@@ -1,0 +1,2128 @@
+{
+  "appName": "A I Event Planner",
+  "dbName": "a_i_event_planner",
+  "folderName": "generated/AIEventPlanner",
+  "features": [
+    {
+      "modelName": "Event",
+      "routeKey": "events",
+      "label": "Event",
+      "icon": "activity",
+      "aiFunction": "analyzeEvent",
+      "aiPrompt": "You are an AI analyst for A I Event Planner. Analyze the provided Event data. The data includes: Name, Event Type, Date, Time, Location, Description, Max Guests, Budget, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "eventType",
+          "label": "Event Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "time",
+          "label": "Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "maxGuests",
+          "label": "Max Guests",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "budget",
+          "label": "Budget",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "eventType": "Category A",
+          "date": "2024-01-01",
+          "time": "Advanced Time 1",
+          "location": "New York",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "maxGuests": 10,
+          "budget": 500,
+          "status": "active"
+        },
+        {
+          "name": "Premium Name 2",
+          "eventType": "Category B",
+          "date": "2024-02-03",
+          "time": "Premium Time 2",
+          "location": "Los Angeles",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "maxGuests": 58,
+          "budget": 2481,
+          "status": "pending"
+        },
+        {
+          "name": "Standard Name 3",
+          "eventType": "Category C",
+          "date": "2024-03-05",
+          "time": "Standard Time 3",
+          "location": "Chicago",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "maxGuests": 106,
+          "budget": 4462,
+          "status": "in_progress"
+        },
+        {
+          "name": "Elite Name 4",
+          "eventType": "Category D",
+          "date": "2024-04-07",
+          "time": "Elite Time 4",
+          "location": "Houston",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "maxGuests": 154,
+          "budget": 6443,
+          "status": "completed"
+        },
+        {
+          "name": "Core Name 5",
+          "eventType": "Category E",
+          "date": "2024-05-09",
+          "time": "Core Time 5",
+          "location": "Phoenix",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "maxGuests": 102,
+          "budget": 8424,
+          "status": "under_review"
+        },
+        {
+          "name": "Pro Name 6",
+          "eventType": "Premium Tier",
+          "date": "2024-06-11",
+          "time": "Pro Time 6",
+          "location": "San Francisco",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "maxGuests": 150,
+          "budget": 10405,
+          "status": "approved"
+        },
+        {
+          "name": "Essential Name 7",
+          "eventType": "Standard Tier",
+          "date": "2024-07-13",
+          "time": "Essential Time 7",
+          "location": "Seattle",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "maxGuests": 198,
+          "budget": 12386,
+          "status": "active"
+        },
+        {
+          "name": "Primary Name 8",
+          "eventType": "Basic Tier",
+          "date": "2024-08-15",
+          "time": "Primary Time 8",
+          "location": "Boston",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "maxGuests": 146,
+          "budget": 9367,
+          "status": "active"
+        },
+        {
+          "name": "Global Name 9",
+          "eventType": "Enterprise",
+          "date": "2024-09-17",
+          "time": "Global Time 9",
+          "location": "Denver",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "maxGuests": 194,
+          "budget": 11348,
+          "status": "active"
+        },
+        {
+          "name": "Regional Name 10",
+          "eventType": "Starter",
+          "date": "2024-10-19",
+          "time": "Regional Time 10",
+          "location": "Miami",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "maxGuests": 242,
+          "budget": 13329,
+          "status": "pending"
+        },
+        {
+          "name": "Custom Name 11",
+          "eventType": "Growth",
+          "date": "2024-11-21",
+          "time": "Custom Time 11",
+          "location": "Austin",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "maxGuests": 190,
+          "budget": 15310,
+          "status": "completed"
+        },
+        {
+          "name": "Smart Name 12",
+          "eventType": "Scale",
+          "date": "2024-12-23",
+          "time": "Smart Time 12",
+          "location": "Portland",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "maxGuests": 238,
+          "budget": 17291,
+          "status": "active"
+        },
+        {
+          "name": "Rapid Name 13",
+          "eventType": "Foundation",
+          "date": "2024-01-25",
+          "time": "Rapid Time 13",
+          "location": "Dallas",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "maxGuests": 286,
+          "budget": 19272,
+          "status": "in_progress"
+        },
+        {
+          "name": "Secure Name 14",
+          "eventType": "Advanced",
+          "date": "2024-02-27",
+          "time": "Secure Time 14",
+          "location": "Atlanta",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "maxGuests": 234,
+          "budget": 21253,
+          "status": "active"
+        },
+        {
+          "name": "Modern Name 15",
+          "eventType": "Professional",
+          "date": "2024-03-01",
+          "time": "Modern Time 15",
+          "location": "Nashville",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "maxGuests": 282,
+          "budget": 18234,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Venue",
+      "routeKey": "venues",
+      "label": "Venue",
+      "icon": "briefcase",
+      "aiFunction": "analyzeVenue",
+      "aiPrompt": "You are an AI analyst for A I Event Planner. Analyze the provided Venue data. The data includes: Name, Address, Capacity, Venue Type, Hourly Rate, Amenities, Contact Phone, Contact Email, Rating. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "capacity",
+          "label": "Capacity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "venueType",
+          "label": "Venue Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "hourlyRate",
+          "label": "Hourly Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "amenities",
+          "label": "Amenities",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "contactPhone",
+          "label": "Contact Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactEmail",
+          "label": "Contact Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "address": "New York",
+          "capacity": 10,
+          "venueType": "Category A",
+          "hourlyRate": 1.5,
+          "amenities": "Comprehensive solution designed for optimal performance and efficiency.",
+          "contactPhone": "(555) 100-1000",
+          "contactEmail": "james.wilson@example.com",
+          "rating": 1.5
+        },
+        {
+          "name": "Premium Name 2",
+          "address": "Los Angeles",
+          "capacity": 58,
+          "venueType": "Category B",
+          "hourlyRate": 2.1,
+          "amenities": "Industry-leading approach with proven results across multiple deployments.",
+          "contactPhone": "(556) 137-1113",
+          "contactEmail": "sarah.chen@example.com",
+          "rating": 2.1
+        },
+        {
+          "name": "Standard Name 3",
+          "address": "Chicago",
+          "capacity": 106,
+          "venueType": "Category C",
+          "hourlyRate": 2.7,
+          "amenities": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "contactPhone": "(557) 174-1226",
+          "contactEmail": "michael.brown@example.com",
+          "rating": 2.7
+        },
+        {
+          "name": "Elite Name 4",
+          "address": "Houston",
+          "capacity": 154,
+          "venueType": "Category D",
+          "hourlyRate": 3.3,
+          "amenities": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "contactPhone": "(558) 211-1339",
+          "contactEmail": "emily.davis@example.com",
+          "rating": 3.3
+        },
+        {
+          "name": "Core Name 5",
+          "address": "Phoenix",
+          "capacity": 102,
+          "venueType": "Category E",
+          "hourlyRate": 3.9,
+          "amenities": "Cost-effective strategy focused on sustainable long-term growth.",
+          "contactPhone": "(555) 248-1452",
+          "contactEmail": "robert.garcia@example.com",
+          "rating": 3.9
+        },
+        {
+          "name": "Pro Name 6",
+          "address": "San Francisco",
+          "capacity": 150,
+          "venueType": "Premium Tier",
+          "hourlyRate": 4.5,
+          "amenities": "High-priority initiative aligned with organizational strategic objectives.",
+          "contactPhone": "(556) 285-1565",
+          "contactEmail": "lisa.anderson@example.com",
+          "rating": 4.5
+        },
+        {
+          "name": "Essential Name 7",
+          "address": "Seattle",
+          "capacity": 198,
+          "venueType": "Standard Tier",
+          "hourlyRate": 5.1,
+          "amenities": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "contactPhone": "(557) 322-1678",
+          "contactEmail": "david.martinez@example.com",
+          "rating": 5.1
+        },
+        {
+          "name": "Primary Name 8",
+          "address": "Boston",
+          "capacity": 146,
+          "venueType": "Basic Tier",
+          "hourlyRate": 5.7,
+          "amenities": "Innovative framework incorporating best practices and emerging technologies.",
+          "contactPhone": "(558) 359-1791",
+          "contactEmail": "jennifer.taylor@example.com",
+          "rating": 5.7
+        },
+        {
+          "name": "Global Name 9",
+          "address": "Denver",
+          "capacity": 194,
+          "venueType": "Enterprise",
+          "hourlyRate": 6.3,
+          "amenities": "Scalable architecture built to accommodate rapid expansion and change.",
+          "contactPhone": "(555) 396-1904",
+          "contactEmail": "william.johnson@example.com",
+          "rating": 6.3
+        },
+        {
+          "name": "Regional Name 10",
+          "address": "Miami",
+          "capacity": 242,
+          "venueType": "Starter",
+          "hourlyRate": 1.9,
+          "amenities": "Enterprise-grade solution with robust security and compliance features.",
+          "contactPhone": "(556) 433-2017",
+          "contactEmail": "maria.rodriguez@example.com",
+          "rating": 1.9
+        },
+        {
+          "name": "Custom Name 11",
+          "address": "Austin",
+          "capacity": 190,
+          "venueType": "Growth",
+          "hourlyRate": 2.5,
+          "amenities": "Integrated platform connecting multiple systems for seamless operations.",
+          "contactPhone": "(557) 470-2130",
+          "contactEmail": "thomas.lee@example.com",
+          "rating": 2.5
+        },
+        {
+          "name": "Smart Name 12",
+          "address": "Portland",
+          "capacity": 238,
+          "venueType": "Scale",
+          "hourlyRate": 3.1,
+          "amenities": "Automated workflow reducing manual intervention and human error.",
+          "contactPhone": "(558) 507-2243",
+          "contactEmail": "patricia.white@example.com",
+          "rating": 3.1
+        },
+        {
+          "name": "Rapid Name 13",
+          "address": "Dallas",
+          "capacity": 286,
+          "venueType": "Foundation",
+          "hourlyRate": 3.7,
+          "amenities": "Real-time monitoring system with intelligent alerting capabilities.",
+          "contactPhone": "(555) 544-2356",
+          "contactEmail": "christopher.hall@example.com",
+          "rating": 3.7
+        },
+        {
+          "name": "Secure Name 14",
+          "address": "Atlanta",
+          "capacity": 234,
+          "venueType": "Advanced",
+          "hourlyRate": 4.3,
+          "amenities": "Customizable module adaptable to diverse operational requirements.",
+          "contactPhone": "(556) 581-2469",
+          "contactEmail": "amanda.clark@example.com",
+          "rating": 4.3
+        },
+        {
+          "name": "Modern Name 15",
+          "address": "Nashville",
+          "capacity": 282,
+          "venueType": "Professional",
+          "hourlyRate": 4.9,
+          "amenities": "Performance-optimized design achieving superior throughput and reliability.",
+          "contactPhone": "(557) 618-2582",
+          "contactEmail": "daniel.wright@example.com",
+          "rating": 4.9
+        }
+      ]
+    },
+    {
+      "modelName": "Guest",
+      "routeKey": "guests",
+      "label": "Guest",
+      "icon": "clipboard",
+      "aiFunction": "analyzeGuest",
+      "aiPrompt": "You are an AI analyst for A I Event Planner. Analyze the provided Guest data. The data includes: Name, Email, Phone, Event Id, Rsvp Status, Dietary Restrictions, Plus Ones, Table Number, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "eventId",
+          "label": "Event Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "rsvpStatus",
+          "label": "Rsvp Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dietaryRestrictions",
+          "label": "Dietary Restrictions",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "plusOnes",
+          "label": "Plus Ones",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "tableNumber",
+          "label": "Table Number",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "eventId": 10,
+          "rsvpStatus": "active",
+          "dietaryRestrictions": "Advanced Dietary Restrictions 1",
+          "plusOnes": 10,
+          "tableNumber": 90,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "eventId": 58,
+          "rsvpStatus": "pending",
+          "dietaryRestrictions": "Premium Dietary Restrictions 2",
+          "plusOnes": 58,
+          "tableNumber": 99,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "eventId": 106,
+          "rsvpStatus": "in_progress",
+          "dietaryRestrictions": "Standard Dietary Restrictions 3",
+          "plusOnes": 106,
+          "tableNumber": 99,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "eventId": 154,
+          "rsvpStatus": "completed",
+          "dietaryRestrictions": "Elite Dietary Restrictions 4",
+          "plusOnes": 154,
+          "tableNumber": 51,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "eventId": 102,
+          "rsvpStatus": "under_review",
+          "dietaryRestrictions": "Core Dietary Restrictions 5",
+          "plusOnes": 102,
+          "tableNumber": 50,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "eventId": 150,
+          "rsvpStatus": "approved",
+          "dietaryRestrictions": "Pro Dietary Restrictions 6",
+          "plusOnes": 150,
+          "tableNumber": 55,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "eventId": 198,
+          "rsvpStatus": "active",
+          "dietaryRestrictions": "Essential Dietary Restrictions 7",
+          "plusOnes": 198,
+          "tableNumber": 147,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "eventId": 146,
+          "rsvpStatus": "active",
+          "dietaryRestrictions": "Primary Dietary Restrictions 8",
+          "plusOnes": 146,
+          "tableNumber": 118,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "eventId": 194,
+          "rsvpStatus": "active",
+          "dietaryRestrictions": "Global Dietary Restrictions 9",
+          "plusOnes": 194,
+          "tableNumber": 256,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "eventId": 242,
+          "rsvpStatus": "pending",
+          "dietaryRestrictions": "Regional Dietary Restrictions 10",
+          "plusOnes": 242,
+          "tableNumber": 86,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "eventId": 190,
+          "rsvpStatus": "completed",
+          "dietaryRestrictions": "Custom Dietary Restrictions 11",
+          "plusOnes": 190,
+          "tableNumber": 273,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "eventId": 238,
+          "rsvpStatus": "active",
+          "dietaryRestrictions": "Smart Dietary Restrictions 12",
+          "plusOnes": 238,
+          "tableNumber": 160,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "eventId": 286,
+          "rsvpStatus": "in_progress",
+          "dietaryRestrictions": "Rapid Dietary Restrictions 13",
+          "plusOnes": 286,
+          "tableNumber": 188,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "eventId": 234,
+          "rsvpStatus": "active",
+          "dietaryRestrictions": "Secure Dietary Restrictions 14",
+          "plusOnes": 234,
+          "tableNumber": 276,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "eventId": 282,
+          "rsvpStatus": "approved",
+          "dietaryRestrictions": "Modern Dietary Restrictions 15",
+          "plusOnes": 282,
+          "tableNumber": 159,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "CateringMenu",
+      "routeKey": "catering-menus",
+      "label": "Catering Menu",
+      "icon": "database",
+      "aiFunction": "analyzeCateringMenu",
+      "aiPrompt": "You are an AI analyst for A I Event Planner. Analyze the provided Catering Menu data. The data includes: Name, Cuisine Type, Price Per Person, Min Guests, Max Guests, Menu Items, Dietary Options, Vendor Name, Rating. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cuisineType",
+          "label": "Cuisine Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "pricePerPerson",
+          "label": "Price Per Person",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "minGuests",
+          "label": "Min Guests",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "maxGuests",
+          "label": "Max Guests",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "menuItems",
+          "label": "Menu Items",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "dietaryOptions",
+          "label": "Dietary Options",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "vendorName",
+          "label": "Vendor Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "cuisineType": "Category A",
+          "pricePerPerson": 500,
+          "minGuests": 10,
+          "maxGuests": 10,
+          "menuItems": "Comprehensive solution designed for optimal performance and efficiency.",
+          "dietaryOptions": "Advanced Dietary Options 1",
+          "vendorName": "Advanced Vendor 1",
+          "rating": 1.5
+        },
+        {
+          "name": "Premium Name 2",
+          "cuisineType": "Category B",
+          "pricePerPerson": 2481,
+          "minGuests": 58,
+          "maxGuests": 58,
+          "menuItems": "Industry-leading approach with proven results across multiple deployments.",
+          "dietaryOptions": "Premium Dietary Options 2",
+          "vendorName": "Premium Vendor 2",
+          "rating": 2.1
+        },
+        {
+          "name": "Standard Name 3",
+          "cuisineType": "Category C",
+          "pricePerPerson": 4462,
+          "minGuests": 106,
+          "maxGuests": 106,
+          "menuItems": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "dietaryOptions": "Standard Dietary Options 3",
+          "vendorName": "Standard Vendor 3",
+          "rating": 2.7
+        },
+        {
+          "name": "Elite Name 4",
+          "cuisineType": "Category D",
+          "pricePerPerson": 6443,
+          "minGuests": 154,
+          "maxGuests": 154,
+          "menuItems": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "dietaryOptions": "Elite Dietary Options 4",
+          "vendorName": "Elite Vendor 4",
+          "rating": 3.3
+        },
+        {
+          "name": "Core Name 5",
+          "cuisineType": "Category E",
+          "pricePerPerson": 8424,
+          "minGuests": 102,
+          "maxGuests": 102,
+          "menuItems": "Cost-effective strategy focused on sustainable long-term growth.",
+          "dietaryOptions": "Core Dietary Options 5",
+          "vendorName": "Core Vendor 5",
+          "rating": 3.9
+        },
+        {
+          "name": "Pro Name 6",
+          "cuisineType": "Premium Tier",
+          "pricePerPerson": 10405,
+          "minGuests": 150,
+          "maxGuests": 150,
+          "menuItems": "High-priority initiative aligned with organizational strategic objectives.",
+          "dietaryOptions": "Pro Dietary Options 6",
+          "vendorName": "Pro Vendor 6",
+          "rating": 4.5
+        },
+        {
+          "name": "Essential Name 7",
+          "cuisineType": "Standard Tier",
+          "pricePerPerson": 12386,
+          "minGuests": 198,
+          "maxGuests": 198,
+          "menuItems": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "dietaryOptions": "Essential Dietary Options 7",
+          "vendorName": "Essential Vendor 7",
+          "rating": 5.1
+        },
+        {
+          "name": "Primary Name 8",
+          "cuisineType": "Basic Tier",
+          "pricePerPerson": 9367,
+          "minGuests": 146,
+          "maxGuests": 146,
+          "menuItems": "Innovative framework incorporating best practices and emerging technologies.",
+          "dietaryOptions": "Primary Dietary Options 8",
+          "vendorName": "Primary Vendor 8",
+          "rating": 5.7
+        },
+        {
+          "name": "Global Name 9",
+          "cuisineType": "Enterprise",
+          "pricePerPerson": 11348,
+          "minGuests": 194,
+          "maxGuests": 194,
+          "menuItems": "Scalable architecture built to accommodate rapid expansion and change.",
+          "dietaryOptions": "Global Dietary Options 9",
+          "vendorName": "Global Vendor 9",
+          "rating": 6.3
+        },
+        {
+          "name": "Regional Name 10",
+          "cuisineType": "Starter",
+          "pricePerPerson": 13329,
+          "minGuests": 242,
+          "maxGuests": 242,
+          "menuItems": "Enterprise-grade solution with robust security and compliance features.",
+          "dietaryOptions": "Regional Dietary Options 10",
+          "vendorName": "Regional Vendor 10",
+          "rating": 1.9
+        },
+        {
+          "name": "Custom Name 11",
+          "cuisineType": "Growth",
+          "pricePerPerson": 15310,
+          "minGuests": 190,
+          "maxGuests": 190,
+          "menuItems": "Integrated platform connecting multiple systems for seamless operations.",
+          "dietaryOptions": "Custom Dietary Options 11",
+          "vendorName": "Custom Vendor 11",
+          "rating": 2.5
+        },
+        {
+          "name": "Smart Name 12",
+          "cuisineType": "Scale",
+          "pricePerPerson": 17291,
+          "minGuests": 238,
+          "maxGuests": 238,
+          "menuItems": "Automated workflow reducing manual intervention and human error.",
+          "dietaryOptions": "Smart Dietary Options 12",
+          "vendorName": "Smart Vendor 12",
+          "rating": 3.1
+        },
+        {
+          "name": "Rapid Name 13",
+          "cuisineType": "Foundation",
+          "pricePerPerson": 19272,
+          "minGuests": 286,
+          "maxGuests": 286,
+          "menuItems": "Real-time monitoring system with intelligent alerting capabilities.",
+          "dietaryOptions": "Rapid Dietary Options 13",
+          "vendorName": "Rapid Vendor 13",
+          "rating": 3.7
+        },
+        {
+          "name": "Secure Name 14",
+          "cuisineType": "Advanced",
+          "pricePerPerson": 21253,
+          "minGuests": 234,
+          "maxGuests": 234,
+          "menuItems": "Customizable module adaptable to diverse operational requirements.",
+          "dietaryOptions": "Secure Dietary Options 14",
+          "vendorName": "Secure Vendor 14",
+          "rating": 4.3
+        },
+        {
+          "name": "Modern Name 15",
+          "cuisineType": "Professional",
+          "pricePerPerson": 18234,
+          "minGuests": 282,
+          "maxGuests": 282,
+          "menuItems": "Performance-optimized design achieving superior throughput and reliability.",
+          "dietaryOptions": "Modern Dietary Options 15",
+          "vendorName": "Modern Vendor 15",
+          "rating": 4.9
+        }
+      ]
+    },
+    {
+      "modelName": "Vendor",
+      "routeKey": "vendors",
+      "label": "Vendor",
+      "icon": "file-text",
+      "aiFunction": "analyzeVendor",
+      "aiPrompt": "You are an AI analyst for A I Event Planner. Analyze the provided Vendor data. The data includes: Name, Service Type, Contact Email, Contact Phone, Hourly Rate, Rating, Description, Availability, Portfolio Url. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serviceType",
+          "label": "Service Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactEmail",
+          "label": "Contact Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactPhone",
+          "label": "Contact Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "hourlyRate",
+          "label": "Hourly Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "availability",
+          "label": "Availability",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "portfolioUrl",
+          "label": "Portfolio Url",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "serviceType": "Category A",
+          "contactEmail": "james.wilson@example.com",
+          "contactPhone": "(555) 100-1000",
+          "hourlyRate": 1.5,
+          "rating": 1.5,
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "availability": "Advanced Availability 1",
+          "portfolioUrl": "https://example.com/portfolioUrl/1"
+        },
+        {
+          "name": "Premium Name 2",
+          "serviceType": "Category B",
+          "contactEmail": "sarah.chen@example.com",
+          "contactPhone": "(556) 137-1113",
+          "hourlyRate": 2.1,
+          "rating": 2.1,
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "availability": "Premium Availability 2",
+          "portfolioUrl": "https://example.com/portfolioUrl/2"
+        },
+        {
+          "name": "Standard Name 3",
+          "serviceType": "Category C",
+          "contactEmail": "michael.brown@example.com",
+          "contactPhone": "(557) 174-1226",
+          "hourlyRate": 2.7,
+          "rating": 2.7,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "availability": "Standard Availability 3",
+          "portfolioUrl": "https://example.com/portfolioUrl/3"
+        },
+        {
+          "name": "Elite Name 4",
+          "serviceType": "Category D",
+          "contactEmail": "emily.davis@example.com",
+          "contactPhone": "(558) 211-1339",
+          "hourlyRate": 3.3,
+          "rating": 3.3,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "availability": "Elite Availability 4",
+          "portfolioUrl": "https://example.com/portfolioUrl/4"
+        },
+        {
+          "name": "Core Name 5",
+          "serviceType": "Category E",
+          "contactEmail": "robert.garcia@example.com",
+          "contactPhone": "(555) 248-1452",
+          "hourlyRate": 3.9,
+          "rating": 3.9,
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "availability": "Core Availability 5",
+          "portfolioUrl": "https://example.com/portfolioUrl/5"
+        },
+        {
+          "name": "Pro Name 6",
+          "serviceType": "Premium Tier",
+          "contactEmail": "lisa.anderson@example.com",
+          "contactPhone": "(556) 285-1565",
+          "hourlyRate": 4.5,
+          "rating": 4.5,
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "availability": "Pro Availability 6",
+          "portfolioUrl": "https://example.com/portfolioUrl/6"
+        },
+        {
+          "name": "Essential Name 7",
+          "serviceType": "Standard Tier",
+          "contactEmail": "david.martinez@example.com",
+          "contactPhone": "(557) 322-1678",
+          "hourlyRate": 5.1,
+          "rating": 5.1,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "availability": "Essential Availability 7",
+          "portfolioUrl": "https://example.com/portfolioUrl/7"
+        },
+        {
+          "name": "Primary Name 8",
+          "serviceType": "Basic Tier",
+          "contactEmail": "jennifer.taylor@example.com",
+          "contactPhone": "(558) 359-1791",
+          "hourlyRate": 5.7,
+          "rating": 5.7,
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "availability": "Primary Availability 8",
+          "portfolioUrl": "https://example.com/portfolioUrl/8"
+        },
+        {
+          "name": "Global Name 9",
+          "serviceType": "Enterprise",
+          "contactEmail": "william.johnson@example.com",
+          "contactPhone": "(555) 396-1904",
+          "hourlyRate": 6.3,
+          "rating": 6.3,
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "availability": "Global Availability 9",
+          "portfolioUrl": "https://example.com/portfolioUrl/9"
+        },
+        {
+          "name": "Regional Name 10",
+          "serviceType": "Starter",
+          "contactEmail": "maria.rodriguez@example.com",
+          "contactPhone": "(556) 433-2017",
+          "hourlyRate": 1.9,
+          "rating": 1.9,
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "availability": "Regional Availability 10",
+          "portfolioUrl": "https://example.com/portfolioUrl/10"
+        },
+        {
+          "name": "Custom Name 11",
+          "serviceType": "Growth",
+          "contactEmail": "thomas.lee@example.com",
+          "contactPhone": "(557) 470-2130",
+          "hourlyRate": 2.5,
+          "rating": 2.5,
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "availability": "Custom Availability 11",
+          "portfolioUrl": "https://example.com/portfolioUrl/11"
+        },
+        {
+          "name": "Smart Name 12",
+          "serviceType": "Scale",
+          "contactEmail": "patricia.white@example.com",
+          "contactPhone": "(558) 507-2243",
+          "hourlyRate": 3.1,
+          "rating": 3.1,
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "availability": "Smart Availability 12",
+          "portfolioUrl": "https://example.com/portfolioUrl/12"
+        },
+        {
+          "name": "Rapid Name 13",
+          "serviceType": "Foundation",
+          "contactEmail": "christopher.hall@example.com",
+          "contactPhone": "(555) 544-2356",
+          "hourlyRate": 3.7,
+          "rating": 3.7,
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "availability": "Rapid Availability 13",
+          "portfolioUrl": "https://example.com/portfolioUrl/13"
+        },
+        {
+          "name": "Secure Name 14",
+          "serviceType": "Advanced",
+          "contactEmail": "amanda.clark@example.com",
+          "contactPhone": "(556) 581-2469",
+          "hourlyRate": 4.3,
+          "rating": 4.3,
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "availability": "Secure Availability 14",
+          "portfolioUrl": "https://example.com/portfolioUrl/14"
+        },
+        {
+          "name": "Modern Name 15",
+          "serviceType": "Professional",
+          "contactEmail": "daniel.wright@example.com",
+          "contactPhone": "(557) 618-2582",
+          "hourlyRate": 4.9,
+          "rating": 4.9,
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "availability": "Modern Availability 15",
+          "portfolioUrl": "https://example.com/portfolioUrl/15"
+        }
+      ]
+    },
+    {
+      "modelName": "Budget",
+      "routeKey": "budgets",
+      "label": "Budget",
+      "icon": "heart",
+      "aiFunction": "analyzeBudget",
+      "aiPrompt": "You are an AI analyst for A I Event Planner. Analyze the provided Budget data. The data includes: Event Id, Category, Estimated Cost, Actual Cost, Vendor Name, Notes, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "eventId",
+          "label": "Event Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "estimatedCost",
+          "label": "Estimated Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "actualCost",
+          "label": "Actual Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "vendorName",
+          "label": "Vendor Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "eventId": 10,
+          "category": "Category A",
+          "estimatedCost": 500,
+          "actualCost": 500,
+          "vendorName": "Advanced Vendor 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "eventId": 58,
+          "category": "Category B",
+          "estimatedCost": 2481,
+          "actualCost": 2481,
+          "vendorName": "Premium Vendor 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "eventId": 106,
+          "category": "Category C",
+          "estimatedCost": 4462,
+          "actualCost": 4462,
+          "vendorName": "Standard Vendor 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "eventId": 154,
+          "category": "Category D",
+          "estimatedCost": 6443,
+          "actualCost": 6443,
+          "vendorName": "Elite Vendor 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "eventId": 102,
+          "category": "Category E",
+          "estimatedCost": 8424,
+          "actualCost": 8424,
+          "vendorName": "Core Vendor 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "eventId": 150,
+          "category": "Premium Tier",
+          "estimatedCost": 10405,
+          "actualCost": 10405,
+          "vendorName": "Pro Vendor 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "eventId": 198,
+          "category": "Standard Tier",
+          "estimatedCost": 12386,
+          "actualCost": 12386,
+          "vendorName": "Essential Vendor 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "eventId": 146,
+          "category": "Basic Tier",
+          "estimatedCost": 9367,
+          "actualCost": 9367,
+          "vendorName": "Primary Vendor 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "eventId": 194,
+          "category": "Enterprise",
+          "estimatedCost": 11348,
+          "actualCost": 11348,
+          "vendorName": "Global Vendor 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "eventId": 242,
+          "category": "Starter",
+          "estimatedCost": 13329,
+          "actualCost": 13329,
+          "vendorName": "Regional Vendor 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "eventId": 190,
+          "category": "Growth",
+          "estimatedCost": 15310,
+          "actualCost": 15310,
+          "vendorName": "Custom Vendor 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "eventId": 238,
+          "category": "Scale",
+          "estimatedCost": 17291,
+          "actualCost": 17291,
+          "vendorName": "Smart Vendor 12",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "eventId": 286,
+          "category": "Foundation",
+          "estimatedCost": 19272,
+          "actualCost": 19272,
+          "vendorName": "Rapid Vendor 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "eventId": 234,
+          "category": "Advanced",
+          "estimatedCost": 21253,
+          "actualCost": 21253,
+          "vendorName": "Secure Vendor 14",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "eventId": 282,
+          "category": "Professional",
+          "estimatedCost": 18234,
+          "actualCost": 18234,
+          "vendorName": "Modern Vendor 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Task",
+      "routeKey": "tasks",
+      "label": "Task",
+      "icon": "layers",
+      "aiFunction": "analyzeTask",
+      "aiPrompt": "You are an AI analyst for A I Event Planner. Analyze the provided Task data. The data includes: Event Id, Title, Description, Assigned To, Due Date, Priority, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "eventId",
+          "label": "Event Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "eventId": 10,
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "assignedTo": "Advanced Assigned To 1",
+          "dueDate": "2024-01-01",
+          "priority": "low",
+          "status": "active"
+        },
+        {
+          "eventId": 58,
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "assignedTo": "Premium Assigned To 2",
+          "dueDate": "2024-02-03",
+          "priority": "medium",
+          "status": "pending"
+        },
+        {
+          "eventId": 106,
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "assignedTo": "Standard Assigned To 3",
+          "dueDate": "2024-03-05",
+          "priority": "high",
+          "status": "in_progress"
+        },
+        {
+          "eventId": 154,
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "assignedTo": "Elite Assigned To 4",
+          "dueDate": "2024-04-07",
+          "priority": "critical",
+          "status": "completed"
+        },
+        {
+          "eventId": 102,
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "assignedTo": "Core Assigned To 5",
+          "dueDate": "2024-05-09",
+          "priority": "medium",
+          "status": "under_review"
+        },
+        {
+          "eventId": 150,
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "assignedTo": "Pro Assigned To 6",
+          "dueDate": "2024-06-11",
+          "priority": "low",
+          "status": "approved"
+        },
+        {
+          "eventId": 198,
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "assignedTo": "Essential Assigned To 7",
+          "dueDate": "2024-07-13",
+          "priority": "medium",
+          "status": "active"
+        },
+        {
+          "eventId": 146,
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "assignedTo": "Primary Assigned To 8",
+          "dueDate": "2024-08-15",
+          "priority": "high",
+          "status": "active"
+        },
+        {
+          "eventId": 194,
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "assignedTo": "Global Assigned To 9",
+          "dueDate": "2024-09-17",
+          "priority": "critical",
+          "status": "active"
+        },
+        {
+          "eventId": 242,
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "assignedTo": "Regional Assigned To 10",
+          "dueDate": "2024-10-19",
+          "priority": "medium",
+          "status": "pending"
+        },
+        {
+          "eventId": 190,
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "assignedTo": "Custom Assigned To 11",
+          "dueDate": "2024-11-21",
+          "priority": "low",
+          "status": "completed"
+        },
+        {
+          "eventId": 238,
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "assignedTo": "Smart Assigned To 12",
+          "dueDate": "2024-12-23",
+          "priority": "medium",
+          "status": "active"
+        },
+        {
+          "eventId": 286,
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "assignedTo": "Rapid Assigned To 13",
+          "dueDate": "2024-01-25",
+          "priority": "high",
+          "status": "in_progress"
+        },
+        {
+          "eventId": 234,
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "assignedTo": "Secure Assigned To 14",
+          "dueDate": "2024-02-27",
+          "priority": "critical",
+          "status": "active"
+        },
+        {
+          "eventId": 282,
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "assignedTo": "Modern Assigned To 15",
+          "dueDate": "2024-03-01",
+          "priority": "medium",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Invitation",
+      "routeKey": "invitations",
+      "label": "Invitation",
+      "icon": "map-pin",
+      "aiFunction": "analyzeInvitation",
+      "aiPrompt": "You are an AI analyst for A I Event Planner. Analyze the provided Invitation data. The data includes: Event Id, Guest Name, Guest Email, Invitation Type, Sent Date, Rsvp Status, Message. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "eventId",
+          "label": "Event Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "guestName",
+          "label": "Guest Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "guestEmail",
+          "label": "Guest Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "invitationType",
+          "label": "Invitation Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sentDate",
+          "label": "Sent Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "rsvpStatus",
+          "label": "Rsvp Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "eventId": 10,
+          "guestName": "Advanced Guest 1",
+          "guestEmail": "james.wilson@example.com",
+          "invitationType": "Category A",
+          "sentDate": "2024-01-01",
+          "rsvpStatus": "active",
+          "message": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "eventId": 58,
+          "guestName": "Premium Guest 2",
+          "guestEmail": "sarah.chen@example.com",
+          "invitationType": "Category B",
+          "sentDate": "2024-02-03",
+          "rsvpStatus": "pending",
+          "message": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "eventId": 106,
+          "guestName": "Standard Guest 3",
+          "guestEmail": "michael.brown@example.com",
+          "invitationType": "Category C",
+          "sentDate": "2024-03-05",
+          "rsvpStatus": "in_progress",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "eventId": 154,
+          "guestName": "Elite Guest 4",
+          "guestEmail": "emily.davis@example.com",
+          "invitationType": "Category D",
+          "sentDate": "2024-04-07",
+          "rsvpStatus": "completed",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "eventId": 102,
+          "guestName": "Core Guest 5",
+          "guestEmail": "robert.garcia@example.com",
+          "invitationType": "Category E",
+          "sentDate": "2024-05-09",
+          "rsvpStatus": "under_review",
+          "message": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "eventId": 150,
+          "guestName": "Pro Guest 6",
+          "guestEmail": "lisa.anderson@example.com",
+          "invitationType": "Premium Tier",
+          "sentDate": "2024-06-11",
+          "rsvpStatus": "approved",
+          "message": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "eventId": 198,
+          "guestName": "Essential Guest 7",
+          "guestEmail": "david.martinez@example.com",
+          "invitationType": "Standard Tier",
+          "sentDate": "2024-07-13",
+          "rsvpStatus": "active",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "eventId": 146,
+          "guestName": "Primary Guest 8",
+          "guestEmail": "jennifer.taylor@example.com",
+          "invitationType": "Basic Tier",
+          "sentDate": "2024-08-15",
+          "rsvpStatus": "active",
+          "message": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "eventId": 194,
+          "guestName": "Global Guest 9",
+          "guestEmail": "william.johnson@example.com",
+          "invitationType": "Enterprise",
+          "sentDate": "2024-09-17",
+          "rsvpStatus": "active",
+          "message": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "eventId": 242,
+          "guestName": "Regional Guest 10",
+          "guestEmail": "maria.rodriguez@example.com",
+          "invitationType": "Starter",
+          "sentDate": "2024-10-19",
+          "rsvpStatus": "pending",
+          "message": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "eventId": 190,
+          "guestName": "Custom Guest 11",
+          "guestEmail": "thomas.lee@example.com",
+          "invitationType": "Growth",
+          "sentDate": "2024-11-21",
+          "rsvpStatus": "completed",
+          "message": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "eventId": 238,
+          "guestName": "Smart Guest 12",
+          "guestEmail": "patricia.white@example.com",
+          "invitationType": "Scale",
+          "sentDate": "2024-12-23",
+          "rsvpStatus": "active",
+          "message": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "eventId": 286,
+          "guestName": "Rapid Guest 13",
+          "guestEmail": "christopher.hall@example.com",
+          "invitationType": "Foundation",
+          "sentDate": "2024-01-25",
+          "rsvpStatus": "in_progress",
+          "message": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "eventId": 234,
+          "guestName": "Secure Guest 14",
+          "guestEmail": "amanda.clark@example.com",
+          "invitationType": "Advanced",
+          "sentDate": "2024-02-27",
+          "rsvpStatus": "active",
+          "message": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "eventId": 282,
+          "guestName": "Modern Guest 15",
+          "guestEmail": "daniel.wright@example.com",
+          "invitationType": "Professional",
+          "sentDate": "2024-03-01",
+          "rsvpStatus": "approved",
+          "message": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Seating",
+      "routeKey": "seatings",
+      "label": "Seating",
+      "icon": "package",
+      "aiFunction": "analyzeSeating",
+      "aiPrompt": "You are an AI analyst for A I Event Planner. Analyze the provided Seating data. The data includes: Event Id, Table Number, Table Name, Capacity, Guests Assigned, Arrangement Type, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "eventId",
+          "label": "Event Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "tableNumber",
+          "label": "Table Number",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "tableName",
+          "label": "Table Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "capacity",
+          "label": "Capacity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "guestsAssigned",
+          "label": "Guests Assigned",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "arrangementType",
+          "label": "Arrangement Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "eventId": 10,
+          "tableNumber": 99,
+          "tableName": "Advanced Table 1",
+          "capacity": 10,
+          "guestsAssigned": "Comprehensive solution designed for optimal performance and efficiency.",
+          "arrangementType": "Category A",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "eventId": 58,
+          "tableNumber": 148,
+          "tableName": "Premium Table 2",
+          "capacity": 58,
+          "guestsAssigned": "Industry-leading approach with proven results across multiple deployments.",
+          "arrangementType": "Category B",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "eventId": 106,
+          "tableNumber": 200,
+          "tableName": "Standard Table 3",
+          "capacity": 106,
+          "guestsAssigned": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "arrangementType": "Category C",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "eventId": 154,
+          "tableNumber": 182,
+          "tableName": "Elite Table 4",
+          "capacity": 154,
+          "guestsAssigned": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "arrangementType": "Category D",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "eventId": 102,
+          "tableNumber": 96,
+          "tableName": "Core Table 5",
+          "capacity": 102,
+          "guestsAssigned": "Cost-effective strategy focused on sustainable long-term growth.",
+          "arrangementType": "Category E",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "eventId": 150,
+          "tableNumber": 193,
+          "tableName": "Pro Table 6",
+          "capacity": 150,
+          "guestsAssigned": "High-priority initiative aligned with organizational strategic objectives.",
+          "arrangementType": "Premium Tier",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "eventId": 198,
+          "tableNumber": 231,
+          "tableName": "Essential Table 7",
+          "capacity": 198,
+          "guestsAssigned": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "arrangementType": "Standard Tier",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "eventId": 146,
+          "tableNumber": 174,
+          "tableName": "Primary Table 8",
+          "capacity": 146,
+          "guestsAssigned": "Innovative framework incorporating best practices and emerging technologies.",
+          "arrangementType": "Basic Tier",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "eventId": 194,
+          "tableNumber": 68,
+          "tableName": "Global Table 9",
+          "capacity": 194,
+          "guestsAssigned": "Scalable architecture built to accommodate rapid expansion and change.",
+          "arrangementType": "Enterprise",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "eventId": 242,
+          "tableNumber": 152,
+          "tableName": "Regional Table 10",
+          "capacity": 242,
+          "guestsAssigned": "Enterprise-grade solution with robust security and compliance features.",
+          "arrangementType": "Starter",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "eventId": 190,
+          "tableNumber": 160,
+          "tableName": "Custom Table 11",
+          "capacity": 190,
+          "guestsAssigned": "Integrated platform connecting multiple systems for seamless operations.",
+          "arrangementType": "Growth",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "eventId": 238,
+          "tableNumber": 89,
+          "tableName": "Smart Table 12",
+          "capacity": 238,
+          "guestsAssigned": "Automated workflow reducing manual intervention and human error.",
+          "arrangementType": "Scale",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "eventId": 286,
+          "tableNumber": 218,
+          "tableName": "Rapid Table 13",
+          "capacity": 286,
+          "guestsAssigned": "Real-time monitoring system with intelligent alerting capabilities.",
+          "arrangementType": "Foundation",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "eventId": 234,
+          "tableNumber": 99,
+          "tableName": "Secure Table 14",
+          "capacity": 234,
+          "guestsAssigned": "Customizable module adaptable to diverse operational requirements.",
+          "arrangementType": "Advanced",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "eventId": 282,
+          "tableNumber": 189,
+          "tableName": "Modern Table 15",
+          "capacity": 282,
+          "guestsAssigned": "Performance-optimized design achieving superior throughput and reliability.",
+          "arrangementType": "Professional",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Entertainment",
+      "routeKey": "entertainments",
+      "label": "Entertainment",
+      "icon": "shield",
+      "aiFunction": "analyzeEntertainment",
+      "aiPrompt": "You are an AI analyst for A I Event Planner. Analyze the provided Entertainment data. The data includes: Name, Entertainment Type, Duration Hours, Cost, Description, Requirements, Contact Info, Rating. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entertainmentType",
+          "label": "Entertainment Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "durationHours",
+          "label": "Duration Hours",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "requirements",
+          "label": "Requirements",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "contactInfo",
+          "label": "Contact Info",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "entertainmentType": "Category A",
+          "durationHours": 1.5,
+          "cost": 500,
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "requirements": "Comprehensive solution designed for optimal performance and efficiency.",
+          "contactInfo": "Advanced Contact Info 1",
+          "rating": 1.5
+        },
+        {
+          "name": "Premium Name 2",
+          "entertainmentType": "Category B",
+          "durationHours": 2.1,
+          "cost": 2481,
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "requirements": "Industry-leading approach with proven results across multiple deployments.",
+          "contactInfo": "Premium Contact Info 2",
+          "rating": 2.1
+        },
+        {
+          "name": "Standard Name 3",
+          "entertainmentType": "Category C",
+          "durationHours": 2.7,
+          "cost": 4462,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "requirements": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "contactInfo": "Standard Contact Info 3",
+          "rating": 2.7
+        },
+        {
+          "name": "Elite Name 4",
+          "entertainmentType": "Category D",
+          "durationHours": 3.3,
+          "cost": 6443,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "requirements": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "contactInfo": "Elite Contact Info 4",
+          "rating": 3.3
+        },
+        {
+          "name": "Core Name 5",
+          "entertainmentType": "Category E",
+          "durationHours": 3.9,
+          "cost": 8424,
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "requirements": "Cost-effective strategy focused on sustainable long-term growth.",
+          "contactInfo": "Core Contact Info 5",
+          "rating": 3.9
+        },
+        {
+          "name": "Pro Name 6",
+          "entertainmentType": "Premium Tier",
+          "durationHours": 4.5,
+          "cost": 10405,
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "requirements": "High-priority initiative aligned with organizational strategic objectives.",
+          "contactInfo": "Pro Contact Info 6",
+          "rating": 4.5
+        },
+        {
+          "name": "Essential Name 7",
+          "entertainmentType": "Standard Tier",
+          "durationHours": 5.1,
+          "cost": 12386,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "requirements": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "contactInfo": "Essential Contact Info 7",
+          "rating": 5.1
+        },
+        {
+          "name": "Primary Name 8",
+          "entertainmentType": "Basic Tier",
+          "durationHours": 5.7,
+          "cost": 9367,
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "requirements": "Innovative framework incorporating best practices and emerging technologies.",
+          "contactInfo": "Primary Contact Info 8",
+          "rating": 5.7
+        },
+        {
+          "name": "Global Name 9",
+          "entertainmentType": "Enterprise",
+          "durationHours": 6.3,
+          "cost": 11348,
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "requirements": "Scalable architecture built to accommodate rapid expansion and change.",
+          "contactInfo": "Global Contact Info 9",
+          "rating": 6.3
+        },
+        {
+          "name": "Regional Name 10",
+          "entertainmentType": "Starter",
+          "durationHours": 1.9,
+          "cost": 13329,
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "requirements": "Enterprise-grade solution with robust security and compliance features.",
+          "contactInfo": "Regional Contact Info 10",
+          "rating": 1.9
+        },
+        {
+          "name": "Custom Name 11",
+          "entertainmentType": "Growth",
+          "durationHours": 2.5,
+          "cost": 15310,
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "requirements": "Integrated platform connecting multiple systems for seamless operations.",
+          "contactInfo": "Custom Contact Info 11",
+          "rating": 2.5
+        },
+        {
+          "name": "Smart Name 12",
+          "entertainmentType": "Scale",
+          "durationHours": 3.1,
+          "cost": 17291,
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "requirements": "Automated workflow reducing manual intervention and human error.",
+          "contactInfo": "Smart Contact Info 12",
+          "rating": 3.1
+        },
+        {
+          "name": "Rapid Name 13",
+          "entertainmentType": "Foundation",
+          "durationHours": 3.7,
+          "cost": 19272,
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "requirements": "Real-time monitoring system with intelligent alerting capabilities.",
+          "contactInfo": "Rapid Contact Info 13",
+          "rating": 3.7
+        },
+        {
+          "name": "Secure Name 14",
+          "entertainmentType": "Advanced",
+          "durationHours": 4.3,
+          "cost": 21253,
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "requirements": "Customizable module adaptable to diverse operational requirements.",
+          "contactInfo": "Secure Contact Info 14",
+          "rating": 4.3
+        },
+        {
+          "name": "Modern Name 15",
+          "entertainmentType": "Professional",
+          "durationHours": 4.9,
+          "cost": 18234,
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "requirements": "Performance-optimized design achieving superior throughput and reliability.",
+          "contactInfo": "Modern Contact Info 15",
+          "rating": 4.9
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2443 @@
+{
+  "appName": "AI Sales Outreach & Churn (Part 2)",
+  "dbName": "a_i_sales_outreach_part2",
+  "folderName": "generated/AISalesOutreachPart2",
+  "features": [
+    {
+      "modelName": "Report",
+      "routeKey": "reports",
+      "label": "Report",
+      "icon": "calendar",
+      "aiFunction": "analyzeReport",
+      "aiPrompt": "You are an AI analyst for ai-sales-outreach. Analyze the provided Report data. The data includes: Team Id, Name, Description, Report Type, Date Range, Filters, Data, Status, File Url. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "teamId",
+          "label": "Team Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "reportType",
+          "label": "Report Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dateRange",
+          "label": "Date Range",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "filters",
+          "label": "Filters",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "data",
+          "label": "Data",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fileUrl",
+          "label": "File Url",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "teamId": "Advanced Team Id 1",
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "reportType": "Category A",
+          "dateRange": "Advanced Date Range 1",
+          "filters": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "data": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "status": "active",
+          "fileUrl": "https://example.com/fileUrl/1"
+        },
+        {
+          "teamId": "Premium Team Id 2",
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "reportType": "Category B",
+          "dateRange": "Premium Date Range 2",
+          "filters": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "data": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "status": "pending",
+          "fileUrl": "https://example.com/fileUrl/2"
+        },
+        {
+          "teamId": "Standard Team Id 3",
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "reportType": "Category C",
+          "dateRange": "Standard Date Range 3",
+          "filters": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "data": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "status": "in_progress",
+          "fileUrl": "https://example.com/fileUrl/3"
+        },
+        {
+          "teamId": "Elite Team Id 4",
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "reportType": "Category D",
+          "dateRange": "Elite Date Range 4",
+          "filters": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "data": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "status": "completed",
+          "fileUrl": "https://example.com/fileUrl/4"
+        },
+        {
+          "teamId": "Core Team Id 5",
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "reportType": "Category E",
+          "dateRange": "Core Date Range 5",
+          "filters": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "data": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "status": "under_review",
+          "fileUrl": "https://example.com/fileUrl/5"
+        },
+        {
+          "teamId": "Pro Team Id 6",
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "reportType": "Premium Tier",
+          "dateRange": "Pro Date Range 6",
+          "filters": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "data": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "status": "approved",
+          "fileUrl": "https://example.com/fileUrl/6"
+        },
+        {
+          "teamId": "Essential Team Id 7",
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "reportType": "Standard Tier",
+          "dateRange": "Essential Date Range 7",
+          "filters": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "data": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "status": "active",
+          "fileUrl": "https://example.com/fileUrl/7"
+        },
+        {
+          "teamId": "Primary Team Id 8",
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "reportType": "Basic Tier",
+          "dateRange": "Primary Date Range 8",
+          "filters": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "data": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "status": "active",
+          "fileUrl": "https://example.com/fileUrl/8"
+        },
+        {
+          "teamId": "Global Team Id 9",
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "reportType": "Enterprise",
+          "dateRange": "Global Date Range 9",
+          "filters": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "data": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "status": "active",
+          "fileUrl": "https://example.com/fileUrl/9"
+        },
+        {
+          "teamId": "Regional Team Id 10",
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "reportType": "Starter",
+          "dateRange": "Regional Date Range 10",
+          "filters": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "data": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "status": "pending",
+          "fileUrl": "https://example.com/fileUrl/10"
+        },
+        {
+          "teamId": "Custom Team Id 11",
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "reportType": "Growth",
+          "dateRange": "Custom Date Range 11",
+          "filters": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "data": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "status": "completed",
+          "fileUrl": "https://example.com/fileUrl/11"
+        },
+        {
+          "teamId": "Smart Team Id 12",
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "reportType": "Scale",
+          "dateRange": "Smart Date Range 12",
+          "filters": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "data": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "status": "active",
+          "fileUrl": "https://example.com/fileUrl/12"
+        },
+        {
+          "teamId": "Rapid Team Id 13",
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "reportType": "Foundation",
+          "dateRange": "Rapid Date Range 13",
+          "filters": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "data": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "status": "in_progress",
+          "fileUrl": "https://example.com/fileUrl/13"
+        },
+        {
+          "teamId": "Secure Team Id 14",
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "reportType": "Advanced",
+          "dateRange": "Secure Date Range 14",
+          "filters": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "data": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "status": "active",
+          "fileUrl": "https://example.com/fileUrl/14"
+        },
+        {
+          "teamId": "Modern Team Id 15",
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "reportType": "Professional",
+          "dateRange": "Modern Date Range 15",
+          "filters": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "data": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "status": "approved",
+          "fileUrl": "https://example.com/fileUrl/15"
+        }
+      ]
+    },
+    {
+      "modelName": "AiPersonalization",
+      "routeKey": "ai-personalizations",
+      "label": "Ai Personalization",
+      "icon": "dollar-sign",
+      "aiFunction": "analyzeAiPersonalization",
+      "aiPrompt": "You are an AI analyst for ai-sales-outreach. Analyze the provided Ai Personalization data. The data includes: Team Id, Contact Id, Personalization Type, Original Content, Personalized Content, Personalization Factors, Tone, Industry Context, Company Insights, Role Specific Points, Pain Points, Value Propositions, Ai Confidence, Engagement Prediction. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "teamId",
+          "label": "Team Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactId",
+          "label": "Contact Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "personalizationType",
+          "label": "Personalization Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "originalContent",
+          "label": "Original Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "personalizedContent",
+          "label": "Personalized Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "personalizationFactors",
+          "label": "Personalization Factors",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "tone",
+          "label": "Tone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "industryContext",
+          "label": "Industry Context",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "companyInsights",
+          "label": "Company Insights",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "roleSpecificPoints",
+          "label": "Role Specific Points",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "painPoints",
+          "label": "Pain Points",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "valuePropositions",
+          "label": "Value Propositions",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiConfidence",
+          "label": "Ai Confidence",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "engagementPrediction",
+          "label": "Engagement Prediction",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "teamId": "Advanced Team Id 1",
+          "contactId": "Advanced Contact Id 1",
+          "personalizationType": "Category A",
+          "originalContent": "Comprehensive solution designed for optimal performance and efficiency.",
+          "personalizedContent": "Comprehensive solution designed for optimal performance and efficiency.",
+          "personalizationFactors": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "tone": "Advanced Tone 1",
+          "industryContext": "Comprehensive solution designed for optimal performance and efficiency.",
+          "companyInsights": "Comprehensive solution designed for optimal performance and efficiency.",
+          "roleSpecificPoints": "Comprehensive solution designed for optimal performance and efficiency.",
+          "painPoints": "Comprehensive solution designed for optimal performance and efficiency.",
+          "valuePropositions": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiConfidence": 10,
+          "engagementPrediction": 10
+        },
+        {
+          "teamId": "Premium Team Id 2",
+          "contactId": "Premium Contact Id 2",
+          "personalizationType": "Category B",
+          "originalContent": "Industry-leading approach with proven results across multiple deployments.",
+          "personalizedContent": "Industry-leading approach with proven results across multiple deployments.",
+          "personalizationFactors": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "tone": "Premium Tone 2",
+          "industryContext": "Industry-leading approach with proven results across multiple deployments.",
+          "companyInsights": "Industry-leading approach with proven results across multiple deployments.",
+          "roleSpecificPoints": "Industry-leading approach with proven results across multiple deployments.",
+          "painPoints": "Industry-leading approach with proven results across multiple deployments.",
+          "valuePropositions": "Industry-leading approach with proven results across multiple deployments.",
+          "aiConfidence": 71.7,
+          "engagementPrediction": 71.7
+        },
+        {
+          "teamId": "Standard Team Id 3",
+          "contactId": "Standard Contact Id 3",
+          "personalizationType": "Category C",
+          "originalContent": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "personalizedContent": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "personalizationFactors": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "tone": "Standard Tone 3",
+          "industryContext": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "companyInsights": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "roleSpecificPoints": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "painPoints": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "valuePropositions": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiConfidence": 33.4,
+          "engagementPrediction": 33.4
+        },
+        {
+          "teamId": "Elite Team Id 4",
+          "contactId": "Elite Contact Id 4",
+          "personalizationType": "Category D",
+          "originalContent": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "personalizedContent": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "personalizationFactors": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "tone": "Elite Tone 4",
+          "industryContext": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "companyInsights": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "roleSpecificPoints": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "painPoints": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "valuePropositions": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiConfidence": 95.1,
+          "engagementPrediction": 95.1
+        },
+        {
+          "teamId": "Core Team Id 5",
+          "contactId": "Core Contact Id 5",
+          "personalizationType": "Category E",
+          "originalContent": "Cost-effective strategy focused on sustainable long-term growth.",
+          "personalizedContent": "Cost-effective strategy focused on sustainable long-term growth.",
+          "personalizationFactors": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "tone": "Core Tone 5",
+          "industryContext": "Cost-effective strategy focused on sustainable long-term growth.",
+          "companyInsights": "Cost-effective strategy focused on sustainable long-term growth.",
+          "roleSpecificPoints": "Cost-effective strategy focused on sustainable long-term growth.",
+          "painPoints": "Cost-effective strategy focused on sustainable long-term growth.",
+          "valuePropositions": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiConfidence": 56.8,
+          "engagementPrediction": 56.8
+        },
+        {
+          "teamId": "Pro Team Id 6",
+          "contactId": "Pro Contact Id 6",
+          "personalizationType": "Premium Tier",
+          "originalContent": "High-priority initiative aligned with organizational strategic objectives.",
+          "personalizedContent": "High-priority initiative aligned with organizational strategic objectives.",
+          "personalizationFactors": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "tone": "Pro Tone 6",
+          "industryContext": "High-priority initiative aligned with organizational strategic objectives.",
+          "companyInsights": "High-priority initiative aligned with organizational strategic objectives.",
+          "roleSpecificPoints": "High-priority initiative aligned with organizational strategic objectives.",
+          "painPoints": "High-priority initiative aligned with organizational strategic objectives.",
+          "valuePropositions": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiConfidence": 118.5,
+          "engagementPrediction": 118.5
+        },
+        {
+          "teamId": "Essential Team Id 7",
+          "contactId": "Essential Contact Id 7",
+          "personalizationType": "Standard Tier",
+          "originalContent": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "personalizedContent": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "personalizationFactors": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "tone": "Essential Tone 7",
+          "industryContext": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "companyInsights": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "roleSpecificPoints": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "painPoints": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "valuePropositions": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiConfidence": 80.2,
+          "engagementPrediction": 80.2
+        },
+        {
+          "teamId": "Primary Team Id 8",
+          "contactId": "Primary Contact Id 8",
+          "personalizationType": "Basic Tier",
+          "originalContent": "Innovative framework incorporating best practices and emerging technologies.",
+          "personalizedContent": "Innovative framework incorporating best practices and emerging technologies.",
+          "personalizationFactors": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "tone": "Primary Tone 8",
+          "industryContext": "Innovative framework incorporating best practices and emerging technologies.",
+          "companyInsights": "Innovative framework incorporating best practices and emerging technologies.",
+          "roleSpecificPoints": "Innovative framework incorporating best practices and emerging technologies.",
+          "painPoints": "Innovative framework incorporating best practices and emerging technologies.",
+          "valuePropositions": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiConfidence": 141.9,
+          "engagementPrediction": 141.9
+        },
+        {
+          "teamId": "Global Team Id 9",
+          "contactId": "Global Contact Id 9",
+          "personalizationType": "Enterprise",
+          "originalContent": "Scalable architecture built to accommodate rapid expansion and change.",
+          "personalizedContent": "Scalable architecture built to accommodate rapid expansion and change.",
+          "personalizationFactors": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "tone": "Global Tone 9",
+          "industryContext": "Scalable architecture built to accommodate rapid expansion and change.",
+          "companyInsights": "Scalable architecture built to accommodate rapid expansion and change.",
+          "roleSpecificPoints": "Scalable architecture built to accommodate rapid expansion and change.",
+          "painPoints": "Scalable architecture built to accommodate rapid expansion and change.",
+          "valuePropositions": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiConfidence": 103.6,
+          "engagementPrediction": 103.6
+        },
+        {
+          "teamId": "Regional Team Id 10",
+          "contactId": "Regional Contact Id 10",
+          "personalizationType": "Starter",
+          "originalContent": "Enterprise-grade solution with robust security and compliance features.",
+          "personalizedContent": "Enterprise-grade solution with robust security and compliance features.",
+          "personalizationFactors": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "tone": "Regional Tone 10",
+          "industryContext": "Enterprise-grade solution with robust security and compliance features.",
+          "companyInsights": "Enterprise-grade solution with robust security and compliance features.",
+          "roleSpecificPoints": "Enterprise-grade solution with robust security and compliance features.",
+          "painPoints": "Enterprise-grade solution with robust security and compliance features.",
+          "valuePropositions": "Enterprise-grade solution with robust security and compliance features.",
+          "aiConfidence": 165.3,
+          "engagementPrediction": 165.3
+        },
+        {
+          "teamId": "Custom Team Id 11",
+          "contactId": "Custom Contact Id 11",
+          "personalizationType": "Growth",
+          "originalContent": "Integrated platform connecting multiple systems for seamless operations.",
+          "personalizedContent": "Integrated platform connecting multiple systems for seamless operations.",
+          "personalizationFactors": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "tone": "Custom Tone 11",
+          "industryContext": "Integrated platform connecting multiple systems for seamless operations.",
+          "companyInsights": "Integrated platform connecting multiple systems for seamless operations.",
+          "roleSpecificPoints": "Integrated platform connecting multiple systems for seamless operations.",
+          "painPoints": "Integrated platform connecting multiple systems for seamless operations.",
+          "valuePropositions": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiConfidence": 127,
+          "engagementPrediction": 127
+        },
+        {
+          "teamId": "Smart Team Id 12",
+          "contactId": "Smart Contact Id 12",
+          "personalizationType": "Scale",
+          "originalContent": "Automated workflow reducing manual intervention and human error.",
+          "personalizedContent": "Automated workflow reducing manual intervention and human error.",
+          "personalizationFactors": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "tone": "Smart Tone 12",
+          "industryContext": "Automated workflow reducing manual intervention and human error.",
+          "companyInsights": "Automated workflow reducing manual intervention and human error.",
+          "roleSpecificPoints": "Automated workflow reducing manual intervention and human error.",
+          "painPoints": "Automated workflow reducing manual intervention and human error.",
+          "valuePropositions": "Automated workflow reducing manual intervention and human error.",
+          "aiConfidence": 188.7,
+          "engagementPrediction": 188.7
+        },
+        {
+          "teamId": "Rapid Team Id 13",
+          "contactId": "Rapid Contact Id 13",
+          "personalizationType": "Foundation",
+          "originalContent": "Real-time monitoring system with intelligent alerting capabilities.",
+          "personalizedContent": "Real-time monitoring system with intelligent alerting capabilities.",
+          "personalizationFactors": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "tone": "Rapid Tone 13",
+          "industryContext": "Real-time monitoring system with intelligent alerting capabilities.",
+          "companyInsights": "Real-time monitoring system with intelligent alerting capabilities.",
+          "roleSpecificPoints": "Real-time monitoring system with intelligent alerting capabilities.",
+          "painPoints": "Real-time monitoring system with intelligent alerting capabilities.",
+          "valuePropositions": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiConfidence": 150.4,
+          "engagementPrediction": 150.4
+        },
+        {
+          "teamId": "Secure Team Id 14",
+          "contactId": "Secure Contact Id 14",
+          "personalizationType": "Advanced",
+          "originalContent": "Customizable module adaptable to diverse operational requirements.",
+          "personalizedContent": "Customizable module adaptable to diverse operational requirements.",
+          "personalizationFactors": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "tone": "Secure Tone 14",
+          "industryContext": "Customizable module adaptable to diverse operational requirements.",
+          "companyInsights": "Customizable module adaptable to diverse operational requirements.",
+          "roleSpecificPoints": "Customizable module adaptable to diverse operational requirements.",
+          "painPoints": "Customizable module adaptable to diverse operational requirements.",
+          "valuePropositions": "Customizable module adaptable to diverse operational requirements.",
+          "aiConfidence": 212.1,
+          "engagementPrediction": 212.1
+        },
+        {
+          "teamId": "Modern Team Id 15",
+          "contactId": "Modern Contact Id 15",
+          "personalizationType": "Professional",
+          "originalContent": "Performance-optimized design achieving superior throughput and reliability.",
+          "personalizedContent": "Performance-optimized design achieving superior throughput and reliability.",
+          "personalizationFactors": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "tone": "Modern Tone 15",
+          "industryContext": "Performance-optimized design achieving superior throughput and reliability.",
+          "companyInsights": "Performance-optimized design achieving superior throughput and reliability.",
+          "roleSpecificPoints": "Performance-optimized design achieving superior throughput and reliability.",
+          "painPoints": "Performance-optimized design achieving superior throughput and reliability.",
+          "valuePropositions": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiConfidence": 173.8,
+          "engagementPrediction": 173.8
+        }
+      ]
+    },
+    {
+      "modelName": "AiObjection",
+      "routeKey": "ai-objections",
+      "label": "Ai Objection",
+      "icon": "briefcase",
+      "aiFunction": "analyzeAiObjection",
+      "aiPrompt": "You are an AI analyst for ai-sales-outreach. Analyze the provided Ai Objection data. The data includes: Team Id, Objection Type, Objection Text, Response Strategy, Response Templates, Confidence, Success Rate, Use Count, Industry, Buyer Persona, Related Objections, Follow Up Questions, Ai Insights. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "teamId",
+          "label": "Team Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "objectionType",
+          "label": "Objection Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "objectionText",
+          "label": "Objection Text",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "responseStrategy",
+          "label": "Response Strategy",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "responseTemplates",
+          "label": "Response Templates",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "confidence",
+          "label": "Confidence",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "successRate",
+          "label": "Success Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "useCount",
+          "label": "Use Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "industry",
+          "label": "Industry",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "buyerPersona",
+          "label": "Buyer Persona",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "relatedObjections",
+          "label": "Related Objections",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "followUpQuestions",
+          "label": "Follow Up Questions",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiInsights",
+          "label": "Ai Insights",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "teamId": "Advanced Team Id 1",
+          "objectionType": "Category A",
+          "objectionText": "Comprehensive solution designed for optimal performance and efficiency.",
+          "responseStrategy": "Comprehensive solution designed for optimal performance and efficiency.",
+          "responseTemplates": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "confidence": 10,
+          "successRate": 1.5,
+          "useCount": 181,
+          "industry": "Advanced Industry 1",
+          "buyerPersona": "Advanced Buyer Persona 1",
+          "relatedObjections": "Comprehensive solution designed for optimal performance and efficiency.",
+          "followUpQuestions": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiInsights": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "teamId": "Premium Team Id 2",
+          "objectionType": "Category B",
+          "objectionText": "Industry-leading approach with proven results across multiple deployments.",
+          "responseStrategy": "Industry-leading approach with proven results across multiple deployments.",
+          "responseTemplates": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "confidence": 71.7,
+          "successRate": 2.1,
+          "useCount": 73,
+          "industry": "Premium Industry 2",
+          "buyerPersona": "Premium Buyer Persona 2",
+          "relatedObjections": "Industry-leading approach with proven results across multiple deployments.",
+          "followUpQuestions": "Industry-leading approach with proven results across multiple deployments.",
+          "aiInsights": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "teamId": "Standard Team Id 3",
+          "objectionType": "Category C",
+          "objectionText": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "responseStrategy": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "responseTemplates": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "confidence": 33.4,
+          "successRate": 2.7,
+          "useCount": 208,
+          "industry": "Standard Industry 3",
+          "buyerPersona": "Standard Buyer Persona 3",
+          "relatedObjections": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "followUpQuestions": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiInsights": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "teamId": "Elite Team Id 4",
+          "objectionType": "Category D",
+          "objectionText": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "responseStrategy": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "responseTemplates": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "confidence": 95.1,
+          "successRate": 3.3,
+          "useCount": 133,
+          "industry": "Elite Industry 4",
+          "buyerPersona": "Elite Buyer Persona 4",
+          "relatedObjections": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "followUpQuestions": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiInsights": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "teamId": "Core Team Id 5",
+          "objectionType": "Category E",
+          "objectionText": "Cost-effective strategy focused on sustainable long-term growth.",
+          "responseStrategy": "Cost-effective strategy focused on sustainable long-term growth.",
+          "responseTemplates": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "confidence": 56.8,
+          "successRate": 3.9,
+          "useCount": 34,
+          "industry": "Core Industry 5",
+          "buyerPersona": "Core Buyer Persona 5",
+          "relatedObjections": "Cost-effective strategy focused on sustainable long-term growth.",
+          "followUpQuestions": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiInsights": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "teamId": "Pro Team Id 6",
+          "objectionType": "Premium Tier",
+          "objectionText": "High-priority initiative aligned with organizational strategic objectives.",
+          "responseStrategy": "High-priority initiative aligned with organizational strategic objectives.",
+          "responseTemplates": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "confidence": 118.5,
+          "successRate": 4.5,
+          "useCount": 110,
+          "industry": "Pro Industry 6",
+          "buyerPersona": "Pro Buyer Persona 6",
+          "relatedObjections": "High-priority initiative aligned with organizational strategic objectives.",
+          "followUpQuestions": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiInsights": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "teamId": "Essential Team Id 7",
+          "objectionType": "Standard Tier",
+          "objectionText": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "responseStrategy": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "responseTemplates": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "confidence": 80.2,
+          "successRate": 5.1,
+          "useCount": 91,
+          "industry": "Essential Industry 7",
+          "buyerPersona": "Essential Buyer Persona 7",
+          "relatedObjections": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "followUpQuestions": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiInsights": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "teamId": "Primary Team Id 8",
+          "objectionType": "Basic Tier",
+          "objectionText": "Innovative framework incorporating best practices and emerging technologies.",
+          "responseStrategy": "Innovative framework incorporating best practices and emerging technologies.",
+          "responseTemplates": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "confidence": 141.9,
+          "successRate": 5.7,
+          "useCount": 223,
+          "industry": "Primary Industry 8",
+          "buyerPersona": "Primary Buyer Persona 8",
+          "relatedObjections": "Innovative framework incorporating best practices and emerging technologies.",
+          "followUpQuestions": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiInsights": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "teamId": "Global Team Id 9",
+          "objectionType": "Enterprise",
+          "objectionText": "Scalable architecture built to accommodate rapid expansion and change.",
+          "responseStrategy": "Scalable architecture built to accommodate rapid expansion and change.",
+          "responseTemplates": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "confidence": 103.6,
+          "successRate": 6.3,
+          "useCount": 109,
+          "industry": "Global Industry 9",
+          "buyerPersona": "Global Buyer Persona 9",
+          "relatedObjections": "Scalable architecture built to accommodate rapid expansion and change.",
+          "followUpQuestions": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiInsights": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "teamId": "Regional Team Id 10",
+          "objectionType": "Starter",
+          "objectionText": "Enterprise-grade solution with robust security and compliance features.",
+          "responseStrategy": "Enterprise-grade solution with robust security and compliance features.",
+          "responseTemplates": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "confidence": 165.3,
+          "successRate": 1.9,
+          "useCount": 256,
+          "industry": "Regional Industry 10",
+          "buyerPersona": "Regional Buyer Persona 10",
+          "relatedObjections": "Enterprise-grade solution with robust security and compliance features.",
+          "followUpQuestions": "Enterprise-grade solution with robust security and compliance features.",
+          "aiInsights": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "teamId": "Custom Team Id 11",
+          "objectionType": "Growth",
+          "objectionText": "Integrated platform connecting multiple systems for seamless operations.",
+          "responseStrategy": "Integrated platform connecting multiple systems for seamless operations.",
+          "responseTemplates": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "confidence": 127,
+          "successRate": 2.5,
+          "useCount": 255,
+          "industry": "Custom Industry 11",
+          "buyerPersona": "Custom Buyer Persona 11",
+          "relatedObjections": "Integrated platform connecting multiple systems for seamless operations.",
+          "followUpQuestions": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiInsights": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "teamId": "Smart Team Id 12",
+          "objectionType": "Scale",
+          "objectionText": "Automated workflow reducing manual intervention and human error.",
+          "responseStrategy": "Automated workflow reducing manual intervention and human error.",
+          "responseTemplates": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "confidence": 188.7,
+          "successRate": 3.1,
+          "useCount": 231,
+          "industry": "Smart Industry 12",
+          "buyerPersona": "Smart Buyer Persona 12",
+          "relatedObjections": "Automated workflow reducing manual intervention and human error.",
+          "followUpQuestions": "Automated workflow reducing manual intervention and human error.",
+          "aiInsights": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "teamId": "Rapid Team Id 13",
+          "objectionType": "Foundation",
+          "objectionText": "Real-time monitoring system with intelligent alerting capabilities.",
+          "responseStrategy": "Real-time monitoring system with intelligent alerting capabilities.",
+          "responseTemplates": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "confidence": 150.4,
+          "successRate": 3.7,
+          "useCount": 286,
+          "industry": "Rapid Industry 13",
+          "buyerPersona": "Rapid Buyer Persona 13",
+          "relatedObjections": "Real-time monitoring system with intelligent alerting capabilities.",
+          "followUpQuestions": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiInsights": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "teamId": "Secure Team Id 14",
+          "objectionType": "Advanced",
+          "objectionText": "Customizable module adaptable to diverse operational requirements.",
+          "responseStrategy": "Customizable module adaptable to diverse operational requirements.",
+          "responseTemplates": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "confidence": 212.1,
+          "successRate": 4.3,
+          "useCount": 123,
+          "industry": "Secure Industry 14",
+          "buyerPersona": "Secure Buyer Persona 14",
+          "relatedObjections": "Customizable module adaptable to diverse operational requirements.",
+          "followUpQuestions": "Customizable module adaptable to diverse operational requirements.",
+          "aiInsights": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "teamId": "Modern Team Id 15",
+          "objectionType": "Professional",
+          "objectionText": "Performance-optimized design achieving superior throughput and reliability.",
+          "responseStrategy": "Performance-optimized design achieving superior throughput and reliability.",
+          "responseTemplates": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "confidence": 173.8,
+          "successRate": 4.9,
+          "useCount": 165,
+          "industry": "Modern Industry 15",
+          "buyerPersona": "Modern Buyer Persona 15",
+          "relatedObjections": "Performance-optimized design achieving superior throughput and reliability.",
+          "followUpQuestions": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiInsights": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Team",
+      "routeKey": "teams",
+      "label": "Team",
+      "icon": "activity",
+      "aiFunction": "analyzeTeam",
+      "aiPrompt": "You are an AI analyst for ai-sales-outreach. Analyze the provided Team data. The data includes: Name, Description, Owner Id, Plan, Monthly Price. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "ownerId",
+          "label": "Owner Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "plan",
+          "label": "Plan",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "monthlyPrice",
+          "label": "Monthly Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "ownerId": "Advanced Owner Id 1",
+          "plan": "Advanced Plan 1",
+          "monthlyPrice": 500
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "ownerId": "Premium Owner Id 2",
+          "plan": "Premium Plan 2",
+          "monthlyPrice": 2481
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "ownerId": "Standard Owner Id 3",
+          "plan": "Standard Plan 3",
+          "monthlyPrice": 4462
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "ownerId": "Elite Owner Id 4",
+          "plan": "Elite Plan 4",
+          "monthlyPrice": 6443
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "ownerId": "Core Owner Id 5",
+          "plan": "Core Plan 5",
+          "monthlyPrice": 8424
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "ownerId": "Pro Owner Id 6",
+          "plan": "Pro Plan 6",
+          "monthlyPrice": 10405
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "ownerId": "Essential Owner Id 7",
+          "plan": "Essential Plan 7",
+          "monthlyPrice": 12386
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "ownerId": "Primary Owner Id 8",
+          "plan": "Primary Plan 8",
+          "monthlyPrice": 9367
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "ownerId": "Global Owner Id 9",
+          "plan": "Global Plan 9",
+          "monthlyPrice": 11348
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "ownerId": "Regional Owner Id 10",
+          "plan": "Regional Plan 10",
+          "monthlyPrice": 13329
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "ownerId": "Custom Owner Id 11",
+          "plan": "Custom Plan 11",
+          "monthlyPrice": 15310
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "ownerId": "Smart Owner Id 12",
+          "plan": "Smart Plan 12",
+          "monthlyPrice": 17291
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "ownerId": "Rapid Owner Id 13",
+          "plan": "Rapid Plan 13",
+          "monthlyPrice": 19272
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "ownerId": "Secure Owner Id 14",
+          "plan": "Secure Plan 14",
+          "monthlyPrice": 21253
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "ownerId": "Modern Owner Id 15",
+          "plan": "Modern Plan 15",
+          "monthlyPrice": 18234
+        }
+      ]
+    },
+    {
+      "modelName": "BillingHistory",
+      "routeKey": "billing-historys",
+      "label": "Billing History",
+      "icon": "shield",
+      "aiFunction": "analyzeBillingHistory",
+      "aiPrompt": "You are an AI analyst for A I Churn Prediction System. Analyze the provided Billing History data. The data includes: Customer Id, Invoice Number, Amount, Currency, Status, Payment Method, Billing Date, Due Date, Paid At, Ai Response, Ai Response Time Ms. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "invoiceNumber",
+          "label": "Invoice Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "currency",
+          "label": "Currency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "billingDate",
+          "label": "Billing Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "paidAt",
+          "label": "Paid At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "aiResponse",
+          "label": "Ai Response",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiResponseTimeMs",
+          "label": "Ai Response Time Ms",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": 10,
+          "invoiceNumber": "Advanced Invoice Number 1",
+          "amount": 500,
+          "currency": "Advanced Currency 1",
+          "status": "active",
+          "paymentMethod": "Advanced Payment Method 1",
+          "billingDate": "2024-01-01",
+          "dueDate": "2024-01-01",
+          "paidAt": "2024-01-01",
+          "aiResponse": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "aiResponseTimeMs": 10
+        },
+        {
+          "customerId": 58,
+          "invoiceNumber": "Premium Invoice Number 2",
+          "amount": 2481,
+          "currency": "Premium Currency 2",
+          "status": "pending",
+          "paymentMethod": "Premium Payment Method 2",
+          "billingDate": "2024-02-03",
+          "dueDate": "2024-02-03",
+          "paidAt": "2024-02-03",
+          "aiResponse": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "aiResponseTimeMs": 58
+        },
+        {
+          "customerId": 106,
+          "invoiceNumber": "Standard Invoice Number 3",
+          "amount": 4462,
+          "currency": "Standard Currency 3",
+          "status": "in_progress",
+          "paymentMethod": "Standard Payment Method 3",
+          "billingDate": "2024-03-05",
+          "dueDate": "2024-03-05",
+          "paidAt": "2024-03-05",
+          "aiResponse": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "aiResponseTimeMs": 106
+        },
+        {
+          "customerId": 154,
+          "invoiceNumber": "Elite Invoice Number 4",
+          "amount": 6443,
+          "currency": "Elite Currency 4",
+          "status": "completed",
+          "paymentMethod": "Elite Payment Method 4",
+          "billingDate": "2024-04-07",
+          "dueDate": "2024-04-07",
+          "paidAt": "2024-04-07",
+          "aiResponse": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "aiResponseTimeMs": 154
+        },
+        {
+          "customerId": 102,
+          "invoiceNumber": "Core Invoice Number 5",
+          "amount": 8424,
+          "currency": "Core Currency 5",
+          "status": "under_review",
+          "paymentMethod": "Core Payment Method 5",
+          "billingDate": "2024-05-09",
+          "dueDate": "2024-05-09",
+          "paidAt": "2024-05-09",
+          "aiResponse": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "aiResponseTimeMs": 102
+        },
+        {
+          "customerId": 150,
+          "invoiceNumber": "Pro Invoice Number 6",
+          "amount": 10405,
+          "currency": "Pro Currency 6",
+          "status": "approved",
+          "paymentMethod": "Pro Payment Method 6",
+          "billingDate": "2024-06-11",
+          "dueDate": "2024-06-11",
+          "paidAt": "2024-06-11",
+          "aiResponse": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "aiResponseTimeMs": 150
+        },
+        {
+          "customerId": 198,
+          "invoiceNumber": "Essential Invoice Number 7",
+          "amount": 12386,
+          "currency": "Essential Currency 7",
+          "status": "active",
+          "paymentMethod": "Essential Payment Method 7",
+          "billingDate": "2024-07-13",
+          "dueDate": "2024-07-13",
+          "paidAt": "2024-07-13",
+          "aiResponse": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "aiResponseTimeMs": 198
+        },
+        {
+          "customerId": 146,
+          "invoiceNumber": "Primary Invoice Number 8",
+          "amount": 9367,
+          "currency": "Primary Currency 8",
+          "status": "active",
+          "paymentMethod": "Primary Payment Method 8",
+          "billingDate": "2024-08-15",
+          "dueDate": "2024-08-15",
+          "paidAt": "2024-08-15",
+          "aiResponse": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "aiResponseTimeMs": 146
+        },
+        {
+          "customerId": 194,
+          "invoiceNumber": "Global Invoice Number 9",
+          "amount": 11348,
+          "currency": "Global Currency 9",
+          "status": "active",
+          "paymentMethod": "Global Payment Method 9",
+          "billingDate": "2024-09-17",
+          "dueDate": "2024-09-17",
+          "paidAt": "2024-09-17",
+          "aiResponse": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "aiResponseTimeMs": 194
+        },
+        {
+          "customerId": 242,
+          "invoiceNumber": "Regional Invoice Number 10",
+          "amount": 13329,
+          "currency": "Regional Currency 10",
+          "status": "pending",
+          "paymentMethod": "Regional Payment Method 10",
+          "billingDate": "2024-10-19",
+          "dueDate": "2024-10-19",
+          "paidAt": "2024-10-19",
+          "aiResponse": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "aiResponseTimeMs": 242
+        },
+        {
+          "customerId": 190,
+          "invoiceNumber": "Custom Invoice Number 11",
+          "amount": 15310,
+          "currency": "Custom Currency 11",
+          "status": "completed",
+          "paymentMethod": "Custom Payment Method 11",
+          "billingDate": "2024-11-21",
+          "dueDate": "2024-11-21",
+          "paidAt": "2024-11-21",
+          "aiResponse": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "aiResponseTimeMs": 190
+        },
+        {
+          "customerId": 238,
+          "invoiceNumber": "Smart Invoice Number 12",
+          "amount": 17291,
+          "currency": "Smart Currency 12",
+          "status": "active",
+          "paymentMethod": "Smart Payment Method 12",
+          "billingDate": "2024-12-23",
+          "dueDate": "2024-12-23",
+          "paidAt": "2024-12-23",
+          "aiResponse": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "aiResponseTimeMs": 238
+        },
+        {
+          "customerId": 286,
+          "invoiceNumber": "Rapid Invoice Number 13",
+          "amount": 19272,
+          "currency": "Rapid Currency 13",
+          "status": "in_progress",
+          "paymentMethod": "Rapid Payment Method 13",
+          "billingDate": "2024-01-25",
+          "dueDate": "2024-01-25",
+          "paidAt": "2024-01-25",
+          "aiResponse": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "aiResponseTimeMs": 286
+        },
+        {
+          "customerId": 234,
+          "invoiceNumber": "Secure Invoice Number 14",
+          "amount": 21253,
+          "currency": "Secure Currency 14",
+          "status": "active",
+          "paymentMethod": "Secure Payment Method 14",
+          "billingDate": "2024-02-27",
+          "dueDate": "2024-02-27",
+          "paidAt": "2024-02-27",
+          "aiResponse": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "aiResponseTimeMs": 234
+        },
+        {
+          "customerId": 282,
+          "invoiceNumber": "Modern Invoice Number 15",
+          "amount": 18234,
+          "currency": "Modern Currency 15",
+          "status": "approved",
+          "paymentMethod": "Modern Payment Method 15",
+          "billingDate": "2024-03-01",
+          "dueDate": "2024-03-01",
+          "paidAt": "2024-03-01",
+          "aiResponse": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "aiResponseTimeMs": 282
+        }
+      ]
+    },
+    {
+      "modelName": "TeamMember",
+      "routeKey": "team-members",
+      "label": "Team Member",
+      "icon": "briefcase",
+      "aiFunction": "analyzeTeamMember",
+      "aiPrompt": "You are an AI analyst for ai-sales-outreach. Analyze the provided Team Member data. The data includes: Team Id, User Id, Role, Joined At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "teamId",
+          "label": "Team Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "joinedAt",
+          "label": "Joined At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "teamId": "Advanced Team Id 1",
+          "userId": "Advanced User Id 1",
+          "role": "Advanced Role 1",
+          "joinedAt": "2024-01-01"
+        },
+        {
+          "teamId": "Premium Team Id 2",
+          "userId": "Premium User Id 2",
+          "role": "Premium Role 2",
+          "joinedAt": "2024-02-03"
+        },
+        {
+          "teamId": "Standard Team Id 3",
+          "userId": "Standard User Id 3",
+          "role": "Standard Role 3",
+          "joinedAt": "2024-03-05"
+        },
+        {
+          "teamId": "Elite Team Id 4",
+          "userId": "Elite User Id 4",
+          "role": "Elite Role 4",
+          "joinedAt": "2024-04-07"
+        },
+        {
+          "teamId": "Core Team Id 5",
+          "userId": "Core User Id 5",
+          "role": "Core Role 5",
+          "joinedAt": "2024-05-09"
+        },
+        {
+          "teamId": "Pro Team Id 6",
+          "userId": "Pro User Id 6",
+          "role": "Pro Role 6",
+          "joinedAt": "2024-06-11"
+        },
+        {
+          "teamId": "Essential Team Id 7",
+          "userId": "Essential User Id 7",
+          "role": "Essential Role 7",
+          "joinedAt": "2024-07-13"
+        },
+        {
+          "teamId": "Primary Team Id 8",
+          "userId": "Primary User Id 8",
+          "role": "Primary Role 8",
+          "joinedAt": "2024-08-15"
+        },
+        {
+          "teamId": "Global Team Id 9",
+          "userId": "Global User Id 9",
+          "role": "Global Role 9",
+          "joinedAt": "2024-09-17"
+        },
+        {
+          "teamId": "Regional Team Id 10",
+          "userId": "Regional User Id 10",
+          "role": "Regional Role 10",
+          "joinedAt": "2024-10-19"
+        },
+        {
+          "teamId": "Custom Team Id 11",
+          "userId": "Custom User Id 11",
+          "role": "Custom Role 11",
+          "joinedAt": "2024-11-21"
+        },
+        {
+          "teamId": "Smart Team Id 12",
+          "userId": "Smart User Id 12",
+          "role": "Smart Role 12",
+          "joinedAt": "2024-12-23"
+        },
+        {
+          "teamId": "Rapid Team Id 13",
+          "userId": "Rapid User Id 13",
+          "role": "Rapid Role 13",
+          "joinedAt": "2024-01-25"
+        },
+        {
+          "teamId": "Secure Team Id 14",
+          "userId": "Secure User Id 14",
+          "role": "Secure Role 14",
+          "joinedAt": "2024-02-27"
+        },
+        {
+          "teamId": "Modern Team Id 15",
+          "userId": "Modern User Id 15",
+          "role": "Modern Role 15",
+          "joinedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "AiGeneration",
+      "routeKey": "ai-generations",
+      "label": "Ai Generation",
+      "icon": "star",
+      "aiFunction": "analyzeAiGeneration",
+      "aiPrompt": "You are an AI analyst for ai-sales-outreach. Analyze the provided Ai Generation data. The data includes: Team Id, User Id, Type, Prompt, Result, Tokens Used. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "teamId",
+          "label": "Team Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "prompt",
+          "label": "Prompt",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "result",
+          "label": "Result",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "tokensUsed",
+          "label": "Tokens Used",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "teamId": "Advanced Team Id 1",
+          "userId": "Advanced User Id 1",
+          "type": "Category A",
+          "prompt": "Comprehensive solution designed for optimal performance and efficiency.",
+          "result": "Comprehensive solution designed for optimal performance and efficiency.",
+          "tokensUsed": 10
+        },
+        {
+          "teamId": "Premium Team Id 2",
+          "userId": "Premium User Id 2",
+          "type": "Category B",
+          "prompt": "Industry-leading approach with proven results across multiple deployments.",
+          "result": "Industry-leading approach with proven results across multiple deployments.",
+          "tokensUsed": 58
+        },
+        {
+          "teamId": "Standard Team Id 3",
+          "userId": "Standard User Id 3",
+          "type": "Category C",
+          "prompt": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "result": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "tokensUsed": 106
+        },
+        {
+          "teamId": "Elite Team Id 4",
+          "userId": "Elite User Id 4",
+          "type": "Category D",
+          "prompt": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "result": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "tokensUsed": 154
+        },
+        {
+          "teamId": "Core Team Id 5",
+          "userId": "Core User Id 5",
+          "type": "Category E",
+          "prompt": "Cost-effective strategy focused on sustainable long-term growth.",
+          "result": "Cost-effective strategy focused on sustainable long-term growth.",
+          "tokensUsed": 102
+        },
+        {
+          "teamId": "Pro Team Id 6",
+          "userId": "Pro User Id 6",
+          "type": "Premium Tier",
+          "prompt": "High-priority initiative aligned with organizational strategic objectives.",
+          "result": "High-priority initiative aligned with organizational strategic objectives.",
+          "tokensUsed": 150
+        },
+        {
+          "teamId": "Essential Team Id 7",
+          "userId": "Essential User Id 7",
+          "type": "Standard Tier",
+          "prompt": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "result": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "tokensUsed": 198
+        },
+        {
+          "teamId": "Primary Team Id 8",
+          "userId": "Primary User Id 8",
+          "type": "Basic Tier",
+          "prompt": "Innovative framework incorporating best practices and emerging technologies.",
+          "result": "Innovative framework incorporating best practices and emerging technologies.",
+          "tokensUsed": 146
+        },
+        {
+          "teamId": "Global Team Id 9",
+          "userId": "Global User Id 9",
+          "type": "Enterprise",
+          "prompt": "Scalable architecture built to accommodate rapid expansion and change.",
+          "result": "Scalable architecture built to accommodate rapid expansion and change.",
+          "tokensUsed": 194
+        },
+        {
+          "teamId": "Regional Team Id 10",
+          "userId": "Regional User Id 10",
+          "type": "Starter",
+          "prompt": "Enterprise-grade solution with robust security and compliance features.",
+          "result": "Enterprise-grade solution with robust security and compliance features.",
+          "tokensUsed": 242
+        },
+        {
+          "teamId": "Custom Team Id 11",
+          "userId": "Custom User Id 11",
+          "type": "Growth",
+          "prompt": "Integrated platform connecting multiple systems for seamless operations.",
+          "result": "Integrated platform connecting multiple systems for seamless operations.",
+          "tokensUsed": 190
+        },
+        {
+          "teamId": "Smart Team Id 12",
+          "userId": "Smart User Id 12",
+          "type": "Scale",
+          "prompt": "Automated workflow reducing manual intervention and human error.",
+          "result": "Automated workflow reducing manual intervention and human error.",
+          "tokensUsed": 238
+        },
+        {
+          "teamId": "Rapid Team Id 13",
+          "userId": "Rapid User Id 13",
+          "type": "Foundation",
+          "prompt": "Real-time monitoring system with intelligent alerting capabilities.",
+          "result": "Real-time monitoring system with intelligent alerting capabilities.",
+          "tokensUsed": 286
+        },
+        {
+          "teamId": "Secure Team Id 14",
+          "userId": "Secure User Id 14",
+          "type": "Advanced",
+          "prompt": "Customizable module adaptable to diverse operational requirements.",
+          "result": "Customizable module adaptable to diverse operational requirements.",
+          "tokensUsed": 234
+        },
+        {
+          "teamId": "Modern Team Id 15",
+          "userId": "Modern User Id 15",
+          "type": "Professional",
+          "prompt": "Performance-optimized design achieving superior throughput and reliability.",
+          "result": "Performance-optimized design achieving superior throughput and reliability.",
+          "tokensUsed": 282
+        }
+      ]
+    },
+    {
+      "modelName": "Notification",
+      "routeKey": "notifications",
+      "label": "Notification",
+      "icon": "book",
+      "aiFunction": "analyzeNotification",
+      "aiPrompt": "You are an AI analyst for ai-sales-outreach. Analyze the provided Notification data. The data includes: Team Id, User Id, Type, Title, Message, Link, Is Read. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "teamId",
+          "label": "Team Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "link",
+          "label": "Link",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isRead",
+          "label": "Is Read",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "teamId": "Advanced Team Id 1",
+          "userId": "Advanced User Id 1",
+          "type": "Category A",
+          "title": "Advanced Title 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "link": "https://example.com/link/1",
+          "isRead": true
+        },
+        {
+          "teamId": "Premium Team Id 2",
+          "userId": "Premium User Id 2",
+          "type": "Category B",
+          "title": "Premium Title 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "link": "https://example.com/link/2",
+          "isRead": true
+        },
+        {
+          "teamId": "Standard Team Id 3",
+          "userId": "Standard User Id 3",
+          "type": "Category C",
+          "title": "Standard Title 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "link": "https://example.com/link/3",
+          "isRead": false
+        },
+        {
+          "teamId": "Elite Team Id 4",
+          "userId": "Elite User Id 4",
+          "type": "Category D",
+          "title": "Elite Title 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "link": "https://example.com/link/4",
+          "isRead": true
+        },
+        {
+          "teamId": "Core Team Id 5",
+          "userId": "Core User Id 5",
+          "type": "Category E",
+          "title": "Core Title 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "link": "https://example.com/link/5",
+          "isRead": false
+        },
+        {
+          "teamId": "Pro Team Id 6",
+          "userId": "Pro User Id 6",
+          "type": "Premium Tier",
+          "title": "Pro Title 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "link": "https://example.com/link/6",
+          "isRead": true
+        },
+        {
+          "teamId": "Essential Team Id 7",
+          "userId": "Essential User Id 7",
+          "type": "Standard Tier",
+          "title": "Essential Title 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "link": "https://example.com/link/7",
+          "isRead": true
+        },
+        {
+          "teamId": "Primary Team Id 8",
+          "userId": "Primary User Id 8",
+          "type": "Basic Tier",
+          "title": "Primary Title 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "link": "https://example.com/link/8",
+          "isRead": false
+        },
+        {
+          "teamId": "Global Team Id 9",
+          "userId": "Global User Id 9",
+          "type": "Enterprise",
+          "title": "Global Title 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "link": "https://example.com/link/9",
+          "isRead": true
+        },
+        {
+          "teamId": "Regional Team Id 10",
+          "userId": "Regional User Id 10",
+          "type": "Starter",
+          "title": "Regional Title 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "link": "https://example.com/link/10",
+          "isRead": true
+        },
+        {
+          "teamId": "Custom Team Id 11",
+          "userId": "Custom User Id 11",
+          "type": "Growth",
+          "title": "Custom Title 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "link": "https://example.com/link/11",
+          "isRead": false
+        },
+        {
+          "teamId": "Smart Team Id 12",
+          "userId": "Smart User Id 12",
+          "type": "Scale",
+          "title": "Smart Title 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "link": "https://example.com/link/12",
+          "isRead": true
+        },
+        {
+          "teamId": "Rapid Team Id 13",
+          "userId": "Rapid User Id 13",
+          "type": "Foundation",
+          "title": "Rapid Title 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "link": "https://example.com/link/13",
+          "isRead": false
+        },
+        {
+          "teamId": "Secure Team Id 14",
+          "userId": "Secure User Id 14",
+          "type": "Advanced",
+          "title": "Secure Title 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "link": "https://example.com/link/14",
+          "isRead": true
+        },
+        {
+          "teamId": "Modern Team Id 15",
+          "userId": "Modern User Id 15",
+          "type": "Professional",
+          "title": "Modern Title 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "link": "https://example.com/link/15",
+          "isRead": true
+        }
+      ]
+    },
+    {
+      "modelName": "NpsScore",
+      "routeKey": "nps-scores",
+      "label": "Nps Score",
+      "icon": "users",
+      "aiFunction": "analyzeNpsScore",
+      "aiPrompt": "You are an AI analyst for A I Churn Prediction System. Analyze the provided Nps Score data. The data includes: Customer Id, Score, Feedback, Category, Survey Date, Follow Up Required, Ai Response, Ai Response Time Ms. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "score",
+          "label": "Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "feedback",
+          "label": "Feedback",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "surveyDate",
+          "label": "Survey Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "followUpRequired",
+          "label": "Follow Up Required",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "aiResponse",
+          "label": "Ai Response",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiResponseTimeMs",
+          "label": "Ai Response Time Ms",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": 10,
+          "score": 10,
+          "feedback": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "Category A",
+          "surveyDate": "2024-01-01",
+          "followUpRequired": true,
+          "aiResponse": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "aiResponseTimeMs": 10
+        },
+        {
+          "customerId": 58,
+          "score": 58,
+          "feedback": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "Category B",
+          "surveyDate": "2024-02-03",
+          "followUpRequired": true,
+          "aiResponse": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "aiResponseTimeMs": 58
+        },
+        {
+          "customerId": 106,
+          "score": 106,
+          "feedback": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "Category C",
+          "surveyDate": "2024-03-05",
+          "followUpRequired": false,
+          "aiResponse": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "aiResponseTimeMs": 106
+        },
+        {
+          "customerId": 154,
+          "score": 154,
+          "feedback": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "Category D",
+          "surveyDate": "2024-04-07",
+          "followUpRequired": true,
+          "aiResponse": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "aiResponseTimeMs": 154
+        },
+        {
+          "customerId": 102,
+          "score": 102,
+          "feedback": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "Category E",
+          "surveyDate": "2024-05-09",
+          "followUpRequired": false,
+          "aiResponse": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "aiResponseTimeMs": 102
+        },
+        {
+          "customerId": 150,
+          "score": 150,
+          "feedback": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "Premium Tier",
+          "surveyDate": "2024-06-11",
+          "followUpRequired": true,
+          "aiResponse": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "aiResponseTimeMs": 150
+        },
+        {
+          "customerId": 198,
+          "score": 198,
+          "feedback": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "Standard Tier",
+          "surveyDate": "2024-07-13",
+          "followUpRequired": true,
+          "aiResponse": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "aiResponseTimeMs": 198
+        },
+        {
+          "customerId": 146,
+          "score": 146,
+          "feedback": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "Basic Tier",
+          "surveyDate": "2024-08-15",
+          "followUpRequired": false,
+          "aiResponse": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "aiResponseTimeMs": 146
+        },
+        {
+          "customerId": 194,
+          "score": 194,
+          "feedback": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "Enterprise",
+          "surveyDate": "2024-09-17",
+          "followUpRequired": true,
+          "aiResponse": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "aiResponseTimeMs": 194
+        },
+        {
+          "customerId": 242,
+          "score": 242,
+          "feedback": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "Starter",
+          "surveyDate": "2024-10-19",
+          "followUpRequired": true,
+          "aiResponse": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "aiResponseTimeMs": 242
+        },
+        {
+          "customerId": 190,
+          "score": 190,
+          "feedback": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "Growth",
+          "surveyDate": "2024-11-21",
+          "followUpRequired": false,
+          "aiResponse": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "aiResponseTimeMs": 190
+        },
+        {
+          "customerId": 238,
+          "score": 238,
+          "feedback": "Automated workflow reducing manual intervention and human error.",
+          "category": "Scale",
+          "surveyDate": "2024-12-23",
+          "followUpRequired": true,
+          "aiResponse": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "aiResponseTimeMs": 238
+        },
+        {
+          "customerId": 286,
+          "score": 286,
+          "feedback": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "Foundation",
+          "surveyDate": "2024-01-25",
+          "followUpRequired": false,
+          "aiResponse": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "aiResponseTimeMs": 286
+        },
+        {
+          "customerId": 234,
+          "score": 234,
+          "feedback": "Customizable module adaptable to diverse operational requirements.",
+          "category": "Advanced",
+          "surveyDate": "2024-02-27",
+          "followUpRequired": true,
+          "aiResponse": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "aiResponseTimeMs": 234
+        },
+        {
+          "customerId": 282,
+          "score": 282,
+          "feedback": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "Professional",
+          "surveyDate": "2024-03-01",
+          "followUpRequired": true,
+          "aiResponse": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "aiResponseTimeMs": 282
+        }
+      ]
+    },
+    {
+      "modelName": "Integration",
+      "routeKey": "integrations",
+      "label": "Integration",
+      "icon": "shield",
+      "aiFunction": "analyzeIntegration",
+      "aiPrompt": "You are an AI analyst for ai-sales-outreach. Analyze the provided Integration data. The data includes: Team Id, Name, Type, Status, Config, Last Sync At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "teamId",
+          "label": "Team Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "config",
+          "label": "Config",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "lastSyncAt",
+          "label": "Last Sync At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "teamId": "Advanced Team Id 1",
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "status": "active",
+          "config": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "lastSyncAt": "2024-01-01"
+        },
+        {
+          "teamId": "Premium Team Id 2",
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "status": "pending",
+          "config": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "lastSyncAt": "2024-02-03"
+        },
+        {
+          "teamId": "Standard Team Id 3",
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "status": "in_progress",
+          "config": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "lastSyncAt": "2024-03-05"
+        },
+        {
+          "teamId": "Elite Team Id 4",
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "status": "completed",
+          "config": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "lastSyncAt": "2024-04-07"
+        },
+        {
+          "teamId": "Core Team Id 5",
+          "name": "Core Name 5",
+          "type": "Category E",
+          "status": "under_review",
+          "config": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "lastSyncAt": "2024-05-09"
+        },
+        {
+          "teamId": "Pro Team Id 6",
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "status": "approved",
+          "config": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "lastSyncAt": "2024-06-11"
+        },
+        {
+          "teamId": "Essential Team Id 7",
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "status": "active",
+          "config": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "lastSyncAt": "2024-07-13"
+        },
+        {
+          "teamId": "Primary Team Id 8",
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "status": "active",
+          "config": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "lastSyncAt": "2024-08-15"
+        },
+        {
+          "teamId": "Global Team Id 9",
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "status": "active",
+          "config": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "lastSyncAt": "2024-09-17"
+        },
+        {
+          "teamId": "Regional Team Id 10",
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "status": "pending",
+          "config": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "lastSyncAt": "2024-10-19"
+        },
+        {
+          "teamId": "Custom Team Id 11",
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "status": "completed",
+          "config": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "lastSyncAt": "2024-11-21"
+        },
+        {
+          "teamId": "Smart Team Id 12",
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "status": "active",
+          "config": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "lastSyncAt": "2024-12-23"
+        },
+        {
+          "teamId": "Rapid Team Id 13",
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "status": "in_progress",
+          "config": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "lastSyncAt": "2024-01-25"
+        },
+        {
+          "teamId": "Secure Team Id 14",
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "status": "active",
+          "config": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "lastSyncAt": "2024-02-27"
+        },
+        {
+          "teamId": "Modern Team Id 15",
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "status": "approved",
+          "config": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "lastSyncAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "SequenceStep",
+      "routeKey": "sequence-steps",
+      "label": "Sequence Step",
+      "icon": "zap",
+      "aiFunction": "analyzeSequenceStep",
+      "aiPrompt": "You are an AI analyst for ai-sales-outreach. Analyze the provided Sequence Step data. The data includes: Sequence Id, Step Number, Step Type, Template Id, Delay Days, Delay Hours, Subject, Body, Sent Count, Open Count, Reply Count. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "sequenceId",
+          "label": "Sequence Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "stepNumber",
+          "label": "Step Number",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "stepType",
+          "label": "Step Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "templateId",
+          "label": "Template Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "delayDays",
+          "label": "Delay Days",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "delayHours",
+          "label": "Delay Hours",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "subject",
+          "label": "Subject",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "body",
+          "label": "Body",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "sentCount",
+          "label": "Sent Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "openCount",
+          "label": "Open Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "replyCount",
+          "label": "Reply Count",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "sequenceId": "Advanced Sequence Id 1",
+          "stepNumber": 89,
+          "stepType": "Category A",
+          "templateId": "Advanced Template Id 1",
+          "delayDays": 10,
+          "delayHours": 10,
+          "subject": "Advanced Subject 1",
+          "body": "Comprehensive solution designed for optimal performance and efficiency.",
+          "sentCount": 41,
+          "openCount": 204,
+          "replyCount": 34
+        },
+        {
+          "sequenceId": "Premium Sequence Id 2",
+          "stepNumber": 153,
+          "stepType": "Category B",
+          "templateId": "Premium Template Id 2",
+          "delayDays": 58,
+          "delayHours": 58,
+          "subject": "Premium Subject 2",
+          "body": "Industry-leading approach with proven results across multiple deployments.",
+          "sentCount": 167,
+          "openCount": 211,
+          "replyCount": 171
+        },
+        {
+          "sequenceId": "Standard Sequence Id 3",
+          "stepNumber": 136,
+          "stepType": "Category C",
+          "templateId": "Standard Template Id 3",
+          "delayDays": 106,
+          "delayHours": 106,
+          "subject": "Standard Subject 3",
+          "body": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "sentCount": 187,
+          "openCount": 98,
+          "replyCount": 135
+        },
+        {
+          "sequenceId": "Elite Sequence Id 4",
+          "stepNumber": 63,
+          "stepType": "Category D",
+          "templateId": "Elite Template Id 4",
+          "delayDays": 154,
+          "delayHours": 154,
+          "subject": "Elite Subject 4",
+          "body": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "sentCount": 152,
+          "openCount": 162,
+          "replyCount": 169
+        },
+        {
+          "sequenceId": "Core Sequence Id 5",
+          "stepNumber": 112,
+          "stepType": "Category E",
+          "templateId": "Core Template Id 5",
+          "delayDays": 102,
+          "delayHours": 102,
+          "subject": "Core Subject 5",
+          "body": "Cost-effective strategy focused on sustainable long-term growth.",
+          "sentCount": 101,
+          "openCount": 56,
+          "replyCount": 129
+        },
+        {
+          "sequenceId": "Pro Sequence Id 6",
+          "stepNumber": 145,
+          "stepType": "Premium Tier",
+          "templateId": "Pro Template Id 6",
+          "delayDays": 150,
+          "delayHours": 150,
+          "subject": "Pro Subject 6",
+          "body": "High-priority initiative aligned with organizational strategic objectives.",
+          "sentCount": 225,
+          "openCount": 129,
+          "replyCount": 224
+        },
+        {
+          "sequenceId": "Essential Sequence Id 7",
+          "stepNumber": 144,
+          "stepType": "Standard Tier",
+          "templateId": "Essential Template Id 7",
+          "delayDays": 198,
+          "delayHours": 198,
+          "subject": "Essential Subject 7",
+          "body": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "sentCount": 76,
+          "openCount": 218,
+          "replyCount": 164
+        },
+        {
+          "sequenceId": "Primary Sequence Id 8",
+          "stepNumber": 241,
+          "stepType": "Basic Tier",
+          "templateId": "Primary Template Id 8",
+          "delayDays": 146,
+          "delayHours": 146,
+          "subject": "Primary Subject 8",
+          "body": "Innovative framework incorporating best practices and emerging technologies.",
+          "sentCount": 179,
+          "openCount": 88,
+          "replyCount": 133
+        },
+        {
+          "sequenceId": "Global Sequence Id 9",
+          "stepNumber": 137,
+          "stepType": "Enterprise",
+          "templateId": "Global Template Id 9",
+          "delayDays": 194,
+          "delayHours": 194,
+          "subject": "Global Subject 9",
+          "body": "Scalable architecture built to accommodate rapid expansion and change.",
+          "sentCount": 246,
+          "openCount": 119,
+          "replyCount": 85
+        },
+        {
+          "sequenceId": "Regional Sequence Id 10",
+          "stepNumber": 265,
+          "stepType": "Starter",
+          "templateId": "Regional Template Id 10",
+          "delayDays": 242,
+          "delayHours": 242,
+          "subject": "Regional Subject 10",
+          "body": "Enterprise-grade solution with robust security and compliance features.",
+          "sentCount": 130,
+          "openCount": 201,
+          "replyCount": 182
+        },
+        {
+          "sequenceId": "Custom Sequence Id 11",
+          "stepNumber": 203,
+          "stepType": "Growth",
+          "templateId": "Custom Template Id 11",
+          "delayDays": 190,
+          "delayHours": 190,
+          "subject": "Custom Subject 11",
+          "body": "Integrated platform connecting multiple systems for seamless operations.",
+          "sentCount": 220,
+          "openCount": 197,
+          "replyCount": 197
+        },
+        {
+          "sequenceId": "Smart Sequence Id 12",
+          "stepNumber": 82,
+          "stepType": "Scale",
+          "templateId": "Smart Template Id 12",
+          "delayDays": 238,
+          "delayHours": 238,
+          "subject": "Smart Subject 12",
+          "body": "Automated workflow reducing manual intervention and human error.",
+          "sentCount": 198,
+          "openCount": 101,
+          "replyCount": 247
+        },
+        {
+          "sequenceId": "Rapid Sequence Id 13",
+          "stepNumber": 195,
+          "stepType": "Foundation",
+          "templateId": "Rapid Template Id 13",
+          "delayDays": 286,
+          "delayHours": 286,
+          "subject": "Rapid Subject 13",
+          "body": "Real-time monitoring system with intelligent alerting capabilities.",
+          "sentCount": 214,
+          "openCount": 285,
+          "replyCount": 243
+        },
+        {
+          "sequenceId": "Secure Sequence Id 14",
+          "stepNumber": 149,
+          "stepType": "Advanced",
+          "templateId": "Secure Template Id 14",
+          "delayDays": 234,
+          "delayHours": 234,
+          "subject": "Secure Subject 14",
+          "body": "Customizable module adaptable to diverse operational requirements.",
+          "sentCount": 160,
+          "openCount": 132,
+          "replyCount": 258
+        },
+        {
+          "sequenceId": "Modern Sequence Id 15",
+          "stepNumber": 139,
+          "stepType": "Professional",
+          "templateId": "Modern Template Id 15",
+          "delayDays": 282,
+          "delayHours": 282,
+          "subject": "Modern Subject 15",
+          "body": "Performance-optimized design achieving superior throughput and reliability.",
+          "sentCount": 179,
+          "openCount": 207,
+          "replyCount": 218
+        }
+      ]
+    }
+  ]
+}

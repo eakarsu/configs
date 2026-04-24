@@ -1,0 +1,2401 @@
+{
+  "appName": "Ai Warehouse Distribution (Part 2)",
+  "dbName": "a_i_warehouse_distribution_part2",
+  "folderName": "generated/AIWarehouseDistributionPart2",
+  "features": [
+    {
+      "label": "Route",
+      "modelName": "Route",
+      "routeKey": "routes",
+      "icon": "📋",
+      "aiFunction": "analyzeRoute",
+      "aiPrompt": "Analyze this Route data and provide actionable insights.",
+      "fields": [
+        {
+          "key": "routeName",
+          "label": "Route Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "driverName",
+          "label": "Driver Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "territory",
+          "label": "Territory",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "stops",
+          "label": "Stops",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "totalDistance",
+          "label": "Total Distance",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "estimatedTime",
+          "label": "Estimated Time",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "fuelCost",
+          "label": "Fuel Cost",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "vehicleType",
+          "label": "Vehicle Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "optimizationScore",
+          "label": "Optimization Score",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "routeName": "Alpha Route Name",
+          "driverName": "Alpha Driver Name",
+          "territory": "Alpha Territory",
+          "stops": "Alpha Stops",
+          "totalDistance": "Alpha Total Distance",
+          "estimatedTime": "Alpha Estimated Time",
+          "fuelCost": "Alpha Fuel Cost",
+          "status": "Active",
+          "scheduledDate": "Alpha Scheduled Date",
+          "vehicleType": "Alpha Vehicle Type",
+          "optimizationScore": "Alpha Optimization Score",
+          "notes": "Alpha Notes"
+        },
+        {
+          "routeName": "Beta Route Name",
+          "driverName": "Beta Driver Name",
+          "territory": "Beta Territory",
+          "stops": "Beta Stops",
+          "totalDistance": "Beta Total Distance",
+          "estimatedTime": "Beta Estimated Time",
+          "fuelCost": "Beta Fuel Cost",
+          "status": "Pending",
+          "scheduledDate": "Beta Scheduled Date",
+          "vehicleType": "Beta Vehicle Type",
+          "optimizationScore": "Beta Optimization Score",
+          "notes": "Beta Notes"
+        },
+        {
+          "routeName": "Gamma Route Name",
+          "driverName": "Gamma Driver Name",
+          "territory": "Gamma Territory",
+          "stops": "Gamma Stops",
+          "totalDistance": "Gamma Total Distance",
+          "estimatedTime": "Gamma Estimated Time",
+          "fuelCost": "Gamma Fuel Cost",
+          "status": "Review",
+          "scheduledDate": "Gamma Scheduled Date",
+          "vehicleType": "Gamma Vehicle Type",
+          "optimizationScore": "Gamma Optimization Score",
+          "notes": "Gamma Notes"
+        },
+        {
+          "routeName": "Delta Route Name",
+          "driverName": "Delta Driver Name",
+          "territory": "Delta Territory",
+          "stops": "Delta Stops",
+          "totalDistance": "Delta Total Distance",
+          "estimatedTime": "Delta Estimated Time",
+          "fuelCost": "Delta Fuel Cost",
+          "status": "Approved",
+          "scheduledDate": "Delta Scheduled Date",
+          "vehicleType": "Delta Vehicle Type",
+          "optimizationScore": "Delta Optimization Score",
+          "notes": "Delta Notes"
+        },
+        {
+          "routeName": "Epsilon Route Name",
+          "driverName": "Epsilon Driver Name",
+          "territory": "Epsilon Territory",
+          "stops": "Epsilon Stops",
+          "totalDistance": "Epsilon Total Distance",
+          "estimatedTime": "Epsilon Estimated Time",
+          "fuelCost": "Epsilon Fuel Cost",
+          "status": "Draft",
+          "scheduledDate": "Epsilon Scheduled Date",
+          "vehicleType": "Epsilon Vehicle Type",
+          "optimizationScore": "Epsilon Optimization Score",
+          "notes": "Epsilon Notes"
+        },
+        {
+          "routeName": "Zeta Route Name",
+          "driverName": "Zeta Driver Name",
+          "territory": "Zeta Territory",
+          "stops": "Zeta Stops",
+          "totalDistance": "Zeta Total Distance",
+          "estimatedTime": "Zeta Estimated Time",
+          "fuelCost": "Zeta Fuel Cost",
+          "status": "Live",
+          "scheduledDate": "Zeta Scheduled Date",
+          "vehicleType": "Zeta Vehicle Type",
+          "optimizationScore": "Zeta Optimization Score",
+          "notes": "Zeta Notes"
+        },
+        {
+          "routeName": "Eta Route Name",
+          "driverName": "Eta Driver Name",
+          "territory": "Eta Territory",
+          "stops": "Eta Stops",
+          "totalDistance": "Eta Total Distance",
+          "estimatedTime": "Eta Estimated Time",
+          "fuelCost": "Eta Fuel Cost",
+          "status": "Paused",
+          "scheduledDate": "Eta Scheduled Date",
+          "vehicleType": "Eta Vehicle Type",
+          "optimizationScore": "Eta Optimization Score",
+          "notes": "Eta Notes"
+        },
+        {
+          "routeName": "Theta Route Name",
+          "driverName": "Theta Driver Name",
+          "territory": "Theta Territory",
+          "stops": "Theta Stops",
+          "totalDistance": "Theta Total Distance",
+          "estimatedTime": "Theta Estimated Time",
+          "fuelCost": "Theta Fuel Cost",
+          "status": "Archived",
+          "scheduledDate": "Theta Scheduled Date",
+          "vehicleType": "Theta Vehicle Type",
+          "optimizationScore": "Theta Optimization Score",
+          "notes": "Theta Notes"
+        },
+        {
+          "routeName": "Iota Route Name",
+          "driverName": "Iota Driver Name",
+          "territory": "Iota Territory",
+          "stops": "Iota Stops",
+          "totalDistance": "Iota Total Distance",
+          "estimatedTime": "Iota Estimated Time",
+          "fuelCost": "Iota Fuel Cost",
+          "status": "Beta",
+          "scheduledDate": "Iota Scheduled Date",
+          "vehicleType": "Iota Vehicle Type",
+          "optimizationScore": "Iota Optimization Score",
+          "notes": "Iota Notes"
+        },
+        {
+          "routeName": "Kappa Route Name",
+          "driverName": "Kappa Driver Name",
+          "territory": "Kappa Territory",
+          "stops": "Kappa Stops",
+          "totalDistance": "Kappa Total Distance",
+          "estimatedTime": "Kappa Estimated Time",
+          "fuelCost": "Kappa Fuel Cost",
+          "status": "GA",
+          "scheduledDate": "Kappa Scheduled Date",
+          "vehicleType": "Kappa Vehicle Type",
+          "optimizationScore": "Kappa Optimization Score",
+          "notes": "Kappa Notes"
+        },
+        {
+          "routeName": "Lambda Route Name",
+          "driverName": "Lambda Driver Name",
+          "territory": "Lambda Territory",
+          "stops": "Lambda Stops",
+          "totalDistance": "Lambda Total Distance",
+          "estimatedTime": "Lambda Estimated Time",
+          "fuelCost": "Lambda Fuel Cost",
+          "status": "Completed",
+          "scheduledDate": "Lambda Scheduled Date",
+          "vehicleType": "Lambda Vehicle Type",
+          "optimizationScore": "Lambda Optimization Score",
+          "notes": "Lambda Notes"
+        },
+        {
+          "routeName": "Mu Route Name",
+          "driverName": "Mu Driver Name",
+          "territory": "Mu Territory",
+          "stops": "Mu Stops",
+          "totalDistance": "Mu Total Distance",
+          "estimatedTime": "Mu Estimated Time",
+          "fuelCost": "Mu Fuel Cost",
+          "status": "In Progress",
+          "scheduledDate": "Mu Scheduled Date",
+          "vehicleType": "Mu Vehicle Type",
+          "optimizationScore": "Mu Optimization Score",
+          "notes": "Mu Notes"
+        },
+        {
+          "routeName": "Nu Route Name",
+          "driverName": "Nu Driver Name",
+          "territory": "Nu Territory",
+          "stops": "Nu Stops",
+          "totalDistance": "Nu Total Distance",
+          "estimatedTime": "Nu Estimated Time",
+          "fuelCost": "Nu Fuel Cost",
+          "status": "Scheduled",
+          "scheduledDate": "Nu Scheduled Date",
+          "vehicleType": "Nu Vehicle Type",
+          "optimizationScore": "Nu Optimization Score",
+          "notes": "Nu Notes"
+        },
+        {
+          "routeName": "Xi Route Name",
+          "driverName": "Xi Driver Name",
+          "territory": "Xi Territory",
+          "stops": "Xi Stops",
+          "totalDistance": "Xi Total Distance",
+          "estimatedTime": "Xi Estimated Time",
+          "fuelCost": "Xi Fuel Cost",
+          "status": "Failed",
+          "scheduledDate": "Xi Scheduled Date",
+          "vehicleType": "Xi Vehicle Type",
+          "optimizationScore": "Xi Optimization Score",
+          "notes": "Xi Notes"
+        },
+        {
+          "routeName": "Omicron Route Name",
+          "driverName": "Omicron Driver Name",
+          "territory": "Omicron Territory",
+          "stops": "Omicron Stops",
+          "totalDistance": "Omicron Total Distance",
+          "estimatedTime": "Omicron Estimated Time",
+          "fuelCost": "Omicron Fuel Cost",
+          "status": "Cancelled",
+          "scheduledDate": "Omicron Scheduled Date",
+          "vehicleType": "Omicron Vehicle Type",
+          "optimizationScore": "Omicron Optimization Score",
+          "notes": "Omicron Notes"
+        }
+      ]
+    },
+    {
+      "label": "Sales Rep",
+      "modelName": "SalesRep",
+      "routeKey": "salesReps",
+      "icon": "📋",
+      "aiFunction": "analyzeSalesRep",
+      "aiPrompt": "Analyze this Sales Rep data and provide actionable insights.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "territory",
+          "label": "Territory",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "region",
+          "label": "Region",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "quota",
+          "label": "Quota",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "actualSales",
+          "label": "Actual Sales",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "attainment",
+          "label": "Attainment",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "totalDeals",
+          "label": "Total Deals",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "avgDealSize",
+          "label": "Avg Deal Size",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "winRate",
+          "label": "Win Rate",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "customerCount",
+          "label": "Customer Count",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "rank",
+          "label": "Rank",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "hireDate",
+          "label": "Hire Date",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "email": "alpha@example.com",
+          "phone": "Alpha Phone",
+          "territory": "Alpha Territory",
+          "region": "Alpha Region",
+          "quota": "Alpha Quota",
+          "actualSales": "Alpha Actual Sales",
+          "attainment": "Alpha Attainment",
+          "totalDeals": "Alpha Total Deals",
+          "avgDealSize": "Alpha Avg Deal Size",
+          "winRate": "Alpha Win Rate",
+          "customerCount": "Alpha Customer Count",
+          "rank": "Alpha Rank",
+          "status": "Active",
+          "hireDate": "Alpha Hire Date",
+          "notes": "Alpha Notes"
+        },
+        {
+          "name": "Beta Name",
+          "email": "beta@example.com",
+          "phone": "Beta Phone",
+          "territory": "Beta Territory",
+          "region": "Beta Region",
+          "quota": "Beta Quota",
+          "actualSales": "Beta Actual Sales",
+          "attainment": "Beta Attainment",
+          "totalDeals": "Beta Total Deals",
+          "avgDealSize": "Beta Avg Deal Size",
+          "winRate": "Beta Win Rate",
+          "customerCount": "Beta Customer Count",
+          "rank": "Beta Rank",
+          "status": "Pending",
+          "hireDate": "Beta Hire Date",
+          "notes": "Beta Notes"
+        },
+        {
+          "name": "Gamma Name",
+          "email": "gamma@example.com",
+          "phone": "Gamma Phone",
+          "territory": "Gamma Territory",
+          "region": "Gamma Region",
+          "quota": "Gamma Quota",
+          "actualSales": "Gamma Actual Sales",
+          "attainment": "Gamma Attainment",
+          "totalDeals": "Gamma Total Deals",
+          "avgDealSize": "Gamma Avg Deal Size",
+          "winRate": "Gamma Win Rate",
+          "customerCount": "Gamma Customer Count",
+          "rank": "Gamma Rank",
+          "status": "Review",
+          "hireDate": "Gamma Hire Date",
+          "notes": "Gamma Notes"
+        },
+        {
+          "name": "Delta Name",
+          "email": "delta@example.com",
+          "phone": "Delta Phone",
+          "territory": "Delta Territory",
+          "region": "Delta Region",
+          "quota": "Delta Quota",
+          "actualSales": "Delta Actual Sales",
+          "attainment": "Delta Attainment",
+          "totalDeals": "Delta Total Deals",
+          "avgDealSize": "Delta Avg Deal Size",
+          "winRate": "Delta Win Rate",
+          "customerCount": "Delta Customer Count",
+          "rank": "Delta Rank",
+          "status": "Approved",
+          "hireDate": "Delta Hire Date",
+          "notes": "Delta Notes"
+        },
+        {
+          "name": "Epsilon Name",
+          "email": "epsilon@example.com",
+          "phone": "Epsilon Phone",
+          "territory": "Epsilon Territory",
+          "region": "Epsilon Region",
+          "quota": "Epsilon Quota",
+          "actualSales": "Epsilon Actual Sales",
+          "attainment": "Epsilon Attainment",
+          "totalDeals": "Epsilon Total Deals",
+          "avgDealSize": "Epsilon Avg Deal Size",
+          "winRate": "Epsilon Win Rate",
+          "customerCount": "Epsilon Customer Count",
+          "rank": "Epsilon Rank",
+          "status": "Draft",
+          "hireDate": "Epsilon Hire Date",
+          "notes": "Epsilon Notes"
+        },
+        {
+          "name": "Zeta Name",
+          "email": "zeta@example.com",
+          "phone": "Zeta Phone",
+          "territory": "Zeta Territory",
+          "region": "Zeta Region",
+          "quota": "Zeta Quota",
+          "actualSales": "Zeta Actual Sales",
+          "attainment": "Zeta Attainment",
+          "totalDeals": "Zeta Total Deals",
+          "avgDealSize": "Zeta Avg Deal Size",
+          "winRate": "Zeta Win Rate",
+          "customerCount": "Zeta Customer Count",
+          "rank": "Zeta Rank",
+          "status": "Live",
+          "hireDate": "Zeta Hire Date",
+          "notes": "Zeta Notes"
+        },
+        {
+          "name": "Eta Name",
+          "email": "eta@example.com",
+          "phone": "Eta Phone",
+          "territory": "Eta Territory",
+          "region": "Eta Region",
+          "quota": "Eta Quota",
+          "actualSales": "Eta Actual Sales",
+          "attainment": "Eta Attainment",
+          "totalDeals": "Eta Total Deals",
+          "avgDealSize": "Eta Avg Deal Size",
+          "winRate": "Eta Win Rate",
+          "customerCount": "Eta Customer Count",
+          "rank": "Eta Rank",
+          "status": "Paused",
+          "hireDate": "Eta Hire Date",
+          "notes": "Eta Notes"
+        },
+        {
+          "name": "Theta Name",
+          "email": "theta@example.com",
+          "phone": "Theta Phone",
+          "territory": "Theta Territory",
+          "region": "Theta Region",
+          "quota": "Theta Quota",
+          "actualSales": "Theta Actual Sales",
+          "attainment": "Theta Attainment",
+          "totalDeals": "Theta Total Deals",
+          "avgDealSize": "Theta Avg Deal Size",
+          "winRate": "Theta Win Rate",
+          "customerCount": "Theta Customer Count",
+          "rank": "Theta Rank",
+          "status": "Archived",
+          "hireDate": "Theta Hire Date",
+          "notes": "Theta Notes"
+        },
+        {
+          "name": "Iota Name",
+          "email": "iota@example.com",
+          "phone": "Iota Phone",
+          "territory": "Iota Territory",
+          "region": "Iota Region",
+          "quota": "Iota Quota",
+          "actualSales": "Iota Actual Sales",
+          "attainment": "Iota Attainment",
+          "totalDeals": "Iota Total Deals",
+          "avgDealSize": "Iota Avg Deal Size",
+          "winRate": "Iota Win Rate",
+          "customerCount": "Iota Customer Count",
+          "rank": "Iota Rank",
+          "status": "Beta",
+          "hireDate": "Iota Hire Date",
+          "notes": "Iota Notes"
+        },
+        {
+          "name": "Kappa Name",
+          "email": "kappa@example.com",
+          "phone": "Kappa Phone",
+          "territory": "Kappa Territory",
+          "region": "Kappa Region",
+          "quota": "Kappa Quota",
+          "actualSales": "Kappa Actual Sales",
+          "attainment": "Kappa Attainment",
+          "totalDeals": "Kappa Total Deals",
+          "avgDealSize": "Kappa Avg Deal Size",
+          "winRate": "Kappa Win Rate",
+          "customerCount": "Kappa Customer Count",
+          "rank": "Kappa Rank",
+          "status": "GA",
+          "hireDate": "Kappa Hire Date",
+          "notes": "Kappa Notes"
+        },
+        {
+          "name": "Lambda Name",
+          "email": "lambda@example.com",
+          "phone": "Lambda Phone",
+          "territory": "Lambda Territory",
+          "region": "Lambda Region",
+          "quota": "Lambda Quota",
+          "actualSales": "Lambda Actual Sales",
+          "attainment": "Lambda Attainment",
+          "totalDeals": "Lambda Total Deals",
+          "avgDealSize": "Lambda Avg Deal Size",
+          "winRate": "Lambda Win Rate",
+          "customerCount": "Lambda Customer Count",
+          "rank": "Lambda Rank",
+          "status": "Completed",
+          "hireDate": "Lambda Hire Date",
+          "notes": "Lambda Notes"
+        },
+        {
+          "name": "Mu Name",
+          "email": "mu@example.com",
+          "phone": "Mu Phone",
+          "territory": "Mu Territory",
+          "region": "Mu Region",
+          "quota": "Mu Quota",
+          "actualSales": "Mu Actual Sales",
+          "attainment": "Mu Attainment",
+          "totalDeals": "Mu Total Deals",
+          "avgDealSize": "Mu Avg Deal Size",
+          "winRate": "Mu Win Rate",
+          "customerCount": "Mu Customer Count",
+          "rank": "Mu Rank",
+          "status": "In Progress",
+          "hireDate": "Mu Hire Date",
+          "notes": "Mu Notes"
+        },
+        {
+          "name": "Nu Name",
+          "email": "nu@example.com",
+          "phone": "Nu Phone",
+          "territory": "Nu Territory",
+          "region": "Nu Region",
+          "quota": "Nu Quota",
+          "actualSales": "Nu Actual Sales",
+          "attainment": "Nu Attainment",
+          "totalDeals": "Nu Total Deals",
+          "avgDealSize": "Nu Avg Deal Size",
+          "winRate": "Nu Win Rate",
+          "customerCount": "Nu Customer Count",
+          "rank": "Nu Rank",
+          "status": "Scheduled",
+          "hireDate": "Nu Hire Date",
+          "notes": "Nu Notes"
+        },
+        {
+          "name": "Xi Name",
+          "email": "xi@example.com",
+          "phone": "Xi Phone",
+          "territory": "Xi Territory",
+          "region": "Xi Region",
+          "quota": "Xi Quota",
+          "actualSales": "Xi Actual Sales",
+          "attainment": "Xi Attainment",
+          "totalDeals": "Xi Total Deals",
+          "avgDealSize": "Xi Avg Deal Size",
+          "winRate": "Xi Win Rate",
+          "customerCount": "Xi Customer Count",
+          "rank": "Xi Rank",
+          "status": "Failed",
+          "hireDate": "Xi Hire Date",
+          "notes": "Xi Notes"
+        },
+        {
+          "name": "Omicron Name",
+          "email": "omicron@example.com",
+          "phone": "Omicron Phone",
+          "territory": "Omicron Territory",
+          "region": "Omicron Region",
+          "quota": "Omicron Quota",
+          "actualSales": "Omicron Actual Sales",
+          "attainment": "Omicron Attainment",
+          "totalDeals": "Omicron Total Deals",
+          "avgDealSize": "Omicron Avg Deal Size",
+          "winRate": "Omicron Win Rate",
+          "customerCount": "Omicron Customer Count",
+          "rank": "Omicron Rank",
+          "status": "Cancelled",
+          "hireDate": "Omicron Hire Date",
+          "notes": "Omicron Notes"
+        }
+      ]
+    },
+    {
+      "label": "Shopping List",
+      "modelName": "ShoppingList",
+      "routeKey": "shoppingLists",
+      "icon": "📋",
+      "aiFunction": "analyzeShoppingList",
+      "aiPrompt": "Analyze this Shopping List data and provide actionable insights.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "designId",
+          "label": "Design Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": "Alpha User Id",
+          "designId": "Alpha Design Id",
+          "name": "Alpha Name",
+          "status": "Active"
+        },
+        {
+          "userId": "Beta User Id",
+          "designId": "Beta Design Id",
+          "name": "Beta Name",
+          "status": "Pending"
+        },
+        {
+          "userId": "Gamma User Id",
+          "designId": "Gamma Design Id",
+          "name": "Gamma Name",
+          "status": "Review"
+        },
+        {
+          "userId": "Delta User Id",
+          "designId": "Delta Design Id",
+          "name": "Delta Name",
+          "status": "Approved"
+        },
+        {
+          "userId": "Epsilon User Id",
+          "designId": "Epsilon Design Id",
+          "name": "Epsilon Name",
+          "status": "Draft"
+        },
+        {
+          "userId": "Zeta User Id",
+          "designId": "Zeta Design Id",
+          "name": "Zeta Name",
+          "status": "Live"
+        },
+        {
+          "userId": "Eta User Id",
+          "designId": "Eta Design Id",
+          "name": "Eta Name",
+          "status": "Paused"
+        },
+        {
+          "userId": "Theta User Id",
+          "designId": "Theta Design Id",
+          "name": "Theta Name",
+          "status": "Archived"
+        },
+        {
+          "userId": "Iota User Id",
+          "designId": "Iota Design Id",
+          "name": "Iota Name",
+          "status": "Beta"
+        },
+        {
+          "userId": "Kappa User Id",
+          "designId": "Kappa Design Id",
+          "name": "Kappa Name",
+          "status": "GA"
+        },
+        {
+          "userId": "Lambda User Id",
+          "designId": "Lambda Design Id",
+          "name": "Lambda Name",
+          "status": "Completed"
+        },
+        {
+          "userId": "Mu User Id",
+          "designId": "Mu Design Id",
+          "name": "Mu Name",
+          "status": "In Progress"
+        },
+        {
+          "userId": "Nu User Id",
+          "designId": "Nu Design Id",
+          "name": "Nu Name",
+          "status": "Scheduled"
+        },
+        {
+          "userId": "Xi User Id",
+          "designId": "Xi Design Id",
+          "name": "Xi Name",
+          "status": "Failed"
+        },
+        {
+          "userId": "Omicron User Id",
+          "designId": "Omicron Design Id",
+          "name": "Omicron Name",
+          "status": "Cancelled"
+        }
+      ]
+    },
+    {
+      "label": "Shopping List Item",
+      "modelName": "ShoppingListItem",
+      "routeKey": "shoppingListItems",
+      "icon": "📋",
+      "aiFunction": "analyzeShoppingListItem",
+      "aiPrompt": "Analyze this Shopping List Item data and provide actionable insights.",
+      "fields": [
+        {
+          "key": "shoppingListId",
+          "label": "Shopping List Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "price",
+          "label": "Price",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "purchased",
+          "label": "Purchased",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "storeUrl",
+          "label": "Store Url",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "storeName",
+          "label": "Store Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "shoppingListId": "Alpha Shopping List Id",
+          "name": "Alpha Name",
+          "category": "Alpha Category",
+          "price": "Alpha Price",
+          "quantity": "Alpha Quantity",
+          "purchased": "Alpha Purchased",
+          "storeUrl": "https://alpha.example.com",
+          "storeName": "Alpha Store Name",
+          "notes": "Alpha Notes"
+        },
+        {
+          "shoppingListId": "Beta Shopping List Id",
+          "name": "Beta Name",
+          "category": "Beta Category",
+          "price": "Beta Price",
+          "quantity": "Beta Quantity",
+          "purchased": "Beta Purchased",
+          "storeUrl": "https://beta.example.com",
+          "storeName": "Beta Store Name",
+          "notes": "Beta Notes"
+        },
+        {
+          "shoppingListId": "Gamma Shopping List Id",
+          "name": "Gamma Name",
+          "category": "Gamma Category",
+          "price": "Gamma Price",
+          "quantity": "Gamma Quantity",
+          "purchased": "Gamma Purchased",
+          "storeUrl": "https://gamma.example.com",
+          "storeName": "Gamma Store Name",
+          "notes": "Gamma Notes"
+        },
+        {
+          "shoppingListId": "Delta Shopping List Id",
+          "name": "Delta Name",
+          "category": "Delta Category",
+          "price": "Delta Price",
+          "quantity": "Delta Quantity",
+          "purchased": "Delta Purchased",
+          "storeUrl": "https://delta.example.com",
+          "storeName": "Delta Store Name",
+          "notes": "Delta Notes"
+        },
+        {
+          "shoppingListId": "Epsilon Shopping List Id",
+          "name": "Epsilon Name",
+          "category": "Epsilon Category",
+          "price": "Epsilon Price",
+          "quantity": "Epsilon Quantity",
+          "purchased": "Epsilon Purchased",
+          "storeUrl": "https://epsilon.example.com",
+          "storeName": "Epsilon Store Name",
+          "notes": "Epsilon Notes"
+        },
+        {
+          "shoppingListId": "Zeta Shopping List Id",
+          "name": "Zeta Name",
+          "category": "Zeta Category",
+          "price": "Zeta Price",
+          "quantity": "Zeta Quantity",
+          "purchased": "Zeta Purchased",
+          "storeUrl": "https://zeta.example.com",
+          "storeName": "Zeta Store Name",
+          "notes": "Zeta Notes"
+        },
+        {
+          "shoppingListId": "Eta Shopping List Id",
+          "name": "Eta Name",
+          "category": "Eta Category",
+          "price": "Eta Price",
+          "quantity": "Eta Quantity",
+          "purchased": "Eta Purchased",
+          "storeUrl": "https://eta.example.com",
+          "storeName": "Eta Store Name",
+          "notes": "Eta Notes"
+        },
+        {
+          "shoppingListId": "Theta Shopping List Id",
+          "name": "Theta Name",
+          "category": "Theta Category",
+          "price": "Theta Price",
+          "quantity": "Theta Quantity",
+          "purchased": "Theta Purchased",
+          "storeUrl": "https://theta.example.com",
+          "storeName": "Theta Store Name",
+          "notes": "Theta Notes"
+        },
+        {
+          "shoppingListId": "Iota Shopping List Id",
+          "name": "Iota Name",
+          "category": "Iota Category",
+          "price": "Iota Price",
+          "quantity": "Iota Quantity",
+          "purchased": "Iota Purchased",
+          "storeUrl": "https://iota.example.com",
+          "storeName": "Iota Store Name",
+          "notes": "Iota Notes"
+        },
+        {
+          "shoppingListId": "Kappa Shopping List Id",
+          "name": "Kappa Name",
+          "category": "Kappa Category",
+          "price": "Kappa Price",
+          "quantity": "Kappa Quantity",
+          "purchased": "Kappa Purchased",
+          "storeUrl": "https://kappa.example.com",
+          "storeName": "Kappa Store Name",
+          "notes": "Kappa Notes"
+        },
+        {
+          "shoppingListId": "Lambda Shopping List Id",
+          "name": "Lambda Name",
+          "category": "Lambda Category",
+          "price": "Lambda Price",
+          "quantity": "Lambda Quantity",
+          "purchased": "Lambda Purchased",
+          "storeUrl": "https://lambda.example.com",
+          "storeName": "Lambda Store Name",
+          "notes": "Lambda Notes"
+        },
+        {
+          "shoppingListId": "Mu Shopping List Id",
+          "name": "Mu Name",
+          "category": "Mu Category",
+          "price": "Mu Price",
+          "quantity": "Mu Quantity",
+          "purchased": "Mu Purchased",
+          "storeUrl": "https://mu.example.com",
+          "storeName": "Mu Store Name",
+          "notes": "Mu Notes"
+        },
+        {
+          "shoppingListId": "Nu Shopping List Id",
+          "name": "Nu Name",
+          "category": "Nu Category",
+          "price": "Nu Price",
+          "quantity": "Nu Quantity",
+          "purchased": "Nu Purchased",
+          "storeUrl": "https://nu.example.com",
+          "storeName": "Nu Store Name",
+          "notes": "Nu Notes"
+        },
+        {
+          "shoppingListId": "Xi Shopping List Id",
+          "name": "Xi Name",
+          "category": "Xi Category",
+          "price": "Xi Price",
+          "quantity": "Xi Quantity",
+          "purchased": "Xi Purchased",
+          "storeUrl": "https://xi.example.com",
+          "storeName": "Xi Store Name",
+          "notes": "Xi Notes"
+        },
+        {
+          "shoppingListId": "Omicron Shopping List Id",
+          "name": "Omicron Name",
+          "category": "Omicron Category",
+          "price": "Omicron Price",
+          "quantity": "Omicron Quantity",
+          "purchased": "Omicron Purchased",
+          "storeUrl": "https://omicron.example.com",
+          "storeName": "Omicron Store Name",
+          "notes": "Omicron Notes"
+        }
+      ]
+    },
+    {
+      "label": "Style Preset",
+      "modelName": "StylePreset",
+      "routeKey": "stylePresets",
+      "icon": "📋",
+      "aiFunction": "analyzeStylePreset",
+      "aiPrompt": "Analyze this Style Preset data and provide actionable insights.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "style",
+          "label": "Style",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "roomType",
+          "label": "Room Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "features",
+          "label": "Features",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "colorPalette",
+          "label": "Color Palette",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "imageUrl",
+          "label": "Image Url",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "popularity",
+          "label": "Popularity",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "description": "Alpha Description",
+          "style": "Alpha Style",
+          "roomType": "Alpha Room Type",
+          "features": "Alpha Features",
+          "colorPalette": "Alpha Color Palette",
+          "imageUrl": "https://alpha.example.com",
+          "popularity": "Alpha Popularity"
+        },
+        {
+          "name": "Beta Name",
+          "description": "Beta Description",
+          "style": "Beta Style",
+          "roomType": "Beta Room Type",
+          "features": "Beta Features",
+          "colorPalette": "Beta Color Palette",
+          "imageUrl": "https://beta.example.com",
+          "popularity": "Beta Popularity"
+        },
+        {
+          "name": "Gamma Name",
+          "description": "Gamma Description",
+          "style": "Gamma Style",
+          "roomType": "Gamma Room Type",
+          "features": "Gamma Features",
+          "colorPalette": "Gamma Color Palette",
+          "imageUrl": "https://gamma.example.com",
+          "popularity": "Gamma Popularity"
+        },
+        {
+          "name": "Delta Name",
+          "description": "Delta Description",
+          "style": "Delta Style",
+          "roomType": "Delta Room Type",
+          "features": "Delta Features",
+          "colorPalette": "Delta Color Palette",
+          "imageUrl": "https://delta.example.com",
+          "popularity": "Delta Popularity"
+        },
+        {
+          "name": "Epsilon Name",
+          "description": "Epsilon Description",
+          "style": "Epsilon Style",
+          "roomType": "Epsilon Room Type",
+          "features": "Epsilon Features",
+          "colorPalette": "Epsilon Color Palette",
+          "imageUrl": "https://epsilon.example.com",
+          "popularity": "Epsilon Popularity"
+        },
+        {
+          "name": "Zeta Name",
+          "description": "Zeta Description",
+          "style": "Zeta Style",
+          "roomType": "Zeta Room Type",
+          "features": "Zeta Features",
+          "colorPalette": "Zeta Color Palette",
+          "imageUrl": "https://zeta.example.com",
+          "popularity": "Zeta Popularity"
+        },
+        {
+          "name": "Eta Name",
+          "description": "Eta Description",
+          "style": "Eta Style",
+          "roomType": "Eta Room Type",
+          "features": "Eta Features",
+          "colorPalette": "Eta Color Palette",
+          "imageUrl": "https://eta.example.com",
+          "popularity": "Eta Popularity"
+        },
+        {
+          "name": "Theta Name",
+          "description": "Theta Description",
+          "style": "Theta Style",
+          "roomType": "Theta Room Type",
+          "features": "Theta Features",
+          "colorPalette": "Theta Color Palette",
+          "imageUrl": "https://theta.example.com",
+          "popularity": "Theta Popularity"
+        },
+        {
+          "name": "Iota Name",
+          "description": "Iota Description",
+          "style": "Iota Style",
+          "roomType": "Iota Room Type",
+          "features": "Iota Features",
+          "colorPalette": "Iota Color Palette",
+          "imageUrl": "https://iota.example.com",
+          "popularity": "Iota Popularity"
+        },
+        {
+          "name": "Kappa Name",
+          "description": "Kappa Description",
+          "style": "Kappa Style",
+          "roomType": "Kappa Room Type",
+          "features": "Kappa Features",
+          "colorPalette": "Kappa Color Palette",
+          "imageUrl": "https://kappa.example.com",
+          "popularity": "Kappa Popularity"
+        },
+        {
+          "name": "Lambda Name",
+          "description": "Lambda Description",
+          "style": "Lambda Style",
+          "roomType": "Lambda Room Type",
+          "features": "Lambda Features",
+          "colorPalette": "Lambda Color Palette",
+          "imageUrl": "https://lambda.example.com",
+          "popularity": "Lambda Popularity"
+        },
+        {
+          "name": "Mu Name",
+          "description": "Mu Description",
+          "style": "Mu Style",
+          "roomType": "Mu Room Type",
+          "features": "Mu Features",
+          "colorPalette": "Mu Color Palette",
+          "imageUrl": "https://mu.example.com",
+          "popularity": "Mu Popularity"
+        },
+        {
+          "name": "Nu Name",
+          "description": "Nu Description",
+          "style": "Nu Style",
+          "roomType": "Nu Room Type",
+          "features": "Nu Features",
+          "colorPalette": "Nu Color Palette",
+          "imageUrl": "https://nu.example.com",
+          "popularity": "Nu Popularity"
+        },
+        {
+          "name": "Xi Name",
+          "description": "Xi Description",
+          "style": "Xi Style",
+          "roomType": "Xi Room Type",
+          "features": "Xi Features",
+          "colorPalette": "Xi Color Palette",
+          "imageUrl": "https://xi.example.com",
+          "popularity": "Xi Popularity"
+        },
+        {
+          "name": "Omicron Name",
+          "description": "Omicron Description",
+          "style": "Omicron Style",
+          "roomType": "Omicron Room Type",
+          "features": "Omicron Features",
+          "colorPalette": "Omicron Color Palette",
+          "imageUrl": "https://omicron.example.com",
+          "popularity": "Omicron Popularity"
+        }
+      ]
+    },
+    {
+      "label": "Subscription",
+      "modelName": "Subscription",
+      "routeKey": "subscriptions",
+      "icon": "📋",
+      "aiFunction": "analyzeSubscription",
+      "aiPrompt": "Analyze this Subscription data and provide actionable insights.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "plan",
+          "label": "Plan",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "creditsUsed",
+          "label": "Credits Used",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "creditsLimit",
+          "label": "Credits Limit",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": "Alpha User Id",
+          "plan": "Alpha Plan",
+          "status": "Active",
+          "creditsUsed": "Alpha Credits Used",
+          "creditsLimit": "Alpha Credits Limit",
+          "startDate": "Alpha Start Date",
+          "endDate": "Alpha End Date"
+        },
+        {
+          "userId": "Beta User Id",
+          "plan": "Beta Plan",
+          "status": "Pending",
+          "creditsUsed": "Beta Credits Used",
+          "creditsLimit": "Beta Credits Limit",
+          "startDate": "Beta Start Date",
+          "endDate": "Beta End Date"
+        },
+        {
+          "userId": "Gamma User Id",
+          "plan": "Gamma Plan",
+          "status": "Review",
+          "creditsUsed": "Gamma Credits Used",
+          "creditsLimit": "Gamma Credits Limit",
+          "startDate": "Gamma Start Date",
+          "endDate": "Gamma End Date"
+        },
+        {
+          "userId": "Delta User Id",
+          "plan": "Delta Plan",
+          "status": "Approved",
+          "creditsUsed": "Delta Credits Used",
+          "creditsLimit": "Delta Credits Limit",
+          "startDate": "Delta Start Date",
+          "endDate": "Delta End Date"
+        },
+        {
+          "userId": "Epsilon User Id",
+          "plan": "Epsilon Plan",
+          "status": "Draft",
+          "creditsUsed": "Epsilon Credits Used",
+          "creditsLimit": "Epsilon Credits Limit",
+          "startDate": "Epsilon Start Date",
+          "endDate": "Epsilon End Date"
+        },
+        {
+          "userId": "Zeta User Id",
+          "plan": "Zeta Plan",
+          "status": "Live",
+          "creditsUsed": "Zeta Credits Used",
+          "creditsLimit": "Zeta Credits Limit",
+          "startDate": "Zeta Start Date",
+          "endDate": "Zeta End Date"
+        },
+        {
+          "userId": "Eta User Id",
+          "plan": "Eta Plan",
+          "status": "Paused",
+          "creditsUsed": "Eta Credits Used",
+          "creditsLimit": "Eta Credits Limit",
+          "startDate": "Eta Start Date",
+          "endDate": "Eta End Date"
+        },
+        {
+          "userId": "Theta User Id",
+          "plan": "Theta Plan",
+          "status": "Archived",
+          "creditsUsed": "Theta Credits Used",
+          "creditsLimit": "Theta Credits Limit",
+          "startDate": "Theta Start Date",
+          "endDate": "Theta End Date"
+        },
+        {
+          "userId": "Iota User Id",
+          "plan": "Iota Plan",
+          "status": "Beta",
+          "creditsUsed": "Iota Credits Used",
+          "creditsLimit": "Iota Credits Limit",
+          "startDate": "Iota Start Date",
+          "endDate": "Iota End Date"
+        },
+        {
+          "userId": "Kappa User Id",
+          "plan": "Kappa Plan",
+          "status": "GA",
+          "creditsUsed": "Kappa Credits Used",
+          "creditsLimit": "Kappa Credits Limit",
+          "startDate": "Kappa Start Date",
+          "endDate": "Kappa End Date"
+        },
+        {
+          "userId": "Lambda User Id",
+          "plan": "Lambda Plan",
+          "status": "Completed",
+          "creditsUsed": "Lambda Credits Used",
+          "creditsLimit": "Lambda Credits Limit",
+          "startDate": "Lambda Start Date",
+          "endDate": "Lambda End Date"
+        },
+        {
+          "userId": "Mu User Id",
+          "plan": "Mu Plan",
+          "status": "In Progress",
+          "creditsUsed": "Mu Credits Used",
+          "creditsLimit": "Mu Credits Limit",
+          "startDate": "Mu Start Date",
+          "endDate": "Mu End Date"
+        },
+        {
+          "userId": "Nu User Id",
+          "plan": "Nu Plan",
+          "status": "Scheduled",
+          "creditsUsed": "Nu Credits Used",
+          "creditsLimit": "Nu Credits Limit",
+          "startDate": "Nu Start Date",
+          "endDate": "Nu End Date"
+        },
+        {
+          "userId": "Xi User Id",
+          "plan": "Xi Plan",
+          "status": "Failed",
+          "creditsUsed": "Xi Credits Used",
+          "creditsLimit": "Xi Credits Limit",
+          "startDate": "Xi Start Date",
+          "endDate": "Xi End Date"
+        },
+        {
+          "userId": "Omicron User Id",
+          "plan": "Omicron Plan",
+          "status": "Cancelled",
+          "creditsUsed": "Omicron Credits Used",
+          "creditsLimit": "Omicron Credits Limit",
+          "startDate": "Omicron Start Date",
+          "endDate": "Omicron End Date"
+        }
+      ]
+    },
+    {
+      "label": "Supplier",
+      "modelName": "Supplier",
+      "routeKey": "suppliers",
+      "icon": "📋",
+      "aiFunction": "analyzeSupplier",
+      "aiPrompt": "Analyze this Supplier data and provide actionable insights.",
+      "fields": [
+        {
+          "key": "companyName",
+          "label": "Company Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "contactName",
+          "label": "Contact Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "leadTimeDays",
+          "label": "Lead Time Days",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "reliabilityScore",
+          "label": "Reliability Score",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "totalOrders",
+          "label": "Total Orders",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "onTimeDeliveryRate",
+          "label": "On Time Delivery Rate",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "qualityRating",
+          "label": "Quality Rating",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "paymentTerms",
+          "label": "Payment Terms",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "contractExpiry",
+          "label": "Contract Expiry",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "companyName": "Alpha Company Name",
+          "contactName": "Alpha Contact Name",
+          "email": "alpha@example.com",
+          "phone": "Alpha Phone",
+          "address": "Alpha Address",
+          "category": "Alpha Category",
+          "leadTimeDays": "Alpha Lead Time Days",
+          "reliabilityScore": "Alpha Reliability Score",
+          "totalOrders": "Alpha Total Orders",
+          "onTimeDeliveryRate": "Alpha On Time Delivery Rate",
+          "qualityRating": "Alpha Quality Rating",
+          "paymentTerms": "Alpha Payment Terms",
+          "status": "Active",
+          "contractExpiry": "Alpha Contract Expiry",
+          "notes": "Alpha Notes"
+        },
+        {
+          "companyName": "Beta Company Name",
+          "contactName": "Beta Contact Name",
+          "email": "beta@example.com",
+          "phone": "Beta Phone",
+          "address": "Beta Address",
+          "category": "Beta Category",
+          "leadTimeDays": "Beta Lead Time Days",
+          "reliabilityScore": "Beta Reliability Score",
+          "totalOrders": "Beta Total Orders",
+          "onTimeDeliveryRate": "Beta On Time Delivery Rate",
+          "qualityRating": "Beta Quality Rating",
+          "paymentTerms": "Beta Payment Terms",
+          "status": "Pending",
+          "contractExpiry": "Beta Contract Expiry",
+          "notes": "Beta Notes"
+        },
+        {
+          "companyName": "Gamma Company Name",
+          "contactName": "Gamma Contact Name",
+          "email": "gamma@example.com",
+          "phone": "Gamma Phone",
+          "address": "Gamma Address",
+          "category": "Gamma Category",
+          "leadTimeDays": "Gamma Lead Time Days",
+          "reliabilityScore": "Gamma Reliability Score",
+          "totalOrders": "Gamma Total Orders",
+          "onTimeDeliveryRate": "Gamma On Time Delivery Rate",
+          "qualityRating": "Gamma Quality Rating",
+          "paymentTerms": "Gamma Payment Terms",
+          "status": "Review",
+          "contractExpiry": "Gamma Contract Expiry",
+          "notes": "Gamma Notes"
+        },
+        {
+          "companyName": "Delta Company Name",
+          "contactName": "Delta Contact Name",
+          "email": "delta@example.com",
+          "phone": "Delta Phone",
+          "address": "Delta Address",
+          "category": "Delta Category",
+          "leadTimeDays": "Delta Lead Time Days",
+          "reliabilityScore": "Delta Reliability Score",
+          "totalOrders": "Delta Total Orders",
+          "onTimeDeliveryRate": "Delta On Time Delivery Rate",
+          "qualityRating": "Delta Quality Rating",
+          "paymentTerms": "Delta Payment Terms",
+          "status": "Approved",
+          "contractExpiry": "Delta Contract Expiry",
+          "notes": "Delta Notes"
+        },
+        {
+          "companyName": "Epsilon Company Name",
+          "contactName": "Epsilon Contact Name",
+          "email": "epsilon@example.com",
+          "phone": "Epsilon Phone",
+          "address": "Epsilon Address",
+          "category": "Epsilon Category",
+          "leadTimeDays": "Epsilon Lead Time Days",
+          "reliabilityScore": "Epsilon Reliability Score",
+          "totalOrders": "Epsilon Total Orders",
+          "onTimeDeliveryRate": "Epsilon On Time Delivery Rate",
+          "qualityRating": "Epsilon Quality Rating",
+          "paymentTerms": "Epsilon Payment Terms",
+          "status": "Draft",
+          "contractExpiry": "Epsilon Contract Expiry",
+          "notes": "Epsilon Notes"
+        },
+        {
+          "companyName": "Zeta Company Name",
+          "contactName": "Zeta Contact Name",
+          "email": "zeta@example.com",
+          "phone": "Zeta Phone",
+          "address": "Zeta Address",
+          "category": "Zeta Category",
+          "leadTimeDays": "Zeta Lead Time Days",
+          "reliabilityScore": "Zeta Reliability Score",
+          "totalOrders": "Zeta Total Orders",
+          "onTimeDeliveryRate": "Zeta On Time Delivery Rate",
+          "qualityRating": "Zeta Quality Rating",
+          "paymentTerms": "Zeta Payment Terms",
+          "status": "Live",
+          "contractExpiry": "Zeta Contract Expiry",
+          "notes": "Zeta Notes"
+        },
+        {
+          "companyName": "Eta Company Name",
+          "contactName": "Eta Contact Name",
+          "email": "eta@example.com",
+          "phone": "Eta Phone",
+          "address": "Eta Address",
+          "category": "Eta Category",
+          "leadTimeDays": "Eta Lead Time Days",
+          "reliabilityScore": "Eta Reliability Score",
+          "totalOrders": "Eta Total Orders",
+          "onTimeDeliveryRate": "Eta On Time Delivery Rate",
+          "qualityRating": "Eta Quality Rating",
+          "paymentTerms": "Eta Payment Terms",
+          "status": "Paused",
+          "contractExpiry": "Eta Contract Expiry",
+          "notes": "Eta Notes"
+        },
+        {
+          "companyName": "Theta Company Name",
+          "contactName": "Theta Contact Name",
+          "email": "theta@example.com",
+          "phone": "Theta Phone",
+          "address": "Theta Address",
+          "category": "Theta Category",
+          "leadTimeDays": "Theta Lead Time Days",
+          "reliabilityScore": "Theta Reliability Score",
+          "totalOrders": "Theta Total Orders",
+          "onTimeDeliveryRate": "Theta On Time Delivery Rate",
+          "qualityRating": "Theta Quality Rating",
+          "paymentTerms": "Theta Payment Terms",
+          "status": "Archived",
+          "contractExpiry": "Theta Contract Expiry",
+          "notes": "Theta Notes"
+        },
+        {
+          "companyName": "Iota Company Name",
+          "contactName": "Iota Contact Name",
+          "email": "iota@example.com",
+          "phone": "Iota Phone",
+          "address": "Iota Address",
+          "category": "Iota Category",
+          "leadTimeDays": "Iota Lead Time Days",
+          "reliabilityScore": "Iota Reliability Score",
+          "totalOrders": "Iota Total Orders",
+          "onTimeDeliveryRate": "Iota On Time Delivery Rate",
+          "qualityRating": "Iota Quality Rating",
+          "paymentTerms": "Iota Payment Terms",
+          "status": "Beta",
+          "contractExpiry": "Iota Contract Expiry",
+          "notes": "Iota Notes"
+        },
+        {
+          "companyName": "Kappa Company Name",
+          "contactName": "Kappa Contact Name",
+          "email": "kappa@example.com",
+          "phone": "Kappa Phone",
+          "address": "Kappa Address",
+          "category": "Kappa Category",
+          "leadTimeDays": "Kappa Lead Time Days",
+          "reliabilityScore": "Kappa Reliability Score",
+          "totalOrders": "Kappa Total Orders",
+          "onTimeDeliveryRate": "Kappa On Time Delivery Rate",
+          "qualityRating": "Kappa Quality Rating",
+          "paymentTerms": "Kappa Payment Terms",
+          "status": "GA",
+          "contractExpiry": "Kappa Contract Expiry",
+          "notes": "Kappa Notes"
+        },
+        {
+          "companyName": "Lambda Company Name",
+          "contactName": "Lambda Contact Name",
+          "email": "lambda@example.com",
+          "phone": "Lambda Phone",
+          "address": "Lambda Address",
+          "category": "Lambda Category",
+          "leadTimeDays": "Lambda Lead Time Days",
+          "reliabilityScore": "Lambda Reliability Score",
+          "totalOrders": "Lambda Total Orders",
+          "onTimeDeliveryRate": "Lambda On Time Delivery Rate",
+          "qualityRating": "Lambda Quality Rating",
+          "paymentTerms": "Lambda Payment Terms",
+          "status": "Completed",
+          "contractExpiry": "Lambda Contract Expiry",
+          "notes": "Lambda Notes"
+        },
+        {
+          "companyName": "Mu Company Name",
+          "contactName": "Mu Contact Name",
+          "email": "mu@example.com",
+          "phone": "Mu Phone",
+          "address": "Mu Address",
+          "category": "Mu Category",
+          "leadTimeDays": "Mu Lead Time Days",
+          "reliabilityScore": "Mu Reliability Score",
+          "totalOrders": "Mu Total Orders",
+          "onTimeDeliveryRate": "Mu On Time Delivery Rate",
+          "qualityRating": "Mu Quality Rating",
+          "paymentTerms": "Mu Payment Terms",
+          "status": "In Progress",
+          "contractExpiry": "Mu Contract Expiry",
+          "notes": "Mu Notes"
+        },
+        {
+          "companyName": "Nu Company Name",
+          "contactName": "Nu Contact Name",
+          "email": "nu@example.com",
+          "phone": "Nu Phone",
+          "address": "Nu Address",
+          "category": "Nu Category",
+          "leadTimeDays": "Nu Lead Time Days",
+          "reliabilityScore": "Nu Reliability Score",
+          "totalOrders": "Nu Total Orders",
+          "onTimeDeliveryRate": "Nu On Time Delivery Rate",
+          "qualityRating": "Nu Quality Rating",
+          "paymentTerms": "Nu Payment Terms",
+          "status": "Scheduled",
+          "contractExpiry": "Nu Contract Expiry",
+          "notes": "Nu Notes"
+        },
+        {
+          "companyName": "Xi Company Name",
+          "contactName": "Xi Contact Name",
+          "email": "xi@example.com",
+          "phone": "Xi Phone",
+          "address": "Xi Address",
+          "category": "Xi Category",
+          "leadTimeDays": "Xi Lead Time Days",
+          "reliabilityScore": "Xi Reliability Score",
+          "totalOrders": "Xi Total Orders",
+          "onTimeDeliveryRate": "Xi On Time Delivery Rate",
+          "qualityRating": "Xi Quality Rating",
+          "paymentTerms": "Xi Payment Terms",
+          "status": "Failed",
+          "contractExpiry": "Xi Contract Expiry",
+          "notes": "Xi Notes"
+        },
+        {
+          "companyName": "Omicron Company Name",
+          "contactName": "Omicron Contact Name",
+          "email": "omicron@example.com",
+          "phone": "Omicron Phone",
+          "address": "Omicron Address",
+          "category": "Omicron Category",
+          "leadTimeDays": "Omicron Lead Time Days",
+          "reliabilityScore": "Omicron Reliability Score",
+          "totalOrders": "Omicron Total Orders",
+          "onTimeDeliveryRate": "Omicron On Time Delivery Rate",
+          "qualityRating": "Omicron Quality Rating",
+          "paymentTerms": "Omicron Payment Terms",
+          "status": "Cancelled",
+          "contractExpiry": "Omicron Contract Expiry",
+          "notes": "Omicron Notes"
+        }
+      ]
+    },
+    {
+      "label": "Territory",
+      "modelName": "Territory",
+      "routeKey": "territorys",
+      "icon": "📋",
+      "aiFunction": "analyzeTerritory",
+      "aiPrompt": "Analyze this Territory data and provide actionable insights.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "region",
+          "label": "Region",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "zipCodes",
+          "label": "Zip Codes",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "assignedRep",
+          "label": "Assigned Rep",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "customerCount",
+          "label": "Customer Count",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "annualRevenue",
+          "label": "Annual Revenue",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "growthRate",
+          "label": "Growth Rate",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "marketPotential",
+          "label": "Market Potential",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "region": "Alpha Region",
+          "state": "Alpha State",
+          "zipCodes": "Alpha Zip Codes",
+          "assignedRep": "Alpha Assigned Rep",
+          "customerCount": "Alpha Customer Count",
+          "annualRevenue": "Alpha Annual Revenue",
+          "growthRate": "Alpha Growth Rate",
+          "marketPotential": "Alpha Market Potential",
+          "status": "Active",
+          "notes": "Alpha Notes"
+        },
+        {
+          "name": "Beta Name",
+          "region": "Beta Region",
+          "state": "Beta State",
+          "zipCodes": "Beta Zip Codes",
+          "assignedRep": "Beta Assigned Rep",
+          "customerCount": "Beta Customer Count",
+          "annualRevenue": "Beta Annual Revenue",
+          "growthRate": "Beta Growth Rate",
+          "marketPotential": "Beta Market Potential",
+          "status": "Pending",
+          "notes": "Beta Notes"
+        },
+        {
+          "name": "Gamma Name",
+          "region": "Gamma Region",
+          "state": "Gamma State",
+          "zipCodes": "Gamma Zip Codes",
+          "assignedRep": "Gamma Assigned Rep",
+          "customerCount": "Gamma Customer Count",
+          "annualRevenue": "Gamma Annual Revenue",
+          "growthRate": "Gamma Growth Rate",
+          "marketPotential": "Gamma Market Potential",
+          "status": "Review",
+          "notes": "Gamma Notes"
+        },
+        {
+          "name": "Delta Name",
+          "region": "Delta Region",
+          "state": "Delta State",
+          "zipCodes": "Delta Zip Codes",
+          "assignedRep": "Delta Assigned Rep",
+          "customerCount": "Delta Customer Count",
+          "annualRevenue": "Delta Annual Revenue",
+          "growthRate": "Delta Growth Rate",
+          "marketPotential": "Delta Market Potential",
+          "status": "Approved",
+          "notes": "Delta Notes"
+        },
+        {
+          "name": "Epsilon Name",
+          "region": "Epsilon Region",
+          "state": "Epsilon State",
+          "zipCodes": "Epsilon Zip Codes",
+          "assignedRep": "Epsilon Assigned Rep",
+          "customerCount": "Epsilon Customer Count",
+          "annualRevenue": "Epsilon Annual Revenue",
+          "growthRate": "Epsilon Growth Rate",
+          "marketPotential": "Epsilon Market Potential",
+          "status": "Draft",
+          "notes": "Epsilon Notes"
+        },
+        {
+          "name": "Zeta Name",
+          "region": "Zeta Region",
+          "state": "Zeta State",
+          "zipCodes": "Zeta Zip Codes",
+          "assignedRep": "Zeta Assigned Rep",
+          "customerCount": "Zeta Customer Count",
+          "annualRevenue": "Zeta Annual Revenue",
+          "growthRate": "Zeta Growth Rate",
+          "marketPotential": "Zeta Market Potential",
+          "status": "Live",
+          "notes": "Zeta Notes"
+        },
+        {
+          "name": "Eta Name",
+          "region": "Eta Region",
+          "state": "Eta State",
+          "zipCodes": "Eta Zip Codes",
+          "assignedRep": "Eta Assigned Rep",
+          "customerCount": "Eta Customer Count",
+          "annualRevenue": "Eta Annual Revenue",
+          "growthRate": "Eta Growth Rate",
+          "marketPotential": "Eta Market Potential",
+          "status": "Paused",
+          "notes": "Eta Notes"
+        },
+        {
+          "name": "Theta Name",
+          "region": "Theta Region",
+          "state": "Theta State",
+          "zipCodes": "Theta Zip Codes",
+          "assignedRep": "Theta Assigned Rep",
+          "customerCount": "Theta Customer Count",
+          "annualRevenue": "Theta Annual Revenue",
+          "growthRate": "Theta Growth Rate",
+          "marketPotential": "Theta Market Potential",
+          "status": "Archived",
+          "notes": "Theta Notes"
+        },
+        {
+          "name": "Iota Name",
+          "region": "Iota Region",
+          "state": "Iota State",
+          "zipCodes": "Iota Zip Codes",
+          "assignedRep": "Iota Assigned Rep",
+          "customerCount": "Iota Customer Count",
+          "annualRevenue": "Iota Annual Revenue",
+          "growthRate": "Iota Growth Rate",
+          "marketPotential": "Iota Market Potential",
+          "status": "Beta",
+          "notes": "Iota Notes"
+        },
+        {
+          "name": "Kappa Name",
+          "region": "Kappa Region",
+          "state": "Kappa State",
+          "zipCodes": "Kappa Zip Codes",
+          "assignedRep": "Kappa Assigned Rep",
+          "customerCount": "Kappa Customer Count",
+          "annualRevenue": "Kappa Annual Revenue",
+          "growthRate": "Kappa Growth Rate",
+          "marketPotential": "Kappa Market Potential",
+          "status": "GA",
+          "notes": "Kappa Notes"
+        },
+        {
+          "name": "Lambda Name",
+          "region": "Lambda Region",
+          "state": "Lambda State",
+          "zipCodes": "Lambda Zip Codes",
+          "assignedRep": "Lambda Assigned Rep",
+          "customerCount": "Lambda Customer Count",
+          "annualRevenue": "Lambda Annual Revenue",
+          "growthRate": "Lambda Growth Rate",
+          "marketPotential": "Lambda Market Potential",
+          "status": "Completed",
+          "notes": "Lambda Notes"
+        },
+        {
+          "name": "Mu Name",
+          "region": "Mu Region",
+          "state": "Mu State",
+          "zipCodes": "Mu Zip Codes",
+          "assignedRep": "Mu Assigned Rep",
+          "customerCount": "Mu Customer Count",
+          "annualRevenue": "Mu Annual Revenue",
+          "growthRate": "Mu Growth Rate",
+          "marketPotential": "Mu Market Potential",
+          "status": "In Progress",
+          "notes": "Mu Notes"
+        },
+        {
+          "name": "Nu Name",
+          "region": "Nu Region",
+          "state": "Nu State",
+          "zipCodes": "Nu Zip Codes",
+          "assignedRep": "Nu Assigned Rep",
+          "customerCount": "Nu Customer Count",
+          "annualRevenue": "Nu Annual Revenue",
+          "growthRate": "Nu Growth Rate",
+          "marketPotential": "Nu Market Potential",
+          "status": "Scheduled",
+          "notes": "Nu Notes"
+        },
+        {
+          "name": "Xi Name",
+          "region": "Xi Region",
+          "state": "Xi State",
+          "zipCodes": "Xi Zip Codes",
+          "assignedRep": "Xi Assigned Rep",
+          "customerCount": "Xi Customer Count",
+          "annualRevenue": "Xi Annual Revenue",
+          "growthRate": "Xi Growth Rate",
+          "marketPotential": "Xi Market Potential",
+          "status": "Failed",
+          "notes": "Xi Notes"
+        },
+        {
+          "name": "Omicron Name",
+          "region": "Omicron Region",
+          "state": "Omicron State",
+          "zipCodes": "Omicron Zip Codes",
+          "assignedRep": "Omicron Assigned Rep",
+          "customerCount": "Omicron Customer Count",
+          "annualRevenue": "Omicron Annual Revenue",
+          "growthRate": "Omicron Growth Rate",
+          "marketPotential": "Omicron Market Potential",
+          "status": "Cancelled",
+          "notes": "Omicron Notes"
+        }
+      ]
+    },
+    {
+      "label": "Warehouse",
+      "modelName": "Warehouse",
+      "routeKey": "warehouses",
+      "icon": "📋",
+      "aiFunction": "analyzeWarehouse",
+      "aiPrompt": "Analyze this Warehouse data and provide actionable insights.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "code",
+          "label": "Code",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "region",
+          "label": "Region",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "capacity",
+          "label": "Capacity",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "currentUtilization",
+          "label": "Current Utilization",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "manager",
+          "label": "Manager",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "operatingHours",
+          "label": "Operating Hours",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "temperatureControlled",
+          "label": "Temperature Controlled",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "dockCount",
+          "label": "Dock Count",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "monthlyOperatingCost",
+          "label": "Monthly Operating Cost",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "code": "Alpha Code",
+          "address": "Alpha Address",
+          "region": "Alpha Region",
+          "capacity": "Alpha Capacity",
+          "currentUtilization": "Alpha Current Utilization",
+          "manager": "Alpha Manager",
+          "phone": "Alpha Phone",
+          "operatingHours": "Alpha Operating Hours",
+          "temperatureControlled": "Alpha Temperature Controlled",
+          "dockCount": "Alpha Dock Count",
+          "monthlyOperatingCost": "Alpha Monthly Operating Cost",
+          "status": "Active",
+          "notes": "Alpha Notes"
+        },
+        {
+          "name": "Beta Name",
+          "code": "Beta Code",
+          "address": "Beta Address",
+          "region": "Beta Region",
+          "capacity": "Beta Capacity",
+          "currentUtilization": "Beta Current Utilization",
+          "manager": "Beta Manager",
+          "phone": "Beta Phone",
+          "operatingHours": "Beta Operating Hours",
+          "temperatureControlled": "Beta Temperature Controlled",
+          "dockCount": "Beta Dock Count",
+          "monthlyOperatingCost": "Beta Monthly Operating Cost",
+          "status": "Pending",
+          "notes": "Beta Notes"
+        },
+        {
+          "name": "Gamma Name",
+          "code": "Gamma Code",
+          "address": "Gamma Address",
+          "region": "Gamma Region",
+          "capacity": "Gamma Capacity",
+          "currentUtilization": "Gamma Current Utilization",
+          "manager": "Gamma Manager",
+          "phone": "Gamma Phone",
+          "operatingHours": "Gamma Operating Hours",
+          "temperatureControlled": "Gamma Temperature Controlled",
+          "dockCount": "Gamma Dock Count",
+          "monthlyOperatingCost": "Gamma Monthly Operating Cost",
+          "status": "Review",
+          "notes": "Gamma Notes"
+        },
+        {
+          "name": "Delta Name",
+          "code": "Delta Code",
+          "address": "Delta Address",
+          "region": "Delta Region",
+          "capacity": "Delta Capacity",
+          "currentUtilization": "Delta Current Utilization",
+          "manager": "Delta Manager",
+          "phone": "Delta Phone",
+          "operatingHours": "Delta Operating Hours",
+          "temperatureControlled": "Delta Temperature Controlled",
+          "dockCount": "Delta Dock Count",
+          "monthlyOperatingCost": "Delta Monthly Operating Cost",
+          "status": "Approved",
+          "notes": "Delta Notes"
+        },
+        {
+          "name": "Epsilon Name",
+          "code": "Epsilon Code",
+          "address": "Epsilon Address",
+          "region": "Epsilon Region",
+          "capacity": "Epsilon Capacity",
+          "currentUtilization": "Epsilon Current Utilization",
+          "manager": "Epsilon Manager",
+          "phone": "Epsilon Phone",
+          "operatingHours": "Epsilon Operating Hours",
+          "temperatureControlled": "Epsilon Temperature Controlled",
+          "dockCount": "Epsilon Dock Count",
+          "monthlyOperatingCost": "Epsilon Monthly Operating Cost",
+          "status": "Draft",
+          "notes": "Epsilon Notes"
+        },
+        {
+          "name": "Zeta Name",
+          "code": "Zeta Code",
+          "address": "Zeta Address",
+          "region": "Zeta Region",
+          "capacity": "Zeta Capacity",
+          "currentUtilization": "Zeta Current Utilization",
+          "manager": "Zeta Manager",
+          "phone": "Zeta Phone",
+          "operatingHours": "Zeta Operating Hours",
+          "temperatureControlled": "Zeta Temperature Controlled",
+          "dockCount": "Zeta Dock Count",
+          "monthlyOperatingCost": "Zeta Monthly Operating Cost",
+          "status": "Live",
+          "notes": "Zeta Notes"
+        },
+        {
+          "name": "Eta Name",
+          "code": "Eta Code",
+          "address": "Eta Address",
+          "region": "Eta Region",
+          "capacity": "Eta Capacity",
+          "currentUtilization": "Eta Current Utilization",
+          "manager": "Eta Manager",
+          "phone": "Eta Phone",
+          "operatingHours": "Eta Operating Hours",
+          "temperatureControlled": "Eta Temperature Controlled",
+          "dockCount": "Eta Dock Count",
+          "monthlyOperatingCost": "Eta Monthly Operating Cost",
+          "status": "Paused",
+          "notes": "Eta Notes"
+        },
+        {
+          "name": "Theta Name",
+          "code": "Theta Code",
+          "address": "Theta Address",
+          "region": "Theta Region",
+          "capacity": "Theta Capacity",
+          "currentUtilization": "Theta Current Utilization",
+          "manager": "Theta Manager",
+          "phone": "Theta Phone",
+          "operatingHours": "Theta Operating Hours",
+          "temperatureControlled": "Theta Temperature Controlled",
+          "dockCount": "Theta Dock Count",
+          "monthlyOperatingCost": "Theta Monthly Operating Cost",
+          "status": "Archived",
+          "notes": "Theta Notes"
+        },
+        {
+          "name": "Iota Name",
+          "code": "Iota Code",
+          "address": "Iota Address",
+          "region": "Iota Region",
+          "capacity": "Iota Capacity",
+          "currentUtilization": "Iota Current Utilization",
+          "manager": "Iota Manager",
+          "phone": "Iota Phone",
+          "operatingHours": "Iota Operating Hours",
+          "temperatureControlled": "Iota Temperature Controlled",
+          "dockCount": "Iota Dock Count",
+          "monthlyOperatingCost": "Iota Monthly Operating Cost",
+          "status": "Beta",
+          "notes": "Iota Notes"
+        },
+        {
+          "name": "Kappa Name",
+          "code": "Kappa Code",
+          "address": "Kappa Address",
+          "region": "Kappa Region",
+          "capacity": "Kappa Capacity",
+          "currentUtilization": "Kappa Current Utilization",
+          "manager": "Kappa Manager",
+          "phone": "Kappa Phone",
+          "operatingHours": "Kappa Operating Hours",
+          "temperatureControlled": "Kappa Temperature Controlled",
+          "dockCount": "Kappa Dock Count",
+          "monthlyOperatingCost": "Kappa Monthly Operating Cost",
+          "status": "GA",
+          "notes": "Kappa Notes"
+        },
+        {
+          "name": "Lambda Name",
+          "code": "Lambda Code",
+          "address": "Lambda Address",
+          "region": "Lambda Region",
+          "capacity": "Lambda Capacity",
+          "currentUtilization": "Lambda Current Utilization",
+          "manager": "Lambda Manager",
+          "phone": "Lambda Phone",
+          "operatingHours": "Lambda Operating Hours",
+          "temperatureControlled": "Lambda Temperature Controlled",
+          "dockCount": "Lambda Dock Count",
+          "monthlyOperatingCost": "Lambda Monthly Operating Cost",
+          "status": "Completed",
+          "notes": "Lambda Notes"
+        },
+        {
+          "name": "Mu Name",
+          "code": "Mu Code",
+          "address": "Mu Address",
+          "region": "Mu Region",
+          "capacity": "Mu Capacity",
+          "currentUtilization": "Mu Current Utilization",
+          "manager": "Mu Manager",
+          "phone": "Mu Phone",
+          "operatingHours": "Mu Operating Hours",
+          "temperatureControlled": "Mu Temperature Controlled",
+          "dockCount": "Mu Dock Count",
+          "monthlyOperatingCost": "Mu Monthly Operating Cost",
+          "status": "In Progress",
+          "notes": "Mu Notes"
+        },
+        {
+          "name": "Nu Name",
+          "code": "Nu Code",
+          "address": "Nu Address",
+          "region": "Nu Region",
+          "capacity": "Nu Capacity",
+          "currentUtilization": "Nu Current Utilization",
+          "manager": "Nu Manager",
+          "phone": "Nu Phone",
+          "operatingHours": "Nu Operating Hours",
+          "temperatureControlled": "Nu Temperature Controlled",
+          "dockCount": "Nu Dock Count",
+          "monthlyOperatingCost": "Nu Monthly Operating Cost",
+          "status": "Scheduled",
+          "notes": "Nu Notes"
+        },
+        {
+          "name": "Xi Name",
+          "code": "Xi Code",
+          "address": "Xi Address",
+          "region": "Xi Region",
+          "capacity": "Xi Capacity",
+          "currentUtilization": "Xi Current Utilization",
+          "manager": "Xi Manager",
+          "phone": "Xi Phone",
+          "operatingHours": "Xi Operating Hours",
+          "temperatureControlled": "Xi Temperature Controlled",
+          "dockCount": "Xi Dock Count",
+          "monthlyOperatingCost": "Xi Monthly Operating Cost",
+          "status": "Failed",
+          "notes": "Xi Notes"
+        },
+        {
+          "name": "Omicron Name",
+          "code": "Omicron Code",
+          "address": "Omicron Address",
+          "region": "Omicron Region",
+          "capacity": "Omicron Capacity",
+          "currentUtilization": "Omicron Current Utilization",
+          "manager": "Omicron Manager",
+          "phone": "Omicron Phone",
+          "operatingHours": "Omicron Operating Hours",
+          "temperatureControlled": "Omicron Temperature Controlled",
+          "dockCount": "Omicron Dock Count",
+          "monthlyOperatingCost": "Omicron Monthly Operating Cost",
+          "status": "Cancelled",
+          "notes": "Omicron Notes"
+        }
+      ]
+    }
+  ]
+}

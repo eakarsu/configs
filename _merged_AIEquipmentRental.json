@@ -1,0 +1,616 @@
+{
+  "appName": "AI Equipment Rental",
+  "dbName": "a_i_equipment_rental",
+  "folderName": "generated/AIEquipmentRental",
+  "features": [
+    {
+      "modelName": "Equipment",
+      "routeKey": "equipments",
+      "label": "Equipment",
+      "icon": "activity",
+      "aiFunction": "analyzeEquipment",
+      "aiPrompt": "You are an AI analyst for A I Equipment Rental Platform. Analyze the provided Equipment data. The data includes: Name, Description, Category, Daily Rate, Weekly Rate, Monthly Rate, Location, Condition Rating, Specifications, Image Url, Status, Owner Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dailyRate",
+          "label": "Daily Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "weeklyRate",
+          "label": "Weekly Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "monthlyRate",
+          "label": "Monthly Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "conditionRating",
+          "label": "Condition Rating",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "specifications",
+          "label": "Specifications",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "imageUrl",
+          "label": "Image Url",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ownerId",
+          "label": "Owner Id",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "Category A",
+          "dailyRate": 1.5,
+          "weeklyRate": 1.5,
+          "monthlyRate": 1.5,
+          "location": "New York",
+          "conditionRating": 10,
+          "specifications": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "imageUrl": "https://example.com/imageUrl/1",
+          "status": "active",
+          "ownerId": 10
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "Category B",
+          "dailyRate": 2.1,
+          "weeklyRate": 2.1,
+          "monthlyRate": 2.1,
+          "location": "Los Angeles",
+          "conditionRating": 58,
+          "specifications": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "imageUrl": "https://example.com/imageUrl/2",
+          "status": "pending",
+          "ownerId": 58
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "Category C",
+          "dailyRate": 2.7,
+          "weeklyRate": 2.7,
+          "monthlyRate": 2.7,
+          "location": "Chicago",
+          "conditionRating": 106,
+          "specifications": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "imageUrl": "https://example.com/imageUrl/3",
+          "status": "in_progress",
+          "ownerId": 106
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "Category D",
+          "dailyRate": 3.3,
+          "weeklyRate": 3.3,
+          "monthlyRate": 3.3,
+          "location": "Houston",
+          "conditionRating": 154,
+          "specifications": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "imageUrl": "https://example.com/imageUrl/4",
+          "status": "completed",
+          "ownerId": 154
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "Category E",
+          "dailyRate": 3.9,
+          "weeklyRate": 3.9,
+          "monthlyRate": 3.9,
+          "location": "Phoenix",
+          "conditionRating": 102,
+          "specifications": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "imageUrl": "https://example.com/imageUrl/5",
+          "status": "under_review",
+          "ownerId": 102
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "Premium Tier",
+          "dailyRate": 4.5,
+          "weeklyRate": 4.5,
+          "monthlyRate": 4.5,
+          "location": "San Francisco",
+          "conditionRating": 150,
+          "specifications": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "imageUrl": "https://example.com/imageUrl/6",
+          "status": "approved",
+          "ownerId": 150
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "Standard Tier",
+          "dailyRate": 5.1,
+          "weeklyRate": 5.1,
+          "monthlyRate": 5.1,
+          "location": "Seattle",
+          "conditionRating": 198,
+          "specifications": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "imageUrl": "https://example.com/imageUrl/7",
+          "status": "active",
+          "ownerId": 198
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "Basic Tier",
+          "dailyRate": 5.7,
+          "weeklyRate": 5.7,
+          "monthlyRate": 5.7,
+          "location": "Boston",
+          "conditionRating": 146,
+          "specifications": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "imageUrl": "https://example.com/imageUrl/8",
+          "status": "active",
+          "ownerId": 146
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "Enterprise",
+          "dailyRate": 6.3,
+          "weeklyRate": 6.3,
+          "monthlyRate": 6.3,
+          "location": "Denver",
+          "conditionRating": 194,
+          "specifications": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "imageUrl": "https://example.com/imageUrl/9",
+          "status": "active",
+          "ownerId": 194
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "Starter",
+          "dailyRate": 1.9,
+          "weeklyRate": 1.9,
+          "monthlyRate": 1.9,
+          "location": "Miami",
+          "conditionRating": 242,
+          "specifications": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "imageUrl": "https://example.com/imageUrl/10",
+          "status": "pending",
+          "ownerId": 242
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "Growth",
+          "dailyRate": 2.5,
+          "weeklyRate": 2.5,
+          "monthlyRate": 2.5,
+          "location": "Austin",
+          "conditionRating": 190,
+          "specifications": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "imageUrl": "https://example.com/imageUrl/11",
+          "status": "completed",
+          "ownerId": 190
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "category": "Scale",
+          "dailyRate": 3.1,
+          "weeklyRate": 3.1,
+          "monthlyRate": 3.1,
+          "location": "Portland",
+          "conditionRating": 238,
+          "specifications": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "imageUrl": "https://example.com/imageUrl/12",
+          "status": "active",
+          "ownerId": 238
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "Foundation",
+          "dailyRate": 3.7,
+          "weeklyRate": 3.7,
+          "monthlyRate": 3.7,
+          "location": "Dallas",
+          "conditionRating": 286,
+          "specifications": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "imageUrl": "https://example.com/imageUrl/13",
+          "status": "in_progress",
+          "ownerId": 286
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "category": "Advanced",
+          "dailyRate": 4.3,
+          "weeklyRate": 4.3,
+          "monthlyRate": 4.3,
+          "location": "Atlanta",
+          "conditionRating": 234,
+          "specifications": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "imageUrl": "https://example.com/imageUrl/14",
+          "status": "active",
+          "ownerId": 234
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "Professional",
+          "dailyRate": 4.9,
+          "weeklyRate": 4.9,
+          "monthlyRate": 4.9,
+          "location": "Nashville",
+          "conditionRating": 282,
+          "specifications": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "imageUrl": "https://example.com/imageUrl/15",
+          "status": "approved",
+          "ownerId": 282
+        }
+      ]
+    },
+    {
+      "modelName": "Rental",
+      "routeKey": "rentals",
+      "label": "Rental",
+      "icon": "briefcase",
+      "aiFunction": "analyzeRental",
+      "aiPrompt": "You are an AI analyst for A I Equipment Rental Platform. Analyze the provided Rental data. The data includes: Equipment Id, Renter Id, Start Date, End Date, Total Cost, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "equipmentId",
+          "label": "Equipment Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "renterId",
+          "label": "Renter Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "totalCost",
+          "label": "Total Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "equipmentId": 10,
+          "renterId": 10,
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "totalCost": 500,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "equipmentId": 58,
+          "renterId": 58,
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "totalCost": 2481,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "equipmentId": 106,
+          "renterId": 106,
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "totalCost": 4462,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "equipmentId": 154,
+          "renterId": 154,
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "totalCost": 6443,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "equipmentId": 102,
+          "renterId": 102,
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "totalCost": 8424,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "equipmentId": 150,
+          "renterId": 150,
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "totalCost": 10405,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "equipmentId": 198,
+          "renterId": 198,
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "totalCost": 12386,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "equipmentId": 146,
+          "renterId": 146,
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "totalCost": 9367,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "equipmentId": 194,
+          "renterId": 194,
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "totalCost": 11348,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "equipmentId": 242,
+          "renterId": 242,
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "totalCost": 13329,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "equipmentId": 190,
+          "renterId": 190,
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "totalCost": 15310,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "equipmentId": 238,
+          "renterId": 238,
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "totalCost": 17291,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "equipmentId": 286,
+          "renterId": 286,
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "totalCost": 19272,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "equipmentId": 234,
+          "renterId": 234,
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "totalCost": 21253,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "equipmentId": 282,
+          "renterId": 282,
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "totalCost": 18234,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Review",
+      "routeKey": "reviews",
+      "label": "Review",
+      "icon": "clipboard",
+      "aiFunction": "analyzeReview",
+      "aiPrompt": "You are an AI analyst for A I Equipment Rental Platform. Analyze the provided Review data. The data includes: Equipment Id, User Id, Rating, Comment. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "equipmentId",
+          "label": "Equipment Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "comment",
+          "label": "Comment",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "equipmentId": 10,
+          "userId": 10,
+          "rating": 10,
+          "comment": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "equipmentId": 58,
+          "userId": 58,
+          "rating": 58,
+          "comment": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "equipmentId": 106,
+          "userId": 106,
+          "rating": 106,
+          "comment": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "equipmentId": 154,
+          "userId": 154,
+          "rating": 154,
+          "comment": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "equipmentId": 102,
+          "userId": 102,
+          "rating": 102,
+          "comment": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "equipmentId": 150,
+          "userId": 150,
+          "rating": 150,
+          "comment": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "equipmentId": 198,
+          "userId": 198,
+          "rating": 198,
+          "comment": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "equipmentId": 146,
+          "userId": 146,
+          "rating": 146,
+          "comment": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "equipmentId": 194,
+          "userId": 194,
+          "rating": 194,
+          "comment": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "equipmentId": 242,
+          "userId": 242,
+          "rating": 242,
+          "comment": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "equipmentId": 190,
+          "userId": 190,
+          "rating": 190,
+          "comment": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "equipmentId": 238,
+          "userId": 238,
+          "rating": 238,
+          "comment": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "equipmentId": 286,
+          "userId": 286,
+          "rating": 286,
+          "comment": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "equipmentId": 234,
+          "userId": 234,
+          "rating": 234,
+          "comment": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "equipmentId": 282,
+          "userId": 282,
+          "rating": 282,
+          "comment": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

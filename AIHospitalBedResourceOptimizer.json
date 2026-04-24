@@ -1,0 +1,2569 @@
+{
+  "appName": "A I Hospital Bed Resource Optimizer",
+  "dbName": "a_i_hospital_bed_resource_optimizer",
+  "folderName": "generated/AIHospitalBedResourceOptimizer",
+  "features": [
+    {
+      "modelName": "Department",
+      "routeKey": "departments",
+      "label": "Department",
+      "icon": "activity",
+      "aiFunction": "analyzeDepartment",
+      "aiPrompt": "You are an AI analyst for A I Hospital Bed Resource Optimizer. Analyze the provided Department data. The data includes: Name, Head Doctor, Floor, Total Beds, Occupied Beds, Staff Count, Budget, Phone, Status, Specialization, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "headDoctor",
+          "label": "Head Doctor",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "floor",
+          "label": "Floor",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "totalBeds",
+          "label": "Total Beds",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "occupiedBeds",
+          "label": "Occupied Beds",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "staffCount",
+          "label": "Staff Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "budget",
+          "label": "Budget",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "specialization",
+          "label": "Specialization",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "headDoctor": "Advanced Head Doctor 1",
+          "floor": 10,
+          "totalBeds": 10,
+          "occupiedBeds": 10,
+          "staffCount": 155,
+          "budget": 500,
+          "phone": "(555) 100-1000",
+          "status": "active",
+          "specialization": "Advanced Specialization 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "headDoctor": "Premium Head Doctor 2",
+          "floor": 58,
+          "totalBeds": 58,
+          "occupiedBeds": 58,
+          "staffCount": 121,
+          "budget": 2481,
+          "phone": "(556) 137-1113",
+          "status": "pending",
+          "specialization": "Premium Specialization 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "headDoctor": "Standard Head Doctor 3",
+          "floor": 106,
+          "totalBeds": 106,
+          "occupiedBeds": 106,
+          "staffCount": 59,
+          "budget": 4462,
+          "phone": "(557) 174-1226",
+          "status": "in_progress",
+          "specialization": "Standard Specialization 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "headDoctor": "Elite Head Doctor 4",
+          "floor": 154,
+          "totalBeds": 154,
+          "occupiedBeds": 154,
+          "staffCount": 26,
+          "budget": 6443,
+          "phone": "(558) 211-1339",
+          "status": "completed",
+          "specialization": "Elite Specialization 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "headDoctor": "Core Head Doctor 5",
+          "floor": 102,
+          "totalBeds": 102,
+          "occupiedBeds": 102,
+          "staffCount": 181,
+          "budget": 8424,
+          "phone": "(555) 248-1452",
+          "status": "under_review",
+          "specialization": "Core Specialization 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "headDoctor": "Pro Head Doctor 6",
+          "floor": 150,
+          "totalBeds": 150,
+          "occupiedBeds": 150,
+          "staffCount": 156,
+          "budget": 10405,
+          "phone": "(556) 285-1565",
+          "status": "approved",
+          "specialization": "Pro Specialization 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "headDoctor": "Essential Head Doctor 7",
+          "floor": 198,
+          "totalBeds": 198,
+          "occupiedBeds": 198,
+          "staffCount": 98,
+          "budget": 12386,
+          "phone": "(557) 322-1678",
+          "status": "active",
+          "specialization": "Essential Specialization 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "headDoctor": "Primary Head Doctor 8",
+          "floor": 146,
+          "totalBeds": 146,
+          "occupiedBeds": 146,
+          "staffCount": 114,
+          "budget": 9367,
+          "phone": "(558) 359-1791",
+          "status": "active",
+          "specialization": "Primary Specialization 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "headDoctor": "Global Head Doctor 9",
+          "floor": 194,
+          "totalBeds": 194,
+          "occupiedBeds": 194,
+          "staffCount": 116,
+          "budget": 11348,
+          "phone": "(555) 396-1904",
+          "status": "active",
+          "specialization": "Global Specialization 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "headDoctor": "Regional Head Doctor 10",
+          "floor": 242,
+          "totalBeds": 242,
+          "occupiedBeds": 242,
+          "staffCount": 137,
+          "budget": 13329,
+          "phone": "(556) 433-2017",
+          "status": "pending",
+          "specialization": "Regional Specialization 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "headDoctor": "Custom Head Doctor 11",
+          "floor": 190,
+          "totalBeds": 190,
+          "occupiedBeds": 190,
+          "staffCount": 163,
+          "budget": 15310,
+          "phone": "(557) 470-2130",
+          "status": "completed",
+          "specialization": "Custom Specialization 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "headDoctor": "Smart Head Doctor 12",
+          "floor": 238,
+          "totalBeds": 238,
+          "occupiedBeds": 238,
+          "staffCount": 266,
+          "budget": 17291,
+          "phone": "(558) 507-2243",
+          "status": "active",
+          "specialization": "Smart Specialization 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "headDoctor": "Rapid Head Doctor 13",
+          "floor": 286,
+          "totalBeds": 286,
+          "occupiedBeds": 286,
+          "staffCount": 286,
+          "budget": 19272,
+          "phone": "(555) 544-2356",
+          "status": "in_progress",
+          "specialization": "Rapid Specialization 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "headDoctor": "Secure Head Doctor 14",
+          "floor": 234,
+          "totalBeds": 234,
+          "occupiedBeds": 234,
+          "staffCount": 187,
+          "budget": 21253,
+          "phone": "(556) 581-2469",
+          "status": "active",
+          "specialization": "Secure Specialization 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "headDoctor": "Modern Head Doctor 15",
+          "floor": 282,
+          "totalBeds": 282,
+          "occupiedBeds": 282,
+          "staffCount": 227,
+          "budget": 18234,
+          "phone": "(557) 618-2582",
+          "status": "approved",
+          "specialization": "Modern Specialization 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Bed",
+      "routeKey": "beds",
+      "label": "Bed",
+      "icon": "briefcase",
+      "aiFunction": "analyzeBed",
+      "aiPrompt": "You are an AI analyst for A I Hospital Bed Resource Optimizer. Analyze the provided Bed data. The data includes: Bed Number, Ward, Floor, Bed Type, Status, Department, Has Monitoring, Has Oxygen, Has Suction, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "bedNumber",
+          "label": "Bed Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ward",
+          "label": "Ward",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "floor",
+          "label": "Floor",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bedType",
+          "label": "Bed Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "hasMonitoring",
+          "label": "Has Monitoring",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "hasOxygen",
+          "label": "Has Oxygen",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "hasSuction",
+          "label": "Has Suction",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "bedNumber": "Advanced Bed Number 1",
+          "ward": "Advanced Ward 1",
+          "floor": 10,
+          "bedType": "Category A",
+          "status": "active",
+          "department": "Category A",
+          "hasMonitoring": true,
+          "hasOxygen": true,
+          "hasSuction": true,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "bedNumber": "Premium Bed Number 2",
+          "ward": "Premium Ward 2",
+          "floor": 58,
+          "bedType": "Category B",
+          "status": "pending",
+          "department": "Category B",
+          "hasMonitoring": true,
+          "hasOxygen": true,
+          "hasSuction": true,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "bedNumber": "Standard Bed Number 3",
+          "ward": "Standard Ward 3",
+          "floor": 106,
+          "bedType": "Category C",
+          "status": "in_progress",
+          "department": "Category C",
+          "hasMonitoring": false,
+          "hasOxygen": false,
+          "hasSuction": false,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "bedNumber": "Elite Bed Number 4",
+          "ward": "Elite Ward 4",
+          "floor": 154,
+          "bedType": "Category D",
+          "status": "completed",
+          "department": "Category D",
+          "hasMonitoring": true,
+          "hasOxygen": true,
+          "hasSuction": true,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "bedNumber": "Core Bed Number 5",
+          "ward": "Core Ward 5",
+          "floor": 102,
+          "bedType": "Category E",
+          "status": "under_review",
+          "department": "Category E",
+          "hasMonitoring": false,
+          "hasOxygen": false,
+          "hasSuction": false,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "bedNumber": "Pro Bed Number 6",
+          "ward": "Pro Ward 6",
+          "floor": 150,
+          "bedType": "Premium Tier",
+          "status": "approved",
+          "department": "Premium Tier",
+          "hasMonitoring": true,
+          "hasOxygen": true,
+          "hasSuction": true,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "bedNumber": "Essential Bed Number 7",
+          "ward": "Essential Ward 7",
+          "floor": 198,
+          "bedType": "Standard Tier",
+          "status": "active",
+          "department": "Standard Tier",
+          "hasMonitoring": true,
+          "hasOxygen": true,
+          "hasSuction": true,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "bedNumber": "Primary Bed Number 8",
+          "ward": "Primary Ward 8",
+          "floor": 146,
+          "bedType": "Basic Tier",
+          "status": "active",
+          "department": "Basic Tier",
+          "hasMonitoring": false,
+          "hasOxygen": false,
+          "hasSuction": false,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "bedNumber": "Global Bed Number 9",
+          "ward": "Global Ward 9",
+          "floor": 194,
+          "bedType": "Enterprise",
+          "status": "active",
+          "department": "Enterprise",
+          "hasMonitoring": true,
+          "hasOxygen": true,
+          "hasSuction": true,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "bedNumber": "Regional Bed Number 10",
+          "ward": "Regional Ward 10",
+          "floor": 242,
+          "bedType": "Starter",
+          "status": "pending",
+          "department": "Starter",
+          "hasMonitoring": true,
+          "hasOxygen": true,
+          "hasSuction": true,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "bedNumber": "Custom Bed Number 11",
+          "ward": "Custom Ward 11",
+          "floor": 190,
+          "bedType": "Growth",
+          "status": "completed",
+          "department": "Growth",
+          "hasMonitoring": false,
+          "hasOxygen": false,
+          "hasSuction": false,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "bedNumber": "Smart Bed Number 12",
+          "ward": "Smart Ward 12",
+          "floor": 238,
+          "bedType": "Scale",
+          "status": "active",
+          "department": "Scale",
+          "hasMonitoring": true,
+          "hasOxygen": true,
+          "hasSuction": true,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "bedNumber": "Rapid Bed Number 13",
+          "ward": "Rapid Ward 13",
+          "floor": 286,
+          "bedType": "Foundation",
+          "status": "in_progress",
+          "department": "Foundation",
+          "hasMonitoring": false,
+          "hasOxygen": false,
+          "hasSuction": false,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "bedNumber": "Secure Bed Number 14",
+          "ward": "Secure Ward 14",
+          "floor": 234,
+          "bedType": "Advanced",
+          "status": "active",
+          "department": "Advanced",
+          "hasMonitoring": true,
+          "hasOxygen": true,
+          "hasSuction": true,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "bedNumber": "Modern Bed Number 15",
+          "ward": "Modern Ward 15",
+          "floor": 282,
+          "bedType": "Professional",
+          "status": "approved",
+          "department": "Professional",
+          "hasMonitoring": true,
+          "hasOxygen": true,
+          "hasSuction": true,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Patient",
+      "routeKey": "patients",
+      "label": "Patient",
+      "icon": "clipboard",
+      "aiFunction": "analyzePatient",
+      "aiPrompt": "You are an AI analyst for A I Hospital Bed Resource Optimizer. Analyze the provided Patient data. The data includes: Name, Age, Gender, Diagnosis, Admission Date, Expected Discharge, Bed Id, Department, Status, Priority, Insurance, Attending Physician, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "age",
+          "label": "Age",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "gender",
+          "label": "Gender",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "diagnosis",
+          "label": "Diagnosis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "admissionDate",
+          "label": "Admission Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "expectedDischarge",
+          "label": "Expected Discharge",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "bedId",
+          "label": "Bed Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "insurance",
+          "label": "Insurance",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "attendingPhysician",
+          "label": "Attending Physician",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "age": 18,
+          "gender": "Advanced Gender 1",
+          "diagnosis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "admissionDate": "2024-01-01",
+          "expectedDischarge": "2024-01-01",
+          "bedId": 10,
+          "department": "Category A",
+          "status": "active",
+          "priority": "low",
+          "insurance": "Advanced Insurance 1",
+          "attendingPhysician": "Advanced Attending Physician 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "age": 21,
+          "gender": "Premium Gender 2",
+          "diagnosis": "Industry-leading approach with proven results across multiple deployments.",
+          "admissionDate": "2024-02-03",
+          "expectedDischarge": "2024-02-03",
+          "bedId": 58,
+          "department": "Category B",
+          "status": "pending",
+          "priority": "medium",
+          "insurance": "Premium Insurance 2",
+          "attendingPhysician": "Premium Attending Physician 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "age": 24,
+          "gender": "Standard Gender 3",
+          "diagnosis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "admissionDate": "2024-03-05",
+          "expectedDischarge": "2024-03-05",
+          "bedId": 106,
+          "department": "Category C",
+          "status": "in_progress",
+          "priority": "high",
+          "insurance": "Standard Insurance 3",
+          "attendingPhysician": "Standard Attending Physician 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "age": 27,
+          "gender": "Elite Gender 4",
+          "diagnosis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "admissionDate": "2024-04-07",
+          "expectedDischarge": "2024-04-07",
+          "bedId": 154,
+          "department": "Category D",
+          "status": "completed",
+          "priority": "critical",
+          "insurance": "Elite Insurance 4",
+          "attendingPhysician": "Elite Attending Physician 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "age": 30,
+          "gender": "Core Gender 5",
+          "diagnosis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "admissionDate": "2024-05-09",
+          "expectedDischarge": "2024-05-09",
+          "bedId": 102,
+          "department": "Category E",
+          "status": "under_review",
+          "priority": "medium",
+          "insurance": "Core Insurance 5",
+          "attendingPhysician": "Core Attending Physician 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "age": 33,
+          "gender": "Pro Gender 6",
+          "diagnosis": "High-priority initiative aligned with organizational strategic objectives.",
+          "admissionDate": "2024-06-11",
+          "expectedDischarge": "2024-06-11",
+          "bedId": 150,
+          "department": "Premium Tier",
+          "status": "approved",
+          "priority": "low",
+          "insurance": "Pro Insurance 6",
+          "attendingPhysician": "Pro Attending Physician 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "age": 36,
+          "gender": "Essential Gender 7",
+          "diagnosis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "admissionDate": "2024-07-13",
+          "expectedDischarge": "2024-07-13",
+          "bedId": 198,
+          "department": "Standard Tier",
+          "status": "active",
+          "priority": "medium",
+          "insurance": "Essential Insurance 7",
+          "attendingPhysician": "Essential Attending Physician 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "age": 39,
+          "gender": "Primary Gender 8",
+          "diagnosis": "Innovative framework incorporating best practices and emerging technologies.",
+          "admissionDate": "2024-08-15",
+          "expectedDischarge": "2024-08-15",
+          "bedId": 146,
+          "department": "Basic Tier",
+          "status": "active",
+          "priority": "high",
+          "insurance": "Primary Insurance 8",
+          "attendingPhysician": "Primary Attending Physician 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "age": 42,
+          "gender": "Global Gender 9",
+          "diagnosis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "admissionDate": "2024-09-17",
+          "expectedDischarge": "2024-09-17",
+          "bedId": 194,
+          "department": "Enterprise",
+          "status": "active",
+          "priority": "critical",
+          "insurance": "Global Insurance 9",
+          "attendingPhysician": "Global Attending Physician 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "age": 45,
+          "gender": "Regional Gender 10",
+          "diagnosis": "Enterprise-grade solution with robust security and compliance features.",
+          "admissionDate": "2024-10-19",
+          "expectedDischarge": "2024-10-19",
+          "bedId": 242,
+          "department": "Starter",
+          "status": "pending",
+          "priority": "medium",
+          "insurance": "Regional Insurance 10",
+          "attendingPhysician": "Regional Attending Physician 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "age": 48,
+          "gender": "Custom Gender 11",
+          "diagnosis": "Integrated platform connecting multiple systems for seamless operations.",
+          "admissionDate": "2024-11-21",
+          "expectedDischarge": "2024-11-21",
+          "bedId": 190,
+          "department": "Growth",
+          "status": "completed",
+          "priority": "low",
+          "insurance": "Custom Insurance 11",
+          "attendingPhysician": "Custom Attending Physician 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "age": 51,
+          "gender": "Smart Gender 12",
+          "diagnosis": "Automated workflow reducing manual intervention and human error.",
+          "admissionDate": "2024-12-23",
+          "expectedDischarge": "2024-12-23",
+          "bedId": 238,
+          "department": "Scale",
+          "status": "active",
+          "priority": "medium",
+          "insurance": "Smart Insurance 12",
+          "attendingPhysician": "Smart Attending Physician 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "age": 54,
+          "gender": "Rapid Gender 13",
+          "diagnosis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "admissionDate": "2024-01-25",
+          "expectedDischarge": "2024-01-25",
+          "bedId": 286,
+          "department": "Foundation",
+          "status": "in_progress",
+          "priority": "high",
+          "insurance": "Rapid Insurance 13",
+          "attendingPhysician": "Rapid Attending Physician 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "age": 57,
+          "gender": "Secure Gender 14",
+          "diagnosis": "Customizable module adaptable to diverse operational requirements.",
+          "admissionDate": "2024-02-27",
+          "expectedDischarge": "2024-02-27",
+          "bedId": 234,
+          "department": "Advanced",
+          "status": "active",
+          "priority": "critical",
+          "insurance": "Secure Insurance 14",
+          "attendingPhysician": "Secure Attending Physician 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "age": 60,
+          "gender": "Modern Gender 15",
+          "diagnosis": "Performance-optimized design achieving superior throughput and reliability.",
+          "admissionDate": "2024-03-01",
+          "expectedDischarge": "2024-03-01",
+          "bedId": 282,
+          "department": "Professional",
+          "status": "approved",
+          "priority": "medium",
+          "insurance": "Modern Insurance 15",
+          "attendingPhysician": "Modern Attending Physician 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Staff",
+      "routeKey": "staffs",
+      "label": "Staff",
+      "icon": "database",
+      "aiFunction": "analyzeStaff",
+      "aiPrompt": "You are an AI analyst for A I Hospital Bed Resource Optimizer. Analyze the provided Staff data. The data includes: Name, Role, Department, Shift, Specialization, Phone, Email, Status, Hire Date, Certification, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "shift",
+          "label": "Shift",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "specialization",
+          "label": "Specialization",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "hireDate",
+          "label": "Hire Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "certification",
+          "label": "Certification",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "role": "Advanced Role 1",
+          "department": "Category A",
+          "shift": "Advanced Shift 1",
+          "specialization": "Advanced Specialization 1",
+          "phone": "(555) 100-1000",
+          "email": "james.wilson@example.com",
+          "status": "active",
+          "hireDate": "2024-01-01",
+          "certification": "Advanced Certification 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "role": "Premium Role 2",
+          "department": "Category B",
+          "shift": "Premium Shift 2",
+          "specialization": "Premium Specialization 2",
+          "phone": "(556) 137-1113",
+          "email": "sarah.chen@example.com",
+          "status": "pending",
+          "hireDate": "2024-02-03",
+          "certification": "Premium Certification 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "role": "Standard Role 3",
+          "department": "Category C",
+          "shift": "Standard Shift 3",
+          "specialization": "Standard Specialization 3",
+          "phone": "(557) 174-1226",
+          "email": "michael.brown@example.com",
+          "status": "in_progress",
+          "hireDate": "2024-03-05",
+          "certification": "Standard Certification 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "role": "Elite Role 4",
+          "department": "Category D",
+          "shift": "Elite Shift 4",
+          "specialization": "Elite Specialization 4",
+          "phone": "(558) 211-1339",
+          "email": "emily.davis@example.com",
+          "status": "completed",
+          "hireDate": "2024-04-07",
+          "certification": "Elite Certification 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "role": "Core Role 5",
+          "department": "Category E",
+          "shift": "Core Shift 5",
+          "specialization": "Core Specialization 5",
+          "phone": "(555) 248-1452",
+          "email": "robert.garcia@example.com",
+          "status": "under_review",
+          "hireDate": "2024-05-09",
+          "certification": "Core Certification 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "role": "Pro Role 6",
+          "department": "Premium Tier",
+          "shift": "Pro Shift 6",
+          "specialization": "Pro Specialization 6",
+          "phone": "(556) 285-1565",
+          "email": "lisa.anderson@example.com",
+          "status": "approved",
+          "hireDate": "2024-06-11",
+          "certification": "Pro Certification 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "role": "Essential Role 7",
+          "department": "Standard Tier",
+          "shift": "Essential Shift 7",
+          "specialization": "Essential Specialization 7",
+          "phone": "(557) 322-1678",
+          "email": "david.martinez@example.com",
+          "status": "active",
+          "hireDate": "2024-07-13",
+          "certification": "Essential Certification 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "role": "Primary Role 8",
+          "department": "Basic Tier",
+          "shift": "Primary Shift 8",
+          "specialization": "Primary Specialization 8",
+          "phone": "(558) 359-1791",
+          "email": "jennifer.taylor@example.com",
+          "status": "active",
+          "hireDate": "2024-08-15",
+          "certification": "Primary Certification 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "role": "Global Role 9",
+          "department": "Enterprise",
+          "shift": "Global Shift 9",
+          "specialization": "Global Specialization 9",
+          "phone": "(555) 396-1904",
+          "email": "william.johnson@example.com",
+          "status": "active",
+          "hireDate": "2024-09-17",
+          "certification": "Global Certification 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "role": "Regional Role 10",
+          "department": "Starter",
+          "shift": "Regional Shift 10",
+          "specialization": "Regional Specialization 10",
+          "phone": "(556) 433-2017",
+          "email": "maria.rodriguez@example.com",
+          "status": "pending",
+          "hireDate": "2024-10-19",
+          "certification": "Regional Certification 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "role": "Custom Role 11",
+          "department": "Growth",
+          "shift": "Custom Shift 11",
+          "specialization": "Custom Specialization 11",
+          "phone": "(557) 470-2130",
+          "email": "thomas.lee@example.com",
+          "status": "completed",
+          "hireDate": "2024-11-21",
+          "certification": "Custom Certification 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "role": "Smart Role 12",
+          "department": "Scale",
+          "shift": "Smart Shift 12",
+          "specialization": "Smart Specialization 12",
+          "phone": "(558) 507-2243",
+          "email": "patricia.white@example.com",
+          "status": "active",
+          "hireDate": "2024-12-23",
+          "certification": "Smart Certification 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "role": "Rapid Role 13",
+          "department": "Foundation",
+          "shift": "Rapid Shift 13",
+          "specialization": "Rapid Specialization 13",
+          "phone": "(555) 544-2356",
+          "email": "christopher.hall@example.com",
+          "status": "in_progress",
+          "hireDate": "2024-01-25",
+          "certification": "Rapid Certification 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "role": "Secure Role 14",
+          "department": "Advanced",
+          "shift": "Secure Shift 14",
+          "specialization": "Secure Specialization 14",
+          "phone": "(556) 581-2469",
+          "email": "amanda.clark@example.com",
+          "status": "active",
+          "hireDate": "2024-02-27",
+          "certification": "Secure Certification 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "role": "Modern Role 15",
+          "department": "Professional",
+          "shift": "Modern Shift 15",
+          "specialization": "Modern Specialization 15",
+          "phone": "(557) 618-2582",
+          "email": "daniel.wright@example.com",
+          "status": "approved",
+          "hireDate": "2024-03-01",
+          "certification": "Modern Certification 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Equipment",
+      "routeKey": "equipments",
+      "label": "Equipment",
+      "icon": "file-text",
+      "aiFunction": "analyzeEquipment",
+      "aiPrompt": "You are an AI analyst for A I Hospital Bed Resource Optimizer. Analyze the provided Equipment data. The data includes: Name, Type, Department, Status, Serial Number, Purchase Date, Last Maintenance, Next Maintenance, Cost, Manufacturer, Warranty Until, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serialNumber",
+          "label": "Serial Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "purchaseDate",
+          "label": "Purchase Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "lastMaintenance",
+          "label": "Last Maintenance",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "nextMaintenance",
+          "label": "Next Maintenance",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "manufacturer",
+          "label": "Manufacturer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "warrantyUntil",
+          "label": "Warranty Until",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "department": "Category A",
+          "status": "active",
+          "serialNumber": "Advanced Serial Number 1",
+          "purchaseDate": "2024-01-01",
+          "lastMaintenance": "2024-01-01",
+          "nextMaintenance": "2024-01-01",
+          "cost": 500,
+          "manufacturer": "Advanced Manufacturer 1",
+          "warrantyUntil": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "department": "Category B",
+          "status": "pending",
+          "serialNumber": "Premium Serial Number 2",
+          "purchaseDate": "2024-02-03",
+          "lastMaintenance": "2024-02-03",
+          "nextMaintenance": "2024-02-03",
+          "cost": 2481,
+          "manufacturer": "Premium Manufacturer 2",
+          "warrantyUntil": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "department": "Category C",
+          "status": "in_progress",
+          "serialNumber": "Standard Serial Number 3",
+          "purchaseDate": "2024-03-05",
+          "lastMaintenance": "2024-03-05",
+          "nextMaintenance": "2024-03-05",
+          "cost": 4462,
+          "manufacturer": "Standard Manufacturer 3",
+          "warrantyUntil": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "department": "Category D",
+          "status": "completed",
+          "serialNumber": "Elite Serial Number 4",
+          "purchaseDate": "2024-04-07",
+          "lastMaintenance": "2024-04-07",
+          "nextMaintenance": "2024-04-07",
+          "cost": 6443,
+          "manufacturer": "Elite Manufacturer 4",
+          "warrantyUntil": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "department": "Category E",
+          "status": "under_review",
+          "serialNumber": "Core Serial Number 5",
+          "purchaseDate": "2024-05-09",
+          "lastMaintenance": "2024-05-09",
+          "nextMaintenance": "2024-05-09",
+          "cost": 8424,
+          "manufacturer": "Core Manufacturer 5",
+          "warrantyUntil": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "department": "Premium Tier",
+          "status": "approved",
+          "serialNumber": "Pro Serial Number 6",
+          "purchaseDate": "2024-06-11",
+          "lastMaintenance": "2024-06-11",
+          "nextMaintenance": "2024-06-11",
+          "cost": 10405,
+          "manufacturer": "Pro Manufacturer 6",
+          "warrantyUntil": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "department": "Standard Tier",
+          "status": "active",
+          "serialNumber": "Essential Serial Number 7",
+          "purchaseDate": "2024-07-13",
+          "lastMaintenance": "2024-07-13",
+          "nextMaintenance": "2024-07-13",
+          "cost": 12386,
+          "manufacturer": "Essential Manufacturer 7",
+          "warrantyUntil": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "department": "Basic Tier",
+          "status": "active",
+          "serialNumber": "Primary Serial Number 8",
+          "purchaseDate": "2024-08-15",
+          "lastMaintenance": "2024-08-15",
+          "nextMaintenance": "2024-08-15",
+          "cost": 9367,
+          "manufacturer": "Primary Manufacturer 8",
+          "warrantyUntil": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "department": "Enterprise",
+          "status": "active",
+          "serialNumber": "Global Serial Number 9",
+          "purchaseDate": "2024-09-17",
+          "lastMaintenance": "2024-09-17",
+          "nextMaintenance": "2024-09-17",
+          "cost": 11348,
+          "manufacturer": "Global Manufacturer 9",
+          "warrantyUntil": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "department": "Starter",
+          "status": "pending",
+          "serialNumber": "Regional Serial Number 10",
+          "purchaseDate": "2024-10-19",
+          "lastMaintenance": "2024-10-19",
+          "nextMaintenance": "2024-10-19",
+          "cost": 13329,
+          "manufacturer": "Regional Manufacturer 10",
+          "warrantyUntil": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "department": "Growth",
+          "status": "completed",
+          "serialNumber": "Custom Serial Number 11",
+          "purchaseDate": "2024-11-21",
+          "lastMaintenance": "2024-11-21",
+          "nextMaintenance": "2024-11-21",
+          "cost": 15310,
+          "manufacturer": "Custom Manufacturer 11",
+          "warrantyUntil": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "department": "Scale",
+          "status": "active",
+          "serialNumber": "Smart Serial Number 12",
+          "purchaseDate": "2024-12-23",
+          "lastMaintenance": "2024-12-23",
+          "nextMaintenance": "2024-12-23",
+          "cost": 17291,
+          "manufacturer": "Smart Manufacturer 12",
+          "warrantyUntil": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "department": "Foundation",
+          "status": "in_progress",
+          "serialNumber": "Rapid Serial Number 13",
+          "purchaseDate": "2024-01-25",
+          "lastMaintenance": "2024-01-25",
+          "nextMaintenance": "2024-01-25",
+          "cost": 19272,
+          "manufacturer": "Rapid Manufacturer 13",
+          "warrantyUntil": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "department": "Advanced",
+          "status": "active",
+          "serialNumber": "Secure Serial Number 14",
+          "purchaseDate": "2024-02-27",
+          "lastMaintenance": "2024-02-27",
+          "nextMaintenance": "2024-02-27",
+          "cost": 21253,
+          "manufacturer": "Secure Manufacturer 14",
+          "warrantyUntil": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "department": "Professional",
+          "status": "approved",
+          "serialNumber": "Modern Serial Number 15",
+          "purchaseDate": "2024-03-01",
+          "lastMaintenance": "2024-03-01",
+          "nextMaintenance": "2024-03-01",
+          "cost": 18234,
+          "manufacturer": "Modern Manufacturer 15",
+          "warrantyUntil": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Resource",
+      "routeKey": "resources",
+      "label": "Resource",
+      "icon": "heart",
+      "aiFunction": "analyzeResource",
+      "aiPrompt": "You are an AI analyst for A I Hospital Bed Resource Optimizer. Analyze the provided Resource data. The data includes: Name, Category, Department, Quantity, Unit, Min Quantity, Cost Per Unit, Supplier, Status, Reorder Point, Storage Location, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "unit",
+          "label": "Unit",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "minQuantity",
+          "label": "Min Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "costPerUnit",
+          "label": "Cost Per Unit",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "supplier",
+          "label": "Supplier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reorderPoint",
+          "label": "Reorder Point",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "storageLocation",
+          "label": "Storage Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "department": "Category A",
+          "quantity": 101,
+          "unit": "Advanced Unit 1",
+          "minQuantity": 191,
+          "costPerUnit": 500,
+          "supplier": "Advanced Supplier 1",
+          "status": "active",
+          "reorderPoint": 10,
+          "storageLocation": "New York",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "department": "Category B",
+          "quantity": 209,
+          "unit": "Premium Unit 2",
+          "minQuantity": 55,
+          "costPerUnit": 2481,
+          "supplier": "Premium Supplier 2",
+          "status": "pending",
+          "reorderPoint": 58,
+          "storageLocation": "Los Angeles",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "department": "Category C",
+          "quantity": 101,
+          "unit": "Standard Unit 3",
+          "minQuantity": 69,
+          "costPerUnit": 4462,
+          "supplier": "Standard Supplier 3",
+          "status": "in_progress",
+          "reorderPoint": 106,
+          "storageLocation": "Chicago",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "department": "Category D",
+          "quantity": 134,
+          "unit": "Elite Unit 4",
+          "minQuantity": 195,
+          "costPerUnit": 6443,
+          "supplier": "Elite Supplier 4",
+          "status": "completed",
+          "reorderPoint": 154,
+          "storageLocation": "Houston",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "department": "Category E",
+          "quantity": 122,
+          "unit": "Core Unit 5",
+          "minQuantity": 196,
+          "costPerUnit": 8424,
+          "supplier": "Core Supplier 5",
+          "status": "under_review",
+          "reorderPoint": 102,
+          "storageLocation": "Phoenix",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "department": "Premium Tier",
+          "quantity": 95,
+          "unit": "Pro Unit 6",
+          "minQuantity": 210,
+          "costPerUnit": 10405,
+          "supplier": "Pro Supplier 6",
+          "status": "approved",
+          "reorderPoint": 150,
+          "storageLocation": "San Francisco",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "department": "Standard Tier",
+          "quantity": 158,
+          "unit": "Essential Unit 7",
+          "minQuantity": 164,
+          "costPerUnit": 12386,
+          "supplier": "Essential Supplier 7",
+          "status": "active",
+          "reorderPoint": 198,
+          "storageLocation": "Seattle",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "department": "Basic Tier",
+          "quantity": 194,
+          "unit": "Primary Unit 8",
+          "minQuantity": 87,
+          "costPerUnit": 9367,
+          "supplier": "Primary Supplier 8",
+          "status": "active",
+          "reorderPoint": 146,
+          "storageLocation": "Boston",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "department": "Enterprise",
+          "quantity": 243,
+          "unit": "Global Unit 9",
+          "minQuantity": 62,
+          "costPerUnit": 11348,
+          "supplier": "Global Supplier 9",
+          "status": "active",
+          "reorderPoint": 194,
+          "storageLocation": "Denver",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "department": "Starter",
+          "quantity": 254,
+          "unit": "Regional Unit 10",
+          "minQuantity": 140,
+          "costPerUnit": 13329,
+          "supplier": "Regional Supplier 10",
+          "status": "pending",
+          "reorderPoint": 242,
+          "storageLocation": "Miami",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "department": "Growth",
+          "quantity": 265,
+          "unit": "Custom Unit 11",
+          "minQuantity": 124,
+          "costPerUnit": 15310,
+          "supplier": "Custom Supplier 11",
+          "status": "completed",
+          "reorderPoint": 190,
+          "storageLocation": "Austin",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "department": "Scale",
+          "quantity": 118,
+          "unit": "Smart Unit 12",
+          "minQuantity": 194,
+          "costPerUnit": 17291,
+          "supplier": "Smart Supplier 12",
+          "status": "active",
+          "reorderPoint": 238,
+          "storageLocation": "Portland",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "department": "Foundation",
+          "quantity": 190,
+          "unit": "Rapid Unit 13",
+          "minQuantity": 288,
+          "costPerUnit": 19272,
+          "supplier": "Rapid Supplier 13",
+          "status": "in_progress",
+          "reorderPoint": 286,
+          "storageLocation": "Dallas",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "department": "Advanced",
+          "quantity": 109,
+          "unit": "Secure Unit 14",
+          "minQuantity": 109,
+          "costPerUnit": 21253,
+          "supplier": "Secure Supplier 14",
+          "status": "active",
+          "reorderPoint": 234,
+          "storageLocation": "Atlanta",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "department": "Professional",
+          "quantity": 242,
+          "unit": "Modern Unit 15",
+          "minQuantity": 107,
+          "costPerUnit": 18234,
+          "supplier": "Modern Supplier 15",
+          "status": "approved",
+          "reorderPoint": 282,
+          "storageLocation": "Nashville",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "OperatingRoom",
+      "routeKey": "operating-rooms",
+      "label": "Operating Room",
+      "icon": "layers",
+      "aiFunction": "analyzeOperatingRoom",
+      "aiPrompt": "You are an AI analyst for A I Hospital Bed Resource Optimizer. Analyze the provided Operating Room data. The data includes: Room Number, Name, Floor, Status, Surgery Type, Surgeon, Patient Name, Scheduled Start, Scheduled End, Equipment Ready, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "roomNumber",
+          "label": "Room Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "floor",
+          "label": "Floor",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "surgeryType",
+          "label": "Surgery Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "surgeon",
+          "label": "Surgeon",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "patientName",
+          "label": "Patient Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledStart",
+          "label": "Scheduled Start",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "scheduledEnd",
+          "label": "Scheduled End",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "equipmentReady",
+          "label": "Equipment Ready",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "roomNumber": "Advanced Room Number 1",
+          "name": "Advanced Name 1",
+          "floor": 10,
+          "status": "active",
+          "surgeryType": "Category A",
+          "surgeon": "Advanced Surgeon 1",
+          "patientName": "Advanced Patient 1",
+          "scheduledStart": "2024-01-01",
+          "scheduledEnd": "2024-01-01",
+          "equipmentReady": true,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "roomNumber": "Premium Room Number 2",
+          "name": "Premium Name 2",
+          "floor": 58,
+          "status": "pending",
+          "surgeryType": "Category B",
+          "surgeon": "Premium Surgeon 2",
+          "patientName": "Premium Patient 2",
+          "scheduledStart": "2024-02-03",
+          "scheduledEnd": "2024-02-03",
+          "equipmentReady": true,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "roomNumber": "Standard Room Number 3",
+          "name": "Standard Name 3",
+          "floor": 106,
+          "status": "in_progress",
+          "surgeryType": "Category C",
+          "surgeon": "Standard Surgeon 3",
+          "patientName": "Standard Patient 3",
+          "scheduledStart": "2024-03-05",
+          "scheduledEnd": "2024-03-05",
+          "equipmentReady": false,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "roomNumber": "Elite Room Number 4",
+          "name": "Elite Name 4",
+          "floor": 154,
+          "status": "completed",
+          "surgeryType": "Category D",
+          "surgeon": "Elite Surgeon 4",
+          "patientName": "Elite Patient 4",
+          "scheduledStart": "2024-04-07",
+          "scheduledEnd": "2024-04-07",
+          "equipmentReady": true,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "roomNumber": "Core Room Number 5",
+          "name": "Core Name 5",
+          "floor": 102,
+          "status": "under_review",
+          "surgeryType": "Category E",
+          "surgeon": "Core Surgeon 5",
+          "patientName": "Core Patient 5",
+          "scheduledStart": "2024-05-09",
+          "scheduledEnd": "2024-05-09",
+          "equipmentReady": false,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "roomNumber": "Pro Room Number 6",
+          "name": "Pro Name 6",
+          "floor": 150,
+          "status": "approved",
+          "surgeryType": "Premium Tier",
+          "surgeon": "Pro Surgeon 6",
+          "patientName": "Pro Patient 6",
+          "scheduledStart": "2024-06-11",
+          "scheduledEnd": "2024-06-11",
+          "equipmentReady": true,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "roomNumber": "Essential Room Number 7",
+          "name": "Essential Name 7",
+          "floor": 198,
+          "status": "active",
+          "surgeryType": "Standard Tier",
+          "surgeon": "Essential Surgeon 7",
+          "patientName": "Essential Patient 7",
+          "scheduledStart": "2024-07-13",
+          "scheduledEnd": "2024-07-13",
+          "equipmentReady": true,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "roomNumber": "Primary Room Number 8",
+          "name": "Primary Name 8",
+          "floor": 146,
+          "status": "active",
+          "surgeryType": "Basic Tier",
+          "surgeon": "Primary Surgeon 8",
+          "patientName": "Primary Patient 8",
+          "scheduledStart": "2024-08-15",
+          "scheduledEnd": "2024-08-15",
+          "equipmentReady": false,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "roomNumber": "Global Room Number 9",
+          "name": "Global Name 9",
+          "floor": 194,
+          "status": "active",
+          "surgeryType": "Enterprise",
+          "surgeon": "Global Surgeon 9",
+          "patientName": "Global Patient 9",
+          "scheduledStart": "2024-09-17",
+          "scheduledEnd": "2024-09-17",
+          "equipmentReady": true,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "roomNumber": "Regional Room Number 10",
+          "name": "Regional Name 10",
+          "floor": 242,
+          "status": "pending",
+          "surgeryType": "Starter",
+          "surgeon": "Regional Surgeon 10",
+          "patientName": "Regional Patient 10",
+          "scheduledStart": "2024-10-19",
+          "scheduledEnd": "2024-10-19",
+          "equipmentReady": true,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "roomNumber": "Custom Room Number 11",
+          "name": "Custom Name 11",
+          "floor": 190,
+          "status": "completed",
+          "surgeryType": "Growth",
+          "surgeon": "Custom Surgeon 11",
+          "patientName": "Custom Patient 11",
+          "scheduledStart": "2024-11-21",
+          "scheduledEnd": "2024-11-21",
+          "equipmentReady": false,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "roomNumber": "Smart Room Number 12",
+          "name": "Smart Name 12",
+          "floor": 238,
+          "status": "active",
+          "surgeryType": "Scale",
+          "surgeon": "Smart Surgeon 12",
+          "patientName": "Smart Patient 12",
+          "scheduledStart": "2024-12-23",
+          "scheduledEnd": "2024-12-23",
+          "equipmentReady": true,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "roomNumber": "Rapid Room Number 13",
+          "name": "Rapid Name 13",
+          "floor": 286,
+          "status": "in_progress",
+          "surgeryType": "Foundation",
+          "surgeon": "Rapid Surgeon 13",
+          "patientName": "Rapid Patient 13",
+          "scheduledStart": "2024-01-25",
+          "scheduledEnd": "2024-01-25",
+          "equipmentReady": false,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "roomNumber": "Secure Room Number 14",
+          "name": "Secure Name 14",
+          "floor": 234,
+          "status": "active",
+          "surgeryType": "Advanced",
+          "surgeon": "Secure Surgeon 14",
+          "patientName": "Secure Patient 14",
+          "scheduledStart": "2024-02-27",
+          "scheduledEnd": "2024-02-27",
+          "equipmentReady": true,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "roomNumber": "Modern Room Number 15",
+          "name": "Modern Name 15",
+          "floor": 282,
+          "status": "approved",
+          "surgeryType": "Professional",
+          "surgeon": "Modern Surgeon 15",
+          "patientName": "Modern Patient 15",
+          "scheduledStart": "2024-03-01",
+          "scheduledEnd": "2024-03-01",
+          "equipmentReady": true,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Supplie",
+      "routeKey": "supplies",
+      "label": "Supplie",
+      "icon": "map-pin",
+      "aiFunction": "analyzeSupplie",
+      "aiPrompt": "You are an AI analyst for A I Hospital Bed Resource Optimizer. Analyze the provided Supplie data. The data includes: Name, Category, Quantity, Unit, Min Quantity, Cost Per Unit, Supplier, Expiry Date, Storage Location, Status, Department, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "unit",
+          "label": "Unit",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "minQuantity",
+          "label": "Min Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "costPerUnit",
+          "label": "Cost Per Unit",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "supplier",
+          "label": "Supplier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "storageLocation",
+          "label": "Storage Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "quantity": 70,
+          "unit": "Advanced Unit 1",
+          "minQuantity": 122,
+          "costPerUnit": 500,
+          "supplier": "Advanced Supplier 1",
+          "expiryDate": "2024-01-01",
+          "storageLocation": "New York",
+          "status": "active",
+          "department": "Category A",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "quantity": 38,
+          "unit": "Premium Unit 2",
+          "minQuantity": 72,
+          "costPerUnit": 2481,
+          "supplier": "Premium Supplier 2",
+          "expiryDate": "2024-02-03",
+          "storageLocation": "Los Angeles",
+          "status": "pending",
+          "department": "Category B",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "quantity": 97,
+          "unit": "Standard Unit 3",
+          "minQuantity": 37,
+          "costPerUnit": 4462,
+          "supplier": "Standard Supplier 3",
+          "expiryDate": "2024-03-05",
+          "storageLocation": "Chicago",
+          "status": "in_progress",
+          "department": "Category C",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "quantity": 92,
+          "unit": "Elite Unit 4",
+          "minQuantity": 161,
+          "costPerUnit": 6443,
+          "supplier": "Elite Supplier 4",
+          "expiryDate": "2024-04-07",
+          "storageLocation": "Houston",
+          "status": "completed",
+          "department": "Category D",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "quantity": 45,
+          "unit": "Core Unit 5",
+          "minQuantity": 115,
+          "costPerUnit": 8424,
+          "supplier": "Core Supplier 5",
+          "expiryDate": "2024-05-09",
+          "storageLocation": "Phoenix",
+          "status": "under_review",
+          "department": "Category E",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "quantity": 111,
+          "unit": "Pro Unit 6",
+          "minQuantity": 184,
+          "costPerUnit": 10405,
+          "supplier": "Pro Supplier 6",
+          "expiryDate": "2024-06-11",
+          "storageLocation": "San Francisco",
+          "status": "approved",
+          "department": "Premium Tier",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "quantity": 220,
+          "unit": "Essential Unit 7",
+          "minQuantity": 107,
+          "costPerUnit": 12386,
+          "supplier": "Essential Supplier 7",
+          "expiryDate": "2024-07-13",
+          "storageLocation": "Seattle",
+          "status": "active",
+          "department": "Standard Tier",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "quantity": 66,
+          "unit": "Primary Unit 8",
+          "minQuantity": 209,
+          "costPerUnit": 9367,
+          "supplier": "Primary Supplier 8",
+          "expiryDate": "2024-08-15",
+          "storageLocation": "Boston",
+          "status": "active",
+          "department": "Basic Tier",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "quantity": 187,
+          "unit": "Global Unit 9",
+          "minQuantity": 215,
+          "costPerUnit": 11348,
+          "supplier": "Global Supplier 9",
+          "expiryDate": "2024-09-17",
+          "storageLocation": "Denver",
+          "status": "active",
+          "department": "Enterprise",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "quantity": 128,
+          "unit": "Regional Unit 10",
+          "minQuantity": 184,
+          "costPerUnit": 13329,
+          "supplier": "Regional Supplier 10",
+          "expiryDate": "2024-10-19",
+          "storageLocation": "Miami",
+          "status": "pending",
+          "department": "Starter",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "quantity": 91,
+          "unit": "Custom Unit 11",
+          "minQuantity": 245,
+          "costPerUnit": 15310,
+          "supplier": "Custom Supplier 11",
+          "expiryDate": "2024-11-21",
+          "storageLocation": "Austin",
+          "status": "completed",
+          "department": "Growth",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "quantity": 261,
+          "unit": "Smart Unit 12",
+          "minQuantity": 89,
+          "costPerUnit": 17291,
+          "supplier": "Smart Supplier 12",
+          "expiryDate": "2024-12-23",
+          "storageLocation": "Portland",
+          "status": "active",
+          "department": "Scale",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "quantity": 201,
+          "unit": "Rapid Unit 13",
+          "minQuantity": 163,
+          "costPerUnit": 19272,
+          "supplier": "Rapid Supplier 13",
+          "expiryDate": "2024-01-25",
+          "storageLocation": "Dallas",
+          "status": "in_progress",
+          "department": "Foundation",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "quantity": 157,
+          "unit": "Secure Unit 14",
+          "minQuantity": 133,
+          "costPerUnit": 21253,
+          "supplier": "Secure Supplier 14",
+          "expiryDate": "2024-02-27",
+          "storageLocation": "Atlanta",
+          "status": "active",
+          "department": "Advanced",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "quantity": 286,
+          "unit": "Modern Unit 15",
+          "minQuantity": 197,
+          "costPerUnit": 18234,
+          "supplier": "Modern Supplier 15",
+          "expiryDate": "2024-03-01",
+          "storageLocation": "Nashville",
+          "status": "approved",
+          "department": "Professional",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "EmergencyCapacity",
+      "routeKey": "emergency-capacitys",
+      "label": "Emergency Capacity",
+      "icon": "package",
+      "aiFunction": "analyzeEmergencyCapacity",
+      "aiPrompt": "You are an AI analyst for A I Hospital Bed Resource Optimizer. Analyze the provided Emergency Capacity data. The data includes: Plan Name, Scenario Type, Severity Level, Total Beds Needed, Current Available, Surge Capacity, Staff Required, Equipment Needed, Estimated Duration, Activation Status, Coordinator, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "planName",
+          "label": "Plan Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scenarioType",
+          "label": "Scenario Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "severityLevel",
+          "label": "Severity Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalBedsNeeded",
+          "label": "Total Beds Needed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "currentAvailable",
+          "label": "Current Available",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "surgeCapacity",
+          "label": "Surge Capacity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "staffRequired",
+          "label": "Staff Required",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "equipmentNeeded",
+          "label": "Equipment Needed",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "estimatedDuration",
+          "label": "Estimated Duration",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "activationStatus",
+          "label": "Activation Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "coordinator",
+          "label": "Coordinator",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "planName": "Advanced Plan 1",
+          "scenarioType": "Category A",
+          "severityLevel": "low",
+          "totalBedsNeeded": 10,
+          "currentAvailable": 10,
+          "surgeCapacity": 10,
+          "staffRequired": 10,
+          "equipmentNeeded": "Comprehensive solution designed for optimal performance and efficiency.",
+          "estimatedDuration": "Advanced Estimated Duration 1",
+          "activationStatus": "active",
+          "coordinator": "Advanced Coordinator 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "planName": "Premium Plan 2",
+          "scenarioType": "Category B",
+          "severityLevel": "medium",
+          "totalBedsNeeded": 58,
+          "currentAvailable": 58,
+          "surgeCapacity": 58,
+          "staffRequired": 58,
+          "equipmentNeeded": "Industry-leading approach with proven results across multiple deployments.",
+          "estimatedDuration": "Premium Estimated Duration 2",
+          "activationStatus": "pending",
+          "coordinator": "Premium Coordinator 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "planName": "Standard Plan 3",
+          "scenarioType": "Category C",
+          "severityLevel": "high",
+          "totalBedsNeeded": 106,
+          "currentAvailable": 106,
+          "surgeCapacity": 106,
+          "staffRequired": 106,
+          "equipmentNeeded": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "estimatedDuration": "Standard Estimated Duration 3",
+          "activationStatus": "in_progress",
+          "coordinator": "Standard Coordinator 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "planName": "Elite Plan 4",
+          "scenarioType": "Category D",
+          "severityLevel": "critical",
+          "totalBedsNeeded": 154,
+          "currentAvailable": 154,
+          "surgeCapacity": 154,
+          "staffRequired": 154,
+          "equipmentNeeded": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "estimatedDuration": "Elite Estimated Duration 4",
+          "activationStatus": "completed",
+          "coordinator": "Elite Coordinator 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "planName": "Core Plan 5",
+          "scenarioType": "Category E",
+          "severityLevel": "medium",
+          "totalBedsNeeded": 102,
+          "currentAvailable": 102,
+          "surgeCapacity": 102,
+          "staffRequired": 102,
+          "equipmentNeeded": "Cost-effective strategy focused on sustainable long-term growth.",
+          "estimatedDuration": "Core Estimated Duration 5",
+          "activationStatus": "under_review",
+          "coordinator": "Core Coordinator 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "planName": "Pro Plan 6",
+          "scenarioType": "Premium Tier",
+          "severityLevel": "low",
+          "totalBedsNeeded": 150,
+          "currentAvailable": 150,
+          "surgeCapacity": 150,
+          "staffRequired": 150,
+          "equipmentNeeded": "High-priority initiative aligned with organizational strategic objectives.",
+          "estimatedDuration": "Pro Estimated Duration 6",
+          "activationStatus": "approved",
+          "coordinator": "Pro Coordinator 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "planName": "Essential Plan 7",
+          "scenarioType": "Standard Tier",
+          "severityLevel": "medium",
+          "totalBedsNeeded": 198,
+          "currentAvailable": 198,
+          "surgeCapacity": 198,
+          "staffRequired": 198,
+          "equipmentNeeded": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "estimatedDuration": "Essential Estimated Duration 7",
+          "activationStatus": "active",
+          "coordinator": "Essential Coordinator 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "planName": "Primary Plan 8",
+          "scenarioType": "Basic Tier",
+          "severityLevel": "high",
+          "totalBedsNeeded": 146,
+          "currentAvailable": 146,
+          "surgeCapacity": 146,
+          "staffRequired": 146,
+          "equipmentNeeded": "Innovative framework incorporating best practices and emerging technologies.",
+          "estimatedDuration": "Primary Estimated Duration 8",
+          "activationStatus": "active",
+          "coordinator": "Primary Coordinator 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "planName": "Global Plan 9",
+          "scenarioType": "Enterprise",
+          "severityLevel": "critical",
+          "totalBedsNeeded": 194,
+          "currentAvailable": 194,
+          "surgeCapacity": 194,
+          "staffRequired": 194,
+          "equipmentNeeded": "Scalable architecture built to accommodate rapid expansion and change.",
+          "estimatedDuration": "Global Estimated Duration 9",
+          "activationStatus": "active",
+          "coordinator": "Global Coordinator 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "planName": "Regional Plan 10",
+          "scenarioType": "Starter",
+          "severityLevel": "medium",
+          "totalBedsNeeded": 242,
+          "currentAvailable": 242,
+          "surgeCapacity": 242,
+          "staffRequired": 242,
+          "equipmentNeeded": "Enterprise-grade solution with robust security and compliance features.",
+          "estimatedDuration": "Regional Estimated Duration 10",
+          "activationStatus": "pending",
+          "coordinator": "Regional Coordinator 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "planName": "Custom Plan 11",
+          "scenarioType": "Growth",
+          "severityLevel": "low",
+          "totalBedsNeeded": 190,
+          "currentAvailable": 190,
+          "surgeCapacity": 190,
+          "staffRequired": 190,
+          "equipmentNeeded": "Integrated platform connecting multiple systems for seamless operations.",
+          "estimatedDuration": "Custom Estimated Duration 11",
+          "activationStatus": "completed",
+          "coordinator": "Custom Coordinator 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "planName": "Smart Plan 12",
+          "scenarioType": "Scale",
+          "severityLevel": "medium",
+          "totalBedsNeeded": 238,
+          "currentAvailable": 238,
+          "surgeCapacity": 238,
+          "staffRequired": 238,
+          "equipmentNeeded": "Automated workflow reducing manual intervention and human error.",
+          "estimatedDuration": "Smart Estimated Duration 12",
+          "activationStatus": "active",
+          "coordinator": "Smart Coordinator 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "planName": "Rapid Plan 13",
+          "scenarioType": "Foundation",
+          "severityLevel": "high",
+          "totalBedsNeeded": 286,
+          "currentAvailable": 286,
+          "surgeCapacity": 286,
+          "staffRequired": 286,
+          "equipmentNeeded": "Real-time monitoring system with intelligent alerting capabilities.",
+          "estimatedDuration": "Rapid Estimated Duration 13",
+          "activationStatus": "in_progress",
+          "coordinator": "Rapid Coordinator 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "planName": "Secure Plan 14",
+          "scenarioType": "Advanced",
+          "severityLevel": "critical",
+          "totalBedsNeeded": 234,
+          "currentAvailable": 234,
+          "surgeCapacity": 234,
+          "staffRequired": 234,
+          "equipmentNeeded": "Customizable module adaptable to diverse operational requirements.",
+          "estimatedDuration": "Secure Estimated Duration 14",
+          "activationStatus": "active",
+          "coordinator": "Secure Coordinator 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "planName": "Modern Plan 15",
+          "scenarioType": "Professional",
+          "severityLevel": "medium",
+          "totalBedsNeeded": 282,
+          "currentAvailable": 282,
+          "surgeCapacity": 282,
+          "staffRequired": 282,
+          "equipmentNeeded": "Performance-optimized design achieving superior throughput and reliability.",
+          "estimatedDuration": "Modern Estimated Duration 15",
+          "activationStatus": "approved",
+          "coordinator": "Modern Coordinator 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

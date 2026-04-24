@@ -1,0 +1,2947 @@
+{
+  "appName": "A I Podcast Producer",
+  "dbName": "a_i_podcast_producer",
+  "folderName": "generated/AIPodcastProducer",
+  "features": [
+    {
+      "modelName": "Episode",
+      "routeKey": "episodes",
+      "label": "Episode",
+      "icon": "activity",
+      "aiFunction": "analyzeEpisode",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Episode data. The data includes: Title, Description, Status, Duration, Publish Date, Guest Name, Category, Tags, Audio Url, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "duration",
+          "label": "Duration",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "publishDate",
+          "label": "Publish Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "guestName",
+          "label": "Guest Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tags",
+          "label": "Tags",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "audioUrl",
+          "label": "Audio Url",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "duration": "Advanced Duration 1",
+          "publishDate": "2024-01-01",
+          "guestName": "Advanced Guest 1",
+          "category": "Category A",
+          "tags": "Comprehensive solution designed for optimal performance and efficiency.",
+          "audioUrl": "https://example.com/audioUrl/1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "duration": "Premium Duration 2",
+          "publishDate": "2024-02-03",
+          "guestName": "Premium Guest 2",
+          "category": "Category B",
+          "tags": "Industry-leading approach with proven results across multiple deployments.",
+          "audioUrl": "https://example.com/audioUrl/2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "duration": "Standard Duration 3",
+          "publishDate": "2024-03-05",
+          "guestName": "Standard Guest 3",
+          "category": "Category C",
+          "tags": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "audioUrl": "https://example.com/audioUrl/3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "duration": "Elite Duration 4",
+          "publishDate": "2024-04-07",
+          "guestName": "Elite Guest 4",
+          "category": "Category D",
+          "tags": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "audioUrl": "https://example.com/audioUrl/4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "duration": "Core Duration 5",
+          "publishDate": "2024-05-09",
+          "guestName": "Core Guest 5",
+          "category": "Category E",
+          "tags": "Cost-effective strategy focused on sustainable long-term growth.",
+          "audioUrl": "https://example.com/audioUrl/5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "duration": "Pro Duration 6",
+          "publishDate": "2024-06-11",
+          "guestName": "Pro Guest 6",
+          "category": "Premium Tier",
+          "tags": "High-priority initiative aligned with organizational strategic objectives.",
+          "audioUrl": "https://example.com/audioUrl/6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "duration": "Essential Duration 7",
+          "publishDate": "2024-07-13",
+          "guestName": "Essential Guest 7",
+          "category": "Standard Tier",
+          "tags": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "audioUrl": "https://example.com/audioUrl/7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "duration": "Primary Duration 8",
+          "publishDate": "2024-08-15",
+          "guestName": "Primary Guest 8",
+          "category": "Basic Tier",
+          "tags": "Innovative framework incorporating best practices and emerging technologies.",
+          "audioUrl": "https://example.com/audioUrl/8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "duration": "Global Duration 9",
+          "publishDate": "2024-09-17",
+          "guestName": "Global Guest 9",
+          "category": "Enterprise",
+          "tags": "Scalable architecture built to accommodate rapid expansion and change.",
+          "audioUrl": "https://example.com/audioUrl/9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "duration": "Regional Duration 10",
+          "publishDate": "2024-10-19",
+          "guestName": "Regional Guest 10",
+          "category": "Starter",
+          "tags": "Enterprise-grade solution with robust security and compliance features.",
+          "audioUrl": "https://example.com/audioUrl/10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "duration": "Custom Duration 11",
+          "publishDate": "2024-11-21",
+          "guestName": "Custom Guest 11",
+          "category": "Growth",
+          "tags": "Integrated platform connecting multiple systems for seamless operations.",
+          "audioUrl": "https://example.com/audioUrl/11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "duration": "Smart Duration 12",
+          "publishDate": "2024-12-23",
+          "guestName": "Smart Guest 12",
+          "category": "Scale",
+          "tags": "Automated workflow reducing manual intervention and human error.",
+          "audioUrl": "https://example.com/audioUrl/12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "duration": "Rapid Duration 13",
+          "publishDate": "2024-01-25",
+          "guestName": "Rapid Guest 13",
+          "category": "Foundation",
+          "tags": "Real-time monitoring system with intelligent alerting capabilities.",
+          "audioUrl": "https://example.com/audioUrl/13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "duration": "Secure Duration 14",
+          "publishDate": "2024-02-27",
+          "guestName": "Secure Guest 14",
+          "category": "Advanced",
+          "tags": "Customizable module adaptable to diverse operational requirements.",
+          "audioUrl": "https://example.com/audioUrl/14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "duration": "Modern Duration 15",
+          "publishDate": "2024-03-01",
+          "guestName": "Modern Guest 15",
+          "category": "Professional",
+          "tags": "Performance-optimized design achieving superior throughput and reliability.",
+          "audioUrl": "https://example.com/audioUrl/15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Guest",
+      "routeKey": "guests",
+      "label": "Guest",
+      "icon": "briefcase",
+      "aiFunction": "analyzeGuest",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Guest data. The data includes: Name, Email, Bio, Expertise, Company, Social Links, Status, Notes, Episode Count, Rating. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "bio",
+          "label": "Bio",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "expertise",
+          "label": "Expertise",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "company",
+          "label": "Company",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "socialLinks",
+          "label": "Social Links",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "episodeCount",
+          "label": "Episode Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "bio": "Comprehensive solution designed for optimal performance and efficiency.",
+          "expertise": "Advanced Expertise 1",
+          "company": "Advanced Company 1",
+          "socialLinks": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "episodeCount": 26,
+          "rating": 1.5
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "bio": "Industry-leading approach with proven results across multiple deployments.",
+          "expertise": "Premium Expertise 2",
+          "company": "Premium Company 2",
+          "socialLinks": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "episodeCount": 58,
+          "rating": 2.1
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "bio": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "expertise": "Standard Expertise 3",
+          "company": "Standard Company 3",
+          "socialLinks": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "episodeCount": 41,
+          "rating": 2.7
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "bio": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "expertise": "Elite Expertise 4",
+          "company": "Elite Company 4",
+          "socialLinks": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "episodeCount": 60,
+          "rating": 3.3
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "bio": "Cost-effective strategy focused on sustainable long-term growth.",
+          "expertise": "Core Expertise 5",
+          "company": "Core Company 5",
+          "socialLinks": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "episodeCount": 189,
+          "rating": 3.9
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "bio": "High-priority initiative aligned with organizational strategic objectives.",
+          "expertise": "Pro Expertise 6",
+          "company": "Pro Company 6",
+          "socialLinks": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "episodeCount": 159,
+          "rating": 4.5
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "bio": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "expertise": "Essential Expertise 7",
+          "company": "Essential Company 7",
+          "socialLinks": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "episodeCount": 144,
+          "rating": 5.1
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "bio": "Innovative framework incorporating best practices and emerging technologies.",
+          "expertise": "Primary Expertise 8",
+          "company": "Primary Company 8",
+          "socialLinks": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "episodeCount": 114,
+          "rating": 5.7
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "bio": "Scalable architecture built to accommodate rapid expansion and change.",
+          "expertise": "Global Expertise 9",
+          "company": "Global Company 9",
+          "socialLinks": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "episodeCount": 68,
+          "rating": 6.3
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "bio": "Enterprise-grade solution with robust security and compliance features.",
+          "expertise": "Regional Expertise 10",
+          "company": "Regional Company 10",
+          "socialLinks": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "episodeCount": 233,
+          "rating": 1.9
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "bio": "Integrated platform connecting multiple systems for seamless operations.",
+          "expertise": "Custom Expertise 11",
+          "company": "Custom Company 11",
+          "socialLinks": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "episodeCount": 118,
+          "rating": 2.5
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "bio": "Automated workflow reducing manual intervention and human error.",
+          "expertise": "Smart Expertise 12",
+          "company": "Smart Company 12",
+          "socialLinks": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "episodeCount": 220,
+          "rating": 3.1
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "bio": "Real-time monitoring system with intelligent alerting capabilities.",
+          "expertise": "Rapid Expertise 13",
+          "company": "Rapid Company 13",
+          "socialLinks": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "episodeCount": 266,
+          "rating": 3.7
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "bio": "Customizable module adaptable to diverse operational requirements.",
+          "expertise": "Secure Expertise 14",
+          "company": "Secure Company 14",
+          "socialLinks": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "episodeCount": 224,
+          "rating": 4.3
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "bio": "Performance-optimized design achieving superior throughput and reliability.",
+          "expertise": "Modern Expertise 15",
+          "company": "Modern Company 15",
+          "socialLinks": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "episodeCount": 173,
+          "rating": 4.9
+        }
+      ]
+    },
+    {
+      "modelName": "Script",
+      "routeKey": "scripts",
+      "label": "Script",
+      "icon": "clipboard",
+      "aiFunction": "analyzeScript",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Script data. The data includes: Title, Content, Episode Id, Type, Status, Word Count, Duration Estimate, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "episodeId",
+          "label": "Episode Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "wordCount",
+          "label": "Word Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "durationEstimate",
+          "label": "Duration Estimate",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "episodeId": 10,
+          "type": "Category A",
+          "status": "active",
+          "wordCount": 54,
+          "durationEstimate": "Advanced Duration Estimate 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "title": "Premium Title 2",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "episodeId": 58,
+          "type": "Category B",
+          "status": "pending",
+          "wordCount": 122,
+          "durationEstimate": "Premium Duration Estimate 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "title": "Standard Title 3",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "episodeId": 106,
+          "type": "Category C",
+          "status": "in_progress",
+          "wordCount": 195,
+          "durationEstimate": "Standard Duration Estimate 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "title": "Elite Title 4",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "episodeId": 154,
+          "type": "Category D",
+          "status": "completed",
+          "wordCount": 68,
+          "durationEstimate": "Elite Duration Estimate 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "title": "Core Title 5",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "episodeId": 102,
+          "type": "Category E",
+          "status": "under_review",
+          "wordCount": 138,
+          "durationEstimate": "Core Duration Estimate 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "title": "Pro Title 6",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "episodeId": 150,
+          "type": "Premium Tier",
+          "status": "approved",
+          "wordCount": 231,
+          "durationEstimate": "Pro Duration Estimate 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "title": "Essential Title 7",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "episodeId": 198,
+          "type": "Standard Tier",
+          "status": "active",
+          "wordCount": 205,
+          "durationEstimate": "Essential Duration Estimate 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "title": "Primary Title 8",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "episodeId": 146,
+          "type": "Basic Tier",
+          "status": "active",
+          "wordCount": 174,
+          "durationEstimate": "Primary Duration Estimate 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "title": "Global Title 9",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "episodeId": 194,
+          "type": "Enterprise",
+          "status": "active",
+          "wordCount": 238,
+          "durationEstimate": "Global Duration Estimate 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "title": "Regional Title 10",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "episodeId": 242,
+          "type": "Starter",
+          "status": "pending",
+          "wordCount": 261,
+          "durationEstimate": "Regional Duration Estimate 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "title": "Custom Title 11",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "episodeId": 190,
+          "type": "Growth",
+          "status": "completed",
+          "wordCount": 122,
+          "durationEstimate": "Custom Duration Estimate 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "title": "Smart Title 12",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "episodeId": 238,
+          "type": "Scale",
+          "status": "active",
+          "wordCount": 157,
+          "durationEstimate": "Smart Duration Estimate 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "title": "Rapid Title 13",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "episodeId": 286,
+          "type": "Foundation",
+          "status": "in_progress",
+          "wordCount": 148,
+          "durationEstimate": "Rapid Duration Estimate 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "title": "Secure Title 14",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "episodeId": 234,
+          "type": "Advanced",
+          "status": "active",
+          "wordCount": 145,
+          "durationEstimate": "Secure Duration Estimate 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "title": "Modern Title 15",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "episodeId": 282,
+          "type": "Professional",
+          "status": "approved",
+          "wordCount": 117,
+          "durationEstimate": "Modern Duration Estimate 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Topic",
+      "routeKey": "topics",
+      "label": "Topic",
+      "icon": "database",
+      "aiFunction": "analyzeTopic",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Topic data. The data includes: Title, Description, Category, Trending Score, Source, Status, Target Audience, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "trendingScore",
+          "label": "Trending Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "targetAudience",
+          "label": "Target Audience",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "Category A",
+          "trendingScore": 1.5,
+          "source": "Advanced Source 1",
+          "status": "active",
+          "targetAudience": "Advanced Target Audience 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "Category B",
+          "trendingScore": 2.1,
+          "source": "Premium Source 2",
+          "status": "pending",
+          "targetAudience": "Premium Target Audience 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "Category C",
+          "trendingScore": 2.7,
+          "source": "Standard Source 3",
+          "status": "in_progress",
+          "targetAudience": "Standard Target Audience 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "Category D",
+          "trendingScore": 3.3,
+          "source": "Elite Source 4",
+          "status": "completed",
+          "targetAudience": "Elite Target Audience 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "Category E",
+          "trendingScore": 3.9,
+          "source": "Core Source 5",
+          "status": "under_review",
+          "targetAudience": "Core Target Audience 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "Premium Tier",
+          "trendingScore": 4.5,
+          "source": "Pro Source 6",
+          "status": "approved",
+          "targetAudience": "Pro Target Audience 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "Standard Tier",
+          "trendingScore": 5.1,
+          "source": "Essential Source 7",
+          "status": "active",
+          "targetAudience": "Essential Target Audience 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "Basic Tier",
+          "trendingScore": 5.7,
+          "source": "Primary Source 8",
+          "status": "active",
+          "targetAudience": "Primary Target Audience 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "Enterprise",
+          "trendingScore": 6.3,
+          "source": "Global Source 9",
+          "status": "active",
+          "targetAudience": "Global Target Audience 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "Starter",
+          "trendingScore": 1.9,
+          "source": "Regional Source 10",
+          "status": "pending",
+          "targetAudience": "Regional Target Audience 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "Growth",
+          "trendingScore": 2.5,
+          "source": "Custom Source 11",
+          "status": "completed",
+          "targetAudience": "Custom Target Audience 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "category": "Scale",
+          "trendingScore": 3.1,
+          "source": "Smart Source 12",
+          "status": "active",
+          "targetAudience": "Smart Target Audience 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "Foundation",
+          "trendingScore": 3.7,
+          "source": "Rapid Source 13",
+          "status": "in_progress",
+          "targetAudience": "Rapid Target Audience 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "category": "Advanced",
+          "trendingScore": 4.3,
+          "source": "Secure Source 14",
+          "status": "active",
+          "targetAudience": "Secure Target Audience 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "Professional",
+          "trendingScore": 4.9,
+          "source": "Modern Source 15",
+          "status": "approved",
+          "targetAudience": "Modern Target Audience 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "ShowNote",
+      "routeKey": "show-notes",
+      "label": "Show Note",
+      "icon": "file-text",
+      "aiFunction": "analyzeShowNote",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Show Note data. The data includes: Title, Content, Episode Id, Key Points, Resources, Timestamps, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "episodeId",
+          "label": "Episode Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "keyPoints",
+          "label": "Key Points",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "resources",
+          "label": "Resources",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "timestamps",
+          "label": "Timestamps",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "episodeId": 10,
+          "keyPoints": "Comprehensive solution designed for optimal performance and efficiency.",
+          "resources": "Comprehensive solution designed for optimal performance and efficiency.",
+          "timestamps": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "title": "Premium Title 2",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "episodeId": 58,
+          "keyPoints": "Industry-leading approach with proven results across multiple deployments.",
+          "resources": "Industry-leading approach with proven results across multiple deployments.",
+          "timestamps": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "title": "Standard Title 3",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "episodeId": 106,
+          "keyPoints": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "resources": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "timestamps": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "title": "Elite Title 4",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "episodeId": 154,
+          "keyPoints": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "resources": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "timestamps": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "title": "Core Title 5",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "episodeId": 102,
+          "keyPoints": "Cost-effective strategy focused on sustainable long-term growth.",
+          "resources": "Cost-effective strategy focused on sustainable long-term growth.",
+          "timestamps": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "title": "Pro Title 6",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "episodeId": 150,
+          "keyPoints": "High-priority initiative aligned with organizational strategic objectives.",
+          "resources": "High-priority initiative aligned with organizational strategic objectives.",
+          "timestamps": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "title": "Essential Title 7",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "episodeId": 198,
+          "keyPoints": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "resources": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "timestamps": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "title": "Primary Title 8",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "episodeId": 146,
+          "keyPoints": "Innovative framework incorporating best practices and emerging technologies.",
+          "resources": "Innovative framework incorporating best practices and emerging technologies.",
+          "timestamps": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "title": "Global Title 9",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "episodeId": 194,
+          "keyPoints": "Scalable architecture built to accommodate rapid expansion and change.",
+          "resources": "Scalable architecture built to accommodate rapid expansion and change.",
+          "timestamps": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "title": "Regional Title 10",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "episodeId": 242,
+          "keyPoints": "Enterprise-grade solution with robust security and compliance features.",
+          "resources": "Enterprise-grade solution with robust security and compliance features.",
+          "timestamps": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "title": "Custom Title 11",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "episodeId": 190,
+          "keyPoints": "Integrated platform connecting multiple systems for seamless operations.",
+          "resources": "Integrated platform connecting multiple systems for seamless operations.",
+          "timestamps": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "title": "Smart Title 12",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "episodeId": 238,
+          "keyPoints": "Automated workflow reducing manual intervention and human error.",
+          "resources": "Automated workflow reducing manual intervention and human error.",
+          "timestamps": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "title": "Rapid Title 13",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "episodeId": 286,
+          "keyPoints": "Real-time monitoring system with intelligent alerting capabilities.",
+          "resources": "Real-time monitoring system with intelligent alerting capabilities.",
+          "timestamps": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "title": "Secure Title 14",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "episodeId": 234,
+          "keyPoints": "Customizable module adaptable to diverse operational requirements.",
+          "resources": "Customizable module adaptable to diverse operational requirements.",
+          "timestamps": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "title": "Modern Title 15",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "episodeId": 282,
+          "keyPoints": "Performance-optimized design achieving superior throughput and reliability.",
+          "resources": "Performance-optimized design achieving superior throughput and reliability.",
+          "timestamps": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "IntrosOutro",
+      "routeKey": "intros-outros",
+      "label": "Intros Outro",
+      "icon": "heart",
+      "aiFunction": "analyzeIntrosOutro",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Intros Outro data. The data includes: Title, Content, Type, Tone, Duration Estimate, Episode Id, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tone",
+          "label": "Tone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "durationEstimate",
+          "label": "Duration Estimate",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "episodeId",
+          "label": "Episode Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "type": "Category A",
+          "tone": "Advanced Tone 1",
+          "durationEstimate": "Advanced Duration Estimate 1",
+          "episodeId": 10,
+          "status": "active"
+        },
+        {
+          "title": "Premium Title 2",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "type": "Category B",
+          "tone": "Premium Tone 2",
+          "durationEstimate": "Premium Duration Estimate 2",
+          "episodeId": 58,
+          "status": "pending"
+        },
+        {
+          "title": "Standard Title 3",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "type": "Category C",
+          "tone": "Standard Tone 3",
+          "durationEstimate": "Standard Duration Estimate 3",
+          "episodeId": 106,
+          "status": "in_progress"
+        },
+        {
+          "title": "Elite Title 4",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "type": "Category D",
+          "tone": "Elite Tone 4",
+          "durationEstimate": "Elite Duration Estimate 4",
+          "episodeId": 154,
+          "status": "completed"
+        },
+        {
+          "title": "Core Title 5",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "type": "Category E",
+          "tone": "Core Tone 5",
+          "durationEstimate": "Core Duration Estimate 5",
+          "episodeId": 102,
+          "status": "under_review"
+        },
+        {
+          "title": "Pro Title 6",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "type": "Premium Tier",
+          "tone": "Pro Tone 6",
+          "durationEstimate": "Pro Duration Estimate 6",
+          "episodeId": 150,
+          "status": "approved"
+        },
+        {
+          "title": "Essential Title 7",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "type": "Standard Tier",
+          "tone": "Essential Tone 7",
+          "durationEstimate": "Essential Duration Estimate 7",
+          "episodeId": 198,
+          "status": "active"
+        },
+        {
+          "title": "Primary Title 8",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "type": "Basic Tier",
+          "tone": "Primary Tone 8",
+          "durationEstimate": "Primary Duration Estimate 8",
+          "episodeId": 146,
+          "status": "active"
+        },
+        {
+          "title": "Global Title 9",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "type": "Enterprise",
+          "tone": "Global Tone 9",
+          "durationEstimate": "Global Duration Estimate 9",
+          "episodeId": 194,
+          "status": "active"
+        },
+        {
+          "title": "Regional Title 10",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "type": "Starter",
+          "tone": "Regional Tone 10",
+          "durationEstimate": "Regional Duration Estimate 10",
+          "episodeId": 242,
+          "status": "pending"
+        },
+        {
+          "title": "Custom Title 11",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "type": "Growth",
+          "tone": "Custom Tone 11",
+          "durationEstimate": "Custom Duration Estimate 11",
+          "episodeId": 190,
+          "status": "completed"
+        },
+        {
+          "title": "Smart Title 12",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "type": "Scale",
+          "tone": "Smart Tone 12",
+          "durationEstimate": "Smart Duration Estimate 12",
+          "episodeId": 238,
+          "status": "active"
+        },
+        {
+          "title": "Rapid Title 13",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "type": "Foundation",
+          "tone": "Rapid Tone 13",
+          "durationEstimate": "Rapid Duration Estimate 13",
+          "episodeId": 286,
+          "status": "in_progress"
+        },
+        {
+          "title": "Secure Title 14",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "type": "Advanced",
+          "tone": "Secure Tone 14",
+          "durationEstimate": "Secure Duration Estimate 14",
+          "episodeId": 234,
+          "status": "active"
+        },
+        {
+          "title": "Modern Title 15",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "type": "Professional",
+          "tone": "Modern Tone 15",
+          "durationEstimate": "Modern Duration Estimate 15",
+          "episodeId": 282,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "InterviewQuestion",
+      "routeKey": "interview-questions",
+      "label": "Interview Question",
+      "icon": "layers",
+      "aiFunction": "analyzeInterviewQuestion",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Interview Question data. The data includes: Question, Category, Difficulty, Guest Id, Episode Id, Follow Up, Notes, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "question",
+          "label": "Question",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "difficulty",
+          "label": "Difficulty",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "guestId",
+          "label": "Guest Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "episodeId",
+          "label": "Episode Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "followUp",
+          "label": "Follow Up",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "question": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "Category A",
+          "difficulty": "Advanced Difficulty 1",
+          "guestId": 10,
+          "episodeId": 10,
+          "followUp": "Comprehensive solution designed for optimal performance and efficiency.",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "question": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "Category B",
+          "difficulty": "Premium Difficulty 2",
+          "guestId": 58,
+          "episodeId": 58,
+          "followUp": "Industry-leading approach with proven results across multiple deployments.",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "question": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "Category C",
+          "difficulty": "Standard Difficulty 3",
+          "guestId": 106,
+          "episodeId": 106,
+          "followUp": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "question": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "Category D",
+          "difficulty": "Elite Difficulty 4",
+          "guestId": 154,
+          "episodeId": 154,
+          "followUp": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "question": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "Category E",
+          "difficulty": "Core Difficulty 5",
+          "guestId": 102,
+          "episodeId": 102,
+          "followUp": "Cost-effective strategy focused on sustainable long-term growth.",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "question": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "Premium Tier",
+          "difficulty": "Pro Difficulty 6",
+          "guestId": 150,
+          "episodeId": 150,
+          "followUp": "High-priority initiative aligned with organizational strategic objectives.",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "question": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "Standard Tier",
+          "difficulty": "Essential Difficulty 7",
+          "guestId": 198,
+          "episodeId": 198,
+          "followUp": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "question": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "Basic Tier",
+          "difficulty": "Primary Difficulty 8",
+          "guestId": 146,
+          "episodeId": 146,
+          "followUp": "Innovative framework incorporating best practices and emerging technologies.",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "question": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "Enterprise",
+          "difficulty": "Global Difficulty 9",
+          "guestId": 194,
+          "episodeId": 194,
+          "followUp": "Scalable architecture built to accommodate rapid expansion and change.",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "question": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "Starter",
+          "difficulty": "Regional Difficulty 10",
+          "guestId": 242,
+          "episodeId": 242,
+          "followUp": "Enterprise-grade solution with robust security and compliance features.",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "question": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "Growth",
+          "difficulty": "Custom Difficulty 11",
+          "guestId": 190,
+          "episodeId": 190,
+          "followUp": "Integrated platform connecting multiple systems for seamless operations.",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "question": "Automated workflow reducing manual intervention and human error.",
+          "category": "Scale",
+          "difficulty": "Smart Difficulty 12",
+          "guestId": 238,
+          "episodeId": 238,
+          "followUp": "Automated workflow reducing manual intervention and human error.",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "question": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "Foundation",
+          "difficulty": "Rapid Difficulty 13",
+          "guestId": 286,
+          "episodeId": 286,
+          "followUp": "Real-time monitoring system with intelligent alerting capabilities.",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "question": "Customizable module adaptable to diverse operational requirements.",
+          "category": "Advanced",
+          "difficulty": "Secure Difficulty 14",
+          "guestId": 234,
+          "episodeId": 234,
+          "followUp": "Customizable module adaptable to diverse operational requirements.",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "question": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "Professional",
+          "difficulty": "Modern Difficulty 15",
+          "guestId": 282,
+          "episodeId": 282,
+          "followUp": "Performance-optimized design achieving superior throughput and reliability.",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "ContentCalendar",
+      "routeKey": "content-calendars",
+      "label": "Content Calendar",
+      "icon": "map-pin",
+      "aiFunction": "analyzeContentCalendar",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Content Calendar data. The data includes: Title, Scheduled Date, Episode Id, Status, Type, Assignee, Priority, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "episodeId",
+          "label": "Episode Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assignee",
+          "label": "Assignee",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "scheduledDate": "2024-01-01",
+          "episodeId": 10,
+          "status": "active",
+          "type": "Category A",
+          "assignee": "Advanced Assignee 1",
+          "priority": "low",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "title": "Premium Title 2",
+          "scheduledDate": "2024-02-03",
+          "episodeId": 58,
+          "status": "pending",
+          "type": "Category B",
+          "assignee": "Premium Assignee 2",
+          "priority": "medium",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "title": "Standard Title 3",
+          "scheduledDate": "2024-03-05",
+          "episodeId": 106,
+          "status": "in_progress",
+          "type": "Category C",
+          "assignee": "Standard Assignee 3",
+          "priority": "high",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "title": "Elite Title 4",
+          "scheduledDate": "2024-04-07",
+          "episodeId": 154,
+          "status": "completed",
+          "type": "Category D",
+          "assignee": "Elite Assignee 4",
+          "priority": "critical",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "title": "Core Title 5",
+          "scheduledDate": "2024-05-09",
+          "episodeId": 102,
+          "status": "under_review",
+          "type": "Category E",
+          "assignee": "Core Assignee 5",
+          "priority": "medium",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "title": "Pro Title 6",
+          "scheduledDate": "2024-06-11",
+          "episodeId": 150,
+          "status": "approved",
+          "type": "Premium Tier",
+          "assignee": "Pro Assignee 6",
+          "priority": "low",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "title": "Essential Title 7",
+          "scheduledDate": "2024-07-13",
+          "episodeId": 198,
+          "status": "active",
+          "type": "Standard Tier",
+          "assignee": "Essential Assignee 7",
+          "priority": "medium",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "title": "Primary Title 8",
+          "scheduledDate": "2024-08-15",
+          "episodeId": 146,
+          "status": "active",
+          "type": "Basic Tier",
+          "assignee": "Primary Assignee 8",
+          "priority": "high",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "title": "Global Title 9",
+          "scheduledDate": "2024-09-17",
+          "episodeId": 194,
+          "status": "active",
+          "type": "Enterprise",
+          "assignee": "Global Assignee 9",
+          "priority": "critical",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "title": "Regional Title 10",
+          "scheduledDate": "2024-10-19",
+          "episodeId": 242,
+          "status": "pending",
+          "type": "Starter",
+          "assignee": "Regional Assignee 10",
+          "priority": "medium",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "title": "Custom Title 11",
+          "scheduledDate": "2024-11-21",
+          "episodeId": 190,
+          "status": "completed",
+          "type": "Growth",
+          "assignee": "Custom Assignee 11",
+          "priority": "low",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "title": "Smart Title 12",
+          "scheduledDate": "2024-12-23",
+          "episodeId": 238,
+          "status": "active",
+          "type": "Scale",
+          "assignee": "Smart Assignee 12",
+          "priority": "medium",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "title": "Rapid Title 13",
+          "scheduledDate": "2024-01-25",
+          "episodeId": 286,
+          "status": "in_progress",
+          "type": "Foundation",
+          "assignee": "Rapid Assignee 13",
+          "priority": "high",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "title": "Secure Title 14",
+          "scheduledDate": "2024-02-27",
+          "episodeId": 234,
+          "status": "active",
+          "type": "Advanced",
+          "assignee": "Secure Assignee 14",
+          "priority": "critical",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "title": "Modern Title 15",
+          "scheduledDate": "2024-03-01",
+          "episodeId": 282,
+          "status": "approved",
+          "type": "Professional",
+          "assignee": "Modern Assignee 15",
+          "priority": "medium",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Analytic",
+      "routeKey": "analytics",
+      "label": "Analytic",
+      "icon": "package",
+      "aiFunction": "analyzeAnalytic",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Analytic data. The data includes: Episode Id, Metric Name, Metric Value, Period, Platform, Notes, Category. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "episodeId",
+          "label": "Episode Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "metricName",
+          "label": "Metric Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "metricValue",
+          "label": "Metric Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "period",
+          "label": "Period",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "platform",
+          "label": "Platform",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "episodeId": 10,
+          "metricName": "Advanced Metric 1",
+          "metricValue": 10,
+          "period": "Advanced Period 1",
+          "platform": "Advanced Platform 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "Category A"
+        },
+        {
+          "episodeId": 58,
+          "metricName": "Premium Metric 2",
+          "metricValue": 71.7,
+          "period": "Premium Period 2",
+          "platform": "Premium Platform 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "Category B"
+        },
+        {
+          "episodeId": 106,
+          "metricName": "Standard Metric 3",
+          "metricValue": 33.4,
+          "period": "Standard Period 3",
+          "platform": "Standard Platform 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "Category C"
+        },
+        {
+          "episodeId": 154,
+          "metricName": "Elite Metric 4",
+          "metricValue": 95.1,
+          "period": "Elite Period 4",
+          "platform": "Elite Platform 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "Category D"
+        },
+        {
+          "episodeId": 102,
+          "metricName": "Core Metric 5",
+          "metricValue": 56.8,
+          "period": "Core Period 5",
+          "platform": "Core Platform 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "Category E"
+        },
+        {
+          "episodeId": 150,
+          "metricName": "Pro Metric 6",
+          "metricValue": 118.5,
+          "period": "Pro Period 6",
+          "platform": "Pro Platform 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "Premium Tier"
+        },
+        {
+          "episodeId": 198,
+          "metricName": "Essential Metric 7",
+          "metricValue": 80.2,
+          "period": "Essential Period 7",
+          "platform": "Essential Platform 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "Standard Tier"
+        },
+        {
+          "episodeId": 146,
+          "metricName": "Primary Metric 8",
+          "metricValue": 141.9,
+          "period": "Primary Period 8",
+          "platform": "Primary Platform 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "Basic Tier"
+        },
+        {
+          "episodeId": 194,
+          "metricName": "Global Metric 9",
+          "metricValue": 103.6,
+          "period": "Global Period 9",
+          "platform": "Global Platform 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "Enterprise"
+        },
+        {
+          "episodeId": 242,
+          "metricName": "Regional Metric 10",
+          "metricValue": 165.3,
+          "period": "Regional Period 10",
+          "platform": "Regional Platform 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "Starter"
+        },
+        {
+          "episodeId": 190,
+          "metricName": "Custom Metric 11",
+          "metricValue": 127,
+          "period": "Custom Period 11",
+          "platform": "Custom Platform 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "Growth"
+        },
+        {
+          "episodeId": 238,
+          "metricName": "Smart Metric 12",
+          "metricValue": 188.7,
+          "period": "Smart Period 12",
+          "platform": "Smart Platform 12",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "category": "Scale"
+        },
+        {
+          "episodeId": 286,
+          "metricName": "Rapid Metric 13",
+          "metricValue": 150.4,
+          "period": "Rapid Period 13",
+          "platform": "Rapid Platform 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "Foundation"
+        },
+        {
+          "episodeId": 234,
+          "metricName": "Secure Metric 14",
+          "metricValue": 212.1,
+          "period": "Secure Period 14",
+          "platform": "Secure Platform 14",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "category": "Advanced"
+        },
+        {
+          "episodeId": 282,
+          "metricName": "Modern Metric 15",
+          "metricValue": 173.8,
+          "period": "Modern Period 15",
+          "platform": "Modern Platform 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "Professional"
+        }
+      ]
+    },
+    {
+      "modelName": "DistributionChannel",
+      "routeKey": "distribution-channels",
+      "label": "Distribution Channel",
+      "icon": "shield",
+      "aiFunction": "analyzeDistributionChannel",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Distribution Channel data. The data includes: Name, Platform, Url, Api Key, Status, Subscriber Count, Notes, Category. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "platform",
+          "label": "Platform",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "url",
+          "label": "Url",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "apiKey",
+          "label": "Api Key",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "subscriberCount",
+          "label": "Subscriber Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "platform": "Advanced Platform 1",
+          "url": "https://example.com/url/1",
+          "apiKey": "Advanced Api Key 1",
+          "status": "active",
+          "subscriberCount": 113,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "Category A"
+        },
+        {
+          "name": "Premium Name 2",
+          "platform": "Premium Platform 2",
+          "url": "https://example.com/url/2",
+          "apiKey": "Premium Api Key 2",
+          "status": "pending",
+          "subscriberCount": 100,
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "Category B"
+        },
+        {
+          "name": "Standard Name 3",
+          "platform": "Standard Platform 3",
+          "url": "https://example.com/url/3",
+          "apiKey": "Standard Api Key 3",
+          "status": "in_progress",
+          "subscriberCount": 188,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "Category C"
+        },
+        {
+          "name": "Elite Name 4",
+          "platform": "Elite Platform 4",
+          "url": "https://example.com/url/4",
+          "apiKey": "Elite Api Key 4",
+          "status": "completed",
+          "subscriberCount": 85,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "Category D"
+        },
+        {
+          "name": "Core Name 5",
+          "platform": "Core Platform 5",
+          "url": "https://example.com/url/5",
+          "apiKey": "Core Api Key 5",
+          "status": "under_review",
+          "subscriberCount": 230,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "Category E"
+        },
+        {
+          "name": "Pro Name 6",
+          "platform": "Pro Platform 6",
+          "url": "https://example.com/url/6",
+          "apiKey": "Pro Api Key 6",
+          "status": "approved",
+          "subscriberCount": 125,
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "Premium Tier"
+        },
+        {
+          "name": "Essential Name 7",
+          "platform": "Essential Platform 7",
+          "url": "https://example.com/url/7",
+          "apiKey": "Essential Api Key 7",
+          "status": "active",
+          "subscriberCount": 219,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "Standard Tier"
+        },
+        {
+          "name": "Primary Name 8",
+          "platform": "Primary Platform 8",
+          "url": "https://example.com/url/8",
+          "apiKey": "Primary Api Key 8",
+          "status": "active",
+          "subscriberCount": 142,
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "Basic Tier"
+        },
+        {
+          "name": "Global Name 9",
+          "platform": "Global Platform 9",
+          "url": "https://example.com/url/9",
+          "apiKey": "Global Api Key 9",
+          "status": "active",
+          "subscriberCount": 101,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "Enterprise"
+        },
+        {
+          "name": "Regional Name 10",
+          "platform": "Regional Platform 10",
+          "url": "https://example.com/url/10",
+          "apiKey": "Regional Api Key 10",
+          "status": "pending",
+          "subscriberCount": 70,
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "Starter"
+        },
+        {
+          "name": "Custom Name 11",
+          "platform": "Custom Platform 11",
+          "url": "https://example.com/url/11",
+          "apiKey": "Custom Api Key 11",
+          "status": "completed",
+          "subscriberCount": 162,
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "Growth"
+        },
+        {
+          "name": "Smart Name 12",
+          "platform": "Smart Platform 12",
+          "url": "https://example.com/url/12",
+          "apiKey": "Smart Api Key 12",
+          "status": "active",
+          "subscriberCount": 262,
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "category": "Scale"
+        },
+        {
+          "name": "Rapid Name 13",
+          "platform": "Rapid Platform 13",
+          "url": "https://example.com/url/13",
+          "apiKey": "Rapid Api Key 13",
+          "status": "in_progress",
+          "subscriberCount": 162,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "Foundation"
+        },
+        {
+          "name": "Secure Name 14",
+          "platform": "Secure Platform 14",
+          "url": "https://example.com/url/14",
+          "apiKey": "Secure Api Key 14",
+          "status": "active",
+          "subscriberCount": 109,
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "category": "Advanced"
+        },
+        {
+          "name": "Modern Name 15",
+          "platform": "Modern Platform 15",
+          "url": "https://example.com/url/15",
+          "apiKey": "Modern Api Key 15",
+          "status": "approved",
+          "subscriberCount": 211,
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "Professional"
+        }
+      ]
+    },
+    {
+      "modelName": "EpisodeTemplate",
+      "routeKey": "episode-templates",
+      "label": "Episode Template",
+      "icon": "star",
+      "aiFunction": "analyzeEpisodeTemplate",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Episode Template data. The data includes: Name, Description, Structure, Duration, Category, Tags, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "structure",
+          "label": "Structure",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "duration",
+          "label": "Duration",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tags",
+          "label": "Tags",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "structure": "Comprehensive solution designed for optimal performance and efficiency.",
+          "duration": "Advanced Duration 1",
+          "category": "Category A",
+          "tags": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "structure": "Industry-leading approach with proven results across multiple deployments.",
+          "duration": "Premium Duration 2",
+          "category": "Category B",
+          "tags": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "structure": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "duration": "Standard Duration 3",
+          "category": "Category C",
+          "tags": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "structure": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "duration": "Elite Duration 4",
+          "category": "Category D",
+          "tags": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "structure": "Cost-effective strategy focused on sustainable long-term growth.",
+          "duration": "Core Duration 5",
+          "category": "Category E",
+          "tags": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "structure": "High-priority initiative aligned with organizational strategic objectives.",
+          "duration": "Pro Duration 6",
+          "category": "Premium Tier",
+          "tags": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "structure": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "duration": "Essential Duration 7",
+          "category": "Standard Tier",
+          "tags": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "structure": "Innovative framework incorporating best practices and emerging technologies.",
+          "duration": "Primary Duration 8",
+          "category": "Basic Tier",
+          "tags": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "structure": "Scalable architecture built to accommodate rapid expansion and change.",
+          "duration": "Global Duration 9",
+          "category": "Enterprise",
+          "tags": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "structure": "Enterprise-grade solution with robust security and compliance features.",
+          "duration": "Regional Duration 10",
+          "category": "Starter",
+          "tags": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "structure": "Integrated platform connecting multiple systems for seamless operations.",
+          "duration": "Custom Duration 11",
+          "category": "Growth",
+          "tags": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "structure": "Automated workflow reducing manual intervention and human error.",
+          "duration": "Smart Duration 12",
+          "category": "Scale",
+          "tags": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "structure": "Real-time monitoring system with intelligent alerting capabilities.",
+          "duration": "Rapid Duration 13",
+          "category": "Foundation",
+          "tags": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "structure": "Customizable module adaptable to diverse operational requirements.",
+          "duration": "Secure Duration 14",
+          "category": "Advanced",
+          "tags": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "structure": "Performance-optimized design achieving superior throughput and reliability.",
+          "duration": "Modern Duration 15",
+          "category": "Professional",
+          "tags": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Transcript",
+      "routeKey": "transcripts",
+      "label": "Transcript",
+      "icon": "truck",
+      "aiFunction": "analyzeTranscript",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Transcript data. The data includes: Title, Content, Episode Id, Word Count, Language, Status, Accuracy, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "episodeId",
+          "label": "Episode Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "wordCount",
+          "label": "Word Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "language",
+          "label": "Language",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "accuracy",
+          "label": "Accuracy",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "episodeId": 10,
+          "wordCount": 113,
+          "language": "Advanced Language 1",
+          "status": "active",
+          "accuracy": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "title": "Premium Title 2",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "episodeId": 58,
+          "wordCount": 125,
+          "language": "Premium Language 2",
+          "status": "pending",
+          "accuracy": 71.7,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "title": "Standard Title 3",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "episodeId": 106,
+          "wordCount": 206,
+          "language": "Standard Language 3",
+          "status": "in_progress",
+          "accuracy": 33.4,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "title": "Elite Title 4",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "episodeId": 154,
+          "wordCount": 95,
+          "language": "Elite Language 4",
+          "status": "completed",
+          "accuracy": 95.1,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "title": "Core Title 5",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "episodeId": 102,
+          "wordCount": 183,
+          "language": "Core Language 5",
+          "status": "under_review",
+          "accuracy": 56.8,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "title": "Pro Title 6",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "episodeId": 150,
+          "wordCount": 166,
+          "language": "Pro Language 6",
+          "status": "approved",
+          "accuracy": 118.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "title": "Essential Title 7",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "episodeId": 198,
+          "wordCount": 138,
+          "language": "Essential Language 7",
+          "status": "active",
+          "accuracy": 80.2,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "title": "Primary Title 8",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "episodeId": 146,
+          "wordCount": 92,
+          "language": "Primary Language 8",
+          "status": "active",
+          "accuracy": 141.9,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "title": "Global Title 9",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "episodeId": 194,
+          "wordCount": 244,
+          "language": "Global Language 9",
+          "status": "active",
+          "accuracy": 103.6,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "title": "Regional Title 10",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "episodeId": 242,
+          "wordCount": 79,
+          "language": "Regional Language 10",
+          "status": "pending",
+          "accuracy": 165.3,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "title": "Custom Title 11",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "episodeId": 190,
+          "wordCount": 142,
+          "language": "Custom Language 11",
+          "status": "completed",
+          "accuracy": 127,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "title": "Smart Title 12",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "episodeId": 238,
+          "wordCount": 252,
+          "language": "Smart Language 12",
+          "status": "active",
+          "accuracy": 188.7,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "title": "Rapid Title 13",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "episodeId": 286,
+          "wordCount": 182,
+          "language": "Rapid Language 13",
+          "status": "in_progress",
+          "accuracy": 150.4,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "title": "Secure Title 14",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "episodeId": 234,
+          "wordCount": 130,
+          "language": "Secure Language 14",
+          "status": "active",
+          "accuracy": 212.1,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "title": "Modern Title 15",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "episodeId": 282,
+          "wordCount": 296,
+          "language": "Modern Language 15",
+          "status": "approved",
+          "accuracy": 173.8,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "SocialPost",
+      "routeKey": "social-posts",
+      "label": "Social Post",
+      "icon": "users",
+      "aiFunction": "analyzeSocialPost",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Social Post data. The data includes: Title, Content, Platform, Episode Id, Scheduled Date, Status, Engagement Score, Hashtags. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "platform",
+          "label": "Platform",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "episodeId",
+          "label": "Episode Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "engagementScore",
+          "label": "Engagement Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "hashtags",
+          "label": "Hashtags",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "platform": "Advanced Platform 1",
+          "episodeId": 10,
+          "scheduledDate": "2024-01-01",
+          "status": "active",
+          "engagementScore": 1.5,
+          "hashtags": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "title": "Premium Title 2",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "platform": "Premium Platform 2",
+          "episodeId": 58,
+          "scheduledDate": "2024-02-03",
+          "status": "pending",
+          "engagementScore": 2.1,
+          "hashtags": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "title": "Standard Title 3",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "platform": "Standard Platform 3",
+          "episodeId": 106,
+          "scheduledDate": "2024-03-05",
+          "status": "in_progress",
+          "engagementScore": 2.7,
+          "hashtags": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "title": "Elite Title 4",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "platform": "Elite Platform 4",
+          "episodeId": 154,
+          "scheduledDate": "2024-04-07",
+          "status": "completed",
+          "engagementScore": 3.3,
+          "hashtags": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "title": "Core Title 5",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "platform": "Core Platform 5",
+          "episodeId": 102,
+          "scheduledDate": "2024-05-09",
+          "status": "under_review",
+          "engagementScore": 3.9,
+          "hashtags": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "title": "Pro Title 6",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "platform": "Pro Platform 6",
+          "episodeId": 150,
+          "scheduledDate": "2024-06-11",
+          "status": "approved",
+          "engagementScore": 4.5,
+          "hashtags": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "title": "Essential Title 7",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "platform": "Essential Platform 7",
+          "episodeId": 198,
+          "scheduledDate": "2024-07-13",
+          "status": "active",
+          "engagementScore": 5.1,
+          "hashtags": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "title": "Primary Title 8",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "platform": "Primary Platform 8",
+          "episodeId": 146,
+          "scheduledDate": "2024-08-15",
+          "status": "active",
+          "engagementScore": 5.7,
+          "hashtags": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "title": "Global Title 9",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "platform": "Global Platform 9",
+          "episodeId": 194,
+          "scheduledDate": "2024-09-17",
+          "status": "active",
+          "engagementScore": 6.3,
+          "hashtags": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "title": "Regional Title 10",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "platform": "Regional Platform 10",
+          "episodeId": 242,
+          "scheduledDate": "2024-10-19",
+          "status": "pending",
+          "engagementScore": 1.9,
+          "hashtags": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "title": "Custom Title 11",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "platform": "Custom Platform 11",
+          "episodeId": 190,
+          "scheduledDate": "2024-11-21",
+          "status": "completed",
+          "engagementScore": 2.5,
+          "hashtags": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "title": "Smart Title 12",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "platform": "Smart Platform 12",
+          "episodeId": 238,
+          "scheduledDate": "2024-12-23",
+          "status": "active",
+          "engagementScore": 3.1,
+          "hashtags": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "title": "Rapid Title 13",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "platform": "Rapid Platform 13",
+          "episodeId": 286,
+          "scheduledDate": "2024-01-25",
+          "status": "in_progress",
+          "engagementScore": 3.7,
+          "hashtags": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "title": "Secure Title 14",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "platform": "Secure Platform 14",
+          "episodeId": 234,
+          "scheduledDate": "2024-02-27",
+          "status": "active",
+          "engagementScore": 4.3,
+          "hashtags": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "title": "Modern Title 15",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "platform": "Modern Platform 15",
+          "episodeId": 282,
+          "scheduledDate": "2024-03-01",
+          "status": "approved",
+          "engagementScore": 4.9,
+          "hashtags": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "SeoOptimization",
+      "routeKey": "seo-optimizations",
+      "label": "Seo Optimization",
+      "icon": "zap",
+      "aiFunction": "analyzeSeoOptimization",
+      "aiPrompt": "You are an AI analyst for A I Podcast Producer. Analyze the provided Seo Optimization data. The data includes: Title, Keywords, Meta Description, Episode Id, Score, Suggestions, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "keywords",
+          "label": "Keywords",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "metaDescription",
+          "label": "Meta Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "episodeId",
+          "label": "Episode Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "score",
+          "label": "Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "suggestions",
+          "label": "Suggestions",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "keywords": "Comprehensive solution designed for optimal performance and efficiency.",
+          "metaDescription": "Comprehensive solution designed for optimal performance and efficiency.",
+          "episodeId": 10,
+          "score": 1.5,
+          "suggestions": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "title": "Premium Title 2",
+          "keywords": "Industry-leading approach with proven results across multiple deployments.",
+          "metaDescription": "Industry-leading approach with proven results across multiple deployments.",
+          "episodeId": 58,
+          "score": 2.1,
+          "suggestions": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "title": "Standard Title 3",
+          "keywords": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "metaDescription": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "episodeId": 106,
+          "score": 2.7,
+          "suggestions": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "title": "Elite Title 4",
+          "keywords": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "metaDescription": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "episodeId": 154,
+          "score": 3.3,
+          "suggestions": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "title": "Core Title 5",
+          "keywords": "Cost-effective strategy focused on sustainable long-term growth.",
+          "metaDescription": "Cost-effective strategy focused on sustainable long-term growth.",
+          "episodeId": 102,
+          "score": 3.9,
+          "suggestions": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "title": "Pro Title 6",
+          "keywords": "High-priority initiative aligned with organizational strategic objectives.",
+          "metaDescription": "High-priority initiative aligned with organizational strategic objectives.",
+          "episodeId": 150,
+          "score": 4.5,
+          "suggestions": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "title": "Essential Title 7",
+          "keywords": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "metaDescription": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "episodeId": 198,
+          "score": 5.1,
+          "suggestions": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "title": "Primary Title 8",
+          "keywords": "Innovative framework incorporating best practices and emerging technologies.",
+          "metaDescription": "Innovative framework incorporating best practices and emerging technologies.",
+          "episodeId": 146,
+          "score": 5.7,
+          "suggestions": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "title": "Global Title 9",
+          "keywords": "Scalable architecture built to accommodate rapid expansion and change.",
+          "metaDescription": "Scalable architecture built to accommodate rapid expansion and change.",
+          "episodeId": 194,
+          "score": 6.3,
+          "suggestions": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "title": "Regional Title 10",
+          "keywords": "Enterprise-grade solution with robust security and compliance features.",
+          "metaDescription": "Enterprise-grade solution with robust security and compliance features.",
+          "episodeId": 242,
+          "score": 1.9,
+          "suggestions": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "title": "Custom Title 11",
+          "keywords": "Integrated platform connecting multiple systems for seamless operations.",
+          "metaDescription": "Integrated platform connecting multiple systems for seamless operations.",
+          "episodeId": 190,
+          "score": 2.5,
+          "suggestions": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "title": "Smart Title 12",
+          "keywords": "Automated workflow reducing manual intervention and human error.",
+          "metaDescription": "Automated workflow reducing manual intervention and human error.",
+          "episodeId": 238,
+          "score": 3.1,
+          "suggestions": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "title": "Rapid Title 13",
+          "keywords": "Real-time monitoring system with intelligent alerting capabilities.",
+          "metaDescription": "Real-time monitoring system with intelligent alerting capabilities.",
+          "episodeId": 286,
+          "score": 3.7,
+          "suggestions": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "title": "Secure Title 14",
+          "keywords": "Customizable module adaptable to diverse operational requirements.",
+          "metaDescription": "Customizable module adaptable to diverse operational requirements.",
+          "episodeId": 234,
+          "score": 4.3,
+          "suggestions": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "title": "Modern Title 15",
+          "keywords": "Performance-optimized design achieving superior throughput and reliability.",
+          "metaDescription": "Performance-optimized design achieving superior throughput and reliability.",
+          "episodeId": 282,
+          "score": 4.9,
+          "suggestions": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

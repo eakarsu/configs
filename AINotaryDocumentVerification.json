@@ -1,0 +1,3304 @@
+{
+  "appName": "A I Notary Document Verification",
+  "dbName": "a_i_notary_document_verification",
+  "folderName": "generated/AINotaryDocumentVerification",
+  "features": [
+    {
+      "modelName": "Client",
+      "routeKey": "clients",
+      "label": "Client",
+      "icon": "activity",
+      "aiFunction": "analyzeClient",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Client data. The data includes: Name, Email, Phone, Address, City, State, Zip, Id Type, Id Number, Verified, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "city",
+          "label": "City",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "zip",
+          "label": "Zip",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "idType",
+          "label": "Id Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "idNumber",
+          "label": "Id Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "verified",
+          "label": "Verified",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "city": "New York",
+          "state": "Advanced State 1",
+          "zip": "Advanced Zip 1",
+          "idType": "Category A",
+          "idNumber": "Advanced Id Number 1",
+          "verified": true,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "city": "Los Angeles",
+          "state": "Premium State 2",
+          "zip": "Premium Zip 2",
+          "idType": "Category B",
+          "idNumber": "Premium Id Number 2",
+          "verified": true,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "city": "Chicago",
+          "state": "Standard State 3",
+          "zip": "Standard Zip 3",
+          "idType": "Category C",
+          "idNumber": "Standard Id Number 3",
+          "verified": false,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "city": "Houston",
+          "state": "Elite State 4",
+          "zip": "Elite Zip 4",
+          "idType": "Category D",
+          "idNumber": "Elite Id Number 4",
+          "verified": true,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "city": "Phoenix",
+          "state": "Core State 5",
+          "zip": "Core Zip 5",
+          "idType": "Category E",
+          "idNumber": "Core Id Number 5",
+          "verified": false,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "city": "San Francisco",
+          "state": "Pro State 6",
+          "zip": "Pro Zip 6",
+          "idType": "Premium Tier",
+          "idNumber": "Pro Id Number 6",
+          "verified": true,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "city": "Seattle",
+          "state": "Essential State 7",
+          "zip": "Essential Zip 7",
+          "idType": "Standard Tier",
+          "idNumber": "Essential Id Number 7",
+          "verified": true,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "city": "Boston",
+          "state": "Primary State 8",
+          "zip": "Primary Zip 8",
+          "idType": "Basic Tier",
+          "idNumber": "Primary Id Number 8",
+          "verified": false,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "city": "Denver",
+          "state": "Global State 9",
+          "zip": "Global Zip 9",
+          "idType": "Enterprise",
+          "idNumber": "Global Id Number 9",
+          "verified": true,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "city": "Miami",
+          "state": "Regional State 10",
+          "zip": "Regional Zip 10",
+          "idType": "Starter",
+          "idNumber": "Regional Id Number 10",
+          "verified": true,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "city": "Austin",
+          "state": "Custom State 11",
+          "zip": "Custom Zip 11",
+          "idType": "Growth",
+          "idNumber": "Custom Id Number 11",
+          "verified": false,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "city": "Portland",
+          "state": "Smart State 12",
+          "zip": "Smart Zip 12",
+          "idType": "Scale",
+          "idNumber": "Smart Id Number 12",
+          "verified": true,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "city": "Dallas",
+          "state": "Rapid State 13",
+          "zip": "Rapid Zip 13",
+          "idType": "Foundation",
+          "idNumber": "Rapid Id Number 13",
+          "verified": false,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "city": "Atlanta",
+          "state": "Secure State 14",
+          "zip": "Secure Zip 14",
+          "idType": "Advanced",
+          "idNumber": "Secure Id Number 14",
+          "verified": true,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "city": "Nashville",
+          "state": "Modern State 15",
+          "zip": "Modern Zip 15",
+          "idType": "Professional",
+          "idNumber": "Modern Id Number 15",
+          "verified": true,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Document",
+      "routeKey": "documents",
+      "label": "Document",
+      "icon": "briefcase",
+      "aiFunction": "analyzeDocument",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Document data. The data includes: Title, Type, Status, File Name, File Size, Uploaded By, Client Id, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fileName",
+          "label": "File Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fileSize",
+          "label": "File Size",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "uploadedBy",
+          "label": "Uploaded By",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "clientId",
+          "label": "Client Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "type": "Category A",
+          "status": "active",
+          "fileName": "Advanced File 1",
+          "fileSize": 10,
+          "uploadedBy": 10,
+          "clientId": 10,
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "title": "Premium Title 2",
+          "type": "Category B",
+          "status": "pending",
+          "fileName": "Premium File 2",
+          "fileSize": 58,
+          "uploadedBy": 58,
+          "clientId": 58,
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "title": "Standard Title 3",
+          "type": "Category C",
+          "status": "in_progress",
+          "fileName": "Standard File 3",
+          "fileSize": 106,
+          "uploadedBy": 106,
+          "clientId": 106,
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "title": "Elite Title 4",
+          "type": "Category D",
+          "status": "completed",
+          "fileName": "Elite File 4",
+          "fileSize": 154,
+          "uploadedBy": 154,
+          "clientId": 154,
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "title": "Core Title 5",
+          "type": "Category E",
+          "status": "under_review",
+          "fileName": "Core File 5",
+          "fileSize": 102,
+          "uploadedBy": 102,
+          "clientId": 102,
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "title": "Pro Title 6",
+          "type": "Premium Tier",
+          "status": "approved",
+          "fileName": "Pro File 6",
+          "fileSize": 150,
+          "uploadedBy": 150,
+          "clientId": 150,
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "title": "Essential Title 7",
+          "type": "Standard Tier",
+          "status": "active",
+          "fileName": "Essential File 7",
+          "fileSize": 198,
+          "uploadedBy": 198,
+          "clientId": 198,
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "title": "Primary Title 8",
+          "type": "Basic Tier",
+          "status": "active",
+          "fileName": "Primary File 8",
+          "fileSize": 146,
+          "uploadedBy": 146,
+          "clientId": 146,
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "title": "Global Title 9",
+          "type": "Enterprise",
+          "status": "active",
+          "fileName": "Global File 9",
+          "fileSize": 194,
+          "uploadedBy": 194,
+          "clientId": 194,
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "title": "Regional Title 10",
+          "type": "Starter",
+          "status": "pending",
+          "fileName": "Regional File 10",
+          "fileSize": 242,
+          "uploadedBy": 242,
+          "clientId": 242,
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "title": "Custom Title 11",
+          "type": "Growth",
+          "status": "completed",
+          "fileName": "Custom File 11",
+          "fileSize": 190,
+          "uploadedBy": 190,
+          "clientId": 190,
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "title": "Smart Title 12",
+          "type": "Scale",
+          "status": "active",
+          "fileName": "Smart File 12",
+          "fileSize": 238,
+          "uploadedBy": 238,
+          "clientId": 238,
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "title": "Rapid Title 13",
+          "type": "Foundation",
+          "status": "in_progress",
+          "fileName": "Rapid File 13",
+          "fileSize": 286,
+          "uploadedBy": 286,
+          "clientId": 286,
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "title": "Secure Title 14",
+          "type": "Advanced",
+          "status": "active",
+          "fileName": "Secure File 14",
+          "fileSize": 234,
+          "uploadedBy": 234,
+          "clientId": 234,
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "title": "Modern Title 15",
+          "type": "Professional",
+          "status": "approved",
+          "fileName": "Modern File 15",
+          "fileSize": 282,
+          "uploadedBy": 282,
+          "clientId": 282,
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Notarization",
+      "routeKey": "notarizations",
+      "label": "Notarization",
+      "icon": "clipboard",
+      "aiFunction": "analyzeNotarization",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Notarization data. The data includes: Document Id, Client Id, Notary Id, Status, Type, Scheduled Date, Completed Date, Fee, Location, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "documentId",
+          "label": "Document Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "clientId",
+          "label": "Client Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notaryId",
+          "label": "Notary Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "completedDate",
+          "label": "Completed Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "fee",
+          "label": "Fee",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "documentId": 10,
+          "clientId": 10,
+          "notaryId": 10,
+          "status": "active",
+          "type": "Category A",
+          "scheduledDate": "2024-01-01",
+          "completedDate": "2024-01-01",
+          "fee": 500,
+          "location": "New York",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "documentId": 58,
+          "clientId": 58,
+          "notaryId": 58,
+          "status": "pending",
+          "type": "Category B",
+          "scheduledDate": "2024-02-03",
+          "completedDate": "2024-02-03",
+          "fee": 2481,
+          "location": "Los Angeles",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "documentId": 106,
+          "clientId": 106,
+          "notaryId": 106,
+          "status": "in_progress",
+          "type": "Category C",
+          "scheduledDate": "2024-03-05",
+          "completedDate": "2024-03-05",
+          "fee": 4462,
+          "location": "Chicago",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "documentId": 154,
+          "clientId": 154,
+          "notaryId": 154,
+          "status": "completed",
+          "type": "Category D",
+          "scheduledDate": "2024-04-07",
+          "completedDate": "2024-04-07",
+          "fee": 6443,
+          "location": "Houston",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "documentId": 102,
+          "clientId": 102,
+          "notaryId": 102,
+          "status": "under_review",
+          "type": "Category E",
+          "scheduledDate": "2024-05-09",
+          "completedDate": "2024-05-09",
+          "fee": 8424,
+          "location": "Phoenix",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "documentId": 150,
+          "clientId": 150,
+          "notaryId": 150,
+          "status": "approved",
+          "type": "Premium Tier",
+          "scheduledDate": "2024-06-11",
+          "completedDate": "2024-06-11",
+          "fee": 10405,
+          "location": "San Francisco",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "documentId": 198,
+          "clientId": 198,
+          "notaryId": 198,
+          "status": "active",
+          "type": "Standard Tier",
+          "scheduledDate": "2024-07-13",
+          "completedDate": "2024-07-13",
+          "fee": 12386,
+          "location": "Seattle",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "documentId": 146,
+          "clientId": 146,
+          "notaryId": 146,
+          "status": "active",
+          "type": "Basic Tier",
+          "scheduledDate": "2024-08-15",
+          "completedDate": "2024-08-15",
+          "fee": 9367,
+          "location": "Boston",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "documentId": 194,
+          "clientId": 194,
+          "notaryId": 194,
+          "status": "active",
+          "type": "Enterprise",
+          "scheduledDate": "2024-09-17",
+          "completedDate": "2024-09-17",
+          "fee": 11348,
+          "location": "Denver",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "documentId": 242,
+          "clientId": 242,
+          "notaryId": 242,
+          "status": "pending",
+          "type": "Starter",
+          "scheduledDate": "2024-10-19",
+          "completedDate": "2024-10-19",
+          "fee": 13329,
+          "location": "Miami",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "documentId": 190,
+          "clientId": 190,
+          "notaryId": 190,
+          "status": "completed",
+          "type": "Growth",
+          "scheduledDate": "2024-11-21",
+          "completedDate": "2024-11-21",
+          "fee": 15310,
+          "location": "Austin",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "documentId": 238,
+          "clientId": 238,
+          "notaryId": 238,
+          "status": "active",
+          "type": "Scale",
+          "scheduledDate": "2024-12-23",
+          "completedDate": "2024-12-23",
+          "fee": 17291,
+          "location": "Portland",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "documentId": 286,
+          "clientId": 286,
+          "notaryId": 286,
+          "status": "in_progress",
+          "type": "Foundation",
+          "scheduledDate": "2024-01-25",
+          "completedDate": "2024-01-25",
+          "fee": 19272,
+          "location": "Dallas",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "documentId": 234,
+          "clientId": 234,
+          "notaryId": 234,
+          "status": "active",
+          "type": "Advanced",
+          "scheduledDate": "2024-02-27",
+          "completedDate": "2024-02-27",
+          "fee": 21253,
+          "location": "Atlanta",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "documentId": 282,
+          "clientId": 282,
+          "notaryId": 282,
+          "status": "approved",
+          "type": "Professional",
+          "scheduledDate": "2024-03-01",
+          "completedDate": "2024-03-01",
+          "fee": 18234,
+          "location": "Nashville",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "IdentityVerification",
+      "routeKey": "identity-verifications",
+      "label": "Identity Verification",
+      "icon": "database",
+      "aiFunction": "analyzeIdentityVerification",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Identity Verification data. The data includes: Client Id, Verification Type, Status, Confidence Score, Ai Result, Document Number, Expiry Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "clientId",
+          "label": "Client Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "verificationType",
+          "label": "Verification Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "confidenceScore",
+          "label": "Confidence Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "aiResult",
+          "label": "Ai Result",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "documentNumber",
+          "label": "Document Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "clientId": 10,
+          "verificationType": "Category A",
+          "status": "active",
+          "confidenceScore": 1.5,
+          "aiResult": "Comprehensive solution designed for optimal performance and efficiency.",
+          "documentNumber": "Advanced Document Number 1",
+          "expiryDate": "2024-01-01"
+        },
+        {
+          "clientId": 58,
+          "verificationType": "Category B",
+          "status": "pending",
+          "confidenceScore": 2.1,
+          "aiResult": "Industry-leading approach with proven results across multiple deployments.",
+          "documentNumber": "Premium Document Number 2",
+          "expiryDate": "2024-02-03"
+        },
+        {
+          "clientId": 106,
+          "verificationType": "Category C",
+          "status": "in_progress",
+          "confidenceScore": 2.7,
+          "aiResult": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "documentNumber": "Standard Document Number 3",
+          "expiryDate": "2024-03-05"
+        },
+        {
+          "clientId": 154,
+          "verificationType": "Category D",
+          "status": "completed",
+          "confidenceScore": 3.3,
+          "aiResult": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "documentNumber": "Elite Document Number 4",
+          "expiryDate": "2024-04-07"
+        },
+        {
+          "clientId": 102,
+          "verificationType": "Category E",
+          "status": "under_review",
+          "confidenceScore": 3.9,
+          "aiResult": "Cost-effective strategy focused on sustainable long-term growth.",
+          "documentNumber": "Core Document Number 5",
+          "expiryDate": "2024-05-09"
+        },
+        {
+          "clientId": 150,
+          "verificationType": "Premium Tier",
+          "status": "approved",
+          "confidenceScore": 4.5,
+          "aiResult": "High-priority initiative aligned with organizational strategic objectives.",
+          "documentNumber": "Pro Document Number 6",
+          "expiryDate": "2024-06-11"
+        },
+        {
+          "clientId": 198,
+          "verificationType": "Standard Tier",
+          "status": "active",
+          "confidenceScore": 5.1,
+          "aiResult": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "documentNumber": "Essential Document Number 7",
+          "expiryDate": "2024-07-13"
+        },
+        {
+          "clientId": 146,
+          "verificationType": "Basic Tier",
+          "status": "active",
+          "confidenceScore": 5.7,
+          "aiResult": "Innovative framework incorporating best practices and emerging technologies.",
+          "documentNumber": "Primary Document Number 8",
+          "expiryDate": "2024-08-15"
+        },
+        {
+          "clientId": 194,
+          "verificationType": "Enterprise",
+          "status": "active",
+          "confidenceScore": 6.3,
+          "aiResult": "Scalable architecture built to accommodate rapid expansion and change.",
+          "documentNumber": "Global Document Number 9",
+          "expiryDate": "2024-09-17"
+        },
+        {
+          "clientId": 242,
+          "verificationType": "Starter",
+          "status": "pending",
+          "confidenceScore": 1.9,
+          "aiResult": "Enterprise-grade solution with robust security and compliance features.",
+          "documentNumber": "Regional Document Number 10",
+          "expiryDate": "2024-10-19"
+        },
+        {
+          "clientId": 190,
+          "verificationType": "Growth",
+          "status": "completed",
+          "confidenceScore": 2.5,
+          "aiResult": "Integrated platform connecting multiple systems for seamless operations.",
+          "documentNumber": "Custom Document Number 11",
+          "expiryDate": "2024-11-21"
+        },
+        {
+          "clientId": 238,
+          "verificationType": "Scale",
+          "status": "active",
+          "confidenceScore": 3.1,
+          "aiResult": "Automated workflow reducing manual intervention and human error.",
+          "documentNumber": "Smart Document Number 12",
+          "expiryDate": "2024-12-23"
+        },
+        {
+          "clientId": 286,
+          "verificationType": "Foundation",
+          "status": "in_progress",
+          "confidenceScore": 3.7,
+          "aiResult": "Real-time monitoring system with intelligent alerting capabilities.",
+          "documentNumber": "Rapid Document Number 13",
+          "expiryDate": "2024-01-25"
+        },
+        {
+          "clientId": 234,
+          "verificationType": "Advanced",
+          "status": "active",
+          "confidenceScore": 4.3,
+          "aiResult": "Customizable module adaptable to diverse operational requirements.",
+          "documentNumber": "Secure Document Number 14",
+          "expiryDate": "2024-02-27"
+        },
+        {
+          "clientId": 282,
+          "verificationType": "Professional",
+          "status": "approved",
+          "confidenceScore": 4.9,
+          "aiResult": "Performance-optimized design achieving superior throughput and reliability.",
+          "documentNumber": "Modern Document Number 15",
+          "expiryDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "FraudDetection",
+      "routeKey": "fraud-detections",
+      "label": "Fraud Detection",
+      "icon": "file-text",
+      "aiFunction": "analyzeFraudDetection",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Fraud Detection data. The data includes: Document Id, Risk Level, Risk Score, Ai Analysis, Flags, Status, Reviewed By. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "documentId",
+          "label": "Document Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "riskScore",
+          "label": "Risk Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "flags",
+          "label": "Flags",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reviewedBy",
+          "label": "Reviewed By",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "documentId": 10,
+          "riskLevel": "low",
+          "riskScore": 1.5,
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "flags": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "reviewedBy": 10
+        },
+        {
+          "documentId": 58,
+          "riskLevel": "medium",
+          "riskScore": 2.1,
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments.",
+          "flags": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "reviewedBy": 58
+        },
+        {
+          "documentId": 106,
+          "riskLevel": "high",
+          "riskScore": 2.7,
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "flags": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "reviewedBy": 106
+        },
+        {
+          "documentId": 154,
+          "riskLevel": "critical",
+          "riskScore": 3.3,
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "flags": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "reviewedBy": 154
+        },
+        {
+          "documentId": 102,
+          "riskLevel": "medium",
+          "riskScore": 3.9,
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "flags": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "reviewedBy": 102
+        },
+        {
+          "documentId": 150,
+          "riskLevel": "low",
+          "riskScore": 4.5,
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives.",
+          "flags": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "reviewedBy": 150
+        },
+        {
+          "documentId": 198,
+          "riskLevel": "medium",
+          "riskScore": 5.1,
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "flags": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "reviewedBy": 198
+        },
+        {
+          "documentId": 146,
+          "riskLevel": "high",
+          "riskScore": 5.7,
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies.",
+          "flags": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "reviewedBy": 146
+        },
+        {
+          "documentId": 194,
+          "riskLevel": "critical",
+          "riskScore": 6.3,
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "flags": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "reviewedBy": 194
+        },
+        {
+          "documentId": 242,
+          "riskLevel": "medium",
+          "riskScore": 1.9,
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features.",
+          "flags": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "reviewedBy": 242
+        },
+        {
+          "documentId": 190,
+          "riskLevel": "low",
+          "riskScore": 2.5,
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations.",
+          "flags": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "reviewedBy": 190
+        },
+        {
+          "documentId": 238,
+          "riskLevel": "medium",
+          "riskScore": 3.1,
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error.",
+          "flags": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "reviewedBy": 238
+        },
+        {
+          "documentId": 286,
+          "riskLevel": "high",
+          "riskScore": 3.7,
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "flags": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "reviewedBy": 286
+        },
+        {
+          "documentId": 234,
+          "riskLevel": "critical",
+          "riskScore": 4.3,
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements.",
+          "flags": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "reviewedBy": 234
+        },
+        {
+          "documentId": 282,
+          "riskLevel": "medium",
+          "riskScore": 4.9,
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability.",
+          "flags": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "reviewedBy": 282
+        }
+      ]
+    },
+    {
+      "modelName": "DigitalSignature",
+      "routeKey": "digital-signatures",
+      "label": "Digital Signature",
+      "icon": "heart",
+      "aiFunction": "analyzeDigitalSignature",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Digital Signature data. The data includes: Document Id, Signer Name, Signer Email, Status, Signature Type, Ip Address, Signed At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "documentId",
+          "label": "Document Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "signerName",
+          "label": "Signer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "signerEmail",
+          "label": "Signer Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "signatureType",
+          "label": "Signature Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ipAddress",
+          "label": "Ip Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "signedAt",
+          "label": "Signed At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "documentId": 10,
+          "signerName": "Advanced Signer 1",
+          "signerEmail": "james.wilson@example.com",
+          "status": "active",
+          "signatureType": "Category A",
+          "ipAddress": "New York",
+          "signedAt": "2024-01-01"
+        },
+        {
+          "documentId": 58,
+          "signerName": "Premium Signer 2",
+          "signerEmail": "sarah.chen@example.com",
+          "status": "pending",
+          "signatureType": "Category B",
+          "ipAddress": "Los Angeles",
+          "signedAt": "2024-02-03"
+        },
+        {
+          "documentId": 106,
+          "signerName": "Standard Signer 3",
+          "signerEmail": "michael.brown@example.com",
+          "status": "in_progress",
+          "signatureType": "Category C",
+          "ipAddress": "Chicago",
+          "signedAt": "2024-03-05"
+        },
+        {
+          "documentId": 154,
+          "signerName": "Elite Signer 4",
+          "signerEmail": "emily.davis@example.com",
+          "status": "completed",
+          "signatureType": "Category D",
+          "ipAddress": "Houston",
+          "signedAt": "2024-04-07"
+        },
+        {
+          "documentId": 102,
+          "signerName": "Core Signer 5",
+          "signerEmail": "robert.garcia@example.com",
+          "status": "under_review",
+          "signatureType": "Category E",
+          "ipAddress": "Phoenix",
+          "signedAt": "2024-05-09"
+        },
+        {
+          "documentId": 150,
+          "signerName": "Pro Signer 6",
+          "signerEmail": "lisa.anderson@example.com",
+          "status": "approved",
+          "signatureType": "Premium Tier",
+          "ipAddress": "San Francisco",
+          "signedAt": "2024-06-11"
+        },
+        {
+          "documentId": 198,
+          "signerName": "Essential Signer 7",
+          "signerEmail": "david.martinez@example.com",
+          "status": "active",
+          "signatureType": "Standard Tier",
+          "ipAddress": "Seattle",
+          "signedAt": "2024-07-13"
+        },
+        {
+          "documentId": 146,
+          "signerName": "Primary Signer 8",
+          "signerEmail": "jennifer.taylor@example.com",
+          "status": "active",
+          "signatureType": "Basic Tier",
+          "ipAddress": "Boston",
+          "signedAt": "2024-08-15"
+        },
+        {
+          "documentId": 194,
+          "signerName": "Global Signer 9",
+          "signerEmail": "william.johnson@example.com",
+          "status": "active",
+          "signatureType": "Enterprise",
+          "ipAddress": "Denver",
+          "signedAt": "2024-09-17"
+        },
+        {
+          "documentId": 242,
+          "signerName": "Regional Signer 10",
+          "signerEmail": "maria.rodriguez@example.com",
+          "status": "pending",
+          "signatureType": "Starter",
+          "ipAddress": "Miami",
+          "signedAt": "2024-10-19"
+        },
+        {
+          "documentId": 190,
+          "signerName": "Custom Signer 11",
+          "signerEmail": "thomas.lee@example.com",
+          "status": "completed",
+          "signatureType": "Growth",
+          "ipAddress": "Austin",
+          "signedAt": "2024-11-21"
+        },
+        {
+          "documentId": 238,
+          "signerName": "Smart Signer 12",
+          "signerEmail": "patricia.white@example.com",
+          "status": "active",
+          "signatureType": "Scale",
+          "ipAddress": "Portland",
+          "signedAt": "2024-12-23"
+        },
+        {
+          "documentId": 286,
+          "signerName": "Rapid Signer 13",
+          "signerEmail": "christopher.hall@example.com",
+          "status": "in_progress",
+          "signatureType": "Foundation",
+          "ipAddress": "Dallas",
+          "signedAt": "2024-01-25"
+        },
+        {
+          "documentId": 234,
+          "signerName": "Secure Signer 14",
+          "signerEmail": "amanda.clark@example.com",
+          "status": "active",
+          "signatureType": "Advanced",
+          "ipAddress": "Atlanta",
+          "signedAt": "2024-02-27"
+        },
+        {
+          "documentId": 282,
+          "signerName": "Modern Signer 15",
+          "signerEmail": "daniel.wright@example.com",
+          "status": "approved",
+          "signatureType": "Professional",
+          "ipAddress": "Nashville",
+          "signedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Template",
+      "routeKey": "templates",
+      "label": "Template",
+      "icon": "layers",
+      "aiFunction": "analyzeTemplate",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Template data. The data includes: Name, Category, Description, Content, State, Is Active, Usage Count. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "usageCount",
+          "label": "Usage Count",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "state": "Advanced State 1",
+          "isActive": true,
+          "usageCount": 161
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "state": "Premium State 2",
+          "isActive": true,
+          "usageCount": 94
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "state": "Standard State 3",
+          "isActive": false,
+          "usageCount": 59
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "state": "Elite State 4",
+          "isActive": true,
+          "usageCount": 33
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "state": "Core State 5",
+          "isActive": false,
+          "usageCount": 190
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "state": "Pro State 6",
+          "isActive": true,
+          "usageCount": 218
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "state": "Essential State 7",
+          "isActive": true,
+          "usageCount": 197
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "state": "Primary State 8",
+          "isActive": false,
+          "usageCount": 109
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "state": "Global State 9",
+          "isActive": true,
+          "usageCount": 258
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "state": "Regional State 10",
+          "isActive": true,
+          "usageCount": 258
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "state": "Custom State 11",
+          "isActive": false,
+          "usageCount": 263
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "state": "Smart State 12",
+          "isActive": true,
+          "usageCount": 93
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "state": "Rapid State 13",
+          "isActive": false,
+          "usageCount": 208
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "state": "Secure State 14",
+          "isActive": true,
+          "usageCount": 280
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "state": "Modern State 15",
+          "isActive": true,
+          "usageCount": 129
+        }
+      ]
+    },
+    {
+      "modelName": "AuditTrail",
+      "routeKey": "audit-trails",
+      "label": "Audit Trail",
+      "icon": "map-pin",
+      "aiFunction": "analyzeAuditTrail",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Audit Trail data. The data includes: Action, Entity Type, Entity Id, User Id, Details, Ip Address. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "details",
+          "label": "Details",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "ipAddress",
+          "label": "Ip Address",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "action": "Advanced Action 1",
+          "entityType": "Category A",
+          "entityId": 10,
+          "userId": 10,
+          "details": "Comprehensive solution designed for optimal performance and efficiency.",
+          "ipAddress": "New York"
+        },
+        {
+          "action": "Premium Action 2",
+          "entityType": "Category B",
+          "entityId": 58,
+          "userId": 58,
+          "details": "Industry-leading approach with proven results across multiple deployments.",
+          "ipAddress": "Los Angeles"
+        },
+        {
+          "action": "Standard Action 3",
+          "entityType": "Category C",
+          "entityId": 106,
+          "userId": 106,
+          "details": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "ipAddress": "Chicago"
+        },
+        {
+          "action": "Elite Action 4",
+          "entityType": "Category D",
+          "entityId": 154,
+          "userId": 154,
+          "details": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "ipAddress": "Houston"
+        },
+        {
+          "action": "Core Action 5",
+          "entityType": "Category E",
+          "entityId": 102,
+          "userId": 102,
+          "details": "Cost-effective strategy focused on sustainable long-term growth.",
+          "ipAddress": "Phoenix"
+        },
+        {
+          "action": "Pro Action 6",
+          "entityType": "Premium Tier",
+          "entityId": 150,
+          "userId": 150,
+          "details": "High-priority initiative aligned with organizational strategic objectives.",
+          "ipAddress": "San Francisco"
+        },
+        {
+          "action": "Essential Action 7",
+          "entityType": "Standard Tier",
+          "entityId": 198,
+          "userId": 198,
+          "details": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "ipAddress": "Seattle"
+        },
+        {
+          "action": "Primary Action 8",
+          "entityType": "Basic Tier",
+          "entityId": 146,
+          "userId": 146,
+          "details": "Innovative framework incorporating best practices and emerging technologies.",
+          "ipAddress": "Boston"
+        },
+        {
+          "action": "Global Action 9",
+          "entityType": "Enterprise",
+          "entityId": 194,
+          "userId": 194,
+          "details": "Scalable architecture built to accommodate rapid expansion and change.",
+          "ipAddress": "Denver"
+        },
+        {
+          "action": "Regional Action 10",
+          "entityType": "Starter",
+          "entityId": 242,
+          "userId": 242,
+          "details": "Enterprise-grade solution with robust security and compliance features.",
+          "ipAddress": "Miami"
+        },
+        {
+          "action": "Custom Action 11",
+          "entityType": "Growth",
+          "entityId": 190,
+          "userId": 190,
+          "details": "Integrated platform connecting multiple systems for seamless operations.",
+          "ipAddress": "Austin"
+        },
+        {
+          "action": "Smart Action 12",
+          "entityType": "Scale",
+          "entityId": 238,
+          "userId": 238,
+          "details": "Automated workflow reducing manual intervention and human error.",
+          "ipAddress": "Portland"
+        },
+        {
+          "action": "Rapid Action 13",
+          "entityType": "Foundation",
+          "entityId": 286,
+          "userId": 286,
+          "details": "Real-time monitoring system with intelligent alerting capabilities.",
+          "ipAddress": "Dallas"
+        },
+        {
+          "action": "Secure Action 14",
+          "entityType": "Advanced",
+          "entityId": 234,
+          "userId": 234,
+          "details": "Customizable module adaptable to diverse operational requirements.",
+          "ipAddress": "Atlanta"
+        },
+        {
+          "action": "Modern Action 15",
+          "entityType": "Professional",
+          "entityId": 282,
+          "userId": 282,
+          "details": "Performance-optimized design achieving superior throughput and reliability.",
+          "ipAddress": "Nashville"
+        }
+      ]
+    },
+    {
+      "modelName": "Payment",
+      "routeKey": "payments",
+      "label": "Payment",
+      "icon": "package",
+      "aiFunction": "analyzePayment",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Payment data. The data includes: Notarization Id, Client Id, Amount, Status, Method, Transaction Id, Description. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "notarizationId",
+          "label": "Notarization Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "clientId",
+          "label": "Client Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "method",
+          "label": "Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "transactionId",
+          "label": "Transaction Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "notarizationId": 10,
+          "clientId": 10,
+          "amount": 500,
+          "status": "active",
+          "method": "Advanced Method 1",
+          "transactionId": "Advanced Transaction Id 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "notarizationId": 58,
+          "clientId": 58,
+          "amount": 2481,
+          "status": "pending",
+          "method": "Premium Method 2",
+          "transactionId": "Premium Transaction Id 2",
+          "description": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "notarizationId": 106,
+          "clientId": 106,
+          "amount": 4462,
+          "status": "in_progress",
+          "method": "Standard Method 3",
+          "transactionId": "Standard Transaction Id 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "notarizationId": 154,
+          "clientId": 154,
+          "amount": 6443,
+          "status": "completed",
+          "method": "Elite Method 4",
+          "transactionId": "Elite Transaction Id 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "notarizationId": 102,
+          "clientId": 102,
+          "amount": 8424,
+          "status": "under_review",
+          "method": "Core Method 5",
+          "transactionId": "Core Transaction Id 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "notarizationId": 150,
+          "clientId": 150,
+          "amount": 10405,
+          "status": "approved",
+          "method": "Pro Method 6",
+          "transactionId": "Pro Transaction Id 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "notarizationId": 198,
+          "clientId": 198,
+          "amount": 12386,
+          "status": "active",
+          "method": "Essential Method 7",
+          "transactionId": "Essential Transaction Id 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "notarizationId": 146,
+          "clientId": 146,
+          "amount": 9367,
+          "status": "active",
+          "method": "Primary Method 8",
+          "transactionId": "Primary Transaction Id 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "notarizationId": 194,
+          "clientId": 194,
+          "amount": 11348,
+          "status": "active",
+          "method": "Global Method 9",
+          "transactionId": "Global Transaction Id 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "notarizationId": 242,
+          "clientId": 242,
+          "amount": 13329,
+          "status": "pending",
+          "method": "Regional Method 10",
+          "transactionId": "Regional Transaction Id 10",
+          "description": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "notarizationId": 190,
+          "clientId": 190,
+          "amount": 15310,
+          "status": "completed",
+          "method": "Custom Method 11",
+          "transactionId": "Custom Transaction Id 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "notarizationId": 238,
+          "clientId": 238,
+          "amount": 17291,
+          "status": "active",
+          "method": "Smart Method 12",
+          "transactionId": "Smart Transaction Id 12",
+          "description": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "notarizationId": 286,
+          "clientId": 286,
+          "amount": 19272,
+          "status": "in_progress",
+          "method": "Rapid Method 13",
+          "transactionId": "Rapid Transaction Id 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "notarizationId": 234,
+          "clientId": 234,
+          "amount": 21253,
+          "status": "active",
+          "method": "Secure Method 14",
+          "transactionId": "Secure Transaction Id 14",
+          "description": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "notarizationId": 282,
+          "clientId": 282,
+          "amount": 18234,
+          "status": "approved",
+          "method": "Modern Method 15",
+          "transactionId": "Modern Transaction Id 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "AiAnalyse",
+      "routeKey": "ai-analyses",
+      "label": "Ai Analyse",
+      "icon": "shield",
+      "aiFunction": "analyzeAiAnalyse",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Ai Analyse data. The data includes: Document Id, Analysis Type, Result, Confidence, Model Used, Tokens Used, Processing Time. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "documentId",
+          "label": "Document Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "analysisType",
+          "label": "Analysis Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "result",
+          "label": "Result",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "confidence",
+          "label": "Confidence",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "modelUsed",
+          "label": "Model Used",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tokensUsed",
+          "label": "Tokens Used",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "processingTime",
+          "label": "Processing Time",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "documentId": 10,
+          "analysisType": "Category A",
+          "result": "Comprehensive solution designed for optimal performance and efficiency.",
+          "confidence": 10,
+          "modelUsed": "Advanced Model Used 1",
+          "tokensUsed": 10,
+          "processingTime": 10
+        },
+        {
+          "documentId": 58,
+          "analysisType": "Category B",
+          "result": "Industry-leading approach with proven results across multiple deployments.",
+          "confidence": 71.7,
+          "modelUsed": "Premium Model Used 2",
+          "tokensUsed": 58,
+          "processingTime": 71.7
+        },
+        {
+          "documentId": 106,
+          "analysisType": "Category C",
+          "result": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "confidence": 33.4,
+          "modelUsed": "Standard Model Used 3",
+          "tokensUsed": 106,
+          "processingTime": 33.4
+        },
+        {
+          "documentId": 154,
+          "analysisType": "Category D",
+          "result": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "confidence": 95.1,
+          "modelUsed": "Elite Model Used 4",
+          "tokensUsed": 154,
+          "processingTime": 95.1
+        },
+        {
+          "documentId": 102,
+          "analysisType": "Category E",
+          "result": "Cost-effective strategy focused on sustainable long-term growth.",
+          "confidence": 56.8,
+          "modelUsed": "Core Model Used 5",
+          "tokensUsed": 102,
+          "processingTime": 56.8
+        },
+        {
+          "documentId": 150,
+          "analysisType": "Premium Tier",
+          "result": "High-priority initiative aligned with organizational strategic objectives.",
+          "confidence": 118.5,
+          "modelUsed": "Pro Model Used 6",
+          "tokensUsed": 150,
+          "processingTime": 118.5
+        },
+        {
+          "documentId": 198,
+          "analysisType": "Standard Tier",
+          "result": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "confidence": 80.2,
+          "modelUsed": "Essential Model Used 7",
+          "tokensUsed": 198,
+          "processingTime": 80.2
+        },
+        {
+          "documentId": 146,
+          "analysisType": "Basic Tier",
+          "result": "Innovative framework incorporating best practices and emerging technologies.",
+          "confidence": 141.9,
+          "modelUsed": "Primary Model Used 8",
+          "tokensUsed": 146,
+          "processingTime": 141.9
+        },
+        {
+          "documentId": 194,
+          "analysisType": "Enterprise",
+          "result": "Scalable architecture built to accommodate rapid expansion and change.",
+          "confidence": 103.6,
+          "modelUsed": "Global Model Used 9",
+          "tokensUsed": 194,
+          "processingTime": 103.6
+        },
+        {
+          "documentId": 242,
+          "analysisType": "Starter",
+          "result": "Enterprise-grade solution with robust security and compliance features.",
+          "confidence": 165.3,
+          "modelUsed": "Regional Model Used 10",
+          "tokensUsed": 242,
+          "processingTime": 165.3
+        },
+        {
+          "documentId": 190,
+          "analysisType": "Growth",
+          "result": "Integrated platform connecting multiple systems for seamless operations.",
+          "confidence": 127,
+          "modelUsed": "Custom Model Used 11",
+          "tokensUsed": 190,
+          "processingTime": 127
+        },
+        {
+          "documentId": 238,
+          "analysisType": "Scale",
+          "result": "Automated workflow reducing manual intervention and human error.",
+          "confidence": 188.7,
+          "modelUsed": "Smart Model Used 12",
+          "tokensUsed": 238,
+          "processingTime": 188.7
+        },
+        {
+          "documentId": 286,
+          "analysisType": "Foundation",
+          "result": "Real-time monitoring system with intelligent alerting capabilities.",
+          "confidence": 150.4,
+          "modelUsed": "Rapid Model Used 13",
+          "tokensUsed": 286,
+          "processingTime": 150.4
+        },
+        {
+          "documentId": 234,
+          "analysisType": "Advanced",
+          "result": "Customizable module adaptable to diverse operational requirements.",
+          "confidence": 212.1,
+          "modelUsed": "Secure Model Used 14",
+          "tokensUsed": 234,
+          "processingTime": 212.1
+        },
+        {
+          "documentId": 282,
+          "analysisType": "Professional",
+          "result": "Performance-optimized design achieving superior throughput and reliability.",
+          "confidence": 173.8,
+          "modelUsed": "Modern Model Used 15",
+          "tokensUsed": 282,
+          "processingTime": 173.8
+        }
+      ]
+    },
+    {
+      "modelName": "ComplianceCheck",
+      "routeKey": "compliance-checks",
+      "label": "Compliance Check",
+      "icon": "star",
+      "aiFunction": "analyzeComplianceCheck",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Compliance Check data. The data includes: Document Id, Status, Issues, Recommendations. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "documentId",
+          "label": "Document Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "issues",
+          "label": "Issues",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "recommendations",
+          "label": "Recommendations",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "documentId": 10,
+          "status": "active",
+          "issues": "Comprehensive solution designed for optimal performance and efficiency.",
+          "recommendations": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "documentId": 58,
+          "status": "pending",
+          "issues": "Industry-leading approach with proven results across multiple deployments.",
+          "recommendations": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "documentId": 106,
+          "status": "in_progress",
+          "issues": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "recommendations": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "documentId": 154,
+          "status": "completed",
+          "issues": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "recommendations": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "documentId": 102,
+          "status": "under_review",
+          "issues": "Cost-effective strategy focused on sustainable long-term growth.",
+          "recommendations": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "documentId": 150,
+          "status": "approved",
+          "issues": "High-priority initiative aligned with organizational strategic objectives.",
+          "recommendations": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "documentId": 198,
+          "status": "active",
+          "issues": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "recommendations": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "documentId": 146,
+          "status": "active",
+          "issues": "Innovative framework incorporating best practices and emerging technologies.",
+          "recommendations": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "documentId": 194,
+          "status": "active",
+          "issues": "Scalable architecture built to accommodate rapid expansion and change.",
+          "recommendations": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "documentId": 242,
+          "status": "pending",
+          "issues": "Enterprise-grade solution with robust security and compliance features.",
+          "recommendations": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "documentId": 190,
+          "status": "completed",
+          "issues": "Integrated platform connecting multiple systems for seamless operations.",
+          "recommendations": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "documentId": 238,
+          "status": "active",
+          "issues": "Automated workflow reducing manual intervention and human error.",
+          "recommendations": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "documentId": 286,
+          "status": "in_progress",
+          "issues": "Real-time monitoring system with intelligent alerting capabilities.",
+          "recommendations": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "documentId": 234,
+          "status": "active",
+          "issues": "Customizable module adaptable to diverse operational requirements.",
+          "recommendations": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "documentId": 282,
+          "status": "approved",
+          "issues": "Performance-optimized design achieving superior throughput and reliability.",
+          "recommendations": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "NotaryJournal",
+      "routeKey": "notary-journals",
+      "label": "Notary Journal",
+      "icon": "truck",
+      "aiFunction": "analyzeNotaryJournal",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Notary Journal data. The data includes: Notary Id, Document Type, Signer Name, Signer Address, Id Type, Id Number, Notary Act, Fee, Date Performed, Witness Name, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "notaryId",
+          "label": "Notary Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "documentType",
+          "label": "Document Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "signerName",
+          "label": "Signer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "signerAddress",
+          "label": "Signer Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "idType",
+          "label": "Id Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "idNumber",
+          "label": "Id Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notaryAct",
+          "label": "Notary Act",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fee",
+          "label": "Fee",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "datePerformed",
+          "label": "Date Performed",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "witnessName",
+          "label": "Witness Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "notaryId": 10,
+          "documentType": "Category A",
+          "signerName": "Advanced Signer 1",
+          "signerAddress": "Comprehensive solution designed for optimal performance and efficiency.",
+          "idType": "Category A",
+          "idNumber": "Advanced Id Number 1",
+          "notaryAct": "Advanced Notary Act 1",
+          "fee": 500,
+          "datePerformed": "2024-01-01",
+          "witnessName": "Advanced Witness 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "notaryId": 58,
+          "documentType": "Category B",
+          "signerName": "Premium Signer 2",
+          "signerAddress": "Industry-leading approach with proven results across multiple deployments.",
+          "idType": "Category B",
+          "idNumber": "Premium Id Number 2",
+          "notaryAct": "Premium Notary Act 2",
+          "fee": 2481,
+          "datePerformed": "2024-02-03",
+          "witnessName": "Premium Witness 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "notaryId": 106,
+          "documentType": "Category C",
+          "signerName": "Standard Signer 3",
+          "signerAddress": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "idType": "Category C",
+          "idNumber": "Standard Id Number 3",
+          "notaryAct": "Standard Notary Act 3",
+          "fee": 4462,
+          "datePerformed": "2024-03-05",
+          "witnessName": "Standard Witness 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "notaryId": 154,
+          "documentType": "Category D",
+          "signerName": "Elite Signer 4",
+          "signerAddress": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "idType": "Category D",
+          "idNumber": "Elite Id Number 4",
+          "notaryAct": "Elite Notary Act 4",
+          "fee": 6443,
+          "datePerformed": "2024-04-07",
+          "witnessName": "Elite Witness 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "notaryId": 102,
+          "documentType": "Category E",
+          "signerName": "Core Signer 5",
+          "signerAddress": "Cost-effective strategy focused on sustainable long-term growth.",
+          "idType": "Category E",
+          "idNumber": "Core Id Number 5",
+          "notaryAct": "Core Notary Act 5",
+          "fee": 8424,
+          "datePerformed": "2024-05-09",
+          "witnessName": "Core Witness 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "notaryId": 150,
+          "documentType": "Premium Tier",
+          "signerName": "Pro Signer 6",
+          "signerAddress": "High-priority initiative aligned with organizational strategic objectives.",
+          "idType": "Premium Tier",
+          "idNumber": "Pro Id Number 6",
+          "notaryAct": "Pro Notary Act 6",
+          "fee": 10405,
+          "datePerformed": "2024-06-11",
+          "witnessName": "Pro Witness 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "notaryId": 198,
+          "documentType": "Standard Tier",
+          "signerName": "Essential Signer 7",
+          "signerAddress": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "idType": "Standard Tier",
+          "idNumber": "Essential Id Number 7",
+          "notaryAct": "Essential Notary Act 7",
+          "fee": 12386,
+          "datePerformed": "2024-07-13",
+          "witnessName": "Essential Witness 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "notaryId": 146,
+          "documentType": "Basic Tier",
+          "signerName": "Primary Signer 8",
+          "signerAddress": "Innovative framework incorporating best practices and emerging technologies.",
+          "idType": "Basic Tier",
+          "idNumber": "Primary Id Number 8",
+          "notaryAct": "Primary Notary Act 8",
+          "fee": 9367,
+          "datePerformed": "2024-08-15",
+          "witnessName": "Primary Witness 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "notaryId": 194,
+          "documentType": "Enterprise",
+          "signerName": "Global Signer 9",
+          "signerAddress": "Scalable architecture built to accommodate rapid expansion and change.",
+          "idType": "Enterprise",
+          "idNumber": "Global Id Number 9",
+          "notaryAct": "Global Notary Act 9",
+          "fee": 11348,
+          "datePerformed": "2024-09-17",
+          "witnessName": "Global Witness 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "notaryId": 242,
+          "documentType": "Starter",
+          "signerName": "Regional Signer 10",
+          "signerAddress": "Enterprise-grade solution with robust security and compliance features.",
+          "idType": "Starter",
+          "idNumber": "Regional Id Number 10",
+          "notaryAct": "Regional Notary Act 10",
+          "fee": 13329,
+          "datePerformed": "2024-10-19",
+          "witnessName": "Regional Witness 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "notaryId": 190,
+          "documentType": "Growth",
+          "signerName": "Custom Signer 11",
+          "signerAddress": "Integrated platform connecting multiple systems for seamless operations.",
+          "idType": "Growth",
+          "idNumber": "Custom Id Number 11",
+          "notaryAct": "Custom Notary Act 11",
+          "fee": 15310,
+          "datePerformed": "2024-11-21",
+          "witnessName": "Custom Witness 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "notaryId": 238,
+          "documentType": "Scale",
+          "signerName": "Smart Signer 12",
+          "signerAddress": "Automated workflow reducing manual intervention and human error.",
+          "idType": "Scale",
+          "idNumber": "Smart Id Number 12",
+          "notaryAct": "Smart Notary Act 12",
+          "fee": 17291,
+          "datePerformed": "2024-12-23",
+          "witnessName": "Smart Witness 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "notaryId": 286,
+          "documentType": "Foundation",
+          "signerName": "Rapid Signer 13",
+          "signerAddress": "Real-time monitoring system with intelligent alerting capabilities.",
+          "idType": "Foundation",
+          "idNumber": "Rapid Id Number 13",
+          "notaryAct": "Rapid Notary Act 13",
+          "fee": 19272,
+          "datePerformed": "2024-01-25",
+          "witnessName": "Rapid Witness 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "notaryId": 234,
+          "documentType": "Advanced",
+          "signerName": "Secure Signer 14",
+          "signerAddress": "Customizable module adaptable to diverse operational requirements.",
+          "idType": "Advanced",
+          "idNumber": "Secure Id Number 14",
+          "notaryAct": "Secure Notary Act 14",
+          "fee": 21253,
+          "datePerformed": "2024-02-27",
+          "witnessName": "Secure Witness 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "notaryId": 282,
+          "documentType": "Professional",
+          "signerName": "Modern Signer 15",
+          "signerAddress": "Performance-optimized design achieving superior throughput and reliability.",
+          "idType": "Professional",
+          "idNumber": "Modern Id Number 15",
+          "notaryAct": "Modern Notary Act 15",
+          "fee": 18234,
+          "datePerformed": "2024-03-01",
+          "witnessName": "Modern Witness 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Seal",
+      "routeKey": "seals",
+      "label": "Seal",
+      "icon": "users",
+      "aiFunction": "analyzeSeal",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Seal data. The data includes: Notary Id, Seal Number, State, County, Commission Number, Commission Expiry, Status, Seal Type. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "notaryId",
+          "label": "Notary Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "sealNumber",
+          "label": "Seal Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "county",
+          "label": "County",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "commissionNumber",
+          "label": "Commission Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "commissionExpiry",
+          "label": "Commission Expiry",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sealType",
+          "label": "Seal Type",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "notaryId": 10,
+          "sealNumber": "Advanced Seal Number 1",
+          "state": "Advanced State 1",
+          "county": "Advanced County 1",
+          "commissionNumber": "Advanced Commission Number 1",
+          "commissionExpiry": "2024-01-01",
+          "status": "active",
+          "sealType": "Category A"
+        },
+        {
+          "notaryId": 58,
+          "sealNumber": "Premium Seal Number 2",
+          "state": "Premium State 2",
+          "county": "Premium County 2",
+          "commissionNumber": "Premium Commission Number 2",
+          "commissionExpiry": "2024-02-03",
+          "status": "pending",
+          "sealType": "Category B"
+        },
+        {
+          "notaryId": 106,
+          "sealNumber": "Standard Seal Number 3",
+          "state": "Standard State 3",
+          "county": "Standard County 3",
+          "commissionNumber": "Standard Commission Number 3",
+          "commissionExpiry": "2024-03-05",
+          "status": "in_progress",
+          "sealType": "Category C"
+        },
+        {
+          "notaryId": 154,
+          "sealNumber": "Elite Seal Number 4",
+          "state": "Elite State 4",
+          "county": "Elite County 4",
+          "commissionNumber": "Elite Commission Number 4",
+          "commissionExpiry": "2024-04-07",
+          "status": "completed",
+          "sealType": "Category D"
+        },
+        {
+          "notaryId": 102,
+          "sealNumber": "Core Seal Number 5",
+          "state": "Core State 5",
+          "county": "Core County 5",
+          "commissionNumber": "Core Commission Number 5",
+          "commissionExpiry": "2024-05-09",
+          "status": "under_review",
+          "sealType": "Category E"
+        },
+        {
+          "notaryId": 150,
+          "sealNumber": "Pro Seal Number 6",
+          "state": "Pro State 6",
+          "county": "Pro County 6",
+          "commissionNumber": "Pro Commission Number 6",
+          "commissionExpiry": "2024-06-11",
+          "status": "approved",
+          "sealType": "Premium Tier"
+        },
+        {
+          "notaryId": 198,
+          "sealNumber": "Essential Seal Number 7",
+          "state": "Essential State 7",
+          "county": "Essential County 7",
+          "commissionNumber": "Essential Commission Number 7",
+          "commissionExpiry": "2024-07-13",
+          "status": "active",
+          "sealType": "Standard Tier"
+        },
+        {
+          "notaryId": 146,
+          "sealNumber": "Primary Seal Number 8",
+          "state": "Primary State 8",
+          "county": "Primary County 8",
+          "commissionNumber": "Primary Commission Number 8",
+          "commissionExpiry": "2024-08-15",
+          "status": "active",
+          "sealType": "Basic Tier"
+        },
+        {
+          "notaryId": 194,
+          "sealNumber": "Global Seal Number 9",
+          "state": "Global State 9",
+          "county": "Global County 9",
+          "commissionNumber": "Global Commission Number 9",
+          "commissionExpiry": "2024-09-17",
+          "status": "active",
+          "sealType": "Enterprise"
+        },
+        {
+          "notaryId": 242,
+          "sealNumber": "Regional Seal Number 10",
+          "state": "Regional State 10",
+          "county": "Regional County 10",
+          "commissionNumber": "Regional Commission Number 10",
+          "commissionExpiry": "2024-10-19",
+          "status": "pending",
+          "sealType": "Starter"
+        },
+        {
+          "notaryId": 190,
+          "sealNumber": "Custom Seal Number 11",
+          "state": "Custom State 11",
+          "county": "Custom County 11",
+          "commissionNumber": "Custom Commission Number 11",
+          "commissionExpiry": "2024-11-21",
+          "status": "completed",
+          "sealType": "Growth"
+        },
+        {
+          "notaryId": 238,
+          "sealNumber": "Smart Seal Number 12",
+          "state": "Smart State 12",
+          "county": "Smart County 12",
+          "commissionNumber": "Smart Commission Number 12",
+          "commissionExpiry": "2024-12-23",
+          "status": "active",
+          "sealType": "Scale"
+        },
+        {
+          "notaryId": 286,
+          "sealNumber": "Rapid Seal Number 13",
+          "state": "Rapid State 13",
+          "county": "Rapid County 13",
+          "commissionNumber": "Rapid Commission Number 13",
+          "commissionExpiry": "2024-01-25",
+          "status": "in_progress",
+          "sealType": "Foundation"
+        },
+        {
+          "notaryId": 234,
+          "sealNumber": "Secure Seal Number 14",
+          "state": "Secure State 14",
+          "county": "Secure County 14",
+          "commissionNumber": "Secure Commission Number 14",
+          "commissionExpiry": "2024-02-27",
+          "status": "active",
+          "sealType": "Advanced"
+        },
+        {
+          "notaryId": 282,
+          "sealNumber": "Modern Seal Number 15",
+          "state": "Modern State 15",
+          "county": "Modern County 15",
+          "commissionNumber": "Modern Commission Number 15",
+          "commissionExpiry": "2024-03-01",
+          "status": "approved",
+          "sealType": "Professional"
+        }
+      ]
+    },
+    {
+      "modelName": "Notification",
+      "routeKey": "notifications",
+      "label": "Notification",
+      "icon": "zap",
+      "aiFunction": "analyzeNotification",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Notification data. The data includes: User Id, Title, Message, Type, Is Read, Link. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isRead",
+          "label": "Is Read",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "link",
+          "label": "Link",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "title": "Advanced Title 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "type": "Category A",
+          "isRead": true,
+          "link": "https://example.com/link/1"
+        },
+        {
+          "userId": 58,
+          "title": "Premium Title 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "type": "Category B",
+          "isRead": true,
+          "link": "https://example.com/link/2"
+        },
+        {
+          "userId": 106,
+          "title": "Standard Title 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "type": "Category C",
+          "isRead": false,
+          "link": "https://example.com/link/3"
+        },
+        {
+          "userId": 154,
+          "title": "Elite Title 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "type": "Category D",
+          "isRead": true,
+          "link": "https://example.com/link/4"
+        },
+        {
+          "userId": 102,
+          "title": "Core Title 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "type": "Category E",
+          "isRead": false,
+          "link": "https://example.com/link/5"
+        },
+        {
+          "userId": 150,
+          "title": "Pro Title 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "type": "Premium Tier",
+          "isRead": true,
+          "link": "https://example.com/link/6"
+        },
+        {
+          "userId": 198,
+          "title": "Essential Title 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "type": "Standard Tier",
+          "isRead": true,
+          "link": "https://example.com/link/7"
+        },
+        {
+          "userId": 146,
+          "title": "Primary Title 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "type": "Basic Tier",
+          "isRead": false,
+          "link": "https://example.com/link/8"
+        },
+        {
+          "userId": 194,
+          "title": "Global Title 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "type": "Enterprise",
+          "isRead": true,
+          "link": "https://example.com/link/9"
+        },
+        {
+          "userId": 242,
+          "title": "Regional Title 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "type": "Starter",
+          "isRead": true,
+          "link": "https://example.com/link/10"
+        },
+        {
+          "userId": 190,
+          "title": "Custom Title 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "type": "Growth",
+          "isRead": false,
+          "link": "https://example.com/link/11"
+        },
+        {
+          "userId": 238,
+          "title": "Smart Title 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "type": "Scale",
+          "isRead": true,
+          "link": "https://example.com/link/12"
+        },
+        {
+          "userId": 286,
+          "title": "Rapid Title 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "type": "Foundation",
+          "isRead": false,
+          "link": "https://example.com/link/13"
+        },
+        {
+          "userId": 234,
+          "title": "Secure Title 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "type": "Advanced",
+          "isRead": true,
+          "link": "https://example.com/link/14"
+        },
+        {
+          "userId": 282,
+          "title": "Modern Title 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "type": "Professional",
+          "isRead": true,
+          "link": "https://example.com/link/15"
+        }
+      ]
+    },
+    {
+      "modelName": "Witnesse",
+      "routeKey": "witnesses",
+      "label": "Witnesse",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeWitnesse",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Witnesse data. The data includes: Name, Email, Phone, Address, Id Type, Id Number, Notarization Id, Relationship, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "idType",
+          "label": "Id Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "idNumber",
+          "label": "Id Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notarizationId",
+          "label": "Notarization Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "relationship",
+          "label": "Relationship",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "idType": "Category A",
+          "idNumber": "Advanced Id Number 1",
+          "notarizationId": 10,
+          "relationship": "Advanced Relationship 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "idType": "Category B",
+          "idNumber": "Premium Id Number 2",
+          "notarizationId": 58,
+          "relationship": "Premium Relationship 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "idType": "Category C",
+          "idNumber": "Standard Id Number 3",
+          "notarizationId": 106,
+          "relationship": "Standard Relationship 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "idType": "Category D",
+          "idNumber": "Elite Id Number 4",
+          "notarizationId": 154,
+          "relationship": "Elite Relationship 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "idType": "Category E",
+          "idNumber": "Core Id Number 5",
+          "notarizationId": 102,
+          "relationship": "Core Relationship 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "idType": "Premium Tier",
+          "idNumber": "Pro Id Number 6",
+          "notarizationId": 150,
+          "relationship": "Pro Relationship 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "idType": "Standard Tier",
+          "idNumber": "Essential Id Number 7",
+          "notarizationId": 198,
+          "relationship": "Essential Relationship 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "idType": "Basic Tier",
+          "idNumber": "Primary Id Number 8",
+          "notarizationId": 146,
+          "relationship": "Primary Relationship 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "idType": "Enterprise",
+          "idNumber": "Global Id Number 9",
+          "notarizationId": 194,
+          "relationship": "Global Relationship 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "idType": "Starter",
+          "idNumber": "Regional Id Number 10",
+          "notarizationId": 242,
+          "relationship": "Regional Relationship 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "idType": "Growth",
+          "idNumber": "Custom Id Number 11",
+          "notarizationId": 190,
+          "relationship": "Custom Relationship 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "idType": "Scale",
+          "idNumber": "Smart Id Number 12",
+          "notarizationId": 238,
+          "relationship": "Smart Relationship 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "idType": "Foundation",
+          "idNumber": "Rapid Id Number 13",
+          "notarizationId": 286,
+          "relationship": "Rapid Relationship 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "idType": "Advanced",
+          "idNumber": "Secure Id Number 14",
+          "notarizationId": 234,
+          "relationship": "Secure Relationship 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "idType": "Professional",
+          "idNumber": "Modern Id Number 15",
+          "notarizationId": 282,
+          "relationship": "Modern Relationship 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Bookmark",
+      "routeKey": "bookmarks",
+      "label": "Bookmark",
+      "icon": "bell",
+      "aiFunction": "analyzeBookmark",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Bookmark data. The data includes: User Id, Entity Type, Entity Id, Label. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "label",
+          "label": "Label",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "entityType": "Category A",
+          "entityId": 10,
+          "label": "Advanced Label 1"
+        },
+        {
+          "userId": 58,
+          "entityType": "Category B",
+          "entityId": 58,
+          "label": "Premium Label 2"
+        },
+        {
+          "userId": 106,
+          "entityType": "Category C",
+          "entityId": 106,
+          "label": "Standard Label 3"
+        },
+        {
+          "userId": 154,
+          "entityType": "Category D",
+          "entityId": 154,
+          "label": "Elite Label 4"
+        },
+        {
+          "userId": 102,
+          "entityType": "Category E",
+          "entityId": 102,
+          "label": "Core Label 5"
+        },
+        {
+          "userId": 150,
+          "entityType": "Premium Tier",
+          "entityId": 150,
+          "label": "Pro Label 6"
+        },
+        {
+          "userId": 198,
+          "entityType": "Standard Tier",
+          "entityId": 198,
+          "label": "Essential Label 7"
+        },
+        {
+          "userId": 146,
+          "entityType": "Basic Tier",
+          "entityId": 146,
+          "label": "Primary Label 8"
+        },
+        {
+          "userId": 194,
+          "entityType": "Enterprise",
+          "entityId": 194,
+          "label": "Global Label 9"
+        },
+        {
+          "userId": 242,
+          "entityType": "Starter",
+          "entityId": 242,
+          "label": "Regional Label 10"
+        },
+        {
+          "userId": 190,
+          "entityType": "Growth",
+          "entityId": 190,
+          "label": "Custom Label 11"
+        },
+        {
+          "userId": 238,
+          "entityType": "Scale",
+          "entityId": 238,
+          "label": "Smart Label 12"
+        },
+        {
+          "userId": 286,
+          "entityType": "Foundation",
+          "entityId": 286,
+          "label": "Rapid Label 13"
+        },
+        {
+          "userId": 234,
+          "entityType": "Advanced",
+          "entityId": 234,
+          "label": "Secure Label 14"
+        },
+        {
+          "userId": 282,
+          "entityType": "Professional",
+          "entityId": 282,
+          "label": "Modern Label 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Note",
+      "routeKey": "notes",
+      "label": "Note",
+      "icon": "book",
+      "aiFunction": "analyzeNote",
+      "aiPrompt": "You are an AI analyst for A I Notary Document Verification. Analyze the provided Note data. The data includes: Entity Type, Entity Id, User Id, Content. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "entityType": "Category A",
+          "entityId": 10,
+          "userId": 10,
+          "content": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "entityType": "Category B",
+          "entityId": 58,
+          "userId": 58,
+          "content": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "entityType": "Category C",
+          "entityId": 106,
+          "userId": 106,
+          "content": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "entityType": "Category D",
+          "entityId": 154,
+          "userId": 154,
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "entityType": "Category E",
+          "entityId": 102,
+          "userId": 102,
+          "content": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "entityType": "Premium Tier",
+          "entityId": 150,
+          "userId": 150,
+          "content": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "entityType": "Standard Tier",
+          "entityId": 198,
+          "userId": 198,
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "entityType": "Basic Tier",
+          "entityId": 146,
+          "userId": 146,
+          "content": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "entityType": "Enterprise",
+          "entityId": 194,
+          "userId": 194,
+          "content": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "entityType": "Starter",
+          "entityId": 242,
+          "userId": 242,
+          "content": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "entityType": "Growth",
+          "entityId": 190,
+          "userId": 190,
+          "content": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "entityType": "Scale",
+          "entityId": 238,
+          "userId": 238,
+          "content": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "entityType": "Foundation",
+          "entityId": 286,
+          "userId": 286,
+          "content": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "entityType": "Advanced",
+          "entityId": 234,
+          "userId": 234,
+          "content": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "entityType": "Professional",
+          "entityId": 282,
+          "userId": 282,
+          "content": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

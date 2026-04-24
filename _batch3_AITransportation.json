@@ -1,0 +1,3577 @@
+{
+  "appName": "AI Fleet & Logistics Manager",
+  "dbName": "ai_transportation",
+  "folderName": "generated/AITransportation",
+  "features": [
+    {
+      "label": "Vehicle Fleet",
+      "modelName": "VehicleFleet",
+      "routeKey": "vehicleFleets",
+      "icon": "🚛",
+      "aiFunction": "analyzeVehicleFleet",
+      "aiPrompt": "Analyze this Vehicle Fleet data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "vehicleId",
+          "label": "Vehicle Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "vehicleType",
+          "label": "Vehicle Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "make",
+          "label": "Make",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "model",
+          "label": "Model",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "year",
+          "label": "year",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "licensePlate",
+          "label": "License Plate",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "vin",
+          "label": "Vin",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "assignedDriver",
+          "label": "Assigned Driver",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "mileage",
+          "label": "mileage",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "fuelType",
+          "label": "Fuel Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "capacity",
+          "label": "capacity",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "lastInspectionDate",
+          "label": "last Inspection Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "nextMaintenanceDate",
+          "label": "next Maintenance Date",
+          "type": "DATE",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "vehicleId": "Alpha Vehicle Id",
+          "vehicleType": "Alpha Type",
+          "make": "Alpha Make",
+          "model": "Alpha Model",
+          "year": 2023,
+          "licensePlate": "Alpha License Plate",
+          "vin": "Alpha Vin",
+          "status": "Active",
+          "assignedDriver": "Alpha Assigned Driver",
+          "mileage": 647,
+          "fuelType": "Alpha Type",
+          "capacity": 999.09,
+          "lastInspectionDate": "2026-10-26",
+          "nextMaintenanceDate": "2026-01-24"
+        },
+        {
+          "vehicleId": "Beta Vehicle Id",
+          "vehicleType": "Beta Type",
+          "make": "Beta Make",
+          "model": "Beta Model",
+          "year": 2025,
+          "licensePlate": "Beta License Plate",
+          "vin": "Beta Vin",
+          "status": "Pending",
+          "assignedDriver": "Beta Assigned Driver",
+          "mileage": 508,
+          "fuelType": "Beta Type",
+          "capacity": 36.36,
+          "lastInspectionDate": "2026-10-12",
+          "nextMaintenanceDate": "2026-03-05"
+        },
+        {
+          "vehicleId": "Gamma Vehicle Id",
+          "vehicleType": "Gamma Type",
+          "make": "Gamma Make",
+          "model": "Gamma Model",
+          "year": 2022,
+          "licensePlate": "Gamma License Plate",
+          "vin": "Gamma Vin",
+          "status": "Review",
+          "assignedDriver": "Gamma Assigned Driver",
+          "mileage": 509,
+          "fuelType": "Gamma Type",
+          "capacity": 239.83,
+          "lastInspectionDate": "2026-08-22",
+          "nextMaintenanceDate": "2026-11-06"
+        },
+        {
+          "vehicleId": "Delta Vehicle Id",
+          "vehicleType": "Delta Type",
+          "make": "Delta Make",
+          "model": "Delta Model",
+          "year": 2022,
+          "licensePlate": "Delta License Plate",
+          "vin": "Delta Vin",
+          "status": "Approved",
+          "assignedDriver": "Delta Assigned Driver",
+          "mileage": 252,
+          "fuelType": "Delta Type",
+          "capacity": 532.15,
+          "lastInspectionDate": "2026-09-09",
+          "nextMaintenanceDate": "2026-01-09"
+        },
+        {
+          "vehicleId": "Epsilon Vehicle Id",
+          "vehicleType": "Epsilon Type",
+          "make": "Epsilon Make",
+          "model": "Epsilon Model",
+          "year": 2026,
+          "licensePlate": "Epsilon License Plate",
+          "vin": "Epsilon Vin",
+          "status": "Draft",
+          "assignedDriver": "Epsilon Assigned Driver",
+          "mileage": 788,
+          "fuelType": "Epsilon Type",
+          "capacity": 592.98,
+          "lastInspectionDate": "2026-11-22",
+          "nextMaintenanceDate": "2026-12-13"
+        },
+        {
+          "vehicleId": "Zeta Vehicle Id",
+          "vehicleType": "Zeta Type",
+          "make": "Zeta Make",
+          "model": "Zeta Model",
+          "year": 2022,
+          "licensePlate": "Zeta License Plate",
+          "vin": "Zeta Vin",
+          "status": "Live",
+          "assignedDriver": "Zeta Assigned Driver",
+          "mileage": 536,
+          "fuelType": "Zeta Type",
+          "capacity": 671.3,
+          "lastInspectionDate": "2026-09-15",
+          "nextMaintenanceDate": "2026-02-07"
+        },
+        {
+          "vehicleId": "Eta Vehicle Id",
+          "vehicleType": "Eta Type",
+          "make": "Eta Make",
+          "model": "Eta Model",
+          "year": 2021,
+          "licensePlate": "Eta License Plate",
+          "vin": "Eta Vin",
+          "status": "Paused",
+          "assignedDriver": "Eta Assigned Driver",
+          "mileage": 761,
+          "fuelType": "Eta Type",
+          "capacity": 774.31,
+          "lastInspectionDate": "2026-10-24",
+          "nextMaintenanceDate": "2026-01-23"
+        },
+        {
+          "vehicleId": "Theta Vehicle Id",
+          "vehicleType": "Theta Type",
+          "make": "Theta Make",
+          "model": "Theta Model",
+          "year": 2021,
+          "licensePlate": "Theta License Plate",
+          "vin": "Theta Vin",
+          "status": "Archived",
+          "assignedDriver": "Theta Assigned Driver",
+          "mileage": 614,
+          "fuelType": "Theta Type",
+          "capacity": 289.72,
+          "lastInspectionDate": "2026-11-16",
+          "nextMaintenanceDate": "2026-09-08"
+        },
+        {
+          "vehicleId": "Iota Vehicle Id",
+          "vehicleType": "Iota Type",
+          "make": "Iota Make",
+          "model": "Iota Model",
+          "year": 2023,
+          "licensePlate": "Iota License Plate",
+          "vin": "Iota Vin",
+          "status": "Beta",
+          "assignedDriver": "Iota Assigned Driver",
+          "mileage": 190,
+          "fuelType": "Iota Type",
+          "capacity": 177.73,
+          "lastInspectionDate": "2026-05-05",
+          "nextMaintenanceDate": "2026-06-03"
+        },
+        {
+          "vehicleId": "Kappa Vehicle Id",
+          "vehicleType": "Kappa Type",
+          "make": "Kappa Make",
+          "model": "Kappa Model",
+          "year": 2025,
+          "licensePlate": "Kappa License Plate",
+          "vin": "Kappa Vin",
+          "status": "GA",
+          "assignedDriver": "Kappa Assigned Driver",
+          "mileage": 30,
+          "fuelType": "Kappa Type",
+          "capacity": 323.69,
+          "lastInspectionDate": "2026-07-16",
+          "nextMaintenanceDate": "2026-07-11"
+        },
+        {
+          "vehicleId": "Lambda Vehicle Id",
+          "vehicleType": "Lambda Type",
+          "make": "Lambda Make",
+          "model": "Lambda Model",
+          "year": 2023,
+          "licensePlate": "Lambda License Plate",
+          "vin": "Lambda Vin",
+          "status": "Completed",
+          "assignedDriver": "Lambda Assigned Driver",
+          "mileage": 211,
+          "fuelType": "Lambda Type",
+          "capacity": 239.59,
+          "lastInspectionDate": "2026-03-17",
+          "nextMaintenanceDate": "2026-06-08"
+        },
+        {
+          "vehicleId": "Mu Vehicle Id",
+          "vehicleType": "Mu Type",
+          "make": "Mu Make",
+          "model": "Mu Model",
+          "year": 2020,
+          "licensePlate": "Mu License Plate",
+          "vin": "Mu Vin",
+          "status": "In Progress",
+          "assignedDriver": "Mu Assigned Driver",
+          "mileage": 526,
+          "fuelType": "Mu Type",
+          "capacity": 830.51,
+          "lastInspectionDate": "2026-10-23",
+          "nextMaintenanceDate": "2026-07-25"
+        },
+        {
+          "vehicleId": "Nu Vehicle Id",
+          "vehicleType": "Nu Type",
+          "make": "Nu Make",
+          "model": "Nu Model",
+          "year": 2020,
+          "licensePlate": "Nu License Plate",
+          "vin": "Nu Vin",
+          "status": "Scheduled",
+          "assignedDriver": "Nu Assigned Driver",
+          "mileage": 673,
+          "fuelType": "Nu Type",
+          "capacity": 119.05,
+          "lastInspectionDate": "2026-02-15",
+          "nextMaintenanceDate": "2026-07-23"
+        },
+        {
+          "vehicleId": "Xi Vehicle Id",
+          "vehicleType": "Xi Type",
+          "make": "Xi Make",
+          "model": "Xi Model",
+          "year": 2023,
+          "licensePlate": "Xi License Plate",
+          "vin": "Xi Vin",
+          "status": "Failed",
+          "assignedDriver": "Xi Assigned Driver",
+          "mileage": 508,
+          "fuelType": "Xi Type",
+          "capacity": 637.98,
+          "lastInspectionDate": "2026-09-01",
+          "nextMaintenanceDate": "2026-04-06"
+        },
+        {
+          "vehicleId": "Omicron Vehicle Id",
+          "vehicleType": "Omicron Type",
+          "make": "Omicron Make",
+          "model": "Omicron Model",
+          "year": 2021,
+          "licensePlate": "Omicron License Plate",
+          "vin": "Omicron Vin",
+          "status": "Cancelled",
+          "assignedDriver": "Omicron Assigned Driver",
+          "mileage": 412,
+          "fuelType": "Omicron Type",
+          "capacity": 157.05,
+          "lastInspectionDate": "2026-09-05",
+          "nextMaintenanceDate": "2026-06-07"
+        }
+      ]
+    },
+    {
+      "label": "Driver Profile",
+      "modelName": "DriverProfile",
+      "routeKey": "driverProfiles",
+      "icon": "🧑‍✈️",
+      "aiFunction": "analyzeDriverProfile",
+      "aiPrompt": "Analyze this Driver Profile data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "licenseNumber",
+          "label": "License Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "licenseClass",
+          "label": "License Class",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "hireDate",
+          "label": "hire Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "totalTrips",
+          "label": "total Trips",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "safetyScore",
+          "label": "safety Score",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "hoursThisWeek",
+          "label": "hours This Week",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "violations",
+          "label": "violations",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "homeBase",
+          "label": "Home Base",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "certifications",
+          "label": "certifications",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "email": "alpha@example.com",
+          "phone": "Alpha Phone",
+          "licenseNumber": "Alpha License Number",
+          "licenseClass": "Alpha License Class",
+          "hireDate": "2026-10-10",
+          "status": "Active",
+          "totalTrips": 357,
+          "safetyScore": 84.4,
+          "hoursThisWeek": 662.1,
+          "violations": 808,
+          "homeBase": "Alpha Home Base",
+          "certifications": "Alpha certifications content for enterprise scenario."
+        },
+        {
+          "name": "Beta Name",
+          "email": "beta@example.com",
+          "phone": "Beta Phone",
+          "licenseNumber": "Beta License Number",
+          "licenseClass": "Beta License Class",
+          "hireDate": "2026-06-24",
+          "status": "Pending",
+          "totalTrips": 153,
+          "safetyScore": 52.4,
+          "hoursThisWeek": 454.93,
+          "violations": 664,
+          "homeBase": "Beta Home Base",
+          "certifications": "Beta certifications content for startup scenario."
+        },
+        {
+          "name": "Gamma Name",
+          "email": "gamma@example.com",
+          "phone": "Gamma Phone",
+          "licenseNumber": "Gamma License Number",
+          "licenseClass": "Gamma License Class",
+          "hireDate": "2026-06-23",
+          "status": "Review",
+          "totalTrips": 393,
+          "safetyScore": 52.9,
+          "hoursThisWeek": 91.08,
+          "violations": 522,
+          "homeBase": "Gamma Home Base",
+          "certifications": "Gamma certifications content for smb scenario."
+        },
+        {
+          "name": "Delta Name",
+          "email": "delta@example.com",
+          "phone": "Delta Phone",
+          "licenseNumber": "Delta License Number",
+          "licenseClass": "Delta License Class",
+          "hireDate": "2026-07-27",
+          "status": "Approved",
+          "totalTrips": 397,
+          "safetyScore": 76.7,
+          "hoursThisWeek": 589.32,
+          "violations": 973,
+          "homeBase": "Delta Home Base",
+          "certifications": "Delta certifications content for agency scenario."
+        },
+        {
+          "name": "Epsilon Name",
+          "email": "epsilon@example.com",
+          "phone": "Epsilon Phone",
+          "licenseNumber": "Epsilon License Number",
+          "licenseClass": "Epsilon License Class",
+          "hireDate": "2026-03-20",
+          "status": "Draft",
+          "totalTrips": 91,
+          "safetyScore": 95.5,
+          "hoursThisWeek": 516.95,
+          "violations": 200,
+          "homeBase": "Epsilon Home Base",
+          "certifications": "Epsilon certifications content for freelancer scenario."
+        },
+        {
+          "name": "Zeta Name",
+          "email": "zeta@example.com",
+          "phone": "Zeta Phone",
+          "licenseNumber": "Zeta License Number",
+          "licenseClass": "Zeta License Class",
+          "hireDate": "2026-12-03",
+          "status": "Live",
+          "totalTrips": 162,
+          "safetyScore": 96.7,
+          "hoursThisWeek": 599.13,
+          "violations": 234,
+          "homeBase": "Zeta Home Base",
+          "certifications": "Zeta certifications content for government scenario."
+        },
+        {
+          "name": "Eta Name",
+          "email": "eta@example.com",
+          "phone": "Eta Phone",
+          "licenseNumber": "Eta License Number",
+          "licenseClass": "Eta License Class",
+          "hireDate": "2026-10-20",
+          "status": "Paused",
+          "totalTrips": 451,
+          "safetyScore": 42.9,
+          "hoursThisWeek": 479.86,
+          "violations": 67,
+          "homeBase": "Eta Home Base",
+          "certifications": "Eta certifications content for nonprofit scenario."
+        },
+        {
+          "name": "Theta Name",
+          "email": "theta@example.com",
+          "phone": "Theta Phone",
+          "licenseNumber": "Theta License Number",
+          "licenseClass": "Theta License Class",
+          "hireDate": "2026-10-22",
+          "status": "Archived",
+          "totalTrips": 218,
+          "safetyScore": 49.9,
+          "hoursThisWeek": 552.64,
+          "violations": 593,
+          "homeBase": "Theta Home Base",
+          "certifications": "Theta certifications content for healthcare scenario."
+        },
+        {
+          "name": "Iota Name",
+          "email": "iota@example.com",
+          "phone": "Iota Phone",
+          "licenseNumber": "Iota License Number",
+          "licenseClass": "Iota License Class",
+          "hireDate": "2026-07-09",
+          "status": "Beta",
+          "totalTrips": 420,
+          "safetyScore": 85.2,
+          "hoursThisWeek": 155.93,
+          "violations": 195,
+          "homeBase": "Iota Home Base",
+          "certifications": "Iota certifications content for finance scenario."
+        },
+        {
+          "name": "Kappa Name",
+          "email": "kappa@example.com",
+          "phone": "Kappa Phone",
+          "licenseNumber": "Kappa License Number",
+          "licenseClass": "Kappa License Class",
+          "hireDate": "2026-10-27",
+          "status": "GA",
+          "totalTrips": 131,
+          "safetyScore": 98.7,
+          "hoursThisWeek": 915.64,
+          "violations": 943,
+          "homeBase": "Kappa Home Base",
+          "certifications": "Kappa certifications content for education scenario."
+        },
+        {
+          "name": "Lambda Name",
+          "email": "lambda@example.com",
+          "phone": "Lambda Phone",
+          "licenseNumber": "Lambda License Number",
+          "licenseClass": "Lambda License Class",
+          "hireDate": "2026-05-21",
+          "status": "Completed",
+          "totalTrips": 203,
+          "safetyScore": 60.5,
+          "hoursThisWeek": 408.13,
+          "violations": 338,
+          "homeBase": "Lambda Home Base",
+          "certifications": "Lambda certifications content for retail scenario."
+        },
+        {
+          "name": "Mu Name",
+          "email": "mu@example.com",
+          "phone": "Mu Phone",
+          "licenseNumber": "Mu License Number",
+          "licenseClass": "Mu License Class",
+          "hireDate": "2026-08-01",
+          "status": "In Progress",
+          "totalTrips": 302,
+          "safetyScore": 76.6,
+          "hoursThisWeek": 440.35,
+          "violations": 526,
+          "homeBase": "Mu Home Base",
+          "certifications": "Mu certifications content for tech scenario."
+        },
+        {
+          "name": "Nu Name",
+          "email": "nu@example.com",
+          "phone": "Nu Phone",
+          "licenseNumber": "Nu License Number",
+          "licenseClass": "Nu License Class",
+          "hireDate": "2026-07-07",
+          "status": "Scheduled",
+          "totalTrips": 389,
+          "safetyScore": 89.7,
+          "hoursThisWeek": 101.96,
+          "violations": 469,
+          "homeBase": "Nu Home Base",
+          "certifications": "Nu certifications content for legal scenario."
+        },
+        {
+          "name": "Xi Name",
+          "email": "xi@example.com",
+          "phone": "Xi Phone",
+          "licenseNumber": "Xi License Number",
+          "licenseClass": "Xi License Class",
+          "hireDate": "2026-05-24",
+          "status": "Failed",
+          "totalTrips": 181,
+          "safetyScore": 99.9,
+          "hoursThisWeek": 863.64,
+          "violations": 153,
+          "homeBase": "Xi Home Base",
+          "certifications": "Xi certifications content for real estate scenario."
+        },
+        {
+          "name": "Omicron Name",
+          "email": "omicron@example.com",
+          "phone": "Omicron Phone",
+          "licenseNumber": "Omicron License Number",
+          "licenseClass": "Omicron License Class",
+          "hireDate": "2026-04-26",
+          "status": "Cancelled",
+          "totalTrips": 457,
+          "safetyScore": 91.7,
+          "hoursThisWeek": 419.61,
+          "violations": 713,
+          "homeBase": "Omicron Home Base",
+          "certifications": "Omicron certifications content for manufacturing scenario."
+        }
+      ]
+    },
+    {
+      "label": "Route Plan",
+      "modelName": "RoutePlan",
+      "routeKey": "routePlans",
+      "icon": "🗺️",
+      "aiFunction": "analyzeRoutePlan",
+      "aiPrompt": "Analyze this Route Plan data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "routeName",
+          "label": "Route Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "origin",
+          "label": "Origin",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "destination",
+          "label": "Destination",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "distanceMiles",
+          "label": "distance Miles",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "estimatedHours",
+          "label": "estimated Hours",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "waypoints",
+          "label": "waypoints",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "vehicleType",
+          "label": "Vehicle Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "scheduled Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "assignedDriver",
+          "label": "Assigned Driver",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "fuelEstimate",
+          "label": "fuel Estimate",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "tollCost",
+          "label": "toll Cost",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "routeName": "Alpha Route Name",
+          "origin": "Alpha Origin",
+          "destination": "Alpha Destination",
+          "distanceMiles": 346.87,
+          "estimatedHours": 389.67,
+          "waypoints": "Alpha waypoints content for enterprise scenario.",
+          "vehicleType": "Alpha Type",
+          "status": "Active",
+          "scheduledDate": "2026-08-13",
+          "assignedDriver": "Alpha Assigned Driver",
+          "fuelEstimate": 282.05,
+          "tollCost": 246.23,
+          "notes": "Alpha notes — comprehensive details for enterprise use case with actionable insights."
+        },
+        {
+          "routeName": "Beta Route Name",
+          "origin": "Beta Origin",
+          "destination": "Beta Destination",
+          "distanceMiles": 551.14,
+          "estimatedHours": 557.86,
+          "waypoints": "Beta waypoints content for startup scenario.",
+          "vehicleType": "Beta Type",
+          "status": "Pending",
+          "scheduledDate": "2026-01-03",
+          "assignedDriver": "Beta Assigned Driver",
+          "fuelEstimate": 810.56,
+          "tollCost": 812.81,
+          "notes": "Beta notes — comprehensive details for startup use case with actionable insights."
+        },
+        {
+          "routeName": "Gamma Route Name",
+          "origin": "Gamma Origin",
+          "destination": "Gamma Destination",
+          "distanceMiles": 427.4,
+          "estimatedHours": 796.82,
+          "waypoints": "Gamma waypoints content for smb scenario.",
+          "vehicleType": "Gamma Type",
+          "status": "Review",
+          "scheduledDate": "2026-05-26",
+          "assignedDriver": "Gamma Assigned Driver",
+          "fuelEstimate": 516.5,
+          "tollCost": 699.93,
+          "notes": "Gamma notes — comprehensive details for smb use case with actionable insights."
+        },
+        {
+          "routeName": "Delta Route Name",
+          "origin": "Delta Origin",
+          "destination": "Delta Destination",
+          "distanceMiles": 898.6,
+          "estimatedHours": 870.06,
+          "waypoints": "Delta waypoints content for agency scenario.",
+          "vehicleType": "Delta Type",
+          "status": "Approved",
+          "scheduledDate": "2026-12-01",
+          "assignedDriver": "Delta Assigned Driver",
+          "fuelEstimate": 730.79,
+          "tollCost": 67.25,
+          "notes": "Delta notes — comprehensive details for agency use case with actionable insights."
+        },
+        {
+          "routeName": "Epsilon Route Name",
+          "origin": "Epsilon Origin",
+          "destination": "Epsilon Destination",
+          "distanceMiles": 319.99,
+          "estimatedHours": 194.89,
+          "waypoints": "Epsilon waypoints content for freelancer scenario.",
+          "vehicleType": "Epsilon Type",
+          "status": "Draft",
+          "scheduledDate": "2026-12-20",
+          "assignedDriver": "Epsilon Assigned Driver",
+          "fuelEstimate": 412.53,
+          "tollCost": 546.15,
+          "notes": "Epsilon notes — comprehensive details for freelancer use case with actionable insights."
+        },
+        {
+          "routeName": "Zeta Route Name",
+          "origin": "Zeta Origin",
+          "destination": "Zeta Destination",
+          "distanceMiles": 398.17,
+          "estimatedHours": 844.89,
+          "waypoints": "Zeta waypoints content for government scenario.",
+          "vehicleType": "Zeta Type",
+          "status": "Live",
+          "scheduledDate": "2026-08-11",
+          "assignedDriver": "Zeta Assigned Driver",
+          "fuelEstimate": 21.5,
+          "tollCost": 152.65,
+          "notes": "Zeta notes — comprehensive details for government use case with actionable insights."
+        },
+        {
+          "routeName": "Eta Route Name",
+          "origin": "Eta Origin",
+          "destination": "Eta Destination",
+          "distanceMiles": 378.62,
+          "estimatedHours": 698.33,
+          "waypoints": "Eta waypoints content for nonprofit scenario.",
+          "vehicleType": "Eta Type",
+          "status": "Paused",
+          "scheduledDate": "2026-05-21",
+          "assignedDriver": "Eta Assigned Driver",
+          "fuelEstimate": 349.77,
+          "tollCost": 627.48,
+          "notes": "Eta notes — comprehensive details for nonprofit use case with actionable insights."
+        },
+        {
+          "routeName": "Theta Route Name",
+          "origin": "Theta Origin",
+          "destination": "Theta Destination",
+          "distanceMiles": 412.48,
+          "estimatedHours": 351.49,
+          "waypoints": "Theta waypoints content for healthcare scenario.",
+          "vehicleType": "Theta Type",
+          "status": "Archived",
+          "scheduledDate": "2026-10-24",
+          "assignedDriver": "Theta Assigned Driver",
+          "fuelEstimate": 292.91,
+          "tollCost": 688.7,
+          "notes": "Theta notes — comprehensive details for healthcare use case with actionable insights."
+        },
+        {
+          "routeName": "Iota Route Name",
+          "origin": "Iota Origin",
+          "destination": "Iota Destination",
+          "distanceMiles": 711.27,
+          "estimatedHours": 408.71,
+          "waypoints": "Iota waypoints content for finance scenario.",
+          "vehicleType": "Iota Type",
+          "status": "Beta",
+          "scheduledDate": "2026-01-10",
+          "assignedDriver": "Iota Assigned Driver",
+          "fuelEstimate": 434.12,
+          "tollCost": 252.87,
+          "notes": "Iota notes — comprehensive details for finance use case with actionable insights."
+        },
+        {
+          "routeName": "Kappa Route Name",
+          "origin": "Kappa Origin",
+          "destination": "Kappa Destination",
+          "distanceMiles": 119.21,
+          "estimatedHours": 818.6,
+          "waypoints": "Kappa waypoints content for education scenario.",
+          "vehicleType": "Kappa Type",
+          "status": "GA",
+          "scheduledDate": "2026-12-14",
+          "assignedDriver": "Kappa Assigned Driver",
+          "fuelEstimate": 843.04,
+          "tollCost": 700.53,
+          "notes": "Kappa notes — comprehensive details for education use case with actionable insights."
+        },
+        {
+          "routeName": "Lambda Route Name",
+          "origin": "Lambda Origin",
+          "destination": "Lambda Destination",
+          "distanceMiles": 920.42,
+          "estimatedHours": 671.48,
+          "waypoints": "Lambda waypoints content for retail scenario.",
+          "vehicleType": "Lambda Type",
+          "status": "Completed",
+          "scheduledDate": "2026-01-28",
+          "assignedDriver": "Lambda Assigned Driver",
+          "fuelEstimate": 582.65,
+          "tollCost": 246.35,
+          "notes": "Lambda notes — comprehensive details for retail use case with actionable insights."
+        },
+        {
+          "routeName": "Mu Route Name",
+          "origin": "Mu Origin",
+          "destination": "Mu Destination",
+          "distanceMiles": 880.66,
+          "estimatedHours": 409.62,
+          "waypoints": "Mu waypoints content for tech scenario.",
+          "vehicleType": "Mu Type",
+          "status": "In Progress",
+          "scheduledDate": "2026-06-14",
+          "assignedDriver": "Mu Assigned Driver",
+          "fuelEstimate": 482.06,
+          "tollCost": 884.64,
+          "notes": "Mu notes — comprehensive details for tech use case with actionable insights."
+        },
+        {
+          "routeName": "Nu Route Name",
+          "origin": "Nu Origin",
+          "destination": "Nu Destination",
+          "distanceMiles": 972.24,
+          "estimatedHours": 352.07,
+          "waypoints": "Nu waypoints content for legal scenario.",
+          "vehicleType": "Nu Type",
+          "status": "Scheduled",
+          "scheduledDate": "2026-11-19",
+          "assignedDriver": "Nu Assigned Driver",
+          "fuelEstimate": 523.5,
+          "tollCost": 599.93,
+          "notes": "Nu notes — comprehensive details for legal use case with actionable insights."
+        },
+        {
+          "routeName": "Xi Route Name",
+          "origin": "Xi Origin",
+          "destination": "Xi Destination",
+          "distanceMiles": 259.29,
+          "estimatedHours": 683.49,
+          "waypoints": "Xi waypoints content for real estate scenario.",
+          "vehicleType": "Xi Type",
+          "status": "Failed",
+          "scheduledDate": "2026-12-06",
+          "assignedDriver": "Xi Assigned Driver",
+          "fuelEstimate": 199.35,
+          "tollCost": 604.91,
+          "notes": "Xi notes — comprehensive details for real estate use case with actionable insights."
+        },
+        {
+          "routeName": "Omicron Route Name",
+          "origin": "Omicron Origin",
+          "destination": "Omicron Destination",
+          "distanceMiles": 48.15,
+          "estimatedHours": 816.29,
+          "waypoints": "Omicron waypoints content for manufacturing scenario.",
+          "vehicleType": "Omicron Type",
+          "status": "Cancelled",
+          "scheduledDate": "2026-08-05",
+          "assignedDriver": "Omicron Assigned Driver",
+          "fuelEstimate": 538.76,
+          "tollCost": 828.95,
+          "notes": "Omicron notes — comprehensive details for manufacturing use case with actionable insights."
+        }
+      ]
+    },
+    {
+      "label": "Delivery Order",
+      "modelName": "DeliveryOrder",
+      "routeKey": "deliveryOrders",
+      "icon": "📦",
+      "aiFunction": "analyzeDeliveryOrder",
+      "aiPrompt": "Analyze this Delivery Order data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "orderNumber",
+          "label": "Order Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "pickupAddress",
+          "label": "pickup Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "deliveryAddress",
+          "label": "delivery Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "scheduled Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "deliveredAt",
+          "label": "delivered At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "weight",
+          "label": "weight",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "dimensions",
+          "label": "Dimensions",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "driverName",
+          "label": "Driver Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "vehicleId",
+          "label": "Vehicle Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "signature",
+          "label": "signature",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "orderNumber": "Alpha Order Number",
+          "customerName": "Alpha Customer Name",
+          "pickupAddress": "Alpha pickup address content for enterprise scenario.",
+          "deliveryAddress": "Alpha delivery address content for enterprise scenario.",
+          "scheduledDate": "2026-03-12",
+          "deliveredAt": "2026-10-04",
+          "status": "Active",
+          "weight": 85.08,
+          "dimensions": "Alpha Dimensions",
+          "driverName": "Alpha Driver Name",
+          "vehicleId": "Alpha Vehicle Id",
+          "signature": true,
+          "priority": "Critical"
+        },
+        {
+          "orderNumber": "Beta Order Number",
+          "customerName": "Beta Customer Name",
+          "pickupAddress": "Beta pickup address content for startup scenario.",
+          "deliveryAddress": "Beta delivery address content for startup scenario.",
+          "scheduledDate": "2026-03-18",
+          "deliveredAt": "2026-07-17",
+          "status": "Pending",
+          "weight": 88.59,
+          "dimensions": "Beta Dimensions",
+          "driverName": "Beta Driver Name",
+          "vehicleId": "Beta Vehicle Id",
+          "signature": false,
+          "priority": "High"
+        },
+        {
+          "orderNumber": "Gamma Order Number",
+          "customerName": "Gamma Customer Name",
+          "pickupAddress": "Gamma pickup address content for smb scenario.",
+          "deliveryAddress": "Gamma delivery address content for smb scenario.",
+          "scheduledDate": "2026-10-21",
+          "deliveredAt": "2026-06-09",
+          "status": "Review",
+          "weight": 97.51,
+          "dimensions": "Gamma Dimensions",
+          "driverName": "Gamma Driver Name",
+          "vehicleId": "Gamma Vehicle Id",
+          "signature": true,
+          "priority": "Medium"
+        },
+        {
+          "orderNumber": "Delta Order Number",
+          "customerName": "Delta Customer Name",
+          "pickupAddress": "Delta pickup address content for agency scenario.",
+          "deliveryAddress": "Delta delivery address content for agency scenario.",
+          "scheduledDate": "2026-04-03",
+          "deliveredAt": "2026-06-06",
+          "status": "Approved",
+          "weight": 79.37,
+          "dimensions": "Delta Dimensions",
+          "driverName": "Delta Driver Name",
+          "vehicleId": "Delta Vehicle Id",
+          "signature": false,
+          "priority": "Low"
+        },
+        {
+          "orderNumber": "Epsilon Order Number",
+          "customerName": "Epsilon Customer Name",
+          "pickupAddress": "Epsilon pickup address content for freelancer scenario.",
+          "deliveryAddress": "Epsilon delivery address content for freelancer scenario.",
+          "scheduledDate": "2026-04-14",
+          "deliveredAt": "2026-05-12",
+          "status": "Draft",
+          "weight": 31.16,
+          "dimensions": "Epsilon Dimensions",
+          "driverName": "Epsilon Driver Name",
+          "vehicleId": "Epsilon Vehicle Id",
+          "signature": true,
+          "priority": "Info"
+        },
+        {
+          "orderNumber": "Zeta Order Number",
+          "customerName": "Zeta Customer Name",
+          "pickupAddress": "Zeta pickup address content for government scenario.",
+          "deliveryAddress": "Zeta delivery address content for government scenario.",
+          "scheduledDate": "2026-07-26",
+          "deliveredAt": "2026-06-22",
+          "status": "Live",
+          "weight": 14.91,
+          "dimensions": "Zeta Dimensions",
+          "driverName": "Zeta Driver Name",
+          "vehicleId": "Zeta Vehicle Id",
+          "signature": false,
+          "priority": "Warning"
+        },
+        {
+          "orderNumber": "Eta Order Number",
+          "customerName": "Eta Customer Name",
+          "pickupAddress": "Eta pickup address content for nonprofit scenario.",
+          "deliveryAddress": "Eta delivery address content for nonprofit scenario.",
+          "scheduledDate": "2026-05-20",
+          "deliveredAt": "2026-09-03",
+          "status": "Paused",
+          "weight": 48.31,
+          "dimensions": "Eta Dimensions",
+          "driverName": "Eta Driver Name",
+          "vehicleId": "Eta Vehicle Id",
+          "signature": true,
+          "priority": "Notice"
+        },
+        {
+          "orderNumber": "Theta Order Number",
+          "customerName": "Theta Customer Name",
+          "pickupAddress": "Theta pickup address content for healthcare scenario.",
+          "deliveryAddress": "Theta delivery address content for healthcare scenario.",
+          "scheduledDate": "2026-12-09",
+          "deliveredAt": "2026-03-03",
+          "status": "Archived",
+          "weight": 67.19,
+          "dimensions": "Theta Dimensions",
+          "driverName": "Theta Driver Name",
+          "vehicleId": "Theta Vehicle Id",
+          "signature": false,
+          "priority": "Alert"
+        },
+        {
+          "orderNumber": "Iota Order Number",
+          "customerName": "Iota Customer Name",
+          "pickupAddress": "Iota pickup address content for finance scenario.",
+          "deliveryAddress": "Iota delivery address content for finance scenario.",
+          "scheduledDate": "2026-11-27",
+          "deliveredAt": "2026-06-20",
+          "status": "Beta",
+          "weight": 47.71,
+          "dimensions": "Iota Dimensions",
+          "driverName": "Iota Driver Name",
+          "vehicleId": "Iota Vehicle Id",
+          "signature": true,
+          "priority": "Emergency"
+        },
+        {
+          "orderNumber": "Kappa Order Number",
+          "customerName": "Kappa Customer Name",
+          "pickupAddress": "Kappa pickup address content for education scenario.",
+          "deliveryAddress": "Kappa delivery address content for education scenario.",
+          "scheduledDate": "2026-10-26",
+          "deliveredAt": "2026-01-01",
+          "status": "GA",
+          "weight": 8.91,
+          "dimensions": "Kappa Dimensions",
+          "driverName": "Kappa Driver Name",
+          "vehicleId": "Kappa Vehicle Id",
+          "signature": false,
+          "priority": "Debug"
+        },
+        {
+          "orderNumber": "Lambda Order Number",
+          "customerName": "Lambda Customer Name",
+          "pickupAddress": "Lambda pickup address content for retail scenario.",
+          "deliveryAddress": "Lambda delivery address content for retail scenario.",
+          "scheduledDate": "2026-11-12",
+          "deliveredAt": "2026-01-28",
+          "status": "Completed",
+          "weight": 92.75,
+          "dimensions": "Lambda Dimensions",
+          "driverName": "Lambda Driver Name",
+          "vehicleId": "Lambda Vehicle Id",
+          "signature": true,
+          "priority": "Trace"
+        },
+        {
+          "orderNumber": "Mu Order Number",
+          "customerName": "Mu Customer Name",
+          "pickupAddress": "Mu pickup address content for tech scenario.",
+          "deliveryAddress": "Mu delivery address content for tech scenario.",
+          "scheduledDate": "2026-08-10",
+          "deliveredAt": "2026-09-02",
+          "status": "In Progress",
+          "weight": 39.84,
+          "dimensions": "Mu Dimensions",
+          "driverName": "Mu Driver Name",
+          "vehicleId": "Mu Vehicle Id",
+          "signature": false,
+          "priority": "Fatal"
+        },
+        {
+          "orderNumber": "Nu Order Number",
+          "customerName": "Nu Customer Name",
+          "pickupAddress": "Nu pickup address content for legal scenario.",
+          "deliveryAddress": "Nu delivery address content for legal scenario.",
+          "scheduledDate": "2026-10-03",
+          "deliveredAt": "2026-11-10",
+          "status": "Scheduled",
+          "weight": 80.95,
+          "dimensions": "Nu Dimensions",
+          "driverName": "Nu Driver Name",
+          "vehicleId": "Nu Vehicle Id",
+          "signature": true,
+          "priority": "Major"
+        },
+        {
+          "orderNumber": "Xi Order Number",
+          "customerName": "Xi Customer Name",
+          "pickupAddress": "Xi pickup address content for real estate scenario.",
+          "deliveryAddress": "Xi delivery address content for real estate scenario.",
+          "scheduledDate": "2026-11-09",
+          "deliveredAt": "2026-09-17",
+          "status": "Failed",
+          "weight": 37.08,
+          "dimensions": "Xi Dimensions",
+          "driverName": "Xi Driver Name",
+          "vehicleId": "Xi Vehicle Id",
+          "signature": false,
+          "priority": "Minor"
+        },
+        {
+          "orderNumber": "Omicron Order Number",
+          "customerName": "Omicron Customer Name",
+          "pickupAddress": "Omicron pickup address content for manufacturing scenario.",
+          "deliveryAddress": "Omicron delivery address content for manufacturing scenario.",
+          "scheduledDate": "2026-05-15",
+          "deliveredAt": "2026-05-21",
+          "status": "Cancelled",
+          "weight": 23.48,
+          "dimensions": "Omicron Dimensions",
+          "driverName": "Omicron Driver Name",
+          "vehicleId": "Omicron Vehicle Id",
+          "signature": true,
+          "priority": "Trivial"
+        }
+      ]
+    },
+    {
+      "label": "Fuel Expense",
+      "modelName": "FuelExpense",
+      "routeKey": "fuelExpenses",
+      "icon": "⛽",
+      "aiFunction": "analyzeFuelExpense",
+      "aiPrompt": "Analyze this Fuel Expense data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "vehicleId",
+          "label": "Vehicle Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "driverName",
+          "label": "Driver Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "fuelDate",
+          "label": "fuel Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "station",
+          "label": "Station",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "fuelType",
+          "label": "Fuel Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "gallons",
+          "label": "gallons",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "pricePerGallon",
+          "label": "price Per Gallon",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "totalCost",
+          "label": "total Cost",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "mileage",
+          "label": "mileage",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "receiptUrl",
+          "label": "Receipt Url",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "isReimbursed",
+          "label": "is Reimbursed",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "vehicleId": "Alpha Vehicle Id",
+          "driverName": "Alpha Driver Name",
+          "fuelDate": "2026-07-23",
+          "station": "Alpha Station",
+          "fuelType": "Alpha Type",
+          "gallons": -55.872086,
+          "pricePerGallon": 697.88,
+          "totalCost": 586.1,
+          "mileage": 710,
+          "receiptUrl": "https://alpha.example.com",
+          "isReimbursed": true
+        },
+        {
+          "vehicleId": "Beta Vehicle Id",
+          "driverName": "Beta Driver Name",
+          "fuelDate": "2026-06-17",
+          "station": "Beta Station",
+          "fuelType": "Beta Type",
+          "gallons": 137.971459,
+          "pricePerGallon": 719.79,
+          "totalCost": 300.76,
+          "mileage": 859,
+          "receiptUrl": "https://beta.example.com",
+          "isReimbursed": false
+        },
+        {
+          "vehicleId": "Gamma Vehicle Id",
+          "driverName": "Gamma Driver Name",
+          "fuelDate": "2026-05-16",
+          "station": "Gamma Station",
+          "fuelType": "Gamma Type",
+          "gallons": 59.052942,
+          "pricePerGallon": 539.65,
+          "totalCost": 794.83,
+          "mileage": 237,
+          "receiptUrl": "https://gamma.example.com",
+          "isReimbursed": true
+        },
+        {
+          "vehicleId": "Delta Vehicle Id",
+          "driverName": "Delta Driver Name",
+          "fuelDate": "2026-07-13",
+          "station": "Delta Station",
+          "fuelType": "Delta Type",
+          "gallons": 163.053377,
+          "pricePerGallon": 811.89,
+          "totalCost": 590.65,
+          "mileage": 966,
+          "receiptUrl": "https://delta.example.com",
+          "isReimbursed": false
+        },
+        {
+          "vehicleId": "Epsilon Vehicle Id",
+          "driverName": "Epsilon Driver Name",
+          "fuelDate": "2026-07-07",
+          "station": "Epsilon Station",
+          "fuelType": "Epsilon Type",
+          "gallons": 119.033105,
+          "pricePerGallon": 803.1,
+          "totalCost": 45.55,
+          "mileage": 630,
+          "receiptUrl": "https://epsilon.example.com",
+          "isReimbursed": true
+        },
+        {
+          "vehicleId": "Zeta Vehicle Id",
+          "driverName": "Zeta Driver Name",
+          "fuelDate": "2026-01-19",
+          "station": "Zeta Station",
+          "fuelType": "Zeta Type",
+          "gallons": -7.557099,
+          "pricePerGallon": 761.16,
+          "totalCost": 460.37,
+          "mileage": 292,
+          "receiptUrl": "https://zeta.example.com",
+          "isReimbursed": false
+        },
+        {
+          "vehicleId": "Eta Vehicle Id",
+          "driverName": "Eta Driver Name",
+          "fuelDate": "2026-05-06",
+          "station": "Eta Station",
+          "fuelType": "Eta Type",
+          "gallons": -79.807775,
+          "pricePerGallon": 113.69,
+          "totalCost": 679.39,
+          "mileage": 871,
+          "receiptUrl": "https://eta.example.com",
+          "isReimbursed": true
+        },
+        {
+          "vehicleId": "Theta Vehicle Id",
+          "driverName": "Theta Driver Name",
+          "fuelDate": "2026-07-26",
+          "station": "Theta Station",
+          "fuelType": "Theta Type",
+          "gallons": -66.185623,
+          "pricePerGallon": 401.11,
+          "totalCost": 422.79,
+          "mileage": 662,
+          "receiptUrl": "https://theta.example.com",
+          "isReimbursed": false
+        },
+        {
+          "vehicleId": "Iota Vehicle Id",
+          "driverName": "Iota Driver Name",
+          "fuelDate": "2026-08-15",
+          "station": "Iota Station",
+          "fuelType": "Iota Type",
+          "gallons": 26.543034,
+          "pricePerGallon": 99.29,
+          "totalCost": 101.53,
+          "mileage": 585,
+          "receiptUrl": "https://iota.example.com",
+          "isReimbursed": true
+        },
+        {
+          "vehicleId": "Kappa Vehicle Id",
+          "driverName": "Kappa Driver Name",
+          "fuelDate": "2026-05-12",
+          "station": "Kappa Station",
+          "fuelType": "Kappa Type",
+          "gallons": 130.999296,
+          "pricePerGallon": 576.27,
+          "totalCost": 862.86,
+          "mileage": 332,
+          "receiptUrl": "https://kappa.example.com",
+          "isReimbursed": false
+        },
+        {
+          "vehicleId": "Lambda Vehicle Id",
+          "driverName": "Lambda Driver Name",
+          "fuelDate": "2026-08-26",
+          "station": "Lambda Station",
+          "fuelType": "Lambda Type",
+          "gallons": -103.084403,
+          "pricePerGallon": 311.89,
+          "totalCost": 530.66,
+          "mileage": 298,
+          "receiptUrl": "https://lambda.example.com",
+          "isReimbursed": true
+        },
+        {
+          "vehicleId": "Mu Vehicle Id",
+          "driverName": "Mu Driver Name",
+          "fuelDate": "2026-09-17",
+          "station": "Mu Station",
+          "fuelType": "Mu Type",
+          "gallons": 132.605967,
+          "pricePerGallon": 744.45,
+          "totalCost": 871.31,
+          "mileage": 195,
+          "receiptUrl": "https://mu.example.com",
+          "isReimbursed": false
+        },
+        {
+          "vehicleId": "Nu Vehicle Id",
+          "driverName": "Nu Driver Name",
+          "fuelDate": "2026-09-12",
+          "station": "Nu Station",
+          "fuelType": "Nu Type",
+          "gallons": 45.707823,
+          "pricePerGallon": 397.86,
+          "totalCost": 648.71,
+          "mileage": 31,
+          "receiptUrl": "https://nu.example.com",
+          "isReimbursed": true
+        },
+        {
+          "vehicleId": "Xi Vehicle Id",
+          "driverName": "Xi Driver Name",
+          "fuelDate": "2026-09-20",
+          "station": "Xi Station",
+          "fuelType": "Xi Type",
+          "gallons": 53.211107,
+          "pricePerGallon": 425.4,
+          "totalCost": 811.95,
+          "mileage": 583,
+          "receiptUrl": "https://xi.example.com",
+          "isReimbursed": false
+        },
+        {
+          "vehicleId": "Omicron Vehicle Id",
+          "driverName": "Omicron Driver Name",
+          "fuelDate": "2026-11-25",
+          "station": "Omicron Station",
+          "fuelType": "Omicron Type",
+          "gallons": 92.198029,
+          "pricePerGallon": 790.88,
+          "totalCost": 228.57,
+          "mileage": 35,
+          "receiptUrl": "https://omicron.example.com",
+          "isReimbursed": true
+        }
+      ]
+    },
+    {
+      "label": "Maintenance Schedule",
+      "modelName": "MaintenanceSchedule",
+      "routeKey": "maintenanceSchedules",
+      "icon": "🔧",
+      "aiFunction": "analyzeMaintenanceSchedule",
+      "aiPrompt": "Analyze this Maintenance Schedule data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "vehicleId",
+          "label": "Vehicle Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "maintenanceType",
+          "label": "Maintenance Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "description",
+          "label": "description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "scheduled Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "completedDate",
+          "label": "completed Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "vendor",
+          "label": "Vendor",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "estimatedCost",
+          "label": "estimated Cost",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "actualCost",
+          "label": "actual Cost",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "mileageInterval",
+          "label": "mileage Interval",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "nextDueDate",
+          "label": "next Due Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "vehicleId": "Alpha Vehicle Id",
+          "maintenanceType": "Alpha Type",
+          "description": "Alpha description — comprehensive details for enterprise use case with actionable insights.",
+          "scheduledDate": "2026-08-03",
+          "completedDate": "2026-12-07",
+          "vendor": "Alpha Vendor",
+          "estimatedCost": 823.19,
+          "actualCost": 237.38,
+          "status": "Active",
+          "mileageInterval": 593,
+          "nextDueDate": "2026-06-02",
+          "priority": "Critical"
+        },
+        {
+          "vehicleId": "Beta Vehicle Id",
+          "maintenanceType": "Beta Type",
+          "description": "Beta description — comprehensive details for startup use case with actionable insights.",
+          "scheduledDate": "2026-12-23",
+          "completedDate": "2026-08-28",
+          "vendor": "Beta Vendor",
+          "estimatedCost": 86.7,
+          "actualCost": 894.84,
+          "status": "Pending",
+          "mileageInterval": 508,
+          "nextDueDate": "2026-03-11",
+          "priority": "High"
+        },
+        {
+          "vehicleId": "Gamma Vehicle Id",
+          "maintenanceType": "Gamma Type",
+          "description": "Gamma description — comprehensive details for smb use case with actionable insights.",
+          "scheduledDate": "2026-03-15",
+          "completedDate": "2026-10-03",
+          "vendor": "Gamma Vendor",
+          "estimatedCost": 257.84,
+          "actualCost": 286.2,
+          "status": "Review",
+          "mileageInterval": 30,
+          "nextDueDate": "2026-07-24",
+          "priority": "Medium"
+        },
+        {
+          "vehicleId": "Delta Vehicle Id",
+          "maintenanceType": "Delta Type",
+          "description": "Delta description — comprehensive details for agency use case with actionable insights.",
+          "scheduledDate": "2026-05-28",
+          "completedDate": "2026-11-10",
+          "vendor": "Delta Vendor",
+          "estimatedCost": 631.87,
+          "actualCost": 12.21,
+          "status": "Approved",
+          "mileageInterval": 410,
+          "nextDueDate": "2026-01-20",
+          "priority": "Low"
+        },
+        {
+          "vehicleId": "Epsilon Vehicle Id",
+          "maintenanceType": "Epsilon Type",
+          "description": "Epsilon description — comprehensive details for freelancer use case with actionable insights.",
+          "scheduledDate": "2026-12-19",
+          "completedDate": "2026-12-14",
+          "vendor": "Epsilon Vendor",
+          "estimatedCost": 503.7,
+          "actualCost": 200.81,
+          "status": "Draft",
+          "mileageInterval": 703,
+          "nextDueDate": "2026-10-23",
+          "priority": "Info"
+        },
+        {
+          "vehicleId": "Zeta Vehicle Id",
+          "maintenanceType": "Zeta Type",
+          "description": "Zeta description — comprehensive details for government use case with actionable insights.",
+          "scheduledDate": "2026-04-25",
+          "completedDate": "2026-12-06",
+          "vendor": "Zeta Vendor",
+          "estimatedCost": 298.49,
+          "actualCost": 341.57,
+          "status": "Live",
+          "mileageInterval": 839,
+          "nextDueDate": "2026-09-06",
+          "priority": "Warning"
+        },
+        {
+          "vehicleId": "Eta Vehicle Id",
+          "maintenanceType": "Eta Type",
+          "description": "Eta description — comprehensive details for nonprofit use case with actionable insights.",
+          "scheduledDate": "2026-10-12",
+          "completedDate": "2026-05-08",
+          "vendor": "Eta Vendor",
+          "estimatedCost": 765.85,
+          "actualCost": 177.26,
+          "status": "Paused",
+          "mileageInterval": 441,
+          "nextDueDate": "2026-01-14",
+          "priority": "Notice"
+        },
+        {
+          "vehicleId": "Theta Vehicle Id",
+          "maintenanceType": "Theta Type",
+          "description": "Theta description — comprehensive details for healthcare use case with actionable insights.",
+          "scheduledDate": "2026-11-17",
+          "completedDate": "2026-12-19",
+          "vendor": "Theta Vendor",
+          "estimatedCost": 275.08,
+          "actualCost": 857.37,
+          "status": "Archived",
+          "mileageInterval": 39,
+          "nextDueDate": "2026-11-22",
+          "priority": "Alert"
+        },
+        {
+          "vehicleId": "Iota Vehicle Id",
+          "maintenanceType": "Iota Type",
+          "description": "Iota description — comprehensive details for finance use case with actionable insights.",
+          "scheduledDate": "2026-08-14",
+          "completedDate": "2026-03-20",
+          "vendor": "Iota Vendor",
+          "estimatedCost": 603.27,
+          "actualCost": 395.98,
+          "status": "Beta",
+          "mileageInterval": 928,
+          "nextDueDate": "2026-01-11",
+          "priority": "Emergency"
+        },
+        {
+          "vehicleId": "Kappa Vehicle Id",
+          "maintenanceType": "Kappa Type",
+          "description": "Kappa description — comprehensive details for education use case with actionable insights.",
+          "scheduledDate": "2026-04-11",
+          "completedDate": "2026-01-05",
+          "vendor": "Kappa Vendor",
+          "estimatedCost": 488.89,
+          "actualCost": 877.25,
+          "status": "GA",
+          "mileageInterval": 223,
+          "nextDueDate": "2026-01-21",
+          "priority": "Debug"
+        },
+        {
+          "vehicleId": "Lambda Vehicle Id",
+          "maintenanceType": "Lambda Type",
+          "description": "Lambda description — comprehensive details for retail use case with actionable insights.",
+          "scheduledDate": "2026-05-26",
+          "completedDate": "2026-11-11",
+          "vendor": "Lambda Vendor",
+          "estimatedCost": 408.99,
+          "actualCost": 45.55,
+          "status": "Completed",
+          "mileageInterval": 134,
+          "nextDueDate": "2026-01-10",
+          "priority": "Trace"
+        },
+        {
+          "vehicleId": "Mu Vehicle Id",
+          "maintenanceType": "Mu Type",
+          "description": "Mu description — comprehensive details for tech use case with actionable insights.",
+          "scheduledDate": "2026-07-25",
+          "completedDate": "2026-11-21",
+          "vendor": "Mu Vendor",
+          "estimatedCost": 56.3,
+          "actualCost": 337.95,
+          "status": "In Progress",
+          "mileageInterval": 331,
+          "nextDueDate": "2026-02-04",
+          "priority": "Fatal"
+        },
+        {
+          "vehicleId": "Nu Vehicle Id",
+          "maintenanceType": "Nu Type",
+          "description": "Nu description — comprehensive details for legal use case with actionable insights.",
+          "scheduledDate": "2026-01-12",
+          "completedDate": "2026-09-05",
+          "vendor": "Nu Vendor",
+          "estimatedCost": 99.07,
+          "actualCost": 126.54,
+          "status": "Scheduled",
+          "mileageInterval": 944,
+          "nextDueDate": "2026-12-22",
+          "priority": "Major"
+        },
+        {
+          "vehicleId": "Xi Vehicle Id",
+          "maintenanceType": "Xi Type",
+          "description": "Xi description — comprehensive details for real estate use case with actionable insights.",
+          "scheduledDate": "2026-11-25",
+          "completedDate": "2026-08-06",
+          "vendor": "Xi Vendor",
+          "estimatedCost": 483.02,
+          "actualCost": 479.61,
+          "status": "Failed",
+          "mileageInterval": 567,
+          "nextDueDate": "2026-08-06",
+          "priority": "Minor"
+        },
+        {
+          "vehicleId": "Omicron Vehicle Id",
+          "maintenanceType": "Omicron Type",
+          "description": "Omicron description — comprehensive details for manufacturing use case with actionable insights.",
+          "scheduledDate": "2026-08-17",
+          "completedDate": "2026-07-21",
+          "vendor": "Omicron Vendor",
+          "estimatedCost": 897.35,
+          "actualCost": 357.97,
+          "status": "Cancelled",
+          "mileageInterval": 23,
+          "nextDueDate": "2026-02-20",
+          "priority": "Trivial"
+        }
+      ]
+    },
+    {
+      "label": "GPS Tracking",
+      "modelName": "GPSTracking",
+      "routeKey": "gpsTrackings",
+      "icon": "📍",
+      "aiFunction": "analyzeGPSTracking",
+      "aiPrompt": "Analyze this GPS Tracking data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "vehicleId",
+          "label": "Vehicle Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "driverName",
+          "label": "Driver Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "latitude",
+          "label": "latitude",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "longitude",
+          "label": "longitude",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "speed",
+          "label": "speed",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "heading",
+          "label": "Heading",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "timestamp",
+          "label": "timestamp",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "geoFenceZone",
+          "label": "Geo Fence Zone",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "ignitionOn",
+          "label": "ignition On",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "fuelLevel",
+          "label": "fuel Level",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "odometerReading",
+          "label": "odometer Reading",
+          "type": "INTEGER",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "vehicleId": "Alpha Vehicle Id",
+          "driverName": "Alpha Driver Name",
+          "latitude": -39.087878,
+          "longitude": -8.863456,
+          "speed": 557.23,
+          "heading": "Alpha Heading",
+          "timestamp": "2026-03-01",
+          "status": "Active",
+          "geoFenceZone": "Alpha Geo Fence Zone",
+          "ignitionOn": true,
+          "fuelLevel": 685.32,
+          "odometerReading": 138
+        },
+        {
+          "vehicleId": "Beta Vehicle Id",
+          "driverName": "Beta Driver Name",
+          "latitude": 51.277855,
+          "longitude": -32.112543,
+          "speed": 168.76,
+          "heading": "Beta Heading",
+          "timestamp": "2026-06-24",
+          "status": "Pending",
+          "geoFenceZone": "Beta Geo Fence Zone",
+          "ignitionOn": false,
+          "fuelLevel": 136.2,
+          "odometerReading": 596
+        },
+        {
+          "vehicleId": "Gamma Vehicle Id",
+          "driverName": "Gamma Driver Name",
+          "latitude": 3.111346,
+          "longitude": 86.221748,
+          "speed": 755.06,
+          "heading": "Gamma Heading",
+          "timestamp": "2026-07-15",
+          "status": "Review",
+          "geoFenceZone": "Gamma Geo Fence Zone",
+          "ignitionOn": true,
+          "fuelLevel": 32.75,
+          "odometerReading": 407
+        },
+        {
+          "vehicleId": "Delta Vehicle Id",
+          "driverName": "Delta Driver Name",
+          "latitude": 41.068736,
+          "longitude": -148.22626,
+          "speed": 437.34,
+          "heading": "Delta Heading",
+          "timestamp": "2026-04-06",
+          "status": "Approved",
+          "geoFenceZone": "Delta Geo Fence Zone",
+          "ignitionOn": false,
+          "fuelLevel": 329.42,
+          "odometerReading": 507
+        },
+        {
+          "vehicleId": "Epsilon Vehicle Id",
+          "driverName": "Epsilon Driver Name",
+          "latitude": 23.945292,
+          "longitude": -66.411476,
+          "speed": 196.85,
+          "heading": "Epsilon Heading",
+          "timestamp": "2026-11-23",
+          "status": "Draft",
+          "geoFenceZone": "Epsilon Geo Fence Zone",
+          "ignitionOn": true,
+          "fuelLevel": 893.95,
+          "odometerReading": 55
+        },
+        {
+          "vehicleId": "Zeta Vehicle Id",
+          "driverName": "Zeta Driver Name",
+          "latitude": -12.593647,
+          "longitude": -75.43504,
+          "speed": 453.55,
+          "heading": "Zeta Heading",
+          "timestamp": "2026-09-18",
+          "status": "Live",
+          "geoFenceZone": "Zeta Geo Fence Zone",
+          "ignitionOn": false,
+          "fuelLevel": 912.79,
+          "odometerReading": 473
+        },
+        {
+          "vehicleId": "Eta Vehicle Id",
+          "driverName": "Eta Driver Name",
+          "latitude": -17.570358,
+          "longitude": -170.903745,
+          "speed": 970.68,
+          "heading": "Eta Heading",
+          "timestamp": "2026-08-20",
+          "status": "Paused",
+          "geoFenceZone": "Eta Geo Fence Zone",
+          "ignitionOn": true,
+          "fuelLevel": 846.9,
+          "odometerReading": 993
+        },
+        {
+          "vehicleId": "Theta Vehicle Id",
+          "driverName": "Theta Driver Name",
+          "latitude": 1.887323,
+          "longitude": -147.331019,
+          "speed": 485.74,
+          "heading": "Theta Heading",
+          "timestamp": "2026-11-16",
+          "status": "Archived",
+          "geoFenceZone": "Theta Geo Fence Zone",
+          "ignitionOn": false,
+          "fuelLevel": 185.41,
+          "odometerReading": 571
+        },
+        {
+          "vehicleId": "Iota Vehicle Id",
+          "driverName": "Iota Driver Name",
+          "latitude": 86.480604,
+          "longitude": -179.612886,
+          "speed": 832.32,
+          "heading": "Iota Heading",
+          "timestamp": "2026-09-19",
+          "status": "Beta",
+          "geoFenceZone": "Iota Geo Fence Zone",
+          "ignitionOn": true,
+          "fuelLevel": 475.11,
+          "odometerReading": 660
+        },
+        {
+          "vehicleId": "Kappa Vehicle Id",
+          "driverName": "Kappa Driver Name",
+          "latitude": -28.328193,
+          "longitude": -8.86736,
+          "speed": 601.33,
+          "heading": "Kappa Heading",
+          "timestamp": "2026-01-06",
+          "status": "GA",
+          "geoFenceZone": "Kappa Geo Fence Zone",
+          "ignitionOn": false,
+          "fuelLevel": 614.48,
+          "odometerReading": 799
+        },
+        {
+          "vehicleId": "Lambda Vehicle Id",
+          "driverName": "Lambda Driver Name",
+          "latitude": -39.863654,
+          "longitude": -68.094602,
+          "speed": 73.9,
+          "heading": "Lambda Heading",
+          "timestamp": "2026-10-11",
+          "status": "Completed",
+          "geoFenceZone": "Lambda Geo Fence Zone",
+          "ignitionOn": true,
+          "fuelLevel": 507.27,
+          "odometerReading": 278
+        },
+        {
+          "vehicleId": "Mu Vehicle Id",
+          "driverName": "Mu Driver Name",
+          "latitude": -19.605046,
+          "longitude": -20.870061,
+          "speed": 541.43,
+          "heading": "Mu Heading",
+          "timestamp": "2026-01-15",
+          "status": "In Progress",
+          "geoFenceZone": "Mu Geo Fence Zone",
+          "ignitionOn": false,
+          "fuelLevel": 755.01,
+          "odometerReading": 142
+        },
+        {
+          "vehicleId": "Nu Vehicle Id",
+          "driverName": "Nu Driver Name",
+          "latitude": -61.600046,
+          "longitude": 60.644001,
+          "speed": 552.14,
+          "heading": "Nu Heading",
+          "timestamp": "2026-11-20",
+          "status": "Scheduled",
+          "geoFenceZone": "Nu Geo Fence Zone",
+          "ignitionOn": true,
+          "fuelLevel": 663.89,
+          "odometerReading": 605
+        },
+        {
+          "vehicleId": "Xi Vehicle Id",
+          "driverName": "Xi Driver Name",
+          "latitude": -3.774527,
+          "longitude": -51.424825,
+          "speed": 945.81,
+          "heading": "Xi Heading",
+          "timestamp": "2026-08-21",
+          "status": "Failed",
+          "geoFenceZone": "Xi Geo Fence Zone",
+          "ignitionOn": false,
+          "fuelLevel": 208.97,
+          "odometerReading": 210
+        },
+        {
+          "vehicleId": "Omicron Vehicle Id",
+          "driverName": "Omicron Driver Name",
+          "latitude": -8.170342,
+          "longitude": -69.867165,
+          "speed": 199.56,
+          "heading": "Omicron Heading",
+          "timestamp": "2026-10-12",
+          "status": "Cancelled",
+          "geoFenceZone": "Omicron Geo Fence Zone",
+          "ignitionOn": true,
+          "fuelLevel": 552.07,
+          "odometerReading": 116
+        }
+      ]
+    },
+    {
+      "label": "Compliance Record",
+      "modelName": "ComplianceRecord",
+      "routeKey": "complianceRecords",
+      "icon": "📋",
+      "aiFunction": "analyzeComplianceRecord",
+      "aiPrompt": "Analyze this Compliance Record data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "vehicleId",
+          "label": "Vehicle Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "driverName",
+          "label": "Driver Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "complianceType",
+          "label": "Compliance Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "regulationCode",
+          "label": "Regulation Code",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "inspectionDate",
+          "label": "inspection Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "expirationDate",
+          "label": "expiration Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "inspector",
+          "label": "Inspector",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "findings",
+          "label": "findings",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "correctiveAction",
+          "label": "corrective Action",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "fineAmount",
+          "label": "fine Amount",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "isResolved",
+          "label": "is Resolved",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "vehicleId": "Alpha Vehicle Id",
+          "driverName": "Alpha Driver Name",
+          "complianceType": "Alpha Type",
+          "regulationCode": "Alpha Regulation Code",
+          "status": "Active",
+          "inspectionDate": "2026-12-07",
+          "expirationDate": "2026-05-12",
+          "inspector": "Alpha Inspector",
+          "findings": "Alpha findings content for enterprise scenario.",
+          "correctiveAction": "Alpha corrective action content for enterprise scenario.",
+          "fineAmount": 536.91,
+          "isResolved": true
+        },
+        {
+          "vehicleId": "Beta Vehicle Id",
+          "driverName": "Beta Driver Name",
+          "complianceType": "Beta Type",
+          "regulationCode": "Beta Regulation Code",
+          "status": "Pending",
+          "inspectionDate": "2026-01-01",
+          "expirationDate": "2026-11-10",
+          "inspector": "Beta Inspector",
+          "findings": "Beta findings content for startup scenario.",
+          "correctiveAction": "Beta corrective action content for startup scenario.",
+          "fineAmount": 28.35,
+          "isResolved": false
+        },
+        {
+          "vehicleId": "Gamma Vehicle Id",
+          "driverName": "Gamma Driver Name",
+          "complianceType": "Gamma Type",
+          "regulationCode": "Gamma Regulation Code",
+          "status": "Review",
+          "inspectionDate": "2026-11-08",
+          "expirationDate": "2026-02-17",
+          "inspector": "Gamma Inspector",
+          "findings": "Gamma findings content for smb scenario.",
+          "correctiveAction": "Gamma corrective action content for smb scenario.",
+          "fineAmount": 362.8,
+          "isResolved": true
+        },
+        {
+          "vehicleId": "Delta Vehicle Id",
+          "driverName": "Delta Driver Name",
+          "complianceType": "Delta Type",
+          "regulationCode": "Delta Regulation Code",
+          "status": "Approved",
+          "inspectionDate": "2026-02-15",
+          "expirationDate": "2026-12-08",
+          "inspector": "Delta Inspector",
+          "findings": "Delta findings content for agency scenario.",
+          "correctiveAction": "Delta corrective action content for agency scenario.",
+          "fineAmount": 754.24,
+          "isResolved": false
+        },
+        {
+          "vehicleId": "Epsilon Vehicle Id",
+          "driverName": "Epsilon Driver Name",
+          "complianceType": "Epsilon Type",
+          "regulationCode": "Epsilon Regulation Code",
+          "status": "Draft",
+          "inspectionDate": "2026-08-07",
+          "expirationDate": "2026-12-03",
+          "inspector": "Epsilon Inspector",
+          "findings": "Epsilon findings content for freelancer scenario.",
+          "correctiveAction": "Epsilon corrective action content for freelancer scenario.",
+          "fineAmount": 303.09,
+          "isResolved": true
+        },
+        {
+          "vehicleId": "Zeta Vehicle Id",
+          "driverName": "Zeta Driver Name",
+          "complianceType": "Zeta Type",
+          "regulationCode": "Zeta Regulation Code",
+          "status": "Live",
+          "inspectionDate": "2026-07-28",
+          "expirationDate": "2026-11-25",
+          "inspector": "Zeta Inspector",
+          "findings": "Zeta findings content for government scenario.",
+          "correctiveAction": "Zeta corrective action content for government scenario.",
+          "fineAmount": 762.61,
+          "isResolved": false
+        },
+        {
+          "vehicleId": "Eta Vehicle Id",
+          "driverName": "Eta Driver Name",
+          "complianceType": "Eta Type",
+          "regulationCode": "Eta Regulation Code",
+          "status": "Paused",
+          "inspectionDate": "2026-02-15",
+          "expirationDate": "2026-07-12",
+          "inspector": "Eta Inspector",
+          "findings": "Eta findings content for nonprofit scenario.",
+          "correctiveAction": "Eta corrective action content for nonprofit scenario.",
+          "fineAmount": 479.56,
+          "isResolved": true
+        },
+        {
+          "vehicleId": "Theta Vehicle Id",
+          "driverName": "Theta Driver Name",
+          "complianceType": "Theta Type",
+          "regulationCode": "Theta Regulation Code",
+          "status": "Archived",
+          "inspectionDate": "2026-12-14",
+          "expirationDate": "2026-08-02",
+          "inspector": "Theta Inspector",
+          "findings": "Theta findings content for healthcare scenario.",
+          "correctiveAction": "Theta corrective action content for healthcare scenario.",
+          "fineAmount": 316.83,
+          "isResolved": false
+        },
+        {
+          "vehicleId": "Iota Vehicle Id",
+          "driverName": "Iota Driver Name",
+          "complianceType": "Iota Type",
+          "regulationCode": "Iota Regulation Code",
+          "status": "Beta",
+          "inspectionDate": "2026-03-05",
+          "expirationDate": "2026-05-17",
+          "inspector": "Iota Inspector",
+          "findings": "Iota findings content for finance scenario.",
+          "correctiveAction": "Iota corrective action content for finance scenario.",
+          "fineAmount": 560.78,
+          "isResolved": true
+        },
+        {
+          "vehicleId": "Kappa Vehicle Id",
+          "driverName": "Kappa Driver Name",
+          "complianceType": "Kappa Type",
+          "regulationCode": "Kappa Regulation Code",
+          "status": "GA",
+          "inspectionDate": "2026-07-19",
+          "expirationDate": "2026-12-17",
+          "inspector": "Kappa Inspector",
+          "findings": "Kappa findings content for education scenario.",
+          "correctiveAction": "Kappa corrective action content for education scenario.",
+          "fineAmount": 652.22,
+          "isResolved": false
+        },
+        {
+          "vehicleId": "Lambda Vehicle Id",
+          "driverName": "Lambda Driver Name",
+          "complianceType": "Lambda Type",
+          "regulationCode": "Lambda Regulation Code",
+          "status": "Completed",
+          "inspectionDate": "2026-05-28",
+          "expirationDate": "2026-05-25",
+          "inspector": "Lambda Inspector",
+          "findings": "Lambda findings content for retail scenario.",
+          "correctiveAction": "Lambda corrective action content for retail scenario.",
+          "fineAmount": 182.04,
+          "isResolved": true
+        },
+        {
+          "vehicleId": "Mu Vehicle Id",
+          "driverName": "Mu Driver Name",
+          "complianceType": "Mu Type",
+          "regulationCode": "Mu Regulation Code",
+          "status": "In Progress",
+          "inspectionDate": "2026-08-01",
+          "expirationDate": "2026-06-18",
+          "inspector": "Mu Inspector",
+          "findings": "Mu findings content for tech scenario.",
+          "correctiveAction": "Mu corrective action content for tech scenario.",
+          "fineAmount": 583.33,
+          "isResolved": false
+        },
+        {
+          "vehicleId": "Nu Vehicle Id",
+          "driverName": "Nu Driver Name",
+          "complianceType": "Nu Type",
+          "regulationCode": "Nu Regulation Code",
+          "status": "Scheduled",
+          "inspectionDate": "2026-12-23",
+          "expirationDate": "2026-09-06",
+          "inspector": "Nu Inspector",
+          "findings": "Nu findings content for legal scenario.",
+          "correctiveAction": "Nu corrective action content for legal scenario.",
+          "fineAmount": 498.7,
+          "isResolved": true
+        },
+        {
+          "vehicleId": "Xi Vehicle Id",
+          "driverName": "Xi Driver Name",
+          "complianceType": "Xi Type",
+          "regulationCode": "Xi Regulation Code",
+          "status": "Failed",
+          "inspectionDate": "2026-09-04",
+          "expirationDate": "2026-08-12",
+          "inspector": "Xi Inspector",
+          "findings": "Xi findings content for real estate scenario.",
+          "correctiveAction": "Xi corrective action content for real estate scenario.",
+          "fineAmount": 305.45,
+          "isResolved": false
+        },
+        {
+          "vehicleId": "Omicron Vehicle Id",
+          "driverName": "Omicron Driver Name",
+          "complianceType": "Omicron Type",
+          "regulationCode": "Omicron Regulation Code",
+          "status": "Cancelled",
+          "inspectionDate": "2026-08-02",
+          "expirationDate": "2026-10-09",
+          "inspector": "Omicron Inspector",
+          "findings": "Omicron findings content for manufacturing scenario.",
+          "correctiveAction": "Omicron corrective action content for manufacturing scenario.",
+          "fineAmount": 216.15,
+          "isResolved": true
+        }
+      ]
+    },
+    {
+      "label": "Load Manifest",
+      "modelName": "LoadManifest",
+      "routeKey": "loadManifests",
+      "icon": "📄",
+      "aiFunction": "analyzeLoadManifest",
+      "aiPrompt": "Analyze this Load Manifest data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "manifestNumber",
+          "label": "Manifest Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "vehicleId",
+          "label": "Vehicle Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "driverName",
+          "label": "Driver Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "origin",
+          "label": "Origin",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "destination",
+          "label": "Destination",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "totalWeight",
+          "label": "total Weight",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "totalPallets",
+          "label": "total Pallets",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "loadDate",
+          "label": "load Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "unloadDate",
+          "label": "unload Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "sealNumber",
+          "label": "Seal Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "hazmat",
+          "label": "hazmat",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "manifestNumber": "Alpha Manifest Number",
+          "vehicleId": "Alpha Vehicle Id",
+          "driverName": "Alpha Driver Name",
+          "origin": "Alpha Origin",
+          "destination": "Alpha Destination",
+          "totalWeight": 23.19,
+          "totalPallets": 415,
+          "loadDate": "2026-08-04",
+          "unloadDate": "2026-07-15",
+          "status": "Active",
+          "sealNumber": "Alpha Seal Number",
+          "hazmat": true,
+          "notes": "Alpha notes — comprehensive details for enterprise use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Beta Manifest Number",
+          "vehicleId": "Beta Vehicle Id",
+          "driverName": "Beta Driver Name",
+          "origin": "Beta Origin",
+          "destination": "Beta Destination",
+          "totalWeight": 80.16,
+          "totalPallets": 56,
+          "loadDate": "2026-01-27",
+          "unloadDate": "2026-10-18",
+          "status": "Pending",
+          "sealNumber": "Beta Seal Number",
+          "hazmat": false,
+          "notes": "Beta notes — comprehensive details for startup use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Gamma Manifest Number",
+          "vehicleId": "Gamma Vehicle Id",
+          "driverName": "Gamma Driver Name",
+          "origin": "Gamma Origin",
+          "destination": "Gamma Destination",
+          "totalWeight": 21.13,
+          "totalPallets": 247,
+          "loadDate": "2026-01-07",
+          "unloadDate": "2026-05-12",
+          "status": "Review",
+          "sealNumber": "Gamma Seal Number",
+          "hazmat": true,
+          "notes": "Gamma notes — comprehensive details for smb use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Delta Manifest Number",
+          "vehicleId": "Delta Vehicle Id",
+          "driverName": "Delta Driver Name",
+          "origin": "Delta Origin",
+          "destination": "Delta Destination",
+          "totalWeight": 57.58,
+          "totalPallets": 198,
+          "loadDate": "2026-12-14",
+          "unloadDate": "2026-11-25",
+          "status": "Approved",
+          "sealNumber": "Delta Seal Number",
+          "hazmat": false,
+          "notes": "Delta notes — comprehensive details for agency use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Epsilon Manifest Number",
+          "vehicleId": "Epsilon Vehicle Id",
+          "driverName": "Epsilon Driver Name",
+          "origin": "Epsilon Origin",
+          "destination": "Epsilon Destination",
+          "totalWeight": 71.29,
+          "totalPallets": 386,
+          "loadDate": "2026-12-13",
+          "unloadDate": "2026-08-01",
+          "status": "Draft",
+          "sealNumber": "Epsilon Seal Number",
+          "hazmat": true,
+          "notes": "Epsilon notes — comprehensive details for freelancer use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Zeta Manifest Number",
+          "vehicleId": "Zeta Vehicle Id",
+          "driverName": "Zeta Driver Name",
+          "origin": "Zeta Origin",
+          "destination": "Zeta Destination",
+          "totalWeight": 1.09,
+          "totalPallets": 72,
+          "loadDate": "2026-03-15",
+          "unloadDate": "2026-01-04",
+          "status": "Live",
+          "sealNumber": "Zeta Seal Number",
+          "hazmat": false,
+          "notes": "Zeta notes — comprehensive details for government use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Eta Manifest Number",
+          "vehicleId": "Eta Vehicle Id",
+          "driverName": "Eta Driver Name",
+          "origin": "Eta Origin",
+          "destination": "Eta Destination",
+          "totalWeight": 79.5,
+          "totalPallets": 118,
+          "loadDate": "2026-04-02",
+          "unloadDate": "2026-01-25",
+          "status": "Paused",
+          "sealNumber": "Eta Seal Number",
+          "hazmat": true,
+          "notes": "Eta notes — comprehensive details for nonprofit use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Theta Manifest Number",
+          "vehicleId": "Theta Vehicle Id",
+          "driverName": "Theta Driver Name",
+          "origin": "Theta Origin",
+          "destination": "Theta Destination",
+          "totalWeight": 71.39,
+          "totalPallets": 98,
+          "loadDate": "2026-10-28",
+          "unloadDate": "2026-03-14",
+          "status": "Archived",
+          "sealNumber": "Theta Seal Number",
+          "hazmat": false,
+          "notes": "Theta notes — comprehensive details for healthcare use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Iota Manifest Number",
+          "vehicleId": "Iota Vehicle Id",
+          "driverName": "Iota Driver Name",
+          "origin": "Iota Origin",
+          "destination": "Iota Destination",
+          "totalWeight": 49.63,
+          "totalPallets": 474,
+          "loadDate": "2026-06-10",
+          "unloadDate": "2026-05-07",
+          "status": "Beta",
+          "sealNumber": "Iota Seal Number",
+          "hazmat": true,
+          "notes": "Iota notes — comprehensive details for finance use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Kappa Manifest Number",
+          "vehicleId": "Kappa Vehicle Id",
+          "driverName": "Kappa Driver Name",
+          "origin": "Kappa Origin",
+          "destination": "Kappa Destination",
+          "totalWeight": 43.15,
+          "totalPallets": 134,
+          "loadDate": "2026-01-02",
+          "unloadDate": "2026-09-18",
+          "status": "GA",
+          "sealNumber": "Kappa Seal Number",
+          "hazmat": false,
+          "notes": "Kappa notes — comprehensive details for education use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Lambda Manifest Number",
+          "vehicleId": "Lambda Vehicle Id",
+          "driverName": "Lambda Driver Name",
+          "origin": "Lambda Origin",
+          "destination": "Lambda Destination",
+          "totalWeight": 93.24,
+          "totalPallets": 335,
+          "loadDate": "2026-01-07",
+          "unloadDate": "2026-04-23",
+          "status": "Completed",
+          "sealNumber": "Lambda Seal Number",
+          "hazmat": true,
+          "notes": "Lambda notes — comprehensive details for retail use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Mu Manifest Number",
+          "vehicleId": "Mu Vehicle Id",
+          "driverName": "Mu Driver Name",
+          "origin": "Mu Origin",
+          "destination": "Mu Destination",
+          "totalWeight": 64.45,
+          "totalPallets": 292,
+          "loadDate": "2026-11-04",
+          "unloadDate": "2026-07-21",
+          "status": "In Progress",
+          "sealNumber": "Mu Seal Number",
+          "hazmat": false,
+          "notes": "Mu notes — comprehensive details for tech use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Nu Manifest Number",
+          "vehicleId": "Nu Vehicle Id",
+          "driverName": "Nu Driver Name",
+          "origin": "Nu Origin",
+          "destination": "Nu Destination",
+          "totalWeight": 48.91,
+          "totalPallets": 422,
+          "loadDate": "2026-06-04",
+          "unloadDate": "2026-07-28",
+          "status": "Scheduled",
+          "sealNumber": "Nu Seal Number",
+          "hazmat": true,
+          "notes": "Nu notes — comprehensive details for legal use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Xi Manifest Number",
+          "vehicleId": "Xi Vehicle Id",
+          "driverName": "Xi Driver Name",
+          "origin": "Xi Origin",
+          "destination": "Xi Destination",
+          "totalWeight": 69.11,
+          "totalPallets": 90,
+          "loadDate": "2026-05-13",
+          "unloadDate": "2026-07-07",
+          "status": "Failed",
+          "sealNumber": "Xi Seal Number",
+          "hazmat": false,
+          "notes": "Xi notes — comprehensive details for real estate use case with actionable insights."
+        },
+        {
+          "manifestNumber": "Omicron Manifest Number",
+          "vehicleId": "Omicron Vehicle Id",
+          "driverName": "Omicron Driver Name",
+          "origin": "Omicron Origin",
+          "destination": "Omicron Destination",
+          "totalWeight": 9.06,
+          "totalPallets": 220,
+          "loadDate": "2026-11-14",
+          "unloadDate": "2026-06-17",
+          "status": "Cancelled",
+          "sealNumber": "Omicron Seal Number",
+          "hazmat": true,
+          "notes": "Omicron notes — comprehensive details for manufacturing use case with actionable insights."
+        }
+      ]
+    },
+    {
+      "label": "Warehouse Zone",
+      "modelName": "WarehouseZone",
+      "routeKey": "warehouseZones",
+      "icon": "🏭",
+      "aiFunction": "analyzeWarehouseZone",
+      "aiPrompt": "Analyze this Warehouse Zone data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "zoneName",
+          "label": "Zone Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "warehouseName",
+          "label": "Warehouse Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "zoneType",
+          "label": "Zone Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "capacity",
+          "label": "capacity",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "currentOccupancy",
+          "label": "current Occupancy",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "temperature",
+          "label": "temperature",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "humidity",
+          "label": "humidity",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "manager",
+          "label": "Manager",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "lastAuditDate",
+          "label": "last Audit Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "specialRequirements",
+          "label": "special Requirements",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "zoneName": "Alpha Zone Name",
+          "warehouseName": "Alpha Warehouse Name",
+          "zoneType": "Alpha Type",
+          "capacity": 10,
+          "currentOccupancy": 974,
+          "temperature": 15.7,
+          "humidity": 711.21,
+          "manager": "Alpha Manager",
+          "status": "Active",
+          "lastAuditDate": "2026-07-11",
+          "specialRequirements": "Alpha special requirements content for enterprise scenario."
+        },
+        {
+          "zoneName": "Beta Zone Name",
+          "warehouseName": "Beta Warehouse Name",
+          "zoneType": "Beta Type",
+          "capacity": 20,
+          "currentOccupancy": 44,
+          "temperature": 23.2,
+          "humidity": 392.03,
+          "manager": "Beta Manager",
+          "status": "Pending",
+          "lastAuditDate": "2026-07-24",
+          "specialRequirements": "Beta special requirements content for startup scenario."
+        },
+        {
+          "zoneName": "Gamma Zone Name",
+          "warehouseName": "Gamma Warehouse Name",
+          "zoneType": "Gamma Type",
+          "capacity": 30,
+          "currentOccupancy": 563,
+          "temperature": 40,
+          "humidity": 928.78,
+          "manager": "Gamma Manager",
+          "status": "Review",
+          "lastAuditDate": "2026-06-01",
+          "specialRequirements": "Gamma special requirements content for smb scenario."
+        },
+        {
+          "zoneName": "Delta Zone Name",
+          "warehouseName": "Delta Warehouse Name",
+          "zoneType": "Delta Type",
+          "capacity": 40,
+          "currentOccupancy": 337,
+          "temperature": 33.1,
+          "humidity": 525.92,
+          "manager": "Delta Manager",
+          "status": "Approved",
+          "lastAuditDate": "2026-04-02",
+          "specialRequirements": "Delta special requirements content for agency scenario."
+        },
+        {
+          "zoneName": "Epsilon Zone Name",
+          "warehouseName": "Epsilon Warehouse Name",
+          "zoneType": "Epsilon Type",
+          "capacity": 50,
+          "currentOccupancy": 916,
+          "temperature": 20.5,
+          "humidity": 203.09,
+          "manager": "Epsilon Manager",
+          "status": "Draft",
+          "lastAuditDate": "2026-11-25",
+          "specialRequirements": "Epsilon special requirements content for freelancer scenario."
+        },
+        {
+          "zoneName": "Zeta Zone Name",
+          "warehouseName": "Zeta Warehouse Name",
+          "zoneType": "Zeta Type",
+          "capacity": 60,
+          "currentOccupancy": 280,
+          "temperature": 41.7,
+          "humidity": 735.81,
+          "manager": "Zeta Manager",
+          "status": "Live",
+          "lastAuditDate": "2026-06-06",
+          "specialRequirements": "Zeta special requirements content for government scenario."
+        },
+        {
+          "zoneName": "Eta Zone Name",
+          "warehouseName": "Eta Warehouse Name",
+          "zoneType": "Eta Type",
+          "capacity": 70,
+          "currentOccupancy": 251,
+          "temperature": 25.3,
+          "humidity": 425.93,
+          "manager": "Eta Manager",
+          "status": "Paused",
+          "lastAuditDate": "2026-07-23",
+          "specialRequirements": "Eta special requirements content for nonprofit scenario."
+        },
+        {
+          "zoneName": "Theta Zone Name",
+          "warehouseName": "Theta Warehouse Name",
+          "zoneType": "Theta Type",
+          "capacity": 80,
+          "currentOccupancy": 877,
+          "temperature": 32.4,
+          "humidity": 574.55,
+          "manager": "Theta Manager",
+          "status": "Archived",
+          "lastAuditDate": "2026-01-02",
+          "specialRequirements": "Theta special requirements content for healthcare scenario."
+        },
+        {
+          "zoneName": "Iota Zone Name",
+          "warehouseName": "Iota Warehouse Name",
+          "zoneType": "Iota Type",
+          "capacity": 90,
+          "currentOccupancy": 79,
+          "temperature": 46.4,
+          "humidity": 342.14,
+          "manager": "Iota Manager",
+          "status": "Beta",
+          "lastAuditDate": "2026-04-16",
+          "specialRequirements": "Iota special requirements content for finance scenario."
+        },
+        {
+          "zoneName": "Kappa Zone Name",
+          "warehouseName": "Kappa Warehouse Name",
+          "zoneType": "Kappa Type",
+          "capacity": 100,
+          "currentOccupancy": 626,
+          "temperature": 27.3,
+          "humidity": 502.04,
+          "manager": "Kappa Manager",
+          "status": "GA",
+          "lastAuditDate": "2026-11-10",
+          "specialRequirements": "Kappa special requirements content for education scenario."
+        },
+        {
+          "zoneName": "Lambda Zone Name",
+          "warehouseName": "Lambda Warehouse Name",
+          "zoneType": "Lambda Type",
+          "capacity": 110,
+          "currentOccupancy": 290,
+          "temperature": 24.9,
+          "humidity": 950.26,
+          "manager": "Lambda Manager",
+          "status": "Completed",
+          "lastAuditDate": "2026-04-11",
+          "specialRequirements": "Lambda special requirements content for retail scenario."
+        },
+        {
+          "zoneName": "Mu Zone Name",
+          "warehouseName": "Mu Warehouse Name",
+          "zoneType": "Mu Type",
+          "capacity": 120,
+          "currentOccupancy": 759,
+          "temperature": 39.5,
+          "humidity": 207.25,
+          "manager": "Mu Manager",
+          "status": "In Progress",
+          "lastAuditDate": "2026-03-22",
+          "specialRequirements": "Mu special requirements content for tech scenario."
+        },
+        {
+          "zoneName": "Nu Zone Name",
+          "warehouseName": "Nu Warehouse Name",
+          "zoneType": "Nu Type",
+          "capacity": 130,
+          "currentOccupancy": 401,
+          "temperature": 46.1,
+          "humidity": 272.9,
+          "manager": "Nu Manager",
+          "status": "Scheduled",
+          "lastAuditDate": "2026-01-05",
+          "specialRequirements": "Nu special requirements content for legal scenario."
+        },
+        {
+          "zoneName": "Xi Zone Name",
+          "warehouseName": "Xi Warehouse Name",
+          "zoneType": "Xi Type",
+          "capacity": 140,
+          "currentOccupancy": 788,
+          "temperature": 12.9,
+          "humidity": 936.14,
+          "manager": "Xi Manager",
+          "status": "Failed",
+          "lastAuditDate": "2026-05-26",
+          "specialRequirements": "Xi special requirements content for real estate scenario."
+        },
+        {
+          "zoneName": "Omicron Zone Name",
+          "warehouseName": "Omicron Warehouse Name",
+          "zoneType": "Omicron Type",
+          "capacity": 150,
+          "currentOccupancy": 225,
+          "temperature": 12.9,
+          "humidity": 462.4,
+          "manager": "Omicron Manager",
+          "status": "Cancelled",
+          "lastAuditDate": "2026-08-20",
+          "specialRequirements": "Omicron special requirements content for manufacturing scenario."
+        }
+      ]
+    },
+    {
+      "label": "Shipping Rate",
+      "modelName": "ShippingRate",
+      "routeKey": "shippingRates",
+      "icon": "💲",
+      "aiFunction": "analyzeShippingRate",
+      "aiPrompt": "Analyze this Shipping Rate data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "carrier",
+          "label": "Carrier",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "serviceLevel",
+          "label": "Service Level",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "originZone",
+          "label": "Origin Zone",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "destinationZone",
+          "label": "Destination Zone",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "weightMin",
+          "label": "weight Min",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "weightMax",
+          "label": "weight Max",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "ratePerLb",
+          "label": "rate Per Lb",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "flatRate",
+          "label": "flat Rate",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "transitDays",
+          "label": "transit Days",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "surcharges",
+          "label": "surcharges",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "effective Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "expirationDate",
+          "label": "expiration Date",
+          "type": "DATE",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "carrier": "Alpha Carrier",
+          "serviceLevel": "Beginner",
+          "originZone": "Alpha Origin Zone",
+          "destinationZone": "Alpha Destination Zone",
+          "weightMin": 72.54,
+          "weightMax": 76.22,
+          "ratePerLb": 84.5,
+          "flatRate": 86,
+          "transitDays": 833,
+          "surcharges": 219.19,
+          "effectiveDate": "2026-07-17",
+          "expirationDate": "2026-04-08"
+        },
+        {
+          "carrier": "Beta Carrier",
+          "serviceLevel": "Intermediate",
+          "originZone": "Beta Origin Zone",
+          "destinationZone": "Beta Destination Zone",
+          "weightMin": 42.4,
+          "weightMax": 51.61,
+          "ratePerLb": 62.1,
+          "flatRate": 95.6,
+          "transitDays": 363,
+          "surcharges": 698.51,
+          "effectiveDate": "2026-03-17",
+          "expirationDate": "2026-06-08"
+        },
+        {
+          "carrier": "Gamma Carrier",
+          "serviceLevel": "Advanced",
+          "originZone": "Gamma Origin Zone",
+          "destinationZone": "Gamma Destination Zone",
+          "weightMin": 16.77,
+          "weightMax": 58.69,
+          "ratePerLb": 62.2,
+          "flatRate": 73.4,
+          "transitDays": 86,
+          "surcharges": 246.81,
+          "effectiveDate": "2026-02-14",
+          "expirationDate": "2026-12-17"
+        },
+        {
+          "carrier": "Delta Carrier",
+          "serviceLevel": "Expert",
+          "originZone": "Delta Origin Zone",
+          "destinationZone": "Delta Destination Zone",
+          "weightMin": 42.78,
+          "weightMax": 9.09,
+          "ratePerLb": 48.4,
+          "flatRate": 78.7,
+          "transitDays": 914,
+          "surcharges": 420.56,
+          "effectiveDate": "2026-04-26",
+          "expirationDate": "2026-07-12"
+        },
+        {
+          "carrier": "Epsilon Carrier",
+          "serviceLevel": "Beginner",
+          "originZone": "Epsilon Origin Zone",
+          "destinationZone": "Epsilon Destination Zone",
+          "weightMin": 52.8,
+          "weightMax": 73.44,
+          "ratePerLb": 98,
+          "flatRate": 65.6,
+          "transitDays": 399,
+          "surcharges": 430.65,
+          "effectiveDate": "2026-04-12",
+          "expirationDate": "2026-06-07"
+        },
+        {
+          "carrier": "Zeta Carrier",
+          "serviceLevel": "Intermediate",
+          "originZone": "Zeta Origin Zone",
+          "destinationZone": "Zeta Destination Zone",
+          "weightMin": 68.11,
+          "weightMax": 69.24,
+          "ratePerLb": 47.1,
+          "flatRate": 92.5,
+          "transitDays": 732,
+          "surcharges": 288.99,
+          "effectiveDate": "2026-08-04",
+          "expirationDate": "2026-02-12"
+        },
+        {
+          "carrier": "Eta Carrier",
+          "serviceLevel": "Advanced",
+          "originZone": "Eta Origin Zone",
+          "destinationZone": "Eta Destination Zone",
+          "weightMin": 40.56,
+          "weightMax": 40.13,
+          "ratePerLb": 94,
+          "flatRate": 41.7,
+          "transitDays": 526,
+          "surcharges": 846.98,
+          "effectiveDate": "2026-03-06",
+          "expirationDate": "2026-07-23"
+        },
+        {
+          "carrier": "Theta Carrier",
+          "serviceLevel": "Expert",
+          "originZone": "Theta Origin Zone",
+          "destinationZone": "Theta Destination Zone",
+          "weightMin": 85.74,
+          "weightMax": 14.66,
+          "ratePerLb": 71.9,
+          "flatRate": 52.5,
+          "transitDays": 550,
+          "surcharges": 895.24,
+          "effectiveDate": "2026-11-04",
+          "expirationDate": "2026-05-02"
+        },
+        {
+          "carrier": "Iota Carrier",
+          "serviceLevel": "Beginner",
+          "originZone": "Iota Origin Zone",
+          "destinationZone": "Iota Destination Zone",
+          "weightMin": 60.26,
+          "weightMax": 62.09,
+          "ratePerLb": 87.9,
+          "flatRate": 83.4,
+          "transitDays": 35,
+          "surcharges": 16.14,
+          "effectiveDate": "2026-12-15",
+          "expirationDate": "2026-08-28"
+        },
+        {
+          "carrier": "Kappa Carrier",
+          "serviceLevel": "Intermediate",
+          "originZone": "Kappa Origin Zone",
+          "destinationZone": "Kappa Destination Zone",
+          "weightMin": 83.91,
+          "weightMax": 76.14,
+          "ratePerLb": 75.8,
+          "flatRate": 74.8,
+          "transitDays": 114,
+          "surcharges": 909.12,
+          "effectiveDate": "2026-01-08",
+          "expirationDate": "2026-09-02"
+        },
+        {
+          "carrier": "Lambda Carrier",
+          "serviceLevel": "Advanced",
+          "originZone": "Lambda Origin Zone",
+          "destinationZone": "Lambda Destination Zone",
+          "weightMin": 58.99,
+          "weightMax": 72.05,
+          "ratePerLb": 70.4,
+          "flatRate": 67.1,
+          "transitDays": 686,
+          "surcharges": 884.89,
+          "effectiveDate": "2026-02-24",
+          "expirationDate": "2026-12-14"
+        },
+        {
+          "carrier": "Mu Carrier",
+          "serviceLevel": "Expert",
+          "originZone": "Mu Origin Zone",
+          "destinationZone": "Mu Destination Zone",
+          "weightMin": 14.13,
+          "weightMax": 56.95,
+          "ratePerLb": 77.8,
+          "flatRate": 68.9,
+          "transitDays": 803,
+          "surcharges": 339.88,
+          "effectiveDate": "2026-03-09",
+          "expirationDate": "2026-09-13"
+        },
+        {
+          "carrier": "Nu Carrier",
+          "serviceLevel": "Beginner",
+          "originZone": "Nu Origin Zone",
+          "destinationZone": "Nu Destination Zone",
+          "weightMin": 48.59,
+          "weightMax": 41.49,
+          "ratePerLb": 78.8,
+          "flatRate": 74.6,
+          "transitDays": 300,
+          "surcharges": 828.66,
+          "effectiveDate": "2026-02-17",
+          "expirationDate": "2026-04-21"
+        },
+        {
+          "carrier": "Xi Carrier",
+          "serviceLevel": "Intermediate",
+          "originZone": "Xi Origin Zone",
+          "destinationZone": "Xi Destination Zone",
+          "weightMin": 63.43,
+          "weightMax": 75.67,
+          "ratePerLb": 92.1,
+          "flatRate": 94.1,
+          "transitDays": 266,
+          "surcharges": 947.44,
+          "effectiveDate": "2026-02-11",
+          "expirationDate": "2026-01-14"
+        },
+        {
+          "carrier": "Omicron Carrier",
+          "serviceLevel": "Advanced",
+          "originZone": "Omicron Origin Zone",
+          "destinationZone": "Omicron Destination Zone",
+          "weightMin": 83.74,
+          "weightMax": 74.2,
+          "ratePerLb": 73.5,
+          "flatRate": 71.9,
+          "transitDays": 188,
+          "surcharges": 686.49,
+          "effectiveDate": "2026-11-24",
+          "expirationDate": "2026-03-01"
+        }
+      ]
+    },
+    {
+      "label": "AI Logistics Insight",
+      "modelName": "AILogisticsInsight",
+      "routeKey": "aiLogisticsInsights",
+      "icon": "🤖",
+      "aiFunction": "analyzeAILogisticsInsight",
+      "aiPrompt": "Analyze this AI Logistics Insight data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "insightType",
+          "label": "Insight Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "description",
+          "label": "description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "confidence",
+          "label": "confidence",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "recommendation",
+          "label": "recommendation",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "affectedRoutes",
+          "label": "affected Routes",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "detectedAt",
+          "label": "detected At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "isActionable",
+          "label": "is Actionable",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "estimatedSavings",
+          "label": "estimated Savings",
+          "type": "FLOAT",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Alpha Title",
+          "insightType": "Alpha Type",
+          "description": "Alpha description — comprehensive details for enterprise use case with actionable insights.",
+          "confidence": 71.9,
+          "recommendation": "AI Analysis for Alpha: Recommend optimizing operations workflows. 22% improvement potential.",
+          "affectedRoutes": 284,
+          "priority": "Critical",
+          "detectedAt": "2026-12-24",
+          "isActionable": true,
+          "estimatedSavings": 320.53
+        },
+        {
+          "title": "Beta Title",
+          "insightType": "Beta Type",
+          "description": "Beta description — comprehensive details for startup use case with actionable insights.",
+          "confidence": 61.3,
+          "recommendation": "AI Analysis for Beta: Recommend optimizing sales workflows. 23% improvement potential.",
+          "affectedRoutes": 728,
+          "priority": "High",
+          "detectedAt": "2026-11-04",
+          "isActionable": false,
+          "estimatedSavings": 264.75
+        },
+        {
+          "title": "Gamma Title",
+          "insightType": "Gamma Type",
+          "description": "Gamma description — comprehensive details for smb use case with actionable insights.",
+          "confidence": 99.8,
+          "recommendation": "AI Analysis for Gamma: Recommend optimizing marketing workflows. 23% improvement potential.",
+          "affectedRoutes": 952,
+          "priority": "Medium",
+          "detectedAt": "2026-05-02",
+          "isActionable": true,
+          "estimatedSavings": 94.12
+        },
+        {
+          "title": "Delta Title",
+          "insightType": "Delta Type",
+          "description": "Delta description — comprehensive details for agency use case with actionable insights.",
+          "confidence": 40.3,
+          "recommendation": "AI Analysis for Delta: Recommend optimizing finance workflows. 29% improvement potential.",
+          "affectedRoutes": 203,
+          "priority": "Low",
+          "detectedAt": "2026-07-27",
+          "isActionable": false,
+          "estimatedSavings": 946.41
+        },
+        {
+          "title": "Epsilon Title",
+          "insightType": "Epsilon Type",
+          "description": "Epsilon description — comprehensive details for freelancer use case with actionable insights.",
+          "confidence": 55.1,
+          "recommendation": "AI Analysis for Epsilon: Recommend optimizing hr workflows. 35% improvement potential.",
+          "affectedRoutes": 327,
+          "priority": "Info",
+          "detectedAt": "2026-08-01",
+          "isActionable": true,
+          "estimatedSavings": 221.11
+        },
+        {
+          "title": "Zeta Title",
+          "insightType": "Zeta Type",
+          "description": "Zeta description — comprehensive details for government use case with actionable insights.",
+          "confidence": 68.5,
+          "recommendation": "AI Analysis for Zeta: Recommend optimizing engineering workflows. 16% improvement potential.",
+          "affectedRoutes": 624,
+          "priority": "Warning",
+          "detectedAt": "2026-01-02",
+          "isActionable": false,
+          "estimatedSavings": 80.6
+        },
+        {
+          "title": "Eta Title",
+          "insightType": "Eta Type",
+          "description": "Eta description — comprehensive details for nonprofit use case with actionable insights.",
+          "confidence": 82.5,
+          "recommendation": "AI Analysis for Eta: Recommend optimizing support workflows. 27% improvement potential.",
+          "affectedRoutes": 912,
+          "priority": "Notice",
+          "detectedAt": "2026-08-14",
+          "isActionable": true,
+          "estimatedSavings": 668.75
+        },
+        {
+          "title": "Theta Title",
+          "insightType": "Theta Type",
+          "description": "Theta description — comprehensive details for healthcare use case with actionable insights.",
+          "confidence": 97.7,
+          "recommendation": "AI Analysis for Theta: Recommend optimizing legal workflows. 24% improvement potential.",
+          "affectedRoutes": 276,
+          "priority": "Alert",
+          "detectedAt": "2026-11-19",
+          "isActionable": false,
+          "estimatedSavings": 253.31
+        },
+        {
+          "title": "Iota Title",
+          "insightType": "Iota Type",
+          "description": "Iota description — comprehensive details for finance use case with actionable insights.",
+          "confidence": 61.1,
+          "recommendation": "AI Analysis for Iota: Recommend optimizing admin workflows. 17% improvement potential.",
+          "affectedRoutes": 627,
+          "priority": "Emergency",
+          "detectedAt": "2026-04-04",
+          "isActionable": true,
+          "estimatedSavings": 721.96
+        },
+        {
+          "title": "Kappa Title",
+          "insightType": "Kappa Type",
+          "description": "Kappa description — comprehensive details for education use case with actionable insights.",
+          "confidence": 84.7,
+          "recommendation": "AI Analysis for Kappa: Recommend optimizing analytics workflows. 10% improvement potential.",
+          "affectedRoutes": 396,
+          "priority": "Debug",
+          "detectedAt": "2026-05-11",
+          "isActionable": false,
+          "estimatedSavings": 943.07
+        },
+        {
+          "title": "Lambda Title",
+          "insightType": "Lambda Type",
+          "description": "Lambda description — comprehensive details for retail use case with actionable insights.",
+          "confidence": 82.2,
+          "recommendation": "AI Analysis for Lambda: Recommend optimizing security workflows. 24% improvement potential.",
+          "affectedRoutes": 245,
+          "priority": "Trace",
+          "detectedAt": "2026-05-05",
+          "isActionable": true,
+          "estimatedSavings": 51.53
+        },
+        {
+          "title": "Mu Title",
+          "insightType": "Mu Type",
+          "description": "Mu description — comprehensive details for tech use case with actionable insights.",
+          "confidence": 76.3,
+          "recommendation": "AI Analysis for Mu: Recommend optimizing compliance workflows. 24% improvement potential.",
+          "affectedRoutes": 894,
+          "priority": "Fatal",
+          "detectedAt": "2026-08-02",
+          "isActionable": false,
+          "estimatedSavings": 305.5
+        },
+        {
+          "title": "Nu Title",
+          "insightType": "Nu Type",
+          "description": "Nu description — comprehensive details for legal use case with actionable insights.",
+          "confidence": 75.7,
+          "recommendation": "AI Analysis for Nu: Recommend optimizing infrastructure workflows. 20% improvement potential.",
+          "affectedRoutes": 580,
+          "priority": "Major",
+          "detectedAt": "2026-07-25",
+          "isActionable": true,
+          "estimatedSavings": 17.85
+        },
+        {
+          "title": "Xi Title",
+          "insightType": "Xi Type",
+          "description": "Xi description — comprehensive details for real estate use case with actionable insights.",
+          "confidence": 93.6,
+          "recommendation": "AI Analysis for Xi: Recommend optimizing product workflows. 26% improvement potential.",
+          "affectedRoutes": 977,
+          "priority": "Minor",
+          "detectedAt": "2026-07-02",
+          "isActionable": false,
+          "estimatedSavings": 284.37
+        },
+        {
+          "title": "Omicron Title",
+          "insightType": "Omicron Type",
+          "description": "Omicron description — comprehensive details for manufacturing use case with actionable insights.",
+          "confidence": 99.4,
+          "recommendation": "AI Analysis for Omicron: Recommend optimizing research workflows. 36% improvement potential.",
+          "affectedRoutes": 808,
+          "priority": "Trivial",
+          "detectedAt": "2026-11-14",
+          "isActionable": true,
+          "estimatedSavings": 799
+        }
+      ]
+    }
+  ]
+}

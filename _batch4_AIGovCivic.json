@@ -1,0 +1,3577 @@
+{
+  "appName": "Government & Civic Platform",
+  "dbName": "ai_gov_civic",
+  "folderName": "generated/AIGovCivic",
+  "features": [
+    {
+      "label": "Citizen Request",
+      "modelName": "CitizenRequest",
+      "routeKey": "citizenRequests",
+      "icon": "📬",
+      "aiFunction": "analyzeCitizenRequest",
+      "aiPrompt": "Analyze this Citizen Request data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "requestNumber",
+          "label": "Request Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "citizenName",
+          "label": "Citizen Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "contactEmail",
+          "label": "Contact Email",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "contactPhone",
+          "label": "Contact Phone",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "requestType",
+          "label": "Request Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "description",
+          "label": "description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "submittedDate",
+          "label": "submitted Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "resolvedDate",
+          "label": "resolved Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "assignedDept",
+          "label": "Assigned Dept",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "resolution",
+          "label": "resolution",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "requestNumber": "Alpha Request Number",
+          "citizenName": "Alpha Citizen Name",
+          "contactEmail": "alpha@example.com",
+          "contactPhone": "Alpha Contact Phone",
+          "requestType": "Alpha Type",
+          "category": "Operations",
+          "description": "Alpha description — comprehensive details for enterprise use case with actionable insights.",
+          "location": "Alpha Location",
+          "priority": "Critical",
+          "status": "Active",
+          "submittedDate": "2026-12-10",
+          "resolvedDate": "2026-09-17",
+          "assignedDept": "Alpha Assigned Dept",
+          "resolution": "Alpha resolution content for enterprise scenario."
+        },
+        {
+          "requestNumber": "Beta Request Number",
+          "citizenName": "Beta Citizen Name",
+          "contactEmail": "beta@example.com",
+          "contactPhone": "Beta Contact Phone",
+          "requestType": "Beta Type",
+          "category": "Sales",
+          "description": "Beta description — comprehensive details for startup use case with actionable insights.",
+          "location": "Beta Location",
+          "priority": "High",
+          "status": "Pending",
+          "submittedDate": "2026-05-16",
+          "resolvedDate": "2026-01-08",
+          "assignedDept": "Beta Assigned Dept",
+          "resolution": "Beta resolution content for startup scenario."
+        },
+        {
+          "requestNumber": "Gamma Request Number",
+          "citizenName": "Gamma Citizen Name",
+          "contactEmail": "gamma@example.com",
+          "contactPhone": "Gamma Contact Phone",
+          "requestType": "Gamma Type",
+          "category": "Marketing",
+          "description": "Gamma description — comprehensive details for smb use case with actionable insights.",
+          "location": "Gamma Location",
+          "priority": "Medium",
+          "status": "Review",
+          "submittedDate": "2026-07-27",
+          "resolvedDate": "2026-02-07",
+          "assignedDept": "Gamma Assigned Dept",
+          "resolution": "Gamma resolution content for smb scenario."
+        },
+        {
+          "requestNumber": "Delta Request Number",
+          "citizenName": "Delta Citizen Name",
+          "contactEmail": "delta@example.com",
+          "contactPhone": "Delta Contact Phone",
+          "requestType": "Delta Type",
+          "category": "Finance",
+          "description": "Delta description — comprehensive details for agency use case with actionable insights.",
+          "location": "Delta Location",
+          "priority": "Low",
+          "status": "Approved",
+          "submittedDate": "2026-06-28",
+          "resolvedDate": "2026-10-25",
+          "assignedDept": "Delta Assigned Dept",
+          "resolution": "Delta resolution content for agency scenario."
+        },
+        {
+          "requestNumber": "Epsilon Request Number",
+          "citizenName": "Epsilon Citizen Name",
+          "contactEmail": "epsilon@example.com",
+          "contactPhone": "Epsilon Contact Phone",
+          "requestType": "Epsilon Type",
+          "category": "HR",
+          "description": "Epsilon description — comprehensive details for freelancer use case with actionable insights.",
+          "location": "Epsilon Location",
+          "priority": "Info",
+          "status": "Draft",
+          "submittedDate": "2026-04-27",
+          "resolvedDate": "2026-07-24",
+          "assignedDept": "Epsilon Assigned Dept",
+          "resolution": "Epsilon resolution content for freelancer scenario."
+        },
+        {
+          "requestNumber": "Zeta Request Number",
+          "citizenName": "Zeta Citizen Name",
+          "contactEmail": "zeta@example.com",
+          "contactPhone": "Zeta Contact Phone",
+          "requestType": "Zeta Type",
+          "category": "Engineering",
+          "description": "Zeta description — comprehensive details for government use case with actionable insights.",
+          "location": "Zeta Location",
+          "priority": "Warning",
+          "status": "Live",
+          "submittedDate": "2026-10-05",
+          "resolvedDate": "2026-02-26",
+          "assignedDept": "Zeta Assigned Dept",
+          "resolution": "Zeta resolution content for government scenario."
+        },
+        {
+          "requestNumber": "Eta Request Number",
+          "citizenName": "Eta Citizen Name",
+          "contactEmail": "eta@example.com",
+          "contactPhone": "Eta Contact Phone",
+          "requestType": "Eta Type",
+          "category": "Support",
+          "description": "Eta description — comprehensive details for nonprofit use case with actionable insights.",
+          "location": "Eta Location",
+          "priority": "Notice",
+          "status": "Paused",
+          "submittedDate": "2026-08-04",
+          "resolvedDate": "2026-06-18",
+          "assignedDept": "Eta Assigned Dept",
+          "resolution": "Eta resolution content for nonprofit scenario."
+        },
+        {
+          "requestNumber": "Theta Request Number",
+          "citizenName": "Theta Citizen Name",
+          "contactEmail": "theta@example.com",
+          "contactPhone": "Theta Contact Phone",
+          "requestType": "Theta Type",
+          "category": "Legal",
+          "description": "Theta description — comprehensive details for healthcare use case with actionable insights.",
+          "location": "Theta Location",
+          "priority": "Alert",
+          "status": "Archived",
+          "submittedDate": "2026-04-16",
+          "resolvedDate": "2026-07-14",
+          "assignedDept": "Theta Assigned Dept",
+          "resolution": "Theta resolution content for healthcare scenario."
+        },
+        {
+          "requestNumber": "Iota Request Number",
+          "citizenName": "Iota Citizen Name",
+          "contactEmail": "iota@example.com",
+          "contactPhone": "Iota Contact Phone",
+          "requestType": "Iota Type",
+          "category": "Admin",
+          "description": "Iota description — comprehensive details for finance use case with actionable insights.",
+          "location": "Iota Location",
+          "priority": "Emergency",
+          "status": "Beta",
+          "submittedDate": "2026-05-12",
+          "resolvedDate": "2026-12-14",
+          "assignedDept": "Iota Assigned Dept",
+          "resolution": "Iota resolution content for finance scenario."
+        },
+        {
+          "requestNumber": "Kappa Request Number",
+          "citizenName": "Kappa Citizen Name",
+          "contactEmail": "kappa@example.com",
+          "contactPhone": "Kappa Contact Phone",
+          "requestType": "Kappa Type",
+          "category": "Analytics",
+          "description": "Kappa description — comprehensive details for education use case with actionable insights.",
+          "location": "Kappa Location",
+          "priority": "Debug",
+          "status": "GA",
+          "submittedDate": "2026-11-10",
+          "resolvedDate": "2026-08-14",
+          "assignedDept": "Kappa Assigned Dept",
+          "resolution": "Kappa resolution content for education scenario."
+        },
+        {
+          "requestNumber": "Lambda Request Number",
+          "citizenName": "Lambda Citizen Name",
+          "contactEmail": "lambda@example.com",
+          "contactPhone": "Lambda Contact Phone",
+          "requestType": "Lambda Type",
+          "category": "Security",
+          "description": "Lambda description — comprehensive details for retail use case with actionable insights.",
+          "location": "Lambda Location",
+          "priority": "Trace",
+          "status": "Completed",
+          "submittedDate": "2026-12-02",
+          "resolvedDate": "2026-11-28",
+          "assignedDept": "Lambda Assigned Dept",
+          "resolution": "Lambda resolution content for retail scenario."
+        },
+        {
+          "requestNumber": "Mu Request Number",
+          "citizenName": "Mu Citizen Name",
+          "contactEmail": "mu@example.com",
+          "contactPhone": "Mu Contact Phone",
+          "requestType": "Mu Type",
+          "category": "Compliance",
+          "description": "Mu description — comprehensive details for tech use case with actionable insights.",
+          "location": "Mu Location",
+          "priority": "Fatal",
+          "status": "In Progress",
+          "submittedDate": "2026-04-12",
+          "resolvedDate": "2026-03-15",
+          "assignedDept": "Mu Assigned Dept",
+          "resolution": "Mu resolution content for tech scenario."
+        },
+        {
+          "requestNumber": "Nu Request Number",
+          "citizenName": "Nu Citizen Name",
+          "contactEmail": "nu@example.com",
+          "contactPhone": "Nu Contact Phone",
+          "requestType": "Nu Type",
+          "category": "Infrastructure",
+          "description": "Nu description — comprehensive details for legal use case with actionable insights.",
+          "location": "Nu Location",
+          "priority": "Major",
+          "status": "Scheduled",
+          "submittedDate": "2026-02-16",
+          "resolvedDate": "2026-06-01",
+          "assignedDept": "Nu Assigned Dept",
+          "resolution": "Nu resolution content for legal scenario."
+        },
+        {
+          "requestNumber": "Xi Request Number",
+          "citizenName": "Xi Citizen Name",
+          "contactEmail": "xi@example.com",
+          "contactPhone": "Xi Contact Phone",
+          "requestType": "Xi Type",
+          "category": "Product",
+          "description": "Xi description — comprehensive details for real estate use case with actionable insights.",
+          "location": "Xi Location",
+          "priority": "Minor",
+          "status": "Failed",
+          "submittedDate": "2026-07-04",
+          "resolvedDate": "2026-01-08",
+          "assignedDept": "Xi Assigned Dept",
+          "resolution": "Xi resolution content for real estate scenario."
+        },
+        {
+          "requestNumber": "Omicron Request Number",
+          "citizenName": "Omicron Citizen Name",
+          "contactEmail": "omicron@example.com",
+          "contactPhone": "Omicron Contact Phone",
+          "requestType": "Omicron Type",
+          "category": "Research",
+          "description": "Omicron description — comprehensive details for manufacturing use case with actionable insights.",
+          "location": "Omicron Location",
+          "priority": "Trivial",
+          "status": "Cancelled",
+          "submittedDate": "2026-09-23",
+          "resolvedDate": "2026-01-20",
+          "assignedDept": "Omicron Assigned Dept",
+          "resolution": "Omicron resolution content for manufacturing scenario."
+        }
+      ]
+    },
+    {
+      "label": "Permit Application",
+      "modelName": "PermitApplication",
+      "routeKey": "permitApplications",
+      "icon": "📋",
+      "aiFunction": "analyzePermitApplication",
+      "aiPrompt": "Analyze this Permit Application data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "applicationNumber",
+          "label": "Application Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "applicantName",
+          "label": "Applicant Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "permitType",
+          "label": "Permit Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "propertyAddress",
+          "label": "property Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "description",
+          "label": "description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "submittedDate",
+          "label": "submitted Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "reviewerName",
+          "label": "Reviewer Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "fee",
+          "label": "fee",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "approvedDate",
+          "label": "approved Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "expirationDate",
+          "label": "expiration Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "conditions",
+          "label": "conditions",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "inspectionRequired",
+          "label": "inspection Required",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "applicationNumber": "Alpha Application Number",
+          "applicantName": "Alpha Applicant Name",
+          "permitType": "Alpha Type",
+          "propertyAddress": "Alpha property address content for enterprise scenario.",
+          "description": "Alpha description — comprehensive details for enterprise use case with actionable insights.",
+          "submittedDate": "2026-03-04",
+          "status": "Active",
+          "reviewerName": "Alpha Reviewer Name",
+          "fee": 531.17,
+          "approvedDate": "2026-06-01",
+          "expirationDate": "2026-06-04",
+          "conditions": "Alpha conditions content for enterprise scenario.",
+          "inspectionRequired": true
+        },
+        {
+          "applicationNumber": "Beta Application Number",
+          "applicantName": "Beta Applicant Name",
+          "permitType": "Beta Type",
+          "propertyAddress": "Beta property address content for startup scenario.",
+          "description": "Beta description — comprehensive details for startup use case with actionable insights.",
+          "submittedDate": "2026-03-19",
+          "status": "Pending",
+          "reviewerName": "Beta Reviewer Name",
+          "fee": 85.39,
+          "approvedDate": "2026-11-16",
+          "expirationDate": "2026-12-08",
+          "conditions": "Beta conditions content for startup scenario.",
+          "inspectionRequired": false
+        },
+        {
+          "applicationNumber": "Gamma Application Number",
+          "applicantName": "Gamma Applicant Name",
+          "permitType": "Gamma Type",
+          "propertyAddress": "Gamma property address content for smb scenario.",
+          "description": "Gamma description — comprehensive details for smb use case with actionable insights.",
+          "submittedDate": "2026-11-04",
+          "status": "Review",
+          "reviewerName": "Gamma Reviewer Name",
+          "fee": 60,
+          "approvedDate": "2026-12-08",
+          "expirationDate": "2026-07-23",
+          "conditions": "Gamma conditions content for smb scenario.",
+          "inspectionRequired": true
+        },
+        {
+          "applicationNumber": "Delta Application Number",
+          "applicantName": "Delta Applicant Name",
+          "permitType": "Delta Type",
+          "propertyAddress": "Delta property address content for agency scenario.",
+          "description": "Delta description — comprehensive details for agency use case with actionable insights.",
+          "submittedDate": "2026-12-01",
+          "status": "Approved",
+          "reviewerName": "Delta Reviewer Name",
+          "fee": 58.17,
+          "approvedDate": "2026-11-05",
+          "expirationDate": "2026-10-10",
+          "conditions": "Delta conditions content for agency scenario.",
+          "inspectionRequired": false
+        },
+        {
+          "applicationNumber": "Epsilon Application Number",
+          "applicantName": "Epsilon Applicant Name",
+          "permitType": "Epsilon Type",
+          "propertyAddress": "Epsilon property address content for freelancer scenario.",
+          "description": "Epsilon description — comprehensive details for freelancer use case with actionable insights.",
+          "submittedDate": "2026-11-12",
+          "status": "Draft",
+          "reviewerName": "Epsilon Reviewer Name",
+          "fee": 827.27,
+          "approvedDate": "2026-04-24",
+          "expirationDate": "2026-06-26",
+          "conditions": "Epsilon conditions content for freelancer scenario.",
+          "inspectionRequired": true
+        },
+        {
+          "applicationNumber": "Zeta Application Number",
+          "applicantName": "Zeta Applicant Name",
+          "permitType": "Zeta Type",
+          "propertyAddress": "Zeta property address content for government scenario.",
+          "description": "Zeta description — comprehensive details for government use case with actionable insights.",
+          "submittedDate": "2026-06-23",
+          "status": "Live",
+          "reviewerName": "Zeta Reviewer Name",
+          "fee": 50.55,
+          "approvedDate": "2026-09-26",
+          "expirationDate": "2026-10-10",
+          "conditions": "Zeta conditions content for government scenario.",
+          "inspectionRequired": false
+        },
+        {
+          "applicationNumber": "Eta Application Number",
+          "applicantName": "Eta Applicant Name",
+          "permitType": "Eta Type",
+          "propertyAddress": "Eta property address content for nonprofit scenario.",
+          "description": "Eta description — comprehensive details for nonprofit use case with actionable insights.",
+          "submittedDate": "2026-12-19",
+          "status": "Paused",
+          "reviewerName": "Eta Reviewer Name",
+          "fee": 43.83,
+          "approvedDate": "2026-01-05",
+          "expirationDate": "2026-09-14",
+          "conditions": "Eta conditions content for nonprofit scenario.",
+          "inspectionRequired": true
+        },
+        {
+          "applicationNumber": "Theta Application Number",
+          "applicantName": "Theta Applicant Name",
+          "permitType": "Theta Type",
+          "propertyAddress": "Theta property address content for healthcare scenario.",
+          "description": "Theta description — comprehensive details for healthcare use case with actionable insights.",
+          "submittedDate": "2026-07-12",
+          "status": "Archived",
+          "reviewerName": "Theta Reviewer Name",
+          "fee": 349.88,
+          "approvedDate": "2026-03-09",
+          "expirationDate": "2026-12-27",
+          "conditions": "Theta conditions content for healthcare scenario.",
+          "inspectionRequired": false
+        },
+        {
+          "applicationNumber": "Iota Application Number",
+          "applicantName": "Iota Applicant Name",
+          "permitType": "Iota Type",
+          "propertyAddress": "Iota property address content for finance scenario.",
+          "description": "Iota description — comprehensive details for finance use case with actionable insights.",
+          "submittedDate": "2026-08-27",
+          "status": "Beta",
+          "reviewerName": "Iota Reviewer Name",
+          "fee": 213.57,
+          "approvedDate": "2026-03-21",
+          "expirationDate": "2026-12-04",
+          "conditions": "Iota conditions content for finance scenario.",
+          "inspectionRequired": true
+        },
+        {
+          "applicationNumber": "Kappa Application Number",
+          "applicantName": "Kappa Applicant Name",
+          "permitType": "Kappa Type",
+          "propertyAddress": "Kappa property address content for education scenario.",
+          "description": "Kappa description — comprehensive details for education use case with actionable insights.",
+          "submittedDate": "2026-11-18",
+          "status": "GA",
+          "reviewerName": "Kappa Reviewer Name",
+          "fee": 450.93,
+          "approvedDate": "2026-09-28",
+          "expirationDate": "2026-11-07",
+          "conditions": "Kappa conditions content for education scenario.",
+          "inspectionRequired": false
+        },
+        {
+          "applicationNumber": "Lambda Application Number",
+          "applicantName": "Lambda Applicant Name",
+          "permitType": "Lambda Type",
+          "propertyAddress": "Lambda property address content for retail scenario.",
+          "description": "Lambda description — comprehensive details for retail use case with actionable insights.",
+          "submittedDate": "2026-02-04",
+          "status": "Completed",
+          "reviewerName": "Lambda Reviewer Name",
+          "fee": 861.82,
+          "approvedDate": "2026-05-09",
+          "expirationDate": "2026-04-17",
+          "conditions": "Lambda conditions content for retail scenario.",
+          "inspectionRequired": true
+        },
+        {
+          "applicationNumber": "Mu Application Number",
+          "applicantName": "Mu Applicant Name",
+          "permitType": "Mu Type",
+          "propertyAddress": "Mu property address content for tech scenario.",
+          "description": "Mu description — comprehensive details for tech use case with actionable insights.",
+          "submittedDate": "2026-05-15",
+          "status": "In Progress",
+          "reviewerName": "Mu Reviewer Name",
+          "fee": 759.89,
+          "approvedDate": "2026-11-16",
+          "expirationDate": "2026-07-14",
+          "conditions": "Mu conditions content for tech scenario.",
+          "inspectionRequired": false
+        },
+        {
+          "applicationNumber": "Nu Application Number",
+          "applicantName": "Nu Applicant Name",
+          "permitType": "Nu Type",
+          "propertyAddress": "Nu property address content for legal scenario.",
+          "description": "Nu description — comprehensive details for legal use case with actionable insights.",
+          "submittedDate": "2026-11-18",
+          "status": "Scheduled",
+          "reviewerName": "Nu Reviewer Name",
+          "fee": 374.08,
+          "approvedDate": "2026-01-11",
+          "expirationDate": "2026-11-10",
+          "conditions": "Nu conditions content for legal scenario.",
+          "inspectionRequired": true
+        },
+        {
+          "applicationNumber": "Xi Application Number",
+          "applicantName": "Xi Applicant Name",
+          "permitType": "Xi Type",
+          "propertyAddress": "Xi property address content for real estate scenario.",
+          "description": "Xi description — comprehensive details for real estate use case with actionable insights.",
+          "submittedDate": "2026-01-19",
+          "status": "Failed",
+          "reviewerName": "Xi Reviewer Name",
+          "fee": 827.95,
+          "approvedDate": "2026-05-04",
+          "expirationDate": "2026-08-24",
+          "conditions": "Xi conditions content for real estate scenario.",
+          "inspectionRequired": false
+        },
+        {
+          "applicationNumber": "Omicron Application Number",
+          "applicantName": "Omicron Applicant Name",
+          "permitType": "Omicron Type",
+          "propertyAddress": "Omicron property address content for manufacturing scenario.",
+          "description": "Omicron description — comprehensive details for manufacturing use case with actionable insights.",
+          "submittedDate": "2026-05-10",
+          "status": "Cancelled",
+          "reviewerName": "Omicron Reviewer Name",
+          "fee": 653.86,
+          "approvedDate": "2026-08-15",
+          "expirationDate": "2026-04-19",
+          "conditions": "Omicron conditions content for manufacturing scenario.",
+          "inspectionRequired": true
+        }
+      ]
+    },
+    {
+      "label": "Public Meeting",
+      "modelName": "PublicMeeting",
+      "routeKey": "publicMeetings",
+      "icon": "🏛️",
+      "aiFunction": "analyzePublicMeeting",
+      "aiPrompt": "Analyze this Public Meeting data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "meetingTitle",
+          "label": "Meeting Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "meetingType",
+          "label": "Meeting Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "scheduled Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "chairperson",
+          "label": "Chairperson",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "agenda",
+          "label": "agenda",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "minutesUrl",
+          "label": "Minutes Url",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "attendeeCount",
+          "label": "attendee Count",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "isPublic",
+          "label": "is Public",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "recordingUrl",
+          "label": "Recording Url",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "meetingTitle": "Alpha Meeting Title",
+          "meetingType": "Alpha Type",
+          "scheduledDate": "2026-12-10",
+          "location": "Alpha Location",
+          "department": "Operations",
+          "chairperson": "Alpha Chairperson",
+          "agenda": "Alpha agenda content for enterprise scenario.",
+          "minutesUrl": "https://alpha.example.com",
+          "attendeeCount": 213,
+          "status": "Active",
+          "isPublic": true,
+          "recordingUrl": "https://alpha.example.com",
+          "notes": "Alpha notes — comprehensive details for enterprise use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Beta Meeting Title",
+          "meetingType": "Beta Type",
+          "scheduledDate": "2026-09-11",
+          "location": "Beta Location",
+          "department": "Sales",
+          "chairperson": "Beta Chairperson",
+          "agenda": "Beta agenda content for startup scenario.",
+          "minutesUrl": "https://beta.example.com",
+          "attendeeCount": 163,
+          "status": "Pending",
+          "isPublic": false,
+          "recordingUrl": "https://beta.example.com",
+          "notes": "Beta notes — comprehensive details for startup use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Gamma Meeting Title",
+          "meetingType": "Gamma Type",
+          "scheduledDate": "2026-07-18",
+          "location": "Gamma Location",
+          "department": "Marketing",
+          "chairperson": "Gamma Chairperson",
+          "agenda": "Gamma agenda content for smb scenario.",
+          "minutesUrl": "https://gamma.example.com",
+          "attendeeCount": 414,
+          "status": "Review",
+          "isPublic": true,
+          "recordingUrl": "https://gamma.example.com",
+          "notes": "Gamma notes — comprehensive details for smb use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Delta Meeting Title",
+          "meetingType": "Delta Type",
+          "scheduledDate": "2026-02-19",
+          "location": "Delta Location",
+          "department": "Finance",
+          "chairperson": "Delta Chairperson",
+          "agenda": "Delta agenda content for agency scenario.",
+          "minutesUrl": "https://delta.example.com",
+          "attendeeCount": 16,
+          "status": "Approved",
+          "isPublic": false,
+          "recordingUrl": "https://delta.example.com",
+          "notes": "Delta notes — comprehensive details for agency use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Epsilon Meeting Title",
+          "meetingType": "Epsilon Type",
+          "scheduledDate": "2026-09-06",
+          "location": "Epsilon Location",
+          "department": "HR",
+          "chairperson": "Epsilon Chairperson",
+          "agenda": "Epsilon agenda content for freelancer scenario.",
+          "minutesUrl": "https://epsilon.example.com",
+          "attendeeCount": 392,
+          "status": "Draft",
+          "isPublic": true,
+          "recordingUrl": "https://epsilon.example.com",
+          "notes": "Epsilon notes — comprehensive details for freelancer use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Zeta Meeting Title",
+          "meetingType": "Zeta Type",
+          "scheduledDate": "2026-02-08",
+          "location": "Zeta Location",
+          "department": "Engineering",
+          "chairperson": "Zeta Chairperson",
+          "agenda": "Zeta agenda content for government scenario.",
+          "minutesUrl": "https://zeta.example.com",
+          "attendeeCount": 9,
+          "status": "Live",
+          "isPublic": false,
+          "recordingUrl": "https://zeta.example.com",
+          "notes": "Zeta notes — comprehensive details for government use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Eta Meeting Title",
+          "meetingType": "Eta Type",
+          "scheduledDate": "2026-01-13",
+          "location": "Eta Location",
+          "department": "Support",
+          "chairperson": "Eta Chairperson",
+          "agenda": "Eta agenda content for nonprofit scenario.",
+          "minutesUrl": "https://eta.example.com",
+          "attendeeCount": 171,
+          "status": "Paused",
+          "isPublic": true,
+          "recordingUrl": "https://eta.example.com",
+          "notes": "Eta notes — comprehensive details for nonprofit use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Theta Meeting Title",
+          "meetingType": "Theta Type",
+          "scheduledDate": "2026-09-09",
+          "location": "Theta Location",
+          "department": "Legal",
+          "chairperson": "Theta Chairperson",
+          "agenda": "Theta agenda content for healthcare scenario.",
+          "minutesUrl": "https://theta.example.com",
+          "attendeeCount": 336,
+          "status": "Archived",
+          "isPublic": false,
+          "recordingUrl": "https://theta.example.com",
+          "notes": "Theta notes — comprehensive details for healthcare use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Iota Meeting Title",
+          "meetingType": "Iota Type",
+          "scheduledDate": "2026-12-23",
+          "location": "Iota Location",
+          "department": "Admin",
+          "chairperson": "Iota Chairperson",
+          "agenda": "Iota agenda content for finance scenario.",
+          "minutesUrl": "https://iota.example.com",
+          "attendeeCount": 118,
+          "status": "Beta",
+          "isPublic": true,
+          "recordingUrl": "https://iota.example.com",
+          "notes": "Iota notes — comprehensive details for finance use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Kappa Meeting Title",
+          "meetingType": "Kappa Type",
+          "scheduledDate": "2026-11-17",
+          "location": "Kappa Location",
+          "department": "Analytics",
+          "chairperson": "Kappa Chairperson",
+          "agenda": "Kappa agenda content for education scenario.",
+          "minutesUrl": "https://kappa.example.com",
+          "attendeeCount": 120,
+          "status": "GA",
+          "isPublic": false,
+          "recordingUrl": "https://kappa.example.com",
+          "notes": "Kappa notes — comprehensive details for education use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Lambda Meeting Title",
+          "meetingType": "Lambda Type",
+          "scheduledDate": "2026-11-01",
+          "location": "Lambda Location",
+          "department": "Security",
+          "chairperson": "Lambda Chairperson",
+          "agenda": "Lambda agenda content for retail scenario.",
+          "minutesUrl": "https://lambda.example.com",
+          "attendeeCount": 46,
+          "status": "Completed",
+          "isPublic": true,
+          "recordingUrl": "https://lambda.example.com",
+          "notes": "Lambda notes — comprehensive details for retail use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Mu Meeting Title",
+          "meetingType": "Mu Type",
+          "scheduledDate": "2026-09-18",
+          "location": "Mu Location",
+          "department": "Compliance",
+          "chairperson": "Mu Chairperson",
+          "agenda": "Mu agenda content for tech scenario.",
+          "minutesUrl": "https://mu.example.com",
+          "attendeeCount": 149,
+          "status": "In Progress",
+          "isPublic": false,
+          "recordingUrl": "https://mu.example.com",
+          "notes": "Mu notes — comprehensive details for tech use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Nu Meeting Title",
+          "meetingType": "Nu Type",
+          "scheduledDate": "2026-08-10",
+          "location": "Nu Location",
+          "department": "Infrastructure",
+          "chairperson": "Nu Chairperson",
+          "agenda": "Nu agenda content for legal scenario.",
+          "minutesUrl": "https://nu.example.com",
+          "attendeeCount": 483,
+          "status": "Scheduled",
+          "isPublic": true,
+          "recordingUrl": "https://nu.example.com",
+          "notes": "Nu notes — comprehensive details for legal use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Xi Meeting Title",
+          "meetingType": "Xi Type",
+          "scheduledDate": "2026-07-09",
+          "location": "Xi Location",
+          "department": "Product",
+          "chairperson": "Xi Chairperson",
+          "agenda": "Xi agenda content for real estate scenario.",
+          "minutesUrl": "https://xi.example.com",
+          "attendeeCount": 492,
+          "status": "Failed",
+          "isPublic": false,
+          "recordingUrl": "https://xi.example.com",
+          "notes": "Xi notes — comprehensive details for real estate use case with actionable insights."
+        },
+        {
+          "meetingTitle": "Omicron Meeting Title",
+          "meetingType": "Omicron Type",
+          "scheduledDate": "2026-12-08",
+          "location": "Omicron Location",
+          "department": "Research",
+          "chairperson": "Omicron Chairperson",
+          "agenda": "Omicron agenda content for manufacturing scenario.",
+          "minutesUrl": "https://omicron.example.com",
+          "attendeeCount": 326,
+          "status": "Cancelled",
+          "isPublic": true,
+          "recordingUrl": "https://omicron.example.com",
+          "notes": "Omicron notes — comprehensive details for manufacturing use case with actionable insights."
+        }
+      ]
+    },
+    {
+      "label": "Council Resolution",
+      "modelName": "CouncilResolution",
+      "routeKey": "councilResolutions",
+      "icon": "📜",
+      "aiFunction": "analyzeCouncilResolution",
+      "aiPrompt": "Analyze this Council Resolution data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "resolutionNumber",
+          "label": "Resolution Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "description",
+          "label": "description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "sponsor",
+          "label": "Sponsor",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "introducedDate",
+          "label": "introduced Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "votedDate",
+          "label": "voted Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "votesFor",
+          "label": "votes For",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "votesAgainst",
+          "label": "votes Against",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "effective Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "fullText",
+          "label": "full Text",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "resolutionNumber": "Alpha Resolution Number",
+          "title": "Alpha Title",
+          "description": "Alpha description — comprehensive details for enterprise use case with actionable insights.",
+          "sponsor": "Alpha Sponsor",
+          "category": "Operations",
+          "introducedDate": "2026-07-07",
+          "votedDate": "2026-11-12",
+          "votesFor": 340,
+          "votesAgainst": 547,
+          "status": "Active",
+          "effectiveDate": "2026-05-20",
+          "fullText": "Alpha full text — comprehensive details for enterprise use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Beta Resolution Number",
+          "title": "Beta Title",
+          "description": "Beta description — comprehensive details for startup use case with actionable insights.",
+          "sponsor": "Beta Sponsor",
+          "category": "Sales",
+          "introducedDate": "2026-12-06",
+          "votedDate": "2026-05-04",
+          "votesFor": 81,
+          "votesAgainst": 632,
+          "status": "Pending",
+          "effectiveDate": "2026-10-17",
+          "fullText": "Beta full text — comprehensive details for startup use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Gamma Resolution Number",
+          "title": "Gamma Title",
+          "description": "Gamma description — comprehensive details for smb use case with actionable insights.",
+          "sponsor": "Gamma Sponsor",
+          "category": "Marketing",
+          "introducedDate": "2026-02-20",
+          "votedDate": "2026-12-08",
+          "votesFor": 100,
+          "votesAgainst": 719,
+          "status": "Review",
+          "effectiveDate": "2026-03-13",
+          "fullText": "Gamma full text — comprehensive details for smb use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Delta Resolution Number",
+          "title": "Delta Title",
+          "description": "Delta description — comprehensive details for agency use case with actionable insights.",
+          "sponsor": "Delta Sponsor",
+          "category": "Finance",
+          "introducedDate": "2026-01-12",
+          "votedDate": "2026-05-15",
+          "votesFor": 351,
+          "votesAgainst": 53,
+          "status": "Approved",
+          "effectiveDate": "2026-04-18",
+          "fullText": "Delta full text — comprehensive details for agency use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Epsilon Resolution Number",
+          "title": "Epsilon Title",
+          "description": "Epsilon description — comprehensive details for freelancer use case with actionable insights.",
+          "sponsor": "Epsilon Sponsor",
+          "category": "HR",
+          "introducedDate": "2026-04-08",
+          "votedDate": "2026-01-23",
+          "votesFor": 332,
+          "votesAgainst": 728,
+          "status": "Draft",
+          "effectiveDate": "2026-05-14",
+          "fullText": "Epsilon full text — comprehensive details for freelancer use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Zeta Resolution Number",
+          "title": "Zeta Title",
+          "description": "Zeta description — comprehensive details for government use case with actionable insights.",
+          "sponsor": "Zeta Sponsor",
+          "category": "Engineering",
+          "introducedDate": "2026-03-27",
+          "votedDate": "2026-10-07",
+          "votesFor": 301,
+          "votesAgainst": 531,
+          "status": "Live",
+          "effectiveDate": "2026-02-15",
+          "fullText": "Zeta full text — comprehensive details for government use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Eta Resolution Number",
+          "title": "Eta Title",
+          "description": "Eta description — comprehensive details for nonprofit use case with actionable insights.",
+          "sponsor": "Eta Sponsor",
+          "category": "Support",
+          "introducedDate": "2026-07-22",
+          "votedDate": "2026-07-10",
+          "votesFor": 210,
+          "votesAgainst": 199,
+          "status": "Paused",
+          "effectiveDate": "2026-03-08",
+          "fullText": "Eta full text — comprehensive details for nonprofit use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Theta Resolution Number",
+          "title": "Theta Title",
+          "description": "Theta description — comprehensive details for healthcare use case with actionable insights.",
+          "sponsor": "Theta Sponsor",
+          "category": "Legal",
+          "introducedDate": "2026-09-15",
+          "votedDate": "2026-03-21",
+          "votesFor": 866,
+          "votesAgainst": 606,
+          "status": "Archived",
+          "effectiveDate": "2026-06-28",
+          "fullText": "Theta full text — comprehensive details for healthcare use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Iota Resolution Number",
+          "title": "Iota Title",
+          "description": "Iota description — comprehensive details for finance use case with actionable insights.",
+          "sponsor": "Iota Sponsor",
+          "category": "Admin",
+          "introducedDate": "2026-09-16",
+          "votedDate": "2026-03-26",
+          "votesFor": 543,
+          "votesAgainst": 595,
+          "status": "Beta",
+          "effectiveDate": "2026-05-10",
+          "fullText": "Iota full text — comprehensive details for finance use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Kappa Resolution Number",
+          "title": "Kappa Title",
+          "description": "Kappa description — comprehensive details for education use case with actionable insights.",
+          "sponsor": "Kappa Sponsor",
+          "category": "Analytics",
+          "introducedDate": "2026-08-23",
+          "votedDate": "2026-04-25",
+          "votesFor": 308,
+          "votesAgainst": 4,
+          "status": "GA",
+          "effectiveDate": "2026-02-12",
+          "fullText": "Kappa full text — comprehensive details for education use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Lambda Resolution Number",
+          "title": "Lambda Title",
+          "description": "Lambda description — comprehensive details for retail use case with actionable insights.",
+          "sponsor": "Lambda Sponsor",
+          "category": "Security",
+          "introducedDate": "2026-07-06",
+          "votedDate": "2026-04-17",
+          "votesFor": 474,
+          "votesAgainst": 29,
+          "status": "Completed",
+          "effectiveDate": "2026-12-06",
+          "fullText": "Lambda full text — comprehensive details for retail use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Mu Resolution Number",
+          "title": "Mu Title",
+          "description": "Mu description — comprehensive details for tech use case with actionable insights.",
+          "sponsor": "Mu Sponsor",
+          "category": "Compliance",
+          "introducedDate": "2026-07-27",
+          "votedDate": "2026-04-17",
+          "votesFor": 905,
+          "votesAgainst": 127,
+          "status": "In Progress",
+          "effectiveDate": "2026-07-27",
+          "fullText": "Mu full text — comprehensive details for tech use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Nu Resolution Number",
+          "title": "Nu Title",
+          "description": "Nu description — comprehensive details for legal use case with actionable insights.",
+          "sponsor": "Nu Sponsor",
+          "category": "Infrastructure",
+          "introducedDate": "2026-12-15",
+          "votedDate": "2026-01-14",
+          "votesFor": 623,
+          "votesAgainst": 708,
+          "status": "Scheduled",
+          "effectiveDate": "2026-10-27",
+          "fullText": "Nu full text — comprehensive details for legal use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Xi Resolution Number",
+          "title": "Xi Title",
+          "description": "Xi description — comprehensive details for real estate use case with actionable insights.",
+          "sponsor": "Xi Sponsor",
+          "category": "Product",
+          "introducedDate": "2026-02-19",
+          "votedDate": "2026-02-18",
+          "votesFor": 519,
+          "votesAgainst": 588,
+          "status": "Failed",
+          "effectiveDate": "2026-09-24",
+          "fullText": "Xi full text — comprehensive details for real estate use case with actionable insights."
+        },
+        {
+          "resolutionNumber": "Omicron Resolution Number",
+          "title": "Omicron Title",
+          "description": "Omicron description — comprehensive details for manufacturing use case with actionable insights.",
+          "sponsor": "Omicron Sponsor",
+          "category": "Research",
+          "introducedDate": "2026-02-14",
+          "votedDate": "2026-06-05",
+          "votesFor": 482,
+          "votesAgainst": 313,
+          "status": "Cancelled",
+          "effectiveDate": "2026-01-13",
+          "fullText": "Omicron full text — comprehensive details for manufacturing use case with actionable insights."
+        }
+      ]
+    },
+    {
+      "label": "Budget Allocation",
+      "modelName": "BudgetAllocation",
+      "routeKey": "budgetAllocations",
+      "icon": "💰",
+      "aiFunction": "analyzeBudgetAllocation",
+      "aiPrompt": "Analyze this Budget Allocation data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "allocationName",
+          "label": "Allocation Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "fiscalYear",
+          "label": "Fiscal Year",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "requestedAmount",
+          "label": "requested Amount",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "approvedAmount",
+          "label": "approved Amount",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "spentAmount",
+          "label": "spent Amount",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "remainingAmount",
+          "label": "remaining Amount",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "approvedDate",
+          "label": "approved Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "allocationName": "Alpha Allocation Name",
+          "department": "Operations",
+          "fiscalYear": "Alpha Fiscal Year",
+          "category": "Operations",
+          "requestedAmount": 555.55,
+          "approvedAmount": 845.15,
+          "spentAmount": 71.04,
+          "remainingAmount": 775.94,
+          "status": "Active",
+          "approvedDate": "2026-10-22",
+          "notes": "Alpha notes — comprehensive details for enterprise use case with actionable insights."
+        },
+        {
+          "allocationName": "Beta Allocation Name",
+          "department": "Sales",
+          "fiscalYear": "Beta Fiscal Year",
+          "category": "Sales",
+          "requestedAmount": 821.68,
+          "approvedAmount": 219.13,
+          "spentAmount": 393.8,
+          "remainingAmount": 672.4,
+          "status": "Pending",
+          "approvedDate": "2026-06-19",
+          "notes": "Beta notes — comprehensive details for startup use case with actionable insights."
+        },
+        {
+          "allocationName": "Gamma Allocation Name",
+          "department": "Marketing",
+          "fiscalYear": "Gamma Fiscal Year",
+          "category": "Marketing",
+          "requestedAmount": 523.47,
+          "approvedAmount": 767.51,
+          "spentAmount": 169.07,
+          "remainingAmount": 746.35,
+          "status": "Review",
+          "approvedDate": "2026-02-18",
+          "notes": "Gamma notes — comprehensive details for smb use case with actionable insights."
+        },
+        {
+          "allocationName": "Delta Allocation Name",
+          "department": "Finance",
+          "fiscalYear": "Delta Fiscal Year",
+          "category": "Finance",
+          "requestedAmount": 563.83,
+          "approvedAmount": 107.59,
+          "spentAmount": 95.16,
+          "remainingAmount": 129.8,
+          "status": "Approved",
+          "approvedDate": "2026-07-09",
+          "notes": "Delta notes — comprehensive details for agency use case with actionable insights."
+        },
+        {
+          "allocationName": "Epsilon Allocation Name",
+          "department": "HR",
+          "fiscalYear": "Epsilon Fiscal Year",
+          "category": "HR",
+          "requestedAmount": 715.9,
+          "approvedAmount": 234.65,
+          "spentAmount": 847.61,
+          "remainingAmount": 226.24,
+          "status": "Draft",
+          "approvedDate": "2026-09-21",
+          "notes": "Epsilon notes — comprehensive details for freelancer use case with actionable insights."
+        },
+        {
+          "allocationName": "Zeta Allocation Name",
+          "department": "Engineering",
+          "fiscalYear": "Zeta Fiscal Year",
+          "category": "Engineering",
+          "requestedAmount": 153.46,
+          "approvedAmount": 457.31,
+          "spentAmount": 240.66,
+          "remainingAmount": 45.58,
+          "status": "Live",
+          "approvedDate": "2026-11-09",
+          "notes": "Zeta notes — comprehensive details for government use case with actionable insights."
+        },
+        {
+          "allocationName": "Eta Allocation Name",
+          "department": "Support",
+          "fiscalYear": "Eta Fiscal Year",
+          "category": "Support",
+          "requestedAmount": 769.2,
+          "approvedAmount": 841.57,
+          "spentAmount": 522.04,
+          "remainingAmount": 662.46,
+          "status": "Paused",
+          "approvedDate": "2026-07-07",
+          "notes": "Eta notes — comprehensive details for nonprofit use case with actionable insights."
+        },
+        {
+          "allocationName": "Theta Allocation Name",
+          "department": "Legal",
+          "fiscalYear": "Theta Fiscal Year",
+          "category": "Legal",
+          "requestedAmount": 721.86,
+          "approvedAmount": 196.15,
+          "spentAmount": 732.27,
+          "remainingAmount": 340.89,
+          "status": "Archived",
+          "approvedDate": "2026-04-15",
+          "notes": "Theta notes — comprehensive details for healthcare use case with actionable insights."
+        },
+        {
+          "allocationName": "Iota Allocation Name",
+          "department": "Admin",
+          "fiscalYear": "Iota Fiscal Year",
+          "category": "Admin",
+          "requestedAmount": 286.19,
+          "approvedAmount": 302.34,
+          "spentAmount": 218.32,
+          "remainingAmount": 637.64,
+          "status": "Beta",
+          "approvedDate": "2026-12-25",
+          "notes": "Iota notes — comprehensive details for finance use case with actionable insights."
+        },
+        {
+          "allocationName": "Kappa Allocation Name",
+          "department": "Analytics",
+          "fiscalYear": "Kappa Fiscal Year",
+          "category": "Analytics",
+          "requestedAmount": 486.34,
+          "approvedAmount": 680.6,
+          "spentAmount": 821.23,
+          "remainingAmount": 616.7,
+          "status": "GA",
+          "approvedDate": "2026-02-27",
+          "notes": "Kappa notes — comprehensive details for education use case with actionable insights."
+        },
+        {
+          "allocationName": "Lambda Allocation Name",
+          "department": "Security",
+          "fiscalYear": "Lambda Fiscal Year",
+          "category": "Security",
+          "requestedAmount": 597.1,
+          "approvedAmount": 82.32,
+          "spentAmount": 636.26,
+          "remainingAmount": 32.26,
+          "status": "Completed",
+          "approvedDate": "2026-02-18",
+          "notes": "Lambda notes — comprehensive details for retail use case with actionable insights."
+        },
+        {
+          "allocationName": "Mu Allocation Name",
+          "department": "Compliance",
+          "fiscalYear": "Mu Fiscal Year",
+          "category": "Compliance",
+          "requestedAmount": 337.83,
+          "approvedAmount": 768.97,
+          "spentAmount": 314.57,
+          "remainingAmount": 140.51,
+          "status": "In Progress",
+          "approvedDate": "2026-10-25",
+          "notes": "Mu notes — comprehensive details for tech use case with actionable insights."
+        },
+        {
+          "allocationName": "Nu Allocation Name",
+          "department": "Infrastructure",
+          "fiscalYear": "Nu Fiscal Year",
+          "category": "Infrastructure",
+          "requestedAmount": 15.55,
+          "approvedAmount": 840.74,
+          "spentAmount": 658.36,
+          "remainingAmount": 481.24,
+          "status": "Scheduled",
+          "approvedDate": "2026-10-06",
+          "notes": "Nu notes — comprehensive details for legal use case with actionable insights."
+        },
+        {
+          "allocationName": "Xi Allocation Name",
+          "department": "Product",
+          "fiscalYear": "Xi Fiscal Year",
+          "category": "Product",
+          "requestedAmount": 486.58,
+          "approvedAmount": 658.22,
+          "spentAmount": 374.21,
+          "remainingAmount": 756.09,
+          "status": "Failed",
+          "approvedDate": "2026-12-27",
+          "notes": "Xi notes — comprehensive details for real estate use case with actionable insights."
+        },
+        {
+          "allocationName": "Omicron Allocation Name",
+          "department": "Research",
+          "fiscalYear": "Omicron Fiscal Year",
+          "category": "Research",
+          "requestedAmount": 677.96,
+          "approvedAmount": 299.24,
+          "spentAmount": 192.59,
+          "remainingAmount": 821.1,
+          "status": "Cancelled",
+          "approvedDate": "2026-03-12",
+          "notes": "Omicron notes — comprehensive details for manufacturing use case with actionable insights."
+        }
+      ]
+    },
+    {
+      "label": "Public Comment",
+      "modelName": "PublicComment",
+      "routeKey": "publicComments",
+      "icon": "💬",
+      "aiFunction": "analyzePublicComment",
+      "aiPrompt": "Analyze this Public Comment data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "commentId",
+          "label": "Comment Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "citizenName",
+          "label": "Citizen Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "topic",
+          "label": "Topic",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "relatedItem",
+          "label": "Related Item",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "comment",
+          "label": "comment",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "submittedDate",
+          "label": "submitted Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "sentiment",
+          "label": "Sentiment",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "isAnonymous",
+          "label": "is Anonymous",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "response",
+          "label": "response",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "respondedBy",
+          "label": "Responded By",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "commentId": "Alpha Comment Id",
+          "citizenName": "Alpha Citizen Name",
+          "topic": "Alpha Topic",
+          "relatedItem": "Alpha Related Item",
+          "comment": "Alpha comment content for enterprise scenario.",
+          "submittedDate": "2026-11-18",
+          "status": "Active",
+          "sentiment": "Alpha Sentiment",
+          "category": "Operations",
+          "isAnonymous": true,
+          "response": "Alpha response content for enterprise scenario.",
+          "respondedBy": "Alpha Responded By"
+        },
+        {
+          "commentId": "Beta Comment Id",
+          "citizenName": "Beta Citizen Name",
+          "topic": "Beta Topic",
+          "relatedItem": "Beta Related Item",
+          "comment": "Beta comment content for startup scenario.",
+          "submittedDate": "2026-07-01",
+          "status": "Pending",
+          "sentiment": "Beta Sentiment",
+          "category": "Sales",
+          "isAnonymous": false,
+          "response": "Beta response content for startup scenario.",
+          "respondedBy": "Beta Responded By"
+        },
+        {
+          "commentId": "Gamma Comment Id",
+          "citizenName": "Gamma Citizen Name",
+          "topic": "Gamma Topic",
+          "relatedItem": "Gamma Related Item",
+          "comment": "Gamma comment content for smb scenario.",
+          "submittedDate": "2026-07-05",
+          "status": "Review",
+          "sentiment": "Gamma Sentiment",
+          "category": "Marketing",
+          "isAnonymous": true,
+          "response": "Gamma response content for smb scenario.",
+          "respondedBy": "Gamma Responded By"
+        },
+        {
+          "commentId": "Delta Comment Id",
+          "citizenName": "Delta Citizen Name",
+          "topic": "Delta Topic",
+          "relatedItem": "Delta Related Item",
+          "comment": "Delta comment content for agency scenario.",
+          "submittedDate": "2026-03-02",
+          "status": "Approved",
+          "sentiment": "Delta Sentiment",
+          "category": "Finance",
+          "isAnonymous": false,
+          "response": "Delta response content for agency scenario.",
+          "respondedBy": "Delta Responded By"
+        },
+        {
+          "commentId": "Epsilon Comment Id",
+          "citizenName": "Epsilon Citizen Name",
+          "topic": "Epsilon Topic",
+          "relatedItem": "Epsilon Related Item",
+          "comment": "Epsilon comment content for freelancer scenario.",
+          "submittedDate": "2026-03-12",
+          "status": "Draft",
+          "sentiment": "Epsilon Sentiment",
+          "category": "HR",
+          "isAnonymous": true,
+          "response": "Epsilon response content for freelancer scenario.",
+          "respondedBy": "Epsilon Responded By"
+        },
+        {
+          "commentId": "Zeta Comment Id",
+          "citizenName": "Zeta Citizen Name",
+          "topic": "Zeta Topic",
+          "relatedItem": "Zeta Related Item",
+          "comment": "Zeta comment content for government scenario.",
+          "submittedDate": "2026-12-13",
+          "status": "Live",
+          "sentiment": "Zeta Sentiment",
+          "category": "Engineering",
+          "isAnonymous": false,
+          "response": "Zeta response content for government scenario.",
+          "respondedBy": "Zeta Responded By"
+        },
+        {
+          "commentId": "Eta Comment Id",
+          "citizenName": "Eta Citizen Name",
+          "topic": "Eta Topic",
+          "relatedItem": "Eta Related Item",
+          "comment": "Eta comment content for nonprofit scenario.",
+          "submittedDate": "2026-06-08",
+          "status": "Paused",
+          "sentiment": "Eta Sentiment",
+          "category": "Support",
+          "isAnonymous": true,
+          "response": "Eta response content for nonprofit scenario.",
+          "respondedBy": "Eta Responded By"
+        },
+        {
+          "commentId": "Theta Comment Id",
+          "citizenName": "Theta Citizen Name",
+          "topic": "Theta Topic",
+          "relatedItem": "Theta Related Item",
+          "comment": "Theta comment content for healthcare scenario.",
+          "submittedDate": "2026-09-06",
+          "status": "Archived",
+          "sentiment": "Theta Sentiment",
+          "category": "Legal",
+          "isAnonymous": false,
+          "response": "Theta response content for healthcare scenario.",
+          "respondedBy": "Theta Responded By"
+        },
+        {
+          "commentId": "Iota Comment Id",
+          "citizenName": "Iota Citizen Name",
+          "topic": "Iota Topic",
+          "relatedItem": "Iota Related Item",
+          "comment": "Iota comment content for finance scenario.",
+          "submittedDate": "2026-09-10",
+          "status": "Beta",
+          "sentiment": "Iota Sentiment",
+          "category": "Admin",
+          "isAnonymous": true,
+          "response": "Iota response content for finance scenario.",
+          "respondedBy": "Iota Responded By"
+        },
+        {
+          "commentId": "Kappa Comment Id",
+          "citizenName": "Kappa Citizen Name",
+          "topic": "Kappa Topic",
+          "relatedItem": "Kappa Related Item",
+          "comment": "Kappa comment content for education scenario.",
+          "submittedDate": "2026-02-05",
+          "status": "GA",
+          "sentiment": "Kappa Sentiment",
+          "category": "Analytics",
+          "isAnonymous": false,
+          "response": "Kappa response content for education scenario.",
+          "respondedBy": "Kappa Responded By"
+        },
+        {
+          "commentId": "Lambda Comment Id",
+          "citizenName": "Lambda Citizen Name",
+          "topic": "Lambda Topic",
+          "relatedItem": "Lambda Related Item",
+          "comment": "Lambda comment content for retail scenario.",
+          "submittedDate": "2026-11-03",
+          "status": "Completed",
+          "sentiment": "Lambda Sentiment",
+          "category": "Security",
+          "isAnonymous": true,
+          "response": "Lambda response content for retail scenario.",
+          "respondedBy": "Lambda Responded By"
+        },
+        {
+          "commentId": "Mu Comment Id",
+          "citizenName": "Mu Citizen Name",
+          "topic": "Mu Topic",
+          "relatedItem": "Mu Related Item",
+          "comment": "Mu comment content for tech scenario.",
+          "submittedDate": "2026-05-07",
+          "status": "In Progress",
+          "sentiment": "Mu Sentiment",
+          "category": "Compliance",
+          "isAnonymous": false,
+          "response": "Mu response content for tech scenario.",
+          "respondedBy": "Mu Responded By"
+        },
+        {
+          "commentId": "Nu Comment Id",
+          "citizenName": "Nu Citizen Name",
+          "topic": "Nu Topic",
+          "relatedItem": "Nu Related Item",
+          "comment": "Nu comment content for legal scenario.",
+          "submittedDate": "2026-01-04",
+          "status": "Scheduled",
+          "sentiment": "Nu Sentiment",
+          "category": "Infrastructure",
+          "isAnonymous": true,
+          "response": "Nu response content for legal scenario.",
+          "respondedBy": "Nu Responded By"
+        },
+        {
+          "commentId": "Xi Comment Id",
+          "citizenName": "Xi Citizen Name",
+          "topic": "Xi Topic",
+          "relatedItem": "Xi Related Item",
+          "comment": "Xi comment content for real estate scenario.",
+          "submittedDate": "2026-02-24",
+          "status": "Failed",
+          "sentiment": "Xi Sentiment",
+          "category": "Product",
+          "isAnonymous": false,
+          "response": "Xi response content for real estate scenario.",
+          "respondedBy": "Xi Responded By"
+        },
+        {
+          "commentId": "Omicron Comment Id",
+          "citizenName": "Omicron Citizen Name",
+          "topic": "Omicron Topic",
+          "relatedItem": "Omicron Related Item",
+          "comment": "Omicron comment content for manufacturing scenario.",
+          "submittedDate": "2026-05-06",
+          "status": "Cancelled",
+          "sentiment": "Omicron Sentiment",
+          "category": "Research",
+          "isAnonymous": true,
+          "response": "Omicron response content for manufacturing scenario.",
+          "respondedBy": "Omicron Responded By"
+        }
+      ]
+    },
+    {
+      "label": "Service Department",
+      "modelName": "ServiceDepartment",
+      "routeKey": "serviceDepartments",
+      "icon": "🏢",
+      "aiFunction": "analyzeServiceDepartment",
+      "aiPrompt": "Analyze this Service Department data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "deptName",
+          "label": "Dept Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "deptCode",
+          "label": "Dept Code",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "director",
+          "label": "Director",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "contactEmail",
+          "label": "Contact Email",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "contactPhone",
+          "label": "Contact Phone",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "employeeCount",
+          "label": "employee Count",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "annualBudget",
+          "label": "annual Budget",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "servicesOffered",
+          "label": "services Offered",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "hoursOfOperation",
+          "label": "Hours Of Operation",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "deptName": "Alpha Dept Name",
+          "deptCode": "Alpha Dept Code",
+          "director": "Alpha Director",
+          "contactEmail": "alpha@example.com",
+          "contactPhone": "Alpha Contact Phone",
+          "employeeCount": 445,
+          "annualBudget": 574.95,
+          "location": "Alpha Location",
+          "status": "Active",
+          "servicesOffered": "Alpha services offered content for enterprise scenario.",
+          "hoursOfOperation": "Alpha Hours Of Operation",
+          "notes": "Alpha notes — comprehensive details for enterprise use case with actionable insights."
+        },
+        {
+          "deptName": "Beta Dept Name",
+          "deptCode": "Beta Dept Code",
+          "director": "Beta Director",
+          "contactEmail": "beta@example.com",
+          "contactPhone": "Beta Contact Phone",
+          "employeeCount": 396,
+          "annualBudget": 267.09,
+          "location": "Beta Location",
+          "status": "Pending",
+          "servicesOffered": "Beta services offered content for startup scenario.",
+          "hoursOfOperation": "Beta Hours Of Operation",
+          "notes": "Beta notes — comprehensive details for startup use case with actionable insights."
+        },
+        {
+          "deptName": "Gamma Dept Name",
+          "deptCode": "Gamma Dept Code",
+          "director": "Gamma Director",
+          "contactEmail": "gamma@example.com",
+          "contactPhone": "Gamma Contact Phone",
+          "employeeCount": 182,
+          "annualBudget": 758.68,
+          "location": "Gamma Location",
+          "status": "Review",
+          "servicesOffered": "Gamma services offered content for smb scenario.",
+          "hoursOfOperation": "Gamma Hours Of Operation",
+          "notes": "Gamma notes — comprehensive details for smb use case with actionable insights."
+        },
+        {
+          "deptName": "Delta Dept Name",
+          "deptCode": "Delta Dept Code",
+          "director": "Delta Director",
+          "contactEmail": "delta@example.com",
+          "contactPhone": "Delta Contact Phone",
+          "employeeCount": 213,
+          "annualBudget": 177.3,
+          "location": "Delta Location",
+          "status": "Approved",
+          "servicesOffered": "Delta services offered content for agency scenario.",
+          "hoursOfOperation": "Delta Hours Of Operation",
+          "notes": "Delta notes — comprehensive details for agency use case with actionable insights."
+        },
+        {
+          "deptName": "Epsilon Dept Name",
+          "deptCode": "Epsilon Dept Code",
+          "director": "Epsilon Director",
+          "contactEmail": "epsilon@example.com",
+          "contactPhone": "Epsilon Contact Phone",
+          "employeeCount": 246,
+          "annualBudget": 238.91,
+          "location": "Epsilon Location",
+          "status": "Draft",
+          "servicesOffered": "Epsilon services offered content for freelancer scenario.",
+          "hoursOfOperation": "Epsilon Hours Of Operation",
+          "notes": "Epsilon notes — comprehensive details for freelancer use case with actionable insights."
+        },
+        {
+          "deptName": "Zeta Dept Name",
+          "deptCode": "Zeta Dept Code",
+          "director": "Zeta Director",
+          "contactEmail": "zeta@example.com",
+          "contactPhone": "Zeta Contact Phone",
+          "employeeCount": 356,
+          "annualBudget": 303.39,
+          "location": "Zeta Location",
+          "status": "Live",
+          "servicesOffered": "Zeta services offered content for government scenario.",
+          "hoursOfOperation": "Zeta Hours Of Operation",
+          "notes": "Zeta notes — comprehensive details for government use case with actionable insights."
+        },
+        {
+          "deptName": "Eta Dept Name",
+          "deptCode": "Eta Dept Code",
+          "director": "Eta Director",
+          "contactEmail": "eta@example.com",
+          "contactPhone": "Eta Contact Phone",
+          "employeeCount": 301,
+          "annualBudget": 168.62,
+          "location": "Eta Location",
+          "status": "Paused",
+          "servicesOffered": "Eta services offered content for nonprofit scenario.",
+          "hoursOfOperation": "Eta Hours Of Operation",
+          "notes": "Eta notes — comprehensive details for nonprofit use case with actionable insights."
+        },
+        {
+          "deptName": "Theta Dept Name",
+          "deptCode": "Theta Dept Code",
+          "director": "Theta Director",
+          "contactEmail": "theta@example.com",
+          "contactPhone": "Theta Contact Phone",
+          "employeeCount": 69,
+          "annualBudget": 22.54,
+          "location": "Theta Location",
+          "status": "Archived",
+          "servicesOffered": "Theta services offered content for healthcare scenario.",
+          "hoursOfOperation": "Theta Hours Of Operation",
+          "notes": "Theta notes — comprehensive details for healthcare use case with actionable insights."
+        },
+        {
+          "deptName": "Iota Dept Name",
+          "deptCode": "Iota Dept Code",
+          "director": "Iota Director",
+          "contactEmail": "iota@example.com",
+          "contactPhone": "Iota Contact Phone",
+          "employeeCount": 122,
+          "annualBudget": 135.41,
+          "location": "Iota Location",
+          "status": "Beta",
+          "servicesOffered": "Iota services offered content for finance scenario.",
+          "hoursOfOperation": "Iota Hours Of Operation",
+          "notes": "Iota notes — comprehensive details for finance use case with actionable insights."
+        },
+        {
+          "deptName": "Kappa Dept Name",
+          "deptCode": "Kappa Dept Code",
+          "director": "Kappa Director",
+          "contactEmail": "kappa@example.com",
+          "contactPhone": "Kappa Contact Phone",
+          "employeeCount": 153,
+          "annualBudget": 570,
+          "location": "Kappa Location",
+          "status": "GA",
+          "servicesOffered": "Kappa services offered content for education scenario.",
+          "hoursOfOperation": "Kappa Hours Of Operation",
+          "notes": "Kappa notes — comprehensive details for education use case with actionable insights."
+        },
+        {
+          "deptName": "Lambda Dept Name",
+          "deptCode": "Lambda Dept Code",
+          "director": "Lambda Director",
+          "contactEmail": "lambda@example.com",
+          "contactPhone": "Lambda Contact Phone",
+          "employeeCount": 118,
+          "annualBudget": 824.75,
+          "location": "Lambda Location",
+          "status": "Completed",
+          "servicesOffered": "Lambda services offered content for retail scenario.",
+          "hoursOfOperation": "Lambda Hours Of Operation",
+          "notes": "Lambda notes — comprehensive details for retail use case with actionable insights."
+        },
+        {
+          "deptName": "Mu Dept Name",
+          "deptCode": "Mu Dept Code",
+          "director": "Mu Director",
+          "contactEmail": "mu@example.com",
+          "contactPhone": "Mu Contact Phone",
+          "employeeCount": 171,
+          "annualBudget": 352.82,
+          "location": "Mu Location",
+          "status": "In Progress",
+          "servicesOffered": "Mu services offered content for tech scenario.",
+          "hoursOfOperation": "Mu Hours Of Operation",
+          "notes": "Mu notes — comprehensive details for tech use case with actionable insights."
+        },
+        {
+          "deptName": "Nu Dept Name",
+          "deptCode": "Nu Dept Code",
+          "director": "Nu Director",
+          "contactEmail": "nu@example.com",
+          "contactPhone": "Nu Contact Phone",
+          "employeeCount": 395,
+          "annualBudget": 80.94,
+          "location": "Nu Location",
+          "status": "Scheduled",
+          "servicesOffered": "Nu services offered content for legal scenario.",
+          "hoursOfOperation": "Nu Hours Of Operation",
+          "notes": "Nu notes — comprehensive details for legal use case with actionable insights."
+        },
+        {
+          "deptName": "Xi Dept Name",
+          "deptCode": "Xi Dept Code",
+          "director": "Xi Director",
+          "contactEmail": "xi@example.com",
+          "contactPhone": "Xi Contact Phone",
+          "employeeCount": 330,
+          "annualBudget": 184.15,
+          "location": "Xi Location",
+          "status": "Failed",
+          "servicesOffered": "Xi services offered content for real estate scenario.",
+          "hoursOfOperation": "Xi Hours Of Operation",
+          "notes": "Xi notes — comprehensive details for real estate use case with actionable insights."
+        },
+        {
+          "deptName": "Omicron Dept Name",
+          "deptCode": "Omicron Dept Code",
+          "director": "Omicron Director",
+          "contactEmail": "omicron@example.com",
+          "contactPhone": "Omicron Contact Phone",
+          "employeeCount": 71,
+          "annualBudget": 235.75,
+          "location": "Omicron Location",
+          "status": "Cancelled",
+          "servicesOffered": "Omicron services offered content for manufacturing scenario.",
+          "hoursOfOperation": "Omicron Hours Of Operation",
+          "notes": "Omicron notes — comprehensive details for manufacturing use case with actionable insights."
+        }
+      ]
+    },
+    {
+      "label": "Community Project",
+      "modelName": "CommunityProject",
+      "routeKey": "communityProjects",
+      "icon": "🌆",
+      "aiFunction": "analyzeCommunityProject",
+      "aiPrompt": "Analyze this Community Project data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "projectName",
+          "label": "Project Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "description",
+          "label": "description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "leadDepartment",
+          "label": "Lead Department",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "projectManager",
+          "label": "Project Manager",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "startDate",
+          "label": "start Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "endDate",
+          "label": "end Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "budget",
+          "label": "budget",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "spentToDate",
+          "label": "spent To Date",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "milestones",
+          "label": "milestones",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "impactArea",
+          "label": "Impact Area",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "beneficiaries",
+          "label": "beneficiaries",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "projectName": "Alpha Project Name",
+          "description": "Alpha description — comprehensive details for enterprise use case with actionable insights.",
+          "category": "Operations",
+          "leadDepartment": "Operations",
+          "projectManager": "Alpha Project Manager",
+          "startDate": "2026-10-25",
+          "endDate": "2026-12-20",
+          "budget": 22.38,
+          "spentToDate": 866.04,
+          "status": "Active",
+          "milestones": "Alpha milestones content for enterprise scenario.",
+          "impactArea": "Alpha Impact Area",
+          "beneficiaries": 789,
+          "notes": "Alpha notes — comprehensive details for enterprise use case with actionable insights."
+        },
+        {
+          "projectName": "Beta Project Name",
+          "description": "Beta description — comprehensive details for startup use case with actionable insights.",
+          "category": "Sales",
+          "leadDepartment": "Sales",
+          "projectManager": "Beta Project Manager",
+          "startDate": "2026-03-08",
+          "endDate": "2026-04-20",
+          "budget": 165.56,
+          "spentToDate": 692.14,
+          "status": "Pending",
+          "milestones": "Beta milestones content for startup scenario.",
+          "impactArea": "Beta Impact Area",
+          "beneficiaries": 178,
+          "notes": "Beta notes — comprehensive details for startup use case with actionable insights."
+        },
+        {
+          "projectName": "Gamma Project Name",
+          "description": "Gamma description — comprehensive details for smb use case with actionable insights.",
+          "category": "Marketing",
+          "leadDepartment": "Marketing",
+          "projectManager": "Gamma Project Manager",
+          "startDate": "2026-10-26",
+          "endDate": "2026-03-22",
+          "budget": 365.5,
+          "spentToDate": 958.17,
+          "status": "Review",
+          "milestones": "Gamma milestones content for smb scenario.",
+          "impactArea": "Gamma Impact Area",
+          "beneficiaries": 433,
+          "notes": "Gamma notes — comprehensive details for smb use case with actionable insights."
+        },
+        {
+          "projectName": "Delta Project Name",
+          "description": "Delta description — comprehensive details for agency use case with actionable insights.",
+          "category": "Finance",
+          "leadDepartment": "Finance",
+          "projectManager": "Delta Project Manager",
+          "startDate": "2026-03-26",
+          "endDate": "2026-03-13",
+          "budget": 525.11,
+          "spentToDate": 198.52,
+          "status": "Approved",
+          "milestones": "Delta milestones content for agency scenario.",
+          "impactArea": "Delta Impact Area",
+          "beneficiaries": 396,
+          "notes": "Delta notes — comprehensive details for agency use case with actionable insights."
+        },
+        {
+          "projectName": "Epsilon Project Name",
+          "description": "Epsilon description — comprehensive details for freelancer use case with actionable insights.",
+          "category": "HR",
+          "leadDepartment": "HR",
+          "projectManager": "Epsilon Project Manager",
+          "startDate": "2026-07-27",
+          "endDate": "2026-09-27",
+          "budget": 944.2,
+          "spentToDate": 427.3,
+          "status": "Draft",
+          "milestones": "Epsilon milestones content for freelancer scenario.",
+          "impactArea": "Epsilon Impact Area",
+          "beneficiaries": 683,
+          "notes": "Epsilon notes — comprehensive details for freelancer use case with actionable insights."
+        },
+        {
+          "projectName": "Zeta Project Name",
+          "description": "Zeta description — comprehensive details for government use case with actionable insights.",
+          "category": "Engineering",
+          "leadDepartment": "Engineering",
+          "projectManager": "Zeta Project Manager",
+          "startDate": "2026-04-18",
+          "endDate": "2026-03-06",
+          "budget": 876.26,
+          "spentToDate": 711.1,
+          "status": "Live",
+          "milestones": "Zeta milestones content for government scenario.",
+          "impactArea": "Zeta Impact Area",
+          "beneficiaries": 397,
+          "notes": "Zeta notes — comprehensive details for government use case with actionable insights."
+        },
+        {
+          "projectName": "Eta Project Name",
+          "description": "Eta description — comprehensive details for nonprofit use case with actionable insights.",
+          "category": "Support",
+          "leadDepartment": "Support",
+          "projectManager": "Eta Project Manager",
+          "startDate": "2026-07-17",
+          "endDate": "2026-11-12",
+          "budget": 623.47,
+          "spentToDate": 912.29,
+          "status": "Paused",
+          "milestones": "Eta milestones content for nonprofit scenario.",
+          "impactArea": "Eta Impact Area",
+          "beneficiaries": 986,
+          "notes": "Eta notes — comprehensive details for nonprofit use case with actionable insights."
+        },
+        {
+          "projectName": "Theta Project Name",
+          "description": "Theta description — comprehensive details for healthcare use case with actionable insights.",
+          "category": "Legal",
+          "leadDepartment": "Legal",
+          "projectManager": "Theta Project Manager",
+          "startDate": "2026-09-21",
+          "endDate": "2026-07-21",
+          "budget": 721.68,
+          "spentToDate": 40.44,
+          "status": "Archived",
+          "milestones": "Theta milestones content for healthcare scenario.",
+          "impactArea": "Theta Impact Area",
+          "beneficiaries": 744,
+          "notes": "Theta notes — comprehensive details for healthcare use case with actionable insights."
+        },
+        {
+          "projectName": "Iota Project Name",
+          "description": "Iota description — comprehensive details for finance use case with actionable insights.",
+          "category": "Admin",
+          "leadDepartment": "Admin",
+          "projectManager": "Iota Project Manager",
+          "startDate": "2026-03-07",
+          "endDate": "2026-09-11",
+          "budget": 131.97,
+          "spentToDate": 250.98,
+          "status": "Beta",
+          "milestones": "Iota milestones content for finance scenario.",
+          "impactArea": "Iota Impact Area",
+          "beneficiaries": 380,
+          "notes": "Iota notes — comprehensive details for finance use case with actionable insights."
+        },
+        {
+          "projectName": "Kappa Project Name",
+          "description": "Kappa description — comprehensive details for education use case with actionable insights.",
+          "category": "Analytics",
+          "leadDepartment": "Analytics",
+          "projectManager": "Kappa Project Manager",
+          "startDate": "2026-03-02",
+          "endDate": "2026-02-16",
+          "budget": 502.1,
+          "spentToDate": 220.92,
+          "status": "GA",
+          "milestones": "Kappa milestones content for education scenario.",
+          "impactArea": "Kappa Impact Area",
+          "beneficiaries": 834,
+          "notes": "Kappa notes — comprehensive details for education use case with actionable insights."
+        },
+        {
+          "projectName": "Lambda Project Name",
+          "description": "Lambda description — comprehensive details for retail use case with actionable insights.",
+          "category": "Security",
+          "leadDepartment": "Security",
+          "projectManager": "Lambda Project Manager",
+          "startDate": "2026-07-08",
+          "endDate": "2026-04-14",
+          "budget": 476.13,
+          "spentToDate": 117.68,
+          "status": "Completed",
+          "milestones": "Lambda milestones content for retail scenario.",
+          "impactArea": "Lambda Impact Area",
+          "beneficiaries": 439,
+          "notes": "Lambda notes — comprehensive details for retail use case with actionable insights."
+        },
+        {
+          "projectName": "Mu Project Name",
+          "description": "Mu description — comprehensive details for tech use case with actionable insights.",
+          "category": "Compliance",
+          "leadDepartment": "Compliance",
+          "projectManager": "Mu Project Manager",
+          "startDate": "2026-06-22",
+          "endDate": "2026-09-07",
+          "budget": 339,
+          "spentToDate": 613.14,
+          "status": "In Progress",
+          "milestones": "Mu milestones content for tech scenario.",
+          "impactArea": "Mu Impact Area",
+          "beneficiaries": 215,
+          "notes": "Mu notes — comprehensive details for tech use case with actionable insights."
+        },
+        {
+          "projectName": "Nu Project Name",
+          "description": "Nu description — comprehensive details for legal use case with actionable insights.",
+          "category": "Infrastructure",
+          "leadDepartment": "Infrastructure",
+          "projectManager": "Nu Project Manager",
+          "startDate": "2026-03-23",
+          "endDate": "2026-03-14",
+          "budget": 207.3,
+          "spentToDate": 216.83,
+          "status": "Scheduled",
+          "milestones": "Nu milestones content for legal scenario.",
+          "impactArea": "Nu Impact Area",
+          "beneficiaries": 169,
+          "notes": "Nu notes — comprehensive details for legal use case with actionable insights."
+        },
+        {
+          "projectName": "Xi Project Name",
+          "description": "Xi description — comprehensive details for real estate use case with actionable insights.",
+          "category": "Product",
+          "leadDepartment": "Product",
+          "projectManager": "Xi Project Manager",
+          "startDate": "2026-03-01",
+          "endDate": "2026-07-07",
+          "budget": 430.97,
+          "spentToDate": 608.57,
+          "status": "Failed",
+          "milestones": "Xi milestones content for real estate scenario.",
+          "impactArea": "Xi Impact Area",
+          "beneficiaries": 49,
+          "notes": "Xi notes — comprehensive details for real estate use case with actionable insights."
+        },
+        {
+          "projectName": "Omicron Project Name",
+          "description": "Omicron description — comprehensive details for manufacturing use case with actionable insights.",
+          "category": "Research",
+          "leadDepartment": "Research",
+          "projectManager": "Omicron Project Manager",
+          "startDate": "2026-01-22",
+          "endDate": "2026-02-20",
+          "budget": 342.4,
+          "spentToDate": 281.87,
+          "status": "Cancelled",
+          "milestones": "Omicron milestones content for manufacturing scenario.",
+          "impactArea": "Omicron Impact Area",
+          "beneficiaries": 733,
+          "notes": "Omicron notes — comprehensive details for manufacturing use case with actionable insights."
+        }
+      ]
+    },
+    {
+      "label": "Voting Record",
+      "modelName": "VotingRecord",
+      "routeKey": "votingRecords",
+      "icon": "🗳️",
+      "aiFunction": "analyzeVotingRecord",
+      "aiPrompt": "Analyze this Voting Record data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "voteId",
+          "label": "Vote Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "memberName",
+          "label": "Member Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "itemTitle",
+          "label": "Item Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "voteDate",
+          "label": "vote Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "vote",
+          "label": "Vote",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "meetingTitle",
+          "label": "Meeting Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "rationale",
+          "label": "rationale",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isPublic",
+          "label": "is Public",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "district",
+          "label": "District",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "voteId": "Alpha Vote Id",
+          "memberName": "Alpha Member Name",
+          "itemTitle": "Alpha Item Title",
+          "voteDate": "2026-10-07",
+          "vote": "Alpha Vote",
+          "category": "Operations",
+          "meetingTitle": "Alpha Meeting Title",
+          "rationale": "Alpha rationale content for enterprise scenario.",
+          "isPublic": true,
+          "district": "Alpha District"
+        },
+        {
+          "voteId": "Beta Vote Id",
+          "memberName": "Beta Member Name",
+          "itemTitle": "Beta Item Title",
+          "voteDate": "2026-09-20",
+          "vote": "Beta Vote",
+          "category": "Sales",
+          "meetingTitle": "Beta Meeting Title",
+          "rationale": "Beta rationale content for startup scenario.",
+          "isPublic": false,
+          "district": "Beta District"
+        },
+        {
+          "voteId": "Gamma Vote Id",
+          "memberName": "Gamma Member Name",
+          "itemTitle": "Gamma Item Title",
+          "voteDate": "2026-06-14",
+          "vote": "Gamma Vote",
+          "category": "Marketing",
+          "meetingTitle": "Gamma Meeting Title",
+          "rationale": "Gamma rationale content for smb scenario.",
+          "isPublic": true,
+          "district": "Gamma District"
+        },
+        {
+          "voteId": "Delta Vote Id",
+          "memberName": "Delta Member Name",
+          "itemTitle": "Delta Item Title",
+          "voteDate": "2026-03-21",
+          "vote": "Delta Vote",
+          "category": "Finance",
+          "meetingTitle": "Delta Meeting Title",
+          "rationale": "Delta rationale content for agency scenario.",
+          "isPublic": false,
+          "district": "Delta District"
+        },
+        {
+          "voteId": "Epsilon Vote Id",
+          "memberName": "Epsilon Member Name",
+          "itemTitle": "Epsilon Item Title",
+          "voteDate": "2026-03-08",
+          "vote": "Epsilon Vote",
+          "category": "HR",
+          "meetingTitle": "Epsilon Meeting Title",
+          "rationale": "Epsilon rationale content for freelancer scenario.",
+          "isPublic": true,
+          "district": "Epsilon District"
+        },
+        {
+          "voteId": "Zeta Vote Id",
+          "memberName": "Zeta Member Name",
+          "itemTitle": "Zeta Item Title",
+          "voteDate": "2026-07-15",
+          "vote": "Zeta Vote",
+          "category": "Engineering",
+          "meetingTitle": "Zeta Meeting Title",
+          "rationale": "Zeta rationale content for government scenario.",
+          "isPublic": false,
+          "district": "Zeta District"
+        },
+        {
+          "voteId": "Eta Vote Id",
+          "memberName": "Eta Member Name",
+          "itemTitle": "Eta Item Title",
+          "voteDate": "2026-04-12",
+          "vote": "Eta Vote",
+          "category": "Support",
+          "meetingTitle": "Eta Meeting Title",
+          "rationale": "Eta rationale content for nonprofit scenario.",
+          "isPublic": true,
+          "district": "Eta District"
+        },
+        {
+          "voteId": "Theta Vote Id",
+          "memberName": "Theta Member Name",
+          "itemTitle": "Theta Item Title",
+          "voteDate": "2026-01-08",
+          "vote": "Theta Vote",
+          "category": "Legal",
+          "meetingTitle": "Theta Meeting Title",
+          "rationale": "Theta rationale content for healthcare scenario.",
+          "isPublic": false,
+          "district": "Theta District"
+        },
+        {
+          "voteId": "Iota Vote Id",
+          "memberName": "Iota Member Name",
+          "itemTitle": "Iota Item Title",
+          "voteDate": "2026-02-17",
+          "vote": "Iota Vote",
+          "category": "Admin",
+          "meetingTitle": "Iota Meeting Title",
+          "rationale": "Iota rationale content for finance scenario.",
+          "isPublic": true,
+          "district": "Iota District"
+        },
+        {
+          "voteId": "Kappa Vote Id",
+          "memberName": "Kappa Member Name",
+          "itemTitle": "Kappa Item Title",
+          "voteDate": "2026-12-07",
+          "vote": "Kappa Vote",
+          "category": "Analytics",
+          "meetingTitle": "Kappa Meeting Title",
+          "rationale": "Kappa rationale content for education scenario.",
+          "isPublic": false,
+          "district": "Kappa District"
+        },
+        {
+          "voteId": "Lambda Vote Id",
+          "memberName": "Lambda Member Name",
+          "itemTitle": "Lambda Item Title",
+          "voteDate": "2026-02-08",
+          "vote": "Lambda Vote",
+          "category": "Security",
+          "meetingTitle": "Lambda Meeting Title",
+          "rationale": "Lambda rationale content for retail scenario.",
+          "isPublic": true,
+          "district": "Lambda District"
+        },
+        {
+          "voteId": "Mu Vote Id",
+          "memberName": "Mu Member Name",
+          "itemTitle": "Mu Item Title",
+          "voteDate": "2026-06-23",
+          "vote": "Mu Vote",
+          "category": "Compliance",
+          "meetingTitle": "Mu Meeting Title",
+          "rationale": "Mu rationale content for tech scenario.",
+          "isPublic": false,
+          "district": "Mu District"
+        },
+        {
+          "voteId": "Nu Vote Id",
+          "memberName": "Nu Member Name",
+          "itemTitle": "Nu Item Title",
+          "voteDate": "2026-02-17",
+          "vote": "Nu Vote",
+          "category": "Infrastructure",
+          "meetingTitle": "Nu Meeting Title",
+          "rationale": "Nu rationale content for legal scenario.",
+          "isPublic": true,
+          "district": "Nu District"
+        },
+        {
+          "voteId": "Xi Vote Id",
+          "memberName": "Xi Member Name",
+          "itemTitle": "Xi Item Title",
+          "voteDate": "2026-06-09",
+          "vote": "Xi Vote",
+          "category": "Product",
+          "meetingTitle": "Xi Meeting Title",
+          "rationale": "Xi rationale content for real estate scenario.",
+          "isPublic": false,
+          "district": "Xi District"
+        },
+        {
+          "voteId": "Omicron Vote Id",
+          "memberName": "Omicron Member Name",
+          "itemTitle": "Omicron Item Title",
+          "voteDate": "2026-09-08",
+          "vote": "Omicron Vote",
+          "category": "Research",
+          "meetingTitle": "Omicron Meeting Title",
+          "rationale": "Omicron rationale content for manufacturing scenario.",
+          "isPublic": true,
+          "district": "Omicron District"
+        }
+      ]
+    },
+    {
+      "label": "Policy Document",
+      "modelName": "PolicyDocument",
+      "routeKey": "policyDocuments",
+      "icon": "📄",
+      "aiFunction": "analyzePolicyDocument",
+      "aiPrompt": "Analyze this Policy Document data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "documentTitle",
+          "label": "Document Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "policyNumber",
+          "label": "Policy Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "effective Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "reviewDate",
+          "label": "review Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "author",
+          "label": "Author",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "approvedBy",
+          "label": "Approved By",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "version",
+          "label": "Version",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "summary",
+          "label": "summary",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "fullText",
+          "label": "full Text",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isPublic",
+          "label": "is Public",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "documentTitle": "Alpha Document Title",
+          "policyNumber": "Alpha Policy Number",
+          "category": "Operations",
+          "department": "Operations",
+          "effectiveDate": "2026-07-25",
+          "reviewDate": "2026-03-01",
+          "status": "Active",
+          "author": "Alpha Author",
+          "approvedBy": "Alpha Approved By",
+          "version": "Alpha Version",
+          "summary": "Alpha summary — comprehensive details for enterprise use case with actionable insights.",
+          "fullText": "Alpha full text — comprehensive details for enterprise use case with actionable insights.",
+          "isPublic": true
+        },
+        {
+          "documentTitle": "Beta Document Title",
+          "policyNumber": "Beta Policy Number",
+          "category": "Sales",
+          "department": "Sales",
+          "effectiveDate": "2026-01-20",
+          "reviewDate": "2026-07-04",
+          "status": "Pending",
+          "author": "Beta Author",
+          "approvedBy": "Beta Approved By",
+          "version": "Beta Version",
+          "summary": "Beta summary — comprehensive details for startup use case with actionable insights.",
+          "fullText": "Beta full text — comprehensive details for startup use case with actionable insights.",
+          "isPublic": false
+        },
+        {
+          "documentTitle": "Gamma Document Title",
+          "policyNumber": "Gamma Policy Number",
+          "category": "Marketing",
+          "department": "Marketing",
+          "effectiveDate": "2026-10-12",
+          "reviewDate": "2026-04-19",
+          "status": "Review",
+          "author": "Gamma Author",
+          "approvedBy": "Gamma Approved By",
+          "version": "Gamma Version",
+          "summary": "Gamma summary — comprehensive details for smb use case with actionable insights.",
+          "fullText": "Gamma full text — comprehensive details for smb use case with actionable insights.",
+          "isPublic": true
+        },
+        {
+          "documentTitle": "Delta Document Title",
+          "policyNumber": "Delta Policy Number",
+          "category": "Finance",
+          "department": "Finance",
+          "effectiveDate": "2026-06-22",
+          "reviewDate": "2026-03-23",
+          "status": "Approved",
+          "author": "Delta Author",
+          "approvedBy": "Delta Approved By",
+          "version": "Delta Version",
+          "summary": "Delta summary — comprehensive details for agency use case with actionable insights.",
+          "fullText": "Delta full text — comprehensive details for agency use case with actionable insights.",
+          "isPublic": false
+        },
+        {
+          "documentTitle": "Epsilon Document Title",
+          "policyNumber": "Epsilon Policy Number",
+          "category": "HR",
+          "department": "HR",
+          "effectiveDate": "2026-03-22",
+          "reviewDate": "2026-06-18",
+          "status": "Draft",
+          "author": "Epsilon Author",
+          "approvedBy": "Epsilon Approved By",
+          "version": "Epsilon Version",
+          "summary": "Epsilon summary — comprehensive details for freelancer use case with actionable insights.",
+          "fullText": "Epsilon full text — comprehensive details for freelancer use case with actionable insights.",
+          "isPublic": true
+        },
+        {
+          "documentTitle": "Zeta Document Title",
+          "policyNumber": "Zeta Policy Number",
+          "category": "Engineering",
+          "department": "Engineering",
+          "effectiveDate": "2026-02-08",
+          "reviewDate": "2026-07-21",
+          "status": "Live",
+          "author": "Zeta Author",
+          "approvedBy": "Zeta Approved By",
+          "version": "Zeta Version",
+          "summary": "Zeta summary — comprehensive details for government use case with actionable insights.",
+          "fullText": "Zeta full text — comprehensive details for government use case with actionable insights.",
+          "isPublic": false
+        },
+        {
+          "documentTitle": "Eta Document Title",
+          "policyNumber": "Eta Policy Number",
+          "category": "Support",
+          "department": "Support",
+          "effectiveDate": "2026-10-17",
+          "reviewDate": "2026-02-10",
+          "status": "Paused",
+          "author": "Eta Author",
+          "approvedBy": "Eta Approved By",
+          "version": "Eta Version",
+          "summary": "Eta summary — comprehensive details for nonprofit use case with actionable insights.",
+          "fullText": "Eta full text — comprehensive details for nonprofit use case with actionable insights.",
+          "isPublic": true
+        },
+        {
+          "documentTitle": "Theta Document Title",
+          "policyNumber": "Theta Policy Number",
+          "category": "Legal",
+          "department": "Legal",
+          "effectiveDate": "2026-01-27",
+          "reviewDate": "2026-03-24",
+          "status": "Archived",
+          "author": "Theta Author",
+          "approvedBy": "Theta Approved By",
+          "version": "Theta Version",
+          "summary": "Theta summary — comprehensive details for healthcare use case with actionable insights.",
+          "fullText": "Theta full text — comprehensive details for healthcare use case with actionable insights.",
+          "isPublic": false
+        },
+        {
+          "documentTitle": "Iota Document Title",
+          "policyNumber": "Iota Policy Number",
+          "category": "Admin",
+          "department": "Admin",
+          "effectiveDate": "2026-04-14",
+          "reviewDate": "2026-11-09",
+          "status": "Beta",
+          "author": "Iota Author",
+          "approvedBy": "Iota Approved By",
+          "version": "Iota Version",
+          "summary": "Iota summary — comprehensive details for finance use case with actionable insights.",
+          "fullText": "Iota full text — comprehensive details for finance use case with actionable insights.",
+          "isPublic": true
+        },
+        {
+          "documentTitle": "Kappa Document Title",
+          "policyNumber": "Kappa Policy Number",
+          "category": "Analytics",
+          "department": "Analytics",
+          "effectiveDate": "2026-01-09",
+          "reviewDate": "2026-09-03",
+          "status": "GA",
+          "author": "Kappa Author",
+          "approvedBy": "Kappa Approved By",
+          "version": "Kappa Version",
+          "summary": "Kappa summary — comprehensive details for education use case with actionable insights.",
+          "fullText": "Kappa full text — comprehensive details for education use case with actionable insights.",
+          "isPublic": false
+        },
+        {
+          "documentTitle": "Lambda Document Title",
+          "policyNumber": "Lambda Policy Number",
+          "category": "Security",
+          "department": "Security",
+          "effectiveDate": "2026-11-25",
+          "reviewDate": "2026-02-12",
+          "status": "Completed",
+          "author": "Lambda Author",
+          "approvedBy": "Lambda Approved By",
+          "version": "Lambda Version",
+          "summary": "Lambda summary — comprehensive details for retail use case with actionable insights.",
+          "fullText": "Lambda full text — comprehensive details for retail use case with actionable insights.",
+          "isPublic": true
+        },
+        {
+          "documentTitle": "Mu Document Title",
+          "policyNumber": "Mu Policy Number",
+          "category": "Compliance",
+          "department": "Compliance",
+          "effectiveDate": "2026-10-10",
+          "reviewDate": "2026-01-20",
+          "status": "In Progress",
+          "author": "Mu Author",
+          "approvedBy": "Mu Approved By",
+          "version": "Mu Version",
+          "summary": "Mu summary — comprehensive details for tech use case with actionable insights.",
+          "fullText": "Mu full text — comprehensive details for tech use case with actionable insights.",
+          "isPublic": false
+        },
+        {
+          "documentTitle": "Nu Document Title",
+          "policyNumber": "Nu Policy Number",
+          "category": "Infrastructure",
+          "department": "Infrastructure",
+          "effectiveDate": "2026-10-23",
+          "reviewDate": "2026-06-09",
+          "status": "Scheduled",
+          "author": "Nu Author",
+          "approvedBy": "Nu Approved By",
+          "version": "Nu Version",
+          "summary": "Nu summary — comprehensive details for legal use case with actionable insights.",
+          "fullText": "Nu full text — comprehensive details for legal use case with actionable insights.",
+          "isPublic": true
+        },
+        {
+          "documentTitle": "Xi Document Title",
+          "policyNumber": "Xi Policy Number",
+          "category": "Product",
+          "department": "Product",
+          "effectiveDate": "2026-10-27",
+          "reviewDate": "2026-03-12",
+          "status": "Failed",
+          "author": "Xi Author",
+          "approvedBy": "Xi Approved By",
+          "version": "Xi Version",
+          "summary": "Xi summary — comprehensive details for real estate use case with actionable insights.",
+          "fullText": "Xi full text — comprehensive details for real estate use case with actionable insights.",
+          "isPublic": false
+        },
+        {
+          "documentTitle": "Omicron Document Title",
+          "policyNumber": "Omicron Policy Number",
+          "category": "Research",
+          "department": "Research",
+          "effectiveDate": "2026-12-12",
+          "reviewDate": "2026-09-23",
+          "status": "Cancelled",
+          "author": "Omicron Author",
+          "approvedBy": "Omicron Approved By",
+          "version": "Omicron Version",
+          "summary": "Omicron summary — comprehensive details for manufacturing use case with actionable insights.",
+          "fullText": "Omicron full text — comprehensive details for manufacturing use case with actionable insights.",
+          "isPublic": true
+        }
+      ]
+    },
+    {
+      "label": "Civic Feedback",
+      "modelName": "CivicFeedback",
+      "routeKey": "civicFeedbacks",
+      "icon": "📊",
+      "aiFunction": "analyzeCivicFeedback",
+      "aiPrompt": "Analyze this Civic Feedback data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "feedbackId",
+          "label": "Feedback Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "citizenName",
+          "label": "Citizen Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "topic",
+          "label": "Topic",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "rating",
+          "label": "rating",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "comment",
+          "label": "comment",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "submittedDate",
+          "label": "submitted Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "channel",
+          "label": "Channel",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "sentiment",
+          "label": "Sentiment",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "followUpNeeded",
+          "label": "follow Up Needed",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "response",
+          "label": "response",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "feedbackId": "Alpha Feedback Id",
+          "citizenName": "Alpha Citizen Name",
+          "topic": "Alpha Topic",
+          "department": "Operations",
+          "rating": 3.9,
+          "comment": "Alpha comment content for enterprise scenario.",
+          "submittedDate": "2026-09-26",
+          "channel": "Email",
+          "status": "Active",
+          "sentiment": "Alpha Sentiment",
+          "followUpNeeded": true,
+          "response": "Alpha response content for enterprise scenario."
+        },
+        {
+          "feedbackId": "Beta Feedback Id",
+          "citizenName": "Beta Citizen Name",
+          "topic": "Beta Topic",
+          "department": "Sales",
+          "rating": 2,
+          "comment": "Beta comment content for startup scenario.",
+          "submittedDate": "2026-08-10",
+          "channel": "SMS",
+          "status": "Pending",
+          "sentiment": "Beta Sentiment",
+          "followUpNeeded": false,
+          "response": "Beta response content for startup scenario."
+        },
+        {
+          "feedbackId": "Gamma Feedback Id",
+          "citizenName": "Gamma Citizen Name",
+          "topic": "Gamma Topic",
+          "department": "Marketing",
+          "rating": 4.5,
+          "comment": "Gamma comment content for smb scenario.",
+          "submittedDate": "2026-04-05",
+          "channel": "Slack",
+          "status": "Review",
+          "sentiment": "Gamma Sentiment",
+          "followUpNeeded": true,
+          "response": "Gamma response content for smb scenario."
+        },
+        {
+          "feedbackId": "Delta Feedback Id",
+          "citizenName": "Delta Citizen Name",
+          "topic": "Delta Topic",
+          "department": "Finance",
+          "rating": 3,
+          "comment": "Delta comment content for agency scenario.",
+          "submittedDate": "2026-02-11",
+          "channel": "Push",
+          "status": "Approved",
+          "sentiment": "Delta Sentiment",
+          "followUpNeeded": false,
+          "response": "Delta response content for agency scenario."
+        },
+        {
+          "feedbackId": "Epsilon Feedback Id",
+          "citizenName": "Epsilon Citizen Name",
+          "topic": "Epsilon Topic",
+          "department": "HR",
+          "rating": 2.6,
+          "comment": "Epsilon comment content for freelancer scenario.",
+          "submittedDate": "2026-09-18",
+          "channel": "Webhook",
+          "status": "Draft",
+          "sentiment": "Epsilon Sentiment",
+          "followUpNeeded": true,
+          "response": "Epsilon response content for freelancer scenario."
+        },
+        {
+          "feedbackId": "Zeta Feedback Id",
+          "citizenName": "Zeta Citizen Name",
+          "topic": "Zeta Topic",
+          "department": "Engineering",
+          "rating": 4.4,
+          "comment": "Zeta comment content for government scenario.",
+          "submittedDate": "2026-10-16",
+          "channel": "Teams",
+          "status": "Live",
+          "sentiment": "Zeta Sentiment",
+          "followUpNeeded": false,
+          "response": "Zeta response content for government scenario."
+        },
+        {
+          "feedbackId": "Eta Feedback Id",
+          "citizenName": "Eta Citizen Name",
+          "topic": "Eta Topic",
+          "department": "Support",
+          "rating": 3.8,
+          "comment": "Eta comment content for nonprofit scenario.",
+          "submittedDate": "2026-05-22",
+          "channel": "Discord",
+          "status": "Paused",
+          "sentiment": "Eta Sentiment",
+          "followUpNeeded": true,
+          "response": "Eta response content for nonprofit scenario."
+        },
+        {
+          "feedbackId": "Theta Feedback Id",
+          "citizenName": "Theta Citizen Name",
+          "topic": "Theta Topic",
+          "department": "Legal",
+          "rating": 1.3,
+          "comment": "Theta comment content for healthcare scenario.",
+          "submittedDate": "2026-02-20",
+          "channel": "WhatsApp",
+          "status": "Archived",
+          "sentiment": "Theta Sentiment",
+          "followUpNeeded": false,
+          "response": "Theta response content for healthcare scenario."
+        },
+        {
+          "feedbackId": "Iota Feedback Id",
+          "citizenName": "Iota Citizen Name",
+          "topic": "Iota Topic",
+          "department": "Admin",
+          "rating": 1.5,
+          "comment": "Iota comment content for finance scenario.",
+          "submittedDate": "2026-11-14",
+          "channel": "Telegram",
+          "status": "Beta",
+          "sentiment": "Iota Sentiment",
+          "followUpNeeded": true,
+          "response": "Iota response content for finance scenario."
+        },
+        {
+          "feedbackId": "Kappa Feedback Id",
+          "citizenName": "Kappa Citizen Name",
+          "topic": "Kappa Topic",
+          "department": "Analytics",
+          "rating": 4.5,
+          "comment": "Kappa comment content for education scenario.",
+          "submittedDate": "2026-05-26",
+          "channel": "In-App",
+          "status": "GA",
+          "sentiment": "Kappa Sentiment",
+          "followUpNeeded": false,
+          "response": "Kappa response content for education scenario."
+        },
+        {
+          "feedbackId": "Lambda Feedback Id",
+          "citizenName": "Lambda Citizen Name",
+          "topic": "Lambda Topic",
+          "department": "Security",
+          "rating": 4.6,
+          "comment": "Lambda comment content for retail scenario.",
+          "submittedDate": "2026-04-12",
+          "channel": "Email",
+          "status": "Completed",
+          "sentiment": "Lambda Sentiment",
+          "followUpNeeded": true,
+          "response": "Lambda response content for retail scenario."
+        },
+        {
+          "feedbackId": "Mu Feedback Id",
+          "citizenName": "Mu Citizen Name",
+          "topic": "Mu Topic",
+          "department": "Compliance",
+          "rating": 2.8,
+          "comment": "Mu comment content for tech scenario.",
+          "submittedDate": "2026-04-09",
+          "channel": "SMS",
+          "status": "In Progress",
+          "sentiment": "Mu Sentiment",
+          "followUpNeeded": false,
+          "response": "Mu response content for tech scenario."
+        },
+        {
+          "feedbackId": "Nu Feedback Id",
+          "citizenName": "Nu Citizen Name",
+          "topic": "Nu Topic",
+          "department": "Infrastructure",
+          "rating": 2.2,
+          "comment": "Nu comment content for legal scenario.",
+          "submittedDate": "2026-01-01",
+          "channel": "Slack",
+          "status": "Scheduled",
+          "sentiment": "Nu Sentiment",
+          "followUpNeeded": true,
+          "response": "Nu response content for legal scenario."
+        },
+        {
+          "feedbackId": "Xi Feedback Id",
+          "citizenName": "Xi Citizen Name",
+          "topic": "Xi Topic",
+          "department": "Product",
+          "rating": 1.8,
+          "comment": "Xi comment content for real estate scenario.",
+          "submittedDate": "2026-12-16",
+          "channel": "Push",
+          "status": "Failed",
+          "sentiment": "Xi Sentiment",
+          "followUpNeeded": false,
+          "response": "Xi response content for real estate scenario."
+        },
+        {
+          "feedbackId": "Omicron Feedback Id",
+          "citizenName": "Omicron Citizen Name",
+          "topic": "Omicron Topic",
+          "department": "Research",
+          "rating": 3.2,
+          "comment": "Omicron comment content for manufacturing scenario.",
+          "submittedDate": "2026-11-20",
+          "channel": "Webhook",
+          "status": "Cancelled",
+          "sentiment": "Omicron Sentiment",
+          "followUpNeeded": true,
+          "response": "Omicron response content for manufacturing scenario."
+        }
+      ]
+    },
+    {
+      "label": "AI Civic Insight",
+      "modelName": "AICivicInsight",
+      "routeKey": "aiCivicInsights",
+      "icon": "🤖",
+      "aiFunction": "analyzeAICivicInsight",
+      "aiPrompt": "Analyze this AI Civic Insight data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "insightType",
+          "label": "Insight Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "description",
+          "label": "description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "confidence",
+          "label": "confidence",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "impact",
+          "label": "impact",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "recommendation",
+          "label": "recommendation",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "affectedDepts",
+          "label": "affected Depts",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "detectedAt",
+          "label": "detected At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "isActionable",
+          "label": "is Actionable",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Alpha Title",
+          "insightType": "Alpha Type",
+          "description": "Alpha description — comprehensive details for enterprise use case with actionable insights.",
+          "confidence": 45.2,
+          "impact": 524.51,
+          "recommendation": "AI Analysis for Alpha: Recommend optimizing operations workflows. 35% improvement potential.",
+          "affectedDepts": 400,
+          "priority": "Critical",
+          "detectedAt": "2026-07-05",
+          "isActionable": true
+        },
+        {
+          "title": "Beta Title",
+          "insightType": "Beta Type",
+          "description": "Beta description — comprehensive details for startup use case with actionable insights.",
+          "confidence": 63.5,
+          "impact": 17.91,
+          "recommendation": "AI Analysis for Beta: Recommend optimizing sales workflows. 19% improvement potential.",
+          "affectedDepts": 605,
+          "priority": "High",
+          "detectedAt": "2026-08-15",
+          "isActionable": false
+        },
+        {
+          "title": "Gamma Title",
+          "insightType": "Gamma Type",
+          "description": "Gamma description — comprehensive details for smb use case with actionable insights.",
+          "confidence": 93.8,
+          "impact": 661.19,
+          "recommendation": "AI Analysis for Gamma: Recommend optimizing marketing workflows. 25% improvement potential.",
+          "affectedDepts": 936,
+          "priority": "Medium",
+          "detectedAt": "2026-04-07",
+          "isActionable": true
+        },
+        {
+          "title": "Delta Title",
+          "insightType": "Delta Type",
+          "description": "Delta description — comprehensive details for agency use case with actionable insights.",
+          "confidence": 86,
+          "impact": 391.11,
+          "recommendation": "AI Analysis for Delta: Recommend optimizing finance workflows. 15% improvement potential.",
+          "affectedDepts": 121,
+          "priority": "Low",
+          "detectedAt": "2026-11-08",
+          "isActionable": false
+        },
+        {
+          "title": "Epsilon Title",
+          "insightType": "Epsilon Type",
+          "description": "Epsilon description — comprehensive details for freelancer use case with actionable insights.",
+          "confidence": 48.5,
+          "impact": 854.62,
+          "recommendation": "AI Analysis for Epsilon: Recommend optimizing hr workflows. 24% improvement potential.",
+          "affectedDepts": 488,
+          "priority": "Info",
+          "detectedAt": "2026-04-10",
+          "isActionable": true
+        },
+        {
+          "title": "Zeta Title",
+          "insightType": "Zeta Type",
+          "description": "Zeta description — comprehensive details for government use case with actionable insights.",
+          "confidence": 62.8,
+          "impact": 788.46,
+          "recommendation": "AI Analysis for Zeta: Recommend optimizing engineering workflows. 11% improvement potential.",
+          "affectedDepts": 145,
+          "priority": "Warning",
+          "detectedAt": "2026-05-19",
+          "isActionable": false
+        },
+        {
+          "title": "Eta Title",
+          "insightType": "Eta Type",
+          "description": "Eta description — comprehensive details for nonprofit use case with actionable insights.",
+          "confidence": 60.9,
+          "impact": 358.33,
+          "recommendation": "AI Analysis for Eta: Recommend optimizing support workflows. 13% improvement potential.",
+          "affectedDepts": 311,
+          "priority": "Notice",
+          "detectedAt": "2026-01-25",
+          "isActionable": true
+        },
+        {
+          "title": "Theta Title",
+          "insightType": "Theta Type",
+          "description": "Theta description — comprehensive details for healthcare use case with actionable insights.",
+          "confidence": 52,
+          "impact": 457.67,
+          "recommendation": "AI Analysis for Theta: Recommend optimizing legal workflows. 23% improvement potential.",
+          "affectedDepts": 366,
+          "priority": "Alert",
+          "detectedAt": "2026-11-22",
+          "isActionable": false
+        },
+        {
+          "title": "Iota Title",
+          "insightType": "Iota Type",
+          "description": "Iota description — comprehensive details for finance use case with actionable insights.",
+          "confidence": 75.3,
+          "impact": 18.41,
+          "recommendation": "AI Analysis for Iota: Recommend optimizing admin workflows. 38% improvement potential.",
+          "affectedDepts": 730,
+          "priority": "Emergency",
+          "detectedAt": "2026-10-25",
+          "isActionable": true
+        },
+        {
+          "title": "Kappa Title",
+          "insightType": "Kappa Type",
+          "description": "Kappa description — comprehensive details for education use case with actionable insights.",
+          "confidence": 47.3,
+          "impact": 239.18,
+          "recommendation": "AI Analysis for Kappa: Recommend optimizing analytics workflows. 24% improvement potential.",
+          "affectedDepts": 423,
+          "priority": "Debug",
+          "detectedAt": "2026-05-03",
+          "isActionable": false
+        },
+        {
+          "title": "Lambda Title",
+          "insightType": "Lambda Type",
+          "description": "Lambda description — comprehensive details for retail use case with actionable insights.",
+          "confidence": 52.6,
+          "impact": 616.95,
+          "recommendation": "AI Analysis for Lambda: Recommend optimizing security workflows. 14% improvement potential.",
+          "affectedDepts": 317,
+          "priority": "Trace",
+          "detectedAt": "2026-06-03",
+          "isActionable": true
+        },
+        {
+          "title": "Mu Title",
+          "insightType": "Mu Type",
+          "description": "Mu description — comprehensive details for tech use case with actionable insights.",
+          "confidence": 89.6,
+          "impact": 18.1,
+          "recommendation": "AI Analysis for Mu: Recommend optimizing compliance workflows. 27% improvement potential.",
+          "affectedDepts": 57,
+          "priority": "Fatal",
+          "detectedAt": "2026-03-23",
+          "isActionable": false
+        },
+        {
+          "title": "Nu Title",
+          "insightType": "Nu Type",
+          "description": "Nu description — comprehensive details for legal use case with actionable insights.",
+          "confidence": 83.3,
+          "impact": 970.56,
+          "recommendation": "AI Analysis for Nu: Recommend optimizing infrastructure workflows. 30% improvement potential.",
+          "affectedDepts": 137,
+          "priority": "Major",
+          "detectedAt": "2026-07-02",
+          "isActionable": true
+        },
+        {
+          "title": "Xi Title",
+          "insightType": "Xi Type",
+          "description": "Xi description — comprehensive details for real estate use case with actionable insights.",
+          "confidence": 73.9,
+          "impact": 530.25,
+          "recommendation": "AI Analysis for Xi: Recommend optimizing product workflows. 29% improvement potential.",
+          "affectedDepts": 43,
+          "priority": "Minor",
+          "detectedAt": "2026-08-27",
+          "isActionable": false
+        },
+        {
+          "title": "Omicron Title",
+          "insightType": "Omicron Type",
+          "description": "Omicron description — comprehensive details for manufacturing use case with actionable insights.",
+          "confidence": 87.2,
+          "impact": 833.85,
+          "recommendation": "AI Analysis for Omicron: Recommend optimizing research workflows. 37% improvement potential.",
+          "affectedDepts": 402,
+          "priority": "Trivial",
+          "detectedAt": "2026-11-02",
+          "isActionable": true
+        }
+      ]
+    }
+  ]
+}

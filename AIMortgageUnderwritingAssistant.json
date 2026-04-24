@@ -1,0 +1,4459 @@
+{
+  "appName": "A I Mortgage Underwriting Assistant",
+  "dbName": "a_i_mortgage_underwriting_assistant",
+  "folderName": "generated/AIMortgageUnderwritingAssistant",
+  "features": [
+    {
+      "modelName": "Borrower",
+      "routeKey": "borrowers",
+      "label": "Borrower",
+      "icon": "activity",
+      "aiFunction": "analyzeBorrower",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Borrower data. The data includes: First Name, Last Name, Email, Phone, Ssn Last4, Date Of Birth, Address, City, State, Zip, Employment Status, Employer Name, Job Title, Years Employed, Annual Income, Monthly Debt, Credit Score, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ssnLast4",
+          "label": "Ssn Last4",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dateOfBirth",
+          "label": "Date Of Birth",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "city",
+          "label": "City",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "zip",
+          "label": "Zip",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "employmentStatus",
+          "label": "Employment Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "employerName",
+          "label": "Employer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "jobTitle",
+          "label": "Job Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "yearsEmployed",
+          "label": "Years Employed",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "annualIncome",
+          "label": "Annual Income",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "monthlyDebt",
+          "label": "Monthly Debt",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "creditScore",
+          "label": "Credit Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "ssnLast4": "Advanced Ssn Last4 1",
+          "dateOfBirth": "2024-01-01",
+          "address": "New York",
+          "city": "New York",
+          "state": "Advanced State 1",
+          "zip": "Advanced Zip 1",
+          "employmentStatus": "active",
+          "employerName": "Advanced Employer 1",
+          "jobTitle": "Advanced Job Title 1",
+          "yearsEmployed": 10,
+          "annualIncome": 10,
+          "monthlyDebt": 10,
+          "creditScore": 10,
+          "status": "active"
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "ssnLast4": "Premium Ssn Last4 2",
+          "dateOfBirth": "2024-02-03",
+          "address": "Los Angeles",
+          "city": "Los Angeles",
+          "state": "Premium State 2",
+          "zip": "Premium Zip 2",
+          "employmentStatus": "pending",
+          "employerName": "Premium Employer 2",
+          "jobTitle": "Premium Job Title 2",
+          "yearsEmployed": 71.7,
+          "annualIncome": 71.7,
+          "monthlyDebt": 71.7,
+          "creditScore": 58,
+          "status": "pending"
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "ssnLast4": "Standard Ssn Last4 3",
+          "dateOfBirth": "2024-03-05",
+          "address": "Chicago",
+          "city": "Chicago",
+          "state": "Standard State 3",
+          "zip": "Standard Zip 3",
+          "employmentStatus": "in_progress",
+          "employerName": "Standard Employer 3",
+          "jobTitle": "Standard Job Title 3",
+          "yearsEmployed": 33.4,
+          "annualIncome": 33.4,
+          "monthlyDebt": 33.4,
+          "creditScore": 106,
+          "status": "in_progress"
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "ssnLast4": "Elite Ssn Last4 4",
+          "dateOfBirth": "2024-04-07",
+          "address": "Houston",
+          "city": "Houston",
+          "state": "Elite State 4",
+          "zip": "Elite Zip 4",
+          "employmentStatus": "completed",
+          "employerName": "Elite Employer 4",
+          "jobTitle": "Elite Job Title 4",
+          "yearsEmployed": 95.1,
+          "annualIncome": 95.1,
+          "monthlyDebt": 95.1,
+          "creditScore": 154,
+          "status": "completed"
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "ssnLast4": "Core Ssn Last4 5",
+          "dateOfBirth": "2024-05-09",
+          "address": "Phoenix",
+          "city": "Phoenix",
+          "state": "Core State 5",
+          "zip": "Core Zip 5",
+          "employmentStatus": "under_review",
+          "employerName": "Core Employer 5",
+          "jobTitle": "Core Job Title 5",
+          "yearsEmployed": 56.8,
+          "annualIncome": 56.8,
+          "monthlyDebt": 56.8,
+          "creditScore": 102,
+          "status": "under_review"
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "ssnLast4": "Pro Ssn Last4 6",
+          "dateOfBirth": "2024-06-11",
+          "address": "San Francisco",
+          "city": "San Francisco",
+          "state": "Pro State 6",
+          "zip": "Pro Zip 6",
+          "employmentStatus": "approved",
+          "employerName": "Pro Employer 6",
+          "jobTitle": "Pro Job Title 6",
+          "yearsEmployed": 118.5,
+          "annualIncome": 118.5,
+          "monthlyDebt": 118.5,
+          "creditScore": 150,
+          "status": "approved"
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "ssnLast4": "Essential Ssn Last4 7",
+          "dateOfBirth": "2024-07-13",
+          "address": "Seattle",
+          "city": "Seattle",
+          "state": "Essential State 7",
+          "zip": "Essential Zip 7",
+          "employmentStatus": "active",
+          "employerName": "Essential Employer 7",
+          "jobTitle": "Essential Job Title 7",
+          "yearsEmployed": 80.2,
+          "annualIncome": 80.2,
+          "monthlyDebt": 80.2,
+          "creditScore": 198,
+          "status": "active"
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "ssnLast4": "Primary Ssn Last4 8",
+          "dateOfBirth": "2024-08-15",
+          "address": "Boston",
+          "city": "Boston",
+          "state": "Primary State 8",
+          "zip": "Primary Zip 8",
+          "employmentStatus": "active",
+          "employerName": "Primary Employer 8",
+          "jobTitle": "Primary Job Title 8",
+          "yearsEmployed": 141.9,
+          "annualIncome": 141.9,
+          "monthlyDebt": 141.9,
+          "creditScore": 146,
+          "status": "active"
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "ssnLast4": "Global Ssn Last4 9",
+          "dateOfBirth": "2024-09-17",
+          "address": "Denver",
+          "city": "Denver",
+          "state": "Global State 9",
+          "zip": "Global Zip 9",
+          "employmentStatus": "active",
+          "employerName": "Global Employer 9",
+          "jobTitle": "Global Job Title 9",
+          "yearsEmployed": 103.6,
+          "annualIncome": 103.6,
+          "monthlyDebt": 103.6,
+          "creditScore": 194,
+          "status": "active"
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "ssnLast4": "Regional Ssn Last4 10",
+          "dateOfBirth": "2024-10-19",
+          "address": "Miami",
+          "city": "Miami",
+          "state": "Regional State 10",
+          "zip": "Regional Zip 10",
+          "employmentStatus": "pending",
+          "employerName": "Regional Employer 10",
+          "jobTitle": "Regional Job Title 10",
+          "yearsEmployed": 165.3,
+          "annualIncome": 165.3,
+          "monthlyDebt": 165.3,
+          "creditScore": 242,
+          "status": "pending"
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "ssnLast4": "Custom Ssn Last4 11",
+          "dateOfBirth": "2024-11-21",
+          "address": "Austin",
+          "city": "Austin",
+          "state": "Custom State 11",
+          "zip": "Custom Zip 11",
+          "employmentStatus": "completed",
+          "employerName": "Custom Employer 11",
+          "jobTitle": "Custom Job Title 11",
+          "yearsEmployed": 127,
+          "annualIncome": 127,
+          "monthlyDebt": 127,
+          "creditScore": 190,
+          "status": "completed"
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "ssnLast4": "Smart Ssn Last4 12",
+          "dateOfBirth": "2024-12-23",
+          "address": "Portland",
+          "city": "Portland",
+          "state": "Smart State 12",
+          "zip": "Smart Zip 12",
+          "employmentStatus": "active",
+          "employerName": "Smart Employer 12",
+          "jobTitle": "Smart Job Title 12",
+          "yearsEmployed": 188.7,
+          "annualIncome": 188.7,
+          "monthlyDebt": 188.7,
+          "creditScore": 238,
+          "status": "active"
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "ssnLast4": "Rapid Ssn Last4 13",
+          "dateOfBirth": "2024-01-25",
+          "address": "Dallas",
+          "city": "Dallas",
+          "state": "Rapid State 13",
+          "zip": "Rapid Zip 13",
+          "employmentStatus": "in_progress",
+          "employerName": "Rapid Employer 13",
+          "jobTitle": "Rapid Job Title 13",
+          "yearsEmployed": 150.4,
+          "annualIncome": 150.4,
+          "monthlyDebt": 150.4,
+          "creditScore": 286,
+          "status": "in_progress"
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "ssnLast4": "Secure Ssn Last4 14",
+          "dateOfBirth": "2024-02-27",
+          "address": "Atlanta",
+          "city": "Atlanta",
+          "state": "Secure State 14",
+          "zip": "Secure Zip 14",
+          "employmentStatus": "active",
+          "employerName": "Secure Employer 14",
+          "jobTitle": "Secure Job Title 14",
+          "yearsEmployed": 212.1,
+          "annualIncome": 212.1,
+          "monthlyDebt": 212.1,
+          "creditScore": 234,
+          "status": "active"
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "ssnLast4": "Modern Ssn Last4 15",
+          "dateOfBirth": "2024-03-01",
+          "address": "Nashville",
+          "city": "Nashville",
+          "state": "Modern State 15",
+          "zip": "Modern Zip 15",
+          "employmentStatus": "approved",
+          "employerName": "Modern Employer 15",
+          "jobTitle": "Modern Job Title 15",
+          "yearsEmployed": 173.8,
+          "annualIncome": 173.8,
+          "monthlyDebt": 173.8,
+          "creditScore": 282,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "LoanProduct",
+      "routeKey": "loan-products",
+      "label": "Loan Product",
+      "icon": "briefcase",
+      "aiFunction": "analyzeLoanProduct",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Loan Product data. The data includes: Name, Type, Interest Rate, Min Credit Score, Max Ltv, Max Dti, Min Down Payment, Term Months, Description, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "interestRate",
+          "label": "Interest Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "minCreditScore",
+          "label": "Min Credit Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "maxLtv",
+          "label": "Max Ltv",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "maxDti",
+          "label": "Max Dti",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "minDownPayment",
+          "label": "Min Down Payment",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "termMonths",
+          "label": "Term Months",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "interestRate": 1.5,
+          "minCreditScore": 10,
+          "maxLtv": 10,
+          "maxDti": 10,
+          "minDownPayment": 10,
+          "termMonths": 10,
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "interestRate": 2.1,
+          "minCreditScore": 58,
+          "maxLtv": 71.7,
+          "maxDti": 71.7,
+          "minDownPayment": 71.7,
+          "termMonths": 58,
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "interestRate": 2.7,
+          "minCreditScore": 106,
+          "maxLtv": 33.4,
+          "maxDti": 33.4,
+          "minDownPayment": 33.4,
+          "termMonths": 106,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "interestRate": 3.3,
+          "minCreditScore": 154,
+          "maxLtv": 95.1,
+          "maxDti": 95.1,
+          "minDownPayment": 95.1,
+          "termMonths": 154,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "interestRate": 3.9,
+          "minCreditScore": 102,
+          "maxLtv": 56.8,
+          "maxDti": 56.8,
+          "minDownPayment": 56.8,
+          "termMonths": 102,
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "interestRate": 4.5,
+          "minCreditScore": 150,
+          "maxLtv": 118.5,
+          "maxDti": 118.5,
+          "minDownPayment": 118.5,
+          "termMonths": 150,
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "interestRate": 5.1,
+          "minCreditScore": 198,
+          "maxLtv": 80.2,
+          "maxDti": 80.2,
+          "minDownPayment": 80.2,
+          "termMonths": 198,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "interestRate": 5.7,
+          "minCreditScore": 146,
+          "maxLtv": 141.9,
+          "maxDti": 141.9,
+          "minDownPayment": 141.9,
+          "termMonths": 146,
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "interestRate": 6.3,
+          "minCreditScore": 194,
+          "maxLtv": 103.6,
+          "maxDti": 103.6,
+          "minDownPayment": 103.6,
+          "termMonths": 194,
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "interestRate": 1.9,
+          "minCreditScore": 242,
+          "maxLtv": 165.3,
+          "maxDti": 165.3,
+          "minDownPayment": 165.3,
+          "termMonths": 242,
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "interestRate": 2.5,
+          "minCreditScore": 190,
+          "maxLtv": 127,
+          "maxDti": 127,
+          "minDownPayment": 127,
+          "termMonths": 190,
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "interestRate": 3.1,
+          "minCreditScore": 238,
+          "maxLtv": 188.7,
+          "maxDti": 188.7,
+          "minDownPayment": 188.7,
+          "termMonths": 238,
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "interestRate": 3.7,
+          "minCreditScore": 286,
+          "maxLtv": 150.4,
+          "maxDti": 150.4,
+          "minDownPayment": 150.4,
+          "termMonths": 286,
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "interestRate": 4.3,
+          "minCreditScore": 234,
+          "maxLtv": 212.1,
+          "maxDti": 212.1,
+          "minDownPayment": 212.1,
+          "termMonths": 234,
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "interestRate": 4.9,
+          "minCreditScore": 282,
+          "maxLtv": 173.8,
+          "maxDti": 173.8,
+          "minDownPayment": 173.8,
+          "termMonths": 282,
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "Propertie",
+      "routeKey": "properties",
+      "label": "Propertie",
+      "icon": "clipboard",
+      "aiFunction": "analyzePropertie",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Propertie data. The data includes: Address, City, State, Zip, Property Type, Year Built, Square Feet, Bedrooms, Bathrooms, Lot Size, Estimated Value, Listing Price, Zoning, Flood Zone, Hoa Fee, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "city",
+          "label": "City",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "zip",
+          "label": "Zip",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "propertyType",
+          "label": "Property Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "yearBuilt",
+          "label": "Year Built",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "squareFeet",
+          "label": "Square Feet",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bedrooms",
+          "label": "Bedrooms",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bathrooms",
+          "label": "Bathrooms",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "lotSize",
+          "label": "Lot Size",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "estimatedValue",
+          "label": "Estimated Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "listingPrice",
+          "label": "Listing Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "zoning",
+          "label": "Zoning",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "floodZone",
+          "label": "Flood Zone",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "hoaFee",
+          "label": "Hoa Fee",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "address": "New York",
+          "city": "New York",
+          "state": "Advanced State 1",
+          "zip": "Advanced Zip 1",
+          "propertyType": "Category A",
+          "yearBuilt": 2020,
+          "squareFeet": 10,
+          "bedrooms": 10,
+          "bathrooms": 10,
+          "lotSize": 10,
+          "estimatedValue": 10,
+          "listingPrice": 500,
+          "zoning": "Advanced Zoning 1",
+          "floodZone": true,
+          "hoaFee": 500,
+          "status": "active"
+        },
+        {
+          "address": "Los Angeles",
+          "city": "Los Angeles",
+          "state": "Premium State 2",
+          "zip": "Premium Zip 2",
+          "propertyType": "Category B",
+          "yearBuilt": 2021,
+          "squareFeet": 58,
+          "bedrooms": 58,
+          "bathrooms": 71.7,
+          "lotSize": 71.7,
+          "estimatedValue": 71.7,
+          "listingPrice": 2481,
+          "zoning": "Premium Zoning 2",
+          "floodZone": true,
+          "hoaFee": 2481,
+          "status": "pending"
+        },
+        {
+          "address": "Chicago",
+          "city": "Chicago",
+          "state": "Standard State 3",
+          "zip": "Standard Zip 3",
+          "propertyType": "Category C",
+          "yearBuilt": 2022,
+          "squareFeet": 106,
+          "bedrooms": 106,
+          "bathrooms": 33.4,
+          "lotSize": 33.4,
+          "estimatedValue": 33.4,
+          "listingPrice": 4462,
+          "zoning": "Standard Zoning 3",
+          "floodZone": false,
+          "hoaFee": 4462,
+          "status": "in_progress"
+        },
+        {
+          "address": "Houston",
+          "city": "Houston",
+          "state": "Elite State 4",
+          "zip": "Elite Zip 4",
+          "propertyType": "Category D",
+          "yearBuilt": 2023,
+          "squareFeet": 154,
+          "bedrooms": 154,
+          "bathrooms": 95.1,
+          "lotSize": 95.1,
+          "estimatedValue": 95.1,
+          "listingPrice": 6443,
+          "zoning": "Elite Zoning 4",
+          "floodZone": true,
+          "hoaFee": 6443,
+          "status": "completed"
+        },
+        {
+          "address": "Phoenix",
+          "city": "Phoenix",
+          "state": "Core State 5",
+          "zip": "Core Zip 5",
+          "propertyType": "Category E",
+          "yearBuilt": 2024,
+          "squareFeet": 102,
+          "bedrooms": 102,
+          "bathrooms": 56.8,
+          "lotSize": 56.8,
+          "estimatedValue": 56.8,
+          "listingPrice": 8424,
+          "zoning": "Core Zoning 5",
+          "floodZone": false,
+          "hoaFee": 8424,
+          "status": "under_review"
+        },
+        {
+          "address": "San Francisco",
+          "city": "San Francisco",
+          "state": "Pro State 6",
+          "zip": "Pro Zip 6",
+          "propertyType": "Premium Tier",
+          "yearBuilt": 2025,
+          "squareFeet": 150,
+          "bedrooms": 150,
+          "bathrooms": 118.5,
+          "lotSize": 118.5,
+          "estimatedValue": 118.5,
+          "listingPrice": 10405,
+          "zoning": "Pro Zoning 6",
+          "floodZone": true,
+          "hoaFee": 10405,
+          "status": "approved"
+        },
+        {
+          "address": "Seattle",
+          "city": "Seattle",
+          "state": "Essential State 7",
+          "zip": "Essential Zip 7",
+          "propertyType": "Standard Tier",
+          "yearBuilt": 2020,
+          "squareFeet": 198,
+          "bedrooms": 198,
+          "bathrooms": 80.2,
+          "lotSize": 80.2,
+          "estimatedValue": 80.2,
+          "listingPrice": 12386,
+          "zoning": "Essential Zoning 7",
+          "floodZone": true,
+          "hoaFee": 12386,
+          "status": "active"
+        },
+        {
+          "address": "Boston",
+          "city": "Boston",
+          "state": "Primary State 8",
+          "zip": "Primary Zip 8",
+          "propertyType": "Basic Tier",
+          "yearBuilt": 2021,
+          "squareFeet": 146,
+          "bedrooms": 146,
+          "bathrooms": 141.9,
+          "lotSize": 141.9,
+          "estimatedValue": 141.9,
+          "listingPrice": 9367,
+          "zoning": "Primary Zoning 8",
+          "floodZone": false,
+          "hoaFee": 9367,
+          "status": "active"
+        },
+        {
+          "address": "Denver",
+          "city": "Denver",
+          "state": "Global State 9",
+          "zip": "Global Zip 9",
+          "propertyType": "Enterprise",
+          "yearBuilt": 2022,
+          "squareFeet": 194,
+          "bedrooms": 194,
+          "bathrooms": 103.6,
+          "lotSize": 103.6,
+          "estimatedValue": 103.6,
+          "listingPrice": 11348,
+          "zoning": "Global Zoning 9",
+          "floodZone": true,
+          "hoaFee": 11348,
+          "status": "active"
+        },
+        {
+          "address": "Miami",
+          "city": "Miami",
+          "state": "Regional State 10",
+          "zip": "Regional Zip 10",
+          "propertyType": "Starter",
+          "yearBuilt": 2023,
+          "squareFeet": 242,
+          "bedrooms": 242,
+          "bathrooms": 165.3,
+          "lotSize": 165.3,
+          "estimatedValue": 165.3,
+          "listingPrice": 13329,
+          "zoning": "Regional Zoning 10",
+          "floodZone": true,
+          "hoaFee": 13329,
+          "status": "pending"
+        },
+        {
+          "address": "Austin",
+          "city": "Austin",
+          "state": "Custom State 11",
+          "zip": "Custom Zip 11",
+          "propertyType": "Growth",
+          "yearBuilt": 2024,
+          "squareFeet": 190,
+          "bedrooms": 190,
+          "bathrooms": 127,
+          "lotSize": 127,
+          "estimatedValue": 127,
+          "listingPrice": 15310,
+          "zoning": "Custom Zoning 11",
+          "floodZone": false,
+          "hoaFee": 15310,
+          "status": "completed"
+        },
+        {
+          "address": "Portland",
+          "city": "Portland",
+          "state": "Smart State 12",
+          "zip": "Smart Zip 12",
+          "propertyType": "Scale",
+          "yearBuilt": 2025,
+          "squareFeet": 238,
+          "bedrooms": 238,
+          "bathrooms": 188.7,
+          "lotSize": 188.7,
+          "estimatedValue": 188.7,
+          "listingPrice": 17291,
+          "zoning": "Smart Zoning 12",
+          "floodZone": true,
+          "hoaFee": 17291,
+          "status": "active"
+        },
+        {
+          "address": "Dallas",
+          "city": "Dallas",
+          "state": "Rapid State 13",
+          "zip": "Rapid Zip 13",
+          "propertyType": "Foundation",
+          "yearBuilt": 2020,
+          "squareFeet": 286,
+          "bedrooms": 286,
+          "bathrooms": 150.4,
+          "lotSize": 150.4,
+          "estimatedValue": 150.4,
+          "listingPrice": 19272,
+          "zoning": "Rapid Zoning 13",
+          "floodZone": false,
+          "hoaFee": 19272,
+          "status": "in_progress"
+        },
+        {
+          "address": "Atlanta",
+          "city": "Atlanta",
+          "state": "Secure State 14",
+          "zip": "Secure Zip 14",
+          "propertyType": "Advanced",
+          "yearBuilt": 2021,
+          "squareFeet": 234,
+          "bedrooms": 234,
+          "bathrooms": 212.1,
+          "lotSize": 212.1,
+          "estimatedValue": 212.1,
+          "listingPrice": 21253,
+          "zoning": "Secure Zoning 14",
+          "floodZone": true,
+          "hoaFee": 21253,
+          "status": "active"
+        },
+        {
+          "address": "Nashville",
+          "city": "Nashville",
+          "state": "Modern State 15",
+          "zip": "Modern Zip 15",
+          "propertyType": "Professional",
+          "yearBuilt": 2022,
+          "squareFeet": 282,
+          "bedrooms": 282,
+          "bathrooms": 173.8,
+          "lotSize": 173.8,
+          "estimatedValue": 173.8,
+          "listingPrice": 18234,
+          "zoning": "Modern Zoning 15",
+          "floodZone": true,
+          "hoaFee": 18234,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "LoanApplication",
+      "routeKey": "loan-applications",
+      "label": "Loan Application",
+      "icon": "database",
+      "aiFunction": "analyzeLoanApplication",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Loan Application data. The data includes: Application Number, Borrower Id, Property Id, Loan Product Id, Loan Amount, Down Payment, Ltv Ratio, Dti Ratio, Interest Rate, Term Months, Purpose, Status, Priority, Assigned Underwriter Id, Submission Date, Decision Date, Decision, Decision Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "applicationNumber",
+          "label": "Application Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "borrowerId",
+          "label": "Borrower Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "propertyId",
+          "label": "Property Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "loanProductId",
+          "label": "Loan Product Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "loanAmount",
+          "label": "Loan Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "downPayment",
+          "label": "Down Payment",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "ltvRatio",
+          "label": "Ltv Ratio",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "dtiRatio",
+          "label": "Dti Ratio",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "interestRate",
+          "label": "Interest Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "termMonths",
+          "label": "Term Months",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "purpose",
+          "label": "Purpose",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assignedUnderwriterId",
+          "label": "Assigned Underwriter Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "submissionDate",
+          "label": "Submission Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "decisionDate",
+          "label": "Decision Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "decision",
+          "label": "Decision",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "decisionNotes",
+          "label": "Decision Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "applicationNumber": "Advanced Application Number 1",
+          "borrowerId": 10,
+          "propertyId": 10,
+          "loanProductId": 10,
+          "loanAmount": 500,
+          "downPayment": 10,
+          "ltvRatio": 1.5,
+          "dtiRatio": 1.5,
+          "interestRate": 1.5,
+          "termMonths": 10,
+          "purpose": "Advanced Purpose 1",
+          "status": "active",
+          "priority": "low",
+          "assignedUnderwriterId": 10,
+          "submissionDate": "2024-01-01",
+          "decisionDate": "2024-01-01",
+          "decision": "Advanced Decision 1",
+          "decisionNotes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "applicationNumber": "Premium Application Number 2",
+          "borrowerId": 58,
+          "propertyId": 58,
+          "loanProductId": 58,
+          "loanAmount": 2481,
+          "downPayment": 71.7,
+          "ltvRatio": 2.1,
+          "dtiRatio": 2.1,
+          "interestRate": 2.1,
+          "termMonths": 58,
+          "purpose": "Premium Purpose 2",
+          "status": "pending",
+          "priority": "medium",
+          "assignedUnderwriterId": 58,
+          "submissionDate": "2024-02-03",
+          "decisionDate": "2024-02-03",
+          "decision": "Premium Decision 2",
+          "decisionNotes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "applicationNumber": "Standard Application Number 3",
+          "borrowerId": 106,
+          "propertyId": 106,
+          "loanProductId": 106,
+          "loanAmount": 4462,
+          "downPayment": 33.4,
+          "ltvRatio": 2.7,
+          "dtiRatio": 2.7,
+          "interestRate": 2.7,
+          "termMonths": 106,
+          "purpose": "Standard Purpose 3",
+          "status": "in_progress",
+          "priority": "high",
+          "assignedUnderwriterId": 106,
+          "submissionDate": "2024-03-05",
+          "decisionDate": "2024-03-05",
+          "decision": "Standard Decision 3",
+          "decisionNotes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "applicationNumber": "Elite Application Number 4",
+          "borrowerId": 154,
+          "propertyId": 154,
+          "loanProductId": 154,
+          "loanAmount": 6443,
+          "downPayment": 95.1,
+          "ltvRatio": 3.3,
+          "dtiRatio": 3.3,
+          "interestRate": 3.3,
+          "termMonths": 154,
+          "purpose": "Elite Purpose 4",
+          "status": "completed",
+          "priority": "critical",
+          "assignedUnderwriterId": 154,
+          "submissionDate": "2024-04-07",
+          "decisionDate": "2024-04-07",
+          "decision": "Elite Decision 4",
+          "decisionNotes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "applicationNumber": "Core Application Number 5",
+          "borrowerId": 102,
+          "propertyId": 102,
+          "loanProductId": 102,
+          "loanAmount": 8424,
+          "downPayment": 56.8,
+          "ltvRatio": 3.9,
+          "dtiRatio": 3.9,
+          "interestRate": 3.9,
+          "termMonths": 102,
+          "purpose": "Core Purpose 5",
+          "status": "under_review",
+          "priority": "medium",
+          "assignedUnderwriterId": 102,
+          "submissionDate": "2024-05-09",
+          "decisionDate": "2024-05-09",
+          "decision": "Core Decision 5",
+          "decisionNotes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "applicationNumber": "Pro Application Number 6",
+          "borrowerId": 150,
+          "propertyId": 150,
+          "loanProductId": 150,
+          "loanAmount": 10405,
+          "downPayment": 118.5,
+          "ltvRatio": 4.5,
+          "dtiRatio": 4.5,
+          "interestRate": 4.5,
+          "termMonths": 150,
+          "purpose": "Pro Purpose 6",
+          "status": "approved",
+          "priority": "low",
+          "assignedUnderwriterId": 150,
+          "submissionDate": "2024-06-11",
+          "decisionDate": "2024-06-11",
+          "decision": "Pro Decision 6",
+          "decisionNotes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "applicationNumber": "Essential Application Number 7",
+          "borrowerId": 198,
+          "propertyId": 198,
+          "loanProductId": 198,
+          "loanAmount": 12386,
+          "downPayment": 80.2,
+          "ltvRatio": 5.1,
+          "dtiRatio": 5.1,
+          "interestRate": 5.1,
+          "termMonths": 198,
+          "purpose": "Essential Purpose 7",
+          "status": "active",
+          "priority": "medium",
+          "assignedUnderwriterId": 198,
+          "submissionDate": "2024-07-13",
+          "decisionDate": "2024-07-13",
+          "decision": "Essential Decision 7",
+          "decisionNotes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "applicationNumber": "Primary Application Number 8",
+          "borrowerId": 146,
+          "propertyId": 146,
+          "loanProductId": 146,
+          "loanAmount": 9367,
+          "downPayment": 141.9,
+          "ltvRatio": 5.7,
+          "dtiRatio": 5.7,
+          "interestRate": 5.7,
+          "termMonths": 146,
+          "purpose": "Primary Purpose 8",
+          "status": "active",
+          "priority": "high",
+          "assignedUnderwriterId": 146,
+          "submissionDate": "2024-08-15",
+          "decisionDate": "2024-08-15",
+          "decision": "Primary Decision 8",
+          "decisionNotes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "applicationNumber": "Global Application Number 9",
+          "borrowerId": 194,
+          "propertyId": 194,
+          "loanProductId": 194,
+          "loanAmount": 11348,
+          "downPayment": 103.6,
+          "ltvRatio": 6.3,
+          "dtiRatio": 6.3,
+          "interestRate": 6.3,
+          "termMonths": 194,
+          "purpose": "Global Purpose 9",
+          "status": "active",
+          "priority": "critical",
+          "assignedUnderwriterId": 194,
+          "submissionDate": "2024-09-17",
+          "decisionDate": "2024-09-17",
+          "decision": "Global Decision 9",
+          "decisionNotes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "applicationNumber": "Regional Application Number 10",
+          "borrowerId": 242,
+          "propertyId": 242,
+          "loanProductId": 242,
+          "loanAmount": 13329,
+          "downPayment": 165.3,
+          "ltvRatio": 1.9,
+          "dtiRatio": 1.9,
+          "interestRate": 1.9,
+          "termMonths": 242,
+          "purpose": "Regional Purpose 10",
+          "status": "pending",
+          "priority": "medium",
+          "assignedUnderwriterId": 242,
+          "submissionDate": "2024-10-19",
+          "decisionDate": "2024-10-19",
+          "decision": "Regional Decision 10",
+          "decisionNotes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "applicationNumber": "Custom Application Number 11",
+          "borrowerId": 190,
+          "propertyId": 190,
+          "loanProductId": 190,
+          "loanAmount": 15310,
+          "downPayment": 127,
+          "ltvRatio": 2.5,
+          "dtiRatio": 2.5,
+          "interestRate": 2.5,
+          "termMonths": 190,
+          "purpose": "Custom Purpose 11",
+          "status": "completed",
+          "priority": "low",
+          "assignedUnderwriterId": 190,
+          "submissionDate": "2024-11-21",
+          "decisionDate": "2024-11-21",
+          "decision": "Custom Decision 11",
+          "decisionNotes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "applicationNumber": "Smart Application Number 12",
+          "borrowerId": 238,
+          "propertyId": 238,
+          "loanProductId": 238,
+          "loanAmount": 17291,
+          "downPayment": 188.7,
+          "ltvRatio": 3.1,
+          "dtiRatio": 3.1,
+          "interestRate": 3.1,
+          "termMonths": 238,
+          "purpose": "Smart Purpose 12",
+          "status": "active",
+          "priority": "medium",
+          "assignedUnderwriterId": 238,
+          "submissionDate": "2024-12-23",
+          "decisionDate": "2024-12-23",
+          "decision": "Smart Decision 12",
+          "decisionNotes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "applicationNumber": "Rapid Application Number 13",
+          "borrowerId": 286,
+          "propertyId": 286,
+          "loanProductId": 286,
+          "loanAmount": 19272,
+          "downPayment": 150.4,
+          "ltvRatio": 3.7,
+          "dtiRatio": 3.7,
+          "interestRate": 3.7,
+          "termMonths": 286,
+          "purpose": "Rapid Purpose 13",
+          "status": "in_progress",
+          "priority": "high",
+          "assignedUnderwriterId": 286,
+          "submissionDate": "2024-01-25",
+          "decisionDate": "2024-01-25",
+          "decision": "Rapid Decision 13",
+          "decisionNotes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "applicationNumber": "Secure Application Number 14",
+          "borrowerId": 234,
+          "propertyId": 234,
+          "loanProductId": 234,
+          "loanAmount": 21253,
+          "downPayment": 212.1,
+          "ltvRatio": 4.3,
+          "dtiRatio": 4.3,
+          "interestRate": 4.3,
+          "termMonths": 234,
+          "purpose": "Secure Purpose 14",
+          "status": "active",
+          "priority": "critical",
+          "assignedUnderwriterId": 234,
+          "submissionDate": "2024-02-27",
+          "decisionDate": "2024-02-27",
+          "decision": "Secure Decision 14",
+          "decisionNotes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "applicationNumber": "Modern Application Number 15",
+          "borrowerId": 282,
+          "propertyId": 282,
+          "loanProductId": 282,
+          "loanAmount": 18234,
+          "downPayment": 173.8,
+          "ltvRatio": 4.9,
+          "dtiRatio": 4.9,
+          "interestRate": 4.9,
+          "termMonths": 282,
+          "purpose": "Modern Purpose 15",
+          "status": "approved",
+          "priority": "medium",
+          "assignedUnderwriterId": 282,
+          "submissionDate": "2024-03-01",
+          "decisionDate": "2024-03-01",
+          "decision": "Modern Decision 15",
+          "decisionNotes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Document",
+      "routeKey": "documents",
+      "label": "Document",
+      "icon": "file-text",
+      "aiFunction": "analyzeDocument",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Document data. The data includes: Application Id, Borrower Id, Name, Type, File Path, File Size, Status, Notes, Uploaded By, Reviewed By, Reviewed At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "applicationId",
+          "label": "Application Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "borrowerId",
+          "label": "Borrower Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "filePath",
+          "label": "File Path",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fileSize",
+          "label": "File Size",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "uploadedBy",
+          "label": "Uploaded By",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "reviewedBy",
+          "label": "Reviewed By",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "reviewedAt",
+          "label": "Reviewed At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "applicationId": 10,
+          "borrowerId": 10,
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "filePath": "Advanced File Path 1",
+          "fileSize": 10,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "uploadedBy": 10,
+          "reviewedBy": 10,
+          "reviewedAt": "2024-01-01"
+        },
+        {
+          "applicationId": 58,
+          "borrowerId": 58,
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "filePath": "Premium File Path 2",
+          "fileSize": 58,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "uploadedBy": 58,
+          "reviewedBy": 58,
+          "reviewedAt": "2024-02-03"
+        },
+        {
+          "applicationId": 106,
+          "borrowerId": 106,
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "filePath": "Standard File Path 3",
+          "fileSize": 106,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "uploadedBy": 106,
+          "reviewedBy": 106,
+          "reviewedAt": "2024-03-05"
+        },
+        {
+          "applicationId": 154,
+          "borrowerId": 154,
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "filePath": "Elite File Path 4",
+          "fileSize": 154,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "uploadedBy": 154,
+          "reviewedBy": 154,
+          "reviewedAt": "2024-04-07"
+        },
+        {
+          "applicationId": 102,
+          "borrowerId": 102,
+          "name": "Core Name 5",
+          "type": "Category E",
+          "filePath": "Core File Path 5",
+          "fileSize": 102,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "uploadedBy": 102,
+          "reviewedBy": 102,
+          "reviewedAt": "2024-05-09"
+        },
+        {
+          "applicationId": 150,
+          "borrowerId": 150,
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "filePath": "Pro File Path 6",
+          "fileSize": 150,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "uploadedBy": 150,
+          "reviewedBy": 150,
+          "reviewedAt": "2024-06-11"
+        },
+        {
+          "applicationId": 198,
+          "borrowerId": 198,
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "filePath": "Essential File Path 7",
+          "fileSize": 198,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "uploadedBy": 198,
+          "reviewedBy": 198,
+          "reviewedAt": "2024-07-13"
+        },
+        {
+          "applicationId": 146,
+          "borrowerId": 146,
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "filePath": "Primary File Path 8",
+          "fileSize": 146,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "uploadedBy": 146,
+          "reviewedBy": 146,
+          "reviewedAt": "2024-08-15"
+        },
+        {
+          "applicationId": 194,
+          "borrowerId": 194,
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "filePath": "Global File Path 9",
+          "fileSize": 194,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "uploadedBy": 194,
+          "reviewedBy": 194,
+          "reviewedAt": "2024-09-17"
+        },
+        {
+          "applicationId": 242,
+          "borrowerId": 242,
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "filePath": "Regional File Path 10",
+          "fileSize": 242,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "uploadedBy": 242,
+          "reviewedBy": 242,
+          "reviewedAt": "2024-10-19"
+        },
+        {
+          "applicationId": 190,
+          "borrowerId": 190,
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "filePath": "Custom File Path 11",
+          "fileSize": 190,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "uploadedBy": 190,
+          "reviewedBy": 190,
+          "reviewedAt": "2024-11-21"
+        },
+        {
+          "applicationId": 238,
+          "borrowerId": 238,
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "filePath": "Smart File Path 12",
+          "fileSize": 238,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "uploadedBy": 238,
+          "reviewedBy": 238,
+          "reviewedAt": "2024-12-23"
+        },
+        {
+          "applicationId": 286,
+          "borrowerId": 286,
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "filePath": "Rapid File Path 13",
+          "fileSize": 286,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "uploadedBy": 286,
+          "reviewedBy": 286,
+          "reviewedAt": "2024-01-25"
+        },
+        {
+          "applicationId": 234,
+          "borrowerId": 234,
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "filePath": "Secure File Path 14",
+          "fileSize": 234,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "uploadedBy": 234,
+          "reviewedBy": 234,
+          "reviewedAt": "2024-02-27"
+        },
+        {
+          "applicationId": 282,
+          "borrowerId": 282,
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "filePath": "Modern File Path 15",
+          "fileSize": 282,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "uploadedBy": 282,
+          "reviewedBy": 282,
+          "reviewedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "CreditReport",
+      "routeKey": "credit-reports",
+      "label": "Credit Report",
+      "icon": "heart",
+      "aiFunction": "analyzeCreditReport",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Credit Report data. The data includes: Borrower Id, Bureau, Score, Report Date, Total Accounts, Open Accounts, Total Balance, Monthly Payments, Delinquencies, Bankruptcies, Collections, Inquiries Last 6months, Oldest Account Years, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "borrowerId",
+          "label": "Borrower Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bureau",
+          "label": "Bureau",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "score",
+          "label": "Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "reportDate",
+          "label": "Report Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "totalAccounts",
+          "label": "Total Accounts",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "openAccounts",
+          "label": "Open Accounts",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "totalBalance",
+          "label": "Total Balance",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "monthlyPayments",
+          "label": "Monthly Payments",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "delinquencies",
+          "label": "Delinquencies",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bankruptcies",
+          "label": "Bankruptcies",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "collections",
+          "label": "Collections",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "inquiriesLast_6months",
+          "label": "Inquiries Last 6months",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "oldestAccountYears",
+          "label": "Oldest Account Years",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "borrowerId": 10,
+          "bureau": "Advanced Bureau 1",
+          "score": 10,
+          "reportDate": "2024-01-01",
+          "totalAccounts": 50,
+          "openAccounts": 77,
+          "totalBalance": 10,
+          "monthlyPayments": 10,
+          "delinquencies": 10,
+          "bankruptcies": 10,
+          "collections": 10,
+          "inquiriesLast_6months": 10,
+          "oldestAccountYears": 10,
+          "status": "active"
+        },
+        {
+          "borrowerId": 58,
+          "bureau": "Premium Bureau 2",
+          "score": 58,
+          "reportDate": "2024-02-03",
+          "totalAccounts": 179,
+          "openAccounts": 155,
+          "totalBalance": 71.7,
+          "monthlyPayments": 71.7,
+          "delinquencies": 58,
+          "bankruptcies": 58,
+          "collections": 58,
+          "inquiriesLast_6months": 58,
+          "oldestAccountYears": 71.7,
+          "status": "pending"
+        },
+        {
+          "borrowerId": 106,
+          "bureau": "Standard Bureau 3",
+          "score": 106,
+          "reportDate": "2024-03-05",
+          "totalAccounts": 111,
+          "openAccounts": 86,
+          "totalBalance": 33.4,
+          "monthlyPayments": 33.4,
+          "delinquencies": 106,
+          "bankruptcies": 106,
+          "collections": 106,
+          "inquiriesLast_6months": 106,
+          "oldestAccountYears": 33.4,
+          "status": "in_progress"
+        },
+        {
+          "borrowerId": 154,
+          "bureau": "Elite Bureau 4",
+          "score": 154,
+          "reportDate": "2024-04-07",
+          "totalAccounts": 223,
+          "openAccounts": 164,
+          "totalBalance": 95.1,
+          "monthlyPayments": 95.1,
+          "delinquencies": 154,
+          "bankruptcies": 154,
+          "collections": 154,
+          "inquiriesLast_6months": 154,
+          "oldestAccountYears": 95.1,
+          "status": "completed"
+        },
+        {
+          "borrowerId": 102,
+          "bureau": "Core Bureau 5",
+          "score": 102,
+          "reportDate": "2024-05-09",
+          "totalAccounts": 212,
+          "openAccounts": 183,
+          "totalBalance": 56.8,
+          "monthlyPayments": 56.8,
+          "delinquencies": 102,
+          "bankruptcies": 102,
+          "collections": 102,
+          "inquiriesLast_6months": 102,
+          "oldestAccountYears": 56.8,
+          "status": "under_review"
+        },
+        {
+          "borrowerId": 150,
+          "bureau": "Pro Bureau 6",
+          "score": 150,
+          "reportDate": "2024-06-11",
+          "totalAccounts": 132,
+          "openAccounts": 76,
+          "totalBalance": 118.5,
+          "monthlyPayments": 118.5,
+          "delinquencies": 150,
+          "bankruptcies": 150,
+          "collections": 150,
+          "inquiriesLast_6months": 150,
+          "oldestAccountYears": 118.5,
+          "status": "approved"
+        },
+        {
+          "borrowerId": 198,
+          "bureau": "Essential Bureau 7",
+          "score": 198,
+          "reportDate": "2024-07-13",
+          "totalAccounts": 241,
+          "openAccounts": 145,
+          "totalBalance": 80.2,
+          "monthlyPayments": 80.2,
+          "delinquencies": 198,
+          "bankruptcies": 198,
+          "collections": 198,
+          "inquiriesLast_6months": 198,
+          "oldestAccountYears": 80.2,
+          "status": "active"
+        },
+        {
+          "borrowerId": 146,
+          "bureau": "Primary Bureau 8",
+          "score": 146,
+          "reportDate": "2024-08-15",
+          "totalAccounts": 91,
+          "openAccounts": 144,
+          "totalBalance": 141.9,
+          "monthlyPayments": 141.9,
+          "delinquencies": 146,
+          "bankruptcies": 146,
+          "collections": 146,
+          "inquiriesLast_6months": 146,
+          "oldestAccountYears": 141.9,
+          "status": "active"
+        },
+        {
+          "borrowerId": 194,
+          "bureau": "Global Bureau 9",
+          "score": 194,
+          "reportDate": "2024-09-17",
+          "totalAccounts": 259,
+          "openAccounts": 119,
+          "totalBalance": 103.6,
+          "monthlyPayments": 103.6,
+          "delinquencies": 194,
+          "bankruptcies": 194,
+          "collections": 194,
+          "inquiriesLast_6months": 194,
+          "oldestAccountYears": 103.6,
+          "status": "active"
+        },
+        {
+          "borrowerId": 242,
+          "bureau": "Regional Bureau 10",
+          "score": 242,
+          "reportDate": "2024-10-19",
+          "totalAccounts": 97,
+          "openAccounts": 202,
+          "totalBalance": 165.3,
+          "monthlyPayments": 165.3,
+          "delinquencies": 242,
+          "bankruptcies": 242,
+          "collections": 242,
+          "inquiriesLast_6months": 242,
+          "oldestAccountYears": 165.3,
+          "status": "pending"
+        },
+        {
+          "borrowerId": 190,
+          "bureau": "Custom Bureau 11",
+          "score": 190,
+          "reportDate": "2024-11-21",
+          "totalAccounts": 235,
+          "openAccounts": 133,
+          "totalBalance": 127,
+          "monthlyPayments": 127,
+          "delinquencies": 190,
+          "bankruptcies": 190,
+          "collections": 190,
+          "inquiriesLast_6months": 190,
+          "oldestAccountYears": 127,
+          "status": "completed"
+        },
+        {
+          "borrowerId": 238,
+          "bureau": "Smart Bureau 12",
+          "score": 238,
+          "reportDate": "2024-12-23",
+          "totalAccounts": 227,
+          "openAccounts": 93,
+          "totalBalance": 188.7,
+          "monthlyPayments": 188.7,
+          "delinquencies": 238,
+          "bankruptcies": 238,
+          "collections": 238,
+          "inquiriesLast_6months": 238,
+          "oldestAccountYears": 188.7,
+          "status": "active"
+        },
+        {
+          "borrowerId": 286,
+          "bureau": "Rapid Bureau 13",
+          "score": 286,
+          "reportDate": "2024-01-25",
+          "totalAccounts": 211,
+          "openAccounts": 268,
+          "totalBalance": 150.4,
+          "monthlyPayments": 150.4,
+          "delinquencies": 286,
+          "bankruptcies": 286,
+          "collections": 286,
+          "inquiriesLast_6months": 286,
+          "oldestAccountYears": 150.4,
+          "status": "in_progress"
+        },
+        {
+          "borrowerId": 234,
+          "bureau": "Secure Bureau 14",
+          "score": 234,
+          "reportDate": "2024-02-27",
+          "totalAccounts": 283,
+          "openAccounts": 245,
+          "totalBalance": 212.1,
+          "monthlyPayments": 212.1,
+          "delinquencies": 234,
+          "bankruptcies": 234,
+          "collections": 234,
+          "inquiriesLast_6months": 234,
+          "oldestAccountYears": 212.1,
+          "status": "active"
+        },
+        {
+          "borrowerId": 282,
+          "bureau": "Modern Bureau 15",
+          "score": 282,
+          "reportDate": "2024-03-01",
+          "totalAccounts": 291,
+          "openAccounts": 297,
+          "totalBalance": 173.8,
+          "monthlyPayments": 173.8,
+          "delinquencies": 282,
+          "bankruptcies": 282,
+          "collections": 282,
+          "inquiriesLast_6months": 282,
+          "oldestAccountYears": 173.8,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "IncomeRecord",
+      "routeKey": "income-records",
+      "label": "Income Record",
+      "icon": "layers",
+      "aiFunction": "analyzeIncomeRecord",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Income Record data. The data includes: Borrower Id, Source, Type, Amount, Frequency, Start Date, End Date, Verified, Verification Method, Employer Name, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "borrowerId",
+          "label": "Borrower Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "frequency",
+          "label": "Frequency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "verified",
+          "label": "Verified",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "verificationMethod",
+          "label": "Verification Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "employerName",
+          "label": "Employer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "borrowerId": 10,
+          "source": "Advanced Source 1",
+          "type": "Category A",
+          "amount": 500,
+          "frequency": "Advanced Frequency 1",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "verified": true,
+          "verificationMethod": "Advanced Verification Method 1",
+          "employerName": "Advanced Employer 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "borrowerId": 58,
+          "source": "Premium Source 2",
+          "type": "Category B",
+          "amount": 2481,
+          "frequency": "Premium Frequency 2",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "verified": true,
+          "verificationMethod": "Premium Verification Method 2",
+          "employerName": "Premium Employer 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "borrowerId": 106,
+          "source": "Standard Source 3",
+          "type": "Category C",
+          "amount": 4462,
+          "frequency": "Standard Frequency 3",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "verified": false,
+          "verificationMethod": "Standard Verification Method 3",
+          "employerName": "Standard Employer 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "borrowerId": 154,
+          "source": "Elite Source 4",
+          "type": "Category D",
+          "amount": 6443,
+          "frequency": "Elite Frequency 4",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "verified": true,
+          "verificationMethod": "Elite Verification Method 4",
+          "employerName": "Elite Employer 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "borrowerId": 102,
+          "source": "Core Source 5",
+          "type": "Category E",
+          "amount": 8424,
+          "frequency": "Core Frequency 5",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "verified": false,
+          "verificationMethod": "Core Verification Method 5",
+          "employerName": "Core Employer 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "borrowerId": 150,
+          "source": "Pro Source 6",
+          "type": "Premium Tier",
+          "amount": 10405,
+          "frequency": "Pro Frequency 6",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "verified": true,
+          "verificationMethod": "Pro Verification Method 6",
+          "employerName": "Pro Employer 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "borrowerId": 198,
+          "source": "Essential Source 7",
+          "type": "Standard Tier",
+          "amount": 12386,
+          "frequency": "Essential Frequency 7",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "verified": true,
+          "verificationMethod": "Essential Verification Method 7",
+          "employerName": "Essential Employer 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "borrowerId": 146,
+          "source": "Primary Source 8",
+          "type": "Basic Tier",
+          "amount": 9367,
+          "frequency": "Primary Frequency 8",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "verified": false,
+          "verificationMethod": "Primary Verification Method 8",
+          "employerName": "Primary Employer 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "borrowerId": 194,
+          "source": "Global Source 9",
+          "type": "Enterprise",
+          "amount": 11348,
+          "frequency": "Global Frequency 9",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "verified": true,
+          "verificationMethod": "Global Verification Method 9",
+          "employerName": "Global Employer 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "borrowerId": 242,
+          "source": "Regional Source 10",
+          "type": "Starter",
+          "amount": 13329,
+          "frequency": "Regional Frequency 10",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "verified": true,
+          "verificationMethod": "Regional Verification Method 10",
+          "employerName": "Regional Employer 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "borrowerId": 190,
+          "source": "Custom Source 11",
+          "type": "Growth",
+          "amount": 15310,
+          "frequency": "Custom Frequency 11",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "verified": false,
+          "verificationMethod": "Custom Verification Method 11",
+          "employerName": "Custom Employer 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "borrowerId": 238,
+          "source": "Smart Source 12",
+          "type": "Scale",
+          "amount": 17291,
+          "frequency": "Smart Frequency 12",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "verified": true,
+          "verificationMethod": "Smart Verification Method 12",
+          "employerName": "Smart Employer 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "borrowerId": 286,
+          "source": "Rapid Source 13",
+          "type": "Foundation",
+          "amount": 19272,
+          "frequency": "Rapid Frequency 13",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "verified": false,
+          "verificationMethod": "Rapid Verification Method 13",
+          "employerName": "Rapid Employer 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "borrowerId": 234,
+          "source": "Secure Source 14",
+          "type": "Advanced",
+          "amount": 21253,
+          "frequency": "Secure Frequency 14",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "verified": true,
+          "verificationMethod": "Secure Verification Method 14",
+          "employerName": "Secure Employer 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "borrowerId": 282,
+          "source": "Modern Source 15",
+          "type": "Professional",
+          "amount": 18234,
+          "frequency": "Modern Frequency 15",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "verified": true,
+          "verificationMethod": "Modern Verification Method 15",
+          "employerName": "Modern Employer 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Appraisal",
+      "routeKey": "appraisals",
+      "label": "Appraisal",
+      "icon": "map-pin",
+      "aiFunction": "analyzeAppraisal",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Appraisal data. The data includes: Property Id, Application Id, Appraiser Name, Appraiser License, Appraisal Date, Appraised Value, Market Value, Condition Rating, Comparable Sales, Notes, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "propertyId",
+          "label": "Property Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "applicationId",
+          "label": "Application Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "appraiserName",
+          "label": "Appraiser Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "appraiserLicense",
+          "label": "Appraiser License",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "appraisalDate",
+          "label": "Appraisal Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "appraisedValue",
+          "label": "Appraised Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "marketValue",
+          "label": "Market Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "conditionRating",
+          "label": "Condition Rating",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "comparableSales",
+          "label": "Comparable Sales",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "propertyId": 10,
+          "applicationId": 10,
+          "appraiserName": "Advanced Appraiser 1",
+          "appraiserLicense": "Advanced Appraiser License 1",
+          "appraisalDate": "2024-01-01",
+          "appraisedValue": 10,
+          "marketValue": 10,
+          "conditionRating": "Advanced Condition Rating 1",
+          "comparableSales": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "propertyId": 58,
+          "applicationId": 58,
+          "appraiserName": "Premium Appraiser 2",
+          "appraiserLicense": "Premium Appraiser License 2",
+          "appraisalDate": "2024-02-03",
+          "appraisedValue": 71.7,
+          "marketValue": 71.7,
+          "conditionRating": "Premium Condition Rating 2",
+          "comparableSales": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "propertyId": 106,
+          "applicationId": 106,
+          "appraiserName": "Standard Appraiser 3",
+          "appraiserLicense": "Standard Appraiser License 3",
+          "appraisalDate": "2024-03-05",
+          "appraisedValue": 33.4,
+          "marketValue": 33.4,
+          "conditionRating": "Standard Condition Rating 3",
+          "comparableSales": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "propertyId": 154,
+          "applicationId": 154,
+          "appraiserName": "Elite Appraiser 4",
+          "appraiserLicense": "Elite Appraiser License 4",
+          "appraisalDate": "2024-04-07",
+          "appraisedValue": 95.1,
+          "marketValue": 95.1,
+          "conditionRating": "Elite Condition Rating 4",
+          "comparableSales": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "propertyId": 102,
+          "applicationId": 102,
+          "appraiserName": "Core Appraiser 5",
+          "appraiserLicense": "Core Appraiser License 5",
+          "appraisalDate": "2024-05-09",
+          "appraisedValue": 56.8,
+          "marketValue": 56.8,
+          "conditionRating": "Core Condition Rating 5",
+          "comparableSales": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "propertyId": 150,
+          "applicationId": 150,
+          "appraiserName": "Pro Appraiser 6",
+          "appraiserLicense": "Pro Appraiser License 6",
+          "appraisalDate": "2024-06-11",
+          "appraisedValue": 118.5,
+          "marketValue": 118.5,
+          "conditionRating": "Pro Condition Rating 6",
+          "comparableSales": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "propertyId": 198,
+          "applicationId": 198,
+          "appraiserName": "Essential Appraiser 7",
+          "appraiserLicense": "Essential Appraiser License 7",
+          "appraisalDate": "2024-07-13",
+          "appraisedValue": 80.2,
+          "marketValue": 80.2,
+          "conditionRating": "Essential Condition Rating 7",
+          "comparableSales": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "propertyId": 146,
+          "applicationId": 146,
+          "appraiserName": "Primary Appraiser 8",
+          "appraiserLicense": "Primary Appraiser License 8",
+          "appraisalDate": "2024-08-15",
+          "appraisedValue": 141.9,
+          "marketValue": 141.9,
+          "conditionRating": "Primary Condition Rating 8",
+          "comparableSales": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "propertyId": 194,
+          "applicationId": 194,
+          "appraiserName": "Global Appraiser 9",
+          "appraiserLicense": "Global Appraiser License 9",
+          "appraisalDate": "2024-09-17",
+          "appraisedValue": 103.6,
+          "marketValue": 103.6,
+          "conditionRating": "Global Condition Rating 9",
+          "comparableSales": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "propertyId": 242,
+          "applicationId": 242,
+          "appraiserName": "Regional Appraiser 10",
+          "appraiserLicense": "Regional Appraiser License 10",
+          "appraisalDate": "2024-10-19",
+          "appraisedValue": 165.3,
+          "marketValue": 165.3,
+          "conditionRating": "Regional Condition Rating 10",
+          "comparableSales": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "propertyId": 190,
+          "applicationId": 190,
+          "appraiserName": "Custom Appraiser 11",
+          "appraiserLicense": "Custom Appraiser License 11",
+          "appraisalDate": "2024-11-21",
+          "appraisedValue": 127,
+          "marketValue": 127,
+          "conditionRating": "Custom Condition Rating 11",
+          "comparableSales": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "propertyId": 238,
+          "applicationId": 238,
+          "appraiserName": "Smart Appraiser 12",
+          "appraiserLicense": "Smart Appraiser License 12",
+          "appraisalDate": "2024-12-23",
+          "appraisedValue": 188.7,
+          "marketValue": 188.7,
+          "conditionRating": "Smart Condition Rating 12",
+          "comparableSales": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "propertyId": 286,
+          "applicationId": 286,
+          "appraiserName": "Rapid Appraiser 13",
+          "appraiserLicense": "Rapid Appraiser License 13",
+          "appraisalDate": "2024-01-25",
+          "appraisedValue": 150.4,
+          "marketValue": 150.4,
+          "conditionRating": "Rapid Condition Rating 13",
+          "comparableSales": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "propertyId": 234,
+          "applicationId": 234,
+          "appraiserName": "Secure Appraiser 14",
+          "appraiserLicense": "Secure Appraiser License 14",
+          "appraisalDate": "2024-02-27",
+          "appraisedValue": 212.1,
+          "marketValue": 212.1,
+          "conditionRating": "Secure Condition Rating 14",
+          "comparableSales": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "propertyId": 282,
+          "applicationId": 282,
+          "appraiserName": "Modern Appraiser 15",
+          "appraiserLicense": "Modern Appraiser License 15",
+          "appraisalDate": "2024-03-01",
+          "appraisedValue": 173.8,
+          "marketValue": 173.8,
+          "conditionRating": "Modern Condition Rating 15",
+          "comparableSales": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "FeeSchedule",
+      "routeKey": "fee-schedules",
+      "label": "Fee Schedule",
+      "icon": "package",
+      "aiFunction": "analyzeFeeSchedule",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Fee Schedule data. The data includes: Name, Category, Amount, Is Percentage, Applies To, Description, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "isPercentage",
+          "label": "Is Percentage",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "appliesTo",
+          "label": "Applies To",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "amount": 500,
+          "isPercentage": true,
+          "appliesTo": "Advanced Applies To 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "amount": 2481,
+          "isPercentage": true,
+          "appliesTo": "Premium Applies To 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "amount": 4462,
+          "isPercentage": false,
+          "appliesTo": "Standard Applies To 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "amount": 6443,
+          "isPercentage": true,
+          "appliesTo": "Elite Applies To 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "amount": 8424,
+          "isPercentage": false,
+          "appliesTo": "Core Applies To 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "amount": 10405,
+          "isPercentage": true,
+          "appliesTo": "Pro Applies To 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "amount": 12386,
+          "isPercentage": true,
+          "appliesTo": "Essential Applies To 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "amount": 9367,
+          "isPercentage": false,
+          "appliesTo": "Primary Applies To 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "amount": 11348,
+          "isPercentage": true,
+          "appliesTo": "Global Applies To 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "amount": 13329,
+          "isPercentage": true,
+          "appliesTo": "Regional Applies To 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "amount": 15310,
+          "isPercentage": false,
+          "appliesTo": "Custom Applies To 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "amount": 17291,
+          "isPercentage": true,
+          "appliesTo": "Smart Applies To 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "amount": 19272,
+          "isPercentage": false,
+          "appliesTo": "Rapid Applies To 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "amount": 21253,
+          "isPercentage": true,
+          "appliesTo": "Secure Applies To 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "amount": 18234,
+          "isPercentage": true,
+          "appliesTo": "Modern Applies To 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "Condition",
+      "routeKey": "conditions",
+      "label": "Condition",
+      "icon": "shield",
+      "aiFunction": "analyzeCondition",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Condition data. The data includes: Application Id, Category, Description, Type, Priority, Status, Due Date, Assigned To, Completed At, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "applicationId",
+          "label": "Application Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "completedAt",
+          "label": "Completed At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "applicationId": 10,
+          "category": "Category A",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "type": "Category A",
+          "priority": "low",
+          "status": "active",
+          "dueDate": "2024-01-01",
+          "assignedTo": 10,
+          "completedAt": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "applicationId": 58,
+          "category": "Category B",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "type": "Category B",
+          "priority": "medium",
+          "status": "pending",
+          "dueDate": "2024-02-03",
+          "assignedTo": 58,
+          "completedAt": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "applicationId": 106,
+          "category": "Category C",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "type": "Category C",
+          "priority": "high",
+          "status": "in_progress",
+          "dueDate": "2024-03-05",
+          "assignedTo": 106,
+          "completedAt": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "applicationId": 154,
+          "category": "Category D",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "type": "Category D",
+          "priority": "critical",
+          "status": "completed",
+          "dueDate": "2024-04-07",
+          "assignedTo": 154,
+          "completedAt": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "applicationId": 102,
+          "category": "Category E",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "type": "Category E",
+          "priority": "medium",
+          "status": "under_review",
+          "dueDate": "2024-05-09",
+          "assignedTo": 102,
+          "completedAt": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "applicationId": 150,
+          "category": "Premium Tier",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "type": "Premium Tier",
+          "priority": "low",
+          "status": "approved",
+          "dueDate": "2024-06-11",
+          "assignedTo": 150,
+          "completedAt": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "applicationId": 198,
+          "category": "Standard Tier",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "type": "Standard Tier",
+          "priority": "medium",
+          "status": "active",
+          "dueDate": "2024-07-13",
+          "assignedTo": 198,
+          "completedAt": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "applicationId": 146,
+          "category": "Basic Tier",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "type": "Basic Tier",
+          "priority": "high",
+          "status": "active",
+          "dueDate": "2024-08-15",
+          "assignedTo": 146,
+          "completedAt": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "applicationId": 194,
+          "category": "Enterprise",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "type": "Enterprise",
+          "priority": "critical",
+          "status": "active",
+          "dueDate": "2024-09-17",
+          "assignedTo": 194,
+          "completedAt": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "applicationId": 242,
+          "category": "Starter",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "type": "Starter",
+          "priority": "medium",
+          "status": "pending",
+          "dueDate": "2024-10-19",
+          "assignedTo": 242,
+          "completedAt": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "applicationId": 190,
+          "category": "Growth",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "type": "Growth",
+          "priority": "low",
+          "status": "completed",
+          "dueDate": "2024-11-21",
+          "assignedTo": 190,
+          "completedAt": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "applicationId": 238,
+          "category": "Scale",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "type": "Scale",
+          "priority": "medium",
+          "status": "active",
+          "dueDate": "2024-12-23",
+          "assignedTo": 238,
+          "completedAt": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "applicationId": 286,
+          "category": "Foundation",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "type": "Foundation",
+          "priority": "high",
+          "status": "in_progress",
+          "dueDate": "2024-01-25",
+          "assignedTo": 286,
+          "completedAt": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "applicationId": 234,
+          "category": "Advanced",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "type": "Advanced",
+          "priority": "critical",
+          "status": "active",
+          "dueDate": "2024-02-27",
+          "assignedTo": 234,
+          "completedAt": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "applicationId": 282,
+          "category": "Professional",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "type": "Professional",
+          "priority": "medium",
+          "status": "approved",
+          "dueDate": "2024-03-01",
+          "assignedTo": 282,
+          "completedAt": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "ComplianceCheck",
+      "routeKey": "compliance-checks",
+      "label": "Compliance Check",
+      "icon": "star",
+      "aiFunction": "analyzeComplianceCheck",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Compliance Check data. The data includes: Application Id, Regulation, Status, Result, Details. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "applicationId",
+          "label": "Application Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "regulation",
+          "label": "Regulation",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "result",
+          "label": "Result",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "details",
+          "label": "Details",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "applicationId": 10,
+          "regulation": "Advanced Regulation 1",
+          "status": "active",
+          "result": "Advanced Result 1",
+          "details": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "applicationId": 58,
+          "regulation": "Premium Regulation 2",
+          "status": "pending",
+          "result": "Premium Result 2",
+          "details": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "applicationId": 106,
+          "regulation": "Standard Regulation 3",
+          "status": "in_progress",
+          "result": "Standard Result 3",
+          "details": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "applicationId": 154,
+          "regulation": "Elite Regulation 4",
+          "status": "completed",
+          "result": "Elite Result 4",
+          "details": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "applicationId": 102,
+          "regulation": "Core Regulation 5",
+          "status": "under_review",
+          "result": "Core Result 5",
+          "details": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "applicationId": 150,
+          "regulation": "Pro Regulation 6",
+          "status": "approved",
+          "result": "Pro Result 6",
+          "details": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "applicationId": 198,
+          "regulation": "Essential Regulation 7",
+          "status": "active",
+          "result": "Essential Result 7",
+          "details": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "applicationId": 146,
+          "regulation": "Primary Regulation 8",
+          "status": "active",
+          "result": "Primary Result 8",
+          "details": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "applicationId": 194,
+          "regulation": "Global Regulation 9",
+          "status": "active",
+          "result": "Global Result 9",
+          "details": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "applicationId": 242,
+          "regulation": "Regional Regulation 10",
+          "status": "pending",
+          "result": "Regional Result 10",
+          "details": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "applicationId": 190,
+          "regulation": "Custom Regulation 11",
+          "status": "completed",
+          "result": "Custom Result 11",
+          "details": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "applicationId": 238,
+          "regulation": "Smart Regulation 12",
+          "status": "active",
+          "result": "Smart Result 12",
+          "details": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "applicationId": 286,
+          "regulation": "Rapid Regulation 13",
+          "status": "in_progress",
+          "result": "Rapid Result 13",
+          "details": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "applicationId": 234,
+          "regulation": "Secure Regulation 14",
+          "status": "active",
+          "result": "Secure Result 14",
+          "details": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "applicationId": 282,
+          "regulation": "Modern Regulation 15",
+          "status": "approved",
+          "result": "Modern Result 15",
+          "details": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "RiskAssessment",
+      "routeKey": "risk-assessments",
+      "label": "Risk Assessment",
+      "icon": "truck",
+      "aiFunction": "analyzeRiskAssessment",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Risk Assessment data. The data includes: Application Id, Risk Category, Risk Level, Score, Factors, Recommendation, Assessed By, Assessed At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "applicationId",
+          "label": "Application Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "riskCategory",
+          "label": "Risk Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "score",
+          "label": "Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "factors",
+          "label": "Factors",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "recommendation",
+          "label": "Recommendation",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "assessedBy",
+          "label": "Assessed By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assessedAt",
+          "label": "Assessed At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "applicationId": 10,
+          "riskCategory": "Category A",
+          "riskLevel": "low",
+          "score": 1.5,
+          "factors": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "recommendation": "Comprehensive solution designed for optimal performance and efficiency.",
+          "assessedBy": "Advanced Assessed By 1",
+          "assessedAt": "2024-01-01"
+        },
+        {
+          "applicationId": 58,
+          "riskCategory": "Category B",
+          "riskLevel": "medium",
+          "score": 2.1,
+          "factors": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "recommendation": "Industry-leading approach with proven results across multiple deployments.",
+          "assessedBy": "Premium Assessed By 2",
+          "assessedAt": "2024-02-03"
+        },
+        {
+          "applicationId": 106,
+          "riskCategory": "Category C",
+          "riskLevel": "high",
+          "score": 2.7,
+          "factors": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "recommendation": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "assessedBy": "Standard Assessed By 3",
+          "assessedAt": "2024-03-05"
+        },
+        {
+          "applicationId": 154,
+          "riskCategory": "Category D",
+          "riskLevel": "critical",
+          "score": 3.3,
+          "factors": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "recommendation": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "assessedBy": "Elite Assessed By 4",
+          "assessedAt": "2024-04-07"
+        },
+        {
+          "applicationId": 102,
+          "riskCategory": "Category E",
+          "riskLevel": "medium",
+          "score": 3.9,
+          "factors": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "recommendation": "Cost-effective strategy focused on sustainable long-term growth.",
+          "assessedBy": "Core Assessed By 5",
+          "assessedAt": "2024-05-09"
+        },
+        {
+          "applicationId": 150,
+          "riskCategory": "Premium Tier",
+          "riskLevel": "low",
+          "score": 4.5,
+          "factors": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "recommendation": "High-priority initiative aligned with organizational strategic objectives.",
+          "assessedBy": "Pro Assessed By 6",
+          "assessedAt": "2024-06-11"
+        },
+        {
+          "applicationId": 198,
+          "riskCategory": "Standard Tier",
+          "riskLevel": "medium",
+          "score": 5.1,
+          "factors": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "recommendation": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "assessedBy": "Essential Assessed By 7",
+          "assessedAt": "2024-07-13"
+        },
+        {
+          "applicationId": 146,
+          "riskCategory": "Basic Tier",
+          "riskLevel": "high",
+          "score": 5.7,
+          "factors": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "recommendation": "Innovative framework incorporating best practices and emerging technologies.",
+          "assessedBy": "Primary Assessed By 8",
+          "assessedAt": "2024-08-15"
+        },
+        {
+          "applicationId": 194,
+          "riskCategory": "Enterprise",
+          "riskLevel": "critical",
+          "score": 6.3,
+          "factors": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "recommendation": "Scalable architecture built to accommodate rapid expansion and change.",
+          "assessedBy": "Global Assessed By 9",
+          "assessedAt": "2024-09-17"
+        },
+        {
+          "applicationId": 242,
+          "riskCategory": "Starter",
+          "riskLevel": "medium",
+          "score": 1.9,
+          "factors": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "recommendation": "Enterprise-grade solution with robust security and compliance features.",
+          "assessedBy": "Regional Assessed By 10",
+          "assessedAt": "2024-10-19"
+        },
+        {
+          "applicationId": 190,
+          "riskCategory": "Growth",
+          "riskLevel": "low",
+          "score": 2.5,
+          "factors": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "recommendation": "Integrated platform connecting multiple systems for seamless operations.",
+          "assessedBy": "Custom Assessed By 11",
+          "assessedAt": "2024-11-21"
+        },
+        {
+          "applicationId": 238,
+          "riskCategory": "Scale",
+          "riskLevel": "medium",
+          "score": 3.1,
+          "factors": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "recommendation": "Automated workflow reducing manual intervention and human error.",
+          "assessedBy": "Smart Assessed By 12",
+          "assessedAt": "2024-12-23"
+        },
+        {
+          "applicationId": 286,
+          "riskCategory": "Foundation",
+          "riskLevel": "high",
+          "score": 3.7,
+          "factors": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "recommendation": "Real-time monitoring system with intelligent alerting capabilities.",
+          "assessedBy": "Rapid Assessed By 13",
+          "assessedAt": "2024-01-25"
+        },
+        {
+          "applicationId": 234,
+          "riskCategory": "Advanced",
+          "riskLevel": "critical",
+          "score": 4.3,
+          "factors": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "recommendation": "Customizable module adaptable to diverse operational requirements.",
+          "assessedBy": "Secure Assessed By 14",
+          "assessedAt": "2024-02-27"
+        },
+        {
+          "applicationId": 282,
+          "riskCategory": "Professional",
+          "riskLevel": "medium",
+          "score": 4.9,
+          "factors": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "recommendation": "Performance-optimized design achieving superior throughput and reliability.",
+          "assessedBy": "Modern Assessed By 15",
+          "assessedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "AiAnalyse",
+      "routeKey": "ai-analyses",
+      "label": "Ai Analyse",
+      "icon": "users",
+      "aiFunction": "analyzeAiAnalyse",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Ai Analyse data. The data includes: Application Id, Borrower Id, Property Id, Analysis Type, Input Data, Result, Confidence, Model Used, Processing Time Ms, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "applicationId",
+          "label": "Application Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "borrowerId",
+          "label": "Borrower Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "propertyId",
+          "label": "Property Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "analysisType",
+          "label": "Analysis Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "inputData",
+          "label": "Input Data",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "result",
+          "label": "Result",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "confidence",
+          "label": "Confidence",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "modelUsed",
+          "label": "Model Used",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "processingTimeMs",
+          "label": "Processing Time Ms",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "applicationId": 10,
+          "borrowerId": 10,
+          "propertyId": 10,
+          "analysisType": "Category A",
+          "inputData": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "result": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "confidence": 10,
+          "modelUsed": "Advanced Model Used 1",
+          "processingTimeMs": 10,
+          "status": "active"
+        },
+        {
+          "applicationId": 58,
+          "borrowerId": 58,
+          "propertyId": 58,
+          "analysisType": "Category B",
+          "inputData": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "result": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "confidence": 71.7,
+          "modelUsed": "Premium Model Used 2",
+          "processingTimeMs": 58,
+          "status": "pending"
+        },
+        {
+          "applicationId": 106,
+          "borrowerId": 106,
+          "propertyId": 106,
+          "analysisType": "Category C",
+          "inputData": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "result": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "confidence": 33.4,
+          "modelUsed": "Standard Model Used 3",
+          "processingTimeMs": 106,
+          "status": "in_progress"
+        },
+        {
+          "applicationId": 154,
+          "borrowerId": 154,
+          "propertyId": 154,
+          "analysisType": "Category D",
+          "inputData": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "result": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "confidence": 95.1,
+          "modelUsed": "Elite Model Used 4",
+          "processingTimeMs": 154,
+          "status": "completed"
+        },
+        {
+          "applicationId": 102,
+          "borrowerId": 102,
+          "propertyId": 102,
+          "analysisType": "Category E",
+          "inputData": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "result": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "confidence": 56.8,
+          "modelUsed": "Core Model Used 5",
+          "processingTimeMs": 102,
+          "status": "under_review"
+        },
+        {
+          "applicationId": 150,
+          "borrowerId": 150,
+          "propertyId": 150,
+          "analysisType": "Premium Tier",
+          "inputData": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "result": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "confidence": 118.5,
+          "modelUsed": "Pro Model Used 6",
+          "processingTimeMs": 150,
+          "status": "approved"
+        },
+        {
+          "applicationId": 198,
+          "borrowerId": 198,
+          "propertyId": 198,
+          "analysisType": "Standard Tier",
+          "inputData": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "result": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "confidence": 80.2,
+          "modelUsed": "Essential Model Used 7",
+          "processingTimeMs": 198,
+          "status": "active"
+        },
+        {
+          "applicationId": 146,
+          "borrowerId": 146,
+          "propertyId": 146,
+          "analysisType": "Basic Tier",
+          "inputData": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "result": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "confidence": 141.9,
+          "modelUsed": "Primary Model Used 8",
+          "processingTimeMs": 146,
+          "status": "active"
+        },
+        {
+          "applicationId": 194,
+          "borrowerId": 194,
+          "propertyId": 194,
+          "analysisType": "Enterprise",
+          "inputData": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "result": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "confidence": 103.6,
+          "modelUsed": "Global Model Used 9",
+          "processingTimeMs": 194,
+          "status": "active"
+        },
+        {
+          "applicationId": 242,
+          "borrowerId": 242,
+          "propertyId": 242,
+          "analysisType": "Starter",
+          "inputData": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "result": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "confidence": 165.3,
+          "modelUsed": "Regional Model Used 10",
+          "processingTimeMs": 242,
+          "status": "pending"
+        },
+        {
+          "applicationId": 190,
+          "borrowerId": 190,
+          "propertyId": 190,
+          "analysisType": "Growth",
+          "inputData": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "result": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "confidence": 127,
+          "modelUsed": "Custom Model Used 11",
+          "processingTimeMs": 190,
+          "status": "completed"
+        },
+        {
+          "applicationId": 238,
+          "borrowerId": 238,
+          "propertyId": 238,
+          "analysisType": "Scale",
+          "inputData": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "result": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "confidence": 188.7,
+          "modelUsed": "Smart Model Used 12",
+          "processingTimeMs": 238,
+          "status": "active"
+        },
+        {
+          "applicationId": 286,
+          "borrowerId": 286,
+          "propertyId": 286,
+          "analysisType": "Foundation",
+          "inputData": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "result": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "confidence": 150.4,
+          "modelUsed": "Rapid Model Used 13",
+          "processingTimeMs": 286,
+          "status": "in_progress"
+        },
+        {
+          "applicationId": 234,
+          "borrowerId": 234,
+          "propertyId": 234,
+          "analysisType": "Advanced",
+          "inputData": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "result": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "confidence": 212.1,
+          "modelUsed": "Secure Model Used 14",
+          "processingTimeMs": 234,
+          "status": "active"
+        },
+        {
+          "applicationId": 282,
+          "borrowerId": 282,
+          "propertyId": 282,
+          "analysisType": "Professional",
+          "inputData": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "result": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "confidence": 173.8,
+          "modelUsed": "Modern Model Used 15",
+          "processingTimeMs": 282,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "AuditLog",
+      "routeKey": "audit-logs",
+      "label": "Audit Log",
+      "icon": "zap",
+      "aiFunction": "analyzeAuditLog",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Audit Log data. The data includes: User Id, Action, Entity Type, Entity Id, Old Values, New Values, Ip Address, User Agent. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "oldValues",
+          "label": "Old Values",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "newValues",
+          "label": "New Values",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "ipAddress",
+          "label": "Ip Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userAgent",
+          "label": "User Agent",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "action": "Advanced Action 1",
+          "entityType": "Category A",
+          "entityId": 10,
+          "oldValues": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "newValues": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "ipAddress": "New York",
+          "userAgent": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "userId": 58,
+          "action": "Premium Action 2",
+          "entityType": "Category B",
+          "entityId": 58,
+          "oldValues": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "newValues": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "ipAddress": "Los Angeles",
+          "userAgent": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "userId": 106,
+          "action": "Standard Action 3",
+          "entityType": "Category C",
+          "entityId": 106,
+          "oldValues": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "newValues": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "ipAddress": "Chicago",
+          "userAgent": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "userId": 154,
+          "action": "Elite Action 4",
+          "entityType": "Category D",
+          "entityId": 154,
+          "oldValues": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "newValues": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "ipAddress": "Houston",
+          "userAgent": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "userId": 102,
+          "action": "Core Action 5",
+          "entityType": "Category E",
+          "entityId": 102,
+          "oldValues": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "newValues": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "ipAddress": "Phoenix",
+          "userAgent": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "userId": 150,
+          "action": "Pro Action 6",
+          "entityType": "Premium Tier",
+          "entityId": 150,
+          "oldValues": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "newValues": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "ipAddress": "San Francisco",
+          "userAgent": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "userId": 198,
+          "action": "Essential Action 7",
+          "entityType": "Standard Tier",
+          "entityId": 198,
+          "oldValues": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "newValues": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "ipAddress": "Seattle",
+          "userAgent": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "userId": 146,
+          "action": "Primary Action 8",
+          "entityType": "Basic Tier",
+          "entityId": 146,
+          "oldValues": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "newValues": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "ipAddress": "Boston",
+          "userAgent": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "userId": 194,
+          "action": "Global Action 9",
+          "entityType": "Enterprise",
+          "entityId": 194,
+          "oldValues": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "newValues": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "ipAddress": "Denver",
+          "userAgent": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "userId": 242,
+          "action": "Regional Action 10",
+          "entityType": "Starter",
+          "entityId": 242,
+          "oldValues": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "newValues": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "ipAddress": "Miami",
+          "userAgent": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "userId": 190,
+          "action": "Custom Action 11",
+          "entityType": "Growth",
+          "entityId": 190,
+          "oldValues": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "newValues": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "ipAddress": "Austin",
+          "userAgent": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "userId": 238,
+          "action": "Smart Action 12",
+          "entityType": "Scale",
+          "entityId": 238,
+          "oldValues": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "newValues": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "ipAddress": "Portland",
+          "userAgent": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "userId": 286,
+          "action": "Rapid Action 13",
+          "entityType": "Foundation",
+          "entityId": 286,
+          "oldValues": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "newValues": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "ipAddress": "Dallas",
+          "userAgent": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "userId": 234,
+          "action": "Secure Action 14",
+          "entityType": "Advanced",
+          "entityId": 234,
+          "oldValues": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "newValues": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "ipAddress": "Atlanta",
+          "userAgent": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "userId": 282,
+          "action": "Modern Action 15",
+          "entityType": "Professional",
+          "entityId": 282,
+          "oldValues": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "newValues": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "ipAddress": "Nashville",
+          "userAgent": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Notification",
+      "routeKey": "notifications",
+      "label": "Notification",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeNotification",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Notification data. The data includes: User Id, Title, Message, Type, Is Read, Link. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isRead",
+          "label": "Is Read",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "link",
+          "label": "Link",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "title": "Advanced Title 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "type": "Category A",
+          "isRead": true,
+          "link": "https://example.com/link/1"
+        },
+        {
+          "userId": 58,
+          "title": "Premium Title 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "type": "Category B",
+          "isRead": true,
+          "link": "https://example.com/link/2"
+        },
+        {
+          "userId": 106,
+          "title": "Standard Title 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "type": "Category C",
+          "isRead": false,
+          "link": "https://example.com/link/3"
+        },
+        {
+          "userId": 154,
+          "title": "Elite Title 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "type": "Category D",
+          "isRead": true,
+          "link": "https://example.com/link/4"
+        },
+        {
+          "userId": 102,
+          "title": "Core Title 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "type": "Category E",
+          "isRead": false,
+          "link": "https://example.com/link/5"
+        },
+        {
+          "userId": 150,
+          "title": "Pro Title 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "type": "Premium Tier",
+          "isRead": true,
+          "link": "https://example.com/link/6"
+        },
+        {
+          "userId": 198,
+          "title": "Essential Title 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "type": "Standard Tier",
+          "isRead": true,
+          "link": "https://example.com/link/7"
+        },
+        {
+          "userId": 146,
+          "title": "Primary Title 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "type": "Basic Tier",
+          "isRead": false,
+          "link": "https://example.com/link/8"
+        },
+        {
+          "userId": 194,
+          "title": "Global Title 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "type": "Enterprise",
+          "isRead": true,
+          "link": "https://example.com/link/9"
+        },
+        {
+          "userId": 242,
+          "title": "Regional Title 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "type": "Starter",
+          "isRead": true,
+          "link": "https://example.com/link/10"
+        },
+        {
+          "userId": 190,
+          "title": "Custom Title 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "type": "Growth",
+          "isRead": false,
+          "link": "https://example.com/link/11"
+        },
+        {
+          "userId": 238,
+          "title": "Smart Title 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "type": "Scale",
+          "isRead": true,
+          "link": "https://example.com/link/12"
+        },
+        {
+          "userId": 286,
+          "title": "Rapid Title 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "type": "Foundation",
+          "isRead": false,
+          "link": "https://example.com/link/13"
+        },
+        {
+          "userId": 234,
+          "title": "Secure Title 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "type": "Advanced",
+          "isRead": true,
+          "link": "https://example.com/link/14"
+        },
+        {
+          "userId": 282,
+          "title": "Modern Title 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "type": "Professional",
+          "isRead": true,
+          "link": "https://example.com/link/15"
+        }
+      ]
+    },
+    {
+      "modelName": "UnderwritingRule",
+      "routeKey": "underwriting-rules",
+      "label": "Underwriting Rule",
+      "icon": "bell",
+      "aiFunction": "analyzeUnderwritingRule",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Underwriting Rule data. The data includes: Name, Category, Condition Field, Operator, Threshold Value, Action, Severity, Is Active, Description. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "conditionField",
+          "label": "Condition Field",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "operator",
+          "label": "Operator",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "thresholdValue",
+          "label": "Threshold Value",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "conditionField": "Advanced Condition Field 1",
+          "operator": "Advanced Operator 1",
+          "thresholdValue": "Advanced Threshold Value 1",
+          "action": "Advanced Action 1",
+          "severity": "low",
+          "isActive": true,
+          "description": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "conditionField": "Premium Condition Field 2",
+          "operator": "Premium Operator 2",
+          "thresholdValue": "Premium Threshold Value 2",
+          "action": "Premium Action 2",
+          "severity": "medium",
+          "isActive": true,
+          "description": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "conditionField": "Standard Condition Field 3",
+          "operator": "Standard Operator 3",
+          "thresholdValue": "Standard Threshold Value 3",
+          "action": "Standard Action 3",
+          "severity": "high",
+          "isActive": false,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "conditionField": "Elite Condition Field 4",
+          "operator": "Elite Operator 4",
+          "thresholdValue": "Elite Threshold Value 4",
+          "action": "Elite Action 4",
+          "severity": "critical",
+          "isActive": true,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "conditionField": "Core Condition Field 5",
+          "operator": "Core Operator 5",
+          "thresholdValue": "Core Threshold Value 5",
+          "action": "Core Action 5",
+          "severity": "medium",
+          "isActive": false,
+          "description": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "conditionField": "Pro Condition Field 6",
+          "operator": "Pro Operator 6",
+          "thresholdValue": "Pro Threshold Value 6",
+          "action": "Pro Action 6",
+          "severity": "low",
+          "isActive": true,
+          "description": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "conditionField": "Essential Condition Field 7",
+          "operator": "Essential Operator 7",
+          "thresholdValue": "Essential Threshold Value 7",
+          "action": "Essential Action 7",
+          "severity": "medium",
+          "isActive": true,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "conditionField": "Primary Condition Field 8",
+          "operator": "Primary Operator 8",
+          "thresholdValue": "Primary Threshold Value 8",
+          "action": "Primary Action 8",
+          "severity": "high",
+          "isActive": false,
+          "description": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "conditionField": "Global Condition Field 9",
+          "operator": "Global Operator 9",
+          "thresholdValue": "Global Threshold Value 9",
+          "action": "Global Action 9",
+          "severity": "critical",
+          "isActive": true,
+          "description": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "conditionField": "Regional Condition Field 10",
+          "operator": "Regional Operator 10",
+          "thresholdValue": "Regional Threshold Value 10",
+          "action": "Regional Action 10",
+          "severity": "medium",
+          "isActive": true,
+          "description": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "conditionField": "Custom Condition Field 11",
+          "operator": "Custom Operator 11",
+          "thresholdValue": "Custom Threshold Value 11",
+          "action": "Custom Action 11",
+          "severity": "low",
+          "isActive": false,
+          "description": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "conditionField": "Smart Condition Field 12",
+          "operator": "Smart Operator 12",
+          "thresholdValue": "Smart Threshold Value 12",
+          "action": "Smart Action 12",
+          "severity": "medium",
+          "isActive": true,
+          "description": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "conditionField": "Rapid Condition Field 13",
+          "operator": "Rapid Operator 13",
+          "thresholdValue": "Rapid Threshold Value 13",
+          "action": "Rapid Action 13",
+          "severity": "high",
+          "isActive": false,
+          "description": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "conditionField": "Secure Condition Field 14",
+          "operator": "Secure Operator 14",
+          "thresholdValue": "Secure Threshold Value 14",
+          "action": "Secure Action 14",
+          "severity": "critical",
+          "isActive": true,
+          "description": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "conditionField": "Modern Condition Field 15",
+          "operator": "Modern Operator 15",
+          "thresholdValue": "Modern Threshold Value 15",
+          "action": "Modern Action 15",
+          "severity": "medium",
+          "isActive": true,
+          "description": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PipelineStage",
+      "routeKey": "pipeline-stages",
+      "label": "Pipeline Stage",
+      "icon": "book",
+      "aiFunction": "analyzePipelineStage",
+      "aiPrompt": "You are an AI analyst for A I Mortgage Underwriting Assistant. Analyze the provided Pipeline Stage data. The data includes: Name, Display Order, Color, Description, Avg Days, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "displayOrder",
+          "label": "Display Order",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "color",
+          "label": "Color",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "avgDays",
+          "label": "Avg Days",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "displayOrder": 10,
+          "color": "Advanced Color 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "avgDays": 10,
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "displayOrder": 58,
+          "color": "Premium Color 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "avgDays": 58,
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "displayOrder": 106,
+          "color": "Standard Color 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "avgDays": 106,
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "displayOrder": 154,
+          "color": "Elite Color 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "avgDays": 154,
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "displayOrder": 102,
+          "color": "Core Color 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "avgDays": 102,
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "displayOrder": 150,
+          "color": "Pro Color 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "avgDays": 150,
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "displayOrder": 198,
+          "color": "Essential Color 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "avgDays": 198,
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "displayOrder": 146,
+          "color": "Primary Color 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "avgDays": 146,
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "displayOrder": 194,
+          "color": "Global Color 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "avgDays": 194,
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "displayOrder": 242,
+          "color": "Regional Color 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "avgDays": 242,
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "displayOrder": 190,
+          "color": "Custom Color 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "avgDays": 190,
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "displayOrder": 238,
+          "color": "Smart Color 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "avgDays": 238,
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "displayOrder": 286,
+          "color": "Rapid Color 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "avgDays": 286,
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "displayOrder": 234,
+          "color": "Secure Color 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "avgDays": 234,
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "displayOrder": 282,
+          "color": "Modern Color 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "avgDays": 282,
+          "isActive": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1465 @@
+{
+  "appName": "A I Election Integrity Monitor",
+  "dbName": "a_i_election_integrity_monitor",
+  "folderName": "generated/AIElectionIntegrityMonitor",
+  "features": [
+    {
+      "modelName": "BallotCount",
+      "routeKey": "ballot-counts",
+      "label": "Ballot Count",
+      "icon": "activity",
+      "aiFunction": "analyzeBallotCount",
+      "aiPrompt": "You are an AI analyst for A I Election Integrity Monitor. Analyze the provided Ballot Count data. The data includes: Precinct, County, State, Election Date, Total Ballots Cast, Registered Voters, Machine Count, Hand Count, Discrepancy, Status, Notes, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "precinct",
+          "label": "Precinct",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "county",
+          "label": "County",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "electionDate",
+          "label": "Election Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "totalBallotsCast",
+          "label": "Total Ballots Cast",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "flagged",
+            "under_review"
+          ]
+        },
+        {
+          "key": "registeredVoters",
+          "label": "Registered Voters",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "flagged",
+            "under_review"
+          ]
+        },
+        {
+          "key": "machineCount",
+          "label": "Machine Count",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "flagged",
+            "under_review"
+          ]
+        },
+        {
+          "key": "handCount",
+          "label": "Hand Count",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "flagged",
+            "under_review"
+          ]
+        },
+        {
+          "key": "discrepancy",
+          "label": "Discrepancy",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "flagged",
+            "under_review"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "flagged",
+            "under_review"
+          ]
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "precinct": "Advanced Precinct 1",
+          "county": "Advanced County 1",
+          "state": "Advanced State 1",
+          "electionDate": "2024-01-01",
+          "totalBallotsCast": 10,
+          "registeredVoters": 10,
+          "machineCount": 110,
+          "handCount": 157,
+          "discrepancy": 10,
+          "status": "verified",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "precinct": "Premium Precinct 2",
+          "county": "Premium County 2",
+          "state": "Premium State 2",
+          "electionDate": "2024-02-03",
+          "totalBallotsCast": 58,
+          "registeredVoters": 58,
+          "machineCount": 157,
+          "handCount": 148,
+          "discrepancy": 58,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "precinct": "Standard Precinct 3",
+          "county": "Standard County 3",
+          "state": "Standard State 3",
+          "electionDate": "2024-03-05",
+          "totalBallotsCast": 106,
+          "registeredVoters": 106,
+          "machineCount": 23,
+          "handCount": 134,
+          "discrepancy": 106,
+          "status": "flagged",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "precinct": "Elite Precinct 4",
+          "county": "Elite County 4",
+          "state": "Elite State 4",
+          "electionDate": "2024-04-07",
+          "totalBallotsCast": 154,
+          "registeredVoters": 154,
+          "machineCount": 166,
+          "handCount": 57,
+          "discrepancy": 154,
+          "status": "under_review",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "precinct": "Core Precinct 5",
+          "county": "Core County 5",
+          "state": "Core State 5",
+          "electionDate": "2024-05-09",
+          "totalBallotsCast": 102,
+          "registeredVoters": 102,
+          "machineCount": 179,
+          "handCount": 215,
+          "discrepancy": 102,
+          "status": "verified",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "precinct": "Pro Precinct 6",
+          "county": "Pro County 6",
+          "state": "Pro State 6",
+          "electionDate": "2024-06-11",
+          "totalBallotsCast": 150,
+          "registeredVoters": 150,
+          "machineCount": 162,
+          "handCount": 218,
+          "discrepancy": 150,
+          "status": "pending",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "precinct": "Essential Precinct 7",
+          "county": "Essential County 7",
+          "state": "Essential State 7",
+          "electionDate": "2024-07-13",
+          "totalBallotsCast": 198,
+          "registeredVoters": 198,
+          "machineCount": 105,
+          "handCount": 77,
+          "discrepancy": 198,
+          "status": "flagged",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "precinct": "Primary Precinct 8",
+          "county": "Primary County 8",
+          "state": "Primary State 8",
+          "electionDate": "2024-08-15",
+          "totalBallotsCast": 146,
+          "registeredVoters": 146,
+          "machineCount": 130,
+          "handCount": 144,
+          "discrepancy": 146,
+          "status": "under_review",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "precinct": "Global Precinct 9",
+          "county": "Global County 9",
+          "state": "Global State 9",
+          "electionDate": "2024-09-17",
+          "totalBallotsCast": 194,
+          "registeredVoters": 194,
+          "machineCount": 93,
+          "handCount": 132,
+          "discrepancy": 194,
+          "status": "verified",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "precinct": "Regional Precinct 10",
+          "county": "Regional County 10",
+          "state": "Regional State 10",
+          "electionDate": "2024-10-19",
+          "totalBallotsCast": 242,
+          "registeredVoters": 242,
+          "machineCount": 192,
+          "handCount": 69,
+          "discrepancy": 242,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "precinct": "Custom Precinct 11",
+          "county": "Custom County 11",
+          "state": "Custom State 11",
+          "electionDate": "2024-11-21",
+          "totalBallotsCast": 190,
+          "registeredVoters": 190,
+          "machineCount": 140,
+          "handCount": 92,
+          "discrepancy": 190,
+          "status": "flagged",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "precinct": "Smart Precinct 12",
+          "county": "Smart County 12",
+          "state": "Smart State 12",
+          "electionDate": "2024-12-23",
+          "totalBallotsCast": 238,
+          "registeredVoters": 238,
+          "machineCount": 160,
+          "handCount": 251,
+          "discrepancy": 238,
+          "status": "under_review",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "precinct": "Rapid Precinct 13",
+          "county": "Rapid County 13",
+          "state": "Rapid State 13",
+          "electionDate": "2024-01-25",
+          "totalBallotsCast": 286,
+          "registeredVoters": 286,
+          "machineCount": 141,
+          "handCount": 176,
+          "discrepancy": 286,
+          "status": "verified",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "precinct": "Secure Precinct 14",
+          "county": "Secure County 14",
+          "state": "Secure State 14",
+          "electionDate": "2024-02-27",
+          "totalBallotsCast": 234,
+          "registeredVoters": 234,
+          "machineCount": 143,
+          "handCount": 114,
+          "discrepancy": 234,
+          "status": "pending",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "precinct": "Modern Precinct 15",
+          "county": "Modern County 15",
+          "state": "Modern State 15",
+          "electionDate": "2024-03-01",
+          "totalBallotsCast": 282,
+          "registeredVoters": 282,
+          "machineCount": 215,
+          "handCount": 133,
+          "discrepancy": 282,
+          "status": "flagged",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "CampaignFinance",
+      "routeKey": "campaign-finances",
+      "label": "Campaign Finance",
+      "icon": "briefcase",
+      "aiFunction": "analyzeCampaignFinance",
+      "aiPrompt": "You are an AI analyst for A I Election Integrity Monitor. Analyze the provided Campaign Finance data. The data includes: Candidate Name, Party, Office, State, Total Contributions, Total Expenditures, Individual Donations, Pac Contributions, Foreign Flagged Donations, Largest Single Donation, Reporting Period, Compliance Status, Notes, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "candidateName",
+          "label": "Candidate Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "party",
+          "label": "Party",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "office",
+          "label": "Office",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalContributions",
+          "label": "Total Contributions",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalExpenditures",
+          "label": "Total Expenditures",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "individualDonations",
+          "label": "Individual Donations",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "pacContributions",
+          "label": "Pac Contributions",
+          "type": "DECIMAL",
+          "formType": "select",
+          "options": [
+            "compliant",
+            "minor_violations",
+            "major_violations",
+            "under_audit",
+            "flagged"
+          ]
+        },
+        {
+          "key": "foreignFlaggedDonations",
+          "label": "Foreign Flagged Donations",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "compliant",
+            "minor_violations",
+            "major_violations",
+            "under_audit",
+            "flagged"
+          ]
+        },
+        {
+          "key": "largestSingleDonation",
+          "label": "Largest Single Donation",
+          "type": "DECIMAL",
+          "formType": "select",
+          "options": [
+            "compliant",
+            "minor_violations",
+            "major_violations",
+            "under_audit",
+            "flagged"
+          ]
+        },
+        {
+          "key": "reportingPeriod",
+          "label": "Reporting Period",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "compliant",
+            "minor_violations",
+            "major_violations",
+            "under_audit",
+            "flagged"
+          ]
+        },
+        {
+          "key": "complianceStatus",
+          "label": "Compliance Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "compliant",
+            "minor_violations",
+            "major_violations",
+            "under_audit",
+            "flagged"
+          ]
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "candidateName": "Advanced Candidate 1",
+          "party": "Advanced Party 1",
+          "office": "Advanced Office 1",
+          "state": "Advanced State 1",
+          "totalContributions": 10,
+          "totalExpenditures": 10,
+          "individualDonations": 10,
+          "pacContributions": 10,
+          "foreignFlaggedDonations": 10,
+          "largestSingleDonation": 10,
+          "reportingPeriod": "compliant",
+          "complianceStatus": "compliant",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "candidateName": "Premium Candidate 2",
+          "party": "Premium Party 2",
+          "office": "Premium Office 2",
+          "state": "Premium State 2",
+          "totalContributions": 71.7,
+          "totalExpenditures": 71.7,
+          "individualDonations": 58,
+          "pacContributions": 71.7,
+          "foreignFlaggedDonations": 58,
+          "largestSingleDonation": 71.7,
+          "reportingPeriod": "minor_violations",
+          "complianceStatus": "minor_violations",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "candidateName": "Standard Candidate 3",
+          "party": "Standard Party 3",
+          "office": "Standard Office 3",
+          "state": "Standard State 3",
+          "totalContributions": 33.4,
+          "totalExpenditures": 33.4,
+          "individualDonations": 106,
+          "pacContributions": 33.4,
+          "foreignFlaggedDonations": 106,
+          "largestSingleDonation": 33.4,
+          "reportingPeriod": "major_violations",
+          "complianceStatus": "major_violations",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "candidateName": "Elite Candidate 4",
+          "party": "Elite Party 4",
+          "office": "Elite Office 4",
+          "state": "Elite State 4",
+          "totalContributions": 95.1,
+          "totalExpenditures": 95.1,
+          "individualDonations": 154,
+          "pacContributions": 95.1,
+          "foreignFlaggedDonations": 154,
+          "largestSingleDonation": 95.1,
+          "reportingPeriod": "under_audit",
+          "complianceStatus": "under_audit",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "candidateName": "Core Candidate 5",
+          "party": "Core Party 5",
+          "office": "Core Office 5",
+          "state": "Core State 5",
+          "totalContributions": 56.8,
+          "totalExpenditures": 56.8,
+          "individualDonations": 102,
+          "pacContributions": 56.8,
+          "foreignFlaggedDonations": 102,
+          "largestSingleDonation": 56.8,
+          "reportingPeriod": "flagged",
+          "complianceStatus": "flagged",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "candidateName": "Pro Candidate 6",
+          "party": "Pro Party 6",
+          "office": "Pro Office 6",
+          "state": "Pro State 6",
+          "totalContributions": 118.5,
+          "totalExpenditures": 118.5,
+          "individualDonations": 150,
+          "pacContributions": 118.5,
+          "foreignFlaggedDonations": 150,
+          "largestSingleDonation": 118.5,
+          "reportingPeriod": "compliant",
+          "complianceStatus": "compliant",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "candidateName": "Essential Candidate 7",
+          "party": "Essential Party 7",
+          "office": "Essential Office 7",
+          "state": "Essential State 7",
+          "totalContributions": 80.2,
+          "totalExpenditures": 80.2,
+          "individualDonations": 198,
+          "pacContributions": 80.2,
+          "foreignFlaggedDonations": 198,
+          "largestSingleDonation": 80.2,
+          "reportingPeriod": "minor_violations",
+          "complianceStatus": "minor_violations",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "candidateName": "Primary Candidate 8",
+          "party": "Primary Party 8",
+          "office": "Primary Office 8",
+          "state": "Primary State 8",
+          "totalContributions": 141.9,
+          "totalExpenditures": 141.9,
+          "individualDonations": 146,
+          "pacContributions": 141.9,
+          "foreignFlaggedDonations": 146,
+          "largestSingleDonation": 141.9,
+          "reportingPeriod": "major_violations",
+          "complianceStatus": "major_violations",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "candidateName": "Global Candidate 9",
+          "party": "Global Party 9",
+          "office": "Global Office 9",
+          "state": "Global State 9",
+          "totalContributions": 103.6,
+          "totalExpenditures": 103.6,
+          "individualDonations": 194,
+          "pacContributions": 103.6,
+          "foreignFlaggedDonations": 194,
+          "largestSingleDonation": 103.6,
+          "reportingPeriod": "under_audit",
+          "complianceStatus": "under_audit",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "candidateName": "Regional Candidate 10",
+          "party": "Regional Party 10",
+          "office": "Regional Office 10",
+          "state": "Regional State 10",
+          "totalContributions": 165.3,
+          "totalExpenditures": 165.3,
+          "individualDonations": 242,
+          "pacContributions": 165.3,
+          "foreignFlaggedDonations": 242,
+          "largestSingleDonation": 165.3,
+          "reportingPeriod": "flagged",
+          "complianceStatus": "flagged",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "candidateName": "Custom Candidate 11",
+          "party": "Custom Party 11",
+          "office": "Custom Office 11",
+          "state": "Custom State 11",
+          "totalContributions": 127,
+          "totalExpenditures": 127,
+          "individualDonations": 190,
+          "pacContributions": 127,
+          "foreignFlaggedDonations": 190,
+          "largestSingleDonation": 127,
+          "reportingPeriod": "compliant",
+          "complianceStatus": "compliant",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "candidateName": "Smart Candidate 12",
+          "party": "Smart Party 12",
+          "office": "Smart Office 12",
+          "state": "Smart State 12",
+          "totalContributions": 188.7,
+          "totalExpenditures": 188.7,
+          "individualDonations": 238,
+          "pacContributions": 188.7,
+          "foreignFlaggedDonations": 238,
+          "largestSingleDonation": 188.7,
+          "reportingPeriod": "minor_violations",
+          "complianceStatus": "minor_violations",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "candidateName": "Rapid Candidate 13",
+          "party": "Rapid Party 13",
+          "office": "Rapid Office 13",
+          "state": "Rapid State 13",
+          "totalContributions": 150.4,
+          "totalExpenditures": 150.4,
+          "individualDonations": 286,
+          "pacContributions": 150.4,
+          "foreignFlaggedDonations": 286,
+          "largestSingleDonation": 150.4,
+          "reportingPeriod": "major_violations",
+          "complianceStatus": "major_violations",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "candidateName": "Secure Candidate 14",
+          "party": "Secure Party 14",
+          "office": "Secure Office 14",
+          "state": "Secure State 14",
+          "totalContributions": 212.1,
+          "totalExpenditures": 212.1,
+          "individualDonations": 234,
+          "pacContributions": 212.1,
+          "foreignFlaggedDonations": 234,
+          "largestSingleDonation": 212.1,
+          "reportingPeriod": "under_audit",
+          "complianceStatus": "under_audit",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "candidateName": "Modern Candidate 15",
+          "party": "Modern Party 15",
+          "office": "Modern Office 15",
+          "state": "Modern State 15",
+          "totalContributions": 173.8,
+          "totalExpenditures": 173.8,
+          "individualDonations": 282,
+          "pacContributions": 173.8,
+          "foreignFlaggedDonations": 282,
+          "largestSingleDonation": 173.8,
+          "reportingPeriod": "flagged",
+          "complianceStatus": "flagged",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "Redistricting",
+      "routeKey": "redistrictings",
+      "label": "Redistricting",
+      "icon": "clipboard",
+      "aiFunction": "analyzeRedistricting",
+      "aiPrompt": "You are an AI analyst for A I Election Integrity Monitor. Analyze the provided Redistricting data. The data includes: District Name, State, Proposed By, Population, Minority Population Pct, Compactness Score, Contiguity Check, Competitiveness Index, Previous District Id, Proposal Date, Status, Fairness Score, Notes, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "districtName",
+          "label": "District Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "proposedBy",
+          "label": "Proposed By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "population",
+          "label": "Population",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "minorityPopulationPct",
+          "label": "Minority Population Pct",
+          "type": "FLOAT",
+          "formType": "select",
+          "options": [
+            "proposed",
+            "under_review",
+            "approved",
+            "rejected",
+            "flagged"
+          ]
+        },
+        {
+          "key": "compactnessScore",
+          "label": "Compactness Score",
+          "type": "FLOAT",
+          "formType": "select",
+          "options": [
+            "proposed",
+            "under_review",
+            "approved",
+            "rejected",
+            "flagged"
+          ]
+        },
+        {
+          "key": "contiguityCheck",
+          "label": "Contiguity Check",
+          "type": "BOOLEAN",
+          "formType": "select",
+          "options": [
+            "proposed",
+            "under_review",
+            "approved",
+            "rejected",
+            "flagged"
+          ]
+        },
+        {
+          "key": "competitivenessIndex",
+          "label": "Competitiveness Index",
+          "type": "FLOAT",
+          "formType": "select",
+          "options": [
+            "proposed",
+            "under_review",
+            "approved",
+            "rejected",
+            "flagged"
+          ]
+        },
+        {
+          "key": "previousDistrictId",
+          "label": "Previous District Id",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "proposed",
+            "under_review",
+            "approved",
+            "rejected",
+            "flagged"
+          ]
+        },
+        {
+          "key": "proposalDate",
+          "label": "Proposal Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "proposed",
+            "under_review",
+            "approved",
+            "rejected",
+            "flagged"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "proposed",
+            "under_review",
+            "approved",
+            "rejected",
+            "flagged"
+          ]
+        },
+        {
+          "key": "fairnessScore",
+          "label": "Fairness Score",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "districtName": "Advanced District 1",
+          "state": "Advanced State 1",
+          "proposedBy": "Advanced Proposed By 1",
+          "population": 10,
+          "minorityPopulationPct": 25,
+          "compactnessScore": 1.5,
+          "contiguityCheck": true,
+          "competitivenessIndex": 10,
+          "previousDistrictId": "proposed",
+          "proposalDate": "2024-01-01",
+          "status": "proposed",
+          "fairnessScore": 1.5,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "districtName": "Premium District 2",
+          "state": "Premium State 2",
+          "proposedBy": "Premium Proposed By 2",
+          "population": 58,
+          "minorityPopulationPct": 26.5,
+          "compactnessScore": 2.1,
+          "contiguityCheck": true,
+          "competitivenessIndex": 71.7,
+          "previousDistrictId": "under_review",
+          "proposalDate": "2024-02-03",
+          "status": "under_review",
+          "fairnessScore": 2.1,
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "districtName": "Standard District 3",
+          "state": "Standard State 3",
+          "proposedBy": "Standard Proposed By 3",
+          "population": 106,
+          "minorityPopulationPct": 28,
+          "compactnessScore": 2.7,
+          "contiguityCheck": false,
+          "competitivenessIndex": 33.4,
+          "previousDistrictId": "approved",
+          "proposalDate": "2024-03-05",
+          "status": "approved",
+          "fairnessScore": 2.7,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "districtName": "Elite District 4",
+          "state": "Elite State 4",
+          "proposedBy": "Elite Proposed By 4",
+          "population": 154,
+          "minorityPopulationPct": 29.5,
+          "compactnessScore": 3.3,
+          "contiguityCheck": true,
+          "competitivenessIndex": 95.1,
+          "previousDistrictId": "rejected",
+          "proposalDate": "2024-04-07",
+          "status": "rejected",
+          "fairnessScore": 3.3,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "districtName": "Core District 5",
+          "state": "Core State 5",
+          "proposedBy": "Core Proposed By 5",
+          "population": 102,
+          "minorityPopulationPct": 31,
+          "compactnessScore": 3.9,
+          "contiguityCheck": false,
+          "competitivenessIndex": 56.8,
+          "previousDistrictId": "flagged",
+          "proposalDate": "2024-05-09",
+          "status": "flagged",
+          "fairnessScore": 3.9,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "districtName": "Pro District 6",
+          "state": "Pro State 6",
+          "proposedBy": "Pro Proposed By 6",
+          "population": 150,
+          "minorityPopulationPct": 32.5,
+          "compactnessScore": 4.5,
+          "contiguityCheck": true,
+          "competitivenessIndex": 118.5,
+          "previousDistrictId": "proposed",
+          "proposalDate": "2024-06-11",
+          "status": "proposed",
+          "fairnessScore": 4.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "districtName": "Essential District 7",
+          "state": "Essential State 7",
+          "proposedBy": "Essential Proposed By 7",
+          "population": 198,
+          "minorityPopulationPct": 34,
+          "compactnessScore": 5.1,
+          "contiguityCheck": true,
+          "competitivenessIndex": 80.2,
+          "previousDistrictId": "under_review",
+          "proposalDate": "2024-07-13",
+          "status": "under_review",
+          "fairnessScore": 5.1,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "districtName": "Primary District 8",
+          "state": "Primary State 8",
+          "proposedBy": "Primary Proposed By 8",
+          "population": 146,
+          "minorityPopulationPct": 35.5,
+          "compactnessScore": 5.7,
+          "contiguityCheck": false,
+          "competitivenessIndex": 141.9,
+          "previousDistrictId": "approved",
+          "proposalDate": "2024-08-15",
+          "status": "approved",
+          "fairnessScore": 5.7,
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "districtName": "Global District 9",
+          "state": "Global State 9",
+          "proposedBy": "Global Proposed By 9",
+          "population": 194,
+          "minorityPopulationPct": 37,
+          "compactnessScore": 6.3,
+          "contiguityCheck": true,
+          "competitivenessIndex": 103.6,
+          "previousDistrictId": "rejected",
+          "proposalDate": "2024-09-17",
+          "status": "rejected",
+          "fairnessScore": 6.3,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "districtName": "Regional District 10",
+          "state": "Regional State 10",
+          "proposedBy": "Regional Proposed By 10",
+          "population": 242,
+          "minorityPopulationPct": 38.5,
+          "compactnessScore": 1.9,
+          "contiguityCheck": true,
+          "competitivenessIndex": 165.3,
+          "previousDistrictId": "flagged",
+          "proposalDate": "2024-10-19",
+          "status": "flagged",
+          "fairnessScore": 1.9,
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "districtName": "Custom District 11",
+          "state": "Custom State 11",
+          "proposedBy": "Custom Proposed By 11",
+          "population": 190,
+          "minorityPopulationPct": 40,
+          "compactnessScore": 2.5,
+          "contiguityCheck": false,
+          "competitivenessIndex": 127,
+          "previousDistrictId": "proposed",
+          "proposalDate": "2024-11-21",
+          "status": "proposed",
+          "fairnessScore": 2.5,
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "districtName": "Smart District 12",
+          "state": "Smart State 12",
+          "proposedBy": "Smart Proposed By 12",
+          "population": 238,
+          "minorityPopulationPct": 41.5,
+          "compactnessScore": 3.1,
+          "contiguityCheck": true,
+          "competitivenessIndex": 188.7,
+          "previousDistrictId": "under_review",
+          "proposalDate": "2024-12-23",
+          "status": "under_review",
+          "fairnessScore": 3.1,
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "districtName": "Rapid District 13",
+          "state": "Rapid State 13",
+          "proposedBy": "Rapid Proposed By 13",
+          "population": 286,
+          "minorityPopulationPct": 43,
+          "compactnessScore": 3.7,
+          "contiguityCheck": false,
+          "competitivenessIndex": 150.4,
+          "previousDistrictId": "approved",
+          "proposalDate": "2024-01-25",
+          "status": "approved",
+          "fairnessScore": 3.7,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "districtName": "Secure District 14",
+          "state": "Secure State 14",
+          "proposedBy": "Secure Proposed By 14",
+          "population": 234,
+          "minorityPopulationPct": 44.5,
+          "compactnessScore": 4.3,
+          "contiguityCheck": true,
+          "competitivenessIndex": 212.1,
+          "previousDistrictId": "rejected",
+          "proposalDate": "2024-02-27",
+          "status": "rejected",
+          "fairnessScore": 4.3,
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "districtName": "Modern District 15",
+          "state": "Modern State 15",
+          "proposedBy": "Modern Proposed By 15",
+          "population": 282,
+          "minorityPopulationPct": 46,
+          "compactnessScore": 4.9,
+          "contiguityCheck": true,
+          "competitivenessIndex": 173.8,
+          "previousDistrictId": "flagged",
+          "proposalDate": "2024-03-01",
+          "status": "flagged",
+          "fairnessScore": 4.9,
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "VoterRegistration",
+      "routeKey": "voter-registrations",
+      "label": "Voter Registration",
+      "icon": "database",
+      "aiFunction": "analyzeVoterRegistration",
+      "aiPrompt": "You are an AI analyst for A I Election Integrity Monitor. Analyze the provided Voter Registration data. The data includes: County, State, Registration Type, Total Registrations, Flagged Records, Duplicate Records, Deceased Matches, Address Mismatches, Report Date, Anomaly Score, Status, Notes, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "county",
+          "label": "County",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "new",
+            "update",
+            "transfer",
+            "purge",
+            "reinstatement"
+          ]
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "new",
+            "update",
+            "transfer",
+            "purge",
+            "reinstatement"
+          ]
+        },
+        {
+          "key": "registrationType",
+          "label": "Registration Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "new",
+            "update",
+            "transfer",
+            "purge",
+            "reinstatement"
+          ]
+        },
+        {
+          "key": "totalRegistrations",
+          "label": "Total Registrations",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "flaggedRecords",
+          "label": "Flagged Records",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "duplicateRecords",
+          "label": "Duplicate Records",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "clean",
+            "anomaly_detected",
+            "under_investigation",
+            "resolved"
+          ]
+        },
+        {
+          "key": "deceasedMatches",
+          "label": "Deceased Matches",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "clean",
+            "anomaly_detected",
+            "under_investigation",
+            "resolved"
+          ]
+        },
+        {
+          "key": "addressMismatches",
+          "label": "Address Mismatches",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "clean",
+            "anomaly_detected",
+            "under_investigation",
+            "resolved"
+          ]
+        },
+        {
+          "key": "reportDate",
+          "label": "Report Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "clean",
+            "anomaly_detected",
+            "under_investigation",
+            "resolved"
+          ]
+        },
+        {
+          "key": "anomalyScore",
+          "label": "Anomaly Score",
+          "type": "FLOAT",
+          "formType": "select",
+          "options": [
+            "clean",
+            "anomaly_detected",
+            "under_investigation",
+            "resolved"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "clean",
+            "anomaly_detected",
+            "under_investigation",
+            "resolved"
+          ]
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "county": "new",
+          "state": "new",
+          "registrationType": "new",
+          "totalRegistrations": 10,
+          "flaggedRecords": 10,
+          "duplicateRecords": 10,
+          "deceasedMatches": 10,
+          "addressMismatches": 10,
+          "reportDate": "2024-01-01",
+          "anomalyScore": 1.5,
+          "status": "clean",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "county": "update",
+          "state": "update",
+          "registrationType": "update",
+          "totalRegistrations": 58,
+          "flaggedRecords": 58,
+          "duplicateRecords": 58,
+          "deceasedMatches": 58,
+          "addressMismatches": 58,
+          "reportDate": "2024-02-03",
+          "anomalyScore": 2.1,
+          "status": "anomaly_detected",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "county": "transfer",
+          "state": "transfer",
+          "registrationType": "transfer",
+          "totalRegistrations": 106,
+          "flaggedRecords": 106,
+          "duplicateRecords": 106,
+          "deceasedMatches": 106,
+          "addressMismatches": 106,
+          "reportDate": "2024-03-05",
+          "anomalyScore": 2.7,
+          "status": "under_investigation",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "county": "purge",
+          "state": "purge",
+          "registrationType": "purge",
+          "totalRegistrations": 154,
+          "flaggedRecords": 154,
+          "duplicateRecords": 154,
+          "deceasedMatches": 154,
+          "addressMismatches": 154,
+          "reportDate": "2024-04-07",
+          "anomalyScore": 3.3,
+          "status": "resolved",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "county": "reinstatement",
+          "state": "reinstatement",
+          "registrationType": "reinstatement",
+          "totalRegistrations": 102,
+          "flaggedRecords": 102,
+          "duplicateRecords": 102,
+          "deceasedMatches": 102,
+          "addressMismatches": 102,
+          "reportDate": "2024-05-09",
+          "anomalyScore": 3.9,
+          "status": "clean",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "county": "new",
+          "state": "new",
+          "registrationType": "new",
+          "totalRegistrations": 150,
+          "flaggedRecords": 150,
+          "duplicateRecords": 150,
+          "deceasedMatches": 150,
+          "addressMismatches": 150,
+          "reportDate": "2024-06-11",
+          "anomalyScore": 4.5,
+          "status": "anomaly_detected",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "county": "update",
+          "state": "update",
+          "registrationType": "update",
+          "totalRegistrations": 198,
+          "flaggedRecords": 198,
+          "duplicateRecords": 198,
+          "deceasedMatches": 198,
+          "addressMismatches": 198,
+          "reportDate": "2024-07-13",
+          "anomalyScore": 5.1,
+          "status": "under_investigation",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "county": "transfer",
+          "state": "transfer",
+          "registrationType": "transfer",
+          "totalRegistrations": 146,
+          "flaggedRecords": 146,
+          "duplicateRecords": 146,
+          "deceasedMatches": 146,
+          "addressMismatches": 146,
+          "reportDate": "2024-08-15",
+          "anomalyScore": 5.7,
+          "status": "resolved",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "county": "purge",
+          "state": "purge",
+          "registrationType": "purge",
+          "totalRegistrations": 194,
+          "flaggedRecords": 194,
+          "duplicateRecords": 194,
+          "deceasedMatches": 194,
+          "addressMismatches": 194,
+          "reportDate": "2024-09-17",
+          "anomalyScore": 6.3,
+          "status": "clean",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "county": "reinstatement",
+          "state": "reinstatement",
+          "registrationType": "reinstatement",
+          "totalRegistrations": 242,
+          "flaggedRecords": 242,
+          "duplicateRecords": 242,
+          "deceasedMatches": 242,
+          "addressMismatches": 242,
+          "reportDate": "2024-10-19",
+          "anomalyScore": 1.9,
+          "status": "anomaly_detected",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "county": "new",
+          "state": "new",
+          "registrationType": "new",
+          "totalRegistrations": 190,
+          "flaggedRecords": 190,
+          "duplicateRecords": 190,
+          "deceasedMatches": 190,
+          "addressMismatches": 190,
+          "reportDate": "2024-11-21",
+          "anomalyScore": 2.5,
+          "status": "under_investigation",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "county": "update",
+          "state": "update",
+          "registrationType": "update",
+          "totalRegistrations": 238,
+          "flaggedRecords": 238,
+          "duplicateRecords": 238,
+          "deceasedMatches": 238,
+          "addressMismatches": 238,
+          "reportDate": "2024-12-23",
+          "anomalyScore": 3.1,
+          "status": "resolved",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "county": "transfer",
+          "state": "transfer",
+          "registrationType": "transfer",
+          "totalRegistrations": 286,
+          "flaggedRecords": 286,
+          "duplicateRecords": 286,
+          "deceasedMatches": 286,
+          "addressMismatches": 286,
+          "reportDate": "2024-01-25",
+          "anomalyScore": 3.7,
+          "status": "clean",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "county": "purge",
+          "state": "purge",
+          "registrationType": "purge",
+          "totalRegistrations": 234,
+          "flaggedRecords": 234,
+          "duplicateRecords": 234,
+          "deceasedMatches": 234,
+          "addressMismatches": 234,
+          "reportDate": "2024-02-27",
+          "anomalyScore": 4.3,
+          "status": "anomaly_detected",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "county": "reinstatement",
+          "state": "reinstatement",
+          "registrationType": "reinstatement",
+          "totalRegistrations": 282,
+          "flaggedRecords": 282,
+          "duplicateRecords": 282,
+          "deceasedMatches": 282,
+          "addressMismatches": 282,
+          "reportDate": "2024-03-01",
+          "anomalyScore": 4.9,
+          "status": "under_investigation",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    }
+  ]
+}

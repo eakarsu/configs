@@ -1,0 +1,574 @@
+{
+  "appName": "AI Workforce Scheduling & Recruiting (Part 2)",
+  "dbName": "a_i_workforce_scheduling_part2",
+  "folderName": "generated/AIWorkforceSchedulingPart2",
+  "features": [
+    {
+      "modelName": "ScreeningQuestion",
+      "routeKey": "screening-questions",
+      "label": "Screening Question",
+      "icon": "clipboard",
+      "aiFunction": "analyzeScreeningQuestion",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Screening Question data. The data includes: Question, Type, Options, Required, Ai Generated, Weight, Order, Job Posting Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "question",
+          "label": "Question",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "options",
+          "label": "Options",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "required",
+          "label": "Required",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "aiGenerated",
+          "label": "Ai Generated",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "order",
+          "label": "Order",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "jobPostingId",
+          "label": "Job Posting Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "question": "Advanced Question 1",
+          "type": "Category A",
+          "options": "Advanced Options 1",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 10,
+          "order": 10,
+          "jobPostingId": "Advanced Job Posting Id 1"
+        },
+        {
+          "question": "Premium Question 2",
+          "type": "Category B",
+          "options": "Premium Options 2",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 58,
+          "order": 58,
+          "jobPostingId": "Premium Job Posting Id 2"
+        },
+        {
+          "question": "Standard Question 3",
+          "type": "Category C",
+          "options": "Standard Options 3",
+          "required": false,
+          "aiGenerated": false,
+          "weight": 106,
+          "order": 106,
+          "jobPostingId": "Standard Job Posting Id 3"
+        },
+        {
+          "question": "Elite Question 4",
+          "type": "Category D",
+          "options": "Elite Options 4",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 154,
+          "order": 154,
+          "jobPostingId": "Elite Job Posting Id 4"
+        },
+        {
+          "question": "Core Question 5",
+          "type": "Category E",
+          "options": "Core Options 5",
+          "required": false,
+          "aiGenerated": false,
+          "weight": 102,
+          "order": 102,
+          "jobPostingId": "Core Job Posting Id 5"
+        },
+        {
+          "question": "Pro Question 6",
+          "type": "Premium Tier",
+          "options": "Pro Options 6",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 150,
+          "order": 150,
+          "jobPostingId": "Pro Job Posting Id 6"
+        },
+        {
+          "question": "Essential Question 7",
+          "type": "Standard Tier",
+          "options": "Essential Options 7",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 198,
+          "order": 198,
+          "jobPostingId": "Essential Job Posting Id 7"
+        },
+        {
+          "question": "Primary Question 8",
+          "type": "Basic Tier",
+          "options": "Primary Options 8",
+          "required": false,
+          "aiGenerated": false,
+          "weight": 146,
+          "order": 146,
+          "jobPostingId": "Primary Job Posting Id 8"
+        },
+        {
+          "question": "Global Question 9",
+          "type": "Enterprise",
+          "options": "Global Options 9",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 194,
+          "order": 194,
+          "jobPostingId": "Global Job Posting Id 9"
+        },
+        {
+          "question": "Regional Question 10",
+          "type": "Starter",
+          "options": "Regional Options 10",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 242,
+          "order": 242,
+          "jobPostingId": "Regional Job Posting Id 10"
+        },
+        {
+          "question": "Custom Question 11",
+          "type": "Growth",
+          "options": "Custom Options 11",
+          "required": false,
+          "aiGenerated": false,
+          "weight": 190,
+          "order": 190,
+          "jobPostingId": "Custom Job Posting Id 11"
+        },
+        {
+          "question": "Smart Question 12",
+          "type": "Scale",
+          "options": "Smart Options 12",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 238,
+          "order": 238,
+          "jobPostingId": "Smart Job Posting Id 12"
+        },
+        {
+          "question": "Rapid Question 13",
+          "type": "Foundation",
+          "options": "Rapid Options 13",
+          "required": false,
+          "aiGenerated": false,
+          "weight": 286,
+          "order": 286,
+          "jobPostingId": "Rapid Job Posting Id 13"
+        },
+        {
+          "question": "Secure Question 14",
+          "type": "Advanced",
+          "options": "Secure Options 14",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 234,
+          "order": 234,
+          "jobPostingId": "Secure Job Posting Id 14"
+        },
+        {
+          "question": "Modern Question 15",
+          "type": "Professional",
+          "options": "Modern Options 15",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 282,
+          "order": 282,
+          "jobPostingId": "Modern Job Posting Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "PipelineStage",
+      "routeKey": "pipeline-stages",
+      "label": "Pipeline Stage",
+      "icon": "shield",
+      "aiFunction": "analyzePipelineStage",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Pipeline Stage data. The data includes: Name, Description, Color, Order, Is Default. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "color",
+          "label": "Color",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "order",
+          "label": "Order",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "isDefault",
+          "label": "Is Default",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Advanced Description 1",
+          "color": "Advanced Color 1",
+          "order": 10,
+          "isDefault": true
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Premium Description 2",
+          "color": "Premium Color 2",
+          "order": 58,
+          "isDefault": true
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Standard Description 3",
+          "color": "Standard Color 3",
+          "order": 106,
+          "isDefault": false
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Elite Description 4",
+          "color": "Elite Color 4",
+          "order": 154,
+          "isDefault": true
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Core Description 5",
+          "color": "Core Color 5",
+          "order": 102,
+          "isDefault": false
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "Pro Description 6",
+          "color": "Pro Color 6",
+          "order": 150,
+          "isDefault": true
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Essential Description 7",
+          "color": "Essential Color 7",
+          "order": 198,
+          "isDefault": true
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Primary Description 8",
+          "color": "Primary Color 8",
+          "order": 146,
+          "isDefault": false
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Global Description 9",
+          "color": "Global Color 9",
+          "order": 194,
+          "isDefault": true
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Regional Description 10",
+          "color": "Regional Color 10",
+          "order": 242,
+          "isDefault": true
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Custom Description 11",
+          "color": "Custom Color 11",
+          "order": 190,
+          "isDefault": false
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Smart Description 12",
+          "color": "Smart Color 12",
+          "order": 238,
+          "isDefault": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Rapid Description 13",
+          "color": "Rapid Color 13",
+          "order": 286,
+          "isDefault": false
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Secure Description 14",
+          "color": "Secure Color 14",
+          "order": 234,
+          "isDefault": true
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Modern Description 15",
+          "color": "Modern Color 15",
+          "order": 282,
+          "isDefault": true
+        }
+      ]
+    },
+    {
+      "modelName": "SentimentAnalysis",
+      "routeKey": "sentiment-analysis",
+      "label": "Sentiment Analysis",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeSentimentAnalysis",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Sentiment Analysis data. The data includes: Employee Id, Source, Content, Sentiment Score, Emotions, Themes, Ai Analysis, Action Items. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "employeeId",
+          "label": "Employee Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sentimentScore",
+          "label": "Sentiment Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "emotions",
+          "label": "Emotions",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "themes",
+          "label": "Themes",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "actionItems",
+          "label": "Action Items",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "employeeId": "Advanced Employee Id 1",
+          "source": "Advanced Source 1",
+          "content": "Advanced Content 1",
+          "sentimentScore": 10,
+          "emotions": "Advanced Emotions 1",
+          "themes": "Advanced Themes 1",
+          "aiAnalysis": "Advanced Ai Analysis 1",
+          "actionItems": "Advanced Action Items 1"
+        },
+        {
+          "employeeId": "Premium Employee Id 2",
+          "source": "Premium Source 2",
+          "content": "Premium Content 2",
+          "sentimentScore": 58,
+          "emotions": "Premium Emotions 2",
+          "themes": "Premium Themes 2",
+          "aiAnalysis": "Premium Ai Analysis 2",
+          "actionItems": "Premium Action Items 2"
+        },
+        {
+          "employeeId": "Standard Employee Id 3",
+          "source": "Standard Source 3",
+          "content": "Standard Content 3",
+          "sentimentScore": 106,
+          "emotions": "Standard Emotions 3",
+          "themes": "Standard Themes 3",
+          "aiAnalysis": "Standard Ai Analysis 3",
+          "actionItems": "Standard Action Items 3"
+        },
+        {
+          "employeeId": "Elite Employee Id 4",
+          "source": "Elite Source 4",
+          "content": "Elite Content 4",
+          "sentimentScore": 154,
+          "emotions": "Elite Emotions 4",
+          "themes": "Elite Themes 4",
+          "aiAnalysis": "Elite Ai Analysis 4",
+          "actionItems": "Elite Action Items 4"
+        },
+        {
+          "employeeId": "Core Employee Id 5",
+          "source": "Core Source 5",
+          "content": "Core Content 5",
+          "sentimentScore": 102,
+          "emotions": "Core Emotions 5",
+          "themes": "Core Themes 5",
+          "aiAnalysis": "Core Ai Analysis 5",
+          "actionItems": "Core Action Items 5"
+        },
+        {
+          "employeeId": "Pro Employee Id 6",
+          "source": "Pro Source 6",
+          "content": "Pro Content 6",
+          "sentimentScore": 150,
+          "emotions": "Pro Emotions 6",
+          "themes": "Pro Themes 6",
+          "aiAnalysis": "Pro Ai Analysis 6",
+          "actionItems": "Pro Action Items 6"
+        },
+        {
+          "employeeId": "Essential Employee Id 7",
+          "source": "Essential Source 7",
+          "content": "Essential Content 7",
+          "sentimentScore": 198,
+          "emotions": "Essential Emotions 7",
+          "themes": "Essential Themes 7",
+          "aiAnalysis": "Essential Ai Analysis 7",
+          "actionItems": "Essential Action Items 7"
+        },
+        {
+          "employeeId": "Primary Employee Id 8",
+          "source": "Primary Source 8",
+          "content": "Primary Content 8",
+          "sentimentScore": 146,
+          "emotions": "Primary Emotions 8",
+          "themes": "Primary Themes 8",
+          "aiAnalysis": "Primary Ai Analysis 8",
+          "actionItems": "Primary Action Items 8"
+        },
+        {
+          "employeeId": "Global Employee Id 9",
+          "source": "Global Source 9",
+          "content": "Global Content 9",
+          "sentimentScore": 194,
+          "emotions": "Global Emotions 9",
+          "themes": "Global Themes 9",
+          "aiAnalysis": "Global Ai Analysis 9",
+          "actionItems": "Global Action Items 9"
+        },
+        {
+          "employeeId": "Regional Employee Id 10",
+          "source": "Regional Source 10",
+          "content": "Regional Content 10",
+          "sentimentScore": 242,
+          "emotions": "Regional Emotions 10",
+          "themes": "Regional Themes 10",
+          "aiAnalysis": "Regional Ai Analysis 10",
+          "actionItems": "Regional Action Items 10"
+        },
+        {
+          "employeeId": "Custom Employee Id 11",
+          "source": "Custom Source 11",
+          "content": "Custom Content 11",
+          "sentimentScore": 190,
+          "emotions": "Custom Emotions 11",
+          "themes": "Custom Themes 11",
+          "aiAnalysis": "Custom Ai Analysis 11",
+          "actionItems": "Custom Action Items 11"
+        },
+        {
+          "employeeId": "Smart Employee Id 12",
+          "source": "Smart Source 12",
+          "content": "Smart Content 12",
+          "sentimentScore": 238,
+          "emotions": "Smart Emotions 12",
+          "themes": "Smart Themes 12",
+          "aiAnalysis": "Smart Ai Analysis 12",
+          "actionItems": "Smart Action Items 12"
+        },
+        {
+          "employeeId": "Rapid Employee Id 13",
+          "source": "Rapid Source 13",
+          "content": "Rapid Content 13",
+          "sentimentScore": 286,
+          "emotions": "Rapid Emotions 13",
+          "themes": "Rapid Themes 13",
+          "aiAnalysis": "Rapid Ai Analysis 13",
+          "actionItems": "Rapid Action Items 13"
+        },
+        {
+          "employeeId": "Secure Employee Id 14",
+          "source": "Secure Source 14",
+          "content": "Secure Content 14",
+          "sentimentScore": 234,
+          "emotions": "Secure Emotions 14",
+          "themes": "Secure Themes 14",
+          "aiAnalysis": "Secure Ai Analysis 14",
+          "actionItems": "Secure Action Items 14"
+        },
+        {
+          "employeeId": "Modern Employee Id 15",
+          "source": "Modern Source 15",
+          "content": "Modern Content 15",
+          "sentimentScore": 282,
+          "emotions": "Modern Emotions 15",
+          "themes": "Modern Themes 15",
+          "aiAnalysis": "Modern Ai Analysis 15",
+          "actionItems": "Modern Action Items 15"
+        }
+      ]
+    }
+  ]
+}

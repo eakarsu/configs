@@ -1,0 +1,847 @@
+{
+  "appName": "AI Multi Agent Orchestrator",
+  "dbName": "ai_multi_agent",
+  "folderName": "generated/multi_agents",
+  "features": [
+    {
+      "modelName": "Agent",
+      "label": "AI Agents",
+      "icon": "cpu",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "model",
+          "label": "AI Model",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "systemPrompt",
+          "label": "System Prompt",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isActive",
+          "label": "Active",
+          "type": "BOOLEAN",
+          "formType": "checkbox"
+        },
+        {
+          "key": "taskCount",
+          "label": "Tasks Completed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "avgLatency",
+          "label": "Avg Latency (ms)",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "routeKey": "agents",
+      "aiFunction": "analyzeAgent",
+      "aiPrompt": "You are an AI analyst for AI Multi Agent Orchestrator. Analyze the provided AI Agents data. The data includes: Name, Type, AI Model, System Prompt, Active, Tasks Completed, Avg Latency (ms). Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "type": "Alpha Type",
+          "model": "Alpha AI Model",
+          "systemPrompt": "Alpha system prompt — detailed content for enterprise use case.",
+          "isActive": true,
+          "taskCount": 526,
+          "avgLatency": 886.23
+        },
+        {
+          "name": "Beta Name",
+          "type": "Beta Type",
+          "model": "Beta AI Model",
+          "systemPrompt": "Beta system prompt — detailed content for startup use case.",
+          "isActive": false,
+          "taskCount": 963,
+          "avgLatency": 207.87
+        },
+        {
+          "name": "Gamma Name",
+          "type": "Gamma Type",
+          "model": "Gamma AI Model",
+          "systemPrompt": "Gamma system prompt — detailed content for smb use case.",
+          "isActive": true,
+          "taskCount": 687,
+          "avgLatency": 919.85
+        },
+        {
+          "name": "Delta Name",
+          "type": "Delta Type",
+          "model": "Delta AI Model",
+          "systemPrompt": "Delta system prompt — detailed content for agency use case.",
+          "isActive": false,
+          "taskCount": 635,
+          "avgLatency": 180.84
+        },
+        {
+          "name": "Epsilon Name",
+          "type": "Epsilon Type",
+          "model": "Epsilon AI Model",
+          "systemPrompt": "Epsilon system prompt — detailed content for freelancer use case.",
+          "isActive": true,
+          "taskCount": 485,
+          "avgLatency": 89.26
+        },
+        {
+          "name": "Zeta Name",
+          "type": "Zeta Type",
+          "model": "Zeta AI Model",
+          "systemPrompt": "Zeta system prompt — detailed content for government use case.",
+          "isActive": false,
+          "taskCount": 823,
+          "avgLatency": 646.96
+        },
+        {
+          "name": "Eta Name",
+          "type": "Eta Type",
+          "model": "Eta AI Model",
+          "systemPrompt": "Eta system prompt — detailed content for nonprofit use case.",
+          "isActive": true,
+          "taskCount": 283,
+          "avgLatency": 588.99
+        },
+        {
+          "name": "Theta Name",
+          "type": "Theta Type",
+          "model": "Theta AI Model",
+          "systemPrompt": "Theta system prompt — detailed content for healthcare use case.",
+          "isActive": false,
+          "taskCount": 3,
+          "avgLatency": 836.26
+        },
+        {
+          "name": "Iota Name",
+          "type": "Iota Type",
+          "model": "Iota AI Model",
+          "systemPrompt": "Iota system prompt — detailed content for finance use case.",
+          "isActive": true,
+          "taskCount": 541,
+          "avgLatency": 533.46
+        },
+        {
+          "name": "Kappa Name",
+          "type": "Kappa Type",
+          "model": "Kappa AI Model",
+          "systemPrompt": "Kappa system prompt — detailed content for education use case.",
+          "isActive": false,
+          "taskCount": 378,
+          "avgLatency": 591.53
+        },
+        {
+          "name": "Lambda Name",
+          "type": "Lambda Type",
+          "model": "Lambda AI Model",
+          "systemPrompt": "Lambda system prompt — detailed content for retail use case.",
+          "isActive": true,
+          "taskCount": 572,
+          "avgLatency": 345.35
+        },
+        {
+          "name": "Mu Name",
+          "type": "Mu Type",
+          "model": "Mu AI Model",
+          "systemPrompt": "Mu system prompt — detailed content for tech use case.",
+          "isActive": false,
+          "taskCount": 729,
+          "avgLatency": 878.86
+        },
+        {
+          "name": "Nu Name",
+          "type": "Nu Type",
+          "model": "Nu AI Model",
+          "systemPrompt": "Nu system prompt — detailed content for legal use case.",
+          "isActive": true,
+          "taskCount": 991,
+          "avgLatency": 294.36
+        },
+        {
+          "name": "Xi Name",
+          "type": "Xi Type",
+          "model": "Xi AI Model",
+          "systemPrompt": "Xi system prompt — detailed content for real estate use case.",
+          "isActive": false,
+          "taskCount": 349,
+          "avgLatency": 198.77
+        },
+        {
+          "name": "Omicron Name",
+          "type": "Omicron Type",
+          "model": "Omicron AI Model",
+          "systemPrompt": "Omicron system prompt — detailed content for manufacturing use case.",
+          "isActive": true,
+          "taskCount": 440,
+          "avgLatency": 589.2
+        }
+      ]
+    },
+    {
+      "modelName": "AgentTask",
+      "label": "Agent Tasks",
+      "icon": "check-square",
+      "fields": [
+        {
+          "key": "agentName",
+          "label": "Agent",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "taskType",
+          "label": "Task Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "input",
+          "label": "Input",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "output",
+          "label": "Output",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "executionTime",
+          "label": "Exec Time (ms)",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "createdDate",
+          "label": "Created Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "agentTasks",
+      "aiFunction": "analyzeAgentTask",
+      "aiPrompt": "You are an AI analyst for AI Multi Agent Orchestrator. Analyze the provided Agent Tasks data. The data includes: Agent, Task Type, Input, Output, Status, Exec Time (ms), Created Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "agentName": "Alpha Agent",
+          "taskType": "Alpha Task Type",
+          "input": "Alpha input — detailed content for enterprise use case.",
+          "output": "Alpha output — detailed content for enterprise use case.",
+          "status": "Active",
+          "executionTime": 454,
+          "createdDate": "2026-05-14"
+        },
+        {
+          "agentName": "Beta Agent",
+          "taskType": "Beta Task Type",
+          "input": "Beta input — detailed content for startup use case.",
+          "output": "Beta output — detailed content for startup use case.",
+          "status": "Pending",
+          "executionTime": 844,
+          "createdDate": "2026-10-17"
+        },
+        {
+          "agentName": "Gamma Agent",
+          "taskType": "Gamma Task Type",
+          "input": "Gamma input — detailed content for smb use case.",
+          "output": "Gamma output — detailed content for smb use case.",
+          "status": "Review",
+          "executionTime": 840,
+          "createdDate": "2026-11-21"
+        },
+        {
+          "agentName": "Delta Agent",
+          "taskType": "Delta Task Type",
+          "input": "Delta input — detailed content for agency use case.",
+          "output": "Delta output — detailed content for agency use case.",
+          "status": "Approved",
+          "executionTime": 693,
+          "createdDate": "2026-05-12"
+        },
+        {
+          "agentName": "Epsilon Agent",
+          "taskType": "Epsilon Task Type",
+          "input": "Epsilon input — detailed content for freelancer use case.",
+          "output": "Epsilon output — detailed content for freelancer use case.",
+          "status": "Draft",
+          "executionTime": 133,
+          "createdDate": "2026-08-05"
+        },
+        {
+          "agentName": "Zeta Agent",
+          "taskType": "Zeta Task Type",
+          "input": "Zeta input — detailed content for government use case.",
+          "output": "Zeta output — detailed content for government use case.",
+          "status": "Live",
+          "executionTime": 907,
+          "createdDate": "2026-10-10"
+        },
+        {
+          "agentName": "Eta Agent",
+          "taskType": "Eta Task Type",
+          "input": "Eta input — detailed content for nonprofit use case.",
+          "output": "Eta output — detailed content for nonprofit use case.",
+          "status": "Paused",
+          "executionTime": 90,
+          "createdDate": "2026-09-17"
+        },
+        {
+          "agentName": "Theta Agent",
+          "taskType": "Theta Task Type",
+          "input": "Theta input — detailed content for healthcare use case.",
+          "output": "Theta output — detailed content for healthcare use case.",
+          "status": "Archived",
+          "executionTime": 665,
+          "createdDate": "2026-07-15"
+        },
+        {
+          "agentName": "Iota Agent",
+          "taskType": "Iota Task Type",
+          "input": "Iota input — detailed content for finance use case.",
+          "output": "Iota output — detailed content for finance use case.",
+          "status": "Beta",
+          "executionTime": 490,
+          "createdDate": "2026-08-04"
+        },
+        {
+          "agentName": "Kappa Agent",
+          "taskType": "Kappa Task Type",
+          "input": "Kappa input — detailed content for education use case.",
+          "output": "Kappa output — detailed content for education use case.",
+          "status": "GA",
+          "executionTime": 204,
+          "createdDate": "2026-06-16"
+        },
+        {
+          "agentName": "Lambda Agent",
+          "taskType": "Lambda Task Type",
+          "input": "Lambda input — detailed content for retail use case.",
+          "output": "Lambda output — detailed content for retail use case.",
+          "status": "Completed",
+          "executionTime": 960,
+          "createdDate": "2026-11-09"
+        },
+        {
+          "agentName": "Mu Agent",
+          "taskType": "Mu Task Type",
+          "input": "Mu input — detailed content for tech use case.",
+          "output": "Mu output — detailed content for tech use case.",
+          "status": "In Progress",
+          "executionTime": 784,
+          "createdDate": "2026-05-17"
+        },
+        {
+          "agentName": "Nu Agent",
+          "taskType": "Nu Task Type",
+          "input": "Nu input — detailed content for legal use case.",
+          "output": "Nu output — detailed content for legal use case.",
+          "status": "Scheduled",
+          "executionTime": 889,
+          "createdDate": "2026-04-28"
+        },
+        {
+          "agentName": "Xi Agent",
+          "taskType": "Xi Task Type",
+          "input": "Xi input — detailed content for real estate use case.",
+          "output": "Xi output — detailed content for real estate use case.",
+          "status": "Failed",
+          "executionTime": 910,
+          "createdDate": "2026-12-06"
+        },
+        {
+          "agentName": "Omicron Agent",
+          "taskType": "Omicron Task Type",
+          "input": "Omicron input — detailed content for manufacturing use case.",
+          "output": "Omicron output — detailed content for manufacturing use case.",
+          "status": "Cancelled",
+          "executionTime": 976,
+          "createdDate": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "modelName": "Orchestration",
+      "label": "Orchestrations",
+      "icon": "git-branch",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "agentCount",
+          "label": "Agent Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "strategy",
+          "label": "Strategy",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalTasks",
+          "label": "Total Tasks",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "successRate",
+          "label": "Success Rate %",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "routeKey": "orchestrations",
+      "aiFunction": "analyzeOrchestration",
+      "aiPrompt": "You are an AI analyst for AI Multi Agent Orchestrator. Analyze the provided Orchestrations data. The data includes: Name, Agent Count, Strategy, Status, Total Tasks, Success Rate %. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "agentCount": 155,
+          "strategy": "Alpha Strategy",
+          "status": "Active",
+          "totalTasks": 859,
+          "successRate": 585.12
+        },
+        {
+          "name": "Beta Name",
+          "agentCount": 232,
+          "strategy": "Beta Strategy",
+          "status": "Pending",
+          "totalTasks": 511,
+          "successRate": 242.82
+        },
+        {
+          "name": "Gamma Name",
+          "agentCount": 899,
+          "strategy": "Gamma Strategy",
+          "status": "Review",
+          "totalTasks": 579,
+          "successRate": 801.35
+        },
+        {
+          "name": "Delta Name",
+          "agentCount": 616,
+          "strategy": "Delta Strategy",
+          "status": "Approved",
+          "totalTasks": 940,
+          "successRate": 456.64
+        },
+        {
+          "name": "Epsilon Name",
+          "agentCount": 67,
+          "strategy": "Epsilon Strategy",
+          "status": "Draft",
+          "totalTasks": 81,
+          "successRate": 916.94
+        },
+        {
+          "name": "Zeta Name",
+          "agentCount": 944,
+          "strategy": "Zeta Strategy",
+          "status": "Live",
+          "totalTasks": 722,
+          "successRate": 924.45
+        },
+        {
+          "name": "Eta Name",
+          "agentCount": 481,
+          "strategy": "Eta Strategy",
+          "status": "Paused",
+          "totalTasks": 261,
+          "successRate": 509.59
+        },
+        {
+          "name": "Theta Name",
+          "agentCount": 531,
+          "strategy": "Theta Strategy",
+          "status": "Archived",
+          "totalTasks": 281,
+          "successRate": 421.14
+        },
+        {
+          "name": "Iota Name",
+          "agentCount": 713,
+          "strategy": "Iota Strategy",
+          "status": "Beta",
+          "totalTasks": 496,
+          "successRate": 834.21
+        },
+        {
+          "name": "Kappa Name",
+          "agentCount": 715,
+          "strategy": "Kappa Strategy",
+          "status": "GA",
+          "totalTasks": 589,
+          "successRate": 180.25
+        },
+        {
+          "name": "Lambda Name",
+          "agentCount": 844,
+          "strategy": "Lambda Strategy",
+          "status": "Completed",
+          "totalTasks": 105,
+          "successRate": 872.14
+        },
+        {
+          "name": "Mu Name",
+          "agentCount": 352,
+          "strategy": "Mu Strategy",
+          "status": "In Progress",
+          "totalTasks": 545,
+          "successRate": 346.1
+        },
+        {
+          "name": "Nu Name",
+          "agentCount": 796,
+          "strategy": "Nu Strategy",
+          "status": "Scheduled",
+          "totalTasks": 385,
+          "successRate": 558.64
+        },
+        {
+          "name": "Xi Name",
+          "agentCount": 257,
+          "strategy": "Xi Strategy",
+          "status": "Failed",
+          "totalTasks": 713,
+          "successRate": 905.94
+        },
+        {
+          "name": "Omicron Name",
+          "agentCount": 803,
+          "strategy": "Omicron Strategy",
+          "status": "Cancelled",
+          "totalTasks": 969,
+          "successRate": 913.64
+        }
+      ]
+    },
+    {
+      "modelName": "AgentMessage",
+      "label": "Agent Messages",
+      "icon": "message-circle",
+      "fields": [
+        {
+          "key": "fromAgent",
+          "label": "From Agent",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "toAgent",
+          "label": "To Agent",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "timestamp",
+          "label": "Timestamp",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "agentMessages",
+      "aiFunction": "analyzeAgentMessage",
+      "aiPrompt": "You are an AI analyst for AI Multi Agent Orchestrator. Analyze the provided Agent Messages data. The data includes: From Agent, To Agent, Content, Type, Timestamp. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "fromAgent": "Alpha From Agent",
+          "toAgent": "Alpha To Agent",
+          "content": "Alpha content — detailed content for enterprise use case.",
+          "type": "Alpha Type",
+          "timestamp": "2026-07-04"
+        },
+        {
+          "fromAgent": "Beta From Agent",
+          "toAgent": "Beta To Agent",
+          "content": "Beta content — detailed content for startup use case.",
+          "type": "Beta Type",
+          "timestamp": "2026-08-10"
+        },
+        {
+          "fromAgent": "Gamma From Agent",
+          "toAgent": "Gamma To Agent",
+          "content": "Gamma content — detailed content for smb use case.",
+          "type": "Gamma Type",
+          "timestamp": "2026-07-12"
+        },
+        {
+          "fromAgent": "Delta From Agent",
+          "toAgent": "Delta To Agent",
+          "content": "Delta content — detailed content for agency use case.",
+          "type": "Delta Type",
+          "timestamp": "2026-04-06"
+        },
+        {
+          "fromAgent": "Epsilon From Agent",
+          "toAgent": "Epsilon To Agent",
+          "content": "Epsilon content — detailed content for freelancer use case.",
+          "type": "Epsilon Type",
+          "timestamp": "2026-07-15"
+        },
+        {
+          "fromAgent": "Zeta From Agent",
+          "toAgent": "Zeta To Agent",
+          "content": "Zeta content — detailed content for government use case.",
+          "type": "Zeta Type",
+          "timestamp": "2026-08-13"
+        },
+        {
+          "fromAgent": "Eta From Agent",
+          "toAgent": "Eta To Agent",
+          "content": "Eta content — detailed content for nonprofit use case.",
+          "type": "Eta Type",
+          "timestamp": "2026-04-16"
+        },
+        {
+          "fromAgent": "Theta From Agent",
+          "toAgent": "Theta To Agent",
+          "content": "Theta content — detailed content for healthcare use case.",
+          "type": "Theta Type",
+          "timestamp": "2026-10-03"
+        },
+        {
+          "fromAgent": "Iota From Agent",
+          "toAgent": "Iota To Agent",
+          "content": "Iota content — detailed content for finance use case.",
+          "type": "Iota Type",
+          "timestamp": "2026-05-21"
+        },
+        {
+          "fromAgent": "Kappa From Agent",
+          "toAgent": "Kappa To Agent",
+          "content": "Kappa content — detailed content for education use case.",
+          "type": "Kappa Type",
+          "timestamp": "2026-06-18"
+        },
+        {
+          "fromAgent": "Lambda From Agent",
+          "toAgent": "Lambda To Agent",
+          "content": "Lambda content — detailed content for retail use case.",
+          "type": "Lambda Type",
+          "timestamp": "2026-07-03"
+        },
+        {
+          "fromAgent": "Mu From Agent",
+          "toAgent": "Mu To Agent",
+          "content": "Mu content — detailed content for tech use case.",
+          "type": "Mu Type",
+          "timestamp": "2026-03-24"
+        },
+        {
+          "fromAgent": "Nu From Agent",
+          "toAgent": "Nu To Agent",
+          "content": "Nu content — detailed content for legal use case.",
+          "type": "Nu Type",
+          "timestamp": "2026-04-22"
+        },
+        {
+          "fromAgent": "Xi From Agent",
+          "toAgent": "Xi To Agent",
+          "content": "Xi content — detailed content for real estate use case.",
+          "type": "Xi Type",
+          "timestamp": "2026-10-15"
+        },
+        {
+          "fromAgent": "Omicron From Agent",
+          "toAgent": "Omicron To Agent",
+          "content": "Omicron content — detailed content for manufacturing use case.",
+          "type": "Omicron Type",
+          "timestamp": "2026-01-21"
+        }
+      ]
+    },
+    {
+      "modelName": "ToolRegistry",
+      "label": "Tool Registry",
+      "icon": "tool",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "inputSchema",
+          "label": "Input Schema",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isEnabled",
+          "label": "Enabled",
+          "type": "BOOLEAN",
+          "formType": "checkbox"
+        },
+        {
+          "key": "usageCount",
+          "label": "Usage Count",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "routeKey": "toolRegistrys",
+      "aiFunction": "analyzeToolRegistry",
+      "aiPrompt": "You are an AI analyst for AI Multi Agent Orchestrator. Analyze the provided Tool Registry data. The data includes: Name, Description, Input Schema, Enabled, Usage Count. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "description": "Alpha description — detailed content for enterprise use case.",
+          "inputSchema": "Alpha input schema — detailed content for enterprise use case.",
+          "isEnabled": true,
+          "usageCount": 836
+        },
+        {
+          "name": "Beta Name",
+          "description": "Beta description — detailed content for startup use case.",
+          "inputSchema": "Beta input schema — detailed content for startup use case.",
+          "isEnabled": false,
+          "usageCount": 957
+        },
+        {
+          "name": "Gamma Name",
+          "description": "Gamma description — detailed content for smb use case.",
+          "inputSchema": "Gamma input schema — detailed content for smb use case.",
+          "isEnabled": true,
+          "usageCount": 310
+        },
+        {
+          "name": "Delta Name",
+          "description": "Delta description — detailed content for agency use case.",
+          "inputSchema": "Delta input schema — detailed content for agency use case.",
+          "isEnabled": false,
+          "usageCount": 15
+        },
+        {
+          "name": "Epsilon Name",
+          "description": "Epsilon description — detailed content for freelancer use case.",
+          "inputSchema": "Epsilon input schema — detailed content for freelancer use case.",
+          "isEnabled": true,
+          "usageCount": 419
+        },
+        {
+          "name": "Zeta Name",
+          "description": "Zeta description — detailed content for government use case.",
+          "inputSchema": "Zeta input schema — detailed content for government use case.",
+          "isEnabled": false,
+          "usageCount": 314
+        },
+        {
+          "name": "Eta Name",
+          "description": "Eta description — detailed content for nonprofit use case.",
+          "inputSchema": "Eta input schema — detailed content for nonprofit use case.",
+          "isEnabled": true,
+          "usageCount": 607
+        },
+        {
+          "name": "Theta Name",
+          "description": "Theta description — detailed content for healthcare use case.",
+          "inputSchema": "Theta input schema — detailed content for healthcare use case.",
+          "isEnabled": false,
+          "usageCount": 322
+        },
+        {
+          "name": "Iota Name",
+          "description": "Iota description — detailed content for finance use case.",
+          "inputSchema": "Iota input schema — detailed content for finance use case.",
+          "isEnabled": true,
+          "usageCount": 774
+        },
+        {
+          "name": "Kappa Name",
+          "description": "Kappa description — detailed content for education use case.",
+          "inputSchema": "Kappa input schema — detailed content for education use case.",
+          "isEnabled": false,
+          "usageCount": 578
+        },
+        {
+          "name": "Lambda Name",
+          "description": "Lambda description — detailed content for retail use case.",
+          "inputSchema": "Lambda input schema — detailed content for retail use case.",
+          "isEnabled": true,
+          "usageCount": 825
+        },
+        {
+          "name": "Mu Name",
+          "description": "Mu description — detailed content for tech use case.",
+          "inputSchema": "Mu input schema — detailed content for tech use case.",
+          "isEnabled": false,
+          "usageCount": 827
+        },
+        {
+          "name": "Nu Name",
+          "description": "Nu description — detailed content for legal use case.",
+          "inputSchema": "Nu input schema — detailed content for legal use case.",
+          "isEnabled": true,
+          "usageCount": 861
+        },
+        {
+          "name": "Xi Name",
+          "description": "Xi description — detailed content for real estate use case.",
+          "inputSchema": "Xi input schema — detailed content for real estate use case.",
+          "isEnabled": false,
+          "usageCount": 465
+        },
+        {
+          "name": "Omicron Name",
+          "description": "Omicron description — detailed content for manufacturing use case.",
+          "inputSchema": "Omicron input schema — detailed content for manufacturing use case.",
+          "isEnabled": true,
+          "usageCount": 855
+        }
+      ]
+    }
+  ]
+}

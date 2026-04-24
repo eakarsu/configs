@@ -1,0 +1,784 @@
+{
+  "appName": "AI PDF Genius",
+  "dbName": "ai_pdf_genius",
+  "folderName": "generated/pdfgenius",
+  "features": [
+    {
+      "modelName": "PdfFile",
+      "label": "PDF Files",
+      "icon": "file-text",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fileName",
+          "label": "File Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "pageCount",
+          "label": "Pages",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "fileSize",
+          "label": "File Size (KB)",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "uploadDate",
+          "label": "Upload Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "pdfFiles",
+      "aiFunction": "analyzePdfFile",
+      "aiPrompt": "You are an AI analyst for AI PDF Genius. Analyze the provided PDF Files data. The data includes: Title, File Name, Pages, File Size (KB), Status, Upload Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "title": "Alpha Title",
+          "fileName": "Alpha File Name",
+          "pageCount": 68,
+          "fileSize": 332,
+          "status": "Active",
+          "uploadDate": "2026-12-08"
+        },
+        {
+          "title": "Beta Title",
+          "fileName": "Beta File Name",
+          "pageCount": 482,
+          "fileSize": 561,
+          "status": "Pending",
+          "uploadDate": "2026-05-04"
+        },
+        {
+          "title": "Gamma Title",
+          "fileName": "Gamma File Name",
+          "pageCount": 685,
+          "fileSize": 37,
+          "status": "Review",
+          "uploadDate": "2026-07-06"
+        },
+        {
+          "title": "Delta Title",
+          "fileName": "Delta File Name",
+          "pageCount": 60,
+          "fileSize": 473,
+          "status": "Approved",
+          "uploadDate": "2026-01-16"
+        },
+        {
+          "title": "Epsilon Title",
+          "fileName": "Epsilon File Name",
+          "pageCount": 374,
+          "fileSize": 675,
+          "status": "Draft",
+          "uploadDate": "2026-12-23"
+        },
+        {
+          "title": "Zeta Title",
+          "fileName": "Zeta File Name",
+          "pageCount": 118,
+          "fileSize": 544,
+          "status": "Live",
+          "uploadDate": "2026-12-06"
+        },
+        {
+          "title": "Eta Title",
+          "fileName": "Eta File Name",
+          "pageCount": 573,
+          "fileSize": 627,
+          "status": "Paused",
+          "uploadDate": "2026-05-02"
+        },
+        {
+          "title": "Theta Title",
+          "fileName": "Theta File Name",
+          "pageCount": 803,
+          "fileSize": 795,
+          "status": "Archived",
+          "uploadDate": "2026-01-01"
+        },
+        {
+          "title": "Iota Title",
+          "fileName": "Iota File Name",
+          "pageCount": 926,
+          "fileSize": 181,
+          "status": "Beta",
+          "uploadDate": "2026-05-12"
+        },
+        {
+          "title": "Kappa Title",
+          "fileName": "Kappa File Name",
+          "pageCount": 472,
+          "fileSize": 618,
+          "status": "GA",
+          "uploadDate": "2026-01-10"
+        },
+        {
+          "title": "Lambda Title",
+          "fileName": "Lambda File Name",
+          "pageCount": 710,
+          "fileSize": 539,
+          "status": "Completed",
+          "uploadDate": "2026-08-20"
+        },
+        {
+          "title": "Mu Title",
+          "fileName": "Mu File Name",
+          "pageCount": 555,
+          "fileSize": 599,
+          "status": "In Progress",
+          "uploadDate": "2026-09-20"
+        },
+        {
+          "title": "Nu Title",
+          "fileName": "Nu File Name",
+          "pageCount": 482,
+          "fileSize": 950,
+          "status": "Scheduled",
+          "uploadDate": "2026-01-08"
+        },
+        {
+          "title": "Xi Title",
+          "fileName": "Xi File Name",
+          "pageCount": 764,
+          "fileSize": 192,
+          "status": "Failed",
+          "uploadDate": "2026-05-08"
+        },
+        {
+          "title": "Omicron Title",
+          "fileName": "Omicron File Name",
+          "pageCount": 85,
+          "fileSize": 537,
+          "status": "Cancelled",
+          "uploadDate": "2026-09-05"
+        }
+      ]
+    },
+    {
+      "modelName": "Annotation",
+      "label": "Annotations",
+      "icon": "edit",
+      "fields": [
+        {
+          "key": "documentTitle",
+          "label": "Document",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "page",
+          "label": "Page",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "author",
+          "label": "Author",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "createdDate",
+          "label": "Created Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "annotations",
+      "aiFunction": "analyzeAnnotation",
+      "aiPrompt": "You are an AI analyst for AI PDF Genius. Analyze the provided Annotations data. The data includes: Document, Type, Page, Content, Author, Created Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "documentTitle": "Alpha Document",
+          "type": "Alpha Type",
+          "page": 375,
+          "content": "Alpha content — detailed content for enterprise use case.",
+          "author": "Alpha Author",
+          "createdDate": "2026-07-03"
+        },
+        {
+          "documentTitle": "Beta Document",
+          "type": "Beta Type",
+          "page": 265,
+          "content": "Beta content — detailed content for startup use case.",
+          "author": "Beta Author",
+          "createdDate": "2026-06-03"
+        },
+        {
+          "documentTitle": "Gamma Document",
+          "type": "Gamma Type",
+          "page": 704,
+          "content": "Gamma content — detailed content for smb use case.",
+          "author": "Gamma Author",
+          "createdDate": "2026-06-13"
+        },
+        {
+          "documentTitle": "Delta Document",
+          "type": "Delta Type",
+          "page": 74,
+          "content": "Delta content — detailed content for agency use case.",
+          "author": "Delta Author",
+          "createdDate": "2026-07-23"
+        },
+        {
+          "documentTitle": "Epsilon Document",
+          "type": "Epsilon Type",
+          "page": 529,
+          "content": "Epsilon content — detailed content for freelancer use case.",
+          "author": "Epsilon Author",
+          "createdDate": "2026-11-14"
+        },
+        {
+          "documentTitle": "Zeta Document",
+          "type": "Zeta Type",
+          "page": 682,
+          "content": "Zeta content — detailed content for government use case.",
+          "author": "Zeta Author",
+          "createdDate": "2026-12-22"
+        },
+        {
+          "documentTitle": "Eta Document",
+          "type": "Eta Type",
+          "page": 365,
+          "content": "Eta content — detailed content for nonprofit use case.",
+          "author": "Eta Author",
+          "createdDate": "2026-09-27"
+        },
+        {
+          "documentTitle": "Theta Document",
+          "type": "Theta Type",
+          "page": 657,
+          "content": "Theta content — detailed content for healthcare use case.",
+          "author": "Theta Author",
+          "createdDate": "2026-12-24"
+        },
+        {
+          "documentTitle": "Iota Document",
+          "type": "Iota Type",
+          "page": 733,
+          "content": "Iota content — detailed content for finance use case.",
+          "author": "Iota Author",
+          "createdDate": "2026-07-10"
+        },
+        {
+          "documentTitle": "Kappa Document",
+          "type": "Kappa Type",
+          "page": 961,
+          "content": "Kappa content — detailed content for education use case.",
+          "author": "Kappa Author",
+          "createdDate": "2026-08-22"
+        },
+        {
+          "documentTitle": "Lambda Document",
+          "type": "Lambda Type",
+          "page": 586,
+          "content": "Lambda content — detailed content for retail use case.",
+          "author": "Lambda Author",
+          "createdDate": "2026-08-08"
+        },
+        {
+          "documentTitle": "Mu Document",
+          "type": "Mu Type",
+          "page": 391,
+          "content": "Mu content — detailed content for tech use case.",
+          "author": "Mu Author",
+          "createdDate": "2026-04-21"
+        },
+        {
+          "documentTitle": "Nu Document",
+          "type": "Nu Type",
+          "page": 352,
+          "content": "Nu content — detailed content for legal use case.",
+          "author": "Nu Author",
+          "createdDate": "2026-10-23"
+        },
+        {
+          "documentTitle": "Xi Document",
+          "type": "Xi Type",
+          "page": 477,
+          "content": "Xi content — detailed content for real estate use case.",
+          "author": "Xi Author",
+          "createdDate": "2026-02-07"
+        },
+        {
+          "documentTitle": "Omicron Document",
+          "type": "Omicron Type",
+          "page": 381,
+          "content": "Omicron content — detailed content for manufacturing use case.",
+          "author": "Omicron Author",
+          "createdDate": "2026-07-13"
+        }
+      ]
+    },
+    {
+      "modelName": "DocumentVersion",
+      "label": "Document Versions",
+      "icon": "git-commit",
+      "fields": [
+        {
+          "key": "documentTitle",
+          "label": "Document",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "version",
+          "label": "Version",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "changeDescription",
+          "label": "Changes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "author",
+          "label": "Author",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "createdDate",
+          "label": "Created Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "documentVersions",
+      "aiFunction": "analyzeDocumentVersion",
+      "aiPrompt": "You are an AI analyst for AI PDF Genius. Analyze the provided Document Versions data. The data includes: Document, Version, Changes, Author, Created Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "documentTitle": "Alpha Document",
+          "version": "Alpha Version",
+          "changeDescription": "Alpha changes — detailed content for enterprise use case.",
+          "author": "Alpha Author",
+          "createdDate": "2026-02-20"
+        },
+        {
+          "documentTitle": "Beta Document",
+          "version": "Beta Version",
+          "changeDescription": "Beta changes — detailed content for startup use case.",
+          "author": "Beta Author",
+          "createdDate": "2026-04-17"
+        },
+        {
+          "documentTitle": "Gamma Document",
+          "version": "Gamma Version",
+          "changeDescription": "Gamma changes — detailed content for smb use case.",
+          "author": "Gamma Author",
+          "createdDate": "2026-02-03"
+        },
+        {
+          "documentTitle": "Delta Document",
+          "version": "Delta Version",
+          "changeDescription": "Delta changes — detailed content for agency use case.",
+          "author": "Delta Author",
+          "createdDate": "2026-09-08"
+        },
+        {
+          "documentTitle": "Epsilon Document",
+          "version": "Epsilon Version",
+          "changeDescription": "Epsilon changes — detailed content for freelancer use case.",
+          "author": "Epsilon Author",
+          "createdDate": "2026-09-09"
+        },
+        {
+          "documentTitle": "Zeta Document",
+          "version": "Zeta Version",
+          "changeDescription": "Zeta changes — detailed content for government use case.",
+          "author": "Zeta Author",
+          "createdDate": "2026-03-07"
+        },
+        {
+          "documentTitle": "Eta Document",
+          "version": "Eta Version",
+          "changeDescription": "Eta changes — detailed content for nonprofit use case.",
+          "author": "Eta Author",
+          "createdDate": "2026-04-19"
+        },
+        {
+          "documentTitle": "Theta Document",
+          "version": "Theta Version",
+          "changeDescription": "Theta changes — detailed content for healthcare use case.",
+          "author": "Theta Author",
+          "createdDate": "2026-02-25"
+        },
+        {
+          "documentTitle": "Iota Document",
+          "version": "Iota Version",
+          "changeDescription": "Iota changes — detailed content for finance use case.",
+          "author": "Iota Author",
+          "createdDate": "2026-01-10"
+        },
+        {
+          "documentTitle": "Kappa Document",
+          "version": "Kappa Version",
+          "changeDescription": "Kappa changes — detailed content for education use case.",
+          "author": "Kappa Author",
+          "createdDate": "2026-07-27"
+        },
+        {
+          "documentTitle": "Lambda Document",
+          "version": "Lambda Version",
+          "changeDescription": "Lambda changes — detailed content for retail use case.",
+          "author": "Lambda Author",
+          "createdDate": "2026-01-12"
+        },
+        {
+          "documentTitle": "Mu Document",
+          "version": "Mu Version",
+          "changeDescription": "Mu changes — detailed content for tech use case.",
+          "author": "Mu Author",
+          "createdDate": "2026-05-05"
+        },
+        {
+          "documentTitle": "Nu Document",
+          "version": "Nu Version",
+          "changeDescription": "Nu changes — detailed content for legal use case.",
+          "author": "Nu Author",
+          "createdDate": "2026-09-25"
+        },
+        {
+          "documentTitle": "Xi Document",
+          "version": "Xi Version",
+          "changeDescription": "Xi changes — detailed content for real estate use case.",
+          "author": "Xi Author",
+          "createdDate": "2026-04-16"
+        },
+        {
+          "documentTitle": "Omicron Document",
+          "version": "Omicron Version",
+          "changeDescription": "Omicron changes — detailed content for manufacturing use case.",
+          "author": "Omicron Author",
+          "createdDate": "2026-01-25"
+        }
+      ]
+    },
+    {
+      "modelName": "OcrExtraction",
+      "label": "OCR Extractions",
+      "icon": "eye",
+      "fields": [
+        {
+          "key": "documentTitle",
+          "label": "Document",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "extractedText",
+          "label": "Extracted Text",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "confidence",
+          "label": "Confidence %",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "language",
+          "label": "Language",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "processedDate",
+          "label": "Processed Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "ocrExtractions",
+      "aiFunction": "analyzeOcrExtraction",
+      "aiPrompt": "You are an AI analyst for AI PDF Genius. Analyze the provided OCR Extractions data. The data includes: Document, Extracted Text, Confidence %, Language, Processed Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "documentTitle": "Alpha Document",
+          "extractedText": "Alpha extracted text — detailed content for enterprise use case.",
+          "confidence": 58.85,
+          "language": "Alpha Language",
+          "processedDate": "2026-01-09"
+        },
+        {
+          "documentTitle": "Beta Document",
+          "extractedText": "Beta extracted text — detailed content for startup use case.",
+          "confidence": 103.58,
+          "language": "Beta Language",
+          "processedDate": "2026-05-19"
+        },
+        {
+          "documentTitle": "Gamma Document",
+          "extractedText": "Gamma extracted text — detailed content for smb use case.",
+          "confidence": 200.76,
+          "language": "Gamma Language",
+          "processedDate": "2026-12-02"
+        },
+        {
+          "documentTitle": "Delta Document",
+          "extractedText": "Delta extracted text — detailed content for agency use case.",
+          "confidence": 411.97,
+          "language": "Delta Language",
+          "processedDate": "2026-06-14"
+        },
+        {
+          "documentTitle": "Epsilon Document",
+          "extractedText": "Epsilon extracted text — detailed content for freelancer use case.",
+          "confidence": 453.9,
+          "language": "Epsilon Language",
+          "processedDate": "2026-01-12"
+        },
+        {
+          "documentTitle": "Zeta Document",
+          "extractedText": "Zeta extracted text — detailed content for government use case.",
+          "confidence": 439.4,
+          "language": "Zeta Language",
+          "processedDate": "2026-08-18"
+        },
+        {
+          "documentTitle": "Eta Document",
+          "extractedText": "Eta extracted text — detailed content for nonprofit use case.",
+          "confidence": 917.96,
+          "language": "Eta Language",
+          "processedDate": "2026-02-27"
+        },
+        {
+          "documentTitle": "Theta Document",
+          "extractedText": "Theta extracted text — detailed content for healthcare use case.",
+          "confidence": 985.42,
+          "language": "Theta Language",
+          "processedDate": "2026-08-10"
+        },
+        {
+          "documentTitle": "Iota Document",
+          "extractedText": "Iota extracted text — detailed content for finance use case.",
+          "confidence": 225.17,
+          "language": "Iota Language",
+          "processedDate": "2026-01-06"
+        },
+        {
+          "documentTitle": "Kappa Document",
+          "extractedText": "Kappa extracted text — detailed content for education use case.",
+          "confidence": 751.61,
+          "language": "Kappa Language",
+          "processedDate": "2026-11-27"
+        },
+        {
+          "documentTitle": "Lambda Document",
+          "extractedText": "Lambda extracted text — detailed content for retail use case.",
+          "confidence": 954.74,
+          "language": "Lambda Language",
+          "processedDate": "2026-05-07"
+        },
+        {
+          "documentTitle": "Mu Document",
+          "extractedText": "Mu extracted text — detailed content for tech use case.",
+          "confidence": 773.84,
+          "language": "Mu Language",
+          "processedDate": "2026-08-21"
+        },
+        {
+          "documentTitle": "Nu Document",
+          "extractedText": "Nu extracted text — detailed content for legal use case.",
+          "confidence": 527.4,
+          "language": "Nu Language",
+          "processedDate": "2026-04-21"
+        },
+        {
+          "documentTitle": "Xi Document",
+          "extractedText": "Xi extracted text — detailed content for real estate use case.",
+          "confidence": 575.81,
+          "language": "Xi Language",
+          "processedDate": "2026-07-11"
+        },
+        {
+          "documentTitle": "Omicron Document",
+          "extractedText": "Omicron extracted text — detailed content for manufacturing use case.",
+          "confidence": 801.58,
+          "language": "Omicron Language",
+          "processedDate": "2026-06-20"
+        }
+      ]
+    },
+    {
+      "modelName": "CollaborationSession",
+      "label": "Collaboration Sessions",
+      "icon": "users",
+      "fields": [
+        {
+          "key": "documentTitle",
+          "label": "Document",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "participants",
+          "label": "Participants",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "commentCount",
+          "label": "Comments",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "routeKey": "collaborationSessions",
+      "aiFunction": "analyzeCollaborationSession",
+      "aiPrompt": "You are an AI analyst for AI PDF Genius. Analyze the provided Collaboration Sessions data. The data includes: Document, Participants, Status, Start Date, Comments. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "documentTitle": "Alpha Document",
+          "participants": "Alpha Participants",
+          "status": "Active",
+          "startDate": "2026-05-20",
+          "commentCount": 202
+        },
+        {
+          "documentTitle": "Beta Document",
+          "participants": "Beta Participants",
+          "status": "Pending",
+          "startDate": "2026-10-18",
+          "commentCount": 128
+        },
+        {
+          "documentTitle": "Gamma Document",
+          "participants": "Gamma Participants",
+          "status": "Review",
+          "startDate": "2026-04-03",
+          "commentCount": 660
+        },
+        {
+          "documentTitle": "Delta Document",
+          "participants": "Delta Participants",
+          "status": "Approved",
+          "startDate": "2026-03-26",
+          "commentCount": 795
+        },
+        {
+          "documentTitle": "Epsilon Document",
+          "participants": "Epsilon Participants",
+          "status": "Draft",
+          "startDate": "2026-09-14",
+          "commentCount": 432
+        },
+        {
+          "documentTitle": "Zeta Document",
+          "participants": "Zeta Participants",
+          "status": "Live",
+          "startDate": "2026-01-19",
+          "commentCount": 568
+        },
+        {
+          "documentTitle": "Eta Document",
+          "participants": "Eta Participants",
+          "status": "Paused",
+          "startDate": "2026-06-18",
+          "commentCount": 618
+        },
+        {
+          "documentTitle": "Theta Document",
+          "participants": "Theta Participants",
+          "status": "Archived",
+          "startDate": "2026-12-07",
+          "commentCount": 324
+        },
+        {
+          "documentTitle": "Iota Document",
+          "participants": "Iota Participants",
+          "status": "Beta",
+          "startDate": "2026-01-06",
+          "commentCount": 582
+        },
+        {
+          "documentTitle": "Kappa Document",
+          "participants": "Kappa Participants",
+          "status": "GA",
+          "startDate": "2026-02-14",
+          "commentCount": 183
+        },
+        {
+          "documentTitle": "Lambda Document",
+          "participants": "Lambda Participants",
+          "status": "Completed",
+          "startDate": "2026-05-03",
+          "commentCount": 563
+        },
+        {
+          "documentTitle": "Mu Document",
+          "participants": "Mu Participants",
+          "status": "In Progress",
+          "startDate": "2026-09-15",
+          "commentCount": 229
+        },
+        {
+          "documentTitle": "Nu Document",
+          "participants": "Nu Participants",
+          "status": "Scheduled",
+          "startDate": "2026-02-17",
+          "commentCount": 688
+        },
+        {
+          "documentTitle": "Xi Document",
+          "participants": "Xi Participants",
+          "status": "Failed",
+          "startDate": "2026-01-28",
+          "commentCount": 589
+        },
+        {
+          "documentTitle": "Omicron Document",
+          "participants": "Omicron Participants",
+          "status": "Cancelled",
+          "startDate": "2026-09-17",
+          "commentCount": 17
+        }
+      ]
+    }
+  ]
+}

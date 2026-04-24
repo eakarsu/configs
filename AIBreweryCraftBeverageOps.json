@@ -1,0 +1,4165 @@
+{
+  "appName": "A I Brewery Craft Beverage Ops",
+  "dbName": "a_i_brewery_craft_beverage_ops",
+  "folderName": "generated/AIBreweryCraftBeverageOps",
+  "features": [
+    {
+      "modelName": "BrewLog",
+      "routeKey": "brew-logs",
+      "label": "Brew Log",
+      "icon": "activity",
+      "aiFunction": "analyzeBrewLog",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Brew Log data. The data includes: Batch Id, Recipe Name, Style, Brew Date, Brewer, Grain Bill, Hops, Yeast, Mash Temp, Og, Fg, Abv, Ibu, Volume Gallons, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "batchId",
+          "label": "Batch Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recipeName",
+          "label": "Recipe Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "style",
+          "label": "Style",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "brewDate",
+          "label": "Brew Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "brewer",
+          "label": "Brewer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "grainBill",
+          "label": "Grain Bill",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "hops",
+          "label": "Hops",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "yeast",
+          "label": "Yeast",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mashTemp",
+          "label": "Mash Temp",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "og",
+          "label": "Og",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "fg",
+          "label": "Fg",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "abv",
+          "label": "Abv",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "ibu",
+          "label": "Ibu",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "volumeGallons",
+          "label": "Volume Gallons",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "batchId": "Advanced Batch Id 1",
+          "recipeName": "Advanced Recipe 1",
+          "style": "Advanced Style 1",
+          "brewDate": "2024-01-01",
+          "brewer": "Advanced Brewer 1",
+          "grainBill": "Comprehensive solution designed for optimal performance and efficiency.",
+          "hops": "Comprehensive solution designed for optimal performance and efficiency.",
+          "yeast": "Advanced Yeast 1",
+          "mashTemp": 10,
+          "og": 10,
+          "fg": 10,
+          "abv": 10,
+          "ibu": 10,
+          "volumeGallons": -120,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "batchId": "Premium Batch Id 2",
+          "recipeName": "Premium Recipe 2",
+          "style": "Premium Style 2",
+          "brewDate": "2024-02-03",
+          "brewer": "Premium Brewer 2",
+          "grainBill": "Industry-leading approach with proven results across multiple deployments.",
+          "hops": "Industry-leading approach with proven results across multiple deployments.",
+          "yeast": "Premium Yeast 2",
+          "mashTemp": 71.7,
+          "og": 71.7,
+          "fg": 71.7,
+          "abv": 71.7,
+          "ibu": 71.7,
+          "volumeGallons": -117,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "batchId": "Standard Batch Id 3",
+          "recipeName": "Standard Recipe 3",
+          "style": "Standard Style 3",
+          "brewDate": "2024-03-05",
+          "brewer": "Standard Brewer 3",
+          "grainBill": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "hops": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "yeast": "Standard Yeast 3",
+          "mashTemp": 33.4,
+          "og": 33.4,
+          "fg": 33.4,
+          "abv": 33.4,
+          "ibu": 33.4,
+          "volumeGallons": -114,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "batchId": "Elite Batch Id 4",
+          "recipeName": "Elite Recipe 4",
+          "style": "Elite Style 4",
+          "brewDate": "2024-04-07",
+          "brewer": "Elite Brewer 4",
+          "grainBill": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "hops": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "yeast": "Elite Yeast 4",
+          "mashTemp": 95.1,
+          "og": 95.1,
+          "fg": 95.1,
+          "abv": 95.1,
+          "ibu": 95.1,
+          "volumeGallons": -111,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "batchId": "Core Batch Id 5",
+          "recipeName": "Core Recipe 5",
+          "style": "Core Style 5",
+          "brewDate": "2024-05-09",
+          "brewer": "Core Brewer 5",
+          "grainBill": "Cost-effective strategy focused on sustainable long-term growth.",
+          "hops": "Cost-effective strategy focused on sustainable long-term growth.",
+          "yeast": "Core Yeast 5",
+          "mashTemp": 56.8,
+          "og": 56.8,
+          "fg": 56.8,
+          "abv": 56.8,
+          "ibu": 56.8,
+          "volumeGallons": -108,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "batchId": "Pro Batch Id 6",
+          "recipeName": "Pro Recipe 6",
+          "style": "Pro Style 6",
+          "brewDate": "2024-06-11",
+          "brewer": "Pro Brewer 6",
+          "grainBill": "High-priority initiative aligned with organizational strategic objectives.",
+          "hops": "High-priority initiative aligned with organizational strategic objectives.",
+          "yeast": "Pro Yeast 6",
+          "mashTemp": 118.5,
+          "og": 118.5,
+          "fg": 118.5,
+          "abv": 118.5,
+          "ibu": 118.5,
+          "volumeGallons": -105,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "batchId": "Essential Batch Id 7",
+          "recipeName": "Essential Recipe 7",
+          "style": "Essential Style 7",
+          "brewDate": "2024-07-13",
+          "brewer": "Essential Brewer 7",
+          "grainBill": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "hops": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "yeast": "Essential Yeast 7",
+          "mashTemp": 80.2,
+          "og": 80.2,
+          "fg": 80.2,
+          "abv": 80.2,
+          "ibu": 80.2,
+          "volumeGallons": -102,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "batchId": "Primary Batch Id 8",
+          "recipeName": "Primary Recipe 8",
+          "style": "Primary Style 8",
+          "brewDate": "2024-08-15",
+          "brewer": "Primary Brewer 8",
+          "grainBill": "Innovative framework incorporating best practices and emerging technologies.",
+          "hops": "Innovative framework incorporating best practices and emerging technologies.",
+          "yeast": "Primary Yeast 8",
+          "mashTemp": 141.9,
+          "og": 141.9,
+          "fg": 141.9,
+          "abv": 141.9,
+          "ibu": 141.9,
+          "volumeGallons": -99,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "batchId": "Global Batch Id 9",
+          "recipeName": "Global Recipe 9",
+          "style": "Global Style 9",
+          "brewDate": "2024-09-17",
+          "brewer": "Global Brewer 9",
+          "grainBill": "Scalable architecture built to accommodate rapid expansion and change.",
+          "hops": "Scalable architecture built to accommodate rapid expansion and change.",
+          "yeast": "Global Yeast 9",
+          "mashTemp": 103.6,
+          "og": 103.6,
+          "fg": 103.6,
+          "abv": 103.6,
+          "ibu": 103.6,
+          "volumeGallons": -96,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "batchId": "Regional Batch Id 10",
+          "recipeName": "Regional Recipe 10",
+          "style": "Regional Style 10",
+          "brewDate": "2024-10-19",
+          "brewer": "Regional Brewer 10",
+          "grainBill": "Enterprise-grade solution with robust security and compliance features.",
+          "hops": "Enterprise-grade solution with robust security and compliance features.",
+          "yeast": "Regional Yeast 10",
+          "mashTemp": 165.3,
+          "og": 165.3,
+          "fg": 165.3,
+          "abv": 165.3,
+          "ibu": 165.3,
+          "volumeGallons": -93,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "batchId": "Custom Batch Id 11",
+          "recipeName": "Custom Recipe 11",
+          "style": "Custom Style 11",
+          "brewDate": "2024-11-21",
+          "brewer": "Custom Brewer 11",
+          "grainBill": "Integrated platform connecting multiple systems for seamless operations.",
+          "hops": "Integrated platform connecting multiple systems for seamless operations.",
+          "yeast": "Custom Yeast 11",
+          "mashTemp": 127,
+          "og": 127,
+          "fg": 127,
+          "abv": 127,
+          "ibu": 127,
+          "volumeGallons": -90,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "batchId": "Smart Batch Id 12",
+          "recipeName": "Smart Recipe 12",
+          "style": "Smart Style 12",
+          "brewDate": "2024-12-23",
+          "brewer": "Smart Brewer 12",
+          "grainBill": "Automated workflow reducing manual intervention and human error.",
+          "hops": "Automated workflow reducing manual intervention and human error.",
+          "yeast": "Smart Yeast 12",
+          "mashTemp": 188.7,
+          "og": 188.7,
+          "fg": 188.7,
+          "abv": 188.7,
+          "ibu": 188.7,
+          "volumeGallons": -87,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "batchId": "Rapid Batch Id 13",
+          "recipeName": "Rapid Recipe 13",
+          "style": "Rapid Style 13",
+          "brewDate": "2024-01-25",
+          "brewer": "Rapid Brewer 13",
+          "grainBill": "Real-time monitoring system with intelligent alerting capabilities.",
+          "hops": "Real-time monitoring system with intelligent alerting capabilities.",
+          "yeast": "Rapid Yeast 13",
+          "mashTemp": 150.4,
+          "og": 150.4,
+          "fg": 150.4,
+          "abv": 150.4,
+          "ibu": 150.4,
+          "volumeGallons": -84,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "batchId": "Secure Batch Id 14",
+          "recipeName": "Secure Recipe 14",
+          "style": "Secure Style 14",
+          "brewDate": "2024-02-27",
+          "brewer": "Secure Brewer 14",
+          "grainBill": "Customizable module adaptable to diverse operational requirements.",
+          "hops": "Customizable module adaptable to diverse operational requirements.",
+          "yeast": "Secure Yeast 14",
+          "mashTemp": 212.1,
+          "og": 212.1,
+          "fg": 212.1,
+          "abv": 212.1,
+          "ibu": 212.1,
+          "volumeGallons": -81,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "batchId": "Modern Batch Id 15",
+          "recipeName": "Modern Recipe 15",
+          "style": "Modern Style 15",
+          "brewDate": "2024-03-01",
+          "brewer": "Modern Brewer 15",
+          "grainBill": "Performance-optimized design achieving superior throughput and reliability.",
+          "hops": "Performance-optimized design achieving superior throughput and reliability.",
+          "yeast": "Modern Yeast 15",
+          "mashTemp": 173.8,
+          "og": 173.8,
+          "fg": 173.8,
+          "abv": 173.8,
+          "ibu": 173.8,
+          "volumeGallons": -78,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Tank",
+      "routeKey": "tanks",
+      "label": "Tank",
+      "icon": "briefcase",
+      "aiFunction": "analyzeTank",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Tank data. The data includes: Name, Type, Capacity Gallons, Status, Current Batch, Temperature, Pressure Psi, Location, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "capacityGallons",
+          "label": "Capacity Gallons",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "currentBatch",
+          "label": "Current Batch",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "temperature",
+          "label": "Temperature",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "pressurePsi",
+          "label": "Pressure Psi",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "capacityGallons": -120,
+          "status": "active",
+          "currentBatch": "Advanced Current Batch 1",
+          "temperature": 10,
+          "pressurePsi": 10,
+          "location": "New York",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "capacityGallons": -117,
+          "status": "pending",
+          "currentBatch": "Premium Current Batch 2",
+          "temperature": 71.7,
+          "pressurePsi": 71.7,
+          "location": "Los Angeles",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "capacityGallons": -114,
+          "status": "in_progress",
+          "currentBatch": "Standard Current Batch 3",
+          "temperature": 33.4,
+          "pressurePsi": 33.4,
+          "location": "Chicago",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "capacityGallons": -111,
+          "status": "completed",
+          "currentBatch": "Elite Current Batch 4",
+          "temperature": 95.1,
+          "pressurePsi": 95.1,
+          "location": "Houston",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "capacityGallons": -108,
+          "status": "under_review",
+          "currentBatch": "Core Current Batch 5",
+          "temperature": 56.8,
+          "pressurePsi": 56.8,
+          "location": "Phoenix",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "capacityGallons": -105,
+          "status": "approved",
+          "currentBatch": "Pro Current Batch 6",
+          "temperature": 118.5,
+          "pressurePsi": 118.5,
+          "location": "San Francisco",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "capacityGallons": -102,
+          "status": "active",
+          "currentBatch": "Essential Current Batch 7",
+          "temperature": 80.2,
+          "pressurePsi": 80.2,
+          "location": "Seattle",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "capacityGallons": -99,
+          "status": "active",
+          "currentBatch": "Primary Current Batch 8",
+          "temperature": 141.9,
+          "pressurePsi": 141.9,
+          "location": "Boston",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "capacityGallons": -96,
+          "status": "active",
+          "currentBatch": "Global Current Batch 9",
+          "temperature": 103.6,
+          "pressurePsi": 103.6,
+          "location": "Denver",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "capacityGallons": -93,
+          "status": "pending",
+          "currentBatch": "Regional Current Batch 10",
+          "temperature": 165.3,
+          "pressurePsi": 165.3,
+          "location": "Miami",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "capacityGallons": -90,
+          "status": "completed",
+          "currentBatch": "Custom Current Batch 11",
+          "temperature": 127,
+          "pressurePsi": 127,
+          "location": "Austin",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "capacityGallons": -87,
+          "status": "active",
+          "currentBatch": "Smart Current Batch 12",
+          "temperature": 188.7,
+          "pressurePsi": 188.7,
+          "location": "Portland",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "capacityGallons": -84,
+          "status": "in_progress",
+          "currentBatch": "Rapid Current Batch 13",
+          "temperature": 150.4,
+          "pressurePsi": 150.4,
+          "location": "Dallas",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "capacityGallons": -81,
+          "status": "active",
+          "currentBatch": "Secure Current Batch 14",
+          "temperature": 212.1,
+          "pressurePsi": 212.1,
+          "location": "Atlanta",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "capacityGallons": -78,
+          "status": "approved",
+          "currentBatch": "Modern Current Batch 15",
+          "temperature": 173.8,
+          "pressurePsi": 173.8,
+          "location": "Nashville",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "RawMaterial",
+      "routeKey": "raw-materials",
+      "label": "Raw Material",
+      "icon": "clipboard",
+      "aiFunction": "analyzeRawMaterial",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Raw Material data. The data includes: Name, Category, Quantity, Unit, Supplier, Lot Number, Cost Per Unit, Reorder Point, Expiration Date, Status, Storage Location, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "unit",
+          "label": "Unit",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "supplier",
+          "label": "Supplier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lotNumber",
+          "label": "Lot Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "costPerUnit",
+          "label": "Cost Per Unit",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "reorderPoint",
+          "label": "Reorder Point",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "expirationDate",
+          "label": "Expiration Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "storageLocation",
+          "label": "Storage Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "quantity": 10,
+          "unit": "Advanced Unit 1",
+          "supplier": "Advanced Supplier 1",
+          "lotNumber": "Advanced Lot Number 1",
+          "costPerUnit": 500,
+          "reorderPoint": 10,
+          "expirationDate": "2024-01-01",
+          "status": "active",
+          "storageLocation": "New York",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "quantity": 71.7,
+          "unit": "Premium Unit 2",
+          "supplier": "Premium Supplier 2",
+          "lotNumber": "Premium Lot Number 2",
+          "costPerUnit": 2481,
+          "reorderPoint": 71.7,
+          "expirationDate": "2024-02-03",
+          "status": "pending",
+          "storageLocation": "Los Angeles",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "quantity": 33.4,
+          "unit": "Standard Unit 3",
+          "supplier": "Standard Supplier 3",
+          "lotNumber": "Standard Lot Number 3",
+          "costPerUnit": 4462,
+          "reorderPoint": 33.4,
+          "expirationDate": "2024-03-05",
+          "status": "in_progress",
+          "storageLocation": "Chicago",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "quantity": 95.1,
+          "unit": "Elite Unit 4",
+          "supplier": "Elite Supplier 4",
+          "lotNumber": "Elite Lot Number 4",
+          "costPerUnit": 6443,
+          "reorderPoint": 95.1,
+          "expirationDate": "2024-04-07",
+          "status": "completed",
+          "storageLocation": "Houston",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "quantity": 56.8,
+          "unit": "Core Unit 5",
+          "supplier": "Core Supplier 5",
+          "lotNumber": "Core Lot Number 5",
+          "costPerUnit": 8424,
+          "reorderPoint": 56.8,
+          "expirationDate": "2024-05-09",
+          "status": "under_review",
+          "storageLocation": "Phoenix",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "quantity": 118.5,
+          "unit": "Pro Unit 6",
+          "supplier": "Pro Supplier 6",
+          "lotNumber": "Pro Lot Number 6",
+          "costPerUnit": 10405,
+          "reorderPoint": 118.5,
+          "expirationDate": "2024-06-11",
+          "status": "approved",
+          "storageLocation": "San Francisco",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "quantity": 80.2,
+          "unit": "Essential Unit 7",
+          "supplier": "Essential Supplier 7",
+          "lotNumber": "Essential Lot Number 7",
+          "costPerUnit": 12386,
+          "reorderPoint": 80.2,
+          "expirationDate": "2024-07-13",
+          "status": "active",
+          "storageLocation": "Seattle",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "quantity": 141.9,
+          "unit": "Primary Unit 8",
+          "supplier": "Primary Supplier 8",
+          "lotNumber": "Primary Lot Number 8",
+          "costPerUnit": 9367,
+          "reorderPoint": 141.9,
+          "expirationDate": "2024-08-15",
+          "status": "active",
+          "storageLocation": "Boston",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "quantity": 103.6,
+          "unit": "Global Unit 9",
+          "supplier": "Global Supplier 9",
+          "lotNumber": "Global Lot Number 9",
+          "costPerUnit": 11348,
+          "reorderPoint": 103.6,
+          "expirationDate": "2024-09-17",
+          "status": "active",
+          "storageLocation": "Denver",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "quantity": 165.3,
+          "unit": "Regional Unit 10",
+          "supplier": "Regional Supplier 10",
+          "lotNumber": "Regional Lot Number 10",
+          "costPerUnit": 13329,
+          "reorderPoint": 165.3,
+          "expirationDate": "2024-10-19",
+          "status": "pending",
+          "storageLocation": "Miami",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "quantity": 127,
+          "unit": "Custom Unit 11",
+          "supplier": "Custom Supplier 11",
+          "lotNumber": "Custom Lot Number 11",
+          "costPerUnit": 15310,
+          "reorderPoint": 127,
+          "expirationDate": "2024-11-21",
+          "status": "completed",
+          "storageLocation": "Austin",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "quantity": 188.7,
+          "unit": "Smart Unit 12",
+          "supplier": "Smart Supplier 12",
+          "lotNumber": "Smart Lot Number 12",
+          "costPerUnit": 17291,
+          "reorderPoint": 188.7,
+          "expirationDate": "2024-12-23",
+          "status": "active",
+          "storageLocation": "Portland",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "quantity": 150.4,
+          "unit": "Rapid Unit 13",
+          "supplier": "Rapid Supplier 13",
+          "lotNumber": "Rapid Lot Number 13",
+          "costPerUnit": 19272,
+          "reorderPoint": 150.4,
+          "expirationDate": "2024-01-25",
+          "status": "in_progress",
+          "storageLocation": "Dallas",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "quantity": 212.1,
+          "unit": "Secure Unit 14",
+          "supplier": "Secure Supplier 14",
+          "lotNumber": "Secure Lot Number 14",
+          "costPerUnit": 21253,
+          "reorderPoint": 212.1,
+          "expirationDate": "2024-02-27",
+          "status": "active",
+          "storageLocation": "Atlanta",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "quantity": 173.8,
+          "unit": "Modern Unit 15",
+          "supplier": "Modern Supplier 15",
+          "lotNumber": "Modern Lot Number 15",
+          "costPerUnit": 18234,
+          "reorderPoint": 173.8,
+          "expirationDate": "2024-03-01",
+          "status": "approved",
+          "storageLocation": "Nashville",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "FermentationLog",
+      "routeKey": "fermentation-logs",
+      "label": "Fermentation Log",
+      "icon": "database",
+      "aiFunction": "analyzeFermentationLog",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Fermentation Log data. The data includes: Batch Id, Tank Id, Date, Time, Temperature, Gravity, Ph, Dissolved Oxygen, Pressure Psi, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "batchId",
+          "label": "Batch Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "tankId",
+          "label": "Tank Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "time",
+          "label": "Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "temperature",
+          "label": "Temperature",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "gravity",
+          "label": "Gravity",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "ph",
+          "label": "Ph",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "dissolvedOxygen",
+          "label": "Dissolved Oxygen",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "pressurePsi",
+          "label": "Pressure Psi",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "batchId": 10,
+          "tankId": 10,
+          "date": "2024-01-01",
+          "time": "Advanced Time 1",
+          "temperature": 10,
+          "gravity": 10,
+          "ph": 10,
+          "dissolvedOxygen": 10,
+          "pressurePsi": 10,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "batchId": 58,
+          "tankId": 58,
+          "date": "2024-02-03",
+          "time": "Premium Time 2",
+          "temperature": 71.7,
+          "gravity": 71.7,
+          "ph": 71.7,
+          "dissolvedOxygen": 71.7,
+          "pressurePsi": 71.7,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "batchId": 106,
+          "tankId": 106,
+          "date": "2024-03-05",
+          "time": "Standard Time 3",
+          "temperature": 33.4,
+          "gravity": 33.4,
+          "ph": 33.4,
+          "dissolvedOxygen": 33.4,
+          "pressurePsi": 33.4,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "batchId": 154,
+          "tankId": 154,
+          "date": "2024-04-07",
+          "time": "Elite Time 4",
+          "temperature": 95.1,
+          "gravity": 95.1,
+          "ph": 95.1,
+          "dissolvedOxygen": 95.1,
+          "pressurePsi": 95.1,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "batchId": 102,
+          "tankId": 102,
+          "date": "2024-05-09",
+          "time": "Core Time 5",
+          "temperature": 56.8,
+          "gravity": 56.8,
+          "ph": 56.8,
+          "dissolvedOxygen": 56.8,
+          "pressurePsi": 56.8,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "batchId": 150,
+          "tankId": 150,
+          "date": "2024-06-11",
+          "time": "Pro Time 6",
+          "temperature": 118.5,
+          "gravity": 118.5,
+          "ph": 118.5,
+          "dissolvedOxygen": 118.5,
+          "pressurePsi": 118.5,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "batchId": 198,
+          "tankId": 198,
+          "date": "2024-07-13",
+          "time": "Essential Time 7",
+          "temperature": 80.2,
+          "gravity": 80.2,
+          "ph": 80.2,
+          "dissolvedOxygen": 80.2,
+          "pressurePsi": 80.2,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "batchId": 146,
+          "tankId": 146,
+          "date": "2024-08-15",
+          "time": "Primary Time 8",
+          "temperature": 141.9,
+          "gravity": 141.9,
+          "ph": 141.9,
+          "dissolvedOxygen": 141.9,
+          "pressurePsi": 141.9,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "batchId": 194,
+          "tankId": 194,
+          "date": "2024-09-17",
+          "time": "Global Time 9",
+          "temperature": 103.6,
+          "gravity": 103.6,
+          "ph": 103.6,
+          "dissolvedOxygen": 103.6,
+          "pressurePsi": 103.6,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "batchId": 242,
+          "tankId": 242,
+          "date": "2024-10-19",
+          "time": "Regional Time 10",
+          "temperature": 165.3,
+          "gravity": 165.3,
+          "ph": 165.3,
+          "dissolvedOxygen": 165.3,
+          "pressurePsi": 165.3,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "batchId": 190,
+          "tankId": 190,
+          "date": "2024-11-21",
+          "time": "Custom Time 11",
+          "temperature": 127,
+          "gravity": 127,
+          "ph": 127,
+          "dissolvedOxygen": 127,
+          "pressurePsi": 127,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "batchId": 238,
+          "tankId": 238,
+          "date": "2024-12-23",
+          "time": "Smart Time 12",
+          "temperature": 188.7,
+          "gravity": 188.7,
+          "ph": 188.7,
+          "dissolvedOxygen": 188.7,
+          "pressurePsi": 188.7,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "batchId": 286,
+          "tankId": 286,
+          "date": "2024-01-25",
+          "time": "Rapid Time 13",
+          "temperature": 150.4,
+          "gravity": 150.4,
+          "ph": 150.4,
+          "dissolvedOxygen": 150.4,
+          "pressurePsi": 150.4,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "batchId": 234,
+          "tankId": 234,
+          "date": "2024-02-27",
+          "time": "Secure Time 14",
+          "temperature": 212.1,
+          "gravity": 212.1,
+          "ph": 212.1,
+          "dissolvedOxygen": 212.1,
+          "pressurePsi": 212.1,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "batchId": 282,
+          "tankId": 282,
+          "date": "2024-03-01",
+          "time": "Modern Time 15",
+          "temperature": 173.8,
+          "gravity": 173.8,
+          "ph": 173.8,
+          "dissolvedOxygen": 173.8,
+          "pressurePsi": 173.8,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PackagingRun",
+      "routeKey": "packaging-runs",
+      "label": "Packaging Run",
+      "icon": "file-text",
+      "aiFunction": "analyzePackagingRun",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Packaging Run data. The data includes: Batch Id, Package Type, Quantity, Date, Line, Operator, Fill Level, Co2 Volumes, Do Level, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "batchId",
+          "label": "Batch Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "packageType",
+          "label": "Package Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "line",
+          "label": "Line",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "operator",
+          "label": "Operator",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fillLevel",
+          "label": "Fill Level",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "co2Volumes",
+          "label": "Co2 Volumes",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "doLevel",
+          "label": "Do Level",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "batchId": 10,
+          "packageType": "Category A",
+          "quantity": 179,
+          "date": "2024-01-01",
+          "line": "Advanced Line 1",
+          "operator": "Advanced Operator 1",
+          "fillLevel": 10,
+          "co2Volumes": 10,
+          "doLevel": 10,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "batchId": 58,
+          "packageType": "Category B",
+          "quantity": 127,
+          "date": "2024-02-03",
+          "line": "Premium Line 2",
+          "operator": "Premium Operator 2",
+          "fillLevel": 71.7,
+          "co2Volumes": 71.7,
+          "doLevel": 71.7,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "batchId": 106,
+          "packageType": "Category C",
+          "quantity": 176,
+          "date": "2024-03-05",
+          "line": "Standard Line 3",
+          "operator": "Standard Operator 3",
+          "fillLevel": 33.4,
+          "co2Volumes": 33.4,
+          "doLevel": 33.4,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "batchId": 154,
+          "packageType": "Category D",
+          "quantity": 87,
+          "date": "2024-04-07",
+          "line": "Elite Line 4",
+          "operator": "Elite Operator 4",
+          "fillLevel": 95.1,
+          "co2Volumes": 95.1,
+          "doLevel": 95.1,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "batchId": 102,
+          "packageType": "Category E",
+          "quantity": 134,
+          "date": "2024-05-09",
+          "line": "Core Line 5",
+          "operator": "Core Operator 5",
+          "fillLevel": 56.8,
+          "co2Volumes": 56.8,
+          "doLevel": 56.8,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "batchId": 150,
+          "packageType": "Premium Tier",
+          "quantity": 135,
+          "date": "2024-06-11",
+          "line": "Pro Line 6",
+          "operator": "Pro Operator 6",
+          "fillLevel": 118.5,
+          "co2Volumes": 118.5,
+          "doLevel": 118.5,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "batchId": 198,
+          "packageType": "Standard Tier",
+          "quantity": 156,
+          "date": "2024-07-13",
+          "line": "Essential Line 7",
+          "operator": "Essential Operator 7",
+          "fillLevel": 80.2,
+          "co2Volumes": 80.2,
+          "doLevel": 80.2,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "batchId": 146,
+          "packageType": "Basic Tier",
+          "quantity": 240,
+          "date": "2024-08-15",
+          "line": "Primary Line 8",
+          "operator": "Primary Operator 8",
+          "fillLevel": 141.9,
+          "co2Volumes": 141.9,
+          "doLevel": 141.9,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "batchId": 194,
+          "packageType": "Enterprise",
+          "quantity": 95,
+          "date": "2024-09-17",
+          "line": "Global Line 9",
+          "operator": "Global Operator 9",
+          "fillLevel": 103.6,
+          "co2Volumes": 103.6,
+          "doLevel": 103.6,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "batchId": 242,
+          "packageType": "Starter",
+          "quantity": 101,
+          "date": "2024-10-19",
+          "line": "Regional Line 10",
+          "operator": "Regional Operator 10",
+          "fillLevel": 165.3,
+          "co2Volumes": 165.3,
+          "doLevel": 165.3,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "batchId": 190,
+          "packageType": "Growth",
+          "quantity": 233,
+          "date": "2024-11-21",
+          "line": "Custom Line 11",
+          "operator": "Custom Operator 11",
+          "fillLevel": 127,
+          "co2Volumes": 127,
+          "doLevel": 127,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "batchId": 238,
+          "packageType": "Scale",
+          "quantity": 241,
+          "date": "2024-12-23",
+          "line": "Smart Line 12",
+          "operator": "Smart Operator 12",
+          "fillLevel": 188.7,
+          "co2Volumes": 188.7,
+          "doLevel": 188.7,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "batchId": 286,
+          "packageType": "Foundation",
+          "quantity": 264,
+          "date": "2024-01-25",
+          "line": "Rapid Line 13",
+          "operator": "Rapid Operator 13",
+          "fillLevel": 150.4,
+          "co2Volumes": 150.4,
+          "doLevel": 150.4,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "batchId": 234,
+          "packageType": "Advanced",
+          "quantity": 192,
+          "date": "2024-02-27",
+          "line": "Secure Line 14",
+          "operator": "Secure Operator 14",
+          "fillLevel": 212.1,
+          "co2Volumes": 212.1,
+          "doLevel": 212.1,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "batchId": 282,
+          "packageType": "Professional",
+          "quantity": 232,
+          "date": "2024-03-01",
+          "line": "Modern Line 15",
+          "operator": "Modern Operator 15",
+          "fillLevel": 173.8,
+          "co2Volumes": 173.8,
+          "doLevel": 173.8,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Keg",
+      "routeKey": "kegs",
+      "label": "Keg",
+      "icon": "heart",
+      "aiFunction": "analyzeKeg",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Keg data. The data includes: Keg Id, Beer Name, Batch Id, Size, Fill Date, Status, Location, Distributor, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "kegId",
+          "label": "Keg Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "beerName",
+          "label": "Beer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "batchId",
+          "label": "Batch Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "size",
+          "label": "Size",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fillDate",
+          "label": "Fill Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "distributor",
+          "label": "Distributor",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "kegId": "Advanced Keg Id 1",
+          "beerName": "Advanced Beer 1",
+          "batchId": 10,
+          "size": "Advanced Size 1",
+          "fillDate": "2024-01-01",
+          "status": "active",
+          "location": "New York",
+          "distributor": "Advanced Distributor 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "kegId": "Premium Keg Id 2",
+          "beerName": "Premium Beer 2",
+          "batchId": 58,
+          "size": "Premium Size 2",
+          "fillDate": "2024-02-03",
+          "status": "pending",
+          "location": "Los Angeles",
+          "distributor": "Premium Distributor 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "kegId": "Standard Keg Id 3",
+          "beerName": "Standard Beer 3",
+          "batchId": 106,
+          "size": "Standard Size 3",
+          "fillDate": "2024-03-05",
+          "status": "in_progress",
+          "location": "Chicago",
+          "distributor": "Standard Distributor 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "kegId": "Elite Keg Id 4",
+          "beerName": "Elite Beer 4",
+          "batchId": 154,
+          "size": "Elite Size 4",
+          "fillDate": "2024-04-07",
+          "status": "completed",
+          "location": "Houston",
+          "distributor": "Elite Distributor 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "kegId": "Core Keg Id 5",
+          "beerName": "Core Beer 5",
+          "batchId": 102,
+          "size": "Core Size 5",
+          "fillDate": "2024-05-09",
+          "status": "under_review",
+          "location": "Phoenix",
+          "distributor": "Core Distributor 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "kegId": "Pro Keg Id 6",
+          "beerName": "Pro Beer 6",
+          "batchId": 150,
+          "size": "Pro Size 6",
+          "fillDate": "2024-06-11",
+          "status": "approved",
+          "location": "San Francisco",
+          "distributor": "Pro Distributor 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "kegId": "Essential Keg Id 7",
+          "beerName": "Essential Beer 7",
+          "batchId": 198,
+          "size": "Essential Size 7",
+          "fillDate": "2024-07-13",
+          "status": "active",
+          "location": "Seattle",
+          "distributor": "Essential Distributor 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "kegId": "Primary Keg Id 8",
+          "beerName": "Primary Beer 8",
+          "batchId": 146,
+          "size": "Primary Size 8",
+          "fillDate": "2024-08-15",
+          "status": "active",
+          "location": "Boston",
+          "distributor": "Primary Distributor 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "kegId": "Global Keg Id 9",
+          "beerName": "Global Beer 9",
+          "batchId": 194,
+          "size": "Global Size 9",
+          "fillDate": "2024-09-17",
+          "status": "active",
+          "location": "Denver",
+          "distributor": "Global Distributor 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "kegId": "Regional Keg Id 10",
+          "beerName": "Regional Beer 10",
+          "batchId": 242,
+          "size": "Regional Size 10",
+          "fillDate": "2024-10-19",
+          "status": "pending",
+          "location": "Miami",
+          "distributor": "Regional Distributor 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "kegId": "Custom Keg Id 11",
+          "beerName": "Custom Beer 11",
+          "batchId": 190,
+          "size": "Custom Size 11",
+          "fillDate": "2024-11-21",
+          "status": "completed",
+          "location": "Austin",
+          "distributor": "Custom Distributor 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "kegId": "Smart Keg Id 12",
+          "beerName": "Smart Beer 12",
+          "batchId": 238,
+          "size": "Smart Size 12",
+          "fillDate": "2024-12-23",
+          "status": "active",
+          "location": "Portland",
+          "distributor": "Smart Distributor 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "kegId": "Rapid Keg Id 13",
+          "beerName": "Rapid Beer 13",
+          "batchId": 286,
+          "size": "Rapid Size 13",
+          "fillDate": "2024-01-25",
+          "status": "in_progress",
+          "location": "Dallas",
+          "distributor": "Rapid Distributor 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "kegId": "Secure Keg Id 14",
+          "beerName": "Secure Beer 14",
+          "batchId": 234,
+          "size": "Secure Size 14",
+          "fillDate": "2024-02-27",
+          "status": "active",
+          "location": "Atlanta",
+          "distributor": "Secure Distributor 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "kegId": "Modern Keg Id 15",
+          "beerName": "Modern Beer 15",
+          "batchId": 282,
+          "size": "Modern Size 15",
+          "fillDate": "2024-03-01",
+          "status": "approved",
+          "location": "Nashville",
+          "distributor": "Modern Distributor 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PosTransaction",
+      "routeKey": "pos-transactions",
+      "label": "Pos Transaction",
+      "icon": "layers",
+      "aiFunction": "analyzePosTransaction",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Pos Transaction data. The data includes: Transaction Id, Date, Time, Items, Subtotal, Tax, Tip, Total, Payment Method, Server, Customer Name, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "transactionId",
+          "label": "Transaction Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "time",
+          "label": "Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "items",
+          "label": "Items",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "subtotal",
+          "label": "Subtotal",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "tax",
+          "label": "Tax",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "tip",
+          "label": "Tip",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "total",
+          "label": "Total",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "server",
+          "label": "Server",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "transactionId": "Advanced Transaction Id 1",
+          "date": "2024-01-01",
+          "time": "Advanced Time 1",
+          "items": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "subtotal": 10,
+          "tax": 10,
+          "tip": 10,
+          "total": 10,
+          "paymentMethod": "Advanced Payment Method 1",
+          "server": "Advanced Server 1",
+          "customerName": "James Wilson",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "transactionId": "Premium Transaction Id 2",
+          "date": "2024-02-03",
+          "time": "Premium Time 2",
+          "items": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "subtotal": 71.7,
+          "tax": 71.7,
+          "tip": 71.7,
+          "total": 71.7,
+          "paymentMethod": "Premium Payment Method 2",
+          "server": "Premium Server 2",
+          "customerName": "Sarah Chen",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "transactionId": "Standard Transaction Id 3",
+          "date": "2024-03-05",
+          "time": "Standard Time 3",
+          "items": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "subtotal": 33.4,
+          "tax": 33.4,
+          "tip": 33.4,
+          "total": 33.4,
+          "paymentMethod": "Standard Payment Method 3",
+          "server": "Standard Server 3",
+          "customerName": "Michael Brown",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "transactionId": "Elite Transaction Id 4",
+          "date": "2024-04-07",
+          "time": "Elite Time 4",
+          "items": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "subtotal": 95.1,
+          "tax": 95.1,
+          "tip": 95.1,
+          "total": 95.1,
+          "paymentMethod": "Elite Payment Method 4",
+          "server": "Elite Server 4",
+          "customerName": "Emily Davis",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "transactionId": "Core Transaction Id 5",
+          "date": "2024-05-09",
+          "time": "Core Time 5",
+          "items": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "subtotal": 56.8,
+          "tax": 56.8,
+          "tip": 56.8,
+          "total": 56.8,
+          "paymentMethod": "Core Payment Method 5",
+          "server": "Core Server 5",
+          "customerName": "Robert Garcia",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "transactionId": "Pro Transaction Id 6",
+          "date": "2024-06-11",
+          "time": "Pro Time 6",
+          "items": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "subtotal": 118.5,
+          "tax": 118.5,
+          "tip": 118.5,
+          "total": 118.5,
+          "paymentMethod": "Pro Payment Method 6",
+          "server": "Pro Server 6",
+          "customerName": "Lisa Anderson",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "transactionId": "Essential Transaction Id 7",
+          "date": "2024-07-13",
+          "time": "Essential Time 7",
+          "items": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "subtotal": 80.2,
+          "tax": 80.2,
+          "tip": 80.2,
+          "total": 80.2,
+          "paymentMethod": "Essential Payment Method 7",
+          "server": "Essential Server 7",
+          "customerName": "David Martinez",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "transactionId": "Primary Transaction Id 8",
+          "date": "2024-08-15",
+          "time": "Primary Time 8",
+          "items": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "subtotal": 141.9,
+          "tax": 141.9,
+          "tip": 141.9,
+          "total": 141.9,
+          "paymentMethod": "Primary Payment Method 8",
+          "server": "Primary Server 8",
+          "customerName": "Jennifer Taylor",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "transactionId": "Global Transaction Id 9",
+          "date": "2024-09-17",
+          "time": "Global Time 9",
+          "items": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "subtotal": 103.6,
+          "tax": 103.6,
+          "tip": 103.6,
+          "total": 103.6,
+          "paymentMethod": "Global Payment Method 9",
+          "server": "Global Server 9",
+          "customerName": "William Johnson",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "transactionId": "Regional Transaction Id 10",
+          "date": "2024-10-19",
+          "time": "Regional Time 10",
+          "items": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "subtotal": 165.3,
+          "tax": 165.3,
+          "tip": 165.3,
+          "total": 165.3,
+          "paymentMethod": "Regional Payment Method 10",
+          "server": "Regional Server 10",
+          "customerName": "Maria Rodriguez",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "transactionId": "Custom Transaction Id 11",
+          "date": "2024-11-21",
+          "time": "Custom Time 11",
+          "items": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "subtotal": 127,
+          "tax": 127,
+          "tip": 127,
+          "total": 127,
+          "paymentMethod": "Custom Payment Method 11",
+          "server": "Custom Server 11",
+          "customerName": "Thomas Lee",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "transactionId": "Smart Transaction Id 12",
+          "date": "2024-12-23",
+          "time": "Smart Time 12",
+          "items": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "subtotal": 188.7,
+          "tax": 188.7,
+          "tip": 188.7,
+          "total": 188.7,
+          "paymentMethod": "Smart Payment Method 12",
+          "server": "Smart Server 12",
+          "customerName": "Patricia White",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "transactionId": "Rapid Transaction Id 13",
+          "date": "2024-01-25",
+          "time": "Rapid Time 13",
+          "items": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "subtotal": 150.4,
+          "tax": 150.4,
+          "tip": 150.4,
+          "total": 150.4,
+          "paymentMethod": "Rapid Payment Method 13",
+          "server": "Rapid Server 13",
+          "customerName": "Christopher Hall",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "transactionId": "Secure Transaction Id 14",
+          "date": "2024-02-27",
+          "time": "Secure Time 14",
+          "items": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "subtotal": 212.1,
+          "tax": 212.1,
+          "tip": 212.1,
+          "total": 212.1,
+          "paymentMethod": "Secure Payment Method 14",
+          "server": "Secure Server 14",
+          "customerName": "Amanda Clark",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "transactionId": "Modern Transaction Id 15",
+          "date": "2024-03-01",
+          "time": "Modern Time 15",
+          "items": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "subtotal": 173.8,
+          "tax": 173.8,
+          "tip": 173.8,
+          "total": 173.8,
+          "paymentMethod": "Modern Payment Method 15",
+          "server": "Modern Server 15",
+          "customerName": "Daniel Wright",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Distribution",
+      "routeKey": "distributions",
+      "label": "Distribution",
+      "icon": "map-pin",
+      "aiFunction": "analyzeDistribution",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Distribution data. The data includes: Distributor, Order Date, Delivery Date, Product, Quantity, Unit Price, Total, Region, Status, Tracking Number, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "distributor",
+          "label": "Distributor",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "orderDate",
+          "label": "Order Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "deliveryDate",
+          "label": "Delivery Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "product",
+          "label": "Product",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "unitPrice",
+          "label": "Unit Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "total",
+          "label": "Total",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "region",
+          "label": "Region",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "trackingNumber",
+          "label": "Tracking Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "distributor": "Advanced Distributor 1",
+          "orderDate": "2024-01-01",
+          "deliveryDate": "2024-01-01",
+          "product": "Advanced Product 1",
+          "quantity": 39,
+          "unitPrice": 500,
+          "total": 10,
+          "region": "Advanced Region 1",
+          "status": "active",
+          "trackingNumber": "Advanced Tracking Number 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "distributor": "Premium Distributor 2",
+          "orderDate": "2024-02-03",
+          "deliveryDate": "2024-02-03",
+          "product": "Premium Product 2",
+          "quantity": 149,
+          "unitPrice": 2481,
+          "total": 71.7,
+          "region": "Premium Region 2",
+          "status": "pending",
+          "trackingNumber": "Premium Tracking Number 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "distributor": "Standard Distributor 3",
+          "orderDate": "2024-03-05",
+          "deliveryDate": "2024-03-05",
+          "product": "Standard Product 3",
+          "quantity": 47,
+          "unitPrice": 4462,
+          "total": 33.4,
+          "region": "Standard Region 3",
+          "status": "in_progress",
+          "trackingNumber": "Standard Tracking Number 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "distributor": "Elite Distributor 4",
+          "orderDate": "2024-04-07",
+          "deliveryDate": "2024-04-07",
+          "product": "Elite Product 4",
+          "quantity": 37,
+          "unitPrice": 6443,
+          "total": 95.1,
+          "region": "Elite Region 4",
+          "status": "completed",
+          "trackingNumber": "Elite Tracking Number 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "distributor": "Core Distributor 5",
+          "orderDate": "2024-05-09",
+          "deliveryDate": "2024-05-09",
+          "product": "Core Product 5",
+          "quantity": 171,
+          "unitPrice": 8424,
+          "total": 56.8,
+          "region": "Core Region 5",
+          "status": "under_review",
+          "trackingNumber": "Core Tracking Number 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "distributor": "Pro Distributor 6",
+          "orderDate": "2024-06-11",
+          "deliveryDate": "2024-06-11",
+          "product": "Pro Product 6",
+          "quantity": 237,
+          "unitPrice": 10405,
+          "total": 118.5,
+          "region": "Pro Region 6",
+          "status": "approved",
+          "trackingNumber": "Pro Tracking Number 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "distributor": "Essential Distributor 7",
+          "orderDate": "2024-07-13",
+          "deliveryDate": "2024-07-13",
+          "product": "Essential Product 7",
+          "quantity": 241,
+          "unitPrice": 12386,
+          "total": 80.2,
+          "region": "Essential Region 7",
+          "status": "active",
+          "trackingNumber": "Essential Tracking Number 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "distributor": "Primary Distributor 8",
+          "orderDate": "2024-08-15",
+          "deliveryDate": "2024-08-15",
+          "product": "Primary Product 8",
+          "quantity": 141,
+          "unitPrice": 9367,
+          "total": 141.9,
+          "region": "Primary Region 8",
+          "status": "active",
+          "trackingNumber": "Primary Tracking Number 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "distributor": "Global Distributor 9",
+          "orderDate": "2024-09-17",
+          "deliveryDate": "2024-09-17",
+          "product": "Global Product 9",
+          "quantity": 184,
+          "unitPrice": 11348,
+          "total": 103.6,
+          "region": "Global Region 9",
+          "status": "active",
+          "trackingNumber": "Global Tracking Number 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "distributor": "Regional Distributor 10",
+          "orderDate": "2024-10-19",
+          "deliveryDate": "2024-10-19",
+          "product": "Regional Product 10",
+          "quantity": 108,
+          "unitPrice": 13329,
+          "total": 165.3,
+          "region": "Regional Region 10",
+          "status": "pending",
+          "trackingNumber": "Regional Tracking Number 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "distributor": "Custom Distributor 11",
+          "orderDate": "2024-11-21",
+          "deliveryDate": "2024-11-21",
+          "product": "Custom Product 11",
+          "quantity": 98,
+          "unitPrice": 15310,
+          "total": 127,
+          "region": "Custom Region 11",
+          "status": "completed",
+          "trackingNumber": "Custom Tracking Number 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "distributor": "Smart Distributor 12",
+          "orderDate": "2024-12-23",
+          "deliveryDate": "2024-12-23",
+          "product": "Smart Product 12",
+          "quantity": 186,
+          "unitPrice": 17291,
+          "total": 188.7,
+          "region": "Smart Region 12",
+          "status": "active",
+          "trackingNumber": "Smart Tracking Number 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "distributor": "Rapid Distributor 13",
+          "orderDate": "2024-01-25",
+          "deliveryDate": "2024-01-25",
+          "product": "Rapid Product 13",
+          "quantity": 137,
+          "unitPrice": 19272,
+          "total": 150.4,
+          "region": "Rapid Region 13",
+          "status": "in_progress",
+          "trackingNumber": "Rapid Tracking Number 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "distributor": "Secure Distributor 14",
+          "orderDate": "2024-02-27",
+          "deliveryDate": "2024-02-27",
+          "product": "Secure Product 14",
+          "quantity": 163,
+          "unitPrice": 21253,
+          "total": 212.1,
+          "region": "Secure Region 14",
+          "status": "active",
+          "trackingNumber": "Secure Tracking Number 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "distributor": "Modern Distributor 15",
+          "orderDate": "2024-03-01",
+          "deliveryDate": "2024-03-01",
+          "product": "Modern Product 15",
+          "quantity": 192,
+          "unitPrice": 18234,
+          "total": 173.8,
+          "region": "Modern Region 15",
+          "status": "approved",
+          "trackingNumber": "Modern Tracking Number 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "LabResult",
+      "routeKey": "lab-results",
+      "label": "Lab Result",
+      "icon": "package",
+      "aiFunction": "analyzeLabResult",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Lab Result data. The data includes: Batch Id, Test Type, Date, Result, Unit, Expected Range, Status, Technician, Equipment Used, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "batchId",
+          "label": "Batch Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "testType",
+          "label": "Test Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "result",
+          "label": "Result",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "unit",
+          "label": "Unit",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "expectedRange",
+          "label": "Expected Range",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "technician",
+          "label": "Technician",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "equipmentUsed",
+          "label": "Equipment Used",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "batchId": 10,
+          "testType": "Category A",
+          "date": "2024-01-01",
+          "result": "Advanced Result 1",
+          "unit": "Advanced Unit 1",
+          "expectedRange": "Advanced Expected Range 1",
+          "status": "active",
+          "technician": "Advanced Technician 1",
+          "equipmentUsed": "Advanced Equipment Used 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "batchId": 58,
+          "testType": "Category B",
+          "date": "2024-02-03",
+          "result": "Premium Result 2",
+          "unit": "Premium Unit 2",
+          "expectedRange": "Premium Expected Range 2",
+          "status": "pending",
+          "technician": "Premium Technician 2",
+          "equipmentUsed": "Premium Equipment Used 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "batchId": 106,
+          "testType": "Category C",
+          "date": "2024-03-05",
+          "result": "Standard Result 3",
+          "unit": "Standard Unit 3",
+          "expectedRange": "Standard Expected Range 3",
+          "status": "in_progress",
+          "technician": "Standard Technician 3",
+          "equipmentUsed": "Standard Equipment Used 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "batchId": 154,
+          "testType": "Category D",
+          "date": "2024-04-07",
+          "result": "Elite Result 4",
+          "unit": "Elite Unit 4",
+          "expectedRange": "Elite Expected Range 4",
+          "status": "completed",
+          "technician": "Elite Technician 4",
+          "equipmentUsed": "Elite Equipment Used 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "batchId": 102,
+          "testType": "Category E",
+          "date": "2024-05-09",
+          "result": "Core Result 5",
+          "unit": "Core Unit 5",
+          "expectedRange": "Core Expected Range 5",
+          "status": "under_review",
+          "technician": "Core Technician 5",
+          "equipmentUsed": "Core Equipment Used 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "batchId": 150,
+          "testType": "Premium Tier",
+          "date": "2024-06-11",
+          "result": "Pro Result 6",
+          "unit": "Pro Unit 6",
+          "expectedRange": "Pro Expected Range 6",
+          "status": "approved",
+          "technician": "Pro Technician 6",
+          "equipmentUsed": "Pro Equipment Used 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "batchId": 198,
+          "testType": "Standard Tier",
+          "date": "2024-07-13",
+          "result": "Essential Result 7",
+          "unit": "Essential Unit 7",
+          "expectedRange": "Essential Expected Range 7",
+          "status": "active",
+          "technician": "Essential Technician 7",
+          "equipmentUsed": "Essential Equipment Used 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "batchId": 146,
+          "testType": "Basic Tier",
+          "date": "2024-08-15",
+          "result": "Primary Result 8",
+          "unit": "Primary Unit 8",
+          "expectedRange": "Primary Expected Range 8",
+          "status": "active",
+          "technician": "Primary Technician 8",
+          "equipmentUsed": "Primary Equipment Used 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "batchId": 194,
+          "testType": "Enterprise",
+          "date": "2024-09-17",
+          "result": "Global Result 9",
+          "unit": "Global Unit 9",
+          "expectedRange": "Global Expected Range 9",
+          "status": "active",
+          "technician": "Global Technician 9",
+          "equipmentUsed": "Global Equipment Used 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "batchId": 242,
+          "testType": "Starter",
+          "date": "2024-10-19",
+          "result": "Regional Result 10",
+          "unit": "Regional Unit 10",
+          "expectedRange": "Regional Expected Range 10",
+          "status": "pending",
+          "technician": "Regional Technician 10",
+          "equipmentUsed": "Regional Equipment Used 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "batchId": 190,
+          "testType": "Growth",
+          "date": "2024-11-21",
+          "result": "Custom Result 11",
+          "unit": "Custom Unit 11",
+          "expectedRange": "Custom Expected Range 11",
+          "status": "completed",
+          "technician": "Custom Technician 11",
+          "equipmentUsed": "Custom Equipment Used 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "batchId": 238,
+          "testType": "Scale",
+          "date": "2024-12-23",
+          "result": "Smart Result 12",
+          "unit": "Smart Unit 12",
+          "expectedRange": "Smart Expected Range 12",
+          "status": "active",
+          "technician": "Smart Technician 12",
+          "equipmentUsed": "Smart Equipment Used 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "batchId": 286,
+          "testType": "Foundation",
+          "date": "2024-01-25",
+          "result": "Rapid Result 13",
+          "unit": "Rapid Unit 13",
+          "expectedRange": "Rapid Expected Range 13",
+          "status": "in_progress",
+          "technician": "Rapid Technician 13",
+          "equipmentUsed": "Rapid Equipment Used 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "batchId": 234,
+          "testType": "Advanced",
+          "date": "2024-02-27",
+          "result": "Secure Result 14",
+          "unit": "Secure Unit 14",
+          "expectedRange": "Secure Expected Range 14",
+          "status": "active",
+          "technician": "Secure Technician 14",
+          "equipmentUsed": "Secure Equipment Used 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "batchId": 282,
+          "testType": "Professional",
+          "date": "2024-03-01",
+          "result": "Modern Result 15",
+          "unit": "Modern Unit 15",
+          "expectedRange": "Modern Expected Range 15",
+          "status": "approved",
+          "technician": "Modern Technician 15",
+          "equipmentUsed": "Modern Equipment Used 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Equipment",
+      "routeKey": "equipments",
+      "label": "Equipment",
+      "icon": "shield",
+      "aiFunction": "analyzeEquipment",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Equipment data. The data includes: Name, Type, Manufacturer, Model, Serial Number, Purchase Date, Last Maintenance, Next Maintenance, Status, Location, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "manufacturer",
+          "label": "Manufacturer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "model",
+          "label": "Model",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serialNumber",
+          "label": "Serial Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "purchaseDate",
+          "label": "Purchase Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "lastMaintenance",
+          "label": "Last Maintenance",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "nextMaintenance",
+          "label": "Next Maintenance",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "manufacturer": "Advanced Manufacturer 1",
+          "model": "Advanced Model 1",
+          "serialNumber": "Advanced Serial Number 1",
+          "purchaseDate": "2024-01-01",
+          "lastMaintenance": "2024-01-01",
+          "nextMaintenance": "2024-01-01",
+          "status": "active",
+          "location": "New York",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "manufacturer": "Premium Manufacturer 2",
+          "model": "Premium Model 2",
+          "serialNumber": "Premium Serial Number 2",
+          "purchaseDate": "2024-02-03",
+          "lastMaintenance": "2024-02-03",
+          "nextMaintenance": "2024-02-03",
+          "status": "pending",
+          "location": "Los Angeles",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "manufacturer": "Standard Manufacturer 3",
+          "model": "Standard Model 3",
+          "serialNumber": "Standard Serial Number 3",
+          "purchaseDate": "2024-03-05",
+          "lastMaintenance": "2024-03-05",
+          "nextMaintenance": "2024-03-05",
+          "status": "in_progress",
+          "location": "Chicago",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "manufacturer": "Elite Manufacturer 4",
+          "model": "Elite Model 4",
+          "serialNumber": "Elite Serial Number 4",
+          "purchaseDate": "2024-04-07",
+          "lastMaintenance": "2024-04-07",
+          "nextMaintenance": "2024-04-07",
+          "status": "completed",
+          "location": "Houston",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "manufacturer": "Core Manufacturer 5",
+          "model": "Core Model 5",
+          "serialNumber": "Core Serial Number 5",
+          "purchaseDate": "2024-05-09",
+          "lastMaintenance": "2024-05-09",
+          "nextMaintenance": "2024-05-09",
+          "status": "under_review",
+          "location": "Phoenix",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "manufacturer": "Pro Manufacturer 6",
+          "model": "Pro Model 6",
+          "serialNumber": "Pro Serial Number 6",
+          "purchaseDate": "2024-06-11",
+          "lastMaintenance": "2024-06-11",
+          "nextMaintenance": "2024-06-11",
+          "status": "approved",
+          "location": "San Francisco",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "manufacturer": "Essential Manufacturer 7",
+          "model": "Essential Model 7",
+          "serialNumber": "Essential Serial Number 7",
+          "purchaseDate": "2024-07-13",
+          "lastMaintenance": "2024-07-13",
+          "nextMaintenance": "2024-07-13",
+          "status": "active",
+          "location": "Seattle",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "manufacturer": "Primary Manufacturer 8",
+          "model": "Primary Model 8",
+          "serialNumber": "Primary Serial Number 8",
+          "purchaseDate": "2024-08-15",
+          "lastMaintenance": "2024-08-15",
+          "nextMaintenance": "2024-08-15",
+          "status": "active",
+          "location": "Boston",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "manufacturer": "Global Manufacturer 9",
+          "model": "Global Model 9",
+          "serialNumber": "Global Serial Number 9",
+          "purchaseDate": "2024-09-17",
+          "lastMaintenance": "2024-09-17",
+          "nextMaintenance": "2024-09-17",
+          "status": "active",
+          "location": "Denver",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "manufacturer": "Regional Manufacturer 10",
+          "model": "Regional Model 10",
+          "serialNumber": "Regional Serial Number 10",
+          "purchaseDate": "2024-10-19",
+          "lastMaintenance": "2024-10-19",
+          "nextMaintenance": "2024-10-19",
+          "status": "pending",
+          "location": "Miami",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "manufacturer": "Custom Manufacturer 11",
+          "model": "Custom Model 11",
+          "serialNumber": "Custom Serial Number 11",
+          "purchaseDate": "2024-11-21",
+          "lastMaintenance": "2024-11-21",
+          "nextMaintenance": "2024-11-21",
+          "status": "completed",
+          "location": "Austin",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "manufacturer": "Smart Manufacturer 12",
+          "model": "Smart Model 12",
+          "serialNumber": "Smart Serial Number 12",
+          "purchaseDate": "2024-12-23",
+          "lastMaintenance": "2024-12-23",
+          "nextMaintenance": "2024-12-23",
+          "status": "active",
+          "location": "Portland",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "manufacturer": "Rapid Manufacturer 13",
+          "model": "Rapid Model 13",
+          "serialNumber": "Rapid Serial Number 13",
+          "purchaseDate": "2024-01-25",
+          "lastMaintenance": "2024-01-25",
+          "nextMaintenance": "2024-01-25",
+          "status": "in_progress",
+          "location": "Dallas",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "manufacturer": "Secure Manufacturer 14",
+          "model": "Secure Model 14",
+          "serialNumber": "Secure Serial Number 14",
+          "purchaseDate": "2024-02-27",
+          "lastMaintenance": "2024-02-27",
+          "nextMaintenance": "2024-02-27",
+          "status": "active",
+          "location": "Atlanta",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "manufacturer": "Modern Manufacturer 15",
+          "model": "Modern Model 15",
+          "serialNumber": "Modern Serial Number 15",
+          "purchaseDate": "2024-03-01",
+          "lastMaintenance": "2024-03-01",
+          "nextMaintenance": "2024-03-01",
+          "status": "approved",
+          "location": "Nashville",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Event",
+      "routeKey": "events",
+      "label": "Event",
+      "icon": "star",
+      "aiFunction": "analyzeEvent",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Event data. The data includes: Name, Type, Date, Start Time, End Time, Capacity, Tickets Sold, Ticket Price, Description, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "capacity",
+          "label": "Capacity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "ticketsSold",
+          "label": "Tickets Sold",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "ticketPrice",
+          "label": "Ticket Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "date": "2024-01-01",
+          "startTime": "Advanced Start Time 1",
+          "endTime": "Advanced End Time 1",
+          "capacity": 10,
+          "ticketsSold": 10,
+          "ticketPrice": 500,
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "date": "2024-02-03",
+          "startTime": "Premium Start Time 2",
+          "endTime": "Premium End Time 2",
+          "capacity": 58,
+          "ticketsSold": 58,
+          "ticketPrice": 2481,
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "date": "2024-03-05",
+          "startTime": "Standard Start Time 3",
+          "endTime": "Standard End Time 3",
+          "capacity": 106,
+          "ticketsSold": 106,
+          "ticketPrice": 4462,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "date": "2024-04-07",
+          "startTime": "Elite Start Time 4",
+          "endTime": "Elite End Time 4",
+          "capacity": 154,
+          "ticketsSold": 154,
+          "ticketPrice": 6443,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "date": "2024-05-09",
+          "startTime": "Core Start Time 5",
+          "endTime": "Core End Time 5",
+          "capacity": 102,
+          "ticketsSold": 102,
+          "ticketPrice": 8424,
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "date": "2024-06-11",
+          "startTime": "Pro Start Time 6",
+          "endTime": "Pro End Time 6",
+          "capacity": 150,
+          "ticketsSold": 150,
+          "ticketPrice": 10405,
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "date": "2024-07-13",
+          "startTime": "Essential Start Time 7",
+          "endTime": "Essential End Time 7",
+          "capacity": 198,
+          "ticketsSold": 198,
+          "ticketPrice": 12386,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "date": "2024-08-15",
+          "startTime": "Primary Start Time 8",
+          "endTime": "Primary End Time 8",
+          "capacity": 146,
+          "ticketsSold": 146,
+          "ticketPrice": 9367,
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "date": "2024-09-17",
+          "startTime": "Global Start Time 9",
+          "endTime": "Global End Time 9",
+          "capacity": 194,
+          "ticketsSold": 194,
+          "ticketPrice": 11348,
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "date": "2024-10-19",
+          "startTime": "Regional Start Time 10",
+          "endTime": "Regional End Time 10",
+          "capacity": 242,
+          "ticketsSold": 242,
+          "ticketPrice": 13329,
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "date": "2024-11-21",
+          "startTime": "Custom Start Time 11",
+          "endTime": "Custom End Time 11",
+          "capacity": 190,
+          "ticketsSold": 190,
+          "ticketPrice": 15310,
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "date": "2024-12-23",
+          "startTime": "Smart Start Time 12",
+          "endTime": "Smart End Time 12",
+          "capacity": 238,
+          "ticketsSold": 238,
+          "ticketPrice": 17291,
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "date": "2024-01-25",
+          "startTime": "Rapid Start Time 13",
+          "endTime": "Rapid End Time 13",
+          "capacity": 286,
+          "ticketsSold": 286,
+          "ticketPrice": 19272,
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "date": "2024-02-27",
+          "startTime": "Secure Start Time 14",
+          "endTime": "Secure End Time 14",
+          "capacity": 234,
+          "ticketsSold": 234,
+          "ticketPrice": 21253,
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "date": "2024-03-01",
+          "startTime": "Modern Start Time 15",
+          "endTime": "Modern End Time 15",
+          "capacity": 282,
+          "ticketsSold": 282,
+          "ticketPrice": 18234,
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "LoyaltyMember",
+      "routeKey": "loyalty-members",
+      "label": "Loyalty Member",
+      "icon": "truck",
+      "aiFunction": "analyzeLoyaltyMember",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Loyalty Member data. The data includes: Name, Email, Phone, Tier, Points, Join Date, Visits, Total Spent, Birthday, Favorite Beer, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tier",
+          "label": "Tier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "points",
+          "label": "Points",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "joinDate",
+          "label": "Join Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "visits",
+          "label": "Visits",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "totalSpent",
+          "label": "Total Spent",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "birthday",
+          "label": "Birthday",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "favoriteBeer",
+          "label": "Favorite Beer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "tier": "Advanced Tier 1",
+          "points": 10,
+          "joinDate": "2024-01-01",
+          "visits": 10,
+          "totalSpent": 10,
+          "birthday": "2024-01-01",
+          "favoriteBeer": "Advanced Favorite Beer 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "tier": "Premium Tier 2",
+          "points": 58,
+          "joinDate": "2024-02-03",
+          "visits": 58,
+          "totalSpent": 71.7,
+          "birthday": "2024-02-03",
+          "favoriteBeer": "Premium Favorite Beer 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "tier": "Standard Tier 3",
+          "points": 106,
+          "joinDate": "2024-03-05",
+          "visits": 106,
+          "totalSpent": 33.4,
+          "birthday": "2024-03-05",
+          "favoriteBeer": "Standard Favorite Beer 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "tier": "Elite Tier 4",
+          "points": 154,
+          "joinDate": "2024-04-07",
+          "visits": 154,
+          "totalSpent": 95.1,
+          "birthday": "2024-04-07",
+          "favoriteBeer": "Elite Favorite Beer 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "tier": "Core Tier 5",
+          "points": 102,
+          "joinDate": "2024-05-09",
+          "visits": 102,
+          "totalSpent": 56.8,
+          "birthday": "2024-05-09",
+          "favoriteBeer": "Core Favorite Beer 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "tier": "Pro Tier 6",
+          "points": 150,
+          "joinDate": "2024-06-11",
+          "visits": 150,
+          "totalSpent": 118.5,
+          "birthday": "2024-06-11",
+          "favoriteBeer": "Pro Favorite Beer 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "tier": "Essential Tier 7",
+          "points": 198,
+          "joinDate": "2024-07-13",
+          "visits": 198,
+          "totalSpent": 80.2,
+          "birthday": "2024-07-13",
+          "favoriteBeer": "Essential Favorite Beer 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "tier": "Primary Tier 8",
+          "points": 146,
+          "joinDate": "2024-08-15",
+          "visits": 146,
+          "totalSpent": 141.9,
+          "birthday": "2024-08-15",
+          "favoriteBeer": "Primary Favorite Beer 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "tier": "Global Tier 9",
+          "points": 194,
+          "joinDate": "2024-09-17",
+          "visits": 194,
+          "totalSpent": 103.6,
+          "birthday": "2024-09-17",
+          "favoriteBeer": "Global Favorite Beer 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "tier": "Regional Tier 10",
+          "points": 242,
+          "joinDate": "2024-10-19",
+          "visits": 242,
+          "totalSpent": 165.3,
+          "birthday": "2024-10-19",
+          "favoriteBeer": "Regional Favorite Beer 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "tier": "Custom Tier 11",
+          "points": 190,
+          "joinDate": "2024-11-21",
+          "visits": 190,
+          "totalSpent": 127,
+          "birthday": "2024-11-21",
+          "favoriteBeer": "Custom Favorite Beer 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "tier": "Smart Tier 12",
+          "points": 238,
+          "joinDate": "2024-12-23",
+          "visits": 238,
+          "totalSpent": 188.7,
+          "birthday": "2024-12-23",
+          "favoriteBeer": "Smart Favorite Beer 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "tier": "Rapid Tier 13",
+          "points": 286,
+          "joinDate": "2024-01-25",
+          "visits": 286,
+          "totalSpent": 150.4,
+          "birthday": "2024-01-25",
+          "favoriteBeer": "Rapid Favorite Beer 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "tier": "Secure Tier 14",
+          "points": 234,
+          "joinDate": "2024-02-27",
+          "visits": 234,
+          "totalSpent": 212.1,
+          "birthday": "2024-02-27",
+          "favoriteBeer": "Secure Favorite Beer 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "tier": "Modern Tier 15",
+          "points": 282,
+          "joinDate": "2024-03-01",
+          "visits": 282,
+          "totalSpent": 173.8,
+          "birthday": "2024-03-01",
+          "favoriteBeer": "Modern Favorite Beer 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "FinancialRecord",
+      "routeKey": "financial-records",
+      "label": "Financial Record",
+      "icon": "users",
+      "aiFunction": "analyzeFinancialRecord",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Financial Record data. The data includes: Date, Type, Category, Amount, Description, Reference Number, Vendor, Payment Method, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "referenceNumber",
+          "label": "Reference Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "vendor",
+          "label": "Vendor",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "date": "2024-01-01",
+          "type": "Category A",
+          "category": "Category A",
+          "amount": 500,
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "referenceNumber": "Advanced Reference Number 1",
+          "vendor": "Advanced Vendor 1",
+          "paymentMethod": "Advanced Payment Method 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "date": "2024-02-03",
+          "type": "Category B",
+          "category": "Category B",
+          "amount": 2481,
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "referenceNumber": "Premium Reference Number 2",
+          "vendor": "Premium Vendor 2",
+          "paymentMethod": "Premium Payment Method 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "date": "2024-03-05",
+          "type": "Category C",
+          "category": "Category C",
+          "amount": 4462,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "referenceNumber": "Standard Reference Number 3",
+          "vendor": "Standard Vendor 3",
+          "paymentMethod": "Standard Payment Method 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "date": "2024-04-07",
+          "type": "Category D",
+          "category": "Category D",
+          "amount": 6443,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "referenceNumber": "Elite Reference Number 4",
+          "vendor": "Elite Vendor 4",
+          "paymentMethod": "Elite Payment Method 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "date": "2024-05-09",
+          "type": "Category E",
+          "category": "Category E",
+          "amount": 8424,
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "referenceNumber": "Core Reference Number 5",
+          "vendor": "Core Vendor 5",
+          "paymentMethod": "Core Payment Method 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "date": "2024-06-11",
+          "type": "Premium Tier",
+          "category": "Premium Tier",
+          "amount": 10405,
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "referenceNumber": "Pro Reference Number 6",
+          "vendor": "Pro Vendor 6",
+          "paymentMethod": "Pro Payment Method 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "date": "2024-07-13",
+          "type": "Standard Tier",
+          "category": "Standard Tier",
+          "amount": 12386,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "referenceNumber": "Essential Reference Number 7",
+          "vendor": "Essential Vendor 7",
+          "paymentMethod": "Essential Payment Method 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "date": "2024-08-15",
+          "type": "Basic Tier",
+          "category": "Basic Tier",
+          "amount": 9367,
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "referenceNumber": "Primary Reference Number 8",
+          "vendor": "Primary Vendor 8",
+          "paymentMethod": "Primary Payment Method 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "date": "2024-09-17",
+          "type": "Enterprise",
+          "category": "Enterprise",
+          "amount": 11348,
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "referenceNumber": "Global Reference Number 9",
+          "vendor": "Global Vendor 9",
+          "paymentMethod": "Global Payment Method 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "date": "2024-10-19",
+          "type": "Starter",
+          "category": "Starter",
+          "amount": 13329,
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "referenceNumber": "Regional Reference Number 10",
+          "vendor": "Regional Vendor 10",
+          "paymentMethod": "Regional Payment Method 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "date": "2024-11-21",
+          "type": "Growth",
+          "category": "Growth",
+          "amount": 15310,
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "referenceNumber": "Custom Reference Number 11",
+          "vendor": "Custom Vendor 11",
+          "paymentMethod": "Custom Payment Method 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "date": "2024-12-23",
+          "type": "Scale",
+          "category": "Scale",
+          "amount": 17291,
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "referenceNumber": "Smart Reference Number 12",
+          "vendor": "Smart Vendor 12",
+          "paymentMethod": "Smart Payment Method 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "date": "2024-01-25",
+          "type": "Foundation",
+          "category": "Foundation",
+          "amount": 19272,
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "referenceNumber": "Rapid Reference Number 13",
+          "vendor": "Rapid Vendor 13",
+          "paymentMethod": "Rapid Payment Method 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "date": "2024-02-27",
+          "type": "Advanced",
+          "category": "Advanced",
+          "amount": 21253,
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "referenceNumber": "Secure Reference Number 14",
+          "vendor": "Secure Vendor 14",
+          "paymentMethod": "Secure Payment Method 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "date": "2024-03-01",
+          "type": "Professional",
+          "category": "Professional",
+          "amount": 18234,
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "referenceNumber": "Modern Reference Number 15",
+          "vendor": "Modern Vendor 15",
+          "paymentMethod": "Modern Payment Method 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "CipSchedule",
+      "routeKey": "cip-schedules",
+      "label": "Cip Schedule",
+      "icon": "zap",
+      "aiFunction": "analyzeCipSchedule",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Cip Schedule data. The data includes: Equipment, Scheduled Date, Completed Date, Cip Type, Chemical Concentration, Temperature, Duration Minutes, Operator, Status, Verification, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "equipment",
+          "label": "Equipment",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "completedDate",
+          "label": "Completed Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "cipType",
+          "label": "Cip Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "chemicalConcentration",
+          "label": "Chemical Concentration",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "temperature",
+          "label": "Temperature",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "durationMinutes",
+          "label": "Duration Minutes",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "operator",
+          "label": "Operator",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "verification",
+          "label": "Verification",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "equipment": "Advanced Equipment 1",
+          "scheduledDate": "2024-01-01",
+          "completedDate": "2024-01-01",
+          "cipType": "Category A",
+          "chemicalConcentration": "Advanced Chemical Concentration 1",
+          "temperature": 10,
+          "durationMinutes": 10,
+          "operator": "Advanced Operator 1",
+          "status": "active",
+          "verification": "Advanced Verification 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "equipment": "Premium Equipment 2",
+          "scheduledDate": "2024-02-03",
+          "completedDate": "2024-02-03",
+          "cipType": "Category B",
+          "chemicalConcentration": "Premium Chemical Concentration 2",
+          "temperature": 71.7,
+          "durationMinutes": 58,
+          "operator": "Premium Operator 2",
+          "status": "pending",
+          "verification": "Premium Verification 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "equipment": "Standard Equipment 3",
+          "scheduledDate": "2024-03-05",
+          "completedDate": "2024-03-05",
+          "cipType": "Category C",
+          "chemicalConcentration": "Standard Chemical Concentration 3",
+          "temperature": 33.4,
+          "durationMinutes": 106,
+          "operator": "Standard Operator 3",
+          "status": "in_progress",
+          "verification": "Standard Verification 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "equipment": "Elite Equipment 4",
+          "scheduledDate": "2024-04-07",
+          "completedDate": "2024-04-07",
+          "cipType": "Category D",
+          "chemicalConcentration": "Elite Chemical Concentration 4",
+          "temperature": 95.1,
+          "durationMinutes": 154,
+          "operator": "Elite Operator 4",
+          "status": "completed",
+          "verification": "Elite Verification 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "equipment": "Core Equipment 5",
+          "scheduledDate": "2024-05-09",
+          "completedDate": "2024-05-09",
+          "cipType": "Category E",
+          "chemicalConcentration": "Core Chemical Concentration 5",
+          "temperature": 56.8,
+          "durationMinutes": 102,
+          "operator": "Core Operator 5",
+          "status": "under_review",
+          "verification": "Core Verification 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "equipment": "Pro Equipment 6",
+          "scheduledDate": "2024-06-11",
+          "completedDate": "2024-06-11",
+          "cipType": "Premium Tier",
+          "chemicalConcentration": "Pro Chemical Concentration 6",
+          "temperature": 118.5,
+          "durationMinutes": 150,
+          "operator": "Pro Operator 6",
+          "status": "approved",
+          "verification": "Pro Verification 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "equipment": "Essential Equipment 7",
+          "scheduledDate": "2024-07-13",
+          "completedDate": "2024-07-13",
+          "cipType": "Standard Tier",
+          "chemicalConcentration": "Essential Chemical Concentration 7",
+          "temperature": 80.2,
+          "durationMinutes": 198,
+          "operator": "Essential Operator 7",
+          "status": "active",
+          "verification": "Essential Verification 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "equipment": "Primary Equipment 8",
+          "scheduledDate": "2024-08-15",
+          "completedDate": "2024-08-15",
+          "cipType": "Basic Tier",
+          "chemicalConcentration": "Primary Chemical Concentration 8",
+          "temperature": 141.9,
+          "durationMinutes": 146,
+          "operator": "Primary Operator 8",
+          "status": "active",
+          "verification": "Primary Verification 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "equipment": "Global Equipment 9",
+          "scheduledDate": "2024-09-17",
+          "completedDate": "2024-09-17",
+          "cipType": "Enterprise",
+          "chemicalConcentration": "Global Chemical Concentration 9",
+          "temperature": 103.6,
+          "durationMinutes": 194,
+          "operator": "Global Operator 9",
+          "status": "active",
+          "verification": "Global Verification 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "equipment": "Regional Equipment 10",
+          "scheduledDate": "2024-10-19",
+          "completedDate": "2024-10-19",
+          "cipType": "Starter",
+          "chemicalConcentration": "Regional Chemical Concentration 10",
+          "temperature": 165.3,
+          "durationMinutes": 242,
+          "operator": "Regional Operator 10",
+          "status": "pending",
+          "verification": "Regional Verification 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "equipment": "Custom Equipment 11",
+          "scheduledDate": "2024-11-21",
+          "completedDate": "2024-11-21",
+          "cipType": "Growth",
+          "chemicalConcentration": "Custom Chemical Concentration 11",
+          "temperature": 127,
+          "durationMinutes": 190,
+          "operator": "Custom Operator 11",
+          "status": "completed",
+          "verification": "Custom Verification 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "equipment": "Smart Equipment 12",
+          "scheduledDate": "2024-12-23",
+          "completedDate": "2024-12-23",
+          "cipType": "Scale",
+          "chemicalConcentration": "Smart Chemical Concentration 12",
+          "temperature": 188.7,
+          "durationMinutes": 238,
+          "operator": "Smart Operator 12",
+          "status": "active",
+          "verification": "Smart Verification 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "equipment": "Rapid Equipment 13",
+          "scheduledDate": "2024-01-25",
+          "completedDate": "2024-01-25",
+          "cipType": "Foundation",
+          "chemicalConcentration": "Rapid Chemical Concentration 13",
+          "temperature": 150.4,
+          "durationMinutes": 286,
+          "operator": "Rapid Operator 13",
+          "status": "in_progress",
+          "verification": "Rapid Verification 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "equipment": "Secure Equipment 14",
+          "scheduledDate": "2024-02-27",
+          "completedDate": "2024-02-27",
+          "cipType": "Advanced",
+          "chemicalConcentration": "Secure Chemical Concentration 14",
+          "temperature": 212.1,
+          "durationMinutes": 234,
+          "operator": "Secure Operator 14",
+          "status": "active",
+          "verification": "Secure Verification 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "equipment": "Modern Equipment 15",
+          "scheduledDate": "2024-03-01",
+          "completedDate": "2024-03-01",
+          "cipType": "Professional",
+          "chemicalConcentration": "Modern Chemical Concentration 15",
+          "temperature": 173.8,
+          "durationMinutes": 282,
+          "operator": "Modern Operator 15",
+          "status": "approved",
+          "verification": "Modern Verification 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Vendor",
+      "routeKey": "vendors",
+      "label": "Vendor",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeVendor",
+      "aiPrompt": "You are an AI analyst for A I Brewery Craft Beverage Ops. Analyze the provided Vendor data. The data includes: Name, Category, Contact Name, Email, Phone, Address, Website, Payment Terms, Lead Time Days, Rating, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactName",
+          "label": "Contact Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "website",
+          "label": "Website",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentTerms",
+          "label": "Payment Terms",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "leadTimeDays",
+          "label": "Lead Time Days",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "contactName": "James Wilson",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "website": "https://example.com/website/1",
+          "paymentTerms": "Advanced Payment Terms 1",
+          "leadTimeDays": 10,
+          "rating": 1.5,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "contactName": "Sarah Chen",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "website": "https://example.com/website/2",
+          "paymentTerms": "Premium Payment Terms 2",
+          "leadTimeDays": 58,
+          "rating": 2.1,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "contactName": "Michael Brown",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "website": "https://example.com/website/3",
+          "paymentTerms": "Standard Payment Terms 3",
+          "leadTimeDays": 106,
+          "rating": 2.7,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "contactName": "Emily Davis",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "website": "https://example.com/website/4",
+          "paymentTerms": "Elite Payment Terms 4",
+          "leadTimeDays": 154,
+          "rating": 3.3,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "contactName": "Robert Garcia",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "website": "https://example.com/website/5",
+          "paymentTerms": "Core Payment Terms 5",
+          "leadTimeDays": 102,
+          "rating": 3.9,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "contactName": "Lisa Anderson",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "website": "https://example.com/website/6",
+          "paymentTerms": "Pro Payment Terms 6",
+          "leadTimeDays": 150,
+          "rating": 4.5,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "contactName": "David Martinez",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "website": "https://example.com/website/7",
+          "paymentTerms": "Essential Payment Terms 7",
+          "leadTimeDays": 198,
+          "rating": 5.1,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "contactName": "Jennifer Taylor",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "website": "https://example.com/website/8",
+          "paymentTerms": "Primary Payment Terms 8",
+          "leadTimeDays": 146,
+          "rating": 5.7,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "contactName": "William Johnson",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "website": "https://example.com/website/9",
+          "paymentTerms": "Global Payment Terms 9",
+          "leadTimeDays": 194,
+          "rating": 6.3,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "contactName": "Maria Rodriguez",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "website": "https://example.com/website/10",
+          "paymentTerms": "Regional Payment Terms 10",
+          "leadTimeDays": 242,
+          "rating": 1.9,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "contactName": "Thomas Lee",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "website": "https://example.com/website/11",
+          "paymentTerms": "Custom Payment Terms 11",
+          "leadTimeDays": 190,
+          "rating": 2.5,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "contactName": "Patricia White",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "website": "https://example.com/website/12",
+          "paymentTerms": "Smart Payment Terms 12",
+          "leadTimeDays": 238,
+          "rating": 3.1,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "contactName": "Christopher Hall",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "website": "https://example.com/website/13",
+          "paymentTerms": "Rapid Payment Terms 13",
+          "leadTimeDays": 286,
+          "rating": 3.7,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "contactName": "Amanda Clark",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "website": "https://example.com/website/14",
+          "paymentTerms": "Secure Payment Terms 14",
+          "leadTimeDays": 234,
+          "rating": 4.3,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "contactName": "Daniel Wright",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "website": "https://example.com/website/15",
+          "paymentTerms": "Modern Payment Terms 15",
+          "leadTimeDays": 282,
+          "rating": 4.9,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

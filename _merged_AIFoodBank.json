@@ -1,0 +1,3430 @@
+{
+  "appName": "AI Food Bank & Pantry",
+  "dbName": "a_i_food_bank",
+  "folderName": "generated/AIFoodBank",
+  "features": [
+    {
+      "modelName": "Warehouse",
+      "routeKey": "warehouses",
+      "label": "Warehouse",
+      "icon": "activity",
+      "aiFunction": "analyzeWarehouse",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Warehouse data. The data includes: Name, Address, Type, Capacity Sqft, Cooler Temp, Freezer Temp, Manager, Phone, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "capacitySqft",
+          "label": "Capacity Sqft",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "coolerTemp",
+          "label": "Cooler Temp",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "freezerTemp",
+          "label": "Freezer Temp",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "manager",
+          "label": "Manager",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "type": "Category A",
+          "capacitySqft": 10,
+          "coolerTemp": 10,
+          "freezerTemp": 10,
+          "manager": "Advanced Manager 1",
+          "phone": "(555) 100-1000",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "type": "Category B",
+          "capacitySqft": 58,
+          "coolerTemp": 71.7,
+          "freezerTemp": 71.7,
+          "manager": "Premium Manager 2",
+          "phone": "(556) 137-1113",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "type": "Category C",
+          "capacitySqft": 106,
+          "coolerTemp": 33.4,
+          "freezerTemp": 33.4,
+          "manager": "Standard Manager 3",
+          "phone": "(557) 174-1226",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "type": "Category D",
+          "capacitySqft": 154,
+          "coolerTemp": 95.1,
+          "freezerTemp": 95.1,
+          "manager": "Elite Manager 4",
+          "phone": "(558) 211-1339",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "type": "Category E",
+          "capacitySqft": 102,
+          "coolerTemp": 56.8,
+          "freezerTemp": 56.8,
+          "manager": "Core Manager 5",
+          "phone": "(555) 248-1452",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "type": "Premium Tier",
+          "capacitySqft": 150,
+          "coolerTemp": 118.5,
+          "freezerTemp": 118.5,
+          "manager": "Pro Manager 6",
+          "phone": "(556) 285-1565",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "type": "Standard Tier",
+          "capacitySqft": 198,
+          "coolerTemp": 80.2,
+          "freezerTemp": 80.2,
+          "manager": "Essential Manager 7",
+          "phone": "(557) 322-1678",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "type": "Basic Tier",
+          "capacitySqft": 146,
+          "coolerTemp": 141.9,
+          "freezerTemp": 141.9,
+          "manager": "Primary Manager 8",
+          "phone": "(558) 359-1791",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "type": "Enterprise",
+          "capacitySqft": 194,
+          "coolerTemp": 103.6,
+          "freezerTemp": 103.6,
+          "manager": "Global Manager 9",
+          "phone": "(555) 396-1904",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "type": "Starter",
+          "capacitySqft": 242,
+          "coolerTemp": 165.3,
+          "freezerTemp": 165.3,
+          "manager": "Regional Manager 10",
+          "phone": "(556) 433-2017",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "type": "Growth",
+          "capacitySqft": 190,
+          "coolerTemp": 127,
+          "freezerTemp": 127,
+          "manager": "Custom Manager 11",
+          "phone": "(557) 470-2130",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "type": "Scale",
+          "capacitySqft": 238,
+          "coolerTemp": 188.7,
+          "freezerTemp": 188.7,
+          "manager": "Smart Manager 12",
+          "phone": "(558) 507-2243",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "type": "Foundation",
+          "capacitySqft": 286,
+          "coolerTemp": 150.4,
+          "freezerTemp": 150.4,
+          "manager": "Rapid Manager 13",
+          "phone": "(555) 544-2356",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "type": "Advanced",
+          "capacitySqft": 234,
+          "coolerTemp": 212.1,
+          "freezerTemp": 212.1,
+          "manager": "Secure Manager 14",
+          "phone": "(556) 581-2469",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "type": "Professional",
+          "capacitySqft": 282,
+          "coolerTemp": 173.8,
+          "freezerTemp": 173.8,
+          "manager": "Modern Manager 15",
+          "phone": "(557) 618-2582",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Client",
+      "routeKey": "clients",
+      "label": "Client",
+      "icon": "briefcase",
+      "aiFunction": "analyzeClient",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Client data. The data includes: First Name, Last Name, Email, Phone, Address, City, State, Zip, Household Size, Income Level, Dietary Restrictions, Notes, Is Homebound. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "city",
+          "label": "City",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "zip",
+          "label": "Zip",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "householdSize",
+          "label": "Household Size",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "incomeLevel",
+          "label": "Income Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dietaryRestrictions",
+          "label": "Dietary Restrictions",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isHomebound",
+          "label": "Is Homebound",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "city": "New York",
+          "state": "Advanced State 1",
+          "zip": "Advanced Zip 1",
+          "householdSize": 10,
+          "incomeLevel": "low",
+          "dietaryRestrictions": "Comprehensive solution designed for optimal performance and efficiency.",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "isHomebound": true
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "city": "Los Angeles",
+          "state": "Premium State 2",
+          "zip": "Premium Zip 2",
+          "householdSize": 58,
+          "incomeLevel": "medium",
+          "dietaryRestrictions": "Industry-leading approach with proven results across multiple deployments.",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "isHomebound": true
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "city": "Chicago",
+          "state": "Standard State 3",
+          "zip": "Standard Zip 3",
+          "householdSize": 106,
+          "incomeLevel": "high",
+          "dietaryRestrictions": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "isHomebound": false
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "city": "Houston",
+          "state": "Elite State 4",
+          "zip": "Elite Zip 4",
+          "householdSize": 154,
+          "incomeLevel": "critical",
+          "dietaryRestrictions": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "isHomebound": true
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "city": "Phoenix",
+          "state": "Core State 5",
+          "zip": "Core Zip 5",
+          "householdSize": 102,
+          "incomeLevel": "medium",
+          "dietaryRestrictions": "Cost-effective strategy focused on sustainable long-term growth.",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "isHomebound": false
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "city": "San Francisco",
+          "state": "Pro State 6",
+          "zip": "Pro Zip 6",
+          "householdSize": 150,
+          "incomeLevel": "low",
+          "dietaryRestrictions": "High-priority initiative aligned with organizational strategic objectives.",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "isHomebound": true
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "city": "Seattle",
+          "state": "Essential State 7",
+          "zip": "Essential Zip 7",
+          "householdSize": 198,
+          "incomeLevel": "medium",
+          "dietaryRestrictions": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "isHomebound": true
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "city": "Boston",
+          "state": "Primary State 8",
+          "zip": "Primary Zip 8",
+          "householdSize": 146,
+          "incomeLevel": "high",
+          "dietaryRestrictions": "Innovative framework incorporating best practices and emerging technologies.",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "isHomebound": false
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "city": "Denver",
+          "state": "Global State 9",
+          "zip": "Global Zip 9",
+          "householdSize": 194,
+          "incomeLevel": "critical",
+          "dietaryRestrictions": "Scalable architecture built to accommodate rapid expansion and change.",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "isHomebound": true
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "city": "Miami",
+          "state": "Regional State 10",
+          "zip": "Regional Zip 10",
+          "householdSize": 242,
+          "incomeLevel": "medium",
+          "dietaryRestrictions": "Enterprise-grade solution with robust security and compliance features.",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "isHomebound": true
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "city": "Austin",
+          "state": "Custom State 11",
+          "zip": "Custom Zip 11",
+          "householdSize": 190,
+          "incomeLevel": "low",
+          "dietaryRestrictions": "Integrated platform connecting multiple systems for seamless operations.",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "isHomebound": false
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "city": "Portland",
+          "state": "Smart State 12",
+          "zip": "Smart Zip 12",
+          "householdSize": 238,
+          "incomeLevel": "medium",
+          "dietaryRestrictions": "Automated workflow reducing manual intervention and human error.",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "isHomebound": true
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "city": "Dallas",
+          "state": "Rapid State 13",
+          "zip": "Rapid Zip 13",
+          "householdSize": 286,
+          "incomeLevel": "high",
+          "dietaryRestrictions": "Real-time monitoring system with intelligent alerting capabilities.",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "isHomebound": false
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "city": "Atlanta",
+          "state": "Secure State 14",
+          "zip": "Secure Zip 14",
+          "householdSize": 234,
+          "incomeLevel": "critical",
+          "dietaryRestrictions": "Customizable module adaptable to diverse operational requirements.",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "isHomebound": true
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "city": "Nashville",
+          "state": "Modern State 15",
+          "zip": "Modern Zip 15",
+          "householdSize": 282,
+          "incomeLevel": "medium",
+          "dietaryRestrictions": "Performance-optimized design achieving superior throughput and reliability.",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "isHomebound": true
+        }
+      ]
+    },
+    {
+      "modelName": "Donor",
+      "routeKey": "donors",
+      "label": "Donor",
+      "icon": "clipboard",
+      "aiFunction": "analyzeDonor",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Donor data. The data includes: Name, Type, Email, Phone, Address, Contact Person, Donation Frequency, Total Donated Lbs, Total Donated Value, Tax Id, Notes, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "contactPerson",
+          "label": "Contact Person",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "donationFrequency",
+          "label": "Donation Frequency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalDonatedLbs",
+          "label": "Total Donated Lbs",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalDonatedValue",
+          "label": "Total Donated Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "taxId",
+          "label": "Tax Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "contactPerson": "Advanced Contact Person 1",
+          "donationFrequency": "Advanced Donation Frequency 1",
+          "totalDonatedLbs": 10,
+          "totalDonatedValue": 10,
+          "taxId": "Advanced Tax Id 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "contactPerson": "Premium Contact Person 2",
+          "donationFrequency": "Premium Donation Frequency 2",
+          "totalDonatedLbs": 71.7,
+          "totalDonatedValue": 71.7,
+          "taxId": "Premium Tax Id 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "contactPerson": "Standard Contact Person 3",
+          "donationFrequency": "Standard Donation Frequency 3",
+          "totalDonatedLbs": 33.4,
+          "totalDonatedValue": 33.4,
+          "taxId": "Standard Tax Id 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "contactPerson": "Elite Contact Person 4",
+          "donationFrequency": "Elite Donation Frequency 4",
+          "totalDonatedLbs": 95.1,
+          "totalDonatedValue": 95.1,
+          "taxId": "Elite Tax Id 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "contactPerson": "Core Contact Person 5",
+          "donationFrequency": "Core Donation Frequency 5",
+          "totalDonatedLbs": 56.8,
+          "totalDonatedValue": 56.8,
+          "taxId": "Core Tax Id 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "contactPerson": "Pro Contact Person 6",
+          "donationFrequency": "Pro Donation Frequency 6",
+          "totalDonatedLbs": 118.5,
+          "totalDonatedValue": 118.5,
+          "taxId": "Pro Tax Id 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "contactPerson": "Essential Contact Person 7",
+          "donationFrequency": "Essential Donation Frequency 7",
+          "totalDonatedLbs": 80.2,
+          "totalDonatedValue": 80.2,
+          "taxId": "Essential Tax Id 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "contactPerson": "Primary Contact Person 8",
+          "donationFrequency": "Primary Donation Frequency 8",
+          "totalDonatedLbs": 141.9,
+          "totalDonatedValue": 141.9,
+          "taxId": "Primary Tax Id 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "contactPerson": "Global Contact Person 9",
+          "donationFrequency": "Global Donation Frequency 9",
+          "totalDonatedLbs": 103.6,
+          "totalDonatedValue": 103.6,
+          "taxId": "Global Tax Id 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "contactPerson": "Regional Contact Person 10",
+          "donationFrequency": "Regional Donation Frequency 10",
+          "totalDonatedLbs": 165.3,
+          "totalDonatedValue": 165.3,
+          "taxId": "Regional Tax Id 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "contactPerson": "Custom Contact Person 11",
+          "donationFrequency": "Custom Donation Frequency 11",
+          "totalDonatedLbs": 127,
+          "totalDonatedValue": 127,
+          "taxId": "Custom Tax Id 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "contactPerson": "Smart Contact Person 12",
+          "donationFrequency": "Smart Donation Frequency 12",
+          "totalDonatedLbs": 188.7,
+          "totalDonatedValue": 188.7,
+          "taxId": "Smart Tax Id 12",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "contactPerson": "Rapid Contact Person 13",
+          "donationFrequency": "Rapid Donation Frequency 13",
+          "totalDonatedLbs": 150.4,
+          "totalDonatedValue": 150.4,
+          "taxId": "Rapid Tax Id 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "contactPerson": "Secure Contact Person 14",
+          "donationFrequency": "Secure Donation Frequency 14",
+          "totalDonatedLbs": 212.1,
+          "totalDonatedValue": 212.1,
+          "taxId": "Secure Tax Id 14",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "contactPerson": "Modern Contact Person 15",
+          "donationFrequency": "Modern Donation Frequency 15",
+          "totalDonatedLbs": 173.8,
+          "totalDonatedValue": 173.8,
+          "taxId": "Modern Tax Id 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Inventory",
+      "routeKey": "inventorys",
+      "label": "Inventory",
+      "icon": "database",
+      "aiFunction": "analyzeInventory",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Inventory data. The data includes: Name, Category, Source, Quantity, Unit, Weight Lbs, Expiration Date, Storage Type, Warehouse Id, Barcode, Min Stock Level, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "unit",
+          "label": "Unit",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "weightLbs",
+          "label": "Weight Lbs",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "expirationDate",
+          "label": "Expiration Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "storageType",
+          "label": "Storage Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "warehouseId",
+          "label": "Warehouse Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "barcode",
+          "label": "Barcode",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "minStockLevel",
+          "label": "Min Stock Level",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "source": "Advanced Source 1",
+          "quantity": 80,
+          "unit": "Advanced Unit 1",
+          "weightLbs": 10,
+          "expirationDate": "2024-01-01",
+          "storageType": "Category A",
+          "warehouseId": 10,
+          "barcode": "Advanced Barcode 1",
+          "minStockLevel": 10,
+          "status": "active"
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "source": "Premium Source 2",
+          "quantity": 93,
+          "unit": "Premium Unit 2",
+          "weightLbs": 71.7,
+          "expirationDate": "2024-02-03",
+          "storageType": "Category B",
+          "warehouseId": 58,
+          "barcode": "Premium Barcode 2",
+          "minStockLevel": 58,
+          "status": "pending"
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "source": "Standard Source 3",
+          "quantity": 55,
+          "unit": "Standard Unit 3",
+          "weightLbs": 33.4,
+          "expirationDate": "2024-03-05",
+          "storageType": "Category C",
+          "warehouseId": 106,
+          "barcode": "Standard Barcode 3",
+          "minStockLevel": 106,
+          "status": "in_progress"
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "source": "Elite Source 4",
+          "quantity": 90,
+          "unit": "Elite Unit 4",
+          "weightLbs": 95.1,
+          "expirationDate": "2024-04-07",
+          "storageType": "Category D",
+          "warehouseId": 154,
+          "barcode": "Elite Barcode 4",
+          "minStockLevel": 154,
+          "status": "completed"
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "source": "Core Source 5",
+          "quantity": 173,
+          "unit": "Core Unit 5",
+          "weightLbs": 56.8,
+          "expirationDate": "2024-05-09",
+          "storageType": "Category E",
+          "warehouseId": 102,
+          "barcode": "Core Barcode 5",
+          "minStockLevel": 102,
+          "status": "under_review"
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "source": "Pro Source 6",
+          "quantity": 100,
+          "unit": "Pro Unit 6",
+          "weightLbs": 118.5,
+          "expirationDate": "2024-06-11",
+          "storageType": "Premium Tier",
+          "warehouseId": 150,
+          "barcode": "Pro Barcode 6",
+          "minStockLevel": 150,
+          "status": "approved"
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "source": "Essential Source 7",
+          "quantity": 73,
+          "unit": "Essential Unit 7",
+          "weightLbs": 80.2,
+          "expirationDate": "2024-07-13",
+          "storageType": "Standard Tier",
+          "warehouseId": 198,
+          "barcode": "Essential Barcode 7",
+          "minStockLevel": 198,
+          "status": "active"
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "source": "Primary Source 8",
+          "quantity": 135,
+          "unit": "Primary Unit 8",
+          "weightLbs": 141.9,
+          "expirationDate": "2024-08-15",
+          "storageType": "Basic Tier",
+          "warehouseId": 146,
+          "barcode": "Primary Barcode 8",
+          "minStockLevel": 146,
+          "status": "active"
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "source": "Global Source 9",
+          "quantity": 172,
+          "unit": "Global Unit 9",
+          "weightLbs": 103.6,
+          "expirationDate": "2024-09-17",
+          "storageType": "Enterprise",
+          "warehouseId": 194,
+          "barcode": "Global Barcode 9",
+          "minStockLevel": 194,
+          "status": "active"
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "source": "Regional Source 10",
+          "quantity": 267,
+          "unit": "Regional Unit 10",
+          "weightLbs": 165.3,
+          "expirationDate": "2024-10-19",
+          "storageType": "Starter",
+          "warehouseId": 242,
+          "barcode": "Regional Barcode 10",
+          "minStockLevel": 242,
+          "status": "pending"
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "source": "Custom Source 11",
+          "quantity": 179,
+          "unit": "Custom Unit 11",
+          "weightLbs": 127,
+          "expirationDate": "2024-11-21",
+          "storageType": "Growth",
+          "warehouseId": 190,
+          "barcode": "Custom Barcode 11",
+          "minStockLevel": 190,
+          "status": "completed"
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "source": "Smart Source 12",
+          "quantity": 232,
+          "unit": "Smart Unit 12",
+          "weightLbs": 188.7,
+          "expirationDate": "2024-12-23",
+          "storageType": "Scale",
+          "warehouseId": 238,
+          "barcode": "Smart Barcode 12",
+          "minStockLevel": 238,
+          "status": "active"
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "source": "Rapid Source 13",
+          "quantity": 254,
+          "unit": "Rapid Unit 13",
+          "weightLbs": 150.4,
+          "expirationDate": "2024-01-25",
+          "storageType": "Foundation",
+          "warehouseId": 286,
+          "barcode": "Rapid Barcode 13",
+          "minStockLevel": 286,
+          "status": "in_progress"
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "source": "Secure Source 14",
+          "quantity": 238,
+          "unit": "Secure Unit 14",
+          "weightLbs": 212.1,
+          "expirationDate": "2024-02-27",
+          "storageType": "Advanced",
+          "warehouseId": 234,
+          "barcode": "Secure Barcode 14",
+          "minStockLevel": 234,
+          "status": "active"
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "source": "Modern Source 15",
+          "quantity": 116,
+          "unit": "Modern Unit 15",
+          "weightLbs": 173.8,
+          "expirationDate": "2024-03-01",
+          "storageType": "Professional",
+          "warehouseId": 282,
+          "barcode": "Modern Barcode 15",
+          "minStockLevel": 282,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Visit",
+      "routeKey": "visits",
+      "label": "Visit",
+      "icon": "file-text",
+      "aiFunction": "analyzeVisit",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Visit data. The data includes: Client Id, Visit Date, Distribution Type, Items Received, Weight Lbs, Notes, Served By. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "clientId",
+          "label": "Client Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "visitDate",
+          "label": "Visit Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "distributionType",
+          "label": "Distribution Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "itemsReceived",
+          "label": "Items Received",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "weightLbs",
+          "label": "Weight Lbs",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "servedBy",
+          "label": "Served By",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "clientId": 10,
+          "visitDate": "2024-01-01",
+          "distributionType": "Category A",
+          "itemsReceived": "Comprehensive solution designed for optimal performance and efficiency.",
+          "weightLbs": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "servedBy": "Advanced Served By 1"
+        },
+        {
+          "clientId": 58,
+          "visitDate": "2024-02-03",
+          "distributionType": "Category B",
+          "itemsReceived": "Industry-leading approach with proven results across multiple deployments.",
+          "weightLbs": 71.7,
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "servedBy": "Premium Served By 2"
+        },
+        {
+          "clientId": 106,
+          "visitDate": "2024-03-05",
+          "distributionType": "Category C",
+          "itemsReceived": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "weightLbs": 33.4,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "servedBy": "Standard Served By 3"
+        },
+        {
+          "clientId": 154,
+          "visitDate": "2024-04-07",
+          "distributionType": "Category D",
+          "itemsReceived": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "weightLbs": 95.1,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "servedBy": "Elite Served By 4"
+        },
+        {
+          "clientId": 102,
+          "visitDate": "2024-05-09",
+          "distributionType": "Category E",
+          "itemsReceived": "Cost-effective strategy focused on sustainable long-term growth.",
+          "weightLbs": 56.8,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "servedBy": "Core Served By 5"
+        },
+        {
+          "clientId": 150,
+          "visitDate": "2024-06-11",
+          "distributionType": "Premium Tier",
+          "itemsReceived": "High-priority initiative aligned with organizational strategic objectives.",
+          "weightLbs": 118.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "servedBy": "Pro Served By 6"
+        },
+        {
+          "clientId": 198,
+          "visitDate": "2024-07-13",
+          "distributionType": "Standard Tier",
+          "itemsReceived": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "weightLbs": 80.2,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "servedBy": "Essential Served By 7"
+        },
+        {
+          "clientId": 146,
+          "visitDate": "2024-08-15",
+          "distributionType": "Basic Tier",
+          "itemsReceived": "Innovative framework incorporating best practices and emerging technologies.",
+          "weightLbs": 141.9,
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "servedBy": "Primary Served By 8"
+        },
+        {
+          "clientId": 194,
+          "visitDate": "2024-09-17",
+          "distributionType": "Enterprise",
+          "itemsReceived": "Scalable architecture built to accommodate rapid expansion and change.",
+          "weightLbs": 103.6,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "servedBy": "Global Served By 9"
+        },
+        {
+          "clientId": 242,
+          "visitDate": "2024-10-19",
+          "distributionType": "Starter",
+          "itemsReceived": "Enterprise-grade solution with robust security and compliance features.",
+          "weightLbs": 165.3,
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "servedBy": "Regional Served By 10"
+        },
+        {
+          "clientId": 190,
+          "visitDate": "2024-11-21",
+          "distributionType": "Growth",
+          "itemsReceived": "Integrated platform connecting multiple systems for seamless operations.",
+          "weightLbs": 127,
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "servedBy": "Custom Served By 11"
+        },
+        {
+          "clientId": 238,
+          "visitDate": "2024-12-23",
+          "distributionType": "Scale",
+          "itemsReceived": "Automated workflow reducing manual intervention and human error.",
+          "weightLbs": 188.7,
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "servedBy": "Smart Served By 12"
+        },
+        {
+          "clientId": 286,
+          "visitDate": "2024-01-25",
+          "distributionType": "Foundation",
+          "itemsReceived": "Real-time monitoring system with intelligent alerting capabilities.",
+          "weightLbs": 150.4,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "servedBy": "Rapid Served By 13"
+        },
+        {
+          "clientId": 234,
+          "visitDate": "2024-02-27",
+          "distributionType": "Advanced",
+          "itemsReceived": "Customizable module adaptable to diverse operational requirements.",
+          "weightLbs": 212.1,
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "servedBy": "Secure Served By 14"
+        },
+        {
+          "clientId": 282,
+          "visitDate": "2024-03-01",
+          "distributionType": "Professional",
+          "itemsReceived": "Performance-optimized design achieving superior throughput and reliability.",
+          "weightLbs": 173.8,
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "servedBy": "Modern Served By 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Distribution",
+      "routeKey": "distributions",
+      "label": "Distribution",
+      "icon": "heart",
+      "aiFunction": "analyzeDistribution",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Distribution data. The data includes: Name, Date, Type, Location, Max Clients, Registered Count, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "maxClients",
+          "label": "Max Clients",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "registeredCount",
+          "label": "Registered Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "date": "2024-01-01",
+          "type": "Category A",
+          "location": "New York",
+          "maxClients": 10,
+          "registeredCount": 40,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "date": "2024-02-03",
+          "type": "Category B",
+          "location": "Los Angeles",
+          "maxClients": 58,
+          "registeredCount": 42,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "date": "2024-03-05",
+          "type": "Category C",
+          "location": "Chicago",
+          "maxClients": 106,
+          "registeredCount": 200,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "date": "2024-04-07",
+          "type": "Category D",
+          "location": "Houston",
+          "maxClients": 154,
+          "registeredCount": 67,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "date": "2024-05-09",
+          "type": "Category E",
+          "location": "Phoenix",
+          "maxClients": 102,
+          "registeredCount": 189,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "date": "2024-06-11",
+          "type": "Premium Tier",
+          "location": "San Francisco",
+          "maxClients": 150,
+          "registeredCount": 121,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "date": "2024-07-13",
+          "type": "Standard Tier",
+          "location": "Seattle",
+          "maxClients": 198,
+          "registeredCount": 191,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "date": "2024-08-15",
+          "type": "Basic Tier",
+          "location": "Boston",
+          "maxClients": 146,
+          "registeredCount": 136,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "date": "2024-09-17",
+          "type": "Enterprise",
+          "location": "Denver",
+          "maxClients": 194,
+          "registeredCount": 251,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "date": "2024-10-19",
+          "type": "Starter",
+          "location": "Miami",
+          "maxClients": 242,
+          "registeredCount": 165,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "date": "2024-11-21",
+          "type": "Growth",
+          "location": "Austin",
+          "maxClients": 190,
+          "registeredCount": 125,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "date": "2024-12-23",
+          "type": "Scale",
+          "location": "Portland",
+          "maxClients": 238,
+          "registeredCount": 107,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "date": "2024-01-25",
+          "type": "Foundation",
+          "location": "Dallas",
+          "maxClients": 286,
+          "registeredCount": 287,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "date": "2024-02-27",
+          "type": "Advanced",
+          "location": "Atlanta",
+          "maxClients": 234,
+          "registeredCount": 275,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "date": "2024-03-01",
+          "type": "Professional",
+          "location": "Nashville",
+          "maxClients": 282,
+          "registeredCount": 202,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "FoodDrive",
+      "routeKey": "food-drives",
+      "label": "Food Drive",
+      "icon": "layers",
+      "aiFunction": "analyzeFoodDrive",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Food Drive data. The data includes: Name, Organizer, Start Date, End Date, Goal Lbs, Collected Lbs, Location, Status, Donation Count, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "organizer",
+          "label": "Organizer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "goalLbs",
+          "label": "Goal Lbs",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "collectedLbs",
+          "label": "Collected Lbs",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "donationCount",
+          "label": "Donation Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "organizer": "Advanced Organizer 1",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "goalLbs": 10,
+          "collectedLbs": 10,
+          "location": "New York",
+          "status": "active",
+          "donationCount": 153,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "organizer": "Premium Organizer 2",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "goalLbs": 71.7,
+          "collectedLbs": 71.7,
+          "location": "Los Angeles",
+          "status": "pending",
+          "donationCount": 156,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "organizer": "Standard Organizer 3",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "goalLbs": 33.4,
+          "collectedLbs": 33.4,
+          "location": "Chicago",
+          "status": "in_progress",
+          "donationCount": 58,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "organizer": "Elite Organizer 4",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "goalLbs": 95.1,
+          "collectedLbs": 95.1,
+          "location": "Houston",
+          "status": "completed",
+          "donationCount": 50,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "organizer": "Core Organizer 5",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "goalLbs": 56.8,
+          "collectedLbs": 56.8,
+          "location": "Phoenix",
+          "status": "under_review",
+          "donationCount": 89,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "organizer": "Pro Organizer 6",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "goalLbs": 118.5,
+          "collectedLbs": 118.5,
+          "location": "San Francisco",
+          "status": "approved",
+          "donationCount": 45,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "organizer": "Essential Organizer 7",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "goalLbs": 80.2,
+          "collectedLbs": 80.2,
+          "location": "Seattle",
+          "status": "active",
+          "donationCount": 173,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "organizer": "Primary Organizer 8",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "goalLbs": 141.9,
+          "collectedLbs": 141.9,
+          "location": "Boston",
+          "status": "active",
+          "donationCount": 126,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "organizer": "Global Organizer 9",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "goalLbs": 103.6,
+          "collectedLbs": 103.6,
+          "location": "Denver",
+          "status": "active",
+          "donationCount": 252,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "organizer": "Regional Organizer 10",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "goalLbs": 165.3,
+          "collectedLbs": 165.3,
+          "location": "Miami",
+          "status": "pending",
+          "donationCount": 158,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "organizer": "Custom Organizer 11",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "goalLbs": 127,
+          "collectedLbs": 127,
+          "location": "Austin",
+          "status": "completed",
+          "donationCount": 166,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "organizer": "Smart Organizer 12",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "goalLbs": 188.7,
+          "collectedLbs": 188.7,
+          "location": "Portland",
+          "status": "active",
+          "donationCount": 198,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "organizer": "Rapid Organizer 13",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "goalLbs": 150.4,
+          "collectedLbs": 150.4,
+          "location": "Dallas",
+          "status": "in_progress",
+          "donationCount": 163,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "organizer": "Secure Organizer 14",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "goalLbs": 212.1,
+          "collectedLbs": 212.1,
+          "location": "Atlanta",
+          "status": "active",
+          "donationCount": 112,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "organizer": "Modern Organizer 15",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "goalLbs": 173.8,
+          "collectedLbs": 173.8,
+          "location": "Nashville",
+          "status": "approved",
+          "donationCount": 150,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Volunteer",
+      "routeKey": "volunteers",
+      "label": "Volunteer",
+      "icon": "map-pin",
+      "aiFunction": "analyzeVolunteer",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Volunteer data. The data includes: Name, Email, Phone, Role, Availability, Skills, Background Check, Emergency Contact, Total Hours, Status, Start Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "availability",
+          "label": "Availability",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "skills",
+          "label": "Skills",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "backgroundCheck",
+          "label": "Background Check",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "emergencyContact",
+          "label": "Emergency Contact",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalHours",
+          "label": "Total Hours",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "role": "Advanced Role 1",
+          "availability": "Comprehensive solution designed for optimal performance and efficiency.",
+          "skills": "Comprehensive solution designed for optimal performance and efficiency.",
+          "backgroundCheck": true,
+          "emergencyContact": "Advanced Emergency Contact 1",
+          "totalHours": 10,
+          "status": "active",
+          "startDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "role": "Premium Role 2",
+          "availability": "Industry-leading approach with proven results across multiple deployments.",
+          "skills": "Industry-leading approach with proven results across multiple deployments.",
+          "backgroundCheck": true,
+          "emergencyContact": "Premium Emergency Contact 2",
+          "totalHours": 71.7,
+          "status": "pending",
+          "startDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "role": "Standard Role 3",
+          "availability": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "skills": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "backgroundCheck": false,
+          "emergencyContact": "Standard Emergency Contact 3",
+          "totalHours": 33.4,
+          "status": "in_progress",
+          "startDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "role": "Elite Role 4",
+          "availability": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "skills": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "backgroundCheck": true,
+          "emergencyContact": "Elite Emergency Contact 4",
+          "totalHours": 95.1,
+          "status": "completed",
+          "startDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "role": "Core Role 5",
+          "availability": "Cost-effective strategy focused on sustainable long-term growth.",
+          "skills": "Cost-effective strategy focused on sustainable long-term growth.",
+          "backgroundCheck": false,
+          "emergencyContact": "Core Emergency Contact 5",
+          "totalHours": 56.8,
+          "status": "under_review",
+          "startDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "role": "Pro Role 6",
+          "availability": "High-priority initiative aligned with organizational strategic objectives.",
+          "skills": "High-priority initiative aligned with organizational strategic objectives.",
+          "backgroundCheck": true,
+          "emergencyContact": "Pro Emergency Contact 6",
+          "totalHours": 118.5,
+          "status": "approved",
+          "startDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "role": "Essential Role 7",
+          "availability": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "skills": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "backgroundCheck": true,
+          "emergencyContact": "Essential Emergency Contact 7",
+          "totalHours": 80.2,
+          "status": "active",
+          "startDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "role": "Primary Role 8",
+          "availability": "Innovative framework incorporating best practices and emerging technologies.",
+          "skills": "Innovative framework incorporating best practices and emerging technologies.",
+          "backgroundCheck": false,
+          "emergencyContact": "Primary Emergency Contact 8",
+          "totalHours": 141.9,
+          "status": "active",
+          "startDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "role": "Global Role 9",
+          "availability": "Scalable architecture built to accommodate rapid expansion and change.",
+          "skills": "Scalable architecture built to accommodate rapid expansion and change.",
+          "backgroundCheck": true,
+          "emergencyContact": "Global Emergency Contact 9",
+          "totalHours": 103.6,
+          "status": "active",
+          "startDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "role": "Regional Role 10",
+          "availability": "Enterprise-grade solution with robust security and compliance features.",
+          "skills": "Enterprise-grade solution with robust security and compliance features.",
+          "backgroundCheck": true,
+          "emergencyContact": "Regional Emergency Contact 10",
+          "totalHours": 165.3,
+          "status": "pending",
+          "startDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "role": "Custom Role 11",
+          "availability": "Integrated platform connecting multiple systems for seamless operations.",
+          "skills": "Integrated platform connecting multiple systems for seamless operations.",
+          "backgroundCheck": false,
+          "emergencyContact": "Custom Emergency Contact 11",
+          "totalHours": 127,
+          "status": "completed",
+          "startDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "role": "Smart Role 12",
+          "availability": "Automated workflow reducing manual intervention and human error.",
+          "skills": "Automated workflow reducing manual intervention and human error.",
+          "backgroundCheck": true,
+          "emergencyContact": "Smart Emergency Contact 12",
+          "totalHours": 188.7,
+          "status": "active",
+          "startDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "role": "Rapid Role 13",
+          "availability": "Real-time monitoring system with intelligent alerting capabilities.",
+          "skills": "Real-time monitoring system with intelligent alerting capabilities.",
+          "backgroundCheck": false,
+          "emergencyContact": "Rapid Emergency Contact 13",
+          "totalHours": 150.4,
+          "status": "in_progress",
+          "startDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "role": "Secure Role 14",
+          "availability": "Customizable module adaptable to diverse operational requirements.",
+          "skills": "Customizable module adaptable to diverse operational requirements.",
+          "backgroundCheck": true,
+          "emergencyContact": "Secure Emergency Contact 14",
+          "totalHours": 212.1,
+          "status": "active",
+          "startDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "role": "Modern Role 15",
+          "availability": "Performance-optimized design achieving superior throughput and reliability.",
+          "skills": "Performance-optimized design achieving superior throughput and reliability.",
+          "backgroundCheck": true,
+          "emergencyContact": "Modern Emergency Contact 15",
+          "totalHours": 173.8,
+          "status": "approved",
+          "startDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Fleet",
+      "routeKey": "fleets",
+      "label": "Fleet",
+      "icon": "package",
+      "aiFunction": "analyzeFleet",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Fleet data. The data includes: Name, Type, Make, Model, Year, License Plate, Mileage, Status, Insurance Expiry, Last Service, Next Service, Capacity Lbs, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "make",
+          "label": "Make",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "model",
+          "label": "Model",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "year",
+          "label": "Year",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "licensePlate",
+          "label": "License Plate",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mileage",
+          "label": "Mileage",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "insuranceExpiry",
+          "label": "Insurance Expiry",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "lastService",
+          "label": "Last Service",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "nextService",
+          "label": "Next Service",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "capacityLbs",
+          "label": "Capacity Lbs",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "make": "Advanced Make 1",
+          "model": "Advanced Model 1",
+          "year": 2020,
+          "licensePlate": "Advanced License Plate 1",
+          "mileage": 18,
+          "status": "active",
+          "insuranceExpiry": "2024-01-01",
+          "lastService": "2024-01-01",
+          "nextService": "2024-01-01",
+          "capacityLbs": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "make": "Premium Make 2",
+          "model": "Premium Model 2",
+          "year": 2021,
+          "licensePlate": "Premium License Plate 2",
+          "mileage": 21,
+          "status": "pending",
+          "insuranceExpiry": "2024-02-03",
+          "lastService": "2024-02-03",
+          "nextService": "2024-02-03",
+          "capacityLbs": 58,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "make": "Standard Make 3",
+          "model": "Standard Model 3",
+          "year": 2022,
+          "licensePlate": "Standard License Plate 3",
+          "mileage": 24,
+          "status": "in_progress",
+          "insuranceExpiry": "2024-03-05",
+          "lastService": "2024-03-05",
+          "nextService": "2024-03-05",
+          "capacityLbs": 106,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "make": "Elite Make 4",
+          "model": "Elite Model 4",
+          "year": 2023,
+          "licensePlate": "Elite License Plate 4",
+          "mileage": 27,
+          "status": "completed",
+          "insuranceExpiry": "2024-04-07",
+          "lastService": "2024-04-07",
+          "nextService": "2024-04-07",
+          "capacityLbs": 154,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "make": "Core Make 5",
+          "model": "Core Model 5",
+          "year": 2024,
+          "licensePlate": "Core License Plate 5",
+          "mileage": 30,
+          "status": "under_review",
+          "insuranceExpiry": "2024-05-09",
+          "lastService": "2024-05-09",
+          "nextService": "2024-05-09",
+          "capacityLbs": 102,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "make": "Pro Make 6",
+          "model": "Pro Model 6",
+          "year": 2025,
+          "licensePlate": "Pro License Plate 6",
+          "mileage": 33,
+          "status": "approved",
+          "insuranceExpiry": "2024-06-11",
+          "lastService": "2024-06-11",
+          "nextService": "2024-06-11",
+          "capacityLbs": 150,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "make": "Essential Make 7",
+          "model": "Essential Model 7",
+          "year": 2020,
+          "licensePlate": "Essential License Plate 7",
+          "mileage": 36,
+          "status": "active",
+          "insuranceExpiry": "2024-07-13",
+          "lastService": "2024-07-13",
+          "nextService": "2024-07-13",
+          "capacityLbs": 198,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "make": "Primary Make 8",
+          "model": "Primary Model 8",
+          "year": 2021,
+          "licensePlate": "Primary License Plate 8",
+          "mileage": 39,
+          "status": "active",
+          "insuranceExpiry": "2024-08-15",
+          "lastService": "2024-08-15",
+          "nextService": "2024-08-15",
+          "capacityLbs": 146,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "make": "Global Make 9",
+          "model": "Global Model 9",
+          "year": 2022,
+          "licensePlate": "Global License Plate 9",
+          "mileage": 42,
+          "status": "active",
+          "insuranceExpiry": "2024-09-17",
+          "lastService": "2024-09-17",
+          "nextService": "2024-09-17",
+          "capacityLbs": 194,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "make": "Regional Make 10",
+          "model": "Regional Model 10",
+          "year": 2023,
+          "licensePlate": "Regional License Plate 10",
+          "mileage": 45,
+          "status": "pending",
+          "insuranceExpiry": "2024-10-19",
+          "lastService": "2024-10-19",
+          "nextService": "2024-10-19",
+          "capacityLbs": 242,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "make": "Custom Make 11",
+          "model": "Custom Model 11",
+          "year": 2024,
+          "licensePlate": "Custom License Plate 11",
+          "mileage": 48,
+          "status": "completed",
+          "insuranceExpiry": "2024-11-21",
+          "lastService": "2024-11-21",
+          "nextService": "2024-11-21",
+          "capacityLbs": 190,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "make": "Smart Make 12",
+          "model": "Smart Model 12",
+          "year": 2025,
+          "licensePlate": "Smart License Plate 12",
+          "mileage": 51,
+          "status": "active",
+          "insuranceExpiry": "2024-12-23",
+          "lastService": "2024-12-23",
+          "nextService": "2024-12-23",
+          "capacityLbs": 238,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "make": "Rapid Make 13",
+          "model": "Rapid Model 13",
+          "year": 2020,
+          "licensePlate": "Rapid License Plate 13",
+          "mileage": 54,
+          "status": "in_progress",
+          "insuranceExpiry": "2024-01-25",
+          "lastService": "2024-01-25",
+          "nextService": "2024-01-25",
+          "capacityLbs": 286,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "make": "Secure Make 14",
+          "model": "Secure Model 14",
+          "year": 2021,
+          "licensePlate": "Secure License Plate 14",
+          "mileage": 57,
+          "status": "active",
+          "insuranceExpiry": "2024-02-27",
+          "lastService": "2024-02-27",
+          "nextService": "2024-02-27",
+          "capacityLbs": 234,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "make": "Modern Make 15",
+          "model": "Modern Model 15",
+          "year": 2022,
+          "licensePlate": "Modern License Plate 15",
+          "mileage": 60,
+          "status": "approved",
+          "insuranceExpiry": "2024-03-01",
+          "lastService": "2024-03-01",
+          "nextService": "2024-03-01",
+          "capacityLbs": 282,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "DeliveryRoute",
+      "routeKey": "delivery-routes",
+      "label": "Delivery Route",
+      "icon": "shield",
+      "aiFunction": "analyzeDeliveryRoute",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Delivery Route data. The data includes: Name, Driver, Vehicle Id, Date, Status, Stops, Total Miles, Estimated Time, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "driver",
+          "label": "Driver",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "vehicleId",
+          "label": "Vehicle Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "stops",
+          "label": "Stops",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "totalMiles",
+          "label": "Total Miles",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "estimatedTime",
+          "label": "Estimated Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "driver": "Advanced Driver 1",
+          "vehicleId": 10,
+          "date": "2024-01-01",
+          "status": "active",
+          "stops": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "totalMiles": 10,
+          "estimatedTime": "Advanced Estimated Time 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "driver": "Premium Driver 2",
+          "vehicleId": 58,
+          "date": "2024-02-03",
+          "status": "pending",
+          "stops": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "totalMiles": 71.7,
+          "estimatedTime": "Premium Estimated Time 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "driver": "Standard Driver 3",
+          "vehicleId": 106,
+          "date": "2024-03-05",
+          "status": "in_progress",
+          "stops": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "totalMiles": 33.4,
+          "estimatedTime": "Standard Estimated Time 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "driver": "Elite Driver 4",
+          "vehicleId": 154,
+          "date": "2024-04-07",
+          "status": "completed",
+          "stops": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "totalMiles": 95.1,
+          "estimatedTime": "Elite Estimated Time 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "driver": "Core Driver 5",
+          "vehicleId": 102,
+          "date": "2024-05-09",
+          "status": "under_review",
+          "stops": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "totalMiles": 56.8,
+          "estimatedTime": "Core Estimated Time 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "driver": "Pro Driver 6",
+          "vehicleId": 150,
+          "date": "2024-06-11",
+          "status": "approved",
+          "stops": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "totalMiles": 118.5,
+          "estimatedTime": "Pro Estimated Time 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "driver": "Essential Driver 7",
+          "vehicleId": 198,
+          "date": "2024-07-13",
+          "status": "active",
+          "stops": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "totalMiles": 80.2,
+          "estimatedTime": "Essential Estimated Time 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "driver": "Primary Driver 8",
+          "vehicleId": 146,
+          "date": "2024-08-15",
+          "status": "active",
+          "stops": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "totalMiles": 141.9,
+          "estimatedTime": "Primary Estimated Time 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "driver": "Global Driver 9",
+          "vehicleId": 194,
+          "date": "2024-09-17",
+          "status": "active",
+          "stops": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "totalMiles": 103.6,
+          "estimatedTime": "Global Estimated Time 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "driver": "Regional Driver 10",
+          "vehicleId": 242,
+          "date": "2024-10-19",
+          "status": "pending",
+          "stops": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "totalMiles": 165.3,
+          "estimatedTime": "Regional Estimated Time 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "driver": "Custom Driver 11",
+          "vehicleId": 190,
+          "date": "2024-11-21",
+          "status": "completed",
+          "stops": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "totalMiles": 127,
+          "estimatedTime": "Custom Estimated Time 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "driver": "Smart Driver 12",
+          "vehicleId": 238,
+          "date": "2024-12-23",
+          "status": "active",
+          "stops": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "totalMiles": 188.7,
+          "estimatedTime": "Smart Estimated Time 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "driver": "Rapid Driver 13",
+          "vehicleId": 286,
+          "date": "2024-01-25",
+          "status": "in_progress",
+          "stops": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "totalMiles": 150.4,
+          "estimatedTime": "Rapid Estimated Time 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "driver": "Secure Driver 14",
+          "vehicleId": 234,
+          "date": "2024-02-27",
+          "status": "active",
+          "stops": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "totalMiles": 212.1,
+          "estimatedTime": "Secure Estimated Time 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "driver": "Modern Driver 15",
+          "vehicleId": 282,
+          "date": "2024-03-01",
+          "status": "approved",
+          "stops": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "totalMiles": 173.8,
+          "estimatedTime": "Modern Estimated Time 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Partner",
+      "routeKey": "partners",
+      "label": "Partner",
+      "icon": "star",
+      "aiFunction": "analyzePartner",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Partner data. The data includes: Name, Type, Address, Contact Name, Contact Email, Contact Phone, Service Area, Clients Served, Status, Agreement Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "contactName",
+          "label": "Contact Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactEmail",
+          "label": "Contact Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactPhone",
+          "label": "Contact Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serviceArea",
+          "label": "Service Area",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "clientsServed",
+          "label": "Clients Served",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "agreementDate",
+          "label": "Agreement Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "contactName": "James Wilson",
+          "contactEmail": "james.wilson@example.com",
+          "contactPhone": "(555) 100-1000",
+          "serviceArea": "Advanced Service Area 1",
+          "clientsServed": 10,
+          "status": "active",
+          "agreementDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "contactName": "Sarah Chen",
+          "contactEmail": "sarah.chen@example.com",
+          "contactPhone": "(556) 137-1113",
+          "serviceArea": "Premium Service Area 2",
+          "clientsServed": 58,
+          "status": "pending",
+          "agreementDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "contactName": "Michael Brown",
+          "contactEmail": "michael.brown@example.com",
+          "contactPhone": "(557) 174-1226",
+          "serviceArea": "Standard Service Area 3",
+          "clientsServed": 106,
+          "status": "in_progress",
+          "agreementDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "contactName": "Emily Davis",
+          "contactEmail": "emily.davis@example.com",
+          "contactPhone": "(558) 211-1339",
+          "serviceArea": "Elite Service Area 4",
+          "clientsServed": 154,
+          "status": "completed",
+          "agreementDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "contactName": "Robert Garcia",
+          "contactEmail": "robert.garcia@example.com",
+          "contactPhone": "(555) 248-1452",
+          "serviceArea": "Core Service Area 5",
+          "clientsServed": 102,
+          "status": "under_review",
+          "agreementDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "contactName": "Lisa Anderson",
+          "contactEmail": "lisa.anderson@example.com",
+          "contactPhone": "(556) 285-1565",
+          "serviceArea": "Pro Service Area 6",
+          "clientsServed": 150,
+          "status": "approved",
+          "agreementDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "contactName": "David Martinez",
+          "contactEmail": "david.martinez@example.com",
+          "contactPhone": "(557) 322-1678",
+          "serviceArea": "Essential Service Area 7",
+          "clientsServed": 198,
+          "status": "active",
+          "agreementDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "contactName": "Jennifer Taylor",
+          "contactEmail": "jennifer.taylor@example.com",
+          "contactPhone": "(558) 359-1791",
+          "serviceArea": "Primary Service Area 8",
+          "clientsServed": 146,
+          "status": "active",
+          "agreementDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "contactName": "William Johnson",
+          "contactEmail": "william.johnson@example.com",
+          "contactPhone": "(555) 396-1904",
+          "serviceArea": "Global Service Area 9",
+          "clientsServed": 194,
+          "status": "active",
+          "agreementDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "contactName": "Maria Rodriguez",
+          "contactEmail": "maria.rodriguez@example.com",
+          "contactPhone": "(556) 433-2017",
+          "serviceArea": "Regional Service Area 10",
+          "clientsServed": 242,
+          "status": "pending",
+          "agreementDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "contactName": "Thomas Lee",
+          "contactEmail": "thomas.lee@example.com",
+          "contactPhone": "(557) 470-2130",
+          "serviceArea": "Custom Service Area 11",
+          "clientsServed": 190,
+          "status": "completed",
+          "agreementDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "contactName": "Patricia White",
+          "contactEmail": "patricia.white@example.com",
+          "contactPhone": "(558) 507-2243",
+          "serviceArea": "Smart Service Area 12",
+          "clientsServed": 238,
+          "status": "active",
+          "agreementDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "contactName": "Christopher Hall",
+          "contactEmail": "christopher.hall@example.com",
+          "contactPhone": "(555) 544-2356",
+          "serviceArea": "Rapid Service Area 13",
+          "clientsServed": 286,
+          "status": "in_progress",
+          "agreementDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "contactName": "Amanda Clark",
+          "contactEmail": "amanda.clark@example.com",
+          "contactPhone": "(556) 581-2469",
+          "serviceArea": "Secure Service Area 14",
+          "clientsServed": 234,
+          "status": "active",
+          "agreementDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "contactName": "Daniel Wright",
+          "contactEmail": "daniel.wright@example.com",
+          "contactPhone": "(557) 618-2582",
+          "serviceArea": "Modern Service Area 15",
+          "clientsServed": 282,
+          "status": "approved",
+          "agreementDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Grant",
+      "routeKey": "grants",
+      "label": "Grant",
+      "icon": "truck",
+      "aiFunction": "analyzeGrant",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Grant data. The data includes: Name, Grantor, Amount, Start Date, End Date, Status, Category, Requirements, Reporting Frequency, Contact Name, Contact Email, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "grantor",
+          "label": "Grantor",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "requirements",
+          "label": "Requirements",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "reportingFrequency",
+          "label": "Reporting Frequency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactName",
+          "label": "Contact Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactEmail",
+          "label": "Contact Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "grantor": "Advanced Grantor 1",
+          "amount": 500,
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "status": "active",
+          "category": "Category A",
+          "requirements": "Comprehensive solution designed for optimal performance and efficiency.",
+          "reportingFrequency": "Advanced Reporting Frequency 1",
+          "contactName": "James Wilson",
+          "contactEmail": "james.wilson@example.com",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "grantor": "Premium Grantor 2",
+          "amount": 2481,
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "status": "pending",
+          "category": "Category B",
+          "requirements": "Industry-leading approach with proven results across multiple deployments.",
+          "reportingFrequency": "Premium Reporting Frequency 2",
+          "contactName": "Sarah Chen",
+          "contactEmail": "sarah.chen@example.com",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "grantor": "Standard Grantor 3",
+          "amount": 4462,
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "status": "in_progress",
+          "category": "Category C",
+          "requirements": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "reportingFrequency": "Standard Reporting Frequency 3",
+          "contactName": "Michael Brown",
+          "contactEmail": "michael.brown@example.com",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "grantor": "Elite Grantor 4",
+          "amount": 6443,
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "status": "completed",
+          "category": "Category D",
+          "requirements": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "reportingFrequency": "Elite Reporting Frequency 4",
+          "contactName": "Emily Davis",
+          "contactEmail": "emily.davis@example.com",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "grantor": "Core Grantor 5",
+          "amount": 8424,
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "status": "under_review",
+          "category": "Category E",
+          "requirements": "Cost-effective strategy focused on sustainable long-term growth.",
+          "reportingFrequency": "Core Reporting Frequency 5",
+          "contactName": "Robert Garcia",
+          "contactEmail": "robert.garcia@example.com",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "grantor": "Pro Grantor 6",
+          "amount": 10405,
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "status": "approved",
+          "category": "Premium Tier",
+          "requirements": "High-priority initiative aligned with organizational strategic objectives.",
+          "reportingFrequency": "Pro Reporting Frequency 6",
+          "contactName": "Lisa Anderson",
+          "contactEmail": "lisa.anderson@example.com",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "grantor": "Essential Grantor 7",
+          "amount": 12386,
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "status": "active",
+          "category": "Standard Tier",
+          "requirements": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "reportingFrequency": "Essential Reporting Frequency 7",
+          "contactName": "David Martinez",
+          "contactEmail": "david.martinez@example.com",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "grantor": "Primary Grantor 8",
+          "amount": 9367,
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "status": "active",
+          "category": "Basic Tier",
+          "requirements": "Innovative framework incorporating best practices and emerging technologies.",
+          "reportingFrequency": "Primary Reporting Frequency 8",
+          "contactName": "Jennifer Taylor",
+          "contactEmail": "jennifer.taylor@example.com",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "grantor": "Global Grantor 9",
+          "amount": 11348,
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "status": "active",
+          "category": "Enterprise",
+          "requirements": "Scalable architecture built to accommodate rapid expansion and change.",
+          "reportingFrequency": "Global Reporting Frequency 9",
+          "contactName": "William Johnson",
+          "contactEmail": "william.johnson@example.com",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "grantor": "Regional Grantor 10",
+          "amount": 13329,
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "status": "pending",
+          "category": "Starter",
+          "requirements": "Enterprise-grade solution with robust security and compliance features.",
+          "reportingFrequency": "Regional Reporting Frequency 10",
+          "contactName": "Maria Rodriguez",
+          "contactEmail": "maria.rodriguez@example.com",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "grantor": "Custom Grantor 11",
+          "amount": 15310,
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "status": "completed",
+          "category": "Growth",
+          "requirements": "Integrated platform connecting multiple systems for seamless operations.",
+          "reportingFrequency": "Custom Reporting Frequency 11",
+          "contactName": "Thomas Lee",
+          "contactEmail": "thomas.lee@example.com",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "grantor": "Smart Grantor 12",
+          "amount": 17291,
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "status": "active",
+          "category": "Scale",
+          "requirements": "Automated workflow reducing manual intervention and human error.",
+          "reportingFrequency": "Smart Reporting Frequency 12",
+          "contactName": "Patricia White",
+          "contactEmail": "patricia.white@example.com",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "grantor": "Rapid Grantor 13",
+          "amount": 19272,
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "status": "in_progress",
+          "category": "Foundation",
+          "requirements": "Real-time monitoring system with intelligent alerting capabilities.",
+          "reportingFrequency": "Rapid Reporting Frequency 13",
+          "contactName": "Christopher Hall",
+          "contactEmail": "christopher.hall@example.com",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "grantor": "Secure Grantor 14",
+          "amount": 21253,
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "status": "active",
+          "category": "Advanced",
+          "requirements": "Customizable module adaptable to diverse operational requirements.",
+          "reportingFrequency": "Secure Reporting Frequency 14",
+          "contactName": "Amanda Clark",
+          "contactEmail": "amanda.clark@example.com",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "grantor": "Modern Grantor 15",
+          "amount": 18234,
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "status": "approved",
+          "category": "Professional",
+          "requirements": "Performance-optimized design achieving superior throughput and reliability.",
+          "reportingFrequency": "Modern Reporting Frequency 15",
+          "contactName": "Daniel Wright",
+          "contactEmail": "daniel.wright@example.com",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "FinancialDonation",
+      "routeKey": "financial-donations",
+      "label": "Financial Donation",
+      "icon": "users",
+      "aiFunction": "analyzeFinancialDonation",
+      "aiPrompt": "You are an AI analyst for A I Food Bank Pantry Manager. Analyze the provided Financial Donation data. The data includes: Donor Id, Amount, Date, Method, Designation, Tax Receipt Number, Tax Receipt Sent, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "donorId",
+          "label": "Donor Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "method",
+          "label": "Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "designation",
+          "label": "Designation",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "taxReceiptNumber",
+          "label": "Tax Receipt Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "taxReceiptSent",
+          "label": "Tax Receipt Sent",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "donorId": 10,
+          "amount": 500,
+          "date": "2024-01-01",
+          "method": "Advanced Method 1",
+          "designation": "Advanced Designation 1",
+          "taxReceiptNumber": "Advanced Tax Receipt Number 1",
+          "taxReceiptSent": true,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "donorId": 58,
+          "amount": 2481,
+          "date": "2024-02-03",
+          "method": "Premium Method 2",
+          "designation": "Premium Designation 2",
+          "taxReceiptNumber": "Premium Tax Receipt Number 2",
+          "taxReceiptSent": true,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "donorId": 106,
+          "amount": 4462,
+          "date": "2024-03-05",
+          "method": "Standard Method 3",
+          "designation": "Standard Designation 3",
+          "taxReceiptNumber": "Standard Tax Receipt Number 3",
+          "taxReceiptSent": false,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "donorId": 154,
+          "amount": 6443,
+          "date": "2024-04-07",
+          "method": "Elite Method 4",
+          "designation": "Elite Designation 4",
+          "taxReceiptNumber": "Elite Tax Receipt Number 4",
+          "taxReceiptSent": true,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "donorId": 102,
+          "amount": 8424,
+          "date": "2024-05-09",
+          "method": "Core Method 5",
+          "designation": "Core Designation 5",
+          "taxReceiptNumber": "Core Tax Receipt Number 5",
+          "taxReceiptSent": false,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "donorId": 150,
+          "amount": 10405,
+          "date": "2024-06-11",
+          "method": "Pro Method 6",
+          "designation": "Pro Designation 6",
+          "taxReceiptNumber": "Pro Tax Receipt Number 6",
+          "taxReceiptSent": true,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "donorId": 198,
+          "amount": 12386,
+          "date": "2024-07-13",
+          "method": "Essential Method 7",
+          "designation": "Essential Designation 7",
+          "taxReceiptNumber": "Essential Tax Receipt Number 7",
+          "taxReceiptSent": true,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "donorId": 146,
+          "amount": 9367,
+          "date": "2024-08-15",
+          "method": "Primary Method 8",
+          "designation": "Primary Designation 8",
+          "taxReceiptNumber": "Primary Tax Receipt Number 8",
+          "taxReceiptSent": false,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "donorId": 194,
+          "amount": 11348,
+          "date": "2024-09-17",
+          "method": "Global Method 9",
+          "designation": "Global Designation 9",
+          "taxReceiptNumber": "Global Tax Receipt Number 9",
+          "taxReceiptSent": true,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "donorId": 242,
+          "amount": 13329,
+          "date": "2024-10-19",
+          "method": "Regional Method 10",
+          "designation": "Regional Designation 10",
+          "taxReceiptNumber": "Regional Tax Receipt Number 10",
+          "taxReceiptSent": true,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "donorId": 190,
+          "amount": 15310,
+          "date": "2024-11-21",
+          "method": "Custom Method 11",
+          "designation": "Custom Designation 11",
+          "taxReceiptNumber": "Custom Tax Receipt Number 11",
+          "taxReceiptSent": false,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "donorId": 238,
+          "amount": 17291,
+          "date": "2024-12-23",
+          "method": "Smart Method 12",
+          "designation": "Smart Designation 12",
+          "taxReceiptNumber": "Smart Tax Receipt Number 12",
+          "taxReceiptSent": true,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "donorId": 286,
+          "amount": 19272,
+          "date": "2024-01-25",
+          "method": "Rapid Method 13",
+          "designation": "Rapid Designation 13",
+          "taxReceiptNumber": "Rapid Tax Receipt Number 13",
+          "taxReceiptSent": false,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "donorId": 234,
+          "amount": 21253,
+          "date": "2024-02-27",
+          "method": "Secure Method 14",
+          "designation": "Secure Designation 14",
+          "taxReceiptNumber": "Secure Tax Receipt Number 14",
+          "taxReceiptSent": true,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "donorId": 282,
+          "amount": 18234,
+          "date": "2024-03-01",
+          "method": "Modern Method 15",
+          "designation": "Modern Designation 15",
+          "taxReceiptNumber": "Modern Tax Receipt Number 15",
+          "taxReceiptSent": true,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

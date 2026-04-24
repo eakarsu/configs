@@ -1,0 +1,3592 @@
+{
+  "appName": "A I Medical Device Compliance Manager",
+  "dbName": "a_i_medical_device_compliance_manager",
+  "folderName": "generated/AIMedicalDeviceComplianceManager",
+  "features": [
+    {
+      "modelName": "Device",
+      "routeKey": "devices",
+      "label": "Device",
+      "icon": "activity",
+      "aiFunction": "analyzeDevice",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Device data. The data includes: Name, Manufacturer, Model Number, Serial Number, Device Class, Status, Description, Department, Installation Date, Last Inspection, Next Inspection, Fda Clearance Number, Ce Marking. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "manufacturer",
+          "label": "Manufacturer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "modelNumber",
+          "label": "Model Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serialNumber",
+          "label": "Serial Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "deviceClass",
+          "label": "Device Class",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "I",
+            "II",
+            "III"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive",
+            "recalled",
+            "pending"
+          ]
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "installationDate",
+          "label": "Installation Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "lastInspection",
+          "label": "Last Inspection",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "nextInspection",
+          "label": "Next Inspection",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "fdaClearanceNumber",
+          "label": "Fda Clearance Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ceMarking",
+          "label": "Ce Marking",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "manufacturer": "Advanced Manufacturer 1",
+          "modelNumber": "Advanced Model Number 1",
+          "serialNumber": "Advanced Serial Number 1",
+          "deviceClass": "I",
+          "status": "active",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "department": "Category A",
+          "installationDate": "2024-01-01",
+          "lastInspection": "2024-01-01",
+          "nextInspection": "2024-01-01",
+          "fdaClearanceNumber": "Advanced Fda Clearance Number 1",
+          "ceMarking": true
+        },
+        {
+          "name": "Premium Name 2",
+          "manufacturer": "Premium Manufacturer 2",
+          "modelNumber": "Premium Model Number 2",
+          "serialNumber": "Premium Serial Number 2",
+          "deviceClass": "II",
+          "status": "inactive",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "department": "Category B",
+          "installationDate": "2024-02-03",
+          "lastInspection": "2024-02-03",
+          "nextInspection": "2024-02-03",
+          "fdaClearanceNumber": "Premium Fda Clearance Number 2",
+          "ceMarking": true
+        },
+        {
+          "name": "Standard Name 3",
+          "manufacturer": "Standard Manufacturer 3",
+          "modelNumber": "Standard Model Number 3",
+          "serialNumber": "Standard Serial Number 3",
+          "deviceClass": "III",
+          "status": "recalled",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "department": "Category C",
+          "installationDate": "2024-03-05",
+          "lastInspection": "2024-03-05",
+          "nextInspection": "2024-03-05",
+          "fdaClearanceNumber": "Standard Fda Clearance Number 3",
+          "ceMarking": false
+        },
+        {
+          "name": "Elite Name 4",
+          "manufacturer": "Elite Manufacturer 4",
+          "modelNumber": "Elite Model Number 4",
+          "serialNumber": "Elite Serial Number 4",
+          "deviceClass": "I",
+          "status": "pending",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "department": "Category D",
+          "installationDate": "2024-04-07",
+          "lastInspection": "2024-04-07",
+          "nextInspection": "2024-04-07",
+          "fdaClearanceNumber": "Elite Fda Clearance Number 4",
+          "ceMarking": true
+        },
+        {
+          "name": "Core Name 5",
+          "manufacturer": "Core Manufacturer 5",
+          "modelNumber": "Core Model Number 5",
+          "serialNumber": "Core Serial Number 5",
+          "deviceClass": "II",
+          "status": "active",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "department": "Category E",
+          "installationDate": "2024-05-09",
+          "lastInspection": "2024-05-09",
+          "nextInspection": "2024-05-09",
+          "fdaClearanceNumber": "Core Fda Clearance Number 5",
+          "ceMarking": false
+        },
+        {
+          "name": "Pro Name 6",
+          "manufacturer": "Pro Manufacturer 6",
+          "modelNumber": "Pro Model Number 6",
+          "serialNumber": "Pro Serial Number 6",
+          "deviceClass": "III",
+          "status": "inactive",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "department": "Premium Tier",
+          "installationDate": "2024-06-11",
+          "lastInspection": "2024-06-11",
+          "nextInspection": "2024-06-11",
+          "fdaClearanceNumber": "Pro Fda Clearance Number 6",
+          "ceMarking": true
+        },
+        {
+          "name": "Essential Name 7",
+          "manufacturer": "Essential Manufacturer 7",
+          "modelNumber": "Essential Model Number 7",
+          "serialNumber": "Essential Serial Number 7",
+          "deviceClass": "I",
+          "status": "recalled",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "department": "Standard Tier",
+          "installationDate": "2024-07-13",
+          "lastInspection": "2024-07-13",
+          "nextInspection": "2024-07-13",
+          "fdaClearanceNumber": "Essential Fda Clearance Number 7",
+          "ceMarking": true
+        },
+        {
+          "name": "Primary Name 8",
+          "manufacturer": "Primary Manufacturer 8",
+          "modelNumber": "Primary Model Number 8",
+          "serialNumber": "Primary Serial Number 8",
+          "deviceClass": "II",
+          "status": "pending",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "department": "Basic Tier",
+          "installationDate": "2024-08-15",
+          "lastInspection": "2024-08-15",
+          "nextInspection": "2024-08-15",
+          "fdaClearanceNumber": "Primary Fda Clearance Number 8",
+          "ceMarking": false
+        },
+        {
+          "name": "Global Name 9",
+          "manufacturer": "Global Manufacturer 9",
+          "modelNumber": "Global Model Number 9",
+          "serialNumber": "Global Serial Number 9",
+          "deviceClass": "III",
+          "status": "active",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "department": "Enterprise",
+          "installationDate": "2024-09-17",
+          "lastInspection": "2024-09-17",
+          "nextInspection": "2024-09-17",
+          "fdaClearanceNumber": "Global Fda Clearance Number 9",
+          "ceMarking": true
+        },
+        {
+          "name": "Regional Name 10",
+          "manufacturer": "Regional Manufacturer 10",
+          "modelNumber": "Regional Model Number 10",
+          "serialNumber": "Regional Serial Number 10",
+          "deviceClass": "I",
+          "status": "inactive",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "department": "Starter",
+          "installationDate": "2024-10-19",
+          "lastInspection": "2024-10-19",
+          "nextInspection": "2024-10-19",
+          "fdaClearanceNumber": "Regional Fda Clearance Number 10",
+          "ceMarking": true
+        },
+        {
+          "name": "Custom Name 11",
+          "manufacturer": "Custom Manufacturer 11",
+          "modelNumber": "Custom Model Number 11",
+          "serialNumber": "Custom Serial Number 11",
+          "deviceClass": "II",
+          "status": "recalled",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "department": "Growth",
+          "installationDate": "2024-11-21",
+          "lastInspection": "2024-11-21",
+          "nextInspection": "2024-11-21",
+          "fdaClearanceNumber": "Custom Fda Clearance Number 11",
+          "ceMarking": false
+        },
+        {
+          "name": "Smart Name 12",
+          "manufacturer": "Smart Manufacturer 12",
+          "modelNumber": "Smart Model Number 12",
+          "serialNumber": "Smart Serial Number 12",
+          "deviceClass": "III",
+          "status": "pending",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "department": "Scale",
+          "installationDate": "2024-12-23",
+          "lastInspection": "2024-12-23",
+          "nextInspection": "2024-12-23",
+          "fdaClearanceNumber": "Smart Fda Clearance Number 12",
+          "ceMarking": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "manufacturer": "Rapid Manufacturer 13",
+          "modelNumber": "Rapid Model Number 13",
+          "serialNumber": "Rapid Serial Number 13",
+          "deviceClass": "I",
+          "status": "active",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "department": "Foundation",
+          "installationDate": "2024-01-25",
+          "lastInspection": "2024-01-25",
+          "nextInspection": "2024-01-25",
+          "fdaClearanceNumber": "Rapid Fda Clearance Number 13",
+          "ceMarking": false
+        },
+        {
+          "name": "Secure Name 14",
+          "manufacturer": "Secure Manufacturer 14",
+          "modelNumber": "Secure Model Number 14",
+          "serialNumber": "Secure Serial Number 14",
+          "deviceClass": "II",
+          "status": "inactive",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "department": "Advanced",
+          "installationDate": "2024-02-27",
+          "lastInspection": "2024-02-27",
+          "nextInspection": "2024-02-27",
+          "fdaClearanceNumber": "Secure Fda Clearance Number 14",
+          "ceMarking": true
+        },
+        {
+          "name": "Modern Name 15",
+          "manufacturer": "Modern Manufacturer 15",
+          "modelNumber": "Modern Model Number 15",
+          "serialNumber": "Modern Serial Number 15",
+          "deviceClass": "III",
+          "status": "recalled",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "department": "Professional",
+          "installationDate": "2024-03-01",
+          "lastInspection": "2024-03-01",
+          "nextInspection": "2024-03-01",
+          "fdaClearanceNumber": "Modern Fda Clearance Number 15",
+          "ceMarking": true
+        }
+      ]
+    },
+    {
+      "modelName": "RegulatoryStandard",
+      "routeKey": "regulatory-standards",
+      "label": "Regulatory Standard",
+      "icon": "briefcase",
+      "aiFunction": "analyzeRegulatoryStandard",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Regulatory Standard data. The data includes: Code, Name, Category, Authority, Version, Effective Date, Description, Requirements, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "code",
+          "label": "Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "safety",
+            "quality",
+            "performance",
+            "labeling",
+            "biocompatibility"
+          ]
+        },
+        {
+          "key": "authority",
+          "label": "Authority",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "FDA",
+            "EU",
+            "ISO",
+            "IEC"
+          ]
+        },
+        {
+          "key": "version",
+          "label": "Version",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "requirements",
+          "label": "Requirements",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "draft",
+            "superseded"
+          ]
+        }
+      ],
+      "sampleData": [
+        {
+          "code": "Advanced Code 1",
+          "name": "Advanced Name 1",
+          "category": "safety",
+          "authority": "FDA",
+          "version": "Advanced Version 1",
+          "effectiveDate": "2024-01-01",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "requirements": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "code": "Premium Code 2",
+          "name": "Premium Name 2",
+          "category": "quality",
+          "authority": "EU",
+          "version": "Premium Version 2",
+          "effectiveDate": "2024-02-03",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "requirements": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "draft"
+        },
+        {
+          "code": "Standard Code 3",
+          "name": "Standard Name 3",
+          "category": "performance",
+          "authority": "ISO",
+          "version": "Standard Version 3",
+          "effectiveDate": "2024-03-05",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "requirements": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "superseded"
+        },
+        {
+          "code": "Elite Code 4",
+          "name": "Elite Name 4",
+          "category": "labeling",
+          "authority": "IEC",
+          "version": "Elite Version 4",
+          "effectiveDate": "2024-04-07",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "requirements": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "active"
+        },
+        {
+          "code": "Core Code 5",
+          "name": "Core Name 5",
+          "category": "biocompatibility",
+          "authority": "FDA",
+          "version": "Core Version 5",
+          "effectiveDate": "2024-05-09",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "requirements": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "draft"
+        },
+        {
+          "code": "Pro Code 6",
+          "name": "Pro Name 6",
+          "category": "safety",
+          "authority": "EU",
+          "version": "Pro Version 6",
+          "effectiveDate": "2024-06-11",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "requirements": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "superseded"
+        },
+        {
+          "code": "Essential Code 7",
+          "name": "Essential Name 7",
+          "category": "quality",
+          "authority": "ISO",
+          "version": "Essential Version 7",
+          "effectiveDate": "2024-07-13",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "requirements": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "code": "Primary Code 8",
+          "name": "Primary Name 8",
+          "category": "performance",
+          "authority": "IEC",
+          "version": "Primary Version 8",
+          "effectiveDate": "2024-08-15",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "requirements": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "draft"
+        },
+        {
+          "code": "Global Code 9",
+          "name": "Global Name 9",
+          "category": "labeling",
+          "authority": "FDA",
+          "version": "Global Version 9",
+          "effectiveDate": "2024-09-17",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "requirements": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "superseded"
+        },
+        {
+          "code": "Regional Code 10",
+          "name": "Regional Name 10",
+          "category": "biocompatibility",
+          "authority": "EU",
+          "version": "Regional Version 10",
+          "effectiveDate": "2024-10-19",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "requirements": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "active"
+        },
+        {
+          "code": "Custom Code 11",
+          "name": "Custom Name 11",
+          "category": "safety",
+          "authority": "ISO",
+          "version": "Custom Version 11",
+          "effectiveDate": "2024-11-21",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "requirements": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "draft"
+        },
+        {
+          "code": "Smart Code 12",
+          "name": "Smart Name 12",
+          "category": "quality",
+          "authority": "IEC",
+          "version": "Smart Version 12",
+          "effectiveDate": "2024-12-23",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "requirements": "Automated workflow reducing manual intervention and human error.",
+          "status": "superseded"
+        },
+        {
+          "code": "Rapid Code 13",
+          "name": "Rapid Name 13",
+          "category": "performance",
+          "authority": "FDA",
+          "version": "Rapid Version 13",
+          "effectiveDate": "2024-01-25",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "requirements": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "active"
+        },
+        {
+          "code": "Secure Code 14",
+          "name": "Secure Name 14",
+          "category": "labeling",
+          "authority": "EU",
+          "version": "Secure Version 14",
+          "effectiveDate": "2024-02-27",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "requirements": "Customizable module adaptable to diverse operational requirements.",
+          "status": "draft"
+        },
+        {
+          "code": "Modern Code 15",
+          "name": "Modern Name 15",
+          "category": "biocompatibility",
+          "authority": "ISO",
+          "version": "Modern Version 15",
+          "effectiveDate": "2024-03-01",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "requirements": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "superseded"
+        }
+      ]
+    },
+    {
+      "modelName": "ComplianceChecklist",
+      "routeKey": "compliance-checklists",
+      "label": "Compliance Checklist",
+      "icon": "clipboard",
+      "aiFunction": "analyzeComplianceChecklist",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Compliance Checklist data. The data includes: Device Id, Standard Id, Item Name, Description, Status, Priority, Assigned To, Due Date, Evidence, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "deviceId",
+          "label": "Device Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "standardId",
+          "label": "Standard Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "itemName",
+          "label": "Item Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "compliant",
+            "non_compliant",
+            "pending",
+            "in_progress",
+            "not_applicable"
+          ]
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "critical",
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "evidence",
+          "label": "Evidence",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "deviceId": 10,
+          "standardId": 10,
+          "itemName": "Advanced Item 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "compliant",
+          "priority": "critical",
+          "assignedTo": "Advanced Assigned To 1",
+          "dueDate": "2024-01-01",
+          "evidence": "Comprehensive solution designed for optimal performance and efficiency.",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "deviceId": 58,
+          "standardId": 58,
+          "itemName": "Premium Item 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "non_compliant",
+          "priority": "high",
+          "assignedTo": "Premium Assigned To 2",
+          "dueDate": "2024-02-03",
+          "evidence": "Industry-leading approach with proven results across multiple deployments.",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "deviceId": 106,
+          "standardId": 106,
+          "itemName": "Standard Item 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "pending",
+          "priority": "medium",
+          "assignedTo": "Standard Assigned To 3",
+          "dueDate": "2024-03-05",
+          "evidence": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "deviceId": 154,
+          "standardId": 154,
+          "itemName": "Elite Item 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "in_progress",
+          "priority": "low",
+          "assignedTo": "Elite Assigned To 4",
+          "dueDate": "2024-04-07",
+          "evidence": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "deviceId": 102,
+          "standardId": 102,
+          "itemName": "Core Item 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "not_applicable",
+          "priority": "critical",
+          "assignedTo": "Core Assigned To 5",
+          "dueDate": "2024-05-09",
+          "evidence": "Cost-effective strategy focused on sustainable long-term growth.",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "deviceId": 150,
+          "standardId": 150,
+          "itemName": "Pro Item 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "compliant",
+          "priority": "high",
+          "assignedTo": "Pro Assigned To 6",
+          "dueDate": "2024-06-11",
+          "evidence": "High-priority initiative aligned with organizational strategic objectives.",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "deviceId": 198,
+          "standardId": 198,
+          "itemName": "Essential Item 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "non_compliant",
+          "priority": "medium",
+          "assignedTo": "Essential Assigned To 7",
+          "dueDate": "2024-07-13",
+          "evidence": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "deviceId": 146,
+          "standardId": 146,
+          "itemName": "Primary Item 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "pending",
+          "priority": "low",
+          "assignedTo": "Primary Assigned To 8",
+          "dueDate": "2024-08-15",
+          "evidence": "Innovative framework incorporating best practices and emerging technologies.",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "deviceId": 194,
+          "standardId": 194,
+          "itemName": "Global Item 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "in_progress",
+          "priority": "critical",
+          "assignedTo": "Global Assigned To 9",
+          "dueDate": "2024-09-17",
+          "evidence": "Scalable architecture built to accommodate rapid expansion and change.",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "deviceId": 242,
+          "standardId": 242,
+          "itemName": "Regional Item 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "not_applicable",
+          "priority": "high",
+          "assignedTo": "Regional Assigned To 10",
+          "dueDate": "2024-10-19",
+          "evidence": "Enterprise-grade solution with robust security and compliance features.",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "deviceId": 190,
+          "standardId": 190,
+          "itemName": "Custom Item 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "compliant",
+          "priority": "medium",
+          "assignedTo": "Custom Assigned To 11",
+          "dueDate": "2024-11-21",
+          "evidence": "Integrated platform connecting multiple systems for seamless operations.",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "deviceId": 238,
+          "standardId": 238,
+          "itemName": "Smart Item 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "status": "non_compliant",
+          "priority": "low",
+          "assignedTo": "Smart Assigned To 12",
+          "dueDate": "2024-12-23",
+          "evidence": "Automated workflow reducing manual intervention and human error.",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "deviceId": 286,
+          "standardId": 286,
+          "itemName": "Rapid Item 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "pending",
+          "priority": "critical",
+          "assignedTo": "Rapid Assigned To 13",
+          "dueDate": "2024-01-25",
+          "evidence": "Real-time monitoring system with intelligent alerting capabilities.",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "deviceId": 234,
+          "standardId": 234,
+          "itemName": "Secure Item 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "status": "in_progress",
+          "priority": "high",
+          "assignedTo": "Secure Assigned To 14",
+          "dueDate": "2024-02-27",
+          "evidence": "Customizable module adaptable to diverse operational requirements.",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "deviceId": 282,
+          "standardId": 282,
+          "itemName": "Modern Item 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "not_applicable",
+          "priority": "medium",
+          "assignedTo": "Modern Assigned To 15",
+          "dueDate": "2024-03-01",
+          "evidence": "Performance-optimized design achieving superior throughput and reliability.",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "AuditLog",
+      "routeKey": "audit-logs",
+      "label": "Audit Log",
+      "icon": "database",
+      "aiFunction": "analyzeAuditLog",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Audit Log data. The data includes: User Name, Action, Entity Type, Entity Id, Details, Ip Address. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userName",
+          "label": "User Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "details",
+          "label": "Details",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "ipAddress",
+          "label": "Ip Address",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userName": "Advanced User 1",
+          "action": "Advanced Action 1",
+          "entityType": "Category A",
+          "entityId": 10,
+          "details": "Comprehensive solution designed for optimal performance and efficiency.",
+          "ipAddress": "New York"
+        },
+        {
+          "userName": "Premium User 2",
+          "action": "Premium Action 2",
+          "entityType": "Category B",
+          "entityId": 58,
+          "details": "Industry-leading approach with proven results across multiple deployments.",
+          "ipAddress": "Los Angeles"
+        },
+        {
+          "userName": "Standard User 3",
+          "action": "Standard Action 3",
+          "entityType": "Category C",
+          "entityId": 106,
+          "details": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "ipAddress": "Chicago"
+        },
+        {
+          "userName": "Elite User 4",
+          "action": "Elite Action 4",
+          "entityType": "Category D",
+          "entityId": 154,
+          "details": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "ipAddress": "Houston"
+        },
+        {
+          "userName": "Core User 5",
+          "action": "Core Action 5",
+          "entityType": "Category E",
+          "entityId": 102,
+          "details": "Cost-effective strategy focused on sustainable long-term growth.",
+          "ipAddress": "Phoenix"
+        },
+        {
+          "userName": "Pro User 6",
+          "action": "Pro Action 6",
+          "entityType": "Premium Tier",
+          "entityId": 150,
+          "details": "High-priority initiative aligned with organizational strategic objectives.",
+          "ipAddress": "San Francisco"
+        },
+        {
+          "userName": "Essential User 7",
+          "action": "Essential Action 7",
+          "entityType": "Standard Tier",
+          "entityId": 198,
+          "details": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "ipAddress": "Seattle"
+        },
+        {
+          "userName": "Primary User 8",
+          "action": "Primary Action 8",
+          "entityType": "Basic Tier",
+          "entityId": 146,
+          "details": "Innovative framework incorporating best practices and emerging technologies.",
+          "ipAddress": "Boston"
+        },
+        {
+          "userName": "Global User 9",
+          "action": "Global Action 9",
+          "entityType": "Enterprise",
+          "entityId": 194,
+          "details": "Scalable architecture built to accommodate rapid expansion and change.",
+          "ipAddress": "Denver"
+        },
+        {
+          "userName": "Regional User 10",
+          "action": "Regional Action 10",
+          "entityType": "Starter",
+          "entityId": 242,
+          "details": "Enterprise-grade solution with robust security and compliance features.",
+          "ipAddress": "Miami"
+        },
+        {
+          "userName": "Custom User 11",
+          "action": "Custom Action 11",
+          "entityType": "Growth",
+          "entityId": 190,
+          "details": "Integrated platform connecting multiple systems for seamless operations.",
+          "ipAddress": "Austin"
+        },
+        {
+          "userName": "Smart User 12",
+          "action": "Smart Action 12",
+          "entityType": "Scale",
+          "entityId": 238,
+          "details": "Automated workflow reducing manual intervention and human error.",
+          "ipAddress": "Portland"
+        },
+        {
+          "userName": "Rapid User 13",
+          "action": "Rapid Action 13",
+          "entityType": "Foundation",
+          "entityId": 286,
+          "details": "Real-time monitoring system with intelligent alerting capabilities.",
+          "ipAddress": "Dallas"
+        },
+        {
+          "userName": "Secure User 14",
+          "action": "Secure Action 14",
+          "entityType": "Advanced",
+          "entityId": 234,
+          "details": "Customizable module adaptable to diverse operational requirements.",
+          "ipAddress": "Atlanta"
+        },
+        {
+          "userName": "Modern User 15",
+          "action": "Modern Action 15",
+          "entityType": "Professional",
+          "entityId": 282,
+          "details": "Performance-optimized design achieving superior throughput and reliability.",
+          "ipAddress": "Nashville"
+        }
+      ]
+    },
+    {
+      "modelName": "Document",
+      "routeKey": "documents",
+      "label": "Document",
+      "icon": "file-text",
+      "aiFunction": "analyzeDocument",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Document data. The data includes: Title, Document Type, Version, Status, Device Id, Standard Id, File Path, Description, Author, Approved By, Approved Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "documentType",
+          "label": "Document Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "SOP",
+            "DHF",
+            "DMR",
+            "protocol",
+            "report",
+            "certificate",
+            "manual"
+          ]
+        },
+        {
+          "key": "version",
+          "label": "Version",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "draft",
+            "review",
+            "approved",
+            "obsolete"
+          ]
+        },
+        {
+          "key": "deviceId",
+          "label": "Device Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "standardId",
+          "label": "Standard Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "filePath",
+          "label": "File Path",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "author",
+          "label": "Author",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "approvedBy",
+          "label": "Approved By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "approvedDate",
+          "label": "Approved Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "documentType": "SOP",
+          "version": "Advanced Version 1",
+          "status": "draft",
+          "deviceId": 10,
+          "standardId": 10,
+          "filePath": "Advanced File Path 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "author": "Advanced Author 1",
+          "approvedBy": "Advanced Approved By 1",
+          "approvedDate": "2024-01-01"
+        },
+        {
+          "title": "Premium Title 2",
+          "documentType": "DHF",
+          "version": "Premium Version 2",
+          "status": "review",
+          "deviceId": 58,
+          "standardId": 58,
+          "filePath": "Premium File Path 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "author": "Premium Author 2",
+          "approvedBy": "Premium Approved By 2",
+          "approvedDate": "2024-02-03"
+        },
+        {
+          "title": "Standard Title 3",
+          "documentType": "DMR",
+          "version": "Standard Version 3",
+          "status": "approved",
+          "deviceId": 106,
+          "standardId": 106,
+          "filePath": "Standard File Path 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "author": "Standard Author 3",
+          "approvedBy": "Standard Approved By 3",
+          "approvedDate": "2024-03-05"
+        },
+        {
+          "title": "Elite Title 4",
+          "documentType": "protocol",
+          "version": "Elite Version 4",
+          "status": "obsolete",
+          "deviceId": 154,
+          "standardId": 154,
+          "filePath": "Elite File Path 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "author": "Elite Author 4",
+          "approvedBy": "Elite Approved By 4",
+          "approvedDate": "2024-04-07"
+        },
+        {
+          "title": "Core Title 5",
+          "documentType": "report",
+          "version": "Core Version 5",
+          "status": "draft",
+          "deviceId": 102,
+          "standardId": 102,
+          "filePath": "Core File Path 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "author": "Core Author 5",
+          "approvedBy": "Core Approved By 5",
+          "approvedDate": "2024-05-09"
+        },
+        {
+          "title": "Pro Title 6",
+          "documentType": "certificate",
+          "version": "Pro Version 6",
+          "status": "review",
+          "deviceId": 150,
+          "standardId": 150,
+          "filePath": "Pro File Path 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "author": "Pro Author 6",
+          "approvedBy": "Pro Approved By 6",
+          "approvedDate": "2024-06-11"
+        },
+        {
+          "title": "Essential Title 7",
+          "documentType": "manual",
+          "version": "Essential Version 7",
+          "status": "approved",
+          "deviceId": 198,
+          "standardId": 198,
+          "filePath": "Essential File Path 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "author": "Essential Author 7",
+          "approvedBy": "Essential Approved By 7",
+          "approvedDate": "2024-07-13"
+        },
+        {
+          "title": "Primary Title 8",
+          "documentType": "SOP",
+          "version": "Primary Version 8",
+          "status": "obsolete",
+          "deviceId": 146,
+          "standardId": 146,
+          "filePath": "Primary File Path 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "author": "Primary Author 8",
+          "approvedBy": "Primary Approved By 8",
+          "approvedDate": "2024-08-15"
+        },
+        {
+          "title": "Global Title 9",
+          "documentType": "DHF",
+          "version": "Global Version 9",
+          "status": "draft",
+          "deviceId": 194,
+          "standardId": 194,
+          "filePath": "Global File Path 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "author": "Global Author 9",
+          "approvedBy": "Global Approved By 9",
+          "approvedDate": "2024-09-17"
+        },
+        {
+          "title": "Regional Title 10",
+          "documentType": "DMR",
+          "version": "Regional Version 10",
+          "status": "review",
+          "deviceId": 242,
+          "standardId": 242,
+          "filePath": "Regional File Path 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "author": "Regional Author 10",
+          "approvedBy": "Regional Approved By 10",
+          "approvedDate": "2024-10-19"
+        },
+        {
+          "title": "Custom Title 11",
+          "documentType": "protocol",
+          "version": "Custom Version 11",
+          "status": "approved",
+          "deviceId": 190,
+          "standardId": 190,
+          "filePath": "Custom File Path 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "author": "Custom Author 11",
+          "approvedBy": "Custom Approved By 11",
+          "approvedDate": "2024-11-21"
+        },
+        {
+          "title": "Smart Title 12",
+          "documentType": "report",
+          "version": "Smart Version 12",
+          "status": "obsolete",
+          "deviceId": 238,
+          "standardId": 238,
+          "filePath": "Smart File Path 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "author": "Smart Author 12",
+          "approvedBy": "Smart Approved By 12",
+          "approvedDate": "2024-12-23"
+        },
+        {
+          "title": "Rapid Title 13",
+          "documentType": "certificate",
+          "version": "Rapid Version 13",
+          "status": "draft",
+          "deviceId": 286,
+          "standardId": 286,
+          "filePath": "Rapid File Path 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "author": "Rapid Author 13",
+          "approvedBy": "Rapid Approved By 13",
+          "approvedDate": "2024-01-25"
+        },
+        {
+          "title": "Secure Title 14",
+          "documentType": "manual",
+          "version": "Secure Version 14",
+          "status": "review",
+          "deviceId": 234,
+          "standardId": 234,
+          "filePath": "Secure File Path 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "author": "Secure Author 14",
+          "approvedBy": "Secure Approved By 14",
+          "approvedDate": "2024-02-27"
+        },
+        {
+          "title": "Modern Title 15",
+          "documentType": "SOP",
+          "version": "Modern Version 15",
+          "status": "approved",
+          "deviceId": 282,
+          "standardId": 282,
+          "filePath": "Modern File Path 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "author": "Modern Author 15",
+          "approvedBy": "Modern Approved By 15",
+          "approvedDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "RiskAssessment",
+      "routeKey": "risk-assessments",
+      "label": "Risk Assessment",
+      "icon": "heart",
+      "aiFunction": "analyzeRiskAssessment",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Risk Assessment data. The data includes: Device Id, Hazard, Risk Category, Severity, Probability, Risk Level, Mitigation, Residual Risk Level, Status, Assigned To, Review Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "deviceId",
+          "label": "Device Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "hazard",
+          "label": "Hazard",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "riskCategory",
+          "label": "Risk Category",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "safety",
+            "performance",
+            "usability",
+            "cybersecurity",
+            "biocompatibility"
+          ]
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "probability",
+          "label": "Probability",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mitigation",
+          "label": "Mitigation",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "residualRiskLevel",
+          "label": "Residual Risk Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "identified",
+            "mitigated",
+            "accepted",
+            "monitoring"
+          ]
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "deviceId": 10,
+          "hazard": "Advanced Hazard 1",
+          "riskCategory": "safety",
+          "severity": 10,
+          "probability": 10,
+          "riskLevel": "low",
+          "mitigation": "Comprehensive solution designed for optimal performance and efficiency.",
+          "residualRiskLevel": "low",
+          "status": "identified",
+          "assignedTo": "Advanced Assigned To 1",
+          "reviewDate": "2024-01-01"
+        },
+        {
+          "deviceId": 58,
+          "hazard": "Premium Hazard 2",
+          "riskCategory": "performance",
+          "severity": 58,
+          "probability": 58,
+          "riskLevel": "medium",
+          "mitigation": "Industry-leading approach with proven results across multiple deployments.",
+          "residualRiskLevel": "medium",
+          "status": "mitigated",
+          "assignedTo": "Premium Assigned To 2",
+          "reviewDate": "2024-02-03"
+        },
+        {
+          "deviceId": 106,
+          "hazard": "Standard Hazard 3",
+          "riskCategory": "usability",
+          "severity": 106,
+          "probability": 106,
+          "riskLevel": "high",
+          "mitigation": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "residualRiskLevel": "high",
+          "status": "accepted",
+          "assignedTo": "Standard Assigned To 3",
+          "reviewDate": "2024-03-05"
+        },
+        {
+          "deviceId": 154,
+          "hazard": "Elite Hazard 4",
+          "riskCategory": "cybersecurity",
+          "severity": 154,
+          "probability": 154,
+          "riskLevel": "critical",
+          "mitigation": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "residualRiskLevel": "critical",
+          "status": "monitoring",
+          "assignedTo": "Elite Assigned To 4",
+          "reviewDate": "2024-04-07"
+        },
+        {
+          "deviceId": 102,
+          "hazard": "Core Hazard 5",
+          "riskCategory": "biocompatibility",
+          "severity": 102,
+          "probability": 102,
+          "riskLevel": "medium",
+          "mitigation": "Cost-effective strategy focused on sustainable long-term growth.",
+          "residualRiskLevel": "medium",
+          "status": "identified",
+          "assignedTo": "Core Assigned To 5",
+          "reviewDate": "2024-05-09"
+        },
+        {
+          "deviceId": 150,
+          "hazard": "Pro Hazard 6",
+          "riskCategory": "safety",
+          "severity": 150,
+          "probability": 150,
+          "riskLevel": "low",
+          "mitigation": "High-priority initiative aligned with organizational strategic objectives.",
+          "residualRiskLevel": "low",
+          "status": "mitigated",
+          "assignedTo": "Pro Assigned To 6",
+          "reviewDate": "2024-06-11"
+        },
+        {
+          "deviceId": 198,
+          "hazard": "Essential Hazard 7",
+          "riskCategory": "performance",
+          "severity": 198,
+          "probability": 198,
+          "riskLevel": "medium",
+          "mitigation": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "residualRiskLevel": "medium",
+          "status": "accepted",
+          "assignedTo": "Essential Assigned To 7",
+          "reviewDate": "2024-07-13"
+        },
+        {
+          "deviceId": 146,
+          "hazard": "Primary Hazard 8",
+          "riskCategory": "usability",
+          "severity": 146,
+          "probability": 146,
+          "riskLevel": "high",
+          "mitigation": "Innovative framework incorporating best practices and emerging technologies.",
+          "residualRiskLevel": "high",
+          "status": "monitoring",
+          "assignedTo": "Primary Assigned To 8",
+          "reviewDate": "2024-08-15"
+        },
+        {
+          "deviceId": 194,
+          "hazard": "Global Hazard 9",
+          "riskCategory": "cybersecurity",
+          "severity": 194,
+          "probability": 194,
+          "riskLevel": "critical",
+          "mitigation": "Scalable architecture built to accommodate rapid expansion and change.",
+          "residualRiskLevel": "critical",
+          "status": "identified",
+          "assignedTo": "Global Assigned To 9",
+          "reviewDate": "2024-09-17"
+        },
+        {
+          "deviceId": 242,
+          "hazard": "Regional Hazard 10",
+          "riskCategory": "biocompatibility",
+          "severity": 242,
+          "probability": 242,
+          "riskLevel": "medium",
+          "mitigation": "Enterprise-grade solution with robust security and compliance features.",
+          "residualRiskLevel": "medium",
+          "status": "mitigated",
+          "assignedTo": "Regional Assigned To 10",
+          "reviewDate": "2024-10-19"
+        },
+        {
+          "deviceId": 190,
+          "hazard": "Custom Hazard 11",
+          "riskCategory": "safety",
+          "severity": 190,
+          "probability": 190,
+          "riskLevel": "low",
+          "mitigation": "Integrated platform connecting multiple systems for seamless operations.",
+          "residualRiskLevel": "low",
+          "status": "accepted",
+          "assignedTo": "Custom Assigned To 11",
+          "reviewDate": "2024-11-21"
+        },
+        {
+          "deviceId": 238,
+          "hazard": "Smart Hazard 12",
+          "riskCategory": "performance",
+          "severity": 238,
+          "probability": 238,
+          "riskLevel": "medium",
+          "mitigation": "Automated workflow reducing manual intervention and human error.",
+          "residualRiskLevel": "medium",
+          "status": "monitoring",
+          "assignedTo": "Smart Assigned To 12",
+          "reviewDate": "2024-12-23"
+        },
+        {
+          "deviceId": 286,
+          "hazard": "Rapid Hazard 13",
+          "riskCategory": "usability",
+          "severity": 286,
+          "probability": 286,
+          "riskLevel": "high",
+          "mitigation": "Real-time monitoring system with intelligent alerting capabilities.",
+          "residualRiskLevel": "high",
+          "status": "identified",
+          "assignedTo": "Rapid Assigned To 13",
+          "reviewDate": "2024-01-25"
+        },
+        {
+          "deviceId": 234,
+          "hazard": "Secure Hazard 14",
+          "riskCategory": "cybersecurity",
+          "severity": 234,
+          "probability": 234,
+          "riskLevel": "critical",
+          "mitigation": "Customizable module adaptable to diverse operational requirements.",
+          "residualRiskLevel": "critical",
+          "status": "mitigated",
+          "assignedTo": "Secure Assigned To 14",
+          "reviewDate": "2024-02-27"
+        },
+        {
+          "deviceId": 282,
+          "hazard": "Modern Hazard 15",
+          "riskCategory": "biocompatibility",
+          "severity": 282,
+          "probability": 282,
+          "riskLevel": "medium",
+          "mitigation": "Performance-optimized design achieving superior throughput and reliability.",
+          "residualRiskLevel": "medium",
+          "status": "accepted",
+          "assignedTo": "Modern Assigned To 15",
+          "reviewDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "CapaRecord",
+      "routeKey": "capa-records",
+      "label": "Capa Record",
+      "icon": "layers",
+      "aiFunction": "analyzeCapaRecord",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Capa Record data. The data includes: Title, Type, Source, Device Id, Description, Root Cause, Action Plan, Status, Priority, Assigned To, Due Date, Completion Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "corrective",
+            "preventive"
+          ]
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "audit",
+            "complaint",
+            "ncr",
+            "inspection",
+            "internal"
+          ]
+        },
+        {
+          "key": "deviceId",
+          "label": "Device Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "rootCause",
+          "label": "Root Cause",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "actionPlan",
+          "label": "Action Plan",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "open",
+            "investigation",
+            "implementation",
+            "verification",
+            "closed"
+          ]
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "critical",
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "completionDate",
+          "label": "Completion Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "type": "corrective",
+          "source": "audit",
+          "deviceId": 10,
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "rootCause": "Comprehensive solution designed for optimal performance and efficiency.",
+          "actionPlan": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "open",
+          "priority": "critical",
+          "assignedTo": "Advanced Assigned To 1",
+          "dueDate": "2024-01-01",
+          "completionDate": "2024-01-01"
+        },
+        {
+          "title": "Premium Title 2",
+          "type": "preventive",
+          "source": "complaint",
+          "deviceId": 58,
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "rootCause": "Industry-leading approach with proven results across multiple deployments.",
+          "actionPlan": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "investigation",
+          "priority": "high",
+          "assignedTo": "Premium Assigned To 2",
+          "dueDate": "2024-02-03",
+          "completionDate": "2024-02-03"
+        },
+        {
+          "title": "Standard Title 3",
+          "type": "corrective",
+          "source": "ncr",
+          "deviceId": 106,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "rootCause": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "actionPlan": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "implementation",
+          "priority": "medium",
+          "assignedTo": "Standard Assigned To 3",
+          "dueDate": "2024-03-05",
+          "completionDate": "2024-03-05"
+        },
+        {
+          "title": "Elite Title 4",
+          "type": "preventive",
+          "source": "inspection",
+          "deviceId": 154,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "rootCause": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "actionPlan": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "verification",
+          "priority": "low",
+          "assignedTo": "Elite Assigned To 4",
+          "dueDate": "2024-04-07",
+          "completionDate": "2024-04-07"
+        },
+        {
+          "title": "Core Title 5",
+          "type": "corrective",
+          "source": "internal",
+          "deviceId": 102,
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "rootCause": "Cost-effective strategy focused on sustainable long-term growth.",
+          "actionPlan": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "closed",
+          "priority": "critical",
+          "assignedTo": "Core Assigned To 5",
+          "dueDate": "2024-05-09",
+          "completionDate": "2024-05-09"
+        },
+        {
+          "title": "Pro Title 6",
+          "type": "preventive",
+          "source": "audit",
+          "deviceId": 150,
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "rootCause": "High-priority initiative aligned with organizational strategic objectives.",
+          "actionPlan": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "open",
+          "priority": "high",
+          "assignedTo": "Pro Assigned To 6",
+          "dueDate": "2024-06-11",
+          "completionDate": "2024-06-11"
+        },
+        {
+          "title": "Essential Title 7",
+          "type": "corrective",
+          "source": "complaint",
+          "deviceId": 198,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "rootCause": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "actionPlan": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "investigation",
+          "priority": "medium",
+          "assignedTo": "Essential Assigned To 7",
+          "dueDate": "2024-07-13",
+          "completionDate": "2024-07-13"
+        },
+        {
+          "title": "Primary Title 8",
+          "type": "preventive",
+          "source": "ncr",
+          "deviceId": 146,
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "rootCause": "Innovative framework incorporating best practices and emerging technologies.",
+          "actionPlan": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "implementation",
+          "priority": "low",
+          "assignedTo": "Primary Assigned To 8",
+          "dueDate": "2024-08-15",
+          "completionDate": "2024-08-15"
+        },
+        {
+          "title": "Global Title 9",
+          "type": "corrective",
+          "source": "inspection",
+          "deviceId": 194,
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "rootCause": "Scalable architecture built to accommodate rapid expansion and change.",
+          "actionPlan": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "verification",
+          "priority": "critical",
+          "assignedTo": "Global Assigned To 9",
+          "dueDate": "2024-09-17",
+          "completionDate": "2024-09-17"
+        },
+        {
+          "title": "Regional Title 10",
+          "type": "preventive",
+          "source": "internal",
+          "deviceId": 242,
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "rootCause": "Enterprise-grade solution with robust security and compliance features.",
+          "actionPlan": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "closed",
+          "priority": "high",
+          "assignedTo": "Regional Assigned To 10",
+          "dueDate": "2024-10-19",
+          "completionDate": "2024-10-19"
+        },
+        {
+          "title": "Custom Title 11",
+          "type": "corrective",
+          "source": "audit",
+          "deviceId": 190,
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "rootCause": "Integrated platform connecting multiple systems for seamless operations.",
+          "actionPlan": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "open",
+          "priority": "medium",
+          "assignedTo": "Custom Assigned To 11",
+          "dueDate": "2024-11-21",
+          "completionDate": "2024-11-21"
+        },
+        {
+          "title": "Smart Title 12",
+          "type": "preventive",
+          "source": "complaint",
+          "deviceId": 238,
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "rootCause": "Automated workflow reducing manual intervention and human error.",
+          "actionPlan": "Automated workflow reducing manual intervention and human error.",
+          "status": "investigation",
+          "priority": "low",
+          "assignedTo": "Smart Assigned To 12",
+          "dueDate": "2024-12-23",
+          "completionDate": "2024-12-23"
+        },
+        {
+          "title": "Rapid Title 13",
+          "type": "corrective",
+          "source": "ncr",
+          "deviceId": 286,
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "rootCause": "Real-time monitoring system with intelligent alerting capabilities.",
+          "actionPlan": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "implementation",
+          "priority": "critical",
+          "assignedTo": "Rapid Assigned To 13",
+          "dueDate": "2024-01-25",
+          "completionDate": "2024-01-25"
+        },
+        {
+          "title": "Secure Title 14",
+          "type": "preventive",
+          "source": "inspection",
+          "deviceId": 234,
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "rootCause": "Customizable module adaptable to diverse operational requirements.",
+          "actionPlan": "Customizable module adaptable to diverse operational requirements.",
+          "status": "verification",
+          "priority": "high",
+          "assignedTo": "Secure Assigned To 14",
+          "dueDate": "2024-02-27",
+          "completionDate": "2024-02-27"
+        },
+        {
+          "title": "Modern Title 15",
+          "type": "corrective",
+          "source": "internal",
+          "deviceId": 282,
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "rootCause": "Performance-optimized design achieving superior throughput and reliability.",
+          "actionPlan": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "closed",
+          "priority": "medium",
+          "assignedTo": "Modern Assigned To 15",
+          "dueDate": "2024-03-01",
+          "completionDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "TrainingRecord",
+      "routeKey": "training-records",
+      "label": "Training Record",
+      "icon": "map-pin",
+      "aiFunction": "analyzeTrainingRecord",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Training Record data. The data includes: Employee Name, Employee Id Str, Department, Course Name, Course Type, Trainer, Training Date, Expiry Date, Status, Score, Certificate Number. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "employeeName",
+          "label": "Employee Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "employeeIdStr",
+          "label": "Employee Id Str",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "courseName",
+          "label": "Course Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "courseType",
+          "label": "Course Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "regulatory",
+            "quality",
+            "safety",
+            "technical",
+            "gmp"
+          ]
+        },
+        {
+          "key": "trainer",
+          "label": "Trainer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "trainingDate",
+          "label": "Training Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "completed",
+            "scheduled",
+            "overdue",
+            "in_progress"
+          ]
+        },
+        {
+          "key": "score",
+          "label": "Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "certificateNumber",
+          "label": "Certificate Number",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "employeeName": "Advanced Employee 1",
+          "employeeIdStr": "Advanced Employee Id Str 1",
+          "department": "Category A",
+          "courseName": "Advanced Course 1",
+          "courseType": "regulatory",
+          "trainer": "Advanced Trainer 1",
+          "trainingDate": "2024-01-01",
+          "expiryDate": "2024-01-01",
+          "status": "completed",
+          "score": 10,
+          "certificateNumber": "Advanced Certificate Number 1"
+        },
+        {
+          "employeeName": "Premium Employee 2",
+          "employeeIdStr": "Premium Employee Id Str 2",
+          "department": "Category B",
+          "courseName": "Premium Course 2",
+          "courseType": "quality",
+          "trainer": "Premium Trainer 2",
+          "trainingDate": "2024-02-03",
+          "expiryDate": "2024-02-03",
+          "status": "scheduled",
+          "score": 58,
+          "certificateNumber": "Premium Certificate Number 2"
+        },
+        {
+          "employeeName": "Standard Employee 3",
+          "employeeIdStr": "Standard Employee Id Str 3",
+          "department": "Category C",
+          "courseName": "Standard Course 3",
+          "courseType": "safety",
+          "trainer": "Standard Trainer 3",
+          "trainingDate": "2024-03-05",
+          "expiryDate": "2024-03-05",
+          "status": "overdue",
+          "score": 106,
+          "certificateNumber": "Standard Certificate Number 3"
+        },
+        {
+          "employeeName": "Elite Employee 4",
+          "employeeIdStr": "Elite Employee Id Str 4",
+          "department": "Category D",
+          "courseName": "Elite Course 4",
+          "courseType": "technical",
+          "trainer": "Elite Trainer 4",
+          "trainingDate": "2024-04-07",
+          "expiryDate": "2024-04-07",
+          "status": "in_progress",
+          "score": 154,
+          "certificateNumber": "Elite Certificate Number 4"
+        },
+        {
+          "employeeName": "Core Employee 5",
+          "employeeIdStr": "Core Employee Id Str 5",
+          "department": "Category E",
+          "courseName": "Core Course 5",
+          "courseType": "gmp",
+          "trainer": "Core Trainer 5",
+          "trainingDate": "2024-05-09",
+          "expiryDate": "2024-05-09",
+          "status": "completed",
+          "score": 102,
+          "certificateNumber": "Core Certificate Number 5"
+        },
+        {
+          "employeeName": "Pro Employee 6",
+          "employeeIdStr": "Pro Employee Id Str 6",
+          "department": "Premium Tier",
+          "courseName": "Pro Course 6",
+          "courseType": "regulatory",
+          "trainer": "Pro Trainer 6",
+          "trainingDate": "2024-06-11",
+          "expiryDate": "2024-06-11",
+          "status": "scheduled",
+          "score": 150,
+          "certificateNumber": "Pro Certificate Number 6"
+        },
+        {
+          "employeeName": "Essential Employee 7",
+          "employeeIdStr": "Essential Employee Id Str 7",
+          "department": "Standard Tier",
+          "courseName": "Essential Course 7",
+          "courseType": "quality",
+          "trainer": "Essential Trainer 7",
+          "trainingDate": "2024-07-13",
+          "expiryDate": "2024-07-13",
+          "status": "overdue",
+          "score": 198,
+          "certificateNumber": "Essential Certificate Number 7"
+        },
+        {
+          "employeeName": "Primary Employee 8",
+          "employeeIdStr": "Primary Employee Id Str 8",
+          "department": "Basic Tier",
+          "courseName": "Primary Course 8",
+          "courseType": "safety",
+          "trainer": "Primary Trainer 8",
+          "trainingDate": "2024-08-15",
+          "expiryDate": "2024-08-15",
+          "status": "in_progress",
+          "score": 146,
+          "certificateNumber": "Primary Certificate Number 8"
+        },
+        {
+          "employeeName": "Global Employee 9",
+          "employeeIdStr": "Global Employee Id Str 9",
+          "department": "Enterprise",
+          "courseName": "Global Course 9",
+          "courseType": "technical",
+          "trainer": "Global Trainer 9",
+          "trainingDate": "2024-09-17",
+          "expiryDate": "2024-09-17",
+          "status": "completed",
+          "score": 194,
+          "certificateNumber": "Global Certificate Number 9"
+        },
+        {
+          "employeeName": "Regional Employee 10",
+          "employeeIdStr": "Regional Employee Id Str 10",
+          "department": "Starter",
+          "courseName": "Regional Course 10",
+          "courseType": "gmp",
+          "trainer": "Regional Trainer 10",
+          "trainingDate": "2024-10-19",
+          "expiryDate": "2024-10-19",
+          "status": "scheduled",
+          "score": 242,
+          "certificateNumber": "Regional Certificate Number 10"
+        },
+        {
+          "employeeName": "Custom Employee 11",
+          "employeeIdStr": "Custom Employee Id Str 11",
+          "department": "Growth",
+          "courseName": "Custom Course 11",
+          "courseType": "regulatory",
+          "trainer": "Custom Trainer 11",
+          "trainingDate": "2024-11-21",
+          "expiryDate": "2024-11-21",
+          "status": "overdue",
+          "score": 190,
+          "certificateNumber": "Custom Certificate Number 11"
+        },
+        {
+          "employeeName": "Smart Employee 12",
+          "employeeIdStr": "Smart Employee Id Str 12",
+          "department": "Scale",
+          "courseName": "Smart Course 12",
+          "courseType": "quality",
+          "trainer": "Smart Trainer 12",
+          "trainingDate": "2024-12-23",
+          "expiryDate": "2024-12-23",
+          "status": "in_progress",
+          "score": 238,
+          "certificateNumber": "Smart Certificate Number 12"
+        },
+        {
+          "employeeName": "Rapid Employee 13",
+          "employeeIdStr": "Rapid Employee Id Str 13",
+          "department": "Foundation",
+          "courseName": "Rapid Course 13",
+          "courseType": "safety",
+          "trainer": "Rapid Trainer 13",
+          "trainingDate": "2024-01-25",
+          "expiryDate": "2024-01-25",
+          "status": "completed",
+          "score": 286,
+          "certificateNumber": "Rapid Certificate Number 13"
+        },
+        {
+          "employeeName": "Secure Employee 14",
+          "employeeIdStr": "Secure Employee Id Str 14",
+          "department": "Advanced",
+          "courseName": "Secure Course 14",
+          "courseType": "technical",
+          "trainer": "Secure Trainer 14",
+          "trainingDate": "2024-02-27",
+          "expiryDate": "2024-02-27",
+          "status": "scheduled",
+          "score": 234,
+          "certificateNumber": "Secure Certificate Number 14"
+        },
+        {
+          "employeeName": "Modern Employee 15",
+          "employeeIdStr": "Modern Employee Id Str 15",
+          "department": "Professional",
+          "courseName": "Modern Course 15",
+          "courseType": "gmp",
+          "trainer": "Modern Trainer 15",
+          "trainingDate": "2024-03-01",
+          "expiryDate": "2024-03-01",
+          "status": "overdue",
+          "score": 282,
+          "certificateNumber": "Modern Certificate Number 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Supplier",
+      "routeKey": "suppliers",
+      "label": "Supplier",
+      "icon": "package",
+      "aiFunction": "analyzeSupplier",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Supplier data. The data includes: Name, Contact Person, Email, Phone, Address, Category, Qualification Status, Iso Certified, Last Audit Date, Next Audit Date, Risk Rating, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactPerson",
+          "label": "Contact Person",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "raw_material",
+            "component",
+            "service",
+            "equipment",
+            "software"
+          ]
+        },
+        {
+          "key": "qualificationStatus",
+          "label": "Qualification Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "qualified",
+            "conditional",
+            "disqualified",
+            "pending"
+          ]
+        },
+        {
+          "key": "isoCertified",
+          "label": "Iso Certified",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "lastAuditDate",
+          "label": "Last Audit Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "nextAuditDate",
+          "label": "Next Audit Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "riskRating",
+          "label": "Risk Rating",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "contactPerson": "Advanced Contact Person 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "raw_material",
+          "qualificationStatus": "qualified",
+          "isoCertified": true,
+          "lastAuditDate": "2024-01-01",
+          "nextAuditDate": "2024-01-01",
+          "riskRating": "low",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "contactPerson": "Premium Contact Person 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "component",
+          "qualificationStatus": "conditional",
+          "isoCertified": true,
+          "lastAuditDate": "2024-02-03",
+          "nextAuditDate": "2024-02-03",
+          "riskRating": "medium",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "contactPerson": "Standard Contact Person 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "service",
+          "qualificationStatus": "disqualified",
+          "isoCertified": false,
+          "lastAuditDate": "2024-03-05",
+          "nextAuditDate": "2024-03-05",
+          "riskRating": "high",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "contactPerson": "Elite Contact Person 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "equipment",
+          "qualificationStatus": "pending",
+          "isoCertified": true,
+          "lastAuditDate": "2024-04-07",
+          "nextAuditDate": "2024-04-07",
+          "riskRating": "low",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "contactPerson": "Core Contact Person 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "software",
+          "qualificationStatus": "qualified",
+          "isoCertified": false,
+          "lastAuditDate": "2024-05-09",
+          "nextAuditDate": "2024-05-09",
+          "riskRating": "medium",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "contactPerson": "Pro Contact Person 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "raw_material",
+          "qualificationStatus": "conditional",
+          "isoCertified": true,
+          "lastAuditDate": "2024-06-11",
+          "nextAuditDate": "2024-06-11",
+          "riskRating": "high",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "contactPerson": "Essential Contact Person 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "component",
+          "qualificationStatus": "disqualified",
+          "isoCertified": true,
+          "lastAuditDate": "2024-07-13",
+          "nextAuditDate": "2024-07-13",
+          "riskRating": "low",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "contactPerson": "Primary Contact Person 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "service",
+          "qualificationStatus": "pending",
+          "isoCertified": false,
+          "lastAuditDate": "2024-08-15",
+          "nextAuditDate": "2024-08-15",
+          "riskRating": "medium",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "contactPerson": "Global Contact Person 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "equipment",
+          "qualificationStatus": "qualified",
+          "isoCertified": true,
+          "lastAuditDate": "2024-09-17",
+          "nextAuditDate": "2024-09-17",
+          "riskRating": "high",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "contactPerson": "Regional Contact Person 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "software",
+          "qualificationStatus": "conditional",
+          "isoCertified": true,
+          "lastAuditDate": "2024-10-19",
+          "nextAuditDate": "2024-10-19",
+          "riskRating": "low",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "contactPerson": "Custom Contact Person 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "raw_material",
+          "qualificationStatus": "disqualified",
+          "isoCertified": false,
+          "lastAuditDate": "2024-11-21",
+          "nextAuditDate": "2024-11-21",
+          "riskRating": "medium",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "contactPerson": "Smart Contact Person 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "category": "component",
+          "qualificationStatus": "pending",
+          "isoCertified": true,
+          "lastAuditDate": "2024-12-23",
+          "nextAuditDate": "2024-12-23",
+          "riskRating": "high",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "contactPerson": "Rapid Contact Person 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "service",
+          "qualificationStatus": "qualified",
+          "isoCertified": false,
+          "lastAuditDate": "2024-01-25",
+          "nextAuditDate": "2024-01-25",
+          "riskRating": "low",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "contactPerson": "Secure Contact Person 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "category": "equipment",
+          "qualificationStatus": "conditional",
+          "isoCertified": true,
+          "lastAuditDate": "2024-02-27",
+          "nextAuditDate": "2024-02-27",
+          "riskRating": "medium",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "contactPerson": "Modern Contact Person 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "software",
+          "qualificationStatus": "disqualified",
+          "isoCertified": true,
+          "lastAuditDate": "2024-03-01",
+          "nextAuditDate": "2024-03-01",
+          "riskRating": "high",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "NonconformanceReport",
+      "routeKey": "nonconformance-reports",
+      "label": "Nonconformance Report",
+      "icon": "shield",
+      "aiFunction": "analyzeNonconformanceReport",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Nonconformance Report data. The data includes: Ncr Number, Title, Device Id, Category, Severity, Description, Investigation, Disposition, Status, Reported By, Assigned To, Due Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "ncrNumber",
+          "label": "Ncr Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "deviceId",
+          "label": "Device Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "product",
+            "process",
+            "supplier",
+            "documentation",
+            "equipment"
+          ]
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "critical",
+            "major",
+            "minor"
+          ]
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "investigation",
+          "label": "Investigation",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "disposition",
+          "label": "Disposition",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "open",
+            "investigation",
+            "disposition",
+            "closed"
+          ]
+        },
+        {
+          "key": "reportedBy",
+          "label": "Reported By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "ncrNumber": "Advanced Ncr Number 1",
+          "title": "Advanced Title 1",
+          "deviceId": 10,
+          "category": "product",
+          "severity": "critical",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "investigation": "Comprehensive solution designed for optimal performance and efficiency.",
+          "disposition": "Advanced Disposition 1",
+          "status": "open",
+          "reportedBy": "Advanced Reported By 1",
+          "assignedTo": "Advanced Assigned To 1",
+          "dueDate": "2024-01-01"
+        },
+        {
+          "ncrNumber": "Premium Ncr Number 2",
+          "title": "Premium Title 2",
+          "deviceId": 58,
+          "category": "process",
+          "severity": "major",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "investigation": "Industry-leading approach with proven results across multiple deployments.",
+          "disposition": "Premium Disposition 2",
+          "status": "investigation",
+          "reportedBy": "Premium Reported By 2",
+          "assignedTo": "Premium Assigned To 2",
+          "dueDate": "2024-02-03"
+        },
+        {
+          "ncrNumber": "Standard Ncr Number 3",
+          "title": "Standard Title 3",
+          "deviceId": 106,
+          "category": "supplier",
+          "severity": "minor",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "investigation": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "disposition": "Standard Disposition 3",
+          "status": "disposition",
+          "reportedBy": "Standard Reported By 3",
+          "assignedTo": "Standard Assigned To 3",
+          "dueDate": "2024-03-05"
+        },
+        {
+          "ncrNumber": "Elite Ncr Number 4",
+          "title": "Elite Title 4",
+          "deviceId": 154,
+          "category": "documentation",
+          "severity": "critical",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "investigation": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "disposition": "Elite Disposition 4",
+          "status": "closed",
+          "reportedBy": "Elite Reported By 4",
+          "assignedTo": "Elite Assigned To 4",
+          "dueDate": "2024-04-07"
+        },
+        {
+          "ncrNumber": "Core Ncr Number 5",
+          "title": "Core Title 5",
+          "deviceId": 102,
+          "category": "equipment",
+          "severity": "major",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "investigation": "Cost-effective strategy focused on sustainable long-term growth.",
+          "disposition": "Core Disposition 5",
+          "status": "open",
+          "reportedBy": "Core Reported By 5",
+          "assignedTo": "Core Assigned To 5",
+          "dueDate": "2024-05-09"
+        },
+        {
+          "ncrNumber": "Pro Ncr Number 6",
+          "title": "Pro Title 6",
+          "deviceId": 150,
+          "category": "product",
+          "severity": "minor",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "investigation": "High-priority initiative aligned with organizational strategic objectives.",
+          "disposition": "Pro Disposition 6",
+          "status": "investigation",
+          "reportedBy": "Pro Reported By 6",
+          "assignedTo": "Pro Assigned To 6",
+          "dueDate": "2024-06-11"
+        },
+        {
+          "ncrNumber": "Essential Ncr Number 7",
+          "title": "Essential Title 7",
+          "deviceId": 198,
+          "category": "process",
+          "severity": "critical",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "investigation": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "disposition": "Essential Disposition 7",
+          "status": "disposition",
+          "reportedBy": "Essential Reported By 7",
+          "assignedTo": "Essential Assigned To 7",
+          "dueDate": "2024-07-13"
+        },
+        {
+          "ncrNumber": "Primary Ncr Number 8",
+          "title": "Primary Title 8",
+          "deviceId": 146,
+          "category": "supplier",
+          "severity": "major",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "investigation": "Innovative framework incorporating best practices and emerging technologies.",
+          "disposition": "Primary Disposition 8",
+          "status": "closed",
+          "reportedBy": "Primary Reported By 8",
+          "assignedTo": "Primary Assigned To 8",
+          "dueDate": "2024-08-15"
+        },
+        {
+          "ncrNumber": "Global Ncr Number 9",
+          "title": "Global Title 9",
+          "deviceId": 194,
+          "category": "documentation",
+          "severity": "minor",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "investigation": "Scalable architecture built to accommodate rapid expansion and change.",
+          "disposition": "Global Disposition 9",
+          "status": "open",
+          "reportedBy": "Global Reported By 9",
+          "assignedTo": "Global Assigned To 9",
+          "dueDate": "2024-09-17"
+        },
+        {
+          "ncrNumber": "Regional Ncr Number 10",
+          "title": "Regional Title 10",
+          "deviceId": 242,
+          "category": "equipment",
+          "severity": "critical",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "investigation": "Enterprise-grade solution with robust security and compliance features.",
+          "disposition": "Regional Disposition 10",
+          "status": "investigation",
+          "reportedBy": "Regional Reported By 10",
+          "assignedTo": "Regional Assigned To 10",
+          "dueDate": "2024-10-19"
+        },
+        {
+          "ncrNumber": "Custom Ncr Number 11",
+          "title": "Custom Title 11",
+          "deviceId": 190,
+          "category": "product",
+          "severity": "major",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "investigation": "Integrated platform connecting multiple systems for seamless operations.",
+          "disposition": "Custom Disposition 11",
+          "status": "disposition",
+          "reportedBy": "Custom Reported By 11",
+          "assignedTo": "Custom Assigned To 11",
+          "dueDate": "2024-11-21"
+        },
+        {
+          "ncrNumber": "Smart Ncr Number 12",
+          "title": "Smart Title 12",
+          "deviceId": 238,
+          "category": "process",
+          "severity": "minor",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "investigation": "Automated workflow reducing manual intervention and human error.",
+          "disposition": "Smart Disposition 12",
+          "status": "closed",
+          "reportedBy": "Smart Reported By 12",
+          "assignedTo": "Smart Assigned To 12",
+          "dueDate": "2024-12-23"
+        },
+        {
+          "ncrNumber": "Rapid Ncr Number 13",
+          "title": "Rapid Title 13",
+          "deviceId": 286,
+          "category": "supplier",
+          "severity": "critical",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "investigation": "Real-time monitoring system with intelligent alerting capabilities.",
+          "disposition": "Rapid Disposition 13",
+          "status": "open",
+          "reportedBy": "Rapid Reported By 13",
+          "assignedTo": "Rapid Assigned To 13",
+          "dueDate": "2024-01-25"
+        },
+        {
+          "ncrNumber": "Secure Ncr Number 14",
+          "title": "Secure Title 14",
+          "deviceId": 234,
+          "category": "documentation",
+          "severity": "major",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "investigation": "Customizable module adaptable to diverse operational requirements.",
+          "disposition": "Secure Disposition 14",
+          "status": "investigation",
+          "reportedBy": "Secure Reported By 14",
+          "assignedTo": "Secure Assigned To 14",
+          "dueDate": "2024-02-27"
+        },
+        {
+          "ncrNumber": "Modern Ncr Number 15",
+          "title": "Modern Title 15",
+          "deviceId": 282,
+          "category": "equipment",
+          "severity": "minor",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "investigation": "Performance-optimized design achieving superior throughput and reliability.",
+          "disposition": "Modern Disposition 15",
+          "status": "disposition",
+          "reportedBy": "Modern Reported By 15",
+          "assignedTo": "Modern Assigned To 15",
+          "dueDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "ChangeControl",
+      "routeKey": "change-controls",
+      "label": "Change Control",
+      "icon": "star",
+      "aiFunction": "analyzeChangeControl",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Change Control data. The data includes: Change Number, Title, Change Type, Device Id, Description, Justification, Impact Assessment, Status, Priority, Requested By, Approved By, Implementation Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "changeNumber",
+          "label": "Change Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "changeType",
+          "label": "Change Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "design",
+            "process",
+            "document",
+            "supplier",
+            "software"
+          ]
+        },
+        {
+          "key": "deviceId",
+          "label": "Device Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "justification",
+          "label": "Justification",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "impactAssessment",
+          "label": "Impact Assessment",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "requested",
+            "review",
+            "approved",
+            "implementation",
+            "closed",
+            "rejected"
+          ]
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "critical",
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        {
+          "key": "requestedBy",
+          "label": "Requested By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "approvedBy",
+          "label": "Approved By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "implementationDate",
+          "label": "Implementation Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "changeNumber": "Advanced Change Number 1",
+          "title": "Advanced Title 1",
+          "changeType": "design",
+          "deviceId": 10,
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "justification": "Comprehensive solution designed for optimal performance and efficiency.",
+          "impactAssessment": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "requested",
+          "priority": "critical",
+          "requestedBy": "Advanced Requested By 1",
+          "approvedBy": "Advanced Approved By 1",
+          "implementationDate": "2024-01-01"
+        },
+        {
+          "changeNumber": "Premium Change Number 2",
+          "title": "Premium Title 2",
+          "changeType": "process",
+          "deviceId": 58,
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "justification": "Industry-leading approach with proven results across multiple deployments.",
+          "impactAssessment": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "review",
+          "priority": "high",
+          "requestedBy": "Premium Requested By 2",
+          "approvedBy": "Premium Approved By 2",
+          "implementationDate": "2024-02-03"
+        },
+        {
+          "changeNumber": "Standard Change Number 3",
+          "title": "Standard Title 3",
+          "changeType": "document",
+          "deviceId": 106,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "justification": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "impactAssessment": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "approved",
+          "priority": "medium",
+          "requestedBy": "Standard Requested By 3",
+          "approvedBy": "Standard Approved By 3",
+          "implementationDate": "2024-03-05"
+        },
+        {
+          "changeNumber": "Elite Change Number 4",
+          "title": "Elite Title 4",
+          "changeType": "supplier",
+          "deviceId": 154,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "justification": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "impactAssessment": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "implementation",
+          "priority": "low",
+          "requestedBy": "Elite Requested By 4",
+          "approvedBy": "Elite Approved By 4",
+          "implementationDate": "2024-04-07"
+        },
+        {
+          "changeNumber": "Core Change Number 5",
+          "title": "Core Title 5",
+          "changeType": "software",
+          "deviceId": 102,
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "justification": "Cost-effective strategy focused on sustainable long-term growth.",
+          "impactAssessment": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "closed",
+          "priority": "critical",
+          "requestedBy": "Core Requested By 5",
+          "approvedBy": "Core Approved By 5",
+          "implementationDate": "2024-05-09"
+        },
+        {
+          "changeNumber": "Pro Change Number 6",
+          "title": "Pro Title 6",
+          "changeType": "design",
+          "deviceId": 150,
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "justification": "High-priority initiative aligned with organizational strategic objectives.",
+          "impactAssessment": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "rejected",
+          "priority": "high",
+          "requestedBy": "Pro Requested By 6",
+          "approvedBy": "Pro Approved By 6",
+          "implementationDate": "2024-06-11"
+        },
+        {
+          "changeNumber": "Essential Change Number 7",
+          "title": "Essential Title 7",
+          "changeType": "process",
+          "deviceId": 198,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "justification": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "impactAssessment": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "requested",
+          "priority": "medium",
+          "requestedBy": "Essential Requested By 7",
+          "approvedBy": "Essential Approved By 7",
+          "implementationDate": "2024-07-13"
+        },
+        {
+          "changeNumber": "Primary Change Number 8",
+          "title": "Primary Title 8",
+          "changeType": "document",
+          "deviceId": 146,
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "justification": "Innovative framework incorporating best practices and emerging technologies.",
+          "impactAssessment": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "review",
+          "priority": "low",
+          "requestedBy": "Primary Requested By 8",
+          "approvedBy": "Primary Approved By 8",
+          "implementationDate": "2024-08-15"
+        },
+        {
+          "changeNumber": "Global Change Number 9",
+          "title": "Global Title 9",
+          "changeType": "supplier",
+          "deviceId": 194,
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "justification": "Scalable architecture built to accommodate rapid expansion and change.",
+          "impactAssessment": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "approved",
+          "priority": "critical",
+          "requestedBy": "Global Requested By 9",
+          "approvedBy": "Global Approved By 9",
+          "implementationDate": "2024-09-17"
+        },
+        {
+          "changeNumber": "Regional Change Number 10",
+          "title": "Regional Title 10",
+          "changeType": "software",
+          "deviceId": 242,
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "justification": "Enterprise-grade solution with robust security and compliance features.",
+          "impactAssessment": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "implementation",
+          "priority": "high",
+          "requestedBy": "Regional Requested By 10",
+          "approvedBy": "Regional Approved By 10",
+          "implementationDate": "2024-10-19"
+        },
+        {
+          "changeNumber": "Custom Change Number 11",
+          "title": "Custom Title 11",
+          "changeType": "design",
+          "deviceId": 190,
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "justification": "Integrated platform connecting multiple systems for seamless operations.",
+          "impactAssessment": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "closed",
+          "priority": "medium",
+          "requestedBy": "Custom Requested By 11",
+          "approvedBy": "Custom Approved By 11",
+          "implementationDate": "2024-11-21"
+        },
+        {
+          "changeNumber": "Smart Change Number 12",
+          "title": "Smart Title 12",
+          "changeType": "process",
+          "deviceId": 238,
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "justification": "Automated workflow reducing manual intervention and human error.",
+          "impactAssessment": "Automated workflow reducing manual intervention and human error.",
+          "status": "rejected",
+          "priority": "low",
+          "requestedBy": "Smart Requested By 12",
+          "approvedBy": "Smart Approved By 12",
+          "implementationDate": "2024-12-23"
+        },
+        {
+          "changeNumber": "Rapid Change Number 13",
+          "title": "Rapid Title 13",
+          "changeType": "document",
+          "deviceId": 286,
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "justification": "Real-time monitoring system with intelligent alerting capabilities.",
+          "impactAssessment": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "requested",
+          "priority": "critical",
+          "requestedBy": "Rapid Requested By 13",
+          "approvedBy": "Rapid Approved By 13",
+          "implementationDate": "2024-01-25"
+        },
+        {
+          "changeNumber": "Secure Change Number 14",
+          "title": "Secure Title 14",
+          "changeType": "supplier",
+          "deviceId": 234,
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "justification": "Customizable module adaptable to diverse operational requirements.",
+          "impactAssessment": "Customizable module adaptable to diverse operational requirements.",
+          "status": "review",
+          "priority": "high",
+          "requestedBy": "Secure Requested By 14",
+          "approvedBy": "Secure Approved By 14",
+          "implementationDate": "2024-02-27"
+        },
+        {
+          "changeNumber": "Modern Change Number 15",
+          "title": "Modern Title 15",
+          "changeType": "software",
+          "deviceId": 282,
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "justification": "Performance-optimized design achieving superior throughput and reliability.",
+          "impactAssessment": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "priority": "medium",
+          "requestedBy": "Modern Requested By 15",
+          "approvedBy": "Modern Approved By 15",
+          "implementationDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "CalibrationRecord",
+      "routeKey": "calibration-records",
+      "label": "Calibration Record",
+      "icon": "truck",
+      "aiFunction": "analyzeCalibrationRecord",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Calibration Record data. The data includes: Equipment Name, Equipment Id Str, Device Id, Calibration Type, Calibration Date, Next Calibration Date, Performed By, Status, Standard Used, Results, Certificate Number. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "equipmentName",
+          "label": "Equipment Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "equipmentIdStr",
+          "label": "Equipment Id Str",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "deviceId",
+          "label": "Device Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "calibrationType",
+          "label": "Calibration Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "initial",
+            "periodic",
+            "after_repair",
+            "verification"
+          ]
+        },
+        {
+          "key": "calibrationDate",
+          "label": "Calibration Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "nextCalibrationDate",
+          "label": "Next Calibration Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "performedBy",
+          "label": "Performed By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "calibrated",
+            "out_of_tolerance",
+            "due",
+            "overdue"
+          ]
+        },
+        {
+          "key": "standardUsed",
+          "label": "Standard Used",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "results",
+          "label": "Results",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "certificateNumber",
+          "label": "Certificate Number",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "equipmentName": "Advanced Equipment 1",
+          "equipmentIdStr": "Advanced Equipment Id Str 1",
+          "deviceId": 10,
+          "calibrationType": "initial",
+          "calibrationDate": "2024-01-01",
+          "nextCalibrationDate": "2024-01-01",
+          "performedBy": "Advanced Performed By 1",
+          "status": "calibrated",
+          "standardUsed": "Advanced Standard Used 1",
+          "results": "Comprehensive solution designed for optimal performance and efficiency.",
+          "certificateNumber": "Advanced Certificate Number 1"
+        },
+        {
+          "equipmentName": "Premium Equipment 2",
+          "equipmentIdStr": "Premium Equipment Id Str 2",
+          "deviceId": 58,
+          "calibrationType": "periodic",
+          "calibrationDate": "2024-02-03",
+          "nextCalibrationDate": "2024-02-03",
+          "performedBy": "Premium Performed By 2",
+          "status": "out_of_tolerance",
+          "standardUsed": "Premium Standard Used 2",
+          "results": "Industry-leading approach with proven results across multiple deployments.",
+          "certificateNumber": "Premium Certificate Number 2"
+        },
+        {
+          "equipmentName": "Standard Equipment 3",
+          "equipmentIdStr": "Standard Equipment Id Str 3",
+          "deviceId": 106,
+          "calibrationType": "after_repair",
+          "calibrationDate": "2024-03-05",
+          "nextCalibrationDate": "2024-03-05",
+          "performedBy": "Standard Performed By 3",
+          "status": "due",
+          "standardUsed": "Standard Standard Used 3",
+          "results": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "certificateNumber": "Standard Certificate Number 3"
+        },
+        {
+          "equipmentName": "Elite Equipment 4",
+          "equipmentIdStr": "Elite Equipment Id Str 4",
+          "deviceId": 154,
+          "calibrationType": "verification",
+          "calibrationDate": "2024-04-07",
+          "nextCalibrationDate": "2024-04-07",
+          "performedBy": "Elite Performed By 4",
+          "status": "overdue",
+          "standardUsed": "Elite Standard Used 4",
+          "results": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "certificateNumber": "Elite Certificate Number 4"
+        },
+        {
+          "equipmentName": "Core Equipment 5",
+          "equipmentIdStr": "Core Equipment Id Str 5",
+          "deviceId": 102,
+          "calibrationType": "initial",
+          "calibrationDate": "2024-05-09",
+          "nextCalibrationDate": "2024-05-09",
+          "performedBy": "Core Performed By 5",
+          "status": "calibrated",
+          "standardUsed": "Core Standard Used 5",
+          "results": "Cost-effective strategy focused on sustainable long-term growth.",
+          "certificateNumber": "Core Certificate Number 5"
+        },
+        {
+          "equipmentName": "Pro Equipment 6",
+          "equipmentIdStr": "Pro Equipment Id Str 6",
+          "deviceId": 150,
+          "calibrationType": "periodic",
+          "calibrationDate": "2024-06-11",
+          "nextCalibrationDate": "2024-06-11",
+          "performedBy": "Pro Performed By 6",
+          "status": "out_of_tolerance",
+          "standardUsed": "Pro Standard Used 6",
+          "results": "High-priority initiative aligned with organizational strategic objectives.",
+          "certificateNumber": "Pro Certificate Number 6"
+        },
+        {
+          "equipmentName": "Essential Equipment 7",
+          "equipmentIdStr": "Essential Equipment Id Str 7",
+          "deviceId": 198,
+          "calibrationType": "after_repair",
+          "calibrationDate": "2024-07-13",
+          "nextCalibrationDate": "2024-07-13",
+          "performedBy": "Essential Performed By 7",
+          "status": "due",
+          "standardUsed": "Essential Standard Used 7",
+          "results": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "certificateNumber": "Essential Certificate Number 7"
+        },
+        {
+          "equipmentName": "Primary Equipment 8",
+          "equipmentIdStr": "Primary Equipment Id Str 8",
+          "deviceId": 146,
+          "calibrationType": "verification",
+          "calibrationDate": "2024-08-15",
+          "nextCalibrationDate": "2024-08-15",
+          "performedBy": "Primary Performed By 8",
+          "status": "overdue",
+          "standardUsed": "Primary Standard Used 8",
+          "results": "Innovative framework incorporating best practices and emerging technologies.",
+          "certificateNumber": "Primary Certificate Number 8"
+        },
+        {
+          "equipmentName": "Global Equipment 9",
+          "equipmentIdStr": "Global Equipment Id Str 9",
+          "deviceId": 194,
+          "calibrationType": "initial",
+          "calibrationDate": "2024-09-17",
+          "nextCalibrationDate": "2024-09-17",
+          "performedBy": "Global Performed By 9",
+          "status": "calibrated",
+          "standardUsed": "Global Standard Used 9",
+          "results": "Scalable architecture built to accommodate rapid expansion and change.",
+          "certificateNumber": "Global Certificate Number 9"
+        },
+        {
+          "equipmentName": "Regional Equipment 10",
+          "equipmentIdStr": "Regional Equipment Id Str 10",
+          "deviceId": 242,
+          "calibrationType": "periodic",
+          "calibrationDate": "2024-10-19",
+          "nextCalibrationDate": "2024-10-19",
+          "performedBy": "Regional Performed By 10",
+          "status": "out_of_tolerance",
+          "standardUsed": "Regional Standard Used 10",
+          "results": "Enterprise-grade solution with robust security and compliance features.",
+          "certificateNumber": "Regional Certificate Number 10"
+        },
+        {
+          "equipmentName": "Custom Equipment 11",
+          "equipmentIdStr": "Custom Equipment Id Str 11",
+          "deviceId": 190,
+          "calibrationType": "after_repair",
+          "calibrationDate": "2024-11-21",
+          "nextCalibrationDate": "2024-11-21",
+          "performedBy": "Custom Performed By 11",
+          "status": "due",
+          "standardUsed": "Custom Standard Used 11",
+          "results": "Integrated platform connecting multiple systems for seamless operations.",
+          "certificateNumber": "Custom Certificate Number 11"
+        },
+        {
+          "equipmentName": "Smart Equipment 12",
+          "equipmentIdStr": "Smart Equipment Id Str 12",
+          "deviceId": 238,
+          "calibrationType": "verification",
+          "calibrationDate": "2024-12-23",
+          "nextCalibrationDate": "2024-12-23",
+          "performedBy": "Smart Performed By 12",
+          "status": "overdue",
+          "standardUsed": "Smart Standard Used 12",
+          "results": "Automated workflow reducing manual intervention and human error.",
+          "certificateNumber": "Smart Certificate Number 12"
+        },
+        {
+          "equipmentName": "Rapid Equipment 13",
+          "equipmentIdStr": "Rapid Equipment Id Str 13",
+          "deviceId": 286,
+          "calibrationType": "initial",
+          "calibrationDate": "2024-01-25",
+          "nextCalibrationDate": "2024-01-25",
+          "performedBy": "Rapid Performed By 13",
+          "status": "calibrated",
+          "standardUsed": "Rapid Standard Used 13",
+          "results": "Real-time monitoring system with intelligent alerting capabilities.",
+          "certificateNumber": "Rapid Certificate Number 13"
+        },
+        {
+          "equipmentName": "Secure Equipment 14",
+          "equipmentIdStr": "Secure Equipment Id Str 14",
+          "deviceId": 234,
+          "calibrationType": "periodic",
+          "calibrationDate": "2024-02-27",
+          "nextCalibrationDate": "2024-02-27",
+          "performedBy": "Secure Performed By 14",
+          "status": "out_of_tolerance",
+          "standardUsed": "Secure Standard Used 14",
+          "results": "Customizable module adaptable to diverse operational requirements.",
+          "certificateNumber": "Secure Certificate Number 14"
+        },
+        {
+          "equipmentName": "Modern Equipment 15",
+          "equipmentIdStr": "Modern Equipment Id Str 15",
+          "deviceId": 282,
+          "calibrationType": "after_repair",
+          "calibrationDate": "2024-03-01",
+          "nextCalibrationDate": "2024-03-01",
+          "performedBy": "Modern Performed By 15",
+          "status": "due",
+          "standardUsed": "Modern Standard Used 15",
+          "results": "Performance-optimized design achieving superior throughput and reliability.",
+          "certificateNumber": "Modern Certificate Number 15"
+        }
+      ]
+    },
+    {
+      "modelName": "AiAnalyse",
+      "routeKey": "ai-analyses",
+      "label": "Ai Analyse",
+      "icon": "users",
+      "aiFunction": "analyzeAiAnalyse",
+      "aiPrompt": "You are an AI analyst for A I Medical Device Compliance Manager. Analyze the provided Ai Analyse data. The data includes: Analysis Type, Entity Type, Entity Id, Prompt, Result, Model Used. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "analysisType",
+          "label": "Analysis Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "compliance",
+            "risk",
+            "gap",
+            "document_review",
+            "audit_report"
+          ]
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "prompt",
+          "label": "Prompt",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "result",
+          "label": "Result",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "modelUsed",
+          "label": "Model Used",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "analysisType": "compliance",
+          "entityType": "Category A",
+          "entityId": 10,
+          "prompt": "Comprehensive solution designed for optimal performance and efficiency.",
+          "result": "Comprehensive solution designed for optimal performance and efficiency.",
+          "modelUsed": "Advanced Model Used 1"
+        },
+        {
+          "analysisType": "risk",
+          "entityType": "Category B",
+          "entityId": 58,
+          "prompt": "Industry-leading approach with proven results across multiple deployments.",
+          "result": "Industry-leading approach with proven results across multiple deployments.",
+          "modelUsed": "Premium Model Used 2"
+        },
+        {
+          "analysisType": "gap",
+          "entityType": "Category C",
+          "entityId": 106,
+          "prompt": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "result": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "modelUsed": "Standard Model Used 3"
+        },
+        {
+          "analysisType": "document_review",
+          "entityType": "Category D",
+          "entityId": 154,
+          "prompt": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "result": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "modelUsed": "Elite Model Used 4"
+        },
+        {
+          "analysisType": "audit_report",
+          "entityType": "Category E",
+          "entityId": 102,
+          "prompt": "Cost-effective strategy focused on sustainable long-term growth.",
+          "result": "Cost-effective strategy focused on sustainable long-term growth.",
+          "modelUsed": "Core Model Used 5"
+        },
+        {
+          "analysisType": "compliance",
+          "entityType": "Premium Tier",
+          "entityId": 150,
+          "prompt": "High-priority initiative aligned with organizational strategic objectives.",
+          "result": "High-priority initiative aligned with organizational strategic objectives.",
+          "modelUsed": "Pro Model Used 6"
+        },
+        {
+          "analysisType": "risk",
+          "entityType": "Standard Tier",
+          "entityId": 198,
+          "prompt": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "result": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "modelUsed": "Essential Model Used 7"
+        },
+        {
+          "analysisType": "gap",
+          "entityType": "Basic Tier",
+          "entityId": 146,
+          "prompt": "Innovative framework incorporating best practices and emerging technologies.",
+          "result": "Innovative framework incorporating best practices and emerging technologies.",
+          "modelUsed": "Primary Model Used 8"
+        },
+        {
+          "analysisType": "document_review",
+          "entityType": "Enterprise",
+          "entityId": 194,
+          "prompt": "Scalable architecture built to accommodate rapid expansion and change.",
+          "result": "Scalable architecture built to accommodate rapid expansion and change.",
+          "modelUsed": "Global Model Used 9"
+        },
+        {
+          "analysisType": "audit_report",
+          "entityType": "Starter",
+          "entityId": 242,
+          "prompt": "Enterprise-grade solution with robust security and compliance features.",
+          "result": "Enterprise-grade solution with robust security and compliance features.",
+          "modelUsed": "Regional Model Used 10"
+        },
+        {
+          "analysisType": "compliance",
+          "entityType": "Growth",
+          "entityId": 190,
+          "prompt": "Integrated platform connecting multiple systems for seamless operations.",
+          "result": "Integrated platform connecting multiple systems for seamless operations.",
+          "modelUsed": "Custom Model Used 11"
+        },
+        {
+          "analysisType": "risk",
+          "entityType": "Scale",
+          "entityId": 238,
+          "prompt": "Automated workflow reducing manual intervention and human error.",
+          "result": "Automated workflow reducing manual intervention and human error.",
+          "modelUsed": "Smart Model Used 12"
+        },
+        {
+          "analysisType": "gap",
+          "entityType": "Foundation",
+          "entityId": 286,
+          "prompt": "Real-time monitoring system with intelligent alerting capabilities.",
+          "result": "Real-time monitoring system with intelligent alerting capabilities.",
+          "modelUsed": "Rapid Model Used 13"
+        },
+        {
+          "analysisType": "document_review",
+          "entityType": "Advanced",
+          "entityId": 234,
+          "prompt": "Customizable module adaptable to diverse operational requirements.",
+          "result": "Customizable module adaptable to diverse operational requirements.",
+          "modelUsed": "Secure Model Used 14"
+        },
+        {
+          "analysisType": "audit_report",
+          "entityType": "Professional",
+          "entityId": 282,
+          "prompt": "Performance-optimized design achieving superior throughput and reliability.",
+          "result": "Performance-optimized design achieving superior throughput and reliability.",
+          "modelUsed": "Modern Model Used 15"
+        }
+      ]
+    }
+  ]
+}

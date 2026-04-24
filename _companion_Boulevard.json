@@ -1,0 +1,1288 @@
+{
+  "appName": "AI Boulevard Scheduling",
+  "dbName": "ai_boulevard_scheduling",
+  "folderName": "generated/Boulevard",
+  "features": [
+    {
+      "modelName": "Appointment",
+      "label": "Appointments",
+      "icon": "calendar",
+      "fields": [
+        {
+          "key": "clientName",
+          "label": "Client Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serviceName",
+          "label": "Service",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "staffName",
+          "label": "Staff",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dateTime",
+          "label": "Date Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "duration",
+          "label": "Duration (min)",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "price",
+          "label": "Price",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "routeKey": "appointments",
+      "aiFunction": "analyzeAppointment",
+      "aiPrompt": "You are an AI analyst for AI Boulevard Scheduling. Analyze the provided Appointments data. The data includes: Client Name, Service, Staff, Date Time, Duration (min), Status, Notes, Price. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "clientName": "Alpha Client Name",
+          "serviceName": "Alpha Service",
+          "staffName": "Alpha Staff",
+          "dateTime": "2026-02-26",
+          "duration": 930,
+          "status": "Active",
+          "notes": "Alpha notes — detailed content for enterprise use case.",
+          "price": 482.34
+        },
+        {
+          "clientName": "Beta Client Name",
+          "serviceName": "Beta Service",
+          "staffName": "Beta Staff",
+          "dateTime": "2026-06-26",
+          "duration": 666,
+          "status": "Pending",
+          "notes": "Beta notes — detailed content for startup use case.",
+          "price": 134.58
+        },
+        {
+          "clientName": "Gamma Client Name",
+          "serviceName": "Gamma Service",
+          "staffName": "Gamma Staff",
+          "dateTime": "2026-04-20",
+          "duration": 382,
+          "status": "Review",
+          "notes": "Gamma notes — detailed content for smb use case.",
+          "price": 39.68
+        },
+        {
+          "clientName": "Delta Client Name",
+          "serviceName": "Delta Service",
+          "staffName": "Delta Staff",
+          "dateTime": "2026-06-25",
+          "duration": 334,
+          "status": "Approved",
+          "notes": "Delta notes — detailed content for agency use case.",
+          "price": 278.51
+        },
+        {
+          "clientName": "Epsilon Client Name",
+          "serviceName": "Epsilon Service",
+          "staffName": "Epsilon Staff",
+          "dateTime": "2026-09-07",
+          "duration": 383,
+          "status": "Draft",
+          "notes": "Epsilon notes — detailed content for freelancer use case.",
+          "price": 866.6
+        },
+        {
+          "clientName": "Zeta Client Name",
+          "serviceName": "Zeta Service",
+          "staffName": "Zeta Staff",
+          "dateTime": "2026-08-05",
+          "duration": 474,
+          "status": "Live",
+          "notes": "Zeta notes — detailed content for government use case.",
+          "price": 927.9
+        },
+        {
+          "clientName": "Eta Client Name",
+          "serviceName": "Eta Service",
+          "staffName": "Eta Staff",
+          "dateTime": "2026-05-05",
+          "duration": 801,
+          "status": "Paused",
+          "notes": "Eta notes — detailed content for nonprofit use case.",
+          "price": 177.98
+        },
+        {
+          "clientName": "Theta Client Name",
+          "serviceName": "Theta Service",
+          "staffName": "Theta Staff",
+          "dateTime": "2026-11-05",
+          "duration": 328,
+          "status": "Archived",
+          "notes": "Theta notes — detailed content for healthcare use case.",
+          "price": 968.25
+        },
+        {
+          "clientName": "Iota Client Name",
+          "serviceName": "Iota Service",
+          "staffName": "Iota Staff",
+          "dateTime": "2026-05-06",
+          "duration": 396,
+          "status": "Beta",
+          "notes": "Iota notes — detailed content for finance use case.",
+          "price": 544.23
+        },
+        {
+          "clientName": "Kappa Client Name",
+          "serviceName": "Kappa Service",
+          "staffName": "Kappa Staff",
+          "dateTime": "2026-07-15",
+          "duration": 713,
+          "status": "GA",
+          "notes": "Kappa notes — detailed content for education use case.",
+          "price": 569.2
+        },
+        {
+          "clientName": "Lambda Client Name",
+          "serviceName": "Lambda Service",
+          "staffName": "Lambda Staff",
+          "dateTime": "2026-08-08",
+          "duration": 211,
+          "status": "Completed",
+          "notes": "Lambda notes — detailed content for retail use case.",
+          "price": 427.78
+        },
+        {
+          "clientName": "Mu Client Name",
+          "serviceName": "Mu Service",
+          "staffName": "Mu Staff",
+          "dateTime": "2026-08-07",
+          "duration": 319,
+          "status": "In Progress",
+          "notes": "Mu notes — detailed content for tech use case.",
+          "price": 656.48
+        },
+        {
+          "clientName": "Nu Client Name",
+          "serviceName": "Nu Service",
+          "staffName": "Nu Staff",
+          "dateTime": "2026-01-17",
+          "duration": 48,
+          "status": "Scheduled",
+          "notes": "Nu notes — detailed content for legal use case.",
+          "price": 254.57
+        },
+        {
+          "clientName": "Xi Client Name",
+          "serviceName": "Xi Service",
+          "staffName": "Xi Staff",
+          "dateTime": "2026-09-14",
+          "duration": 614,
+          "status": "Failed",
+          "notes": "Xi notes — detailed content for real estate use case.",
+          "price": 170.89
+        },
+        {
+          "clientName": "Omicron Client Name",
+          "serviceName": "Omicron Service",
+          "staffName": "Omicron Staff",
+          "dateTime": "2026-06-20",
+          "duration": 756,
+          "status": "Cancelled",
+          "notes": "Omicron notes — detailed content for manufacturing use case.",
+          "price": 949.93
+        }
+      ]
+    },
+    {
+      "modelName": "Client",
+      "label": "Clients",
+      "icon": "users",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "preferredStaff",
+          "label": "Preferred Staff",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalVisits",
+          "label": "Total Visits",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "totalSpent",
+          "label": "Total Spent",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "routeKey": "clients",
+      "aiFunction": "analyzeClient",
+      "aiPrompt": "You are an AI analyst for AI Boulevard Scheduling. Analyze the provided Clients data. The data includes: First Name, Last Name, Email, Phone, Preferred Staff, Total Visits, Total Spent, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "firstName": "Alpha First Name",
+          "lastName": "Alpha Last Name",
+          "email": "alpha@example.com",
+          "phone": "555-100-1000",
+          "preferredStaff": "Alpha Preferred Staff",
+          "totalVisits": 231,
+          "totalSpent": 281.13,
+          "notes": "Alpha notes — detailed content for enterprise use case."
+        },
+        {
+          "firstName": "Beta First Name",
+          "lastName": "Beta Last Name",
+          "email": "beta@example.com",
+          "phone": "555-101-1111",
+          "preferredStaff": "Beta Preferred Staff",
+          "totalVisits": 132,
+          "totalSpent": 909.49,
+          "notes": "Beta notes — detailed content for startup use case."
+        },
+        {
+          "firstName": "Gamma First Name",
+          "lastName": "Gamma Last Name",
+          "email": "gamma@example.com",
+          "phone": "555-102-1222",
+          "preferredStaff": "Gamma Preferred Staff",
+          "totalVisits": 382,
+          "totalSpent": 447.42,
+          "notes": "Gamma notes — detailed content for smb use case."
+        },
+        {
+          "firstName": "Delta First Name",
+          "lastName": "Delta Last Name",
+          "email": "delta@example.com",
+          "phone": "555-103-1333",
+          "preferredStaff": "Delta Preferred Staff",
+          "totalVisits": 335,
+          "totalSpent": 650.14,
+          "notes": "Delta notes — detailed content for agency use case."
+        },
+        {
+          "firstName": "Epsilon First Name",
+          "lastName": "Epsilon Last Name",
+          "email": "epsilon@example.com",
+          "phone": "555-104-1444",
+          "preferredStaff": "Epsilon Preferred Staff",
+          "totalVisits": 956,
+          "totalSpent": 637.13,
+          "notes": "Epsilon notes — detailed content for freelancer use case."
+        },
+        {
+          "firstName": "Zeta First Name",
+          "lastName": "Zeta Last Name",
+          "email": "zeta@example.com",
+          "phone": "555-105-1555",
+          "preferredStaff": "Zeta Preferred Staff",
+          "totalVisits": 65,
+          "totalSpent": 835.81,
+          "notes": "Zeta notes — detailed content for government use case."
+        },
+        {
+          "firstName": "Eta First Name",
+          "lastName": "Eta Last Name",
+          "email": "eta@example.com",
+          "phone": "555-106-1666",
+          "preferredStaff": "Eta Preferred Staff",
+          "totalVisits": 806,
+          "totalSpent": 939.26,
+          "notes": "Eta notes — detailed content for nonprofit use case."
+        },
+        {
+          "firstName": "Theta First Name",
+          "lastName": "Theta Last Name",
+          "email": "theta@example.com",
+          "phone": "555-107-1777",
+          "preferredStaff": "Theta Preferred Staff",
+          "totalVisits": 343,
+          "totalSpent": 268.73,
+          "notes": "Theta notes — detailed content for healthcare use case."
+        },
+        {
+          "firstName": "Iota First Name",
+          "lastName": "Iota Last Name",
+          "email": "iota@example.com",
+          "phone": "555-108-1888",
+          "preferredStaff": "Iota Preferred Staff",
+          "totalVisits": 172,
+          "totalSpent": 592.06,
+          "notes": "Iota notes — detailed content for finance use case."
+        },
+        {
+          "firstName": "Kappa First Name",
+          "lastName": "Kappa Last Name",
+          "email": "kappa@example.com",
+          "phone": "555-109-1999",
+          "preferredStaff": "Kappa Preferred Staff",
+          "totalVisits": 714,
+          "totalSpent": 369.14,
+          "notes": "Kappa notes — detailed content for education use case."
+        },
+        {
+          "firstName": "Lambda First Name",
+          "lastName": "Lambda Last Name",
+          "email": "lambda@example.com",
+          "phone": "555-110-2110",
+          "preferredStaff": "Lambda Preferred Staff",
+          "totalVisits": 455,
+          "totalSpent": 229.61,
+          "notes": "Lambda notes — detailed content for retail use case."
+        },
+        {
+          "firstName": "Mu First Name",
+          "lastName": "Mu Last Name",
+          "email": "mu@example.com",
+          "phone": "555-111-2221",
+          "preferredStaff": "Mu Preferred Staff",
+          "totalVisits": 106,
+          "totalSpent": 693.19,
+          "notes": "Mu notes — detailed content for tech use case."
+        },
+        {
+          "firstName": "Nu First Name",
+          "lastName": "Nu Last Name",
+          "email": "nu@example.com",
+          "phone": "555-112-2332",
+          "preferredStaff": "Nu Preferred Staff",
+          "totalVisits": 352,
+          "totalSpent": 61.86,
+          "notes": "Nu notes — detailed content for legal use case."
+        },
+        {
+          "firstName": "Xi First Name",
+          "lastName": "Xi Last Name",
+          "email": "xi@example.com",
+          "phone": "555-113-2443",
+          "preferredStaff": "Xi Preferred Staff",
+          "totalVisits": 690,
+          "totalSpent": 960.09,
+          "notes": "Xi notes — detailed content for real estate use case."
+        },
+        {
+          "firstName": "Omicron First Name",
+          "lastName": "Omicron Last Name",
+          "email": "omicron@example.com",
+          "phone": "555-114-2554",
+          "preferredStaff": "Omicron Preferred Staff",
+          "totalVisits": 912,
+          "totalSpent": 105.17,
+          "notes": "Omicron notes — detailed content for manufacturing use case."
+        }
+      ]
+    },
+    {
+      "modelName": "Staff",
+      "label": "Staff",
+      "icon": "user",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "specialties",
+          "label": "Specialties",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isAvailable",
+          "label": "Available",
+          "type": "BOOLEAN",
+          "formType": "checkbox"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "routeKey": "staffs",
+      "aiFunction": "analyzeStaff",
+      "aiPrompt": "You are an AI analyst for AI Boulevard Scheduling. Analyze the provided Staff data. The data includes: Name, Role, Email, Phone, Specialties, Available, Rating. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "role": "Alpha Role",
+          "email": "alpha@example.com",
+          "phone": "555-100-1000",
+          "specialties": "Alpha Specialties",
+          "isAvailable": true,
+          "rating": 898
+        },
+        {
+          "name": "Beta Name",
+          "role": "Beta Role",
+          "email": "beta@example.com",
+          "phone": "555-101-1111",
+          "specialties": "Beta Specialties",
+          "isAvailable": false,
+          "rating": 116.88
+        },
+        {
+          "name": "Gamma Name",
+          "role": "Gamma Role",
+          "email": "gamma@example.com",
+          "phone": "555-102-1222",
+          "specialties": "Gamma Specialties",
+          "isAvailable": true,
+          "rating": 395.09
+        },
+        {
+          "name": "Delta Name",
+          "role": "Delta Role",
+          "email": "delta@example.com",
+          "phone": "555-103-1333",
+          "specialties": "Delta Specialties",
+          "isAvailable": false,
+          "rating": 14.91
+        },
+        {
+          "name": "Epsilon Name",
+          "role": "Epsilon Role",
+          "email": "epsilon@example.com",
+          "phone": "555-104-1444",
+          "specialties": "Epsilon Specialties",
+          "isAvailable": true,
+          "rating": 995.18
+        },
+        {
+          "name": "Zeta Name",
+          "role": "Zeta Role",
+          "email": "zeta@example.com",
+          "phone": "555-105-1555",
+          "specialties": "Zeta Specialties",
+          "isAvailable": false,
+          "rating": 250.65
+        },
+        {
+          "name": "Eta Name",
+          "role": "Eta Role",
+          "email": "eta@example.com",
+          "phone": "555-106-1666",
+          "specialties": "Eta Specialties",
+          "isAvailable": true,
+          "rating": 280.35
+        },
+        {
+          "name": "Theta Name",
+          "role": "Theta Role",
+          "email": "theta@example.com",
+          "phone": "555-107-1777",
+          "specialties": "Theta Specialties",
+          "isAvailable": false,
+          "rating": 92.65
+        },
+        {
+          "name": "Iota Name",
+          "role": "Iota Role",
+          "email": "iota@example.com",
+          "phone": "555-108-1888",
+          "specialties": "Iota Specialties",
+          "isAvailable": true,
+          "rating": 888.97
+        },
+        {
+          "name": "Kappa Name",
+          "role": "Kappa Role",
+          "email": "kappa@example.com",
+          "phone": "555-109-1999",
+          "specialties": "Kappa Specialties",
+          "isAvailable": false,
+          "rating": 859.16
+        },
+        {
+          "name": "Lambda Name",
+          "role": "Lambda Role",
+          "email": "lambda@example.com",
+          "phone": "555-110-2110",
+          "specialties": "Lambda Specialties",
+          "isAvailable": true,
+          "rating": 932.52
+        },
+        {
+          "name": "Mu Name",
+          "role": "Mu Role",
+          "email": "mu@example.com",
+          "phone": "555-111-2221",
+          "specialties": "Mu Specialties",
+          "isAvailable": false,
+          "rating": 623.92
+        },
+        {
+          "name": "Nu Name",
+          "role": "Nu Role",
+          "email": "nu@example.com",
+          "phone": "555-112-2332",
+          "specialties": "Nu Specialties",
+          "isAvailable": true,
+          "rating": 140
+        },
+        {
+          "name": "Xi Name",
+          "role": "Xi Role",
+          "email": "xi@example.com",
+          "phone": "555-113-2443",
+          "specialties": "Xi Specialties",
+          "isAvailable": false,
+          "rating": 372.44
+        },
+        {
+          "name": "Omicron Name",
+          "role": "Omicron Role",
+          "email": "omicron@example.com",
+          "phone": "555-114-2554",
+          "specialties": "Omicron Specialties",
+          "isAvailable": true,
+          "rating": 295.37
+        }
+      ]
+    },
+    {
+      "modelName": "Service",
+      "label": "Service Catalog",
+      "icon": "scissors",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "duration",
+          "label": "Duration (min)",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "price",
+          "label": "Price",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isActive",
+          "label": "Active",
+          "type": "BOOLEAN",
+          "formType": "checkbox"
+        }
+      ],
+      "routeKey": "services",
+      "aiFunction": "analyzeService",
+      "aiPrompt": "You are an AI analyst for AI Boulevard Scheduling. Analyze the provided Service Catalog data. The data includes: Name, Category, Duration (min), Price, Description, Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "category": "Alpha Category",
+          "duration": 336,
+          "price": 771.3,
+          "description": "Alpha description — detailed content for enterprise use case.",
+          "isActive": true
+        },
+        {
+          "name": "Beta Name",
+          "category": "Beta Category",
+          "duration": 403,
+          "price": 289.34,
+          "description": "Beta description — detailed content for startup use case.",
+          "isActive": false
+        },
+        {
+          "name": "Gamma Name",
+          "category": "Gamma Category",
+          "duration": 540,
+          "price": 133.93,
+          "description": "Gamma description — detailed content for smb use case.",
+          "isActive": true
+        },
+        {
+          "name": "Delta Name",
+          "category": "Delta Category",
+          "duration": 498,
+          "price": 453.05,
+          "description": "Delta description — detailed content for agency use case.",
+          "isActive": false
+        },
+        {
+          "name": "Epsilon Name",
+          "category": "Epsilon Category",
+          "duration": 526,
+          "price": 932.16,
+          "description": "Epsilon description — detailed content for freelancer use case.",
+          "isActive": true
+        },
+        {
+          "name": "Zeta Name",
+          "category": "Zeta Category",
+          "duration": 695,
+          "price": 452.18,
+          "description": "Zeta description — detailed content for government use case.",
+          "isActive": false
+        },
+        {
+          "name": "Eta Name",
+          "category": "Eta Category",
+          "duration": 886,
+          "price": 100.56,
+          "description": "Eta description — detailed content for nonprofit use case.",
+          "isActive": true
+        },
+        {
+          "name": "Theta Name",
+          "category": "Theta Category",
+          "duration": 774,
+          "price": 451.78,
+          "description": "Theta description — detailed content for healthcare use case.",
+          "isActive": false
+        },
+        {
+          "name": "Iota Name",
+          "category": "Iota Category",
+          "duration": 171,
+          "price": 424.13,
+          "description": "Iota description — detailed content for finance use case.",
+          "isActive": true
+        },
+        {
+          "name": "Kappa Name",
+          "category": "Kappa Category",
+          "duration": 693,
+          "price": 237.32,
+          "description": "Kappa description — detailed content for education use case.",
+          "isActive": false
+        },
+        {
+          "name": "Lambda Name",
+          "category": "Lambda Category",
+          "duration": 878,
+          "price": 500.11,
+          "description": "Lambda description — detailed content for retail use case.",
+          "isActive": true
+        },
+        {
+          "name": "Mu Name",
+          "category": "Mu Category",
+          "duration": 697,
+          "price": 648.54,
+          "description": "Mu description — detailed content for tech use case.",
+          "isActive": false
+        },
+        {
+          "name": "Nu Name",
+          "category": "Nu Category",
+          "duration": 377,
+          "price": 797.71,
+          "description": "Nu description — detailed content for legal use case.",
+          "isActive": true
+        },
+        {
+          "name": "Xi Name",
+          "category": "Xi Category",
+          "duration": 172,
+          "price": 425.96,
+          "description": "Xi description — detailed content for real estate use case.",
+          "isActive": false
+        },
+        {
+          "name": "Omicron Name",
+          "category": "Omicron Category",
+          "duration": 765,
+          "price": 3.25,
+          "description": "Omicron description — detailed content for manufacturing use case.",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "Payment",
+      "label": "Payments",
+      "icon": "credit-card",
+      "fields": [
+        {
+          "key": "clientName",
+          "label": "Client",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "method",
+          "label": "Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "invoiceNumber",
+          "label": "Invoice #",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "routeKey": "payments",
+      "aiFunction": "analyzePayment",
+      "aiPrompt": "You are an AI analyst for AI Boulevard Scheduling. Analyze the provided Payments data. The data includes: Client, Amount, Method, Date, Status, Invoice #. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "clientName": "Alpha Client",
+          "amount": 729.25,
+          "method": "Alpha Method",
+          "date": "2026-06-22",
+          "status": "Active",
+          "invoiceNumber": "Alpha Invoice #"
+        },
+        {
+          "clientName": "Beta Client",
+          "amount": 446.58,
+          "method": "Beta Method",
+          "date": "2026-01-04",
+          "status": "Pending",
+          "invoiceNumber": "Beta Invoice #"
+        },
+        {
+          "clientName": "Gamma Client",
+          "amount": 185.61,
+          "method": "Gamma Method",
+          "date": "2026-06-26",
+          "status": "Review",
+          "invoiceNumber": "Gamma Invoice #"
+        },
+        {
+          "clientName": "Delta Client",
+          "amount": 373.57,
+          "method": "Delta Method",
+          "date": "2026-01-05",
+          "status": "Approved",
+          "invoiceNumber": "Delta Invoice #"
+        },
+        {
+          "clientName": "Epsilon Client",
+          "amount": 288.94,
+          "method": "Epsilon Method",
+          "date": "2026-05-11",
+          "status": "Draft",
+          "invoiceNumber": "Epsilon Invoice #"
+        },
+        {
+          "clientName": "Zeta Client",
+          "amount": 194.15,
+          "method": "Zeta Method",
+          "date": "2026-07-09",
+          "status": "Live",
+          "invoiceNumber": "Zeta Invoice #"
+        },
+        {
+          "clientName": "Eta Client",
+          "amount": 321.18,
+          "method": "Eta Method",
+          "date": "2026-08-15",
+          "status": "Paused",
+          "invoiceNumber": "Eta Invoice #"
+        },
+        {
+          "clientName": "Theta Client",
+          "amount": 948.99,
+          "method": "Theta Method",
+          "date": "2026-09-11",
+          "status": "Archived",
+          "invoiceNumber": "Theta Invoice #"
+        },
+        {
+          "clientName": "Iota Client",
+          "amount": 601.08,
+          "method": "Iota Method",
+          "date": "2026-07-21",
+          "status": "Beta",
+          "invoiceNumber": "Iota Invoice #"
+        },
+        {
+          "clientName": "Kappa Client",
+          "amount": 708.81,
+          "method": "Kappa Method",
+          "date": "2026-10-28",
+          "status": "GA",
+          "invoiceNumber": "Kappa Invoice #"
+        },
+        {
+          "clientName": "Lambda Client",
+          "amount": 128.36,
+          "method": "Lambda Method",
+          "date": "2026-04-24",
+          "status": "Completed",
+          "invoiceNumber": "Lambda Invoice #"
+        },
+        {
+          "clientName": "Mu Client",
+          "amount": 615.49,
+          "method": "Mu Method",
+          "date": "2026-09-27",
+          "status": "In Progress",
+          "invoiceNumber": "Mu Invoice #"
+        },
+        {
+          "clientName": "Nu Client",
+          "amount": 538.23,
+          "method": "Nu Method",
+          "date": "2026-11-21",
+          "status": "Scheduled",
+          "invoiceNumber": "Nu Invoice #"
+        },
+        {
+          "clientName": "Xi Client",
+          "amount": 308.58,
+          "method": "Xi Method",
+          "date": "2026-09-12",
+          "status": "Failed",
+          "invoiceNumber": "Xi Invoice #"
+        },
+        {
+          "clientName": "Omicron Client",
+          "amount": 917.36,
+          "method": "Omicron Method",
+          "date": "2026-07-05",
+          "status": "Cancelled",
+          "invoiceNumber": "Omicron Invoice #"
+        }
+      ]
+    },
+    {
+      "modelName": "RecurringAppointment",
+      "label": "Recurring Appointments",
+      "icon": "repeat",
+      "fields": [
+        {
+          "key": "clientName",
+          "label": "Client",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serviceName",
+          "label": "Service",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "frequency",
+          "label": "Frequency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dayOfWeek",
+          "label": "Day",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "timeSlot",
+          "label": "Time Slot",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isActive",
+          "label": "Active",
+          "type": "BOOLEAN",
+          "formType": "checkbox"
+        }
+      ],
+      "routeKey": "recurringAppointments",
+      "aiFunction": "analyzeRecurringAppointment",
+      "aiPrompt": "You are an AI analyst for AI Boulevard Scheduling. Analyze the provided Recurring Appointments data. The data includes: Client, Service, Frequency, Day, Time Slot, Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "clientName": "Alpha Client",
+          "serviceName": "Alpha Service",
+          "frequency": "Alpha Frequency",
+          "dayOfWeek": "Alpha Day",
+          "timeSlot": "Alpha Time Slot",
+          "isActive": true
+        },
+        {
+          "clientName": "Beta Client",
+          "serviceName": "Beta Service",
+          "frequency": "Beta Frequency",
+          "dayOfWeek": "Beta Day",
+          "timeSlot": "Beta Time Slot",
+          "isActive": false
+        },
+        {
+          "clientName": "Gamma Client",
+          "serviceName": "Gamma Service",
+          "frequency": "Gamma Frequency",
+          "dayOfWeek": "Gamma Day",
+          "timeSlot": "Gamma Time Slot",
+          "isActive": true
+        },
+        {
+          "clientName": "Delta Client",
+          "serviceName": "Delta Service",
+          "frequency": "Delta Frequency",
+          "dayOfWeek": "Delta Day",
+          "timeSlot": "Delta Time Slot",
+          "isActive": false
+        },
+        {
+          "clientName": "Epsilon Client",
+          "serviceName": "Epsilon Service",
+          "frequency": "Epsilon Frequency",
+          "dayOfWeek": "Epsilon Day",
+          "timeSlot": "Epsilon Time Slot",
+          "isActive": true
+        },
+        {
+          "clientName": "Zeta Client",
+          "serviceName": "Zeta Service",
+          "frequency": "Zeta Frequency",
+          "dayOfWeek": "Zeta Day",
+          "timeSlot": "Zeta Time Slot",
+          "isActive": false
+        },
+        {
+          "clientName": "Eta Client",
+          "serviceName": "Eta Service",
+          "frequency": "Eta Frequency",
+          "dayOfWeek": "Eta Day",
+          "timeSlot": "Eta Time Slot",
+          "isActive": true
+        },
+        {
+          "clientName": "Theta Client",
+          "serviceName": "Theta Service",
+          "frequency": "Theta Frequency",
+          "dayOfWeek": "Theta Day",
+          "timeSlot": "Theta Time Slot",
+          "isActive": false
+        },
+        {
+          "clientName": "Iota Client",
+          "serviceName": "Iota Service",
+          "frequency": "Iota Frequency",
+          "dayOfWeek": "Iota Day",
+          "timeSlot": "Iota Time Slot",
+          "isActive": true
+        },
+        {
+          "clientName": "Kappa Client",
+          "serviceName": "Kappa Service",
+          "frequency": "Kappa Frequency",
+          "dayOfWeek": "Kappa Day",
+          "timeSlot": "Kappa Time Slot",
+          "isActive": false
+        },
+        {
+          "clientName": "Lambda Client",
+          "serviceName": "Lambda Service",
+          "frequency": "Lambda Frequency",
+          "dayOfWeek": "Lambda Day",
+          "timeSlot": "Lambda Time Slot",
+          "isActive": true
+        },
+        {
+          "clientName": "Mu Client",
+          "serviceName": "Mu Service",
+          "frequency": "Mu Frequency",
+          "dayOfWeek": "Mu Day",
+          "timeSlot": "Mu Time Slot",
+          "isActive": false
+        },
+        {
+          "clientName": "Nu Client",
+          "serviceName": "Nu Service",
+          "frequency": "Nu Frequency",
+          "dayOfWeek": "Nu Day",
+          "timeSlot": "Nu Time Slot",
+          "isActive": true
+        },
+        {
+          "clientName": "Xi Client",
+          "serviceName": "Xi Service",
+          "frequency": "Xi Frequency",
+          "dayOfWeek": "Xi Day",
+          "timeSlot": "Xi Time Slot",
+          "isActive": false
+        },
+        {
+          "clientName": "Omicron Client",
+          "serviceName": "Omicron Service",
+          "frequency": "Omicron Frequency",
+          "dayOfWeek": "Omicron Day",
+          "timeSlot": "Omicron Time Slot",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "Notification",
+      "label": "Notifications",
+      "icon": "bell",
+      "fields": [
+        {
+          "key": "recipientName",
+          "label": "Recipient",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "sentDate",
+          "label": "Sent Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "isRead",
+          "label": "Read",
+          "type": "BOOLEAN",
+          "formType": "checkbox"
+        },
+        {
+          "key": "channel",
+          "label": "Channel",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "routeKey": "notifications",
+      "aiFunction": "analyzeNotification",
+      "aiPrompt": "You are an AI analyst for AI Boulevard Scheduling. Analyze the provided Notifications data. The data includes: Recipient, Type, Message, Sent Date, Read, Channel. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "recipientName": "Alpha Recipient",
+          "type": "Alpha Type",
+          "message": "Alpha message — detailed content for enterprise use case.",
+          "sentDate": "2026-12-05",
+          "isRead": true,
+          "channel": "Alpha Channel"
+        },
+        {
+          "recipientName": "Beta Recipient",
+          "type": "Beta Type",
+          "message": "Beta message — detailed content for startup use case.",
+          "sentDate": "2026-10-02",
+          "isRead": false,
+          "channel": "Beta Channel"
+        },
+        {
+          "recipientName": "Gamma Recipient",
+          "type": "Gamma Type",
+          "message": "Gamma message — detailed content for smb use case.",
+          "sentDate": "2026-01-17",
+          "isRead": true,
+          "channel": "Gamma Channel"
+        },
+        {
+          "recipientName": "Delta Recipient",
+          "type": "Delta Type",
+          "message": "Delta message — detailed content for agency use case.",
+          "sentDate": "2026-09-27",
+          "isRead": false,
+          "channel": "Delta Channel"
+        },
+        {
+          "recipientName": "Epsilon Recipient",
+          "type": "Epsilon Type",
+          "message": "Epsilon message — detailed content for freelancer use case.",
+          "sentDate": "2026-08-21",
+          "isRead": true,
+          "channel": "Epsilon Channel"
+        },
+        {
+          "recipientName": "Zeta Recipient",
+          "type": "Zeta Type",
+          "message": "Zeta message — detailed content for government use case.",
+          "sentDate": "2026-11-01",
+          "isRead": false,
+          "channel": "Zeta Channel"
+        },
+        {
+          "recipientName": "Eta Recipient",
+          "type": "Eta Type",
+          "message": "Eta message — detailed content for nonprofit use case.",
+          "sentDate": "2026-04-11",
+          "isRead": true,
+          "channel": "Eta Channel"
+        },
+        {
+          "recipientName": "Theta Recipient",
+          "type": "Theta Type",
+          "message": "Theta message — detailed content for healthcare use case.",
+          "sentDate": "2026-08-22",
+          "isRead": false,
+          "channel": "Theta Channel"
+        },
+        {
+          "recipientName": "Iota Recipient",
+          "type": "Iota Type",
+          "message": "Iota message — detailed content for finance use case.",
+          "sentDate": "2026-12-08",
+          "isRead": true,
+          "channel": "Iota Channel"
+        },
+        {
+          "recipientName": "Kappa Recipient",
+          "type": "Kappa Type",
+          "message": "Kappa message — detailed content for education use case.",
+          "sentDate": "2026-03-24",
+          "isRead": false,
+          "channel": "Kappa Channel"
+        },
+        {
+          "recipientName": "Lambda Recipient",
+          "type": "Lambda Type",
+          "message": "Lambda message — detailed content for retail use case.",
+          "sentDate": "2026-05-23",
+          "isRead": true,
+          "channel": "Lambda Channel"
+        },
+        {
+          "recipientName": "Mu Recipient",
+          "type": "Mu Type",
+          "message": "Mu message — detailed content for tech use case.",
+          "sentDate": "2026-03-20",
+          "isRead": false,
+          "channel": "Mu Channel"
+        },
+        {
+          "recipientName": "Nu Recipient",
+          "type": "Nu Type",
+          "message": "Nu message — detailed content for legal use case.",
+          "sentDate": "2026-08-01",
+          "isRead": true,
+          "channel": "Nu Channel"
+        },
+        {
+          "recipientName": "Xi Recipient",
+          "type": "Xi Type",
+          "message": "Xi message — detailed content for real estate use case.",
+          "sentDate": "2026-02-25",
+          "isRead": false,
+          "channel": "Xi Channel"
+        },
+        {
+          "recipientName": "Omicron Recipient",
+          "type": "Omicron Type",
+          "message": "Omicron message — detailed content for manufacturing use case.",
+          "sentDate": "2026-06-07",
+          "isRead": true,
+          "channel": "Omicron Channel"
+        }
+      ]
+    }
+  ]
+}

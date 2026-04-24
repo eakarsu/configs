@@ -1,0 +1,3157 @@
+{
+  "appName": "AI Self Storage Facility",
+  "dbName": "a_i_self_storage",
+  "folderName": "generated/AISelfStorage",
+  "features": [
+    {
+      "modelName": "StorageUnit",
+      "routeKey": "storage-units",
+      "label": "Storage Unit",
+      "icon": "activity",
+      "aiFunction": "analyzeStorageUnit",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Storage Unit data. The data includes: Unit Number, Size Sqft, Unit Type, Climate Controlled, Floor Level, Monthly Rate, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "unitNumber",
+          "label": "Unit Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sizeSqft",
+          "label": "Size Sqft",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "unitType",
+          "label": "Unit Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "climateControlled",
+          "label": "Climate Controlled",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "floorLevel",
+          "label": "Floor Level",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "monthlyRate",
+          "label": "Monthly Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "unitNumber": "Advanced Unit Number 1",
+          "sizeSqft": 10,
+          "unitType": "Category A",
+          "climateControlled": true,
+          "floorLevel": 10,
+          "monthlyRate": 1.5,
+          "status": "active"
+        },
+        {
+          "unitNumber": "Premium Unit Number 2",
+          "sizeSqft": 58,
+          "unitType": "Category B",
+          "climateControlled": true,
+          "floorLevel": 58,
+          "monthlyRate": 2.1,
+          "status": "pending"
+        },
+        {
+          "unitNumber": "Standard Unit Number 3",
+          "sizeSqft": 106,
+          "unitType": "Category C",
+          "climateControlled": false,
+          "floorLevel": 106,
+          "monthlyRate": 2.7,
+          "status": "in_progress"
+        },
+        {
+          "unitNumber": "Elite Unit Number 4",
+          "sizeSqft": 154,
+          "unitType": "Category D",
+          "climateControlled": true,
+          "floorLevel": 154,
+          "monthlyRate": 3.3,
+          "status": "completed"
+        },
+        {
+          "unitNumber": "Core Unit Number 5",
+          "sizeSqft": 102,
+          "unitType": "Category E",
+          "climateControlled": false,
+          "floorLevel": 102,
+          "monthlyRate": 3.9,
+          "status": "under_review"
+        },
+        {
+          "unitNumber": "Pro Unit Number 6",
+          "sizeSqft": 150,
+          "unitType": "Premium Tier",
+          "climateControlled": true,
+          "floorLevel": 150,
+          "monthlyRate": 4.5,
+          "status": "approved"
+        },
+        {
+          "unitNumber": "Essential Unit Number 7",
+          "sizeSqft": 198,
+          "unitType": "Standard Tier",
+          "climateControlled": true,
+          "floorLevel": 198,
+          "monthlyRate": 5.1,
+          "status": "active"
+        },
+        {
+          "unitNumber": "Primary Unit Number 8",
+          "sizeSqft": 146,
+          "unitType": "Basic Tier",
+          "climateControlled": false,
+          "floorLevel": 146,
+          "monthlyRate": 5.7,
+          "status": "active"
+        },
+        {
+          "unitNumber": "Global Unit Number 9",
+          "sizeSqft": 194,
+          "unitType": "Enterprise",
+          "climateControlled": true,
+          "floorLevel": 194,
+          "monthlyRate": 6.3,
+          "status": "active"
+        },
+        {
+          "unitNumber": "Regional Unit Number 10",
+          "sizeSqft": 242,
+          "unitType": "Starter",
+          "climateControlled": true,
+          "floorLevel": 242,
+          "monthlyRate": 1.9,
+          "status": "pending"
+        },
+        {
+          "unitNumber": "Custom Unit Number 11",
+          "sizeSqft": 190,
+          "unitType": "Growth",
+          "climateControlled": false,
+          "floorLevel": 190,
+          "monthlyRate": 2.5,
+          "status": "completed"
+        },
+        {
+          "unitNumber": "Smart Unit Number 12",
+          "sizeSqft": 238,
+          "unitType": "Scale",
+          "climateControlled": true,
+          "floorLevel": 238,
+          "monthlyRate": 3.1,
+          "status": "active"
+        },
+        {
+          "unitNumber": "Rapid Unit Number 13",
+          "sizeSqft": 286,
+          "unitType": "Foundation",
+          "climateControlled": false,
+          "floorLevel": 286,
+          "monthlyRate": 3.7,
+          "status": "in_progress"
+        },
+        {
+          "unitNumber": "Secure Unit Number 14",
+          "sizeSqft": 234,
+          "unitType": "Advanced",
+          "climateControlled": true,
+          "floorLevel": 234,
+          "monthlyRate": 4.3,
+          "status": "active"
+        },
+        {
+          "unitNumber": "Modern Unit Number 15",
+          "sizeSqft": 282,
+          "unitType": "Professional",
+          "climateControlled": true,
+          "floorLevel": 282,
+          "monthlyRate": 4.9,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "PricingRule",
+      "routeKey": "pricing-rules",
+      "label": "Pricing Rule",
+      "icon": "briefcase",
+      "aiFunction": "analyzePricingRule",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Pricing Rule data. The data includes: Rule Name, Unit Type, Base Price, Demand Multiplier, Season, Min Price, Max Price, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "ruleName",
+          "label": "Rule Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "unitType",
+          "label": "Unit Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "basePrice",
+          "label": "Base Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "demandMultiplier",
+          "label": "Demand Multiplier",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "season",
+          "label": "Season",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "minPrice",
+          "label": "Min Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "maxPrice",
+          "label": "Max Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "ruleName": "Advanced Rule 1",
+          "unitType": "Category A",
+          "basePrice": 500,
+          "demandMultiplier": 10,
+          "season": "Advanced Season 1",
+          "minPrice": 500,
+          "maxPrice": 500,
+          "isActive": true
+        },
+        {
+          "ruleName": "Premium Rule 2",
+          "unitType": "Category B",
+          "basePrice": 2481,
+          "demandMultiplier": 71.7,
+          "season": "Premium Season 2",
+          "minPrice": 2481,
+          "maxPrice": 2481,
+          "isActive": true
+        },
+        {
+          "ruleName": "Standard Rule 3",
+          "unitType": "Category C",
+          "basePrice": 4462,
+          "demandMultiplier": 33.4,
+          "season": "Standard Season 3",
+          "minPrice": 4462,
+          "maxPrice": 4462,
+          "isActive": false
+        },
+        {
+          "ruleName": "Elite Rule 4",
+          "unitType": "Category D",
+          "basePrice": 6443,
+          "demandMultiplier": 95.1,
+          "season": "Elite Season 4",
+          "minPrice": 6443,
+          "maxPrice": 6443,
+          "isActive": true
+        },
+        {
+          "ruleName": "Core Rule 5",
+          "unitType": "Category E",
+          "basePrice": 8424,
+          "demandMultiplier": 56.8,
+          "season": "Core Season 5",
+          "minPrice": 8424,
+          "maxPrice": 8424,
+          "isActive": false
+        },
+        {
+          "ruleName": "Pro Rule 6",
+          "unitType": "Premium Tier",
+          "basePrice": 10405,
+          "demandMultiplier": 118.5,
+          "season": "Pro Season 6",
+          "minPrice": 10405,
+          "maxPrice": 10405,
+          "isActive": true
+        },
+        {
+          "ruleName": "Essential Rule 7",
+          "unitType": "Standard Tier",
+          "basePrice": 12386,
+          "demandMultiplier": 80.2,
+          "season": "Essential Season 7",
+          "minPrice": 12386,
+          "maxPrice": 12386,
+          "isActive": true
+        },
+        {
+          "ruleName": "Primary Rule 8",
+          "unitType": "Basic Tier",
+          "basePrice": 9367,
+          "demandMultiplier": 141.9,
+          "season": "Primary Season 8",
+          "minPrice": 9367,
+          "maxPrice": 9367,
+          "isActive": false
+        },
+        {
+          "ruleName": "Global Rule 9",
+          "unitType": "Enterprise",
+          "basePrice": 11348,
+          "demandMultiplier": 103.6,
+          "season": "Global Season 9",
+          "minPrice": 11348,
+          "maxPrice": 11348,
+          "isActive": true
+        },
+        {
+          "ruleName": "Regional Rule 10",
+          "unitType": "Starter",
+          "basePrice": 13329,
+          "demandMultiplier": 165.3,
+          "season": "Regional Season 10",
+          "minPrice": 13329,
+          "maxPrice": 13329,
+          "isActive": true
+        },
+        {
+          "ruleName": "Custom Rule 11",
+          "unitType": "Growth",
+          "basePrice": 15310,
+          "demandMultiplier": 127,
+          "season": "Custom Season 11",
+          "minPrice": 15310,
+          "maxPrice": 15310,
+          "isActive": false
+        },
+        {
+          "ruleName": "Smart Rule 12",
+          "unitType": "Scale",
+          "basePrice": 17291,
+          "demandMultiplier": 188.7,
+          "season": "Smart Season 12",
+          "minPrice": 17291,
+          "maxPrice": 17291,
+          "isActive": true
+        },
+        {
+          "ruleName": "Rapid Rule 13",
+          "unitType": "Foundation",
+          "basePrice": 19272,
+          "demandMultiplier": 150.4,
+          "season": "Rapid Season 13",
+          "minPrice": 19272,
+          "maxPrice": 19272,
+          "isActive": false
+        },
+        {
+          "ruleName": "Secure Rule 14",
+          "unitType": "Advanced",
+          "basePrice": 21253,
+          "demandMultiplier": 212.1,
+          "season": "Secure Season 14",
+          "minPrice": 21253,
+          "maxPrice": 21253,
+          "isActive": true
+        },
+        {
+          "ruleName": "Modern Rule 15",
+          "unitType": "Professional",
+          "basePrice": 18234,
+          "demandMultiplier": 173.8,
+          "season": "Modern Season 15",
+          "minPrice": 18234,
+          "maxPrice": 18234,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "OccupancyForecast",
+      "routeKey": "occupancy-forecasts",
+      "label": "Occupancy Forecast",
+      "icon": "clipboard",
+      "aiFunction": "analyzeOccupancyForecast",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Occupancy Forecast data. The data includes: Forecast Date, Predicted Occupancy, Actual Occupancy, Unit Type, Confidence Score, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "forecastDate",
+          "label": "Forecast Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "predictedOccupancy",
+          "label": "Predicted Occupancy",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "actualOccupancy",
+          "label": "Actual Occupancy",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "unitType",
+          "label": "Unit Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "confidenceScore",
+          "label": "Confidence Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "forecastDate": "2024-01-01",
+          "predictedOccupancy": 10,
+          "actualOccupancy": 10,
+          "unitType": "Category A",
+          "confidenceScore": 1.5,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "forecastDate": "2024-02-03",
+          "predictedOccupancy": 71.7,
+          "actualOccupancy": 71.7,
+          "unitType": "Category B",
+          "confidenceScore": 2.1,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "forecastDate": "2024-03-05",
+          "predictedOccupancy": 33.4,
+          "actualOccupancy": 33.4,
+          "unitType": "Category C",
+          "confidenceScore": 2.7,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "forecastDate": "2024-04-07",
+          "predictedOccupancy": 95.1,
+          "actualOccupancy": 95.1,
+          "unitType": "Category D",
+          "confidenceScore": 3.3,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "forecastDate": "2024-05-09",
+          "predictedOccupancy": 56.8,
+          "actualOccupancy": 56.8,
+          "unitType": "Category E",
+          "confidenceScore": 3.9,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "forecastDate": "2024-06-11",
+          "predictedOccupancy": 118.5,
+          "actualOccupancy": 118.5,
+          "unitType": "Premium Tier",
+          "confidenceScore": 4.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "forecastDate": "2024-07-13",
+          "predictedOccupancy": 80.2,
+          "actualOccupancy": 80.2,
+          "unitType": "Standard Tier",
+          "confidenceScore": 5.1,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "forecastDate": "2024-08-15",
+          "predictedOccupancy": 141.9,
+          "actualOccupancy": 141.9,
+          "unitType": "Basic Tier",
+          "confidenceScore": 5.7,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "forecastDate": "2024-09-17",
+          "predictedOccupancy": 103.6,
+          "actualOccupancy": 103.6,
+          "unitType": "Enterprise",
+          "confidenceScore": 6.3,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "forecastDate": "2024-10-19",
+          "predictedOccupancy": 165.3,
+          "actualOccupancy": 165.3,
+          "unitType": "Starter",
+          "confidenceScore": 1.9,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "forecastDate": "2024-11-21",
+          "predictedOccupancy": 127,
+          "actualOccupancy": 127,
+          "unitType": "Growth",
+          "confidenceScore": 2.5,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "forecastDate": "2024-12-23",
+          "predictedOccupancy": 188.7,
+          "actualOccupancy": 188.7,
+          "unitType": "Scale",
+          "confidenceScore": 3.1,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "forecastDate": "2024-01-25",
+          "predictedOccupancy": 150.4,
+          "actualOccupancy": 150.4,
+          "unitType": "Foundation",
+          "confidenceScore": 3.7,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "forecastDate": "2024-02-27",
+          "predictedOccupancy": 212.1,
+          "actualOccupancy": 212.1,
+          "unitType": "Advanced",
+          "confidenceScore": 4.3,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "forecastDate": "2024-03-01",
+          "predictedOccupancy": 173.8,
+          "actualOccupancy": 173.8,
+          "unitType": "Professional",
+          "confidenceScore": 4.9,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "ClimateControl",
+      "routeKey": "climate-controls",
+      "label": "Climate Control",
+      "icon": "database",
+      "aiFunction": "analyzeClimateControl",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Climate Control data. The data includes: Zone Name, Current Temp, Target Temp, Current Humidity, Target Humidity, Hvac Status, Energy Usage Kwh, Last Maintenance. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "zoneName",
+          "label": "Zone Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "currentTemp",
+          "label": "Current Temp",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "targetTemp",
+          "label": "Target Temp",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "currentHumidity",
+          "label": "Current Humidity",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "targetHumidity",
+          "label": "Target Humidity",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "hvacStatus",
+          "label": "Hvac Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "energyUsageKwh",
+          "label": "Energy Usage Kwh",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "lastMaintenance",
+          "label": "Last Maintenance",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "zoneName": "Advanced Zone 1",
+          "currentTemp": 10,
+          "targetTemp": 10,
+          "currentHumidity": 10,
+          "targetHumidity": 10,
+          "hvacStatus": "active",
+          "energyUsageKwh": 10,
+          "lastMaintenance": "2024-01-01"
+        },
+        {
+          "zoneName": "Premium Zone 2",
+          "currentTemp": 71.7,
+          "targetTemp": 71.7,
+          "currentHumidity": 71.7,
+          "targetHumidity": 71.7,
+          "hvacStatus": "pending",
+          "energyUsageKwh": 71.7,
+          "lastMaintenance": "2024-02-03"
+        },
+        {
+          "zoneName": "Standard Zone 3",
+          "currentTemp": 33.4,
+          "targetTemp": 33.4,
+          "currentHumidity": 33.4,
+          "targetHumidity": 33.4,
+          "hvacStatus": "in_progress",
+          "energyUsageKwh": 33.4,
+          "lastMaintenance": "2024-03-05"
+        },
+        {
+          "zoneName": "Elite Zone 4",
+          "currentTemp": 95.1,
+          "targetTemp": 95.1,
+          "currentHumidity": 95.1,
+          "targetHumidity": 95.1,
+          "hvacStatus": "completed",
+          "energyUsageKwh": 95.1,
+          "lastMaintenance": "2024-04-07"
+        },
+        {
+          "zoneName": "Core Zone 5",
+          "currentTemp": 56.8,
+          "targetTemp": 56.8,
+          "currentHumidity": 56.8,
+          "targetHumidity": 56.8,
+          "hvacStatus": "under_review",
+          "energyUsageKwh": 56.8,
+          "lastMaintenance": "2024-05-09"
+        },
+        {
+          "zoneName": "Pro Zone 6",
+          "currentTemp": 118.5,
+          "targetTemp": 118.5,
+          "currentHumidity": 118.5,
+          "targetHumidity": 118.5,
+          "hvacStatus": "approved",
+          "energyUsageKwh": 118.5,
+          "lastMaintenance": "2024-06-11"
+        },
+        {
+          "zoneName": "Essential Zone 7",
+          "currentTemp": 80.2,
+          "targetTemp": 80.2,
+          "currentHumidity": 80.2,
+          "targetHumidity": 80.2,
+          "hvacStatus": "active",
+          "energyUsageKwh": 80.2,
+          "lastMaintenance": "2024-07-13"
+        },
+        {
+          "zoneName": "Primary Zone 8",
+          "currentTemp": 141.9,
+          "targetTemp": 141.9,
+          "currentHumidity": 141.9,
+          "targetHumidity": 141.9,
+          "hvacStatus": "active",
+          "energyUsageKwh": 141.9,
+          "lastMaintenance": "2024-08-15"
+        },
+        {
+          "zoneName": "Global Zone 9",
+          "currentTemp": 103.6,
+          "targetTemp": 103.6,
+          "currentHumidity": 103.6,
+          "targetHumidity": 103.6,
+          "hvacStatus": "active",
+          "energyUsageKwh": 103.6,
+          "lastMaintenance": "2024-09-17"
+        },
+        {
+          "zoneName": "Regional Zone 10",
+          "currentTemp": 165.3,
+          "targetTemp": 165.3,
+          "currentHumidity": 165.3,
+          "targetHumidity": 165.3,
+          "hvacStatus": "pending",
+          "energyUsageKwh": 165.3,
+          "lastMaintenance": "2024-10-19"
+        },
+        {
+          "zoneName": "Custom Zone 11",
+          "currentTemp": 127,
+          "targetTemp": 127,
+          "currentHumidity": 127,
+          "targetHumidity": 127,
+          "hvacStatus": "completed",
+          "energyUsageKwh": 127,
+          "lastMaintenance": "2024-11-21"
+        },
+        {
+          "zoneName": "Smart Zone 12",
+          "currentTemp": 188.7,
+          "targetTemp": 188.7,
+          "currentHumidity": 188.7,
+          "targetHumidity": 188.7,
+          "hvacStatus": "active",
+          "energyUsageKwh": 188.7,
+          "lastMaintenance": "2024-12-23"
+        },
+        {
+          "zoneName": "Rapid Zone 13",
+          "currentTemp": 150.4,
+          "targetTemp": 150.4,
+          "currentHumidity": 150.4,
+          "targetHumidity": 150.4,
+          "hvacStatus": "in_progress",
+          "energyUsageKwh": 150.4,
+          "lastMaintenance": "2024-01-25"
+        },
+        {
+          "zoneName": "Secure Zone 14",
+          "currentTemp": 212.1,
+          "targetTemp": 212.1,
+          "currentHumidity": 212.1,
+          "targetHumidity": 212.1,
+          "hvacStatus": "active",
+          "energyUsageKwh": 212.1,
+          "lastMaintenance": "2024-02-27"
+        },
+        {
+          "zoneName": "Modern Zone 15",
+          "currentTemp": 173.8,
+          "targetTemp": 173.8,
+          "currentHumidity": 173.8,
+          "targetHumidity": 173.8,
+          "hvacStatus": "approved",
+          "energyUsageKwh": 173.8,
+          "lastMaintenance": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "SecurityEvent",
+      "routeKey": "security-events",
+      "label": "Security Event",
+      "icon": "file-text",
+      "aiFunction": "analyzeSecurityEvent",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Security Event data. The data includes: Event Type, Location, Severity, Description, Camera Id, Resolved, Resolved By, Event Time. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "eventType",
+          "label": "Event Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "cameraId",
+          "label": "Camera Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "resolved",
+          "label": "Resolved",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "resolvedBy",
+          "label": "Resolved By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "eventTime",
+          "label": "Event Time",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "eventType": "Category A",
+          "location": "New York",
+          "severity": "low",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "cameraId": "Advanced Camera Id 1",
+          "resolved": true,
+          "resolvedBy": "Advanced Resolved By 1",
+          "eventTime": "2024-01-01"
+        },
+        {
+          "eventType": "Category B",
+          "location": "Los Angeles",
+          "severity": "medium",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "cameraId": "Premium Camera Id 2",
+          "resolved": true,
+          "resolvedBy": "Premium Resolved By 2",
+          "eventTime": "2024-02-03"
+        },
+        {
+          "eventType": "Category C",
+          "location": "Chicago",
+          "severity": "high",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "cameraId": "Standard Camera Id 3",
+          "resolved": false,
+          "resolvedBy": "Standard Resolved By 3",
+          "eventTime": "2024-03-05"
+        },
+        {
+          "eventType": "Category D",
+          "location": "Houston",
+          "severity": "critical",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "cameraId": "Elite Camera Id 4",
+          "resolved": true,
+          "resolvedBy": "Elite Resolved By 4",
+          "eventTime": "2024-04-07"
+        },
+        {
+          "eventType": "Category E",
+          "location": "Phoenix",
+          "severity": "medium",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "cameraId": "Core Camera Id 5",
+          "resolved": false,
+          "resolvedBy": "Core Resolved By 5",
+          "eventTime": "2024-05-09"
+        },
+        {
+          "eventType": "Premium Tier",
+          "location": "San Francisco",
+          "severity": "low",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "cameraId": "Pro Camera Id 6",
+          "resolved": true,
+          "resolvedBy": "Pro Resolved By 6",
+          "eventTime": "2024-06-11"
+        },
+        {
+          "eventType": "Standard Tier",
+          "location": "Seattle",
+          "severity": "medium",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "cameraId": "Essential Camera Id 7",
+          "resolved": true,
+          "resolvedBy": "Essential Resolved By 7",
+          "eventTime": "2024-07-13"
+        },
+        {
+          "eventType": "Basic Tier",
+          "location": "Boston",
+          "severity": "high",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "cameraId": "Primary Camera Id 8",
+          "resolved": false,
+          "resolvedBy": "Primary Resolved By 8",
+          "eventTime": "2024-08-15"
+        },
+        {
+          "eventType": "Enterprise",
+          "location": "Denver",
+          "severity": "critical",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "cameraId": "Global Camera Id 9",
+          "resolved": true,
+          "resolvedBy": "Global Resolved By 9",
+          "eventTime": "2024-09-17"
+        },
+        {
+          "eventType": "Starter",
+          "location": "Miami",
+          "severity": "medium",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "cameraId": "Regional Camera Id 10",
+          "resolved": true,
+          "resolvedBy": "Regional Resolved By 10",
+          "eventTime": "2024-10-19"
+        },
+        {
+          "eventType": "Growth",
+          "location": "Austin",
+          "severity": "low",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "cameraId": "Custom Camera Id 11",
+          "resolved": false,
+          "resolvedBy": "Custom Resolved By 11",
+          "eventTime": "2024-11-21"
+        },
+        {
+          "eventType": "Scale",
+          "location": "Portland",
+          "severity": "medium",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "cameraId": "Smart Camera Id 12",
+          "resolved": true,
+          "resolvedBy": "Smart Resolved By 12",
+          "eventTime": "2024-12-23"
+        },
+        {
+          "eventType": "Foundation",
+          "location": "Dallas",
+          "severity": "high",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "cameraId": "Rapid Camera Id 13",
+          "resolved": false,
+          "resolvedBy": "Rapid Resolved By 13",
+          "eventTime": "2024-01-25"
+        },
+        {
+          "eventType": "Advanced",
+          "location": "Atlanta",
+          "severity": "critical",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "cameraId": "Secure Camera Id 14",
+          "resolved": true,
+          "resolvedBy": "Secure Resolved By 14",
+          "eventTime": "2024-02-27"
+        },
+        {
+          "eventType": "Professional",
+          "location": "Nashville",
+          "severity": "medium",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "cameraId": "Modern Camera Id 15",
+          "resolved": true,
+          "resolvedBy": "Modern Resolved By 15",
+          "eventTime": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "BillingRecord",
+      "routeKey": "billing-records",
+      "label": "Billing Record",
+      "icon": "heart",
+      "aiFunction": "analyzeBillingRecord",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Billing Record data. The data includes: Tenant Name, Tenant Email, Unit Number, Amount, Due Date, Status, Payment Method, Auto Pay. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "tenantName",
+          "label": "Tenant Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tenantEmail",
+          "label": "Tenant Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "unitNumber",
+          "label": "Unit Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "autoPay",
+          "label": "Auto Pay",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "tenantName": "Advanced Tenant 1",
+          "tenantEmail": "james.wilson@example.com",
+          "unitNumber": "Advanced Unit Number 1",
+          "amount": 500,
+          "dueDate": "2024-01-01",
+          "status": "active",
+          "paymentMethod": "Advanced Payment Method 1",
+          "autoPay": true
+        },
+        {
+          "tenantName": "Premium Tenant 2",
+          "tenantEmail": "sarah.chen@example.com",
+          "unitNumber": "Premium Unit Number 2",
+          "amount": 2481,
+          "dueDate": "2024-02-03",
+          "status": "pending",
+          "paymentMethod": "Premium Payment Method 2",
+          "autoPay": true
+        },
+        {
+          "tenantName": "Standard Tenant 3",
+          "tenantEmail": "michael.brown@example.com",
+          "unitNumber": "Standard Unit Number 3",
+          "amount": 4462,
+          "dueDate": "2024-03-05",
+          "status": "in_progress",
+          "paymentMethod": "Standard Payment Method 3",
+          "autoPay": false
+        },
+        {
+          "tenantName": "Elite Tenant 4",
+          "tenantEmail": "emily.davis@example.com",
+          "unitNumber": "Elite Unit Number 4",
+          "amount": 6443,
+          "dueDate": "2024-04-07",
+          "status": "completed",
+          "paymentMethod": "Elite Payment Method 4",
+          "autoPay": true
+        },
+        {
+          "tenantName": "Core Tenant 5",
+          "tenantEmail": "robert.garcia@example.com",
+          "unitNumber": "Core Unit Number 5",
+          "amount": 8424,
+          "dueDate": "2024-05-09",
+          "status": "under_review",
+          "paymentMethod": "Core Payment Method 5",
+          "autoPay": false
+        },
+        {
+          "tenantName": "Pro Tenant 6",
+          "tenantEmail": "lisa.anderson@example.com",
+          "unitNumber": "Pro Unit Number 6",
+          "amount": 10405,
+          "dueDate": "2024-06-11",
+          "status": "approved",
+          "paymentMethod": "Pro Payment Method 6",
+          "autoPay": true
+        },
+        {
+          "tenantName": "Essential Tenant 7",
+          "tenantEmail": "david.martinez@example.com",
+          "unitNumber": "Essential Unit Number 7",
+          "amount": 12386,
+          "dueDate": "2024-07-13",
+          "status": "active",
+          "paymentMethod": "Essential Payment Method 7",
+          "autoPay": true
+        },
+        {
+          "tenantName": "Primary Tenant 8",
+          "tenantEmail": "jennifer.taylor@example.com",
+          "unitNumber": "Primary Unit Number 8",
+          "amount": 9367,
+          "dueDate": "2024-08-15",
+          "status": "active",
+          "paymentMethod": "Primary Payment Method 8",
+          "autoPay": false
+        },
+        {
+          "tenantName": "Global Tenant 9",
+          "tenantEmail": "william.johnson@example.com",
+          "unitNumber": "Global Unit Number 9",
+          "amount": 11348,
+          "dueDate": "2024-09-17",
+          "status": "active",
+          "paymentMethod": "Global Payment Method 9",
+          "autoPay": true
+        },
+        {
+          "tenantName": "Regional Tenant 10",
+          "tenantEmail": "maria.rodriguez@example.com",
+          "unitNumber": "Regional Unit Number 10",
+          "amount": 13329,
+          "dueDate": "2024-10-19",
+          "status": "pending",
+          "paymentMethod": "Regional Payment Method 10",
+          "autoPay": true
+        },
+        {
+          "tenantName": "Custom Tenant 11",
+          "tenantEmail": "thomas.lee@example.com",
+          "unitNumber": "Custom Unit Number 11",
+          "amount": 15310,
+          "dueDate": "2024-11-21",
+          "status": "completed",
+          "paymentMethod": "Custom Payment Method 11",
+          "autoPay": false
+        },
+        {
+          "tenantName": "Smart Tenant 12",
+          "tenantEmail": "patricia.white@example.com",
+          "unitNumber": "Smart Unit Number 12",
+          "amount": 17291,
+          "dueDate": "2024-12-23",
+          "status": "active",
+          "paymentMethod": "Smart Payment Method 12",
+          "autoPay": true
+        },
+        {
+          "tenantName": "Rapid Tenant 13",
+          "tenantEmail": "christopher.hall@example.com",
+          "unitNumber": "Rapid Unit Number 13",
+          "amount": 19272,
+          "dueDate": "2024-01-25",
+          "status": "in_progress",
+          "paymentMethod": "Rapid Payment Method 13",
+          "autoPay": false
+        },
+        {
+          "tenantName": "Secure Tenant 14",
+          "tenantEmail": "amanda.clark@example.com",
+          "unitNumber": "Secure Unit Number 14",
+          "amount": 21253,
+          "dueDate": "2024-02-27",
+          "status": "active",
+          "paymentMethod": "Secure Payment Method 14",
+          "autoPay": true
+        },
+        {
+          "tenantName": "Modern Tenant 15",
+          "tenantEmail": "daniel.wright@example.com",
+          "unitNumber": "Modern Unit Number 15",
+          "amount": 18234,
+          "dueDate": "2024-03-01",
+          "status": "approved",
+          "paymentMethod": "Modern Payment Method 15",
+          "autoPay": true
+        }
+      ]
+    },
+    {
+      "modelName": "Tenant",
+      "routeKey": "tenants",
+      "label": "Tenant",
+      "icon": "layers",
+      "aiFunction": "analyzeTenant",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Tenant data. The data includes: First Name, Last Name, Email, Phone, Unit Number, Lease Start, Lease End, Emergency Contact, Id Verified, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "unitNumber",
+          "label": "Unit Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "leaseStart",
+          "label": "Lease Start",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "leaseEnd",
+          "label": "Lease End",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "emergencyContact",
+          "label": "Emergency Contact",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "idVerified",
+          "label": "Id Verified",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "unitNumber": "Advanced Unit Number 1",
+          "leaseStart": "2024-01-01",
+          "leaseEnd": "2024-01-01",
+          "emergencyContact": "Advanced Emergency Contact 1",
+          "idVerified": true,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "unitNumber": "Premium Unit Number 2",
+          "leaseStart": "2024-02-03",
+          "leaseEnd": "2024-02-03",
+          "emergencyContact": "Premium Emergency Contact 2",
+          "idVerified": true,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "unitNumber": "Standard Unit Number 3",
+          "leaseStart": "2024-03-05",
+          "leaseEnd": "2024-03-05",
+          "emergencyContact": "Standard Emergency Contact 3",
+          "idVerified": false,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "unitNumber": "Elite Unit Number 4",
+          "leaseStart": "2024-04-07",
+          "leaseEnd": "2024-04-07",
+          "emergencyContact": "Elite Emergency Contact 4",
+          "idVerified": true,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "unitNumber": "Core Unit Number 5",
+          "leaseStart": "2024-05-09",
+          "leaseEnd": "2024-05-09",
+          "emergencyContact": "Core Emergency Contact 5",
+          "idVerified": false,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "unitNumber": "Pro Unit Number 6",
+          "leaseStart": "2024-06-11",
+          "leaseEnd": "2024-06-11",
+          "emergencyContact": "Pro Emergency Contact 6",
+          "idVerified": true,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "unitNumber": "Essential Unit Number 7",
+          "leaseStart": "2024-07-13",
+          "leaseEnd": "2024-07-13",
+          "emergencyContact": "Essential Emergency Contact 7",
+          "idVerified": true,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "unitNumber": "Primary Unit Number 8",
+          "leaseStart": "2024-08-15",
+          "leaseEnd": "2024-08-15",
+          "emergencyContact": "Primary Emergency Contact 8",
+          "idVerified": false,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "unitNumber": "Global Unit Number 9",
+          "leaseStart": "2024-09-17",
+          "leaseEnd": "2024-09-17",
+          "emergencyContact": "Global Emergency Contact 9",
+          "idVerified": true,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "unitNumber": "Regional Unit Number 10",
+          "leaseStart": "2024-10-19",
+          "leaseEnd": "2024-10-19",
+          "emergencyContact": "Regional Emergency Contact 10",
+          "idVerified": true,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "unitNumber": "Custom Unit Number 11",
+          "leaseStart": "2024-11-21",
+          "leaseEnd": "2024-11-21",
+          "emergencyContact": "Custom Emergency Contact 11",
+          "idVerified": false,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "unitNumber": "Smart Unit Number 12",
+          "leaseStart": "2024-12-23",
+          "leaseEnd": "2024-12-23",
+          "emergencyContact": "Smart Emergency Contact 12",
+          "idVerified": true,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "unitNumber": "Rapid Unit Number 13",
+          "leaseStart": "2024-01-25",
+          "leaseEnd": "2024-01-25",
+          "emergencyContact": "Rapid Emergency Contact 13",
+          "idVerified": false,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "unitNumber": "Secure Unit Number 14",
+          "leaseStart": "2024-02-27",
+          "leaseEnd": "2024-02-27",
+          "emergencyContact": "Secure Emergency Contact 14",
+          "idVerified": true,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "unitNumber": "Modern Unit Number 15",
+          "leaseStart": "2024-03-01",
+          "leaseEnd": "2024-03-01",
+          "emergencyContact": "Modern Emergency Contact 15",
+          "idVerified": true,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "MaintenanceRequest",
+      "routeKey": "maintenance-requests",
+      "label": "Maintenance Request",
+      "icon": "map-pin",
+      "aiFunction": "analyzeMaintenanceRequest",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Maintenance Request data. The data includes: Title, Description, Location, Priority, Status, Assigned To, Requested By, Estimated Cost, Completed Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "requestedBy",
+          "label": "Requested By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "estimatedCost",
+          "label": "Estimated Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "completedDate",
+          "label": "Completed Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "location": "New York",
+          "priority": "low",
+          "status": "active",
+          "assignedTo": "Advanced Assigned To 1",
+          "requestedBy": "Advanced Requested By 1",
+          "estimatedCost": 500,
+          "completedDate": "2024-01-01"
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "location": "Los Angeles",
+          "priority": "medium",
+          "status": "pending",
+          "assignedTo": "Premium Assigned To 2",
+          "requestedBy": "Premium Requested By 2",
+          "estimatedCost": 2481,
+          "completedDate": "2024-02-03"
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "location": "Chicago",
+          "priority": "high",
+          "status": "in_progress",
+          "assignedTo": "Standard Assigned To 3",
+          "requestedBy": "Standard Requested By 3",
+          "estimatedCost": 4462,
+          "completedDate": "2024-03-05"
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "location": "Houston",
+          "priority": "critical",
+          "status": "completed",
+          "assignedTo": "Elite Assigned To 4",
+          "requestedBy": "Elite Requested By 4",
+          "estimatedCost": 6443,
+          "completedDate": "2024-04-07"
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "location": "Phoenix",
+          "priority": "medium",
+          "status": "under_review",
+          "assignedTo": "Core Assigned To 5",
+          "requestedBy": "Core Requested By 5",
+          "estimatedCost": 8424,
+          "completedDate": "2024-05-09"
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "location": "San Francisco",
+          "priority": "low",
+          "status": "approved",
+          "assignedTo": "Pro Assigned To 6",
+          "requestedBy": "Pro Requested By 6",
+          "estimatedCost": 10405,
+          "completedDate": "2024-06-11"
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "location": "Seattle",
+          "priority": "medium",
+          "status": "active",
+          "assignedTo": "Essential Assigned To 7",
+          "requestedBy": "Essential Requested By 7",
+          "estimatedCost": 12386,
+          "completedDate": "2024-07-13"
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "location": "Boston",
+          "priority": "high",
+          "status": "active",
+          "assignedTo": "Primary Assigned To 8",
+          "requestedBy": "Primary Requested By 8",
+          "estimatedCost": 9367,
+          "completedDate": "2024-08-15"
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "location": "Denver",
+          "priority": "critical",
+          "status": "active",
+          "assignedTo": "Global Assigned To 9",
+          "requestedBy": "Global Requested By 9",
+          "estimatedCost": 11348,
+          "completedDate": "2024-09-17"
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "location": "Miami",
+          "priority": "medium",
+          "status": "pending",
+          "assignedTo": "Regional Assigned To 10",
+          "requestedBy": "Regional Requested By 10",
+          "estimatedCost": 13329,
+          "completedDate": "2024-10-19"
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "location": "Austin",
+          "priority": "low",
+          "status": "completed",
+          "assignedTo": "Custom Assigned To 11",
+          "requestedBy": "Custom Requested By 11",
+          "estimatedCost": 15310,
+          "completedDate": "2024-11-21"
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "location": "Portland",
+          "priority": "medium",
+          "status": "active",
+          "assignedTo": "Smart Assigned To 12",
+          "requestedBy": "Smart Requested By 12",
+          "estimatedCost": 17291,
+          "completedDate": "2024-12-23"
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "location": "Dallas",
+          "priority": "high",
+          "status": "in_progress",
+          "assignedTo": "Rapid Assigned To 13",
+          "requestedBy": "Rapid Requested By 13",
+          "estimatedCost": 19272,
+          "completedDate": "2024-01-25"
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "location": "Atlanta",
+          "priority": "critical",
+          "status": "active",
+          "assignedTo": "Secure Assigned To 14",
+          "requestedBy": "Secure Requested By 14",
+          "estimatedCost": 21253,
+          "completedDate": "2024-02-27"
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "location": "Nashville",
+          "priority": "medium",
+          "status": "approved",
+          "assignedTo": "Modern Assigned To 15",
+          "requestedBy": "Modern Requested By 15",
+          "estimatedCost": 18234,
+          "completedDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "InsurancePolicie",
+      "routeKey": "insurance-policies",
+      "label": "Insurance Policie",
+      "icon": "shield",
+      "aiFunction": "analyzeInsurancePolicie",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Insurance Policie data. The data includes: Tenant Name, Unit Number, Provider, Policy Number, Coverage Amount, Monthly Premium, Start Date, End Date, Status, Coverage Type. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "tenantName",
+          "label": "Tenant Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "unitNumber",
+          "label": "Unit Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "provider",
+          "label": "Provider",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "policyNumber",
+          "label": "Policy Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "coverageAmount",
+          "label": "Coverage Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "monthlyPremium",
+          "label": "Monthly Premium",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "coverageType",
+          "label": "Coverage Type",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "tenantName": "Advanced Tenant 1",
+          "unitNumber": "Advanced Unit Number 1",
+          "provider": "Advanced Provider 1",
+          "policyNumber": "Advanced Policy Number 1",
+          "coverageAmount": 500,
+          "monthlyPremium": 10,
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "status": "active",
+          "coverageType": "Category A"
+        },
+        {
+          "tenantName": "Premium Tenant 2",
+          "unitNumber": "Premium Unit Number 2",
+          "provider": "Premium Provider 2",
+          "policyNumber": "Premium Policy Number 2",
+          "coverageAmount": 2481,
+          "monthlyPremium": 71.7,
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "status": "pending",
+          "coverageType": "Category B"
+        },
+        {
+          "tenantName": "Standard Tenant 3",
+          "unitNumber": "Standard Unit Number 3",
+          "provider": "Standard Provider 3",
+          "policyNumber": "Standard Policy Number 3",
+          "coverageAmount": 4462,
+          "monthlyPremium": 33.4,
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "status": "in_progress",
+          "coverageType": "Category C"
+        },
+        {
+          "tenantName": "Elite Tenant 4",
+          "unitNumber": "Elite Unit Number 4",
+          "provider": "Elite Provider 4",
+          "policyNumber": "Elite Policy Number 4",
+          "coverageAmount": 6443,
+          "monthlyPremium": 95.1,
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "status": "completed",
+          "coverageType": "Category D"
+        },
+        {
+          "tenantName": "Core Tenant 5",
+          "unitNumber": "Core Unit Number 5",
+          "provider": "Core Provider 5",
+          "policyNumber": "Core Policy Number 5",
+          "coverageAmount": 8424,
+          "monthlyPremium": 56.8,
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "status": "under_review",
+          "coverageType": "Category E"
+        },
+        {
+          "tenantName": "Pro Tenant 6",
+          "unitNumber": "Pro Unit Number 6",
+          "provider": "Pro Provider 6",
+          "policyNumber": "Pro Policy Number 6",
+          "coverageAmount": 10405,
+          "monthlyPremium": 118.5,
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "status": "approved",
+          "coverageType": "Premium Tier"
+        },
+        {
+          "tenantName": "Essential Tenant 7",
+          "unitNumber": "Essential Unit Number 7",
+          "provider": "Essential Provider 7",
+          "policyNumber": "Essential Policy Number 7",
+          "coverageAmount": 12386,
+          "monthlyPremium": 80.2,
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "status": "active",
+          "coverageType": "Standard Tier"
+        },
+        {
+          "tenantName": "Primary Tenant 8",
+          "unitNumber": "Primary Unit Number 8",
+          "provider": "Primary Provider 8",
+          "policyNumber": "Primary Policy Number 8",
+          "coverageAmount": 9367,
+          "monthlyPremium": 141.9,
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "status": "active",
+          "coverageType": "Basic Tier"
+        },
+        {
+          "tenantName": "Global Tenant 9",
+          "unitNumber": "Global Unit Number 9",
+          "provider": "Global Provider 9",
+          "policyNumber": "Global Policy Number 9",
+          "coverageAmount": 11348,
+          "monthlyPremium": 103.6,
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "status": "active",
+          "coverageType": "Enterprise"
+        },
+        {
+          "tenantName": "Regional Tenant 10",
+          "unitNumber": "Regional Unit Number 10",
+          "provider": "Regional Provider 10",
+          "policyNumber": "Regional Policy Number 10",
+          "coverageAmount": 13329,
+          "monthlyPremium": 165.3,
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "status": "pending",
+          "coverageType": "Starter"
+        },
+        {
+          "tenantName": "Custom Tenant 11",
+          "unitNumber": "Custom Unit Number 11",
+          "provider": "Custom Provider 11",
+          "policyNumber": "Custom Policy Number 11",
+          "coverageAmount": 15310,
+          "monthlyPremium": 127,
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "status": "completed",
+          "coverageType": "Growth"
+        },
+        {
+          "tenantName": "Smart Tenant 12",
+          "unitNumber": "Smart Unit Number 12",
+          "provider": "Smart Provider 12",
+          "policyNumber": "Smart Policy Number 12",
+          "coverageAmount": 17291,
+          "monthlyPremium": 188.7,
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "status": "active",
+          "coverageType": "Scale"
+        },
+        {
+          "tenantName": "Rapid Tenant 13",
+          "unitNumber": "Rapid Unit Number 13",
+          "provider": "Rapid Provider 13",
+          "policyNumber": "Rapid Policy Number 13",
+          "coverageAmount": 19272,
+          "monthlyPremium": 150.4,
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "status": "in_progress",
+          "coverageType": "Foundation"
+        },
+        {
+          "tenantName": "Secure Tenant 14",
+          "unitNumber": "Secure Unit Number 14",
+          "provider": "Secure Provider 14",
+          "policyNumber": "Secure Policy Number 14",
+          "coverageAmount": 21253,
+          "monthlyPremium": 212.1,
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "status": "active",
+          "coverageType": "Advanced"
+        },
+        {
+          "tenantName": "Modern Tenant 15",
+          "unitNumber": "Modern Unit Number 15",
+          "provider": "Modern Provider 15",
+          "policyNumber": "Modern Policy Number 15",
+          "coverageAmount": 18234,
+          "monthlyPremium": 173.8,
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "status": "approved",
+          "coverageType": "Professional"
+        }
+      ]
+    },
+    {
+      "modelName": "MoveActivitie",
+      "routeKey": "move-activities",
+      "label": "Move Activitie",
+      "icon": "star",
+      "aiFunction": "analyzeMoveActivitie",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Move Activitie data. The data includes: Tenant Name, Unit Number, Activity Type, Scheduled Date, Completed Date, Status, Requires Elevator, Special Instructions, Staff Assigned. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "tenantName",
+          "label": "Tenant Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "unitNumber",
+          "label": "Unit Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "activityType",
+          "label": "Activity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "completedDate",
+          "label": "Completed Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "requiresElevator",
+          "label": "Requires Elevator",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "specialInstructions",
+          "label": "Special Instructions",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "staffAssigned",
+          "label": "Staff Assigned",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "tenantName": "Advanced Tenant 1",
+          "unitNumber": "Advanced Unit Number 1",
+          "activityType": "Category A",
+          "scheduledDate": "2024-01-01",
+          "completedDate": "2024-01-01",
+          "status": "active",
+          "requiresElevator": true,
+          "specialInstructions": "Comprehensive solution designed for optimal performance and efficiency.",
+          "staffAssigned": "Advanced Staff Assigned 1"
+        },
+        {
+          "tenantName": "Premium Tenant 2",
+          "unitNumber": "Premium Unit Number 2",
+          "activityType": "Category B",
+          "scheduledDate": "2024-02-03",
+          "completedDate": "2024-02-03",
+          "status": "pending",
+          "requiresElevator": true,
+          "specialInstructions": "Industry-leading approach with proven results across multiple deployments.",
+          "staffAssigned": "Premium Staff Assigned 2"
+        },
+        {
+          "tenantName": "Standard Tenant 3",
+          "unitNumber": "Standard Unit Number 3",
+          "activityType": "Category C",
+          "scheduledDate": "2024-03-05",
+          "completedDate": "2024-03-05",
+          "status": "in_progress",
+          "requiresElevator": false,
+          "specialInstructions": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "staffAssigned": "Standard Staff Assigned 3"
+        },
+        {
+          "tenantName": "Elite Tenant 4",
+          "unitNumber": "Elite Unit Number 4",
+          "activityType": "Category D",
+          "scheduledDate": "2024-04-07",
+          "completedDate": "2024-04-07",
+          "status": "completed",
+          "requiresElevator": true,
+          "specialInstructions": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "staffAssigned": "Elite Staff Assigned 4"
+        },
+        {
+          "tenantName": "Core Tenant 5",
+          "unitNumber": "Core Unit Number 5",
+          "activityType": "Category E",
+          "scheduledDate": "2024-05-09",
+          "completedDate": "2024-05-09",
+          "status": "under_review",
+          "requiresElevator": false,
+          "specialInstructions": "Cost-effective strategy focused on sustainable long-term growth.",
+          "staffAssigned": "Core Staff Assigned 5"
+        },
+        {
+          "tenantName": "Pro Tenant 6",
+          "unitNumber": "Pro Unit Number 6",
+          "activityType": "Premium Tier",
+          "scheduledDate": "2024-06-11",
+          "completedDate": "2024-06-11",
+          "status": "approved",
+          "requiresElevator": true,
+          "specialInstructions": "High-priority initiative aligned with organizational strategic objectives.",
+          "staffAssigned": "Pro Staff Assigned 6"
+        },
+        {
+          "tenantName": "Essential Tenant 7",
+          "unitNumber": "Essential Unit Number 7",
+          "activityType": "Standard Tier",
+          "scheduledDate": "2024-07-13",
+          "completedDate": "2024-07-13",
+          "status": "active",
+          "requiresElevator": true,
+          "specialInstructions": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "staffAssigned": "Essential Staff Assigned 7"
+        },
+        {
+          "tenantName": "Primary Tenant 8",
+          "unitNumber": "Primary Unit Number 8",
+          "activityType": "Basic Tier",
+          "scheduledDate": "2024-08-15",
+          "completedDate": "2024-08-15",
+          "status": "active",
+          "requiresElevator": false,
+          "specialInstructions": "Innovative framework incorporating best practices and emerging technologies.",
+          "staffAssigned": "Primary Staff Assigned 8"
+        },
+        {
+          "tenantName": "Global Tenant 9",
+          "unitNumber": "Global Unit Number 9",
+          "activityType": "Enterprise",
+          "scheduledDate": "2024-09-17",
+          "completedDate": "2024-09-17",
+          "status": "active",
+          "requiresElevator": true,
+          "specialInstructions": "Scalable architecture built to accommodate rapid expansion and change.",
+          "staffAssigned": "Global Staff Assigned 9"
+        },
+        {
+          "tenantName": "Regional Tenant 10",
+          "unitNumber": "Regional Unit Number 10",
+          "activityType": "Starter",
+          "scheduledDate": "2024-10-19",
+          "completedDate": "2024-10-19",
+          "status": "pending",
+          "requiresElevator": true,
+          "specialInstructions": "Enterprise-grade solution with robust security and compliance features.",
+          "staffAssigned": "Regional Staff Assigned 10"
+        },
+        {
+          "tenantName": "Custom Tenant 11",
+          "unitNumber": "Custom Unit Number 11",
+          "activityType": "Growth",
+          "scheduledDate": "2024-11-21",
+          "completedDate": "2024-11-21",
+          "status": "completed",
+          "requiresElevator": false,
+          "specialInstructions": "Integrated platform connecting multiple systems for seamless operations.",
+          "staffAssigned": "Custom Staff Assigned 11"
+        },
+        {
+          "tenantName": "Smart Tenant 12",
+          "unitNumber": "Smart Unit Number 12",
+          "activityType": "Scale",
+          "scheduledDate": "2024-12-23",
+          "completedDate": "2024-12-23",
+          "status": "active",
+          "requiresElevator": true,
+          "specialInstructions": "Automated workflow reducing manual intervention and human error.",
+          "staffAssigned": "Smart Staff Assigned 12"
+        },
+        {
+          "tenantName": "Rapid Tenant 13",
+          "unitNumber": "Rapid Unit Number 13",
+          "activityType": "Foundation",
+          "scheduledDate": "2024-01-25",
+          "completedDate": "2024-01-25",
+          "status": "in_progress",
+          "requiresElevator": false,
+          "specialInstructions": "Real-time monitoring system with intelligent alerting capabilities.",
+          "staffAssigned": "Rapid Staff Assigned 13"
+        },
+        {
+          "tenantName": "Secure Tenant 14",
+          "unitNumber": "Secure Unit Number 14",
+          "activityType": "Advanced",
+          "scheduledDate": "2024-02-27",
+          "completedDate": "2024-02-27",
+          "status": "active",
+          "requiresElevator": true,
+          "specialInstructions": "Customizable module adaptable to diverse operational requirements.",
+          "staffAssigned": "Secure Staff Assigned 14"
+        },
+        {
+          "tenantName": "Modern Tenant 15",
+          "unitNumber": "Modern Unit Number 15",
+          "activityType": "Professional",
+          "scheduledDate": "2024-03-01",
+          "completedDate": "2024-03-01",
+          "status": "approved",
+          "requiresElevator": true,
+          "specialInstructions": "Performance-optimized design achieving superior throughput and reliability.",
+          "staffAssigned": "Modern Staff Assigned 15"
+        }
+      ]
+    },
+    {
+      "modelName": "RevenueRecord",
+      "routeKey": "revenue-records",
+      "label": "Revenue Record",
+      "icon": "truck",
+      "aiFunction": "analyzeRevenueRecord",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Revenue Record data. The data includes: Category, Amount, Description, Transaction Date, Payment Method, Tenant Name, Unit Number, Period Month, Period Year. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "transactionDate",
+          "label": "Transaction Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tenantName",
+          "label": "Tenant Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "unitNumber",
+          "label": "Unit Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "periodMonth",
+          "label": "Period Month",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "periodYear",
+          "label": "Period Year",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "category": "Category A",
+          "amount": 500,
+          "description": "Advanced Description 1",
+          "transactionDate": "2024-01-01",
+          "paymentMethod": "Advanced Payment Method 1",
+          "tenantName": "Advanced Tenant 1",
+          "unitNumber": "Advanced Unit Number 1",
+          "periodMonth": 10,
+          "periodYear": 2020
+        },
+        {
+          "category": "Category B",
+          "amount": 2481,
+          "description": "Premium Description 2",
+          "transactionDate": "2024-02-03",
+          "paymentMethod": "Premium Payment Method 2",
+          "tenantName": "Premium Tenant 2",
+          "unitNumber": "Premium Unit Number 2",
+          "periodMonth": 58,
+          "periodYear": 2021
+        },
+        {
+          "category": "Category C",
+          "amount": 4462,
+          "description": "Standard Description 3",
+          "transactionDate": "2024-03-05",
+          "paymentMethod": "Standard Payment Method 3",
+          "tenantName": "Standard Tenant 3",
+          "unitNumber": "Standard Unit Number 3",
+          "periodMonth": 106,
+          "periodYear": 2022
+        },
+        {
+          "category": "Category D",
+          "amount": 6443,
+          "description": "Elite Description 4",
+          "transactionDate": "2024-04-07",
+          "paymentMethod": "Elite Payment Method 4",
+          "tenantName": "Elite Tenant 4",
+          "unitNumber": "Elite Unit Number 4",
+          "periodMonth": 154,
+          "periodYear": 2023
+        },
+        {
+          "category": "Category E",
+          "amount": 8424,
+          "description": "Core Description 5",
+          "transactionDate": "2024-05-09",
+          "paymentMethod": "Core Payment Method 5",
+          "tenantName": "Core Tenant 5",
+          "unitNumber": "Core Unit Number 5",
+          "periodMonth": 102,
+          "periodYear": 2024
+        },
+        {
+          "category": "Premium Tier",
+          "amount": 10405,
+          "description": "Pro Description 6",
+          "transactionDate": "2024-06-11",
+          "paymentMethod": "Pro Payment Method 6",
+          "tenantName": "Pro Tenant 6",
+          "unitNumber": "Pro Unit Number 6",
+          "periodMonth": 150,
+          "periodYear": 2025
+        },
+        {
+          "category": "Standard Tier",
+          "amount": 12386,
+          "description": "Essential Description 7",
+          "transactionDate": "2024-07-13",
+          "paymentMethod": "Essential Payment Method 7",
+          "tenantName": "Essential Tenant 7",
+          "unitNumber": "Essential Unit Number 7",
+          "periodMonth": 198,
+          "periodYear": 2020
+        },
+        {
+          "category": "Basic Tier",
+          "amount": 9367,
+          "description": "Primary Description 8",
+          "transactionDate": "2024-08-15",
+          "paymentMethod": "Primary Payment Method 8",
+          "tenantName": "Primary Tenant 8",
+          "unitNumber": "Primary Unit Number 8",
+          "periodMonth": 146,
+          "periodYear": 2021
+        },
+        {
+          "category": "Enterprise",
+          "amount": 11348,
+          "description": "Global Description 9",
+          "transactionDate": "2024-09-17",
+          "paymentMethod": "Global Payment Method 9",
+          "tenantName": "Global Tenant 9",
+          "unitNumber": "Global Unit Number 9",
+          "periodMonth": 194,
+          "periodYear": 2022
+        },
+        {
+          "category": "Starter",
+          "amount": 13329,
+          "description": "Regional Description 10",
+          "transactionDate": "2024-10-19",
+          "paymentMethod": "Regional Payment Method 10",
+          "tenantName": "Regional Tenant 10",
+          "unitNumber": "Regional Unit Number 10",
+          "periodMonth": 242,
+          "periodYear": 2023
+        },
+        {
+          "category": "Growth",
+          "amount": 15310,
+          "description": "Custom Description 11",
+          "transactionDate": "2024-11-21",
+          "paymentMethod": "Custom Payment Method 11",
+          "tenantName": "Custom Tenant 11",
+          "unitNumber": "Custom Unit Number 11",
+          "periodMonth": 190,
+          "periodYear": 2024
+        },
+        {
+          "category": "Scale",
+          "amount": 17291,
+          "description": "Smart Description 12",
+          "transactionDate": "2024-12-23",
+          "paymentMethod": "Smart Payment Method 12",
+          "tenantName": "Smart Tenant 12",
+          "unitNumber": "Smart Unit Number 12",
+          "periodMonth": 238,
+          "periodYear": 2025
+        },
+        {
+          "category": "Foundation",
+          "amount": 19272,
+          "description": "Rapid Description 13",
+          "transactionDate": "2024-01-25",
+          "paymentMethod": "Rapid Payment Method 13",
+          "tenantName": "Rapid Tenant 13",
+          "unitNumber": "Rapid Unit Number 13",
+          "periodMonth": 286,
+          "periodYear": 2020
+        },
+        {
+          "category": "Advanced",
+          "amount": 21253,
+          "description": "Secure Description 14",
+          "transactionDate": "2024-02-27",
+          "paymentMethod": "Secure Payment Method 14",
+          "tenantName": "Secure Tenant 14",
+          "unitNumber": "Secure Unit Number 14",
+          "periodMonth": 234,
+          "periodYear": 2021
+        },
+        {
+          "category": "Professional",
+          "amount": 18234,
+          "description": "Modern Description 15",
+          "transactionDate": "2024-03-01",
+          "paymentMethod": "Modern Payment Method 15",
+          "tenantName": "Modern Tenant 15",
+          "unitNumber": "Modern Unit Number 15",
+          "periodMonth": 282,
+          "periodYear": 2022
+        }
+      ]
+    },
+    {
+      "modelName": "Promotion",
+      "routeKey": "promotions",
+      "label": "Promotion",
+      "icon": "users",
+      "aiFunction": "analyzePromotion",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Promotion data. The data includes: Name, Description, Discount Type, Discount Value, Unit Type, Start Date, End Date, Promo Code, Max Uses, Current Uses, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "discountType",
+          "label": "Discount Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "discountValue",
+          "label": "Discount Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "unitType",
+          "label": "Unit Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "promoCode",
+          "label": "Promo Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "maxUses",
+          "label": "Max Uses",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "currentUses",
+          "label": "Current Uses",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "discountType": "Category A",
+          "discountValue": 10,
+          "unitType": "Category A",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "promoCode": "Advanced Promo Code 1",
+          "maxUses": 10,
+          "currentUses": 10,
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "discountType": "Category B",
+          "discountValue": 71.7,
+          "unitType": "Category B",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "promoCode": "Premium Promo Code 2",
+          "maxUses": 58,
+          "currentUses": 58,
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "discountType": "Category C",
+          "discountValue": 33.4,
+          "unitType": "Category C",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "promoCode": "Standard Promo Code 3",
+          "maxUses": 106,
+          "currentUses": 106,
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "discountType": "Category D",
+          "discountValue": 95.1,
+          "unitType": "Category D",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "promoCode": "Elite Promo Code 4",
+          "maxUses": 154,
+          "currentUses": 154,
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "discountType": "Category E",
+          "discountValue": 56.8,
+          "unitType": "Category E",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "promoCode": "Core Promo Code 5",
+          "maxUses": 102,
+          "currentUses": 102,
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "discountType": "Premium Tier",
+          "discountValue": 118.5,
+          "unitType": "Premium Tier",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "promoCode": "Pro Promo Code 6",
+          "maxUses": 150,
+          "currentUses": 150,
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "discountType": "Standard Tier",
+          "discountValue": 80.2,
+          "unitType": "Standard Tier",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "promoCode": "Essential Promo Code 7",
+          "maxUses": 198,
+          "currentUses": 198,
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "discountType": "Basic Tier",
+          "discountValue": 141.9,
+          "unitType": "Basic Tier",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "promoCode": "Primary Promo Code 8",
+          "maxUses": 146,
+          "currentUses": 146,
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "discountType": "Enterprise",
+          "discountValue": 103.6,
+          "unitType": "Enterprise",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "promoCode": "Global Promo Code 9",
+          "maxUses": 194,
+          "currentUses": 194,
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "discountType": "Starter",
+          "discountValue": 165.3,
+          "unitType": "Starter",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "promoCode": "Regional Promo Code 10",
+          "maxUses": 242,
+          "currentUses": 242,
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "discountType": "Growth",
+          "discountValue": 127,
+          "unitType": "Growth",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "promoCode": "Custom Promo Code 11",
+          "maxUses": 190,
+          "currentUses": 190,
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "discountType": "Scale",
+          "discountValue": 188.7,
+          "unitType": "Scale",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "promoCode": "Smart Promo Code 12",
+          "maxUses": 238,
+          "currentUses": 238,
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "discountType": "Foundation",
+          "discountValue": 150.4,
+          "unitType": "Foundation",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "promoCode": "Rapid Promo Code 13",
+          "maxUses": 286,
+          "currentUses": 286,
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "discountType": "Advanced",
+          "discountValue": 212.1,
+          "unitType": "Advanced",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "promoCode": "Secure Promo Code 14",
+          "maxUses": 234,
+          "currentUses": 234,
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "discountType": "Professional",
+          "discountValue": 173.8,
+          "unitType": "Professional",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "promoCode": "Modern Promo Code 15",
+          "maxUses": 282,
+          "currentUses": 282,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "Waitlist",
+      "routeKey": "waitlists",
+      "label": "Waitlist",
+      "icon": "zap",
+      "aiFunction": "analyzeWaitlist",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Waitlist data. The data includes: First Name, Last Name, Email, Phone, Desired Unit Type, Desired Size Sqft, Climate Controlled, Max Budget, Notes, Status, Notified Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "desiredUnitType",
+          "label": "Desired Unit Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "desiredSizeSqft",
+          "label": "Desired Size Sqft",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "climateControlled",
+          "label": "Climate Controlled",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "maxBudget",
+          "label": "Max Budget",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notifiedDate",
+          "label": "Notified Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "desiredUnitType": "Category A",
+          "desiredSizeSqft": 10,
+          "climateControlled": true,
+          "maxBudget": 500,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "notifiedDate": "2024-01-01"
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "desiredUnitType": "Category B",
+          "desiredSizeSqft": 58,
+          "climateControlled": true,
+          "maxBudget": 2481,
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "notifiedDate": "2024-02-03"
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "desiredUnitType": "Category C",
+          "desiredSizeSqft": 106,
+          "climateControlled": false,
+          "maxBudget": 4462,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "notifiedDate": "2024-03-05"
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "desiredUnitType": "Category D",
+          "desiredSizeSqft": 154,
+          "climateControlled": true,
+          "maxBudget": 6443,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "notifiedDate": "2024-04-07"
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "desiredUnitType": "Category E",
+          "desiredSizeSqft": 102,
+          "climateControlled": false,
+          "maxBudget": 8424,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "notifiedDate": "2024-05-09"
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "desiredUnitType": "Premium Tier",
+          "desiredSizeSqft": 150,
+          "climateControlled": true,
+          "maxBudget": 10405,
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "notifiedDate": "2024-06-11"
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "desiredUnitType": "Standard Tier",
+          "desiredSizeSqft": 198,
+          "climateControlled": true,
+          "maxBudget": 12386,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "notifiedDate": "2024-07-13"
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "desiredUnitType": "Basic Tier",
+          "desiredSizeSqft": 146,
+          "climateControlled": false,
+          "maxBudget": 9367,
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "notifiedDate": "2024-08-15"
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "desiredUnitType": "Enterprise",
+          "desiredSizeSqft": 194,
+          "climateControlled": true,
+          "maxBudget": 11348,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "notifiedDate": "2024-09-17"
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "desiredUnitType": "Starter",
+          "desiredSizeSqft": 242,
+          "climateControlled": true,
+          "maxBudget": 13329,
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "notifiedDate": "2024-10-19"
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "desiredUnitType": "Growth",
+          "desiredSizeSqft": 190,
+          "climateControlled": false,
+          "maxBudget": 15310,
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "notifiedDate": "2024-11-21"
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "desiredUnitType": "Scale",
+          "desiredSizeSqft": 238,
+          "climateControlled": true,
+          "maxBudget": 17291,
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "notifiedDate": "2024-12-23"
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "desiredUnitType": "Foundation",
+          "desiredSizeSqft": 286,
+          "climateControlled": false,
+          "maxBudget": 19272,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "notifiedDate": "2024-01-25"
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "desiredUnitType": "Advanced",
+          "desiredSizeSqft": 234,
+          "climateControlled": true,
+          "maxBudget": 21253,
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "notifiedDate": "2024-02-27"
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "desiredUnitType": "Professional",
+          "desiredSizeSqft": 282,
+          "climateControlled": true,
+          "maxBudget": 18234,
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "notifiedDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Notification",
+      "routeKey": "notifications",
+      "label": "Notification",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeNotification",
+      "aiPrompt": "You are an AI analyst for A I Self Storage Facility Manager. Analyze the provided Notification data. The data includes: Type, Severity, Title, Message, Related Entity, Related Id, Is Read, Is Auto Generated. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "relatedEntity",
+          "label": "Related Entity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "relatedId",
+          "label": "Related Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isRead",
+          "label": "Is Read",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "isAutoGenerated",
+          "label": "Is Auto Generated",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "type": "Category A",
+          "severity": "low",
+          "title": "Advanced Title 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "relatedEntity": "Advanced Related Entity 1",
+          "relatedId": "Advanced Related Id 1",
+          "isRead": true,
+          "isAutoGenerated": true
+        },
+        {
+          "type": "Category B",
+          "severity": "medium",
+          "title": "Premium Title 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "relatedEntity": "Premium Related Entity 2",
+          "relatedId": "Premium Related Id 2",
+          "isRead": true,
+          "isAutoGenerated": true
+        },
+        {
+          "type": "Category C",
+          "severity": "high",
+          "title": "Standard Title 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "relatedEntity": "Standard Related Entity 3",
+          "relatedId": "Standard Related Id 3",
+          "isRead": false,
+          "isAutoGenerated": false
+        },
+        {
+          "type": "Category D",
+          "severity": "critical",
+          "title": "Elite Title 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "relatedEntity": "Elite Related Entity 4",
+          "relatedId": "Elite Related Id 4",
+          "isRead": true,
+          "isAutoGenerated": true
+        },
+        {
+          "type": "Category E",
+          "severity": "medium",
+          "title": "Core Title 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "relatedEntity": "Core Related Entity 5",
+          "relatedId": "Core Related Id 5",
+          "isRead": false,
+          "isAutoGenerated": false
+        },
+        {
+          "type": "Premium Tier",
+          "severity": "low",
+          "title": "Pro Title 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "relatedEntity": "Pro Related Entity 6",
+          "relatedId": "Pro Related Id 6",
+          "isRead": true,
+          "isAutoGenerated": true
+        },
+        {
+          "type": "Standard Tier",
+          "severity": "medium",
+          "title": "Essential Title 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "relatedEntity": "Essential Related Entity 7",
+          "relatedId": "Essential Related Id 7",
+          "isRead": true,
+          "isAutoGenerated": true
+        },
+        {
+          "type": "Basic Tier",
+          "severity": "high",
+          "title": "Primary Title 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "relatedEntity": "Primary Related Entity 8",
+          "relatedId": "Primary Related Id 8",
+          "isRead": false,
+          "isAutoGenerated": false
+        },
+        {
+          "type": "Enterprise",
+          "severity": "critical",
+          "title": "Global Title 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "relatedEntity": "Global Related Entity 9",
+          "relatedId": "Global Related Id 9",
+          "isRead": true,
+          "isAutoGenerated": true
+        },
+        {
+          "type": "Starter",
+          "severity": "medium",
+          "title": "Regional Title 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "relatedEntity": "Regional Related Entity 10",
+          "relatedId": "Regional Related Id 10",
+          "isRead": true,
+          "isAutoGenerated": true
+        },
+        {
+          "type": "Growth",
+          "severity": "low",
+          "title": "Custom Title 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "relatedEntity": "Custom Related Entity 11",
+          "relatedId": "Custom Related Id 11",
+          "isRead": false,
+          "isAutoGenerated": false
+        },
+        {
+          "type": "Scale",
+          "severity": "medium",
+          "title": "Smart Title 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "relatedEntity": "Smart Related Entity 12",
+          "relatedId": "Smart Related Id 12",
+          "isRead": true,
+          "isAutoGenerated": true
+        },
+        {
+          "type": "Foundation",
+          "severity": "high",
+          "title": "Rapid Title 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "relatedEntity": "Rapid Related Entity 13",
+          "relatedId": "Rapid Related Id 13",
+          "isRead": false,
+          "isAutoGenerated": false
+        },
+        {
+          "type": "Advanced",
+          "severity": "critical",
+          "title": "Secure Title 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "relatedEntity": "Secure Related Entity 14",
+          "relatedId": "Secure Related Id 14",
+          "isRead": true,
+          "isAutoGenerated": true
+        },
+        {
+          "type": "Professional",
+          "severity": "medium",
+          "title": "Modern Title 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "relatedEntity": "Modern Related Entity 15",
+          "relatedId": "Modern Related Id 15",
+          "isRead": true,
+          "isAutoGenerated": true
+        }
+      ]
+    }
+  ]
+}

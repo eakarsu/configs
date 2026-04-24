@@ -1,0 +1,4060 @@
+{
+  "appName": "AI Hotel Revenue Manager",
+  "dbName": "a_i_hotel_revenue",
+  "folderName": "generated/AIHotelRevenue",
+  "features": [
+    {
+      "modelName": "Room",
+      "routeKey": "rooms",
+      "label": "Room",
+      "icon": "activity",
+      "aiFunction": "analyzeRoom",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Room data. The data includes: Room Number, Type, Floor, Capacity, Base Price, Status, Amenities, Description. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "roomNumber",
+          "label": "Room Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "floor",
+          "label": "Floor",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "capacity",
+          "label": "Capacity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "basePrice",
+          "label": "Base Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amenities",
+          "label": "Amenities",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "roomNumber": "Advanced Room Number 1",
+          "type": "Category A",
+          "floor": 10,
+          "capacity": 10,
+          "basePrice": 500,
+          "status": "active",
+          "amenities": "Comprehensive solution designed for optimal performance and efficiency.",
+          "description": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "roomNumber": "Premium Room Number 2",
+          "type": "Category B",
+          "floor": 58,
+          "capacity": 58,
+          "basePrice": 2481,
+          "status": "pending",
+          "amenities": "Industry-leading approach with proven results across multiple deployments.",
+          "description": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "roomNumber": "Standard Room Number 3",
+          "type": "Category C",
+          "floor": 106,
+          "capacity": 106,
+          "basePrice": 4462,
+          "status": "in_progress",
+          "amenities": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "roomNumber": "Elite Room Number 4",
+          "type": "Category D",
+          "floor": 154,
+          "capacity": 154,
+          "basePrice": 6443,
+          "status": "completed",
+          "amenities": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "roomNumber": "Core Room Number 5",
+          "type": "Category E",
+          "floor": 102,
+          "capacity": 102,
+          "basePrice": 8424,
+          "status": "under_review",
+          "amenities": "Cost-effective strategy focused on sustainable long-term growth.",
+          "description": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "roomNumber": "Pro Room Number 6",
+          "type": "Premium Tier",
+          "floor": 150,
+          "capacity": 150,
+          "basePrice": 10405,
+          "status": "approved",
+          "amenities": "High-priority initiative aligned with organizational strategic objectives.",
+          "description": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "roomNumber": "Essential Room Number 7",
+          "type": "Standard Tier",
+          "floor": 198,
+          "capacity": 198,
+          "basePrice": 12386,
+          "status": "active",
+          "amenities": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "roomNumber": "Primary Room Number 8",
+          "type": "Basic Tier",
+          "floor": 146,
+          "capacity": 146,
+          "basePrice": 9367,
+          "status": "active",
+          "amenities": "Innovative framework incorporating best practices and emerging technologies.",
+          "description": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "roomNumber": "Global Room Number 9",
+          "type": "Enterprise",
+          "floor": 194,
+          "capacity": 194,
+          "basePrice": 11348,
+          "status": "active",
+          "amenities": "Scalable architecture built to accommodate rapid expansion and change.",
+          "description": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "roomNumber": "Regional Room Number 10",
+          "type": "Starter",
+          "floor": 242,
+          "capacity": 242,
+          "basePrice": 13329,
+          "status": "pending",
+          "amenities": "Enterprise-grade solution with robust security and compliance features.",
+          "description": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "roomNumber": "Custom Room Number 11",
+          "type": "Growth",
+          "floor": 190,
+          "capacity": 190,
+          "basePrice": 15310,
+          "status": "completed",
+          "amenities": "Integrated platform connecting multiple systems for seamless operations.",
+          "description": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "roomNumber": "Smart Room Number 12",
+          "type": "Scale",
+          "floor": 238,
+          "capacity": 238,
+          "basePrice": 17291,
+          "status": "active",
+          "amenities": "Automated workflow reducing manual intervention and human error.",
+          "description": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "roomNumber": "Rapid Room Number 13",
+          "type": "Foundation",
+          "floor": 286,
+          "capacity": 286,
+          "basePrice": 19272,
+          "status": "in_progress",
+          "amenities": "Real-time monitoring system with intelligent alerting capabilities.",
+          "description": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "roomNumber": "Secure Room Number 14",
+          "type": "Advanced",
+          "floor": 234,
+          "capacity": 234,
+          "basePrice": 21253,
+          "status": "active",
+          "amenities": "Customizable module adaptable to diverse operational requirements.",
+          "description": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "roomNumber": "Modern Room Number 15",
+          "type": "Professional",
+          "floor": 282,
+          "capacity": 282,
+          "basePrice": 18234,
+          "status": "approved",
+          "amenities": "Performance-optimized design achieving superior throughput and reliability.",
+          "description": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PricingRule",
+      "routeKey": "pricing-rules",
+      "label": "Pricing Rule",
+      "icon": "briefcase",
+      "aiFunction": "analyzePricingRule",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Pricing Rule data. The data includes: Room Type, Base Price, Min Price, Max Price, Season, Day Of Week, Occupancy Threshold, Adjustment Percent, Is Active, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "roomType",
+          "label": "Room Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "basePrice",
+          "label": "Base Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "minPrice",
+          "label": "Min Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "maxPrice",
+          "label": "Max Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "season",
+          "label": "Season",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dayOfWeek",
+          "label": "Day Of Week",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "occupancyThreshold",
+          "label": "Occupancy Threshold",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "adjustmentPercent",
+          "label": "Adjustment Percent",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "roomType": "Category A",
+          "basePrice": 500,
+          "minPrice": 500,
+          "maxPrice": 500,
+          "season": "Advanced Season 1",
+          "dayOfWeek": "Advanced Day Of Week 1",
+          "occupancyThreshold": 10,
+          "adjustmentPercent": 1.5,
+          "isActive": true,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "roomType": "Category B",
+          "basePrice": 2481,
+          "minPrice": 2481,
+          "maxPrice": 2481,
+          "season": "Premium Season 2",
+          "dayOfWeek": "Premium Day Of Week 2",
+          "occupancyThreshold": 71.7,
+          "adjustmentPercent": 2.1,
+          "isActive": true,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "roomType": "Category C",
+          "basePrice": 4462,
+          "minPrice": 4462,
+          "maxPrice": 4462,
+          "season": "Standard Season 3",
+          "dayOfWeek": "Standard Day Of Week 3",
+          "occupancyThreshold": 33.4,
+          "adjustmentPercent": 2.7,
+          "isActive": false,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "roomType": "Category D",
+          "basePrice": 6443,
+          "minPrice": 6443,
+          "maxPrice": 6443,
+          "season": "Elite Season 4",
+          "dayOfWeek": "Elite Day Of Week 4",
+          "occupancyThreshold": 95.1,
+          "adjustmentPercent": 3.3,
+          "isActive": true,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "roomType": "Category E",
+          "basePrice": 8424,
+          "minPrice": 8424,
+          "maxPrice": 8424,
+          "season": "Core Season 5",
+          "dayOfWeek": "Core Day Of Week 5",
+          "occupancyThreshold": 56.8,
+          "adjustmentPercent": 3.9,
+          "isActive": false,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "roomType": "Premium Tier",
+          "basePrice": 10405,
+          "minPrice": 10405,
+          "maxPrice": 10405,
+          "season": "Pro Season 6",
+          "dayOfWeek": "Pro Day Of Week 6",
+          "occupancyThreshold": 118.5,
+          "adjustmentPercent": 4.5,
+          "isActive": true,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "roomType": "Standard Tier",
+          "basePrice": 12386,
+          "minPrice": 12386,
+          "maxPrice": 12386,
+          "season": "Essential Season 7",
+          "dayOfWeek": "Essential Day Of Week 7",
+          "occupancyThreshold": 80.2,
+          "adjustmentPercent": 5.1,
+          "isActive": true,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "roomType": "Basic Tier",
+          "basePrice": 9367,
+          "minPrice": 9367,
+          "maxPrice": 9367,
+          "season": "Primary Season 8",
+          "dayOfWeek": "Primary Day Of Week 8",
+          "occupancyThreshold": 141.9,
+          "adjustmentPercent": 5.7,
+          "isActive": false,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "roomType": "Enterprise",
+          "basePrice": 11348,
+          "minPrice": 11348,
+          "maxPrice": 11348,
+          "season": "Global Season 9",
+          "dayOfWeek": "Global Day Of Week 9",
+          "occupancyThreshold": 103.6,
+          "adjustmentPercent": 6.3,
+          "isActive": true,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "roomType": "Starter",
+          "basePrice": 13329,
+          "minPrice": 13329,
+          "maxPrice": 13329,
+          "season": "Regional Season 10",
+          "dayOfWeek": "Regional Day Of Week 10",
+          "occupancyThreshold": 165.3,
+          "adjustmentPercent": 1.9,
+          "isActive": true,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "roomType": "Growth",
+          "basePrice": 15310,
+          "minPrice": 15310,
+          "maxPrice": 15310,
+          "season": "Custom Season 11",
+          "dayOfWeek": "Custom Day Of Week 11",
+          "occupancyThreshold": 127,
+          "adjustmentPercent": 2.5,
+          "isActive": false,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "roomType": "Scale",
+          "basePrice": 17291,
+          "minPrice": 17291,
+          "maxPrice": 17291,
+          "season": "Smart Season 12",
+          "dayOfWeek": "Smart Day Of Week 12",
+          "occupancyThreshold": 188.7,
+          "adjustmentPercent": 3.1,
+          "isActive": true,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "roomType": "Foundation",
+          "basePrice": 19272,
+          "minPrice": 19272,
+          "maxPrice": 19272,
+          "season": "Rapid Season 13",
+          "dayOfWeek": "Rapid Day Of Week 13",
+          "occupancyThreshold": 150.4,
+          "adjustmentPercent": 3.7,
+          "isActive": false,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "roomType": "Advanced",
+          "basePrice": 21253,
+          "minPrice": 21253,
+          "maxPrice": 21253,
+          "season": "Secure Season 14",
+          "dayOfWeek": "Secure Day Of Week 14",
+          "occupancyThreshold": 212.1,
+          "adjustmentPercent": 4.3,
+          "isActive": true,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "roomType": "Professional",
+          "basePrice": 18234,
+          "minPrice": 18234,
+          "maxPrice": 18234,
+          "season": "Modern Season 15",
+          "dayOfWeek": "Modern Day Of Week 15",
+          "occupancyThreshold": 173.8,
+          "adjustmentPercent": 4.9,
+          "isActive": true,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Channel",
+      "routeKey": "channels",
+      "label": "Channel",
+      "icon": "clipboard",
+      "aiFunction": "analyzeChannel",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Channel data. The data includes: Name, Commission Rate, Is Active, Priority, Allocation Percent, Avg Booking Value, Performance Score, Contract End, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "commissionRate",
+          "label": "Commission Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "allocationPercent",
+          "label": "Allocation Percent",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "avgBookingValue",
+          "label": "Avg Booking Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "performanceScore",
+          "label": "Performance Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "contractEnd",
+          "label": "Contract End",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "commissionRate": 1.5,
+          "isActive": true,
+          "priority": 10,
+          "allocationPercent": 1.5,
+          "avgBookingValue": 10,
+          "performanceScore": 1.5,
+          "contractEnd": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "commissionRate": 2.1,
+          "isActive": true,
+          "priority": 58,
+          "allocationPercent": 2.1,
+          "avgBookingValue": 71.7,
+          "performanceScore": 2.1,
+          "contractEnd": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "commissionRate": 2.7,
+          "isActive": false,
+          "priority": 106,
+          "allocationPercent": 2.7,
+          "avgBookingValue": 33.4,
+          "performanceScore": 2.7,
+          "contractEnd": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "commissionRate": 3.3,
+          "isActive": true,
+          "priority": 154,
+          "allocationPercent": 3.3,
+          "avgBookingValue": 95.1,
+          "performanceScore": 3.3,
+          "contractEnd": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "commissionRate": 3.9,
+          "isActive": false,
+          "priority": 102,
+          "allocationPercent": 3.9,
+          "avgBookingValue": 56.8,
+          "performanceScore": 3.9,
+          "contractEnd": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "commissionRate": 4.5,
+          "isActive": true,
+          "priority": 150,
+          "allocationPercent": 4.5,
+          "avgBookingValue": 118.5,
+          "performanceScore": 4.5,
+          "contractEnd": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "commissionRate": 5.1,
+          "isActive": true,
+          "priority": 198,
+          "allocationPercent": 5.1,
+          "avgBookingValue": 80.2,
+          "performanceScore": 5.1,
+          "contractEnd": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "commissionRate": 5.7,
+          "isActive": false,
+          "priority": 146,
+          "allocationPercent": 5.7,
+          "avgBookingValue": 141.9,
+          "performanceScore": 5.7,
+          "contractEnd": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "commissionRate": 6.3,
+          "isActive": true,
+          "priority": 194,
+          "allocationPercent": 6.3,
+          "avgBookingValue": 103.6,
+          "performanceScore": 6.3,
+          "contractEnd": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "commissionRate": 1.9,
+          "isActive": true,
+          "priority": 242,
+          "allocationPercent": 1.9,
+          "avgBookingValue": 165.3,
+          "performanceScore": 1.9,
+          "contractEnd": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "commissionRate": 2.5,
+          "isActive": false,
+          "priority": 190,
+          "allocationPercent": 2.5,
+          "avgBookingValue": 127,
+          "performanceScore": 2.5,
+          "contractEnd": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "commissionRate": 3.1,
+          "isActive": true,
+          "priority": 238,
+          "allocationPercent": 3.1,
+          "avgBookingValue": 188.7,
+          "performanceScore": 3.1,
+          "contractEnd": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "commissionRate": 3.7,
+          "isActive": false,
+          "priority": 286,
+          "allocationPercent": 3.7,
+          "avgBookingValue": 150.4,
+          "performanceScore": 3.7,
+          "contractEnd": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "commissionRate": 4.3,
+          "isActive": true,
+          "priority": 234,
+          "allocationPercent": 4.3,
+          "avgBookingValue": 212.1,
+          "performanceScore": 4.3,
+          "contractEnd": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "commissionRate": 4.9,
+          "isActive": true,
+          "priority": 282,
+          "allocationPercent": 4.9,
+          "avgBookingValue": 173.8,
+          "performanceScore": 4.9,
+          "contractEnd": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Guest",
+      "routeKey": "guests",
+      "label": "Guest",
+      "icon": "database",
+      "aiFunction": "analyzeGuest",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Guest data. The data includes: Name, Email, Phone, Nationality, Vip Level, Total Stays, Preferences, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "nationality",
+          "label": "Nationality",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "vipLevel",
+          "label": "Vip Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalStays",
+          "label": "Total Stays",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "preferences",
+          "label": "Preferences",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "nationality": "Advanced Nationality 1",
+          "vipLevel": "low",
+          "totalStays": 10,
+          "preferences": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "nationality": "Premium Nationality 2",
+          "vipLevel": "medium",
+          "totalStays": 58,
+          "preferences": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "nationality": "Standard Nationality 3",
+          "vipLevel": "high",
+          "totalStays": 106,
+          "preferences": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "nationality": "Elite Nationality 4",
+          "vipLevel": "critical",
+          "totalStays": 154,
+          "preferences": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "nationality": "Core Nationality 5",
+          "vipLevel": "medium",
+          "totalStays": 102,
+          "preferences": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "nationality": "Pro Nationality 6",
+          "vipLevel": "low",
+          "totalStays": 150,
+          "preferences": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "nationality": "Essential Nationality 7",
+          "vipLevel": "medium",
+          "totalStays": 198,
+          "preferences": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "nationality": "Primary Nationality 8",
+          "vipLevel": "high",
+          "totalStays": 146,
+          "preferences": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "nationality": "Global Nationality 9",
+          "vipLevel": "critical",
+          "totalStays": 194,
+          "preferences": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "nationality": "Regional Nationality 10",
+          "vipLevel": "medium",
+          "totalStays": 242,
+          "preferences": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "nationality": "Custom Nationality 11",
+          "vipLevel": "low",
+          "totalStays": 190,
+          "preferences": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "nationality": "Smart Nationality 12",
+          "vipLevel": "medium",
+          "totalStays": 238,
+          "preferences": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "nationality": "Rapid Nationality 13",
+          "vipLevel": "high",
+          "totalStays": 286,
+          "preferences": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "nationality": "Secure Nationality 14",
+          "vipLevel": "critical",
+          "totalStays": 234,
+          "preferences": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "nationality": "Modern Nationality 15",
+          "vipLevel": "medium",
+          "totalStays": 282,
+          "preferences": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "HousekeepingTask",
+      "routeKey": "housekeeping-tasks",
+      "label": "Housekeeping Task",
+      "icon": "file-text",
+      "aiFunction": "analyzeHousekeepingTask",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Housekeeping Task data. The data includes: Room Number, Task Type, Assigned To, Priority, Status, Scheduled Date, Scheduled Time, Estimated Duration, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "roomNumber",
+          "label": "Room Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "taskType",
+          "label": "Task Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "scheduledTime",
+          "label": "Scheduled Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "estimatedDuration",
+          "label": "Estimated Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "roomNumber": "Advanced Room Number 1",
+          "taskType": "Category A",
+          "assignedTo": "Advanced Assigned To 1",
+          "priority": "low",
+          "status": "active",
+          "scheduledDate": "2024-01-01",
+          "scheduledTime": "Advanced Scheduled Time 1",
+          "estimatedDuration": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "roomNumber": "Premium Room Number 2",
+          "taskType": "Category B",
+          "assignedTo": "Premium Assigned To 2",
+          "priority": "medium",
+          "status": "pending",
+          "scheduledDate": "2024-02-03",
+          "scheduledTime": "Premium Scheduled Time 2",
+          "estimatedDuration": 58,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "roomNumber": "Standard Room Number 3",
+          "taskType": "Category C",
+          "assignedTo": "Standard Assigned To 3",
+          "priority": "high",
+          "status": "in_progress",
+          "scheduledDate": "2024-03-05",
+          "scheduledTime": "Standard Scheduled Time 3",
+          "estimatedDuration": 106,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "roomNumber": "Elite Room Number 4",
+          "taskType": "Category D",
+          "assignedTo": "Elite Assigned To 4",
+          "priority": "critical",
+          "status": "completed",
+          "scheduledDate": "2024-04-07",
+          "scheduledTime": "Elite Scheduled Time 4",
+          "estimatedDuration": 154,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "roomNumber": "Core Room Number 5",
+          "taskType": "Category E",
+          "assignedTo": "Core Assigned To 5",
+          "priority": "medium",
+          "status": "under_review",
+          "scheduledDate": "2024-05-09",
+          "scheduledTime": "Core Scheduled Time 5",
+          "estimatedDuration": 102,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "roomNumber": "Pro Room Number 6",
+          "taskType": "Premium Tier",
+          "assignedTo": "Pro Assigned To 6",
+          "priority": "low",
+          "status": "approved",
+          "scheduledDate": "2024-06-11",
+          "scheduledTime": "Pro Scheduled Time 6",
+          "estimatedDuration": 150,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "roomNumber": "Essential Room Number 7",
+          "taskType": "Standard Tier",
+          "assignedTo": "Essential Assigned To 7",
+          "priority": "medium",
+          "status": "active",
+          "scheduledDate": "2024-07-13",
+          "scheduledTime": "Essential Scheduled Time 7",
+          "estimatedDuration": 198,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "roomNumber": "Primary Room Number 8",
+          "taskType": "Basic Tier",
+          "assignedTo": "Primary Assigned To 8",
+          "priority": "high",
+          "status": "active",
+          "scheduledDate": "2024-08-15",
+          "scheduledTime": "Primary Scheduled Time 8",
+          "estimatedDuration": 146,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "roomNumber": "Global Room Number 9",
+          "taskType": "Enterprise",
+          "assignedTo": "Global Assigned To 9",
+          "priority": "critical",
+          "status": "active",
+          "scheduledDate": "2024-09-17",
+          "scheduledTime": "Global Scheduled Time 9",
+          "estimatedDuration": 194,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "roomNumber": "Regional Room Number 10",
+          "taskType": "Starter",
+          "assignedTo": "Regional Assigned To 10",
+          "priority": "medium",
+          "status": "pending",
+          "scheduledDate": "2024-10-19",
+          "scheduledTime": "Regional Scheduled Time 10",
+          "estimatedDuration": 242,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "roomNumber": "Custom Room Number 11",
+          "taskType": "Growth",
+          "assignedTo": "Custom Assigned To 11",
+          "priority": "low",
+          "status": "completed",
+          "scheduledDate": "2024-11-21",
+          "scheduledTime": "Custom Scheduled Time 11",
+          "estimatedDuration": 190,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "roomNumber": "Smart Room Number 12",
+          "taskType": "Scale",
+          "assignedTo": "Smart Assigned To 12",
+          "priority": "medium",
+          "status": "active",
+          "scheduledDate": "2024-12-23",
+          "scheduledTime": "Smart Scheduled Time 12",
+          "estimatedDuration": 238,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "roomNumber": "Rapid Room Number 13",
+          "taskType": "Foundation",
+          "assignedTo": "Rapid Assigned To 13",
+          "priority": "high",
+          "status": "in_progress",
+          "scheduledDate": "2024-01-25",
+          "scheduledTime": "Rapid Scheduled Time 13",
+          "estimatedDuration": 286,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "roomNumber": "Secure Room Number 14",
+          "taskType": "Advanced",
+          "assignedTo": "Secure Assigned To 14",
+          "priority": "critical",
+          "status": "active",
+          "scheduledDate": "2024-02-27",
+          "scheduledTime": "Secure Scheduled Time 14",
+          "estimatedDuration": 234,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "roomNumber": "Modern Room Number 15",
+          "taskType": "Professional",
+          "assignedTo": "Modern Assigned To 15",
+          "priority": "medium",
+          "status": "approved",
+          "scheduledDate": "2024-03-01",
+          "scheduledTime": "Modern Scheduled Time 15",
+          "estimatedDuration": 282,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "UpsellRule",
+      "routeKey": "upsell-rules",
+      "label": "Upsell Rule",
+      "icon": "heart",
+      "aiFunction": "analyzeUpsellRule",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Upsell Rule data. The data includes: Name, Category, Target Segment, Trigger Event, Offer Description, Discount Percent, Revenue Potential, Success Rate, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "targetSegment",
+          "label": "Target Segment",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "triggerEvent",
+          "label": "Trigger Event",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "offerDescription",
+          "label": "Offer Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "discountPercent",
+          "label": "Discount Percent",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "revenuePotential",
+          "label": "Revenue Potential",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "successRate",
+          "label": "Success Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "targetSegment": "Advanced Target Segment 1",
+          "triggerEvent": "Advanced Trigger Event 1",
+          "offerDescription": "Comprehensive solution designed for optimal performance and efficiency.",
+          "discountPercent": 1.5,
+          "revenuePotential": 500,
+          "successRate": 1.5,
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "targetSegment": "Premium Target Segment 2",
+          "triggerEvent": "Premium Trigger Event 2",
+          "offerDescription": "Industry-leading approach with proven results across multiple deployments.",
+          "discountPercent": 2.1,
+          "revenuePotential": 2481,
+          "successRate": 2.1,
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "targetSegment": "Standard Target Segment 3",
+          "triggerEvent": "Standard Trigger Event 3",
+          "offerDescription": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "discountPercent": 2.7,
+          "revenuePotential": 4462,
+          "successRate": 2.7,
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "targetSegment": "Elite Target Segment 4",
+          "triggerEvent": "Elite Trigger Event 4",
+          "offerDescription": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "discountPercent": 3.3,
+          "revenuePotential": 6443,
+          "successRate": 3.3,
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "targetSegment": "Core Target Segment 5",
+          "triggerEvent": "Core Trigger Event 5",
+          "offerDescription": "Cost-effective strategy focused on sustainable long-term growth.",
+          "discountPercent": 3.9,
+          "revenuePotential": 8424,
+          "successRate": 3.9,
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "targetSegment": "Pro Target Segment 6",
+          "triggerEvent": "Pro Trigger Event 6",
+          "offerDescription": "High-priority initiative aligned with organizational strategic objectives.",
+          "discountPercent": 4.5,
+          "revenuePotential": 10405,
+          "successRate": 4.5,
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "targetSegment": "Essential Target Segment 7",
+          "triggerEvent": "Essential Trigger Event 7",
+          "offerDescription": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "discountPercent": 5.1,
+          "revenuePotential": 12386,
+          "successRate": 5.1,
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "targetSegment": "Primary Target Segment 8",
+          "triggerEvent": "Primary Trigger Event 8",
+          "offerDescription": "Innovative framework incorporating best practices and emerging technologies.",
+          "discountPercent": 5.7,
+          "revenuePotential": 9367,
+          "successRate": 5.7,
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "targetSegment": "Global Target Segment 9",
+          "triggerEvent": "Global Trigger Event 9",
+          "offerDescription": "Scalable architecture built to accommodate rapid expansion and change.",
+          "discountPercent": 6.3,
+          "revenuePotential": 11348,
+          "successRate": 6.3,
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "targetSegment": "Regional Target Segment 10",
+          "triggerEvent": "Regional Trigger Event 10",
+          "offerDescription": "Enterprise-grade solution with robust security and compliance features.",
+          "discountPercent": 1.9,
+          "revenuePotential": 13329,
+          "successRate": 1.9,
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "targetSegment": "Custom Target Segment 11",
+          "triggerEvent": "Custom Trigger Event 11",
+          "offerDescription": "Integrated platform connecting multiple systems for seamless operations.",
+          "discountPercent": 2.5,
+          "revenuePotential": 15310,
+          "successRate": 2.5,
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "targetSegment": "Smart Target Segment 12",
+          "triggerEvent": "Smart Trigger Event 12",
+          "offerDescription": "Automated workflow reducing manual intervention and human error.",
+          "discountPercent": 3.1,
+          "revenuePotential": 17291,
+          "successRate": 3.1,
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "targetSegment": "Rapid Target Segment 13",
+          "triggerEvent": "Rapid Trigger Event 13",
+          "offerDescription": "Real-time monitoring system with intelligent alerting capabilities.",
+          "discountPercent": 3.7,
+          "revenuePotential": 19272,
+          "successRate": 3.7,
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "targetSegment": "Secure Target Segment 14",
+          "triggerEvent": "Secure Trigger Event 14",
+          "offerDescription": "Customizable module adaptable to diverse operational requirements.",
+          "discountPercent": 4.3,
+          "revenuePotential": 21253,
+          "successRate": 4.3,
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "targetSegment": "Modern Target Segment 15",
+          "triggerEvent": "Modern Trigger Event 15",
+          "offerDescription": "Performance-optimized design achieving superior throughput and reliability.",
+          "discountPercent": 4.9,
+          "revenuePotential": 18234,
+          "successRate": 4.9,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "Reservation",
+      "routeKey": "reservations",
+      "label": "Reservation",
+      "icon": "layers",
+      "aiFunction": "analyzeReservation",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Reservation data. The data includes: Guest Name, Guest Email, Room Number, Room Type, Nights, Total Price, Channel, Status, Special Requests. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "guestName",
+          "label": "Guest Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "guestEmail",
+          "label": "Guest Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "roomNumber",
+          "label": "Room Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "roomType",
+          "label": "Room Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "nights",
+          "label": "Nights",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "totalPrice",
+          "label": "Total Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "channel",
+          "label": "Channel",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "specialRequests",
+          "label": "Special Requests",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "guestName": "Advanced Guest 1",
+          "guestEmail": "james.wilson@example.com",
+          "roomNumber": "Advanced Room Number 1",
+          "roomType": "Category A",
+          "nights": 10,
+          "totalPrice": 500,
+          "channel": "Advanced Channel 1",
+          "status": "active",
+          "specialRequests": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "guestName": "Premium Guest 2",
+          "guestEmail": "sarah.chen@example.com",
+          "roomNumber": "Premium Room Number 2",
+          "roomType": "Category B",
+          "nights": 58,
+          "totalPrice": 2481,
+          "channel": "Premium Channel 2",
+          "status": "pending",
+          "specialRequests": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "guestName": "Standard Guest 3",
+          "guestEmail": "michael.brown@example.com",
+          "roomNumber": "Standard Room Number 3",
+          "roomType": "Category C",
+          "nights": 106,
+          "totalPrice": 4462,
+          "channel": "Standard Channel 3",
+          "status": "in_progress",
+          "specialRequests": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "guestName": "Elite Guest 4",
+          "guestEmail": "emily.davis@example.com",
+          "roomNumber": "Elite Room Number 4",
+          "roomType": "Category D",
+          "nights": 154,
+          "totalPrice": 6443,
+          "channel": "Elite Channel 4",
+          "status": "completed",
+          "specialRequests": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "guestName": "Core Guest 5",
+          "guestEmail": "robert.garcia@example.com",
+          "roomNumber": "Core Room Number 5",
+          "roomType": "Category E",
+          "nights": 102,
+          "totalPrice": 8424,
+          "channel": "Core Channel 5",
+          "status": "under_review",
+          "specialRequests": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "guestName": "Pro Guest 6",
+          "guestEmail": "lisa.anderson@example.com",
+          "roomNumber": "Pro Room Number 6",
+          "roomType": "Premium Tier",
+          "nights": 150,
+          "totalPrice": 10405,
+          "channel": "Pro Channel 6",
+          "status": "approved",
+          "specialRequests": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "guestName": "Essential Guest 7",
+          "guestEmail": "david.martinez@example.com",
+          "roomNumber": "Essential Room Number 7",
+          "roomType": "Standard Tier",
+          "nights": 198,
+          "totalPrice": 12386,
+          "channel": "Essential Channel 7",
+          "status": "active",
+          "specialRequests": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "guestName": "Primary Guest 8",
+          "guestEmail": "jennifer.taylor@example.com",
+          "roomNumber": "Primary Room Number 8",
+          "roomType": "Basic Tier",
+          "nights": 146,
+          "totalPrice": 9367,
+          "channel": "Primary Channel 8",
+          "status": "active",
+          "specialRequests": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "guestName": "Global Guest 9",
+          "guestEmail": "william.johnson@example.com",
+          "roomNumber": "Global Room Number 9",
+          "roomType": "Enterprise",
+          "nights": 194,
+          "totalPrice": 11348,
+          "channel": "Global Channel 9",
+          "status": "active",
+          "specialRequests": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "guestName": "Regional Guest 10",
+          "guestEmail": "maria.rodriguez@example.com",
+          "roomNumber": "Regional Room Number 10",
+          "roomType": "Starter",
+          "nights": 242,
+          "totalPrice": 13329,
+          "channel": "Regional Channel 10",
+          "status": "pending",
+          "specialRequests": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "guestName": "Custom Guest 11",
+          "guestEmail": "thomas.lee@example.com",
+          "roomNumber": "Custom Room Number 11",
+          "roomType": "Growth",
+          "nights": 190,
+          "totalPrice": 15310,
+          "channel": "Custom Channel 11",
+          "status": "completed",
+          "specialRequests": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "guestName": "Smart Guest 12",
+          "guestEmail": "patricia.white@example.com",
+          "roomNumber": "Smart Room Number 12",
+          "roomType": "Scale",
+          "nights": 238,
+          "totalPrice": 17291,
+          "channel": "Smart Channel 12",
+          "status": "active",
+          "specialRequests": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "guestName": "Rapid Guest 13",
+          "guestEmail": "christopher.hall@example.com",
+          "roomNumber": "Rapid Room Number 13",
+          "roomType": "Foundation",
+          "nights": 286,
+          "totalPrice": 19272,
+          "channel": "Rapid Channel 13",
+          "status": "in_progress",
+          "specialRequests": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "guestName": "Secure Guest 14",
+          "guestEmail": "amanda.clark@example.com",
+          "roomNumber": "Secure Room Number 14",
+          "roomType": "Advanced",
+          "nights": 234,
+          "totalPrice": 21253,
+          "channel": "Secure Channel 14",
+          "status": "active",
+          "specialRequests": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "guestName": "Modern Guest 15",
+          "guestEmail": "daniel.wright@example.com",
+          "roomNumber": "Modern Room Number 15",
+          "roomType": "Professional",
+          "nights": 282,
+          "totalPrice": 18234,
+          "channel": "Modern Channel 15",
+          "status": "approved",
+          "specialRequests": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Analytic",
+      "routeKey": "analytics",
+      "label": "Analytic",
+      "icon": "map-pin",
+      "aiFunction": "analyzeAnalytic",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Analytic data. The data includes: Date, Revenue, Occupancy Rate, Adr, Revpar, Channel, Room Type, Total Bookings, Cancellations, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "revenue",
+          "label": "Revenue",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "occupancyRate",
+          "label": "Occupancy Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "adr",
+          "label": "Adr",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "revpar",
+          "label": "Revpar",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "channel",
+          "label": "Channel",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "roomType",
+          "label": "Room Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalBookings",
+          "label": "Total Bookings",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "cancellations",
+          "label": "Cancellations",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "date": "2024-01-01",
+          "revenue": 500,
+          "occupancyRate": 1.5,
+          "adr": 10,
+          "revpar": 10,
+          "channel": "Advanced Channel 1",
+          "roomType": "Category A",
+          "totalBookings": 10,
+          "cancellations": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "date": "2024-02-03",
+          "revenue": 2481,
+          "occupancyRate": 2.1,
+          "adr": 71.7,
+          "revpar": 71.7,
+          "channel": "Premium Channel 2",
+          "roomType": "Category B",
+          "totalBookings": 58,
+          "cancellations": 58,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "date": "2024-03-05",
+          "revenue": 4462,
+          "occupancyRate": 2.7,
+          "adr": 33.4,
+          "revpar": 33.4,
+          "channel": "Standard Channel 3",
+          "roomType": "Category C",
+          "totalBookings": 106,
+          "cancellations": 106,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "date": "2024-04-07",
+          "revenue": 6443,
+          "occupancyRate": 3.3,
+          "adr": 95.1,
+          "revpar": 95.1,
+          "channel": "Elite Channel 4",
+          "roomType": "Category D",
+          "totalBookings": 154,
+          "cancellations": 154,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "date": "2024-05-09",
+          "revenue": 8424,
+          "occupancyRate": 3.9,
+          "adr": 56.8,
+          "revpar": 56.8,
+          "channel": "Core Channel 5",
+          "roomType": "Category E",
+          "totalBookings": 102,
+          "cancellations": 102,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "date": "2024-06-11",
+          "revenue": 10405,
+          "occupancyRate": 4.5,
+          "adr": 118.5,
+          "revpar": 118.5,
+          "channel": "Pro Channel 6",
+          "roomType": "Premium Tier",
+          "totalBookings": 150,
+          "cancellations": 150,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "date": "2024-07-13",
+          "revenue": 12386,
+          "occupancyRate": 5.1,
+          "adr": 80.2,
+          "revpar": 80.2,
+          "channel": "Essential Channel 7",
+          "roomType": "Standard Tier",
+          "totalBookings": 198,
+          "cancellations": 198,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "date": "2024-08-15",
+          "revenue": 9367,
+          "occupancyRate": 5.7,
+          "adr": 141.9,
+          "revpar": 141.9,
+          "channel": "Primary Channel 8",
+          "roomType": "Basic Tier",
+          "totalBookings": 146,
+          "cancellations": 146,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "date": "2024-09-17",
+          "revenue": 11348,
+          "occupancyRate": 6.3,
+          "adr": 103.6,
+          "revpar": 103.6,
+          "channel": "Global Channel 9",
+          "roomType": "Enterprise",
+          "totalBookings": 194,
+          "cancellations": 194,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "date": "2024-10-19",
+          "revenue": 13329,
+          "occupancyRate": 1.9,
+          "adr": 165.3,
+          "revpar": 165.3,
+          "channel": "Regional Channel 10",
+          "roomType": "Starter",
+          "totalBookings": 242,
+          "cancellations": 242,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "date": "2024-11-21",
+          "revenue": 15310,
+          "occupancyRate": 2.5,
+          "adr": 127,
+          "revpar": 127,
+          "channel": "Custom Channel 11",
+          "roomType": "Growth",
+          "totalBookings": 190,
+          "cancellations": 190,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "date": "2024-12-23",
+          "revenue": 17291,
+          "occupancyRate": 3.1,
+          "adr": 188.7,
+          "revpar": 188.7,
+          "channel": "Smart Channel 12",
+          "roomType": "Scale",
+          "totalBookings": 238,
+          "cancellations": 238,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "date": "2024-01-25",
+          "revenue": 19272,
+          "occupancyRate": 3.7,
+          "adr": 150.4,
+          "revpar": 150.4,
+          "channel": "Rapid Channel 13",
+          "roomType": "Foundation",
+          "totalBookings": 286,
+          "cancellations": 286,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "date": "2024-02-27",
+          "revenue": 21253,
+          "occupancyRate": 4.3,
+          "adr": 212.1,
+          "revpar": 212.1,
+          "channel": "Secure Channel 14",
+          "roomType": "Advanced",
+          "totalBookings": 234,
+          "cancellations": 234,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "date": "2024-03-01",
+          "revenue": 18234,
+          "occupancyRate": 4.9,
+          "adr": 173.8,
+          "revpar": 173.8,
+          "channel": "Modern Channel 15",
+          "roomType": "Professional",
+          "totalBookings": 282,
+          "cancellations": 282,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Review",
+      "routeKey": "reviews",
+      "label": "Review",
+      "icon": "package",
+      "aiFunction": "analyzeReview",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Review data. The data includes: Guest Name, Room Number, Rating, Title, Comment, Sentiment, Stay Date, Response. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "guestName",
+          "label": "Guest Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "roomNumber",
+          "label": "Room Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "comment",
+          "label": "Comment",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "sentiment",
+          "label": "Sentiment",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "stayDate",
+          "label": "Stay Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "response",
+          "label": "Response",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "guestName": "Advanced Guest 1",
+          "roomNumber": "Advanced Room Number 1",
+          "rating": 10,
+          "title": "Advanced Title 1",
+          "comment": "Comprehensive solution designed for optimal performance and efficiency.",
+          "sentiment": "Advanced Sentiment 1",
+          "stayDate": "2024-01-01",
+          "response": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "guestName": "Premium Guest 2",
+          "roomNumber": "Premium Room Number 2",
+          "rating": 58,
+          "title": "Premium Title 2",
+          "comment": "Industry-leading approach with proven results across multiple deployments.",
+          "sentiment": "Premium Sentiment 2",
+          "stayDate": "2024-02-03",
+          "response": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "guestName": "Standard Guest 3",
+          "roomNumber": "Standard Room Number 3",
+          "rating": 106,
+          "title": "Standard Title 3",
+          "comment": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "sentiment": "Standard Sentiment 3",
+          "stayDate": "2024-03-05",
+          "response": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "guestName": "Elite Guest 4",
+          "roomNumber": "Elite Room Number 4",
+          "rating": 154,
+          "title": "Elite Title 4",
+          "comment": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "sentiment": "Elite Sentiment 4",
+          "stayDate": "2024-04-07",
+          "response": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "guestName": "Core Guest 5",
+          "roomNumber": "Core Room Number 5",
+          "rating": 102,
+          "title": "Core Title 5",
+          "comment": "Cost-effective strategy focused on sustainable long-term growth.",
+          "sentiment": "Core Sentiment 5",
+          "stayDate": "2024-05-09",
+          "response": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "guestName": "Pro Guest 6",
+          "roomNumber": "Pro Room Number 6",
+          "rating": 150,
+          "title": "Pro Title 6",
+          "comment": "High-priority initiative aligned with organizational strategic objectives.",
+          "sentiment": "Pro Sentiment 6",
+          "stayDate": "2024-06-11",
+          "response": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "guestName": "Essential Guest 7",
+          "roomNumber": "Essential Room Number 7",
+          "rating": 198,
+          "title": "Essential Title 7",
+          "comment": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "sentiment": "Essential Sentiment 7",
+          "stayDate": "2024-07-13",
+          "response": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "guestName": "Primary Guest 8",
+          "roomNumber": "Primary Room Number 8",
+          "rating": 146,
+          "title": "Primary Title 8",
+          "comment": "Innovative framework incorporating best practices and emerging technologies.",
+          "sentiment": "Primary Sentiment 8",
+          "stayDate": "2024-08-15",
+          "response": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "guestName": "Global Guest 9",
+          "roomNumber": "Global Room Number 9",
+          "rating": 194,
+          "title": "Global Title 9",
+          "comment": "Scalable architecture built to accommodate rapid expansion and change.",
+          "sentiment": "Global Sentiment 9",
+          "stayDate": "2024-09-17",
+          "response": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "guestName": "Regional Guest 10",
+          "roomNumber": "Regional Room Number 10",
+          "rating": 242,
+          "title": "Regional Title 10",
+          "comment": "Enterprise-grade solution with robust security and compliance features.",
+          "sentiment": "Regional Sentiment 10",
+          "stayDate": "2024-10-19",
+          "response": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "guestName": "Custom Guest 11",
+          "roomNumber": "Custom Room Number 11",
+          "rating": 190,
+          "title": "Custom Title 11",
+          "comment": "Integrated platform connecting multiple systems for seamless operations.",
+          "sentiment": "Custom Sentiment 11",
+          "stayDate": "2024-11-21",
+          "response": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "guestName": "Smart Guest 12",
+          "roomNumber": "Smart Room Number 12",
+          "rating": 238,
+          "title": "Smart Title 12",
+          "comment": "Automated workflow reducing manual intervention and human error.",
+          "sentiment": "Smart Sentiment 12",
+          "stayDate": "2024-12-23",
+          "response": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "guestName": "Rapid Guest 13",
+          "roomNumber": "Rapid Room Number 13",
+          "rating": 286,
+          "title": "Rapid Title 13",
+          "comment": "Real-time monitoring system with intelligent alerting capabilities.",
+          "sentiment": "Rapid Sentiment 13",
+          "stayDate": "2024-01-25",
+          "response": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "guestName": "Secure Guest 14",
+          "roomNumber": "Secure Room Number 14",
+          "rating": 234,
+          "title": "Secure Title 14",
+          "comment": "Customizable module adaptable to diverse operational requirements.",
+          "sentiment": "Secure Sentiment 14",
+          "stayDate": "2024-02-27",
+          "response": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "guestName": "Modern Guest 15",
+          "roomNumber": "Modern Room Number 15",
+          "rating": 282,
+          "title": "Modern Title 15",
+          "comment": "Performance-optimized design achieving superior throughput and reliability.",
+          "sentiment": "Modern Sentiment 15",
+          "stayDate": "2024-03-01",
+          "response": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Staff",
+      "routeKey": "staffs",
+      "label": "Staff",
+      "icon": "shield",
+      "aiFunction": "analyzeStaff",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Staff data. The data includes: Name, Email, Phone, Role, Department, Shift, Status, Hire Date, Salary, Performance Score, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "shift",
+          "label": "Shift",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "hireDate",
+          "label": "Hire Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "salary",
+          "label": "Salary",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "performanceScore",
+          "label": "Performance Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "role": "Advanced Role 1",
+          "department": "Category A",
+          "shift": "Advanced Shift 1",
+          "status": "active",
+          "hireDate": "2024-01-01",
+          "salary": 500,
+          "performanceScore": 1.5,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "role": "Premium Role 2",
+          "department": "Category B",
+          "shift": "Premium Shift 2",
+          "status": "pending",
+          "hireDate": "2024-02-03",
+          "salary": 2481,
+          "performanceScore": 2.1,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "role": "Standard Role 3",
+          "department": "Category C",
+          "shift": "Standard Shift 3",
+          "status": "in_progress",
+          "hireDate": "2024-03-05",
+          "salary": 4462,
+          "performanceScore": 2.7,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "role": "Elite Role 4",
+          "department": "Category D",
+          "shift": "Elite Shift 4",
+          "status": "completed",
+          "hireDate": "2024-04-07",
+          "salary": 6443,
+          "performanceScore": 3.3,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "role": "Core Role 5",
+          "department": "Category E",
+          "shift": "Core Shift 5",
+          "status": "under_review",
+          "hireDate": "2024-05-09",
+          "salary": 8424,
+          "performanceScore": 3.9,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "role": "Pro Role 6",
+          "department": "Premium Tier",
+          "shift": "Pro Shift 6",
+          "status": "approved",
+          "hireDate": "2024-06-11",
+          "salary": 10405,
+          "performanceScore": 4.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "role": "Essential Role 7",
+          "department": "Standard Tier",
+          "shift": "Essential Shift 7",
+          "status": "active",
+          "hireDate": "2024-07-13",
+          "salary": 12386,
+          "performanceScore": 5.1,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "role": "Primary Role 8",
+          "department": "Basic Tier",
+          "shift": "Primary Shift 8",
+          "status": "active",
+          "hireDate": "2024-08-15",
+          "salary": 9367,
+          "performanceScore": 5.7,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "role": "Global Role 9",
+          "department": "Enterprise",
+          "shift": "Global Shift 9",
+          "status": "active",
+          "hireDate": "2024-09-17",
+          "salary": 11348,
+          "performanceScore": 6.3,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "role": "Regional Role 10",
+          "department": "Starter",
+          "shift": "Regional Shift 10",
+          "status": "pending",
+          "hireDate": "2024-10-19",
+          "salary": 13329,
+          "performanceScore": 1.9,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "role": "Custom Role 11",
+          "department": "Growth",
+          "shift": "Custom Shift 11",
+          "status": "completed",
+          "hireDate": "2024-11-21",
+          "salary": 15310,
+          "performanceScore": 2.5,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "role": "Smart Role 12",
+          "department": "Scale",
+          "shift": "Smart Shift 12",
+          "status": "active",
+          "hireDate": "2024-12-23",
+          "salary": 17291,
+          "performanceScore": 3.1,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "role": "Rapid Role 13",
+          "department": "Foundation",
+          "shift": "Rapid Shift 13",
+          "status": "in_progress",
+          "hireDate": "2024-01-25",
+          "salary": 19272,
+          "performanceScore": 3.7,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "role": "Secure Role 14",
+          "department": "Advanced",
+          "shift": "Secure Shift 14",
+          "status": "active",
+          "hireDate": "2024-02-27",
+          "salary": 21253,
+          "performanceScore": 4.3,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "role": "Modern Role 15",
+          "department": "Professional",
+          "shift": "Modern Shift 15",
+          "status": "approved",
+          "hireDate": "2024-03-01",
+          "salary": 18234,
+          "performanceScore": 4.9,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Promotion",
+      "routeKey": "promotions",
+      "label": "Promotion",
+      "icon": "star",
+      "aiFunction": "analyzePromotion",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Promotion data. The data includes: Name, Type, Description, Discount Percent, Min Nights, Max Nights, Valid From, Valid Until, Applicable Room Types, Promo Code, Is Active, Times Used, Revenue Generated. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "discountPercent",
+          "label": "Discount Percent",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "minNights",
+          "label": "Min Nights",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "maxNights",
+          "label": "Max Nights",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "validFrom",
+          "label": "Valid From",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "validUntil",
+          "label": "Valid Until",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "applicableRoomTypes",
+          "label": "Applicable Room Types",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "promoCode",
+          "label": "Promo Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "timesUsed",
+          "label": "Times Used",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "revenueGenerated",
+          "label": "Revenue Generated",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "discountPercent": 1.5,
+          "minNights": 10,
+          "maxNights": 10,
+          "validFrom": "2024-01-01",
+          "validUntil": "2024-01-01",
+          "applicableRoomTypes": "Category A",
+          "promoCode": "Advanced Promo Code 1",
+          "isActive": true,
+          "timesUsed": 10,
+          "revenueGenerated": 1.5
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "discountPercent": 2.1,
+          "minNights": 58,
+          "maxNights": 58,
+          "validFrom": "2024-02-03",
+          "validUntil": "2024-02-03",
+          "applicableRoomTypes": "Category B",
+          "promoCode": "Premium Promo Code 2",
+          "isActive": true,
+          "timesUsed": 58,
+          "revenueGenerated": 2.1
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "discountPercent": 2.7,
+          "minNights": 106,
+          "maxNights": 106,
+          "validFrom": "2024-03-05",
+          "validUntil": "2024-03-05",
+          "applicableRoomTypes": "Category C",
+          "promoCode": "Standard Promo Code 3",
+          "isActive": false,
+          "timesUsed": 106,
+          "revenueGenerated": 2.7
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "discountPercent": 3.3,
+          "minNights": 154,
+          "maxNights": 154,
+          "validFrom": "2024-04-07",
+          "validUntil": "2024-04-07",
+          "applicableRoomTypes": "Category D",
+          "promoCode": "Elite Promo Code 4",
+          "isActive": true,
+          "timesUsed": 154,
+          "revenueGenerated": 3.3
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "discountPercent": 3.9,
+          "minNights": 102,
+          "maxNights": 102,
+          "validFrom": "2024-05-09",
+          "validUntil": "2024-05-09",
+          "applicableRoomTypes": "Category E",
+          "promoCode": "Core Promo Code 5",
+          "isActive": false,
+          "timesUsed": 102,
+          "revenueGenerated": 3.9
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "discountPercent": 4.5,
+          "minNights": 150,
+          "maxNights": 150,
+          "validFrom": "2024-06-11",
+          "validUntil": "2024-06-11",
+          "applicableRoomTypes": "Premium Tier",
+          "promoCode": "Pro Promo Code 6",
+          "isActive": true,
+          "timesUsed": 150,
+          "revenueGenerated": 4.5
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "discountPercent": 5.1,
+          "minNights": 198,
+          "maxNights": 198,
+          "validFrom": "2024-07-13",
+          "validUntil": "2024-07-13",
+          "applicableRoomTypes": "Standard Tier",
+          "promoCode": "Essential Promo Code 7",
+          "isActive": true,
+          "timesUsed": 198,
+          "revenueGenerated": 5.1
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "discountPercent": 5.7,
+          "minNights": 146,
+          "maxNights": 146,
+          "validFrom": "2024-08-15",
+          "validUntil": "2024-08-15",
+          "applicableRoomTypes": "Basic Tier",
+          "promoCode": "Primary Promo Code 8",
+          "isActive": false,
+          "timesUsed": 146,
+          "revenueGenerated": 5.7
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "discountPercent": 6.3,
+          "minNights": 194,
+          "maxNights": 194,
+          "validFrom": "2024-09-17",
+          "validUntil": "2024-09-17",
+          "applicableRoomTypes": "Enterprise",
+          "promoCode": "Global Promo Code 9",
+          "isActive": true,
+          "timesUsed": 194,
+          "revenueGenerated": 6.3
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "discountPercent": 1.9,
+          "minNights": 242,
+          "maxNights": 242,
+          "validFrom": "2024-10-19",
+          "validUntil": "2024-10-19",
+          "applicableRoomTypes": "Starter",
+          "promoCode": "Regional Promo Code 10",
+          "isActive": true,
+          "timesUsed": 242,
+          "revenueGenerated": 1.9
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "discountPercent": 2.5,
+          "minNights": 190,
+          "maxNights": 190,
+          "validFrom": "2024-11-21",
+          "validUntil": "2024-11-21",
+          "applicableRoomTypes": "Growth",
+          "promoCode": "Custom Promo Code 11",
+          "isActive": false,
+          "timesUsed": 190,
+          "revenueGenerated": 2.5
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "discountPercent": 3.1,
+          "minNights": 238,
+          "maxNights": 238,
+          "validFrom": "2024-12-23",
+          "validUntil": "2024-12-23",
+          "applicableRoomTypes": "Scale",
+          "promoCode": "Smart Promo Code 12",
+          "isActive": true,
+          "timesUsed": 238,
+          "revenueGenerated": 3.1
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "discountPercent": 3.7,
+          "minNights": 286,
+          "maxNights": 286,
+          "validFrom": "2024-01-25",
+          "validUntil": "2024-01-25",
+          "applicableRoomTypes": "Foundation",
+          "promoCode": "Rapid Promo Code 13",
+          "isActive": false,
+          "timesUsed": 286,
+          "revenueGenerated": 3.7
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "discountPercent": 4.3,
+          "minNights": 234,
+          "maxNights": 234,
+          "validFrom": "2024-02-27",
+          "validUntil": "2024-02-27",
+          "applicableRoomTypes": "Advanced",
+          "promoCode": "Secure Promo Code 14",
+          "isActive": true,
+          "timesUsed": 234,
+          "revenueGenerated": 4.3
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "discountPercent": 4.9,
+          "minNights": 282,
+          "maxNights": 282,
+          "validFrom": "2024-03-01",
+          "validUntil": "2024-03-01",
+          "applicableRoomTypes": "Professional",
+          "promoCode": "Modern Promo Code 15",
+          "isActive": true,
+          "timesUsed": 282,
+          "revenueGenerated": 4.9
+        }
+      ]
+    },
+    {
+      "modelName": "Competitor",
+      "routeKey": "competitors",
+      "label": "Competitor",
+      "icon": "truck",
+      "aiFunction": "analyzeCompetitor",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Competitor data. The data includes: Name, Location, Star Rating, Avg Rate, Our Rate, Rate Difference, Occupancy Estimate, Strengths, Weaknesses, Last Checked, Source, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "starRating",
+          "label": "Star Rating",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "avgRate",
+          "label": "Avg Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "ourRate",
+          "label": "Our Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "rateDifference",
+          "label": "Rate Difference",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "occupancyEstimate",
+          "label": "Occupancy Estimate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "strengths",
+          "label": "Strengths",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "weaknesses",
+          "label": "Weaknesses",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "lastChecked",
+          "label": "Last Checked",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "location": "New York",
+          "starRating": 10,
+          "avgRate": 1.5,
+          "ourRate": 1.5,
+          "rateDifference": 1.5,
+          "occupancyEstimate": 10,
+          "strengths": "Comprehensive solution designed for optimal performance and efficiency.",
+          "weaknesses": "Comprehensive solution designed for optimal performance and efficiency.",
+          "lastChecked": "2024-01-01",
+          "source": "Advanced Source 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "location": "Los Angeles",
+          "starRating": 58,
+          "avgRate": 2.1,
+          "ourRate": 2.1,
+          "rateDifference": 2.1,
+          "occupancyEstimate": 71.7,
+          "strengths": "Industry-leading approach with proven results across multiple deployments.",
+          "weaknesses": "Industry-leading approach with proven results across multiple deployments.",
+          "lastChecked": "2024-02-03",
+          "source": "Premium Source 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "location": "Chicago",
+          "starRating": 106,
+          "avgRate": 2.7,
+          "ourRate": 2.7,
+          "rateDifference": 2.7,
+          "occupancyEstimate": 33.4,
+          "strengths": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "weaknesses": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "lastChecked": "2024-03-05",
+          "source": "Standard Source 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "location": "Houston",
+          "starRating": 154,
+          "avgRate": 3.3,
+          "ourRate": 3.3,
+          "rateDifference": 3.3,
+          "occupancyEstimate": 95.1,
+          "strengths": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "weaknesses": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "lastChecked": "2024-04-07",
+          "source": "Elite Source 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "location": "Phoenix",
+          "starRating": 102,
+          "avgRate": 3.9,
+          "ourRate": 3.9,
+          "rateDifference": 3.9,
+          "occupancyEstimate": 56.8,
+          "strengths": "Cost-effective strategy focused on sustainable long-term growth.",
+          "weaknesses": "Cost-effective strategy focused on sustainable long-term growth.",
+          "lastChecked": "2024-05-09",
+          "source": "Core Source 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "location": "San Francisco",
+          "starRating": 150,
+          "avgRate": 4.5,
+          "ourRate": 4.5,
+          "rateDifference": 4.5,
+          "occupancyEstimate": 118.5,
+          "strengths": "High-priority initiative aligned with organizational strategic objectives.",
+          "weaknesses": "High-priority initiative aligned with organizational strategic objectives.",
+          "lastChecked": "2024-06-11",
+          "source": "Pro Source 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "location": "Seattle",
+          "starRating": 198,
+          "avgRate": 5.1,
+          "ourRate": 5.1,
+          "rateDifference": 5.1,
+          "occupancyEstimate": 80.2,
+          "strengths": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "weaknesses": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "lastChecked": "2024-07-13",
+          "source": "Essential Source 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "location": "Boston",
+          "starRating": 146,
+          "avgRate": 5.7,
+          "ourRate": 5.7,
+          "rateDifference": 5.7,
+          "occupancyEstimate": 141.9,
+          "strengths": "Innovative framework incorporating best practices and emerging technologies.",
+          "weaknesses": "Innovative framework incorporating best practices and emerging technologies.",
+          "lastChecked": "2024-08-15",
+          "source": "Primary Source 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "location": "Denver",
+          "starRating": 194,
+          "avgRate": 6.3,
+          "ourRate": 6.3,
+          "rateDifference": 6.3,
+          "occupancyEstimate": 103.6,
+          "strengths": "Scalable architecture built to accommodate rapid expansion and change.",
+          "weaknesses": "Scalable architecture built to accommodate rapid expansion and change.",
+          "lastChecked": "2024-09-17",
+          "source": "Global Source 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "location": "Miami",
+          "starRating": 242,
+          "avgRate": 1.9,
+          "ourRate": 1.9,
+          "rateDifference": 1.9,
+          "occupancyEstimate": 165.3,
+          "strengths": "Enterprise-grade solution with robust security and compliance features.",
+          "weaknesses": "Enterprise-grade solution with robust security and compliance features.",
+          "lastChecked": "2024-10-19",
+          "source": "Regional Source 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "location": "Austin",
+          "starRating": 190,
+          "avgRate": 2.5,
+          "ourRate": 2.5,
+          "rateDifference": 2.5,
+          "occupancyEstimate": 127,
+          "strengths": "Integrated platform connecting multiple systems for seamless operations.",
+          "weaknesses": "Integrated platform connecting multiple systems for seamless operations.",
+          "lastChecked": "2024-11-21",
+          "source": "Custom Source 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "location": "Portland",
+          "starRating": 238,
+          "avgRate": 3.1,
+          "ourRate": 3.1,
+          "rateDifference": 3.1,
+          "occupancyEstimate": 188.7,
+          "strengths": "Automated workflow reducing manual intervention and human error.",
+          "weaknesses": "Automated workflow reducing manual intervention and human error.",
+          "lastChecked": "2024-12-23",
+          "source": "Smart Source 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "location": "Dallas",
+          "starRating": 286,
+          "avgRate": 3.7,
+          "ourRate": 3.7,
+          "rateDifference": 3.7,
+          "occupancyEstimate": 150.4,
+          "strengths": "Real-time monitoring system with intelligent alerting capabilities.",
+          "weaknesses": "Real-time monitoring system with intelligent alerting capabilities.",
+          "lastChecked": "2024-01-25",
+          "source": "Rapid Source 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "location": "Atlanta",
+          "starRating": 234,
+          "avgRate": 4.3,
+          "ourRate": 4.3,
+          "rateDifference": 4.3,
+          "occupancyEstimate": 212.1,
+          "strengths": "Customizable module adaptable to diverse operational requirements.",
+          "weaknesses": "Customizable module adaptable to diverse operational requirements.",
+          "lastChecked": "2024-02-27",
+          "source": "Secure Source 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "location": "Nashville",
+          "starRating": 282,
+          "avgRate": 4.9,
+          "ourRate": 4.9,
+          "rateDifference": 4.9,
+          "occupancyEstimate": 173.8,
+          "strengths": "Performance-optimized design achieving superior throughput and reliability.",
+          "weaknesses": "Performance-optimized design achieving superior throughput and reliability.",
+          "lastChecked": "2024-03-01",
+          "source": "Modern Source 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "MaintenanceRequest",
+      "routeKey": "maintenance-requests",
+      "label": "Maintenance Request",
+      "icon": "users",
+      "aiFunction": "analyzeMaintenanceRequest",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Maintenance Request data. The data includes: Room Number, Category, Title, Description, Reported By, Assigned To, Priority, Status, Estimated Cost, Actual Cost, Reported Date, Completed Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "roomNumber",
+          "label": "Room Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "reportedBy",
+          "label": "Reported By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "estimatedCost",
+          "label": "Estimated Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "actualCost",
+          "label": "Actual Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "reportedDate",
+          "label": "Reported Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "completedDate",
+          "label": "Completed Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "roomNumber": "Advanced Room Number 1",
+          "category": "Category A",
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "reportedBy": "Advanced Reported By 1",
+          "assignedTo": "Advanced Assigned To 1",
+          "priority": "low",
+          "status": "active",
+          "estimatedCost": 500,
+          "actualCost": 500,
+          "reportedDate": "2024-01-01",
+          "completedDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "roomNumber": "Premium Room Number 2",
+          "category": "Category B",
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "reportedBy": "Premium Reported By 2",
+          "assignedTo": "Premium Assigned To 2",
+          "priority": "medium",
+          "status": "pending",
+          "estimatedCost": 2481,
+          "actualCost": 2481,
+          "reportedDate": "2024-02-03",
+          "completedDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "roomNumber": "Standard Room Number 3",
+          "category": "Category C",
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "reportedBy": "Standard Reported By 3",
+          "assignedTo": "Standard Assigned To 3",
+          "priority": "high",
+          "status": "in_progress",
+          "estimatedCost": 4462,
+          "actualCost": 4462,
+          "reportedDate": "2024-03-05",
+          "completedDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "roomNumber": "Elite Room Number 4",
+          "category": "Category D",
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "reportedBy": "Elite Reported By 4",
+          "assignedTo": "Elite Assigned To 4",
+          "priority": "critical",
+          "status": "completed",
+          "estimatedCost": 6443,
+          "actualCost": 6443,
+          "reportedDate": "2024-04-07",
+          "completedDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "roomNumber": "Core Room Number 5",
+          "category": "Category E",
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "reportedBy": "Core Reported By 5",
+          "assignedTo": "Core Assigned To 5",
+          "priority": "medium",
+          "status": "under_review",
+          "estimatedCost": 8424,
+          "actualCost": 8424,
+          "reportedDate": "2024-05-09",
+          "completedDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "roomNumber": "Pro Room Number 6",
+          "category": "Premium Tier",
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "reportedBy": "Pro Reported By 6",
+          "assignedTo": "Pro Assigned To 6",
+          "priority": "low",
+          "status": "approved",
+          "estimatedCost": 10405,
+          "actualCost": 10405,
+          "reportedDate": "2024-06-11",
+          "completedDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "roomNumber": "Essential Room Number 7",
+          "category": "Standard Tier",
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "reportedBy": "Essential Reported By 7",
+          "assignedTo": "Essential Assigned To 7",
+          "priority": "medium",
+          "status": "active",
+          "estimatedCost": 12386,
+          "actualCost": 12386,
+          "reportedDate": "2024-07-13",
+          "completedDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "roomNumber": "Primary Room Number 8",
+          "category": "Basic Tier",
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "reportedBy": "Primary Reported By 8",
+          "assignedTo": "Primary Assigned To 8",
+          "priority": "high",
+          "status": "active",
+          "estimatedCost": 9367,
+          "actualCost": 9367,
+          "reportedDate": "2024-08-15",
+          "completedDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "roomNumber": "Global Room Number 9",
+          "category": "Enterprise",
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "reportedBy": "Global Reported By 9",
+          "assignedTo": "Global Assigned To 9",
+          "priority": "critical",
+          "status": "active",
+          "estimatedCost": 11348,
+          "actualCost": 11348,
+          "reportedDate": "2024-09-17",
+          "completedDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "roomNumber": "Regional Room Number 10",
+          "category": "Starter",
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "reportedBy": "Regional Reported By 10",
+          "assignedTo": "Regional Assigned To 10",
+          "priority": "medium",
+          "status": "pending",
+          "estimatedCost": 13329,
+          "actualCost": 13329,
+          "reportedDate": "2024-10-19",
+          "completedDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "roomNumber": "Custom Room Number 11",
+          "category": "Growth",
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "reportedBy": "Custom Reported By 11",
+          "assignedTo": "Custom Assigned To 11",
+          "priority": "low",
+          "status": "completed",
+          "estimatedCost": 15310,
+          "actualCost": 15310,
+          "reportedDate": "2024-11-21",
+          "completedDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "roomNumber": "Smart Room Number 12",
+          "category": "Scale",
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "reportedBy": "Smart Reported By 12",
+          "assignedTo": "Smart Assigned To 12",
+          "priority": "medium",
+          "status": "active",
+          "estimatedCost": 17291,
+          "actualCost": 17291,
+          "reportedDate": "2024-12-23",
+          "completedDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "roomNumber": "Rapid Room Number 13",
+          "category": "Foundation",
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "reportedBy": "Rapid Reported By 13",
+          "assignedTo": "Rapid Assigned To 13",
+          "priority": "high",
+          "status": "in_progress",
+          "estimatedCost": 19272,
+          "actualCost": 19272,
+          "reportedDate": "2024-01-25",
+          "completedDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "roomNumber": "Secure Room Number 14",
+          "category": "Advanced",
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "reportedBy": "Secure Reported By 14",
+          "assignedTo": "Secure Assigned To 14",
+          "priority": "critical",
+          "status": "active",
+          "estimatedCost": 21253,
+          "actualCost": 21253,
+          "reportedDate": "2024-02-27",
+          "completedDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "roomNumber": "Modern Room Number 15",
+          "category": "Professional",
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "reportedBy": "Modern Reported By 15",
+          "assignedTo": "Modern Assigned To 15",
+          "priority": "medium",
+          "status": "approved",
+          "estimatedCost": 18234,
+          "actualCost": 18234,
+          "reportedDate": "2024-03-01",
+          "completedDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Forecast",
+      "routeKey": "forecasts",
+      "label": "Forecast",
+      "icon": "zap",
+      "aiFunction": "analyzeForecast",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Forecast data. The data includes: Forecast Date, Period, Predicted Occupancy, Predicted Revenue, Predicted Adr, Confidence Score, Factors, Actual Occupancy, Actual Revenue, Variance, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "forecastDate",
+          "label": "Forecast Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "period",
+          "label": "Period",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "predictedOccupancy",
+          "label": "Predicted Occupancy",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "predictedRevenue",
+          "label": "Predicted Revenue",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "predictedAdr",
+          "label": "Predicted Adr",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "confidenceScore",
+          "label": "Confidence Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "factors",
+          "label": "Factors",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "actualOccupancy",
+          "label": "Actual Occupancy",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "actualRevenue",
+          "label": "Actual Revenue",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "variance",
+          "label": "Variance",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "forecastDate": "2024-01-01",
+          "period": "Advanced Period 1",
+          "predictedOccupancy": 10,
+          "predictedRevenue": 500,
+          "predictedAdr": 10,
+          "confidenceScore": 1.5,
+          "factors": "Comprehensive solution designed for optimal performance and efficiency.",
+          "actualOccupancy": 10,
+          "actualRevenue": 500,
+          "variance": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "forecastDate": "2024-02-03",
+          "period": "Premium Period 2",
+          "predictedOccupancy": 71.7,
+          "predictedRevenue": 2481,
+          "predictedAdr": 71.7,
+          "confidenceScore": 2.1,
+          "factors": "Industry-leading approach with proven results across multiple deployments.",
+          "actualOccupancy": 71.7,
+          "actualRevenue": 2481,
+          "variance": 71.7,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "forecastDate": "2024-03-05",
+          "period": "Standard Period 3",
+          "predictedOccupancy": 33.4,
+          "predictedRevenue": 4462,
+          "predictedAdr": 33.4,
+          "confidenceScore": 2.7,
+          "factors": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "actualOccupancy": 33.4,
+          "actualRevenue": 4462,
+          "variance": 33.4,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "forecastDate": "2024-04-07",
+          "period": "Elite Period 4",
+          "predictedOccupancy": 95.1,
+          "predictedRevenue": 6443,
+          "predictedAdr": 95.1,
+          "confidenceScore": 3.3,
+          "factors": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "actualOccupancy": 95.1,
+          "actualRevenue": 6443,
+          "variance": 95.1,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "forecastDate": "2024-05-09",
+          "period": "Core Period 5",
+          "predictedOccupancy": 56.8,
+          "predictedRevenue": 8424,
+          "predictedAdr": 56.8,
+          "confidenceScore": 3.9,
+          "factors": "Cost-effective strategy focused on sustainable long-term growth.",
+          "actualOccupancy": 56.8,
+          "actualRevenue": 8424,
+          "variance": 56.8,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "forecastDate": "2024-06-11",
+          "period": "Pro Period 6",
+          "predictedOccupancy": 118.5,
+          "predictedRevenue": 10405,
+          "predictedAdr": 118.5,
+          "confidenceScore": 4.5,
+          "factors": "High-priority initiative aligned with organizational strategic objectives.",
+          "actualOccupancy": 118.5,
+          "actualRevenue": 10405,
+          "variance": 118.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "forecastDate": "2024-07-13",
+          "period": "Essential Period 7",
+          "predictedOccupancy": 80.2,
+          "predictedRevenue": 12386,
+          "predictedAdr": 80.2,
+          "confidenceScore": 5.1,
+          "factors": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "actualOccupancy": 80.2,
+          "actualRevenue": 12386,
+          "variance": 80.2,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "forecastDate": "2024-08-15",
+          "period": "Primary Period 8",
+          "predictedOccupancy": 141.9,
+          "predictedRevenue": 9367,
+          "predictedAdr": 141.9,
+          "confidenceScore": 5.7,
+          "factors": "Innovative framework incorporating best practices and emerging technologies.",
+          "actualOccupancy": 141.9,
+          "actualRevenue": 9367,
+          "variance": 141.9,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "forecastDate": "2024-09-17",
+          "period": "Global Period 9",
+          "predictedOccupancy": 103.6,
+          "predictedRevenue": 11348,
+          "predictedAdr": 103.6,
+          "confidenceScore": 6.3,
+          "factors": "Scalable architecture built to accommodate rapid expansion and change.",
+          "actualOccupancy": 103.6,
+          "actualRevenue": 11348,
+          "variance": 103.6,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "forecastDate": "2024-10-19",
+          "period": "Regional Period 10",
+          "predictedOccupancy": 165.3,
+          "predictedRevenue": 13329,
+          "predictedAdr": 165.3,
+          "confidenceScore": 1.9,
+          "factors": "Enterprise-grade solution with robust security and compliance features.",
+          "actualOccupancy": 165.3,
+          "actualRevenue": 13329,
+          "variance": 165.3,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "forecastDate": "2024-11-21",
+          "period": "Custom Period 11",
+          "predictedOccupancy": 127,
+          "predictedRevenue": 15310,
+          "predictedAdr": 127,
+          "confidenceScore": 2.5,
+          "factors": "Integrated platform connecting multiple systems for seamless operations.",
+          "actualOccupancy": 127,
+          "actualRevenue": 15310,
+          "variance": 127,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "forecastDate": "2024-12-23",
+          "period": "Smart Period 12",
+          "predictedOccupancy": 188.7,
+          "predictedRevenue": 17291,
+          "predictedAdr": 188.7,
+          "confidenceScore": 3.1,
+          "factors": "Automated workflow reducing manual intervention and human error.",
+          "actualOccupancy": 188.7,
+          "actualRevenue": 17291,
+          "variance": 188.7,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "forecastDate": "2024-01-25",
+          "period": "Rapid Period 13",
+          "predictedOccupancy": 150.4,
+          "predictedRevenue": 19272,
+          "predictedAdr": 150.4,
+          "confidenceScore": 3.7,
+          "factors": "Real-time monitoring system with intelligent alerting capabilities.",
+          "actualOccupancy": 150.4,
+          "actualRevenue": 19272,
+          "variance": 150.4,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "forecastDate": "2024-02-27",
+          "period": "Secure Period 14",
+          "predictedOccupancy": 212.1,
+          "predictedRevenue": 21253,
+          "predictedAdr": 212.1,
+          "confidenceScore": 4.3,
+          "factors": "Customizable module adaptable to diverse operational requirements.",
+          "actualOccupancy": 212.1,
+          "actualRevenue": 21253,
+          "variance": 212.1,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "forecastDate": "2024-03-01",
+          "period": "Modern Period 15",
+          "predictedOccupancy": 173.8,
+          "predictedRevenue": 18234,
+          "predictedAdr": 173.8,
+          "confidenceScore": 4.9,
+          "factors": "Performance-optimized design achieving superior throughput and reliability.",
+          "actualOccupancy": 173.8,
+          "actualRevenue": 18234,
+          "variance": 173.8,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Invoice",
+      "routeKey": "invoices",
+      "label": "Invoice",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeInvoice",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Invoice data. The data includes: Invoice Number, Reservation Id, Guest Name, Guest Email, Room Number, Nights, Room Charges, Tax Rate, Tax Amount, Additional Charges, Discounts, Total Amount, Payment Method, Payment Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "invoiceNumber",
+          "label": "Invoice Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reservationId",
+          "label": "Reservation Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "guestName",
+          "label": "Guest Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "guestEmail",
+          "label": "Guest Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "roomNumber",
+          "label": "Room Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "nights",
+          "label": "Nights",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "roomCharges",
+          "label": "Room Charges",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "taxRate",
+          "label": "Tax Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "taxAmount",
+          "label": "Tax Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "additionalCharges",
+          "label": "Additional Charges",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "discounts",
+          "label": "Discounts",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalAmount",
+          "label": "Total Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentStatus",
+          "label": "Payment Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "invoiceNumber": "Advanced Invoice Number 1",
+          "reservationId": 10,
+          "guestName": "Advanced Guest 1",
+          "guestEmail": "james.wilson@example.com",
+          "roomNumber": "Advanced Room Number 1",
+          "nights": 10,
+          "roomCharges": 10,
+          "taxRate": 1.5,
+          "taxAmount": 500,
+          "additionalCharges": 10,
+          "discounts": 10,
+          "totalAmount": 500,
+          "paymentMethod": "Advanced Payment Method 1",
+          "paymentStatus": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "invoiceNumber": "Premium Invoice Number 2",
+          "reservationId": 58,
+          "guestName": "Premium Guest 2",
+          "guestEmail": "sarah.chen@example.com",
+          "roomNumber": "Premium Room Number 2",
+          "nights": 58,
+          "roomCharges": 71.7,
+          "taxRate": 2.1,
+          "taxAmount": 2481,
+          "additionalCharges": 71.7,
+          "discounts": 71.7,
+          "totalAmount": 2481,
+          "paymentMethod": "Premium Payment Method 2",
+          "paymentStatus": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "invoiceNumber": "Standard Invoice Number 3",
+          "reservationId": 106,
+          "guestName": "Standard Guest 3",
+          "guestEmail": "michael.brown@example.com",
+          "roomNumber": "Standard Room Number 3",
+          "nights": 106,
+          "roomCharges": 33.4,
+          "taxRate": 2.7,
+          "taxAmount": 4462,
+          "additionalCharges": 33.4,
+          "discounts": 33.4,
+          "totalAmount": 4462,
+          "paymentMethod": "Standard Payment Method 3",
+          "paymentStatus": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "invoiceNumber": "Elite Invoice Number 4",
+          "reservationId": 154,
+          "guestName": "Elite Guest 4",
+          "guestEmail": "emily.davis@example.com",
+          "roomNumber": "Elite Room Number 4",
+          "nights": 154,
+          "roomCharges": 95.1,
+          "taxRate": 3.3,
+          "taxAmount": 6443,
+          "additionalCharges": 95.1,
+          "discounts": 95.1,
+          "totalAmount": 6443,
+          "paymentMethod": "Elite Payment Method 4",
+          "paymentStatus": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "invoiceNumber": "Core Invoice Number 5",
+          "reservationId": 102,
+          "guestName": "Core Guest 5",
+          "guestEmail": "robert.garcia@example.com",
+          "roomNumber": "Core Room Number 5",
+          "nights": 102,
+          "roomCharges": 56.8,
+          "taxRate": 3.9,
+          "taxAmount": 8424,
+          "additionalCharges": 56.8,
+          "discounts": 56.8,
+          "totalAmount": 8424,
+          "paymentMethod": "Core Payment Method 5",
+          "paymentStatus": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "invoiceNumber": "Pro Invoice Number 6",
+          "reservationId": 150,
+          "guestName": "Pro Guest 6",
+          "guestEmail": "lisa.anderson@example.com",
+          "roomNumber": "Pro Room Number 6",
+          "nights": 150,
+          "roomCharges": 118.5,
+          "taxRate": 4.5,
+          "taxAmount": 10405,
+          "additionalCharges": 118.5,
+          "discounts": 118.5,
+          "totalAmount": 10405,
+          "paymentMethod": "Pro Payment Method 6",
+          "paymentStatus": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "invoiceNumber": "Essential Invoice Number 7",
+          "reservationId": 198,
+          "guestName": "Essential Guest 7",
+          "guestEmail": "david.martinez@example.com",
+          "roomNumber": "Essential Room Number 7",
+          "nights": 198,
+          "roomCharges": 80.2,
+          "taxRate": 5.1,
+          "taxAmount": 12386,
+          "additionalCharges": 80.2,
+          "discounts": 80.2,
+          "totalAmount": 12386,
+          "paymentMethod": "Essential Payment Method 7",
+          "paymentStatus": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "invoiceNumber": "Primary Invoice Number 8",
+          "reservationId": 146,
+          "guestName": "Primary Guest 8",
+          "guestEmail": "jennifer.taylor@example.com",
+          "roomNumber": "Primary Room Number 8",
+          "nights": 146,
+          "roomCharges": 141.9,
+          "taxRate": 5.7,
+          "taxAmount": 9367,
+          "additionalCharges": 141.9,
+          "discounts": 141.9,
+          "totalAmount": 9367,
+          "paymentMethod": "Primary Payment Method 8",
+          "paymentStatus": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "invoiceNumber": "Global Invoice Number 9",
+          "reservationId": 194,
+          "guestName": "Global Guest 9",
+          "guestEmail": "william.johnson@example.com",
+          "roomNumber": "Global Room Number 9",
+          "nights": 194,
+          "roomCharges": 103.6,
+          "taxRate": 6.3,
+          "taxAmount": 11348,
+          "additionalCharges": 103.6,
+          "discounts": 103.6,
+          "totalAmount": 11348,
+          "paymentMethod": "Global Payment Method 9",
+          "paymentStatus": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "invoiceNumber": "Regional Invoice Number 10",
+          "reservationId": 242,
+          "guestName": "Regional Guest 10",
+          "guestEmail": "maria.rodriguez@example.com",
+          "roomNumber": "Regional Room Number 10",
+          "nights": 242,
+          "roomCharges": 165.3,
+          "taxRate": 1.9,
+          "taxAmount": 13329,
+          "additionalCharges": 165.3,
+          "discounts": 165.3,
+          "totalAmount": 13329,
+          "paymentMethod": "Regional Payment Method 10",
+          "paymentStatus": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "invoiceNumber": "Custom Invoice Number 11",
+          "reservationId": 190,
+          "guestName": "Custom Guest 11",
+          "guestEmail": "thomas.lee@example.com",
+          "roomNumber": "Custom Room Number 11",
+          "nights": 190,
+          "roomCharges": 127,
+          "taxRate": 2.5,
+          "taxAmount": 15310,
+          "additionalCharges": 127,
+          "discounts": 127,
+          "totalAmount": 15310,
+          "paymentMethod": "Custom Payment Method 11",
+          "paymentStatus": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "invoiceNumber": "Smart Invoice Number 12",
+          "reservationId": 238,
+          "guestName": "Smart Guest 12",
+          "guestEmail": "patricia.white@example.com",
+          "roomNumber": "Smart Room Number 12",
+          "nights": 238,
+          "roomCharges": 188.7,
+          "taxRate": 3.1,
+          "taxAmount": 17291,
+          "additionalCharges": 188.7,
+          "discounts": 188.7,
+          "totalAmount": 17291,
+          "paymentMethod": "Smart Payment Method 12",
+          "paymentStatus": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "invoiceNumber": "Rapid Invoice Number 13",
+          "reservationId": 286,
+          "guestName": "Rapid Guest 13",
+          "guestEmail": "christopher.hall@example.com",
+          "roomNumber": "Rapid Room Number 13",
+          "nights": 286,
+          "roomCharges": 150.4,
+          "taxRate": 3.7,
+          "taxAmount": 19272,
+          "additionalCharges": 150.4,
+          "discounts": 150.4,
+          "totalAmount": 19272,
+          "paymentMethod": "Rapid Payment Method 13",
+          "paymentStatus": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "invoiceNumber": "Secure Invoice Number 14",
+          "reservationId": 234,
+          "guestName": "Secure Guest 14",
+          "guestEmail": "amanda.clark@example.com",
+          "roomNumber": "Secure Room Number 14",
+          "nights": 234,
+          "roomCharges": 212.1,
+          "taxRate": 4.3,
+          "taxAmount": 21253,
+          "additionalCharges": 212.1,
+          "discounts": 212.1,
+          "totalAmount": 21253,
+          "paymentMethod": "Secure Payment Method 14",
+          "paymentStatus": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "invoiceNumber": "Modern Invoice Number 15",
+          "reservationId": 282,
+          "guestName": "Modern Guest 15",
+          "guestEmail": "daniel.wright@example.com",
+          "roomNumber": "Modern Room Number 15",
+          "nights": 282,
+          "roomCharges": 173.8,
+          "taxRate": 4.9,
+          "taxAmount": 18234,
+          "additionalCharges": 173.8,
+          "discounts": 173.8,
+          "totalAmount": 18234,
+          "paymentMethod": "Modern Payment Method 15",
+          "paymentStatus": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Notification",
+      "routeKey": "notifications",
+      "label": "Notification",
+      "icon": "bell",
+      "aiFunction": "analyzeNotification",
+      "aiPrompt": "You are an AI analyst for A I Hotel Revenue Manager. Analyze the provided Notification data. The data includes: Title, Message, Type, Priority, Category, Is Read. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isRead",
+          "label": "Is Read",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "type": "Category A",
+          "priority": "low",
+          "category": "Category A",
+          "isRead": true
+        },
+        {
+          "title": "Premium Title 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "type": "Category B",
+          "priority": "medium",
+          "category": "Category B",
+          "isRead": true
+        },
+        {
+          "title": "Standard Title 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "type": "Category C",
+          "priority": "high",
+          "category": "Category C",
+          "isRead": false
+        },
+        {
+          "title": "Elite Title 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "type": "Category D",
+          "priority": "critical",
+          "category": "Category D",
+          "isRead": true
+        },
+        {
+          "title": "Core Title 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "type": "Category E",
+          "priority": "medium",
+          "category": "Category E",
+          "isRead": false
+        },
+        {
+          "title": "Pro Title 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "type": "Premium Tier",
+          "priority": "low",
+          "category": "Premium Tier",
+          "isRead": true
+        },
+        {
+          "title": "Essential Title 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "type": "Standard Tier",
+          "priority": "medium",
+          "category": "Standard Tier",
+          "isRead": true
+        },
+        {
+          "title": "Primary Title 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "type": "Basic Tier",
+          "priority": "high",
+          "category": "Basic Tier",
+          "isRead": false
+        },
+        {
+          "title": "Global Title 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "type": "Enterprise",
+          "priority": "critical",
+          "category": "Enterprise",
+          "isRead": true
+        },
+        {
+          "title": "Regional Title 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "type": "Starter",
+          "priority": "medium",
+          "category": "Starter",
+          "isRead": true
+        },
+        {
+          "title": "Custom Title 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "type": "Growth",
+          "priority": "low",
+          "category": "Growth",
+          "isRead": false
+        },
+        {
+          "title": "Smart Title 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "type": "Scale",
+          "priority": "medium",
+          "category": "Scale",
+          "isRead": true
+        },
+        {
+          "title": "Rapid Title 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "type": "Foundation",
+          "priority": "high",
+          "category": "Foundation",
+          "isRead": false
+        },
+        {
+          "title": "Secure Title 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "type": "Advanced",
+          "priority": "critical",
+          "category": "Advanced",
+          "isRead": true
+        },
+        {
+          "title": "Modern Title 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "type": "Professional",
+          "priority": "medium",
+          "category": "Professional",
+          "isRead": true
+        }
+      ]
+    }
+  ]
+}

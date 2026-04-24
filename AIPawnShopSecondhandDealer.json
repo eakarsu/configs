@@ -1,0 +1,4249 @@
+{
+  "appName": "A I Pawn Shop Secondhand Dealer",
+  "dbName": "a_i_pawn_shop_secondhand_dealer",
+  "folderName": "generated/AIPawnShopSecondhandDealer",
+  "features": [
+    {
+      "modelName": "Customer",
+      "routeKey": "customers",
+      "label": "Customer",
+      "icon": "activity",
+      "aiFunction": "analyzeCustomer",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Customer data. The data includes: First Name, Last Name, Email, Phone, Address, City, State, Zip, Id Type, Id Number, Id Expiry, Date Of Birth, Photo Url, Notes, Flagged, Flag Reason. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "city",
+          "label": "City",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "zip",
+          "label": "Zip",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "idType",
+          "label": "Id Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "idNumber",
+          "label": "Id Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "idExpiry",
+          "label": "Id Expiry",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "dateOfBirth",
+          "label": "Date Of Birth",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "photoUrl",
+          "label": "Photo Url",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "flagged",
+          "label": "Flagged",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "flagReason",
+          "label": "Flag Reason",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "city": "New York",
+          "state": "Advanced State 1",
+          "zip": "Advanced Zip 1",
+          "idType": "Category A",
+          "idNumber": "Advanced Id Number 1",
+          "idExpiry": "2024-01-01",
+          "dateOfBirth": "2024-01-01",
+          "photoUrl": "Comprehensive solution designed for optimal performance and efficiency.",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "flagged": true,
+          "flagReason": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "city": "Los Angeles",
+          "state": "Premium State 2",
+          "zip": "Premium Zip 2",
+          "idType": "Category B",
+          "idNumber": "Premium Id Number 2",
+          "idExpiry": "2024-02-03",
+          "dateOfBirth": "2024-02-03",
+          "photoUrl": "Industry-leading approach with proven results across multiple deployments.",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "flagged": true,
+          "flagReason": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "city": "Chicago",
+          "state": "Standard State 3",
+          "zip": "Standard Zip 3",
+          "idType": "Category C",
+          "idNumber": "Standard Id Number 3",
+          "idExpiry": "2024-03-05",
+          "dateOfBirth": "2024-03-05",
+          "photoUrl": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "flagged": false,
+          "flagReason": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "city": "Houston",
+          "state": "Elite State 4",
+          "zip": "Elite Zip 4",
+          "idType": "Category D",
+          "idNumber": "Elite Id Number 4",
+          "idExpiry": "2024-04-07",
+          "dateOfBirth": "2024-04-07",
+          "photoUrl": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "flagged": true,
+          "flagReason": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "city": "Phoenix",
+          "state": "Core State 5",
+          "zip": "Core Zip 5",
+          "idType": "Category E",
+          "idNumber": "Core Id Number 5",
+          "idExpiry": "2024-05-09",
+          "dateOfBirth": "2024-05-09",
+          "photoUrl": "Cost-effective strategy focused on sustainable long-term growth.",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "flagged": false,
+          "flagReason": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "city": "San Francisco",
+          "state": "Pro State 6",
+          "zip": "Pro Zip 6",
+          "idType": "Premium Tier",
+          "idNumber": "Pro Id Number 6",
+          "idExpiry": "2024-06-11",
+          "dateOfBirth": "2024-06-11",
+          "photoUrl": "High-priority initiative aligned with organizational strategic objectives.",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "flagged": true,
+          "flagReason": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "city": "Seattle",
+          "state": "Essential State 7",
+          "zip": "Essential Zip 7",
+          "idType": "Standard Tier",
+          "idNumber": "Essential Id Number 7",
+          "idExpiry": "2024-07-13",
+          "dateOfBirth": "2024-07-13",
+          "photoUrl": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "flagged": true,
+          "flagReason": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "city": "Boston",
+          "state": "Primary State 8",
+          "zip": "Primary Zip 8",
+          "idType": "Basic Tier",
+          "idNumber": "Primary Id Number 8",
+          "idExpiry": "2024-08-15",
+          "dateOfBirth": "2024-08-15",
+          "photoUrl": "Innovative framework incorporating best practices and emerging technologies.",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "flagged": false,
+          "flagReason": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "city": "Denver",
+          "state": "Global State 9",
+          "zip": "Global Zip 9",
+          "idType": "Enterprise",
+          "idNumber": "Global Id Number 9",
+          "idExpiry": "2024-09-17",
+          "dateOfBirth": "2024-09-17",
+          "photoUrl": "Scalable architecture built to accommodate rapid expansion and change.",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "flagged": true,
+          "flagReason": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "city": "Miami",
+          "state": "Regional State 10",
+          "zip": "Regional Zip 10",
+          "idType": "Starter",
+          "idNumber": "Regional Id Number 10",
+          "idExpiry": "2024-10-19",
+          "dateOfBirth": "2024-10-19",
+          "photoUrl": "Enterprise-grade solution with robust security and compliance features.",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "flagged": true,
+          "flagReason": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "city": "Austin",
+          "state": "Custom State 11",
+          "zip": "Custom Zip 11",
+          "idType": "Growth",
+          "idNumber": "Custom Id Number 11",
+          "idExpiry": "2024-11-21",
+          "dateOfBirth": "2024-11-21",
+          "photoUrl": "Integrated platform connecting multiple systems for seamless operations.",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "flagged": false,
+          "flagReason": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "city": "Portland",
+          "state": "Smart State 12",
+          "zip": "Smart Zip 12",
+          "idType": "Scale",
+          "idNumber": "Smart Id Number 12",
+          "idExpiry": "2024-12-23",
+          "dateOfBirth": "2024-12-23",
+          "photoUrl": "Automated workflow reducing manual intervention and human error.",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "flagged": true,
+          "flagReason": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "city": "Dallas",
+          "state": "Rapid State 13",
+          "zip": "Rapid Zip 13",
+          "idType": "Foundation",
+          "idNumber": "Rapid Id Number 13",
+          "idExpiry": "2024-01-25",
+          "dateOfBirth": "2024-01-25",
+          "photoUrl": "Real-time monitoring system with intelligent alerting capabilities.",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "flagged": false,
+          "flagReason": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "city": "Atlanta",
+          "state": "Secure State 14",
+          "zip": "Secure Zip 14",
+          "idType": "Advanced",
+          "idNumber": "Secure Id Number 14",
+          "idExpiry": "2024-02-27",
+          "dateOfBirth": "2024-02-27",
+          "photoUrl": "Customizable module adaptable to diverse operational requirements.",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "flagged": true,
+          "flagReason": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "city": "Nashville",
+          "state": "Modern State 15",
+          "zip": "Modern Zip 15",
+          "idType": "Professional",
+          "idNumber": "Modern Id Number 15",
+          "idExpiry": "2024-03-01",
+          "dateOfBirth": "2024-03-01",
+          "photoUrl": "Performance-optimized design achieving superior throughput and reliability.",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "flagged": true,
+          "flagReason": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Inventory",
+      "routeKey": "inventorys",
+      "label": "Inventory",
+      "icon": "briefcase",
+      "aiFunction": "analyzeInventory",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Inventory data. The data includes: Category, Subcategory, Name, Description, Serial Number, Brand, Model, Condition, Cost Price, Retail Price, Status, Location, Photo Url, Customer Id, Acquired Date, Hold Until, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "subcategory",
+          "label": "Subcategory",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "serialNumber",
+          "label": "Serial Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "brand",
+          "label": "Brand",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "model",
+          "label": "Model",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "condition",
+          "label": "Condition",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "costPrice",
+          "label": "Cost Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "retailPrice",
+          "label": "Retail Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "photoUrl",
+          "label": "Photo Url",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "acquiredDate",
+          "label": "Acquired Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "holdUntil",
+          "label": "Hold Until",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "category": "Category A",
+          "subcategory": "Category A",
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "serialNumber": "Advanced Serial Number 1",
+          "brand": "Advanced Brand 1",
+          "model": "Advanced Model 1",
+          "condition": "Advanced Condition 1",
+          "costPrice": 500,
+          "retailPrice": 500,
+          "status": "active",
+          "location": "New York",
+          "photoUrl": "Comprehensive solution designed for optimal performance and efficiency.",
+          "customerId": 10,
+          "acquiredDate": "2024-01-01",
+          "holdUntil": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "category": "Category B",
+          "subcategory": "Category B",
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "serialNumber": "Premium Serial Number 2",
+          "brand": "Premium Brand 2",
+          "model": "Premium Model 2",
+          "condition": "Premium Condition 2",
+          "costPrice": 2481,
+          "retailPrice": 2481,
+          "status": "pending",
+          "location": "Los Angeles",
+          "photoUrl": "Industry-leading approach with proven results across multiple deployments.",
+          "customerId": 58,
+          "acquiredDate": "2024-02-03",
+          "holdUntil": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "category": "Category C",
+          "subcategory": "Category C",
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "serialNumber": "Standard Serial Number 3",
+          "brand": "Standard Brand 3",
+          "model": "Standard Model 3",
+          "condition": "Standard Condition 3",
+          "costPrice": 4462,
+          "retailPrice": 4462,
+          "status": "in_progress",
+          "location": "Chicago",
+          "photoUrl": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "customerId": 106,
+          "acquiredDate": "2024-03-05",
+          "holdUntil": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "category": "Category D",
+          "subcategory": "Category D",
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "serialNumber": "Elite Serial Number 4",
+          "brand": "Elite Brand 4",
+          "model": "Elite Model 4",
+          "condition": "Elite Condition 4",
+          "costPrice": 6443,
+          "retailPrice": 6443,
+          "status": "completed",
+          "location": "Houston",
+          "photoUrl": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "customerId": 154,
+          "acquiredDate": "2024-04-07",
+          "holdUntil": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "category": "Category E",
+          "subcategory": "Category E",
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "serialNumber": "Core Serial Number 5",
+          "brand": "Core Brand 5",
+          "model": "Core Model 5",
+          "condition": "Core Condition 5",
+          "costPrice": 8424,
+          "retailPrice": 8424,
+          "status": "under_review",
+          "location": "Phoenix",
+          "photoUrl": "Cost-effective strategy focused on sustainable long-term growth.",
+          "customerId": 102,
+          "acquiredDate": "2024-05-09",
+          "holdUntil": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "category": "Premium Tier",
+          "subcategory": "Premium Tier",
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "serialNumber": "Pro Serial Number 6",
+          "brand": "Pro Brand 6",
+          "model": "Pro Model 6",
+          "condition": "Pro Condition 6",
+          "costPrice": 10405,
+          "retailPrice": 10405,
+          "status": "approved",
+          "location": "San Francisco",
+          "photoUrl": "High-priority initiative aligned with organizational strategic objectives.",
+          "customerId": 150,
+          "acquiredDate": "2024-06-11",
+          "holdUntil": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "category": "Standard Tier",
+          "subcategory": "Standard Tier",
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "serialNumber": "Essential Serial Number 7",
+          "brand": "Essential Brand 7",
+          "model": "Essential Model 7",
+          "condition": "Essential Condition 7",
+          "costPrice": 12386,
+          "retailPrice": 12386,
+          "status": "active",
+          "location": "Seattle",
+          "photoUrl": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "customerId": 198,
+          "acquiredDate": "2024-07-13",
+          "holdUntil": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "category": "Basic Tier",
+          "subcategory": "Basic Tier",
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "serialNumber": "Primary Serial Number 8",
+          "brand": "Primary Brand 8",
+          "model": "Primary Model 8",
+          "condition": "Primary Condition 8",
+          "costPrice": 9367,
+          "retailPrice": 9367,
+          "status": "active",
+          "location": "Boston",
+          "photoUrl": "Innovative framework incorporating best practices and emerging technologies.",
+          "customerId": 146,
+          "acquiredDate": "2024-08-15",
+          "holdUntil": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "category": "Enterprise",
+          "subcategory": "Enterprise",
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "serialNumber": "Global Serial Number 9",
+          "brand": "Global Brand 9",
+          "model": "Global Model 9",
+          "condition": "Global Condition 9",
+          "costPrice": 11348,
+          "retailPrice": 11348,
+          "status": "active",
+          "location": "Denver",
+          "photoUrl": "Scalable architecture built to accommodate rapid expansion and change.",
+          "customerId": 194,
+          "acquiredDate": "2024-09-17",
+          "holdUntil": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "category": "Starter",
+          "subcategory": "Starter",
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "serialNumber": "Regional Serial Number 10",
+          "brand": "Regional Brand 10",
+          "model": "Regional Model 10",
+          "condition": "Regional Condition 10",
+          "costPrice": 13329,
+          "retailPrice": 13329,
+          "status": "pending",
+          "location": "Miami",
+          "photoUrl": "Enterprise-grade solution with robust security and compliance features.",
+          "customerId": 242,
+          "acquiredDate": "2024-10-19",
+          "holdUntil": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "category": "Growth",
+          "subcategory": "Growth",
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "serialNumber": "Custom Serial Number 11",
+          "brand": "Custom Brand 11",
+          "model": "Custom Model 11",
+          "condition": "Custom Condition 11",
+          "costPrice": 15310,
+          "retailPrice": 15310,
+          "status": "completed",
+          "location": "Austin",
+          "photoUrl": "Integrated platform connecting multiple systems for seamless operations.",
+          "customerId": 190,
+          "acquiredDate": "2024-11-21",
+          "holdUntil": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "category": "Scale",
+          "subcategory": "Scale",
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "serialNumber": "Smart Serial Number 12",
+          "brand": "Smart Brand 12",
+          "model": "Smart Model 12",
+          "condition": "Smart Condition 12",
+          "costPrice": 17291,
+          "retailPrice": 17291,
+          "status": "active",
+          "location": "Portland",
+          "photoUrl": "Automated workflow reducing manual intervention and human error.",
+          "customerId": 238,
+          "acquiredDate": "2024-12-23",
+          "holdUntil": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "category": "Foundation",
+          "subcategory": "Foundation",
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "serialNumber": "Rapid Serial Number 13",
+          "brand": "Rapid Brand 13",
+          "model": "Rapid Model 13",
+          "condition": "Rapid Condition 13",
+          "costPrice": 19272,
+          "retailPrice": 19272,
+          "status": "in_progress",
+          "location": "Dallas",
+          "photoUrl": "Real-time monitoring system with intelligent alerting capabilities.",
+          "customerId": 286,
+          "acquiredDate": "2024-01-25",
+          "holdUntil": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "category": "Advanced",
+          "subcategory": "Advanced",
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "serialNumber": "Secure Serial Number 14",
+          "brand": "Secure Brand 14",
+          "model": "Secure Model 14",
+          "condition": "Secure Condition 14",
+          "costPrice": 21253,
+          "retailPrice": 21253,
+          "status": "active",
+          "location": "Atlanta",
+          "photoUrl": "Customizable module adaptable to diverse operational requirements.",
+          "customerId": 234,
+          "acquiredDate": "2024-02-27",
+          "holdUntil": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "category": "Professional",
+          "subcategory": "Professional",
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "serialNumber": "Modern Serial Number 15",
+          "brand": "Modern Brand 15",
+          "model": "Modern Model 15",
+          "condition": "Modern Condition 15",
+          "costPrice": 18234,
+          "retailPrice": 18234,
+          "status": "approved",
+          "location": "Nashville",
+          "photoUrl": "Performance-optimized design achieving superior throughput and reliability.",
+          "customerId": 282,
+          "acquiredDate": "2024-03-01",
+          "holdUntil": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Loan",
+      "routeKey": "loans",
+      "label": "Loan",
+      "icon": "clipboard",
+      "aiFunction": "analyzeLoan",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Loan data. The data includes: Ticket Number, Customer Id, Inventory Id, Item Description, Principal Amount, Interest Rate, Loan Date, Maturity Date, Status, Total Due, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "ticketNumber",
+          "label": "Ticket Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "inventoryId",
+          "label": "Inventory Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "itemDescription",
+          "label": "Item Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "principalAmount",
+          "label": "Principal Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "interestRate",
+          "label": "Interest Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "loanDate",
+          "label": "Loan Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "maturityDate",
+          "label": "Maturity Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalDue",
+          "label": "Total Due",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "ticketNumber": "Advanced Ticket Number 1",
+          "customerId": 10,
+          "inventoryId": 10,
+          "itemDescription": "Comprehensive solution designed for optimal performance and efficiency.",
+          "principalAmount": 500,
+          "interestRate": 1.5,
+          "loanDate": "2024-01-01",
+          "maturityDate": "2024-01-01",
+          "status": "active",
+          "totalDue": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "ticketNumber": "Premium Ticket Number 2",
+          "customerId": 58,
+          "inventoryId": 58,
+          "itemDescription": "Industry-leading approach with proven results across multiple deployments.",
+          "principalAmount": 2481,
+          "interestRate": 2.1,
+          "loanDate": "2024-02-03",
+          "maturityDate": "2024-02-03",
+          "status": "pending",
+          "totalDue": 71.7,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "ticketNumber": "Standard Ticket Number 3",
+          "customerId": 106,
+          "inventoryId": 106,
+          "itemDescription": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "principalAmount": 4462,
+          "interestRate": 2.7,
+          "loanDate": "2024-03-05",
+          "maturityDate": "2024-03-05",
+          "status": "in_progress",
+          "totalDue": 33.4,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "ticketNumber": "Elite Ticket Number 4",
+          "customerId": 154,
+          "inventoryId": 154,
+          "itemDescription": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "principalAmount": 6443,
+          "interestRate": 3.3,
+          "loanDate": "2024-04-07",
+          "maturityDate": "2024-04-07",
+          "status": "completed",
+          "totalDue": 95.1,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "ticketNumber": "Core Ticket Number 5",
+          "customerId": 102,
+          "inventoryId": 102,
+          "itemDescription": "Cost-effective strategy focused on sustainable long-term growth.",
+          "principalAmount": 8424,
+          "interestRate": 3.9,
+          "loanDate": "2024-05-09",
+          "maturityDate": "2024-05-09",
+          "status": "under_review",
+          "totalDue": 56.8,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "ticketNumber": "Pro Ticket Number 6",
+          "customerId": 150,
+          "inventoryId": 150,
+          "itemDescription": "High-priority initiative aligned with organizational strategic objectives.",
+          "principalAmount": 10405,
+          "interestRate": 4.5,
+          "loanDate": "2024-06-11",
+          "maturityDate": "2024-06-11",
+          "status": "approved",
+          "totalDue": 118.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "ticketNumber": "Essential Ticket Number 7",
+          "customerId": 198,
+          "inventoryId": 198,
+          "itemDescription": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "principalAmount": 12386,
+          "interestRate": 5.1,
+          "loanDate": "2024-07-13",
+          "maturityDate": "2024-07-13",
+          "status": "active",
+          "totalDue": 80.2,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "ticketNumber": "Primary Ticket Number 8",
+          "customerId": 146,
+          "inventoryId": 146,
+          "itemDescription": "Innovative framework incorporating best practices and emerging technologies.",
+          "principalAmount": 9367,
+          "interestRate": 5.7,
+          "loanDate": "2024-08-15",
+          "maturityDate": "2024-08-15",
+          "status": "active",
+          "totalDue": 141.9,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "ticketNumber": "Global Ticket Number 9",
+          "customerId": 194,
+          "inventoryId": 194,
+          "itemDescription": "Scalable architecture built to accommodate rapid expansion and change.",
+          "principalAmount": 11348,
+          "interestRate": 6.3,
+          "loanDate": "2024-09-17",
+          "maturityDate": "2024-09-17",
+          "status": "active",
+          "totalDue": 103.6,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "ticketNumber": "Regional Ticket Number 10",
+          "customerId": 242,
+          "inventoryId": 242,
+          "itemDescription": "Enterprise-grade solution with robust security and compliance features.",
+          "principalAmount": 13329,
+          "interestRate": 1.9,
+          "loanDate": "2024-10-19",
+          "maturityDate": "2024-10-19",
+          "status": "pending",
+          "totalDue": 165.3,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "ticketNumber": "Custom Ticket Number 11",
+          "customerId": 190,
+          "inventoryId": 190,
+          "itemDescription": "Integrated platform connecting multiple systems for seamless operations.",
+          "principalAmount": 15310,
+          "interestRate": 2.5,
+          "loanDate": "2024-11-21",
+          "maturityDate": "2024-11-21",
+          "status": "completed",
+          "totalDue": 127,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "ticketNumber": "Smart Ticket Number 12",
+          "customerId": 238,
+          "inventoryId": 238,
+          "itemDescription": "Automated workflow reducing manual intervention and human error.",
+          "principalAmount": 17291,
+          "interestRate": 3.1,
+          "loanDate": "2024-12-23",
+          "maturityDate": "2024-12-23",
+          "status": "active",
+          "totalDue": 188.7,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "ticketNumber": "Rapid Ticket Number 13",
+          "customerId": 286,
+          "inventoryId": 286,
+          "itemDescription": "Real-time monitoring system with intelligent alerting capabilities.",
+          "principalAmount": 19272,
+          "interestRate": 3.7,
+          "loanDate": "2024-01-25",
+          "maturityDate": "2024-01-25",
+          "status": "in_progress",
+          "totalDue": 150.4,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "ticketNumber": "Secure Ticket Number 14",
+          "customerId": 234,
+          "inventoryId": 234,
+          "itemDescription": "Customizable module adaptable to diverse operational requirements.",
+          "principalAmount": 21253,
+          "interestRate": 4.3,
+          "loanDate": "2024-02-27",
+          "maturityDate": "2024-02-27",
+          "status": "active",
+          "totalDue": 212.1,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "ticketNumber": "Modern Ticket Number 15",
+          "customerId": 282,
+          "inventoryId": 282,
+          "itemDescription": "Performance-optimized design achieving superior throughput and reliability.",
+          "principalAmount": 18234,
+          "interestRate": 4.9,
+          "loanDate": "2024-03-01",
+          "maturityDate": "2024-03-01",
+          "status": "approved",
+          "totalDue": 173.8,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "LoanPayment",
+      "routeKey": "loan-payments",
+      "label": "Loan Payment",
+      "icon": "database",
+      "aiFunction": "analyzeLoanPayment",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Loan Payment data. The data includes: Loan Id, Amount, Payment Type, Payment Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "loanId",
+          "label": "Loan Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "paymentType",
+          "label": "Payment Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentDate",
+          "label": "Payment Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "loanId": 10,
+          "amount": 500,
+          "paymentType": "Category A",
+          "paymentDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "loanId": 58,
+          "amount": 2481,
+          "paymentType": "Category B",
+          "paymentDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "loanId": 106,
+          "amount": 4462,
+          "paymentType": "Category C",
+          "paymentDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "loanId": 154,
+          "amount": 6443,
+          "paymentType": "Category D",
+          "paymentDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "loanId": 102,
+          "amount": 8424,
+          "paymentType": "Category E",
+          "paymentDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "loanId": 150,
+          "amount": 10405,
+          "paymentType": "Premium Tier",
+          "paymentDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "loanId": 198,
+          "amount": 12386,
+          "paymentType": "Standard Tier",
+          "paymentDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "loanId": 146,
+          "amount": 9367,
+          "paymentType": "Basic Tier",
+          "paymentDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "loanId": 194,
+          "amount": 11348,
+          "paymentType": "Enterprise",
+          "paymentDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "loanId": 242,
+          "amount": 13329,
+          "paymentType": "Starter",
+          "paymentDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "loanId": 190,
+          "amount": 15310,
+          "paymentType": "Growth",
+          "paymentDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "loanId": 238,
+          "amount": 17291,
+          "paymentType": "Scale",
+          "paymentDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "loanId": 286,
+          "amount": 19272,
+          "paymentType": "Foundation",
+          "paymentDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "loanId": 234,
+          "amount": 21253,
+          "paymentType": "Advanced",
+          "paymentDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "loanId": 282,
+          "amount": 18234,
+          "paymentType": "Professional",
+          "paymentDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "LoanExtension",
+      "routeKey": "loan-extensions",
+      "label": "Loan Extension",
+      "icon": "file-text",
+      "aiFunction": "analyzeLoanExtension",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Loan Extension data. The data includes: Loan Id, Old Maturity Date, New Maturity Date, Extension Fee, Extension Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "loanId",
+          "label": "Loan Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "oldMaturityDate",
+          "label": "Old Maturity Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "newMaturityDate",
+          "label": "New Maturity Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "extensionFee",
+          "label": "Extension Fee",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "extensionDate",
+          "label": "Extension Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "loanId": 10,
+          "oldMaturityDate": "2024-01-01",
+          "newMaturityDate": "2024-01-01",
+          "extensionFee": 500,
+          "extensionDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "loanId": 58,
+          "oldMaturityDate": "2024-02-03",
+          "newMaturityDate": "2024-02-03",
+          "extensionFee": 2481,
+          "extensionDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "loanId": 106,
+          "oldMaturityDate": "2024-03-05",
+          "newMaturityDate": "2024-03-05",
+          "extensionFee": 4462,
+          "extensionDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "loanId": 154,
+          "oldMaturityDate": "2024-04-07",
+          "newMaturityDate": "2024-04-07",
+          "extensionFee": 6443,
+          "extensionDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "loanId": 102,
+          "oldMaturityDate": "2024-05-09",
+          "newMaturityDate": "2024-05-09",
+          "extensionFee": 8424,
+          "extensionDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "loanId": 150,
+          "oldMaturityDate": "2024-06-11",
+          "newMaturityDate": "2024-06-11",
+          "extensionFee": 10405,
+          "extensionDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "loanId": 198,
+          "oldMaturityDate": "2024-07-13",
+          "newMaturityDate": "2024-07-13",
+          "extensionFee": 12386,
+          "extensionDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "loanId": 146,
+          "oldMaturityDate": "2024-08-15",
+          "newMaturityDate": "2024-08-15",
+          "extensionFee": 9367,
+          "extensionDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "loanId": 194,
+          "oldMaturityDate": "2024-09-17",
+          "newMaturityDate": "2024-09-17",
+          "extensionFee": 11348,
+          "extensionDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "loanId": 242,
+          "oldMaturityDate": "2024-10-19",
+          "newMaturityDate": "2024-10-19",
+          "extensionFee": 13329,
+          "extensionDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "loanId": 190,
+          "oldMaturityDate": "2024-11-21",
+          "newMaturityDate": "2024-11-21",
+          "extensionFee": 15310,
+          "extensionDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "loanId": 238,
+          "oldMaturityDate": "2024-12-23",
+          "newMaturityDate": "2024-12-23",
+          "extensionFee": 17291,
+          "extensionDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "loanId": 286,
+          "oldMaturityDate": "2024-01-25",
+          "newMaturityDate": "2024-01-25",
+          "extensionFee": 19272,
+          "extensionDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "loanId": 234,
+          "oldMaturityDate": "2024-02-27",
+          "newMaturityDate": "2024-02-27",
+          "extensionFee": 21253,
+          "extensionDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "loanId": 282,
+          "oldMaturityDate": "2024-03-01",
+          "newMaturityDate": "2024-03-01",
+          "extensionFee": 18234,
+          "extensionDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Layaway",
+      "routeKey": "layaways",
+      "label": "Layaway",
+      "icon": "heart",
+      "aiFunction": "analyzeLayaway",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Layaway data. The data includes: Customer Id, Inventory Id, Total Price, Down Payment, Monthly Payment, Remaining Balance, Start Date, Due Date, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "inventoryId",
+          "label": "Inventory Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "totalPrice",
+          "label": "Total Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "downPayment",
+          "label": "Down Payment",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "monthlyPayment",
+          "label": "Monthly Payment",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "remainingBalance",
+          "label": "Remaining Balance",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": 10,
+          "inventoryId": 10,
+          "totalPrice": 500,
+          "downPayment": 10,
+          "monthlyPayment": 10,
+          "remainingBalance": 10,
+          "startDate": "2024-01-01",
+          "dueDate": "2024-01-01",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "customerId": 58,
+          "inventoryId": 58,
+          "totalPrice": 2481,
+          "downPayment": 71.7,
+          "monthlyPayment": 71.7,
+          "remainingBalance": 71.7,
+          "startDate": "2024-02-03",
+          "dueDate": "2024-02-03",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "customerId": 106,
+          "inventoryId": 106,
+          "totalPrice": 4462,
+          "downPayment": 33.4,
+          "monthlyPayment": 33.4,
+          "remainingBalance": 33.4,
+          "startDate": "2024-03-05",
+          "dueDate": "2024-03-05",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "customerId": 154,
+          "inventoryId": 154,
+          "totalPrice": 6443,
+          "downPayment": 95.1,
+          "monthlyPayment": 95.1,
+          "remainingBalance": 95.1,
+          "startDate": "2024-04-07",
+          "dueDate": "2024-04-07",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "customerId": 102,
+          "inventoryId": 102,
+          "totalPrice": 8424,
+          "downPayment": 56.8,
+          "monthlyPayment": 56.8,
+          "remainingBalance": 56.8,
+          "startDate": "2024-05-09",
+          "dueDate": "2024-05-09",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "customerId": 150,
+          "inventoryId": 150,
+          "totalPrice": 10405,
+          "downPayment": 118.5,
+          "monthlyPayment": 118.5,
+          "remainingBalance": 118.5,
+          "startDate": "2024-06-11",
+          "dueDate": "2024-06-11",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "customerId": 198,
+          "inventoryId": 198,
+          "totalPrice": 12386,
+          "downPayment": 80.2,
+          "monthlyPayment": 80.2,
+          "remainingBalance": 80.2,
+          "startDate": "2024-07-13",
+          "dueDate": "2024-07-13",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "customerId": 146,
+          "inventoryId": 146,
+          "totalPrice": 9367,
+          "downPayment": 141.9,
+          "monthlyPayment": 141.9,
+          "remainingBalance": 141.9,
+          "startDate": "2024-08-15",
+          "dueDate": "2024-08-15",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "customerId": 194,
+          "inventoryId": 194,
+          "totalPrice": 11348,
+          "downPayment": 103.6,
+          "monthlyPayment": 103.6,
+          "remainingBalance": 103.6,
+          "startDate": "2024-09-17",
+          "dueDate": "2024-09-17",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "customerId": 242,
+          "inventoryId": 242,
+          "totalPrice": 13329,
+          "downPayment": 165.3,
+          "monthlyPayment": 165.3,
+          "remainingBalance": 165.3,
+          "startDate": "2024-10-19",
+          "dueDate": "2024-10-19",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "customerId": 190,
+          "inventoryId": 190,
+          "totalPrice": 15310,
+          "downPayment": 127,
+          "monthlyPayment": 127,
+          "remainingBalance": 127,
+          "startDate": "2024-11-21",
+          "dueDate": "2024-11-21",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "customerId": 238,
+          "inventoryId": 238,
+          "totalPrice": 17291,
+          "downPayment": 188.7,
+          "monthlyPayment": 188.7,
+          "remainingBalance": 188.7,
+          "startDate": "2024-12-23",
+          "dueDate": "2024-12-23",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "customerId": 286,
+          "inventoryId": 286,
+          "totalPrice": 19272,
+          "downPayment": 150.4,
+          "monthlyPayment": 150.4,
+          "remainingBalance": 150.4,
+          "startDate": "2024-01-25",
+          "dueDate": "2024-01-25",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "customerId": 234,
+          "inventoryId": 234,
+          "totalPrice": 21253,
+          "downPayment": 212.1,
+          "monthlyPayment": 212.1,
+          "remainingBalance": 212.1,
+          "startDate": "2024-02-27",
+          "dueDate": "2024-02-27",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "customerId": 282,
+          "inventoryId": 282,
+          "totalPrice": 18234,
+          "downPayment": 173.8,
+          "monthlyPayment": 173.8,
+          "remainingBalance": 173.8,
+          "startDate": "2024-03-01",
+          "dueDate": "2024-03-01",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "LayawayPayment",
+      "routeKey": "layaway-payments",
+      "label": "Layaway Payment",
+      "icon": "layers",
+      "aiFunction": "analyzeLayawayPayment",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Layaway Payment data. The data includes: Layaway Id, Amount, Payment Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "layawayId",
+          "label": "Layaway Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "paymentDate",
+          "label": "Payment Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "layawayId": 10,
+          "amount": 500,
+          "paymentDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "layawayId": 58,
+          "amount": 2481,
+          "paymentDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "layawayId": 106,
+          "amount": 4462,
+          "paymentDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "layawayId": 154,
+          "amount": 6443,
+          "paymentDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "layawayId": 102,
+          "amount": 8424,
+          "paymentDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "layawayId": 150,
+          "amount": 10405,
+          "paymentDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "layawayId": 198,
+          "amount": 12386,
+          "paymentDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "layawayId": 146,
+          "amount": 9367,
+          "paymentDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "layawayId": 194,
+          "amount": 11348,
+          "paymentDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "layawayId": 242,
+          "amount": 13329,
+          "paymentDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "layawayId": 190,
+          "amount": 15310,
+          "paymentDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "layawayId": 238,
+          "amount": 17291,
+          "paymentDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "layawayId": 286,
+          "amount": 19272,
+          "paymentDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "layawayId": 234,
+          "amount": 21253,
+          "paymentDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "layawayId": 282,
+          "amount": 18234,
+          "paymentDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "HoldPeriod",
+      "routeKey": "hold-periods",
+      "label": "Hold Period",
+      "icon": "map-pin",
+      "aiFunction": "analyzeHoldPeriod",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Hold Period data. The data includes: Inventory Id, Hold Type, Start Date, End Date, Police Case Number, Officer Name, Officer Badge, Department, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "inventoryId",
+          "label": "Inventory Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "holdType",
+          "label": "Hold Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "policeCaseNumber",
+          "label": "Police Case Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "officerName",
+          "label": "Officer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "officerBadge",
+          "label": "Officer Badge",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "inventoryId": 10,
+          "holdType": "Category A",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "policeCaseNumber": "Advanced Police Case Number 1",
+          "officerName": "Advanced Officer 1",
+          "officerBadge": "Advanced Officer Badge 1",
+          "department": "Category A",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "inventoryId": 58,
+          "holdType": "Category B",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "policeCaseNumber": "Premium Police Case Number 2",
+          "officerName": "Premium Officer 2",
+          "officerBadge": "Premium Officer Badge 2",
+          "department": "Category B",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "inventoryId": 106,
+          "holdType": "Category C",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "policeCaseNumber": "Standard Police Case Number 3",
+          "officerName": "Standard Officer 3",
+          "officerBadge": "Standard Officer Badge 3",
+          "department": "Category C",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "inventoryId": 154,
+          "holdType": "Category D",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "policeCaseNumber": "Elite Police Case Number 4",
+          "officerName": "Elite Officer 4",
+          "officerBadge": "Elite Officer Badge 4",
+          "department": "Category D",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "inventoryId": 102,
+          "holdType": "Category E",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "policeCaseNumber": "Core Police Case Number 5",
+          "officerName": "Core Officer 5",
+          "officerBadge": "Core Officer Badge 5",
+          "department": "Category E",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "inventoryId": 150,
+          "holdType": "Premium Tier",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "policeCaseNumber": "Pro Police Case Number 6",
+          "officerName": "Pro Officer 6",
+          "officerBadge": "Pro Officer Badge 6",
+          "department": "Premium Tier",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "inventoryId": 198,
+          "holdType": "Standard Tier",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "policeCaseNumber": "Essential Police Case Number 7",
+          "officerName": "Essential Officer 7",
+          "officerBadge": "Essential Officer Badge 7",
+          "department": "Standard Tier",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "inventoryId": 146,
+          "holdType": "Basic Tier",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "policeCaseNumber": "Primary Police Case Number 8",
+          "officerName": "Primary Officer 8",
+          "officerBadge": "Primary Officer Badge 8",
+          "department": "Basic Tier",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "inventoryId": 194,
+          "holdType": "Enterprise",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "policeCaseNumber": "Global Police Case Number 9",
+          "officerName": "Global Officer 9",
+          "officerBadge": "Global Officer Badge 9",
+          "department": "Enterprise",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "inventoryId": 242,
+          "holdType": "Starter",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "policeCaseNumber": "Regional Police Case Number 10",
+          "officerName": "Regional Officer 10",
+          "officerBadge": "Regional Officer Badge 10",
+          "department": "Starter",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "inventoryId": 190,
+          "holdType": "Growth",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "policeCaseNumber": "Custom Police Case Number 11",
+          "officerName": "Custom Officer 11",
+          "officerBadge": "Custom Officer Badge 11",
+          "department": "Growth",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "inventoryId": 238,
+          "holdType": "Scale",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "policeCaseNumber": "Smart Police Case Number 12",
+          "officerName": "Smart Officer 12",
+          "officerBadge": "Smart Officer Badge 12",
+          "department": "Scale",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "inventoryId": 286,
+          "holdType": "Foundation",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "policeCaseNumber": "Rapid Police Case Number 13",
+          "officerName": "Rapid Officer 13",
+          "officerBadge": "Rapid Officer Badge 13",
+          "department": "Foundation",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "inventoryId": 234,
+          "holdType": "Advanced",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "policeCaseNumber": "Secure Police Case Number 14",
+          "officerName": "Secure Officer 14",
+          "officerBadge": "Secure Officer Badge 14",
+          "department": "Advanced",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "inventoryId": 282,
+          "holdType": "Professional",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "policeCaseNumber": "Modern Police Case Number 15",
+          "officerName": "Modern Officer 15",
+          "officerBadge": "Modern Officer Badge 15",
+          "department": "Professional",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PreciousMetalsLog",
+      "routeKey": "precious-metals-logs",
+      "label": "Precious Metals Log",
+      "icon": "package",
+      "aiFunction": "analyzePreciousMetalsLog",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Precious Metals Log data. The data includes: Inventory Id, Customer Id, Metal Type, Purity, Weight Grams, Test Method, Test Result, Tested By, Test Date, Market Price Per Gram, Estimated Value, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "inventoryId",
+          "label": "Inventory Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "metalType",
+          "label": "Metal Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "purity",
+          "label": "Purity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "weightGrams",
+          "label": "Weight Grams",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "testMethod",
+          "label": "Test Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "testResult",
+          "label": "Test Result",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "testedBy",
+          "label": "Tested By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "testDate",
+          "label": "Test Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "marketPricePerGram",
+          "label": "Market Price Per Gram",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "estimatedValue",
+          "label": "Estimated Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "inventoryId": 10,
+          "customerId": 10,
+          "metalType": "Category A",
+          "purity": "Advanced Purity 1",
+          "weightGrams": 10,
+          "testMethod": "Advanced Test Method 1",
+          "testResult": "Advanced Test Result 1",
+          "testedBy": "Advanced Tested By 1",
+          "testDate": "2024-01-01",
+          "marketPricePerGram": 500,
+          "estimatedValue": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "inventoryId": 58,
+          "customerId": 58,
+          "metalType": "Category B",
+          "purity": "Premium Purity 2",
+          "weightGrams": 71.7,
+          "testMethod": "Premium Test Method 2",
+          "testResult": "Premium Test Result 2",
+          "testedBy": "Premium Tested By 2",
+          "testDate": "2024-02-03",
+          "marketPricePerGram": 2481,
+          "estimatedValue": 71.7,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "inventoryId": 106,
+          "customerId": 106,
+          "metalType": "Category C",
+          "purity": "Standard Purity 3",
+          "weightGrams": 33.4,
+          "testMethod": "Standard Test Method 3",
+          "testResult": "Standard Test Result 3",
+          "testedBy": "Standard Tested By 3",
+          "testDate": "2024-03-05",
+          "marketPricePerGram": 4462,
+          "estimatedValue": 33.4,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "inventoryId": 154,
+          "customerId": 154,
+          "metalType": "Category D",
+          "purity": "Elite Purity 4",
+          "weightGrams": 95.1,
+          "testMethod": "Elite Test Method 4",
+          "testResult": "Elite Test Result 4",
+          "testedBy": "Elite Tested By 4",
+          "testDate": "2024-04-07",
+          "marketPricePerGram": 6443,
+          "estimatedValue": 95.1,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "inventoryId": 102,
+          "customerId": 102,
+          "metalType": "Category E",
+          "purity": "Core Purity 5",
+          "weightGrams": 56.8,
+          "testMethod": "Core Test Method 5",
+          "testResult": "Core Test Result 5",
+          "testedBy": "Core Tested By 5",
+          "testDate": "2024-05-09",
+          "marketPricePerGram": 8424,
+          "estimatedValue": 56.8,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "inventoryId": 150,
+          "customerId": 150,
+          "metalType": "Premium Tier",
+          "purity": "Pro Purity 6",
+          "weightGrams": 118.5,
+          "testMethod": "Pro Test Method 6",
+          "testResult": "Pro Test Result 6",
+          "testedBy": "Pro Tested By 6",
+          "testDate": "2024-06-11",
+          "marketPricePerGram": 10405,
+          "estimatedValue": 118.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "inventoryId": 198,
+          "customerId": 198,
+          "metalType": "Standard Tier",
+          "purity": "Essential Purity 7",
+          "weightGrams": 80.2,
+          "testMethod": "Essential Test Method 7",
+          "testResult": "Essential Test Result 7",
+          "testedBy": "Essential Tested By 7",
+          "testDate": "2024-07-13",
+          "marketPricePerGram": 12386,
+          "estimatedValue": 80.2,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "inventoryId": 146,
+          "customerId": 146,
+          "metalType": "Basic Tier",
+          "purity": "Primary Purity 8",
+          "weightGrams": 141.9,
+          "testMethod": "Primary Test Method 8",
+          "testResult": "Primary Test Result 8",
+          "testedBy": "Primary Tested By 8",
+          "testDate": "2024-08-15",
+          "marketPricePerGram": 9367,
+          "estimatedValue": 141.9,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "inventoryId": 194,
+          "customerId": 194,
+          "metalType": "Enterprise",
+          "purity": "Global Purity 9",
+          "weightGrams": 103.6,
+          "testMethod": "Global Test Method 9",
+          "testResult": "Global Test Result 9",
+          "testedBy": "Global Tested By 9",
+          "testDate": "2024-09-17",
+          "marketPricePerGram": 11348,
+          "estimatedValue": 103.6,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "inventoryId": 242,
+          "customerId": 242,
+          "metalType": "Starter",
+          "purity": "Regional Purity 10",
+          "weightGrams": 165.3,
+          "testMethod": "Regional Test Method 10",
+          "testResult": "Regional Test Result 10",
+          "testedBy": "Regional Tested By 10",
+          "testDate": "2024-10-19",
+          "marketPricePerGram": 13329,
+          "estimatedValue": 165.3,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "inventoryId": 190,
+          "customerId": 190,
+          "metalType": "Growth",
+          "purity": "Custom Purity 11",
+          "weightGrams": 127,
+          "testMethod": "Custom Test Method 11",
+          "testResult": "Custom Test Result 11",
+          "testedBy": "Custom Tested By 11",
+          "testDate": "2024-11-21",
+          "marketPricePerGram": 15310,
+          "estimatedValue": 127,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "inventoryId": 238,
+          "customerId": 238,
+          "metalType": "Scale",
+          "purity": "Smart Purity 12",
+          "weightGrams": 188.7,
+          "testMethod": "Smart Test Method 12",
+          "testResult": "Smart Test Result 12",
+          "testedBy": "Smart Tested By 12",
+          "testDate": "2024-12-23",
+          "marketPricePerGram": 17291,
+          "estimatedValue": 188.7,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "inventoryId": 286,
+          "customerId": 286,
+          "metalType": "Foundation",
+          "purity": "Rapid Purity 13",
+          "weightGrams": 150.4,
+          "testMethod": "Rapid Test Method 13",
+          "testResult": "Rapid Test Result 13",
+          "testedBy": "Rapid Tested By 13",
+          "testDate": "2024-01-25",
+          "marketPricePerGram": 19272,
+          "estimatedValue": 150.4,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "inventoryId": 234,
+          "customerId": 234,
+          "metalType": "Advanced",
+          "purity": "Secure Purity 14",
+          "weightGrams": 212.1,
+          "testMethod": "Secure Test Method 14",
+          "testResult": "Secure Test Result 14",
+          "testedBy": "Secure Tested By 14",
+          "testDate": "2024-02-27",
+          "marketPricePerGram": 21253,
+          "estimatedValue": 212.1,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "inventoryId": 282,
+          "customerId": 282,
+          "metalType": "Professional",
+          "purity": "Modern Purity 15",
+          "weightGrams": 173.8,
+          "testMethod": "Modern Test Method 15",
+          "testResult": "Modern Test Result 15",
+          "testedBy": "Modern Tested By 15",
+          "testDate": "2024-03-01",
+          "marketPricePerGram": 18234,
+          "estimatedValue": 173.8,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "FirearmLog",
+      "routeKey": "firearm-logs",
+      "label": "Firearm Log",
+      "icon": "shield",
+      "aiFunction": "analyzeFirearmLog",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Firearm Log data. The data includes: Inventory Id, Customer Id, Manufacturer, Model, Serial Number, Caliber, Firearm Type, Action Type, Barrel Length, Transaction Type, Transaction Date, Acquisition Disposition, Nics Check Number, Nics Check Date, Nics Result, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "inventoryId",
+          "label": "Inventory Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "manufacturer",
+          "label": "Manufacturer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "model",
+          "label": "Model",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serialNumber",
+          "label": "Serial Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "caliber",
+          "label": "Caliber",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "firearmType",
+          "label": "Firearm Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "actionType",
+          "label": "Action Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "barrelLength",
+          "label": "Barrel Length",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "transactionType",
+          "label": "Transaction Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "transactionDate",
+          "label": "Transaction Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "acquisitionDisposition",
+          "label": "Acquisition Disposition",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "nicsCheckNumber",
+          "label": "Nics Check Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "nicsCheckDate",
+          "label": "Nics Check Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "nicsResult",
+          "label": "Nics Result",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "inventoryId": 10,
+          "customerId": 10,
+          "manufacturer": "Advanced Manufacturer 1",
+          "model": "Advanced Model 1",
+          "serialNumber": "Advanced Serial Number 1",
+          "caliber": "Advanced Caliber 1",
+          "firearmType": "Category A",
+          "actionType": "Category A",
+          "barrelLength": "Advanced Barrel Length 1",
+          "transactionType": "Category A",
+          "transactionDate": "2024-01-01",
+          "acquisitionDisposition": "Advanced Acquisition Disposition 1",
+          "nicsCheckNumber": "Advanced Nics Check Number 1",
+          "nicsCheckDate": "2024-01-01",
+          "nicsResult": "Advanced Nics Result 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "inventoryId": 58,
+          "customerId": 58,
+          "manufacturer": "Premium Manufacturer 2",
+          "model": "Premium Model 2",
+          "serialNumber": "Premium Serial Number 2",
+          "caliber": "Premium Caliber 2",
+          "firearmType": "Category B",
+          "actionType": "Category B",
+          "barrelLength": "Premium Barrel Length 2",
+          "transactionType": "Category B",
+          "transactionDate": "2024-02-03",
+          "acquisitionDisposition": "Premium Acquisition Disposition 2",
+          "nicsCheckNumber": "Premium Nics Check Number 2",
+          "nicsCheckDate": "2024-02-03",
+          "nicsResult": "Premium Nics Result 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "inventoryId": 106,
+          "customerId": 106,
+          "manufacturer": "Standard Manufacturer 3",
+          "model": "Standard Model 3",
+          "serialNumber": "Standard Serial Number 3",
+          "caliber": "Standard Caliber 3",
+          "firearmType": "Category C",
+          "actionType": "Category C",
+          "barrelLength": "Standard Barrel Length 3",
+          "transactionType": "Category C",
+          "transactionDate": "2024-03-05",
+          "acquisitionDisposition": "Standard Acquisition Disposition 3",
+          "nicsCheckNumber": "Standard Nics Check Number 3",
+          "nicsCheckDate": "2024-03-05",
+          "nicsResult": "Standard Nics Result 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "inventoryId": 154,
+          "customerId": 154,
+          "manufacturer": "Elite Manufacturer 4",
+          "model": "Elite Model 4",
+          "serialNumber": "Elite Serial Number 4",
+          "caliber": "Elite Caliber 4",
+          "firearmType": "Category D",
+          "actionType": "Category D",
+          "barrelLength": "Elite Barrel Length 4",
+          "transactionType": "Category D",
+          "transactionDate": "2024-04-07",
+          "acquisitionDisposition": "Elite Acquisition Disposition 4",
+          "nicsCheckNumber": "Elite Nics Check Number 4",
+          "nicsCheckDate": "2024-04-07",
+          "nicsResult": "Elite Nics Result 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "inventoryId": 102,
+          "customerId": 102,
+          "manufacturer": "Core Manufacturer 5",
+          "model": "Core Model 5",
+          "serialNumber": "Core Serial Number 5",
+          "caliber": "Core Caliber 5",
+          "firearmType": "Category E",
+          "actionType": "Category E",
+          "barrelLength": "Core Barrel Length 5",
+          "transactionType": "Category E",
+          "transactionDate": "2024-05-09",
+          "acquisitionDisposition": "Core Acquisition Disposition 5",
+          "nicsCheckNumber": "Core Nics Check Number 5",
+          "nicsCheckDate": "2024-05-09",
+          "nicsResult": "Core Nics Result 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "inventoryId": 150,
+          "customerId": 150,
+          "manufacturer": "Pro Manufacturer 6",
+          "model": "Pro Model 6",
+          "serialNumber": "Pro Serial Number 6",
+          "caliber": "Pro Caliber 6",
+          "firearmType": "Premium Tier",
+          "actionType": "Premium Tier",
+          "barrelLength": "Pro Barrel Length 6",
+          "transactionType": "Premium Tier",
+          "transactionDate": "2024-06-11",
+          "acquisitionDisposition": "Pro Acquisition Disposition 6",
+          "nicsCheckNumber": "Pro Nics Check Number 6",
+          "nicsCheckDate": "2024-06-11",
+          "nicsResult": "Pro Nics Result 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "inventoryId": 198,
+          "customerId": 198,
+          "manufacturer": "Essential Manufacturer 7",
+          "model": "Essential Model 7",
+          "serialNumber": "Essential Serial Number 7",
+          "caliber": "Essential Caliber 7",
+          "firearmType": "Standard Tier",
+          "actionType": "Standard Tier",
+          "barrelLength": "Essential Barrel Length 7",
+          "transactionType": "Standard Tier",
+          "transactionDate": "2024-07-13",
+          "acquisitionDisposition": "Essential Acquisition Disposition 7",
+          "nicsCheckNumber": "Essential Nics Check Number 7",
+          "nicsCheckDate": "2024-07-13",
+          "nicsResult": "Essential Nics Result 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "inventoryId": 146,
+          "customerId": 146,
+          "manufacturer": "Primary Manufacturer 8",
+          "model": "Primary Model 8",
+          "serialNumber": "Primary Serial Number 8",
+          "caliber": "Primary Caliber 8",
+          "firearmType": "Basic Tier",
+          "actionType": "Basic Tier",
+          "barrelLength": "Primary Barrel Length 8",
+          "transactionType": "Basic Tier",
+          "transactionDate": "2024-08-15",
+          "acquisitionDisposition": "Primary Acquisition Disposition 8",
+          "nicsCheckNumber": "Primary Nics Check Number 8",
+          "nicsCheckDate": "2024-08-15",
+          "nicsResult": "Primary Nics Result 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "inventoryId": 194,
+          "customerId": 194,
+          "manufacturer": "Global Manufacturer 9",
+          "model": "Global Model 9",
+          "serialNumber": "Global Serial Number 9",
+          "caliber": "Global Caliber 9",
+          "firearmType": "Enterprise",
+          "actionType": "Enterprise",
+          "barrelLength": "Global Barrel Length 9",
+          "transactionType": "Enterprise",
+          "transactionDate": "2024-09-17",
+          "acquisitionDisposition": "Global Acquisition Disposition 9",
+          "nicsCheckNumber": "Global Nics Check Number 9",
+          "nicsCheckDate": "2024-09-17",
+          "nicsResult": "Global Nics Result 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "inventoryId": 242,
+          "customerId": 242,
+          "manufacturer": "Regional Manufacturer 10",
+          "model": "Regional Model 10",
+          "serialNumber": "Regional Serial Number 10",
+          "caliber": "Regional Caliber 10",
+          "firearmType": "Starter",
+          "actionType": "Starter",
+          "barrelLength": "Regional Barrel Length 10",
+          "transactionType": "Starter",
+          "transactionDate": "2024-10-19",
+          "acquisitionDisposition": "Regional Acquisition Disposition 10",
+          "nicsCheckNumber": "Regional Nics Check Number 10",
+          "nicsCheckDate": "2024-10-19",
+          "nicsResult": "Regional Nics Result 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "inventoryId": 190,
+          "customerId": 190,
+          "manufacturer": "Custom Manufacturer 11",
+          "model": "Custom Model 11",
+          "serialNumber": "Custom Serial Number 11",
+          "caliber": "Custom Caliber 11",
+          "firearmType": "Growth",
+          "actionType": "Growth",
+          "barrelLength": "Custom Barrel Length 11",
+          "transactionType": "Growth",
+          "transactionDate": "2024-11-21",
+          "acquisitionDisposition": "Custom Acquisition Disposition 11",
+          "nicsCheckNumber": "Custom Nics Check Number 11",
+          "nicsCheckDate": "2024-11-21",
+          "nicsResult": "Custom Nics Result 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "inventoryId": 238,
+          "customerId": 238,
+          "manufacturer": "Smart Manufacturer 12",
+          "model": "Smart Model 12",
+          "serialNumber": "Smart Serial Number 12",
+          "caliber": "Smart Caliber 12",
+          "firearmType": "Scale",
+          "actionType": "Scale",
+          "barrelLength": "Smart Barrel Length 12",
+          "transactionType": "Scale",
+          "transactionDate": "2024-12-23",
+          "acquisitionDisposition": "Smart Acquisition Disposition 12",
+          "nicsCheckNumber": "Smart Nics Check Number 12",
+          "nicsCheckDate": "2024-12-23",
+          "nicsResult": "Smart Nics Result 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "inventoryId": 286,
+          "customerId": 286,
+          "manufacturer": "Rapid Manufacturer 13",
+          "model": "Rapid Model 13",
+          "serialNumber": "Rapid Serial Number 13",
+          "caliber": "Rapid Caliber 13",
+          "firearmType": "Foundation",
+          "actionType": "Foundation",
+          "barrelLength": "Rapid Barrel Length 13",
+          "transactionType": "Foundation",
+          "transactionDate": "2024-01-25",
+          "acquisitionDisposition": "Rapid Acquisition Disposition 13",
+          "nicsCheckNumber": "Rapid Nics Check Number 13",
+          "nicsCheckDate": "2024-01-25",
+          "nicsResult": "Rapid Nics Result 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "inventoryId": 234,
+          "customerId": 234,
+          "manufacturer": "Secure Manufacturer 14",
+          "model": "Secure Model 14",
+          "serialNumber": "Secure Serial Number 14",
+          "caliber": "Secure Caliber 14",
+          "firearmType": "Advanced",
+          "actionType": "Advanced",
+          "barrelLength": "Secure Barrel Length 14",
+          "transactionType": "Advanced",
+          "transactionDate": "2024-02-27",
+          "acquisitionDisposition": "Secure Acquisition Disposition 14",
+          "nicsCheckNumber": "Secure Nics Check Number 14",
+          "nicsCheckDate": "2024-02-27",
+          "nicsResult": "Secure Nics Result 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "inventoryId": 282,
+          "customerId": 282,
+          "manufacturer": "Modern Manufacturer 15",
+          "model": "Modern Model 15",
+          "serialNumber": "Modern Serial Number 15",
+          "caliber": "Modern Caliber 15",
+          "firearmType": "Professional",
+          "actionType": "Professional",
+          "barrelLength": "Modern Barrel Length 15",
+          "transactionType": "Professional",
+          "transactionDate": "2024-03-01",
+          "acquisitionDisposition": "Modern Acquisition Disposition 15",
+          "nicsCheckNumber": "Modern Nics Check Number 15",
+          "nicsCheckDate": "2024-03-01",
+          "nicsResult": "Modern Nics Result 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PoliceReport",
+      "routeKey": "police-reports",
+      "label": "Police Report",
+      "icon": "star",
+      "aiFunction": "analyzePoliceReport",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Police Report data. The data includes: Report Date, Report Type, Department, Officer Name, Badge Number, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "reportDate",
+          "label": "Report Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "reportType",
+          "label": "Report Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "officerName",
+          "label": "Officer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "badgeNumber",
+          "label": "Badge Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "reportDate": "2024-01-01",
+          "reportType": "Category A",
+          "department": "Category A",
+          "officerName": "Advanced Officer 1",
+          "badgeNumber": "Advanced Badge Number 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "reportDate": "2024-02-03",
+          "reportType": "Category B",
+          "department": "Category B",
+          "officerName": "Premium Officer 2",
+          "badgeNumber": "Premium Badge Number 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "reportDate": "2024-03-05",
+          "reportType": "Category C",
+          "department": "Category C",
+          "officerName": "Standard Officer 3",
+          "badgeNumber": "Standard Badge Number 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "reportDate": "2024-04-07",
+          "reportType": "Category D",
+          "department": "Category D",
+          "officerName": "Elite Officer 4",
+          "badgeNumber": "Elite Badge Number 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "reportDate": "2024-05-09",
+          "reportType": "Category E",
+          "department": "Category E",
+          "officerName": "Core Officer 5",
+          "badgeNumber": "Core Badge Number 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "reportDate": "2024-06-11",
+          "reportType": "Premium Tier",
+          "department": "Premium Tier",
+          "officerName": "Pro Officer 6",
+          "badgeNumber": "Pro Badge Number 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "reportDate": "2024-07-13",
+          "reportType": "Standard Tier",
+          "department": "Standard Tier",
+          "officerName": "Essential Officer 7",
+          "badgeNumber": "Essential Badge Number 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "reportDate": "2024-08-15",
+          "reportType": "Basic Tier",
+          "department": "Basic Tier",
+          "officerName": "Primary Officer 8",
+          "badgeNumber": "Primary Badge Number 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "reportDate": "2024-09-17",
+          "reportType": "Enterprise",
+          "department": "Enterprise",
+          "officerName": "Global Officer 9",
+          "badgeNumber": "Global Badge Number 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "reportDate": "2024-10-19",
+          "reportType": "Starter",
+          "department": "Starter",
+          "officerName": "Regional Officer 10",
+          "badgeNumber": "Regional Badge Number 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "reportDate": "2024-11-21",
+          "reportType": "Growth",
+          "department": "Growth",
+          "officerName": "Custom Officer 11",
+          "badgeNumber": "Custom Badge Number 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "reportDate": "2024-12-23",
+          "reportType": "Scale",
+          "department": "Scale",
+          "officerName": "Smart Officer 12",
+          "badgeNumber": "Smart Badge Number 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "reportDate": "2024-01-25",
+          "reportType": "Foundation",
+          "department": "Foundation",
+          "officerName": "Rapid Officer 13",
+          "badgeNumber": "Rapid Badge Number 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "reportDate": "2024-02-27",
+          "reportType": "Advanced",
+          "department": "Advanced",
+          "officerName": "Secure Officer 14",
+          "badgeNumber": "Secure Badge Number 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "reportDate": "2024-03-01",
+          "reportType": "Professional",
+          "department": "Professional",
+          "officerName": "Modern Officer 15",
+          "badgeNumber": "Modern Badge Number 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PoliceReportItem",
+      "routeKey": "police-report-items",
+      "label": "Police Report Item",
+      "icon": "truck",
+      "aiFunction": "analyzePoliceReportItem",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Police Report Item data. The data includes: Report Id, Inventory Id, Customer Id, Transaction Type, Item Description, Serial Number, Amount. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "reportId",
+          "label": "Report Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "inventoryId",
+          "label": "Inventory Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "transactionType",
+          "label": "Transaction Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "itemDescription",
+          "label": "Item Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "serialNumber",
+          "label": "Serial Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "reportId": 10,
+          "inventoryId": 10,
+          "customerId": 10,
+          "transactionType": "Category A",
+          "itemDescription": "Comprehensive solution designed for optimal performance and efficiency.",
+          "serialNumber": "Advanced Serial Number 1",
+          "amount": 500
+        },
+        {
+          "reportId": 58,
+          "inventoryId": 58,
+          "customerId": 58,
+          "transactionType": "Category B",
+          "itemDescription": "Industry-leading approach with proven results across multiple deployments.",
+          "serialNumber": "Premium Serial Number 2",
+          "amount": 2481
+        },
+        {
+          "reportId": 106,
+          "inventoryId": 106,
+          "customerId": 106,
+          "transactionType": "Category C",
+          "itemDescription": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "serialNumber": "Standard Serial Number 3",
+          "amount": 4462
+        },
+        {
+          "reportId": 154,
+          "inventoryId": 154,
+          "customerId": 154,
+          "transactionType": "Category D",
+          "itemDescription": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "serialNumber": "Elite Serial Number 4",
+          "amount": 6443
+        },
+        {
+          "reportId": 102,
+          "inventoryId": 102,
+          "customerId": 102,
+          "transactionType": "Category E",
+          "itemDescription": "Cost-effective strategy focused on sustainable long-term growth.",
+          "serialNumber": "Core Serial Number 5",
+          "amount": 8424
+        },
+        {
+          "reportId": 150,
+          "inventoryId": 150,
+          "customerId": 150,
+          "transactionType": "Premium Tier",
+          "itemDescription": "High-priority initiative aligned with organizational strategic objectives.",
+          "serialNumber": "Pro Serial Number 6",
+          "amount": 10405
+        },
+        {
+          "reportId": 198,
+          "inventoryId": 198,
+          "customerId": 198,
+          "transactionType": "Standard Tier",
+          "itemDescription": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "serialNumber": "Essential Serial Number 7",
+          "amount": 12386
+        },
+        {
+          "reportId": 146,
+          "inventoryId": 146,
+          "customerId": 146,
+          "transactionType": "Basic Tier",
+          "itemDescription": "Innovative framework incorporating best practices and emerging technologies.",
+          "serialNumber": "Primary Serial Number 8",
+          "amount": 9367
+        },
+        {
+          "reportId": 194,
+          "inventoryId": 194,
+          "customerId": 194,
+          "transactionType": "Enterprise",
+          "itemDescription": "Scalable architecture built to accommodate rapid expansion and change.",
+          "serialNumber": "Global Serial Number 9",
+          "amount": 11348
+        },
+        {
+          "reportId": 242,
+          "inventoryId": 242,
+          "customerId": 242,
+          "transactionType": "Starter",
+          "itemDescription": "Enterprise-grade solution with robust security and compliance features.",
+          "serialNumber": "Regional Serial Number 10",
+          "amount": 13329
+        },
+        {
+          "reportId": 190,
+          "inventoryId": 190,
+          "customerId": 190,
+          "transactionType": "Growth",
+          "itemDescription": "Integrated platform connecting multiple systems for seamless operations.",
+          "serialNumber": "Custom Serial Number 11",
+          "amount": 15310
+        },
+        {
+          "reportId": 238,
+          "inventoryId": 238,
+          "customerId": 238,
+          "transactionType": "Scale",
+          "itemDescription": "Automated workflow reducing manual intervention and human error.",
+          "serialNumber": "Smart Serial Number 12",
+          "amount": 17291
+        },
+        {
+          "reportId": 286,
+          "inventoryId": 286,
+          "customerId": 286,
+          "transactionType": "Foundation",
+          "itemDescription": "Real-time monitoring system with intelligent alerting capabilities.",
+          "serialNumber": "Rapid Serial Number 13",
+          "amount": 19272
+        },
+        {
+          "reportId": 234,
+          "inventoryId": 234,
+          "customerId": 234,
+          "transactionType": "Advanced",
+          "itemDescription": "Customizable module adaptable to diverse operational requirements.",
+          "serialNumber": "Secure Serial Number 14",
+          "amount": 21253
+        },
+        {
+          "reportId": 282,
+          "inventoryId": 282,
+          "customerId": 282,
+          "transactionType": "Professional",
+          "itemDescription": "Performance-optimized design achieving superior throughput and reliability.",
+          "serialNumber": "Modern Serial Number 15",
+          "amount": 18234
+        }
+      ]
+    },
+    {
+      "modelName": "CashDrawer",
+      "routeKey": "cash-drawers",
+      "label": "Cash Drawer",
+      "icon": "users",
+      "aiFunction": "analyzeCashDrawer",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Cash Drawer data. The data includes: Drawer Name, Location, Opening Balance, Current Balance, Status, Opened By, Opened At, Closed At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "drawerName",
+          "label": "Drawer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "openingBalance",
+          "label": "Opening Balance",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "currentBalance",
+          "label": "Current Balance",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "openedBy",
+          "label": "Opened By",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "openedAt",
+          "label": "Opened At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "closedAt",
+          "label": "Closed At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "drawerName": "Advanced Drawer 1",
+          "location": "New York",
+          "openingBalance": 10,
+          "currentBalance": 10,
+          "status": "active",
+          "openedBy": 10,
+          "openedAt": "2024-01-01",
+          "closedAt": "2024-01-01"
+        },
+        {
+          "drawerName": "Premium Drawer 2",
+          "location": "Los Angeles",
+          "openingBalance": 71.7,
+          "currentBalance": 71.7,
+          "status": "pending",
+          "openedBy": 58,
+          "openedAt": "2024-02-03",
+          "closedAt": "2024-02-03"
+        },
+        {
+          "drawerName": "Standard Drawer 3",
+          "location": "Chicago",
+          "openingBalance": 33.4,
+          "currentBalance": 33.4,
+          "status": "in_progress",
+          "openedBy": 106,
+          "openedAt": "2024-03-05",
+          "closedAt": "2024-03-05"
+        },
+        {
+          "drawerName": "Elite Drawer 4",
+          "location": "Houston",
+          "openingBalance": 95.1,
+          "currentBalance": 95.1,
+          "status": "completed",
+          "openedBy": 154,
+          "openedAt": "2024-04-07",
+          "closedAt": "2024-04-07"
+        },
+        {
+          "drawerName": "Core Drawer 5",
+          "location": "Phoenix",
+          "openingBalance": 56.8,
+          "currentBalance": 56.8,
+          "status": "under_review",
+          "openedBy": 102,
+          "openedAt": "2024-05-09",
+          "closedAt": "2024-05-09"
+        },
+        {
+          "drawerName": "Pro Drawer 6",
+          "location": "San Francisco",
+          "openingBalance": 118.5,
+          "currentBalance": 118.5,
+          "status": "approved",
+          "openedBy": 150,
+          "openedAt": "2024-06-11",
+          "closedAt": "2024-06-11"
+        },
+        {
+          "drawerName": "Essential Drawer 7",
+          "location": "Seattle",
+          "openingBalance": 80.2,
+          "currentBalance": 80.2,
+          "status": "active",
+          "openedBy": 198,
+          "openedAt": "2024-07-13",
+          "closedAt": "2024-07-13"
+        },
+        {
+          "drawerName": "Primary Drawer 8",
+          "location": "Boston",
+          "openingBalance": 141.9,
+          "currentBalance": 141.9,
+          "status": "active",
+          "openedBy": 146,
+          "openedAt": "2024-08-15",
+          "closedAt": "2024-08-15"
+        },
+        {
+          "drawerName": "Global Drawer 9",
+          "location": "Denver",
+          "openingBalance": 103.6,
+          "currentBalance": 103.6,
+          "status": "active",
+          "openedBy": 194,
+          "openedAt": "2024-09-17",
+          "closedAt": "2024-09-17"
+        },
+        {
+          "drawerName": "Regional Drawer 10",
+          "location": "Miami",
+          "openingBalance": 165.3,
+          "currentBalance": 165.3,
+          "status": "pending",
+          "openedBy": 242,
+          "openedAt": "2024-10-19",
+          "closedAt": "2024-10-19"
+        },
+        {
+          "drawerName": "Custom Drawer 11",
+          "location": "Austin",
+          "openingBalance": 127,
+          "currentBalance": 127,
+          "status": "completed",
+          "openedBy": 190,
+          "openedAt": "2024-11-21",
+          "closedAt": "2024-11-21"
+        },
+        {
+          "drawerName": "Smart Drawer 12",
+          "location": "Portland",
+          "openingBalance": 188.7,
+          "currentBalance": 188.7,
+          "status": "active",
+          "openedBy": 238,
+          "openedAt": "2024-12-23",
+          "closedAt": "2024-12-23"
+        },
+        {
+          "drawerName": "Rapid Drawer 13",
+          "location": "Dallas",
+          "openingBalance": 150.4,
+          "currentBalance": 150.4,
+          "status": "in_progress",
+          "openedBy": 286,
+          "openedAt": "2024-01-25",
+          "closedAt": "2024-01-25"
+        },
+        {
+          "drawerName": "Secure Drawer 14",
+          "location": "Atlanta",
+          "openingBalance": 212.1,
+          "currentBalance": 212.1,
+          "status": "active",
+          "openedBy": 234,
+          "openedAt": "2024-02-27",
+          "closedAt": "2024-02-27"
+        },
+        {
+          "drawerName": "Modern Drawer 15",
+          "location": "Nashville",
+          "openingBalance": 173.8,
+          "currentBalance": 173.8,
+          "status": "approved",
+          "openedBy": 282,
+          "openedAt": "2024-03-01",
+          "closedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "CashDrawerTransaction",
+      "routeKey": "cash-drawer-transactions",
+      "label": "Cash Drawer Transaction",
+      "icon": "zap",
+      "aiFunction": "analyzeCashDrawerTransaction",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Cash Drawer Transaction data. The data includes: Drawer Id, Transaction Type, Amount, Reference Type, Reference Id, Description, Performed By. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "drawerId",
+          "label": "Drawer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "transactionType",
+          "label": "Transaction Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "referenceType",
+          "label": "Reference Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "referenceId",
+          "label": "Reference Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "performedBy",
+          "label": "Performed By",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "drawerId": 10,
+          "transactionType": "Category A",
+          "amount": 500,
+          "referenceType": "Category A",
+          "referenceId": 10,
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "performedBy": 10
+        },
+        {
+          "drawerId": 58,
+          "transactionType": "Category B",
+          "amount": 2481,
+          "referenceType": "Category B",
+          "referenceId": 58,
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "performedBy": 58
+        },
+        {
+          "drawerId": 106,
+          "transactionType": "Category C",
+          "amount": 4462,
+          "referenceType": "Category C",
+          "referenceId": 106,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "performedBy": 106
+        },
+        {
+          "drawerId": 154,
+          "transactionType": "Category D",
+          "amount": 6443,
+          "referenceType": "Category D",
+          "referenceId": 154,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "performedBy": 154
+        },
+        {
+          "drawerId": 102,
+          "transactionType": "Category E",
+          "amount": 8424,
+          "referenceType": "Category E",
+          "referenceId": 102,
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "performedBy": 102
+        },
+        {
+          "drawerId": 150,
+          "transactionType": "Premium Tier",
+          "amount": 10405,
+          "referenceType": "Premium Tier",
+          "referenceId": 150,
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "performedBy": 150
+        },
+        {
+          "drawerId": 198,
+          "transactionType": "Standard Tier",
+          "amount": 12386,
+          "referenceType": "Standard Tier",
+          "referenceId": 198,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "performedBy": 198
+        },
+        {
+          "drawerId": 146,
+          "transactionType": "Basic Tier",
+          "amount": 9367,
+          "referenceType": "Basic Tier",
+          "referenceId": 146,
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "performedBy": 146
+        },
+        {
+          "drawerId": 194,
+          "transactionType": "Enterprise",
+          "amount": 11348,
+          "referenceType": "Enterprise",
+          "referenceId": 194,
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "performedBy": 194
+        },
+        {
+          "drawerId": 242,
+          "transactionType": "Starter",
+          "amount": 13329,
+          "referenceType": "Starter",
+          "referenceId": 242,
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "performedBy": 242
+        },
+        {
+          "drawerId": 190,
+          "transactionType": "Growth",
+          "amount": 15310,
+          "referenceType": "Growth",
+          "referenceId": 190,
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "performedBy": 190
+        },
+        {
+          "drawerId": 238,
+          "transactionType": "Scale",
+          "amount": 17291,
+          "referenceType": "Scale",
+          "referenceId": 238,
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "performedBy": 238
+        },
+        {
+          "drawerId": 286,
+          "transactionType": "Foundation",
+          "amount": 19272,
+          "referenceType": "Foundation",
+          "referenceId": 286,
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "performedBy": 286
+        },
+        {
+          "drawerId": 234,
+          "transactionType": "Advanced",
+          "amount": 21253,
+          "referenceType": "Advanced",
+          "referenceId": 234,
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "performedBy": 234
+        },
+        {
+          "drawerId": 282,
+          "transactionType": "Professional",
+          "amount": 18234,
+          "referenceType": "Professional",
+          "referenceId": 282,
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "performedBy": 282
+        }
+      ]
+    },
+    {
+      "modelName": "Receipt",
+      "routeKey": "receipts",
+      "label": "Receipt",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeReceipt",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Receipt data. The data includes: Receipt Number, Receipt Type, Customer Id, Loan Id, Items, Subtotal, Tax, Total, Payment Method, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "receiptNumber",
+          "label": "Receipt Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "receiptType",
+          "label": "Receipt Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "loanId",
+          "label": "Loan Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "items",
+          "label": "Items",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "subtotal",
+          "label": "Subtotal",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "tax",
+          "label": "Tax",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "total",
+          "label": "Total",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "receiptNumber": "Advanced Receipt Number 1",
+          "receiptType": "Category A",
+          "customerId": 10,
+          "loanId": 10,
+          "items": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "subtotal": 10,
+          "tax": 10,
+          "total": 10,
+          "paymentMethod": "Advanced Payment Method 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "receiptNumber": "Premium Receipt Number 2",
+          "receiptType": "Category B",
+          "customerId": 58,
+          "loanId": 58,
+          "items": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "subtotal": 71.7,
+          "tax": 71.7,
+          "total": 71.7,
+          "paymentMethod": "Premium Payment Method 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "receiptNumber": "Standard Receipt Number 3",
+          "receiptType": "Category C",
+          "customerId": 106,
+          "loanId": 106,
+          "items": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "subtotal": 33.4,
+          "tax": 33.4,
+          "total": 33.4,
+          "paymentMethod": "Standard Payment Method 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "receiptNumber": "Elite Receipt Number 4",
+          "receiptType": "Category D",
+          "customerId": 154,
+          "loanId": 154,
+          "items": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "subtotal": 95.1,
+          "tax": 95.1,
+          "total": 95.1,
+          "paymentMethod": "Elite Payment Method 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "receiptNumber": "Core Receipt Number 5",
+          "receiptType": "Category E",
+          "customerId": 102,
+          "loanId": 102,
+          "items": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "subtotal": 56.8,
+          "tax": 56.8,
+          "total": 56.8,
+          "paymentMethod": "Core Payment Method 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "receiptNumber": "Pro Receipt Number 6",
+          "receiptType": "Premium Tier",
+          "customerId": 150,
+          "loanId": 150,
+          "items": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "subtotal": 118.5,
+          "tax": 118.5,
+          "total": 118.5,
+          "paymentMethod": "Pro Payment Method 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "receiptNumber": "Essential Receipt Number 7",
+          "receiptType": "Standard Tier",
+          "customerId": 198,
+          "loanId": 198,
+          "items": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "subtotal": 80.2,
+          "tax": 80.2,
+          "total": 80.2,
+          "paymentMethod": "Essential Payment Method 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "receiptNumber": "Primary Receipt Number 8",
+          "receiptType": "Basic Tier",
+          "customerId": 146,
+          "loanId": 146,
+          "items": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "subtotal": 141.9,
+          "tax": 141.9,
+          "total": 141.9,
+          "paymentMethod": "Primary Payment Method 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "receiptNumber": "Global Receipt Number 9",
+          "receiptType": "Enterprise",
+          "customerId": 194,
+          "loanId": 194,
+          "items": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "subtotal": 103.6,
+          "tax": 103.6,
+          "total": 103.6,
+          "paymentMethod": "Global Payment Method 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "receiptNumber": "Regional Receipt Number 10",
+          "receiptType": "Starter",
+          "customerId": 242,
+          "loanId": 242,
+          "items": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "subtotal": 165.3,
+          "tax": 165.3,
+          "total": 165.3,
+          "paymentMethod": "Regional Payment Method 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "receiptNumber": "Custom Receipt Number 11",
+          "receiptType": "Growth",
+          "customerId": 190,
+          "loanId": 190,
+          "items": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "subtotal": 127,
+          "tax": 127,
+          "total": 127,
+          "paymentMethod": "Custom Payment Method 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "receiptNumber": "Smart Receipt Number 12",
+          "receiptType": "Scale",
+          "customerId": 238,
+          "loanId": 238,
+          "items": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "subtotal": 188.7,
+          "tax": 188.7,
+          "total": 188.7,
+          "paymentMethod": "Smart Payment Method 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "receiptNumber": "Rapid Receipt Number 13",
+          "receiptType": "Foundation",
+          "customerId": 286,
+          "loanId": 286,
+          "items": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "subtotal": 150.4,
+          "tax": 150.4,
+          "total": 150.4,
+          "paymentMethod": "Rapid Payment Method 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "receiptNumber": "Secure Receipt Number 14",
+          "receiptType": "Advanced",
+          "customerId": 234,
+          "loanId": 234,
+          "items": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "subtotal": 212.1,
+          "tax": 212.1,
+          "total": 212.1,
+          "paymentMethod": "Secure Payment Method 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "receiptNumber": "Modern Receipt Number 15",
+          "receiptType": "Professional",
+          "customerId": 282,
+          "loanId": 282,
+          "items": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "subtotal": 173.8,
+          "tax": 173.8,
+          "total": 173.8,
+          "paymentMethod": "Modern Payment Method 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Auction",
+      "routeKey": "auctions",
+      "label": "Auction",
+      "icon": "bell",
+      "aiFunction": "analyzeAuction",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Auction data. The data includes: Auction Name, Auction Date, Auction Type, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "auctionName",
+          "label": "Auction Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "auctionDate",
+          "label": "Auction Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "auctionType",
+          "label": "Auction Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "auctionName": "Advanced Auction 1",
+          "auctionDate": "2024-01-01",
+          "auctionType": "Category A",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "auctionName": "Premium Auction 2",
+          "auctionDate": "2024-02-03",
+          "auctionType": "Category B",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "auctionName": "Standard Auction 3",
+          "auctionDate": "2024-03-05",
+          "auctionType": "Category C",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "auctionName": "Elite Auction 4",
+          "auctionDate": "2024-04-07",
+          "auctionType": "Category D",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "auctionName": "Core Auction 5",
+          "auctionDate": "2024-05-09",
+          "auctionType": "Category E",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "auctionName": "Pro Auction 6",
+          "auctionDate": "2024-06-11",
+          "auctionType": "Premium Tier",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "auctionName": "Essential Auction 7",
+          "auctionDate": "2024-07-13",
+          "auctionType": "Standard Tier",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "auctionName": "Primary Auction 8",
+          "auctionDate": "2024-08-15",
+          "auctionType": "Basic Tier",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "auctionName": "Global Auction 9",
+          "auctionDate": "2024-09-17",
+          "auctionType": "Enterprise",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "auctionName": "Regional Auction 10",
+          "auctionDate": "2024-10-19",
+          "auctionType": "Starter",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "auctionName": "Custom Auction 11",
+          "auctionDate": "2024-11-21",
+          "auctionType": "Growth",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "auctionName": "Smart Auction 12",
+          "auctionDate": "2024-12-23",
+          "auctionType": "Scale",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "auctionName": "Rapid Auction 13",
+          "auctionDate": "2024-01-25",
+          "auctionType": "Foundation",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "auctionName": "Secure Auction 14",
+          "auctionDate": "2024-02-27",
+          "auctionType": "Advanced",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "auctionName": "Modern Auction 15",
+          "auctionDate": "2024-03-01",
+          "auctionType": "Professional",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "AuctionItem",
+      "routeKey": "auction-items",
+      "label": "Auction Item",
+      "icon": "book",
+      "aiFunction": "analyzeAuctionItem",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Auction Item data. The data includes: Auction Id, Inventory Id, Loan Id, Starting Bid, Winning Bid, Winner Name, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "auctionId",
+          "label": "Auction Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "inventoryId",
+          "label": "Inventory Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "loanId",
+          "label": "Loan Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "startingBid",
+          "label": "Starting Bid",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "winningBid",
+          "label": "Winning Bid",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "winnerName",
+          "label": "Winner Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "auctionId": 10,
+          "inventoryId": 10,
+          "loanId": 10,
+          "startingBid": 10,
+          "winningBid": 10,
+          "winnerName": "Advanced Winner 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "auctionId": 58,
+          "inventoryId": 58,
+          "loanId": 58,
+          "startingBid": 71.7,
+          "winningBid": 71.7,
+          "winnerName": "Premium Winner 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "auctionId": 106,
+          "inventoryId": 106,
+          "loanId": 106,
+          "startingBid": 33.4,
+          "winningBid": 33.4,
+          "winnerName": "Standard Winner 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "auctionId": 154,
+          "inventoryId": 154,
+          "loanId": 154,
+          "startingBid": 95.1,
+          "winningBid": 95.1,
+          "winnerName": "Elite Winner 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "auctionId": 102,
+          "inventoryId": 102,
+          "loanId": 102,
+          "startingBid": 56.8,
+          "winningBid": 56.8,
+          "winnerName": "Core Winner 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "auctionId": 150,
+          "inventoryId": 150,
+          "loanId": 150,
+          "startingBid": 118.5,
+          "winningBid": 118.5,
+          "winnerName": "Pro Winner 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "auctionId": 198,
+          "inventoryId": 198,
+          "loanId": 198,
+          "startingBid": 80.2,
+          "winningBid": 80.2,
+          "winnerName": "Essential Winner 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "auctionId": 146,
+          "inventoryId": 146,
+          "loanId": 146,
+          "startingBid": 141.9,
+          "winningBid": 141.9,
+          "winnerName": "Primary Winner 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "auctionId": 194,
+          "inventoryId": 194,
+          "loanId": 194,
+          "startingBid": 103.6,
+          "winningBid": 103.6,
+          "winnerName": "Global Winner 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "auctionId": 242,
+          "inventoryId": 242,
+          "loanId": 242,
+          "startingBid": 165.3,
+          "winningBid": 165.3,
+          "winnerName": "Regional Winner 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "auctionId": 190,
+          "inventoryId": 190,
+          "loanId": 190,
+          "startingBid": 127,
+          "winningBid": 127,
+          "winnerName": "Custom Winner 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "auctionId": 238,
+          "inventoryId": 238,
+          "loanId": 238,
+          "startingBid": 188.7,
+          "winningBid": 188.7,
+          "winnerName": "Smart Winner 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "auctionId": 286,
+          "inventoryId": 286,
+          "loanId": 286,
+          "startingBid": 150.4,
+          "winningBid": 150.4,
+          "winnerName": "Rapid Winner 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "auctionId": 234,
+          "inventoryId": 234,
+          "loanId": 234,
+          "startingBid": 212.1,
+          "winningBid": 212.1,
+          "winnerName": "Secure Winner 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "auctionId": 282,
+          "inventoryId": 282,
+          "loanId": 282,
+          "startingBid": 173.8,
+          "winningBid": 173.8,
+          "winnerName": "Modern Winner 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Notification",
+      "routeKey": "notifications",
+      "label": "Notification",
+      "icon": "calendar",
+      "aiFunction": "analyzeNotification",
+      "aiPrompt": "You are an AI analyst for A I Pawn Shop Secondhand Dealer. Analyze the provided Notification data. The data includes: Customer Id, Loan Id, Notification Type, Message, Sent Via, Sent At, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "loanId",
+          "label": "Loan Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notificationType",
+          "label": "Notification Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "sentVia",
+          "label": "Sent Via",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sentAt",
+          "label": "Sent At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": 10,
+          "loanId": 10,
+          "notificationType": "Category A",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "sentVia": "Advanced Sent Via 1",
+          "sentAt": "2024-01-01",
+          "status": "active"
+        },
+        {
+          "customerId": 58,
+          "loanId": 58,
+          "notificationType": "Category B",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "sentVia": "Premium Sent Via 2",
+          "sentAt": "2024-02-03",
+          "status": "pending"
+        },
+        {
+          "customerId": 106,
+          "loanId": 106,
+          "notificationType": "Category C",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "sentVia": "Standard Sent Via 3",
+          "sentAt": "2024-03-05",
+          "status": "in_progress"
+        },
+        {
+          "customerId": 154,
+          "loanId": 154,
+          "notificationType": "Category D",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "sentVia": "Elite Sent Via 4",
+          "sentAt": "2024-04-07",
+          "status": "completed"
+        },
+        {
+          "customerId": 102,
+          "loanId": 102,
+          "notificationType": "Category E",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "sentVia": "Core Sent Via 5",
+          "sentAt": "2024-05-09",
+          "status": "under_review"
+        },
+        {
+          "customerId": 150,
+          "loanId": 150,
+          "notificationType": "Premium Tier",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "sentVia": "Pro Sent Via 6",
+          "sentAt": "2024-06-11",
+          "status": "approved"
+        },
+        {
+          "customerId": 198,
+          "loanId": 198,
+          "notificationType": "Standard Tier",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "sentVia": "Essential Sent Via 7",
+          "sentAt": "2024-07-13",
+          "status": "active"
+        },
+        {
+          "customerId": 146,
+          "loanId": 146,
+          "notificationType": "Basic Tier",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "sentVia": "Primary Sent Via 8",
+          "sentAt": "2024-08-15",
+          "status": "active"
+        },
+        {
+          "customerId": 194,
+          "loanId": 194,
+          "notificationType": "Enterprise",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "sentVia": "Global Sent Via 9",
+          "sentAt": "2024-09-17",
+          "status": "active"
+        },
+        {
+          "customerId": 242,
+          "loanId": 242,
+          "notificationType": "Starter",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "sentVia": "Regional Sent Via 10",
+          "sentAt": "2024-10-19",
+          "status": "pending"
+        },
+        {
+          "customerId": 190,
+          "loanId": 190,
+          "notificationType": "Growth",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "sentVia": "Custom Sent Via 11",
+          "sentAt": "2024-11-21",
+          "status": "completed"
+        },
+        {
+          "customerId": 238,
+          "loanId": 238,
+          "notificationType": "Scale",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "sentVia": "Smart Sent Via 12",
+          "sentAt": "2024-12-23",
+          "status": "active"
+        },
+        {
+          "customerId": 286,
+          "loanId": 286,
+          "notificationType": "Foundation",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "sentVia": "Rapid Sent Via 13",
+          "sentAt": "2024-01-25",
+          "status": "in_progress"
+        },
+        {
+          "customerId": 234,
+          "loanId": 234,
+          "notificationType": "Advanced",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "sentVia": "Secure Sent Via 14",
+          "sentAt": "2024-02-27",
+          "status": "active"
+        },
+        {
+          "customerId": 282,
+          "loanId": 282,
+          "notificationType": "Professional",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "sentVia": "Modern Sent Via 15",
+          "sentAt": "2024-03-01",
+          "status": "approved"
+        }
+      ]
+    }
+  ]
+}

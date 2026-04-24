@@ -1,0 +1,2905 @@
+{
+  "appName": "AI Warehouse & Distribution (Part 2)",
+  "dbName": "a_i_warehouse_distribution_part2",
+  "folderName": "generated/AIWarehouseDistributionPart2",
+  "features": [
+    {
+      "modelName": "Order",
+      "routeKey": "orders",
+      "label": "Order",
+      "icon": "briefcase",
+      "aiFunction": "analyzeOrder",
+      "aiPrompt": "You are an AI analyst for A I Wholesale Distribution Optimizer. Analyze the provided Order data. The data includes: Order Number, Customer Name, Customer Email, Territory, Products, Quantity, Unit Price, Total Amount, Status, Order Date, Delivery Date, Frequency, Pattern, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "orderNumber",
+          "label": "Order Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerEmail",
+          "label": "Customer Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "territory",
+          "label": "Territory",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "products",
+          "label": "Products",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "unitPrice",
+          "label": "Unit Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalAmount",
+          "label": "Total Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "orderDate",
+          "label": "Order Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "deliveryDate",
+          "label": "Delivery Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "frequency",
+          "label": "Frequency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "pattern",
+          "label": "Pattern",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "orderNumber": "Advanced Order Number 1",
+          "customerName": "James Wilson",
+          "customerEmail": "james.wilson@example.com",
+          "territory": "Advanced Territory 1",
+          "products": "Comprehensive solution designed for optimal performance and efficiency.",
+          "quantity": 40,
+          "unitPrice": 500,
+          "totalAmount": 500,
+          "status": "active",
+          "orderDate": "2024-01-01",
+          "deliveryDate": "2024-01-01",
+          "frequency": "Advanced Frequency 1",
+          "pattern": "Advanced Pattern 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "orderNumber": "Premium Order Number 2",
+          "customerName": "Sarah Chen",
+          "customerEmail": "sarah.chen@example.com",
+          "territory": "Premium Territory 2",
+          "products": "Industry-leading approach with proven results across multiple deployments.",
+          "quantity": 180,
+          "unitPrice": 2481,
+          "totalAmount": 2481,
+          "status": "pending",
+          "orderDate": "2024-02-03",
+          "deliveryDate": "2024-02-03",
+          "frequency": "Premium Frequency 2",
+          "pattern": "Premium Pattern 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "orderNumber": "Standard Order Number 3",
+          "customerName": "Michael Brown",
+          "customerEmail": "michael.brown@example.com",
+          "territory": "Standard Territory 3",
+          "products": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "quantity": 215,
+          "unitPrice": 4462,
+          "totalAmount": 4462,
+          "status": "in_progress",
+          "orderDate": "2024-03-05",
+          "deliveryDate": "2024-03-05",
+          "frequency": "Standard Frequency 3",
+          "pattern": "Standard Pattern 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "orderNumber": "Elite Order Number 4",
+          "customerName": "Emily Davis",
+          "customerEmail": "emily.davis@example.com",
+          "territory": "Elite Territory 4",
+          "products": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "quantity": 145,
+          "unitPrice": 6443,
+          "totalAmount": 6443,
+          "status": "completed",
+          "orderDate": "2024-04-07",
+          "deliveryDate": "2024-04-07",
+          "frequency": "Elite Frequency 4",
+          "pattern": "Elite Pattern 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "orderNumber": "Core Order Number 5",
+          "customerName": "Robert Garcia",
+          "customerEmail": "robert.garcia@example.com",
+          "territory": "Core Territory 5",
+          "products": "Cost-effective strategy focused on sustainable long-term growth.",
+          "quantity": 68,
+          "unitPrice": 8424,
+          "totalAmount": 8424,
+          "status": "under_review",
+          "orderDate": "2024-05-09",
+          "deliveryDate": "2024-05-09",
+          "frequency": "Core Frequency 5",
+          "pattern": "Core Pattern 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "orderNumber": "Pro Order Number 6",
+          "customerName": "Lisa Anderson",
+          "customerEmail": "lisa.anderson@example.com",
+          "territory": "Pro Territory 6",
+          "products": "High-priority initiative aligned with organizational strategic objectives.",
+          "quantity": 189,
+          "unitPrice": 10405,
+          "totalAmount": 10405,
+          "status": "approved",
+          "orderDate": "2024-06-11",
+          "deliveryDate": "2024-06-11",
+          "frequency": "Pro Frequency 6",
+          "pattern": "Pro Pattern 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "orderNumber": "Essential Order Number 7",
+          "customerName": "David Martinez",
+          "customerEmail": "david.martinez@example.com",
+          "territory": "Essential Territory 7",
+          "products": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "quantity": 63,
+          "unitPrice": 12386,
+          "totalAmount": 12386,
+          "status": "active",
+          "orderDate": "2024-07-13",
+          "deliveryDate": "2024-07-13",
+          "frequency": "Essential Frequency 7",
+          "pattern": "Essential Pattern 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "orderNumber": "Primary Order Number 8",
+          "customerName": "Jennifer Taylor",
+          "customerEmail": "jennifer.taylor@example.com",
+          "territory": "Primary Territory 8",
+          "products": "Innovative framework incorporating best practices and emerging technologies.",
+          "quantity": 223,
+          "unitPrice": 9367,
+          "totalAmount": 9367,
+          "status": "active",
+          "orderDate": "2024-08-15",
+          "deliveryDate": "2024-08-15",
+          "frequency": "Primary Frequency 8",
+          "pattern": "Primary Pattern 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "orderNumber": "Global Order Number 9",
+          "customerName": "William Johnson",
+          "customerEmail": "william.johnson@example.com",
+          "territory": "Global Territory 9",
+          "products": "Scalable architecture built to accommodate rapid expansion and change.",
+          "quantity": 97,
+          "unitPrice": 11348,
+          "totalAmount": 11348,
+          "status": "active",
+          "orderDate": "2024-09-17",
+          "deliveryDate": "2024-09-17",
+          "frequency": "Global Frequency 9",
+          "pattern": "Global Pattern 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "orderNumber": "Regional Order Number 10",
+          "customerName": "Maria Rodriguez",
+          "customerEmail": "maria.rodriguez@example.com",
+          "territory": "Regional Territory 10",
+          "products": "Enterprise-grade solution with robust security and compliance features.",
+          "quantity": 258,
+          "unitPrice": 13329,
+          "totalAmount": 13329,
+          "status": "pending",
+          "orderDate": "2024-10-19",
+          "deliveryDate": "2024-10-19",
+          "frequency": "Regional Frequency 10",
+          "pattern": "Regional Pattern 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "orderNumber": "Custom Order Number 11",
+          "customerName": "Thomas Lee",
+          "customerEmail": "thomas.lee@example.com",
+          "territory": "Custom Territory 11",
+          "products": "Integrated platform connecting multiple systems for seamless operations.",
+          "quantity": 254,
+          "unitPrice": 15310,
+          "totalAmount": 15310,
+          "status": "completed",
+          "orderDate": "2024-11-21",
+          "deliveryDate": "2024-11-21",
+          "frequency": "Custom Frequency 11",
+          "pattern": "Custom Pattern 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "orderNumber": "Smart Order Number 12",
+          "customerName": "Patricia White",
+          "customerEmail": "patricia.white@example.com",
+          "territory": "Smart Territory 12",
+          "products": "Automated workflow reducing manual intervention and human error.",
+          "quantity": 241,
+          "unitPrice": 17291,
+          "totalAmount": 17291,
+          "status": "active",
+          "orderDate": "2024-12-23",
+          "deliveryDate": "2024-12-23",
+          "frequency": "Smart Frequency 12",
+          "pattern": "Smart Pattern 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "orderNumber": "Rapid Order Number 13",
+          "customerName": "Christopher Hall",
+          "customerEmail": "christopher.hall@example.com",
+          "territory": "Rapid Territory 13",
+          "products": "Real-time monitoring system with intelligent alerting capabilities.",
+          "quantity": 209,
+          "unitPrice": 19272,
+          "totalAmount": 19272,
+          "status": "in_progress",
+          "orderDate": "2024-01-25",
+          "deliveryDate": "2024-01-25",
+          "frequency": "Rapid Frequency 13",
+          "pattern": "Rapid Pattern 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "orderNumber": "Secure Order Number 14",
+          "customerName": "Amanda Clark",
+          "customerEmail": "amanda.clark@example.com",
+          "territory": "Secure Territory 14",
+          "products": "Customizable module adaptable to diverse operational requirements.",
+          "quantity": 255,
+          "unitPrice": 21253,
+          "totalAmount": 21253,
+          "status": "active",
+          "orderDate": "2024-02-27",
+          "deliveryDate": "2024-02-27",
+          "frequency": "Secure Frequency 14",
+          "pattern": "Secure Pattern 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "orderNumber": "Modern Order Number 15",
+          "customerName": "Daniel Wright",
+          "customerEmail": "daniel.wright@example.com",
+          "territory": "Modern Territory 15",
+          "products": "Performance-optimized design achieving superior throughput and reliability.",
+          "quantity": 193,
+          "unitPrice": 18234,
+          "totalAmount": 18234,
+          "status": "approved",
+          "orderDate": "2024-03-01",
+          "deliveryDate": "2024-03-01",
+          "frequency": "Modern Frequency 15",
+          "pattern": "Modern Pattern 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Supplier",
+      "routeKey": "suppliers",
+      "label": "Supplier",
+      "icon": "map-pin",
+      "aiFunction": "analyzeSupplier",
+      "aiPrompt": "You are an AI analyst for A I Wholesale Distribution Optimizer. Analyze the provided Supplier data. The data includes: Company Name, Contact Name, Email, Phone, Address, Category, Lead Time Days, Reliability Score, Total Orders, On Time Delivery Rate, Quality Rating, Payment Terms, Status, Contract Expiry, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "companyName",
+          "label": "Company Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactName",
+          "label": "Contact Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "leadTimeDays",
+          "label": "Lead Time Days",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "reliabilityScore",
+          "label": "Reliability Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalOrders",
+          "label": "Total Orders",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "onTimeDeliveryRate",
+          "label": "On Time Delivery Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "qualityRating",
+          "label": "Quality Rating",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "paymentTerms",
+          "label": "Payment Terms",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contractExpiry",
+          "label": "Contract Expiry",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "companyName": "Advanced Company 1",
+          "contactName": "James Wilson",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "Category A",
+          "leadTimeDays": 10,
+          "reliabilityScore": 1.5,
+          "totalOrders": 10,
+          "onTimeDeliveryRate": 1.5,
+          "qualityRating": 1.5,
+          "paymentTerms": "Advanced Payment Terms 1",
+          "status": "active",
+          "contractExpiry": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "companyName": "Premium Company 2",
+          "contactName": "Sarah Chen",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "Category B",
+          "leadTimeDays": 58,
+          "reliabilityScore": 2.1,
+          "totalOrders": 58,
+          "onTimeDeliveryRate": 2.1,
+          "qualityRating": 2.1,
+          "paymentTerms": "Premium Payment Terms 2",
+          "status": "pending",
+          "contractExpiry": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "companyName": "Standard Company 3",
+          "contactName": "Michael Brown",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "Category C",
+          "leadTimeDays": 106,
+          "reliabilityScore": 2.7,
+          "totalOrders": 106,
+          "onTimeDeliveryRate": 2.7,
+          "qualityRating": 2.7,
+          "paymentTerms": "Standard Payment Terms 3",
+          "status": "in_progress",
+          "contractExpiry": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "companyName": "Elite Company 4",
+          "contactName": "Emily Davis",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "Category D",
+          "leadTimeDays": 154,
+          "reliabilityScore": 3.3,
+          "totalOrders": 154,
+          "onTimeDeliveryRate": 3.3,
+          "qualityRating": 3.3,
+          "paymentTerms": "Elite Payment Terms 4",
+          "status": "completed",
+          "contractExpiry": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "companyName": "Core Company 5",
+          "contactName": "Robert Garcia",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "Category E",
+          "leadTimeDays": 102,
+          "reliabilityScore": 3.9,
+          "totalOrders": 102,
+          "onTimeDeliveryRate": 3.9,
+          "qualityRating": 3.9,
+          "paymentTerms": "Core Payment Terms 5",
+          "status": "under_review",
+          "contractExpiry": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "companyName": "Pro Company 6",
+          "contactName": "Lisa Anderson",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "Premium Tier",
+          "leadTimeDays": 150,
+          "reliabilityScore": 4.5,
+          "totalOrders": 150,
+          "onTimeDeliveryRate": 4.5,
+          "qualityRating": 4.5,
+          "paymentTerms": "Pro Payment Terms 6",
+          "status": "approved",
+          "contractExpiry": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "companyName": "Essential Company 7",
+          "contactName": "David Martinez",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "Standard Tier",
+          "leadTimeDays": 198,
+          "reliabilityScore": 5.1,
+          "totalOrders": 198,
+          "onTimeDeliveryRate": 5.1,
+          "qualityRating": 5.1,
+          "paymentTerms": "Essential Payment Terms 7",
+          "status": "active",
+          "contractExpiry": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "companyName": "Primary Company 8",
+          "contactName": "Jennifer Taylor",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "Basic Tier",
+          "leadTimeDays": 146,
+          "reliabilityScore": 5.7,
+          "totalOrders": 146,
+          "onTimeDeliveryRate": 5.7,
+          "qualityRating": 5.7,
+          "paymentTerms": "Primary Payment Terms 8",
+          "status": "active",
+          "contractExpiry": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "companyName": "Global Company 9",
+          "contactName": "William Johnson",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "Enterprise",
+          "leadTimeDays": 194,
+          "reliabilityScore": 6.3,
+          "totalOrders": 194,
+          "onTimeDeliveryRate": 6.3,
+          "qualityRating": 6.3,
+          "paymentTerms": "Global Payment Terms 9",
+          "status": "active",
+          "contractExpiry": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "companyName": "Regional Company 10",
+          "contactName": "Maria Rodriguez",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "Starter",
+          "leadTimeDays": 242,
+          "reliabilityScore": 1.9,
+          "totalOrders": 242,
+          "onTimeDeliveryRate": 1.9,
+          "qualityRating": 1.9,
+          "paymentTerms": "Regional Payment Terms 10",
+          "status": "pending",
+          "contractExpiry": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "companyName": "Custom Company 11",
+          "contactName": "Thomas Lee",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "Growth",
+          "leadTimeDays": 190,
+          "reliabilityScore": 2.5,
+          "totalOrders": 190,
+          "onTimeDeliveryRate": 2.5,
+          "qualityRating": 2.5,
+          "paymentTerms": "Custom Payment Terms 11",
+          "status": "completed",
+          "contractExpiry": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "companyName": "Smart Company 12",
+          "contactName": "Patricia White",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "category": "Scale",
+          "leadTimeDays": 238,
+          "reliabilityScore": 3.1,
+          "totalOrders": 238,
+          "onTimeDeliveryRate": 3.1,
+          "qualityRating": 3.1,
+          "paymentTerms": "Smart Payment Terms 12",
+          "status": "active",
+          "contractExpiry": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "companyName": "Rapid Company 13",
+          "contactName": "Christopher Hall",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "Foundation",
+          "leadTimeDays": 286,
+          "reliabilityScore": 3.7,
+          "totalOrders": 286,
+          "onTimeDeliveryRate": 3.7,
+          "qualityRating": 3.7,
+          "paymentTerms": "Rapid Payment Terms 13",
+          "status": "in_progress",
+          "contractExpiry": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "companyName": "Secure Company 14",
+          "contactName": "Amanda Clark",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "category": "Advanced",
+          "leadTimeDays": 234,
+          "reliabilityScore": 4.3,
+          "totalOrders": 234,
+          "onTimeDeliveryRate": 4.3,
+          "qualityRating": 4.3,
+          "paymentTerms": "Secure Payment Terms 14",
+          "status": "active",
+          "contractExpiry": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "companyName": "Modern Company 15",
+          "contactName": "Daniel Wright",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "Professional",
+          "leadTimeDays": 282,
+          "reliabilityScore": 4.9,
+          "totalOrders": 282,
+          "onTimeDeliveryRate": 4.9,
+          "qualityRating": 4.9,
+          "paymentTerms": "Modern Payment Terms 15",
+          "status": "approved",
+          "contractExpiry": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Delivery",
+      "routeKey": "deliverys",
+      "label": "Delivery",
+      "icon": "users",
+      "aiFunction": "analyzeDelivery",
+      "aiPrompt": "You are an AI analyst for A I Wholesale Distribution Optimizer. Analyze the provided Delivery data. The data includes: Tracking Number, Order Number, Customer Name, Origin, Destination, Carrier, Estimated Delivery, Actual Delivery, Weight, Cost, Status, Territory, Priority, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "trackingNumber",
+          "label": "Tracking Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "orderNumber",
+          "label": "Order Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "origin",
+          "label": "Origin",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "destination",
+          "label": "Destination",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "carrier",
+          "label": "Carrier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "estimatedDelivery",
+          "label": "Estimated Delivery",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "actualDelivery",
+          "label": "Actual Delivery",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "territory",
+          "label": "Territory",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "trackingNumber": "Advanced Tracking Number 1",
+          "orderNumber": "Advanced Order Number 1",
+          "customerName": "James Wilson",
+          "origin": "Advanced Origin 1",
+          "destination": "Advanced Destination 1",
+          "carrier": "Advanced Carrier 1",
+          "estimatedDelivery": "2024-01-01",
+          "actualDelivery": "2024-01-01",
+          "weight": 10,
+          "cost": 500,
+          "status": "active",
+          "territory": "Advanced Territory 1",
+          "priority": "low",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "trackingNumber": "Premium Tracking Number 2",
+          "orderNumber": "Premium Order Number 2",
+          "customerName": "Sarah Chen",
+          "origin": "Premium Origin 2",
+          "destination": "Premium Destination 2",
+          "carrier": "Premium Carrier 2",
+          "estimatedDelivery": "2024-02-03",
+          "actualDelivery": "2024-02-03",
+          "weight": 71.7,
+          "cost": 2481,
+          "status": "pending",
+          "territory": "Premium Territory 2",
+          "priority": "medium",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "trackingNumber": "Standard Tracking Number 3",
+          "orderNumber": "Standard Order Number 3",
+          "customerName": "Michael Brown",
+          "origin": "Standard Origin 3",
+          "destination": "Standard Destination 3",
+          "carrier": "Standard Carrier 3",
+          "estimatedDelivery": "2024-03-05",
+          "actualDelivery": "2024-03-05",
+          "weight": 33.4,
+          "cost": 4462,
+          "status": "in_progress",
+          "territory": "Standard Territory 3",
+          "priority": "high",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "trackingNumber": "Elite Tracking Number 4",
+          "orderNumber": "Elite Order Number 4",
+          "customerName": "Emily Davis",
+          "origin": "Elite Origin 4",
+          "destination": "Elite Destination 4",
+          "carrier": "Elite Carrier 4",
+          "estimatedDelivery": "2024-04-07",
+          "actualDelivery": "2024-04-07",
+          "weight": 95.1,
+          "cost": 6443,
+          "status": "completed",
+          "territory": "Elite Territory 4",
+          "priority": "critical",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "trackingNumber": "Core Tracking Number 5",
+          "orderNumber": "Core Order Number 5",
+          "customerName": "Robert Garcia",
+          "origin": "Core Origin 5",
+          "destination": "Core Destination 5",
+          "carrier": "Core Carrier 5",
+          "estimatedDelivery": "2024-05-09",
+          "actualDelivery": "2024-05-09",
+          "weight": 56.8,
+          "cost": 8424,
+          "status": "under_review",
+          "territory": "Core Territory 5",
+          "priority": "medium",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "trackingNumber": "Pro Tracking Number 6",
+          "orderNumber": "Pro Order Number 6",
+          "customerName": "Lisa Anderson",
+          "origin": "Pro Origin 6",
+          "destination": "Pro Destination 6",
+          "carrier": "Pro Carrier 6",
+          "estimatedDelivery": "2024-06-11",
+          "actualDelivery": "2024-06-11",
+          "weight": 118.5,
+          "cost": 10405,
+          "status": "approved",
+          "territory": "Pro Territory 6",
+          "priority": "low",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "trackingNumber": "Essential Tracking Number 7",
+          "orderNumber": "Essential Order Number 7",
+          "customerName": "David Martinez",
+          "origin": "Essential Origin 7",
+          "destination": "Essential Destination 7",
+          "carrier": "Essential Carrier 7",
+          "estimatedDelivery": "2024-07-13",
+          "actualDelivery": "2024-07-13",
+          "weight": 80.2,
+          "cost": 12386,
+          "status": "active",
+          "territory": "Essential Territory 7",
+          "priority": "medium",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "trackingNumber": "Primary Tracking Number 8",
+          "orderNumber": "Primary Order Number 8",
+          "customerName": "Jennifer Taylor",
+          "origin": "Primary Origin 8",
+          "destination": "Primary Destination 8",
+          "carrier": "Primary Carrier 8",
+          "estimatedDelivery": "2024-08-15",
+          "actualDelivery": "2024-08-15",
+          "weight": 141.9,
+          "cost": 9367,
+          "status": "active",
+          "territory": "Primary Territory 8",
+          "priority": "high",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "trackingNumber": "Global Tracking Number 9",
+          "orderNumber": "Global Order Number 9",
+          "customerName": "William Johnson",
+          "origin": "Global Origin 9",
+          "destination": "Global Destination 9",
+          "carrier": "Global Carrier 9",
+          "estimatedDelivery": "2024-09-17",
+          "actualDelivery": "2024-09-17",
+          "weight": 103.6,
+          "cost": 11348,
+          "status": "active",
+          "territory": "Global Territory 9",
+          "priority": "critical",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "trackingNumber": "Regional Tracking Number 10",
+          "orderNumber": "Regional Order Number 10",
+          "customerName": "Maria Rodriguez",
+          "origin": "Regional Origin 10",
+          "destination": "Regional Destination 10",
+          "carrier": "Regional Carrier 10",
+          "estimatedDelivery": "2024-10-19",
+          "actualDelivery": "2024-10-19",
+          "weight": 165.3,
+          "cost": 13329,
+          "status": "pending",
+          "territory": "Regional Territory 10",
+          "priority": "medium",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "trackingNumber": "Custom Tracking Number 11",
+          "orderNumber": "Custom Order Number 11",
+          "customerName": "Thomas Lee",
+          "origin": "Custom Origin 11",
+          "destination": "Custom Destination 11",
+          "carrier": "Custom Carrier 11",
+          "estimatedDelivery": "2024-11-21",
+          "actualDelivery": "2024-11-21",
+          "weight": 127,
+          "cost": 15310,
+          "status": "completed",
+          "territory": "Custom Territory 11",
+          "priority": "low",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "trackingNumber": "Smart Tracking Number 12",
+          "orderNumber": "Smart Order Number 12",
+          "customerName": "Patricia White",
+          "origin": "Smart Origin 12",
+          "destination": "Smart Destination 12",
+          "carrier": "Smart Carrier 12",
+          "estimatedDelivery": "2024-12-23",
+          "actualDelivery": "2024-12-23",
+          "weight": 188.7,
+          "cost": 17291,
+          "status": "active",
+          "territory": "Smart Territory 12",
+          "priority": "medium",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "trackingNumber": "Rapid Tracking Number 13",
+          "orderNumber": "Rapid Order Number 13",
+          "customerName": "Christopher Hall",
+          "origin": "Rapid Origin 13",
+          "destination": "Rapid Destination 13",
+          "carrier": "Rapid Carrier 13",
+          "estimatedDelivery": "2024-01-25",
+          "actualDelivery": "2024-01-25",
+          "weight": 150.4,
+          "cost": 19272,
+          "status": "in_progress",
+          "territory": "Rapid Territory 13",
+          "priority": "high",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "trackingNumber": "Secure Tracking Number 14",
+          "orderNumber": "Secure Order Number 14",
+          "customerName": "Amanda Clark",
+          "origin": "Secure Origin 14",
+          "destination": "Secure Destination 14",
+          "carrier": "Secure Carrier 14",
+          "estimatedDelivery": "2024-02-27",
+          "actualDelivery": "2024-02-27",
+          "weight": 212.1,
+          "cost": 21253,
+          "status": "active",
+          "territory": "Secure Territory 14",
+          "priority": "critical",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "trackingNumber": "Modern Tracking Number 15",
+          "orderNumber": "Modern Order Number 15",
+          "customerName": "Daniel Wright",
+          "origin": "Modern Origin 15",
+          "destination": "Modern Destination 15",
+          "carrier": "Modern Carrier 15",
+          "estimatedDelivery": "2024-03-01",
+          "actualDelivery": "2024-03-01",
+          "weight": 173.8,
+          "cost": 18234,
+          "status": "approved",
+          "territory": "Modern Territory 15",
+          "priority": "medium",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "EnergyAudit",
+      "routeKey": "energy-audits",
+      "label": "Energy Audit",
+      "icon": "truck",
+      "aiFunction": "analyzeEnergyAudit",
+      "aiPrompt": "You are an AI analyst for A I Warehouse Manager. Analyze the provided Energy Audit data. The data includes: Floor Plan Id, Efficiency Score, Annual Cost Estimate, Potential Savings, Recommendations, Carbon Footprint, Model Used. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "floorPlanId",
+          "label": "Floor Plan Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "efficiencyScore",
+          "label": "Efficiency Score",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "annualCostEstimate",
+          "label": "Annual Cost Estimate",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "potentialSavings",
+          "label": "Potential Savings",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "recommendations",
+          "label": "Recommendations",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "carbonFootprint",
+          "label": "Carbon Footprint",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "modelUsed",
+          "label": "Model Used",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "floorPlanId": "Advanced Floor Plan Id 1",
+          "efficiencyScore": 1.5,
+          "annualCostEstimate": 500,
+          "potentialSavings": 10,
+          "recommendations": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "carbonFootprint": 10,
+          "modelUsed": "Advanced Model Used 1"
+        },
+        {
+          "floorPlanId": "Premium Floor Plan Id 2",
+          "efficiencyScore": 2.1,
+          "annualCostEstimate": 2481,
+          "potentialSavings": 71.7,
+          "recommendations": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "carbonFootprint": 71.7,
+          "modelUsed": "Premium Model Used 2"
+        },
+        {
+          "floorPlanId": "Standard Floor Plan Id 3",
+          "efficiencyScore": 2.7,
+          "annualCostEstimate": 4462,
+          "potentialSavings": 33.4,
+          "recommendations": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "carbonFootprint": 33.4,
+          "modelUsed": "Standard Model Used 3"
+        },
+        {
+          "floorPlanId": "Elite Floor Plan Id 4",
+          "efficiencyScore": 3.3,
+          "annualCostEstimate": 6443,
+          "potentialSavings": 95.1,
+          "recommendations": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "carbonFootprint": 95.1,
+          "modelUsed": "Elite Model Used 4"
+        },
+        {
+          "floorPlanId": "Core Floor Plan Id 5",
+          "efficiencyScore": 3.9,
+          "annualCostEstimate": 8424,
+          "potentialSavings": 56.8,
+          "recommendations": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "carbonFootprint": 56.8,
+          "modelUsed": "Core Model Used 5"
+        },
+        {
+          "floorPlanId": "Pro Floor Plan Id 6",
+          "efficiencyScore": 4.5,
+          "annualCostEstimate": 10405,
+          "potentialSavings": 118.5,
+          "recommendations": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "carbonFootprint": 118.5,
+          "modelUsed": "Pro Model Used 6"
+        },
+        {
+          "floorPlanId": "Essential Floor Plan Id 7",
+          "efficiencyScore": 5.1,
+          "annualCostEstimate": 12386,
+          "potentialSavings": 80.2,
+          "recommendations": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "carbonFootprint": 80.2,
+          "modelUsed": "Essential Model Used 7"
+        },
+        {
+          "floorPlanId": "Primary Floor Plan Id 8",
+          "efficiencyScore": 5.7,
+          "annualCostEstimate": 9367,
+          "potentialSavings": 141.9,
+          "recommendations": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "carbonFootprint": 141.9,
+          "modelUsed": "Primary Model Used 8"
+        },
+        {
+          "floorPlanId": "Global Floor Plan Id 9",
+          "efficiencyScore": 6.3,
+          "annualCostEstimate": 11348,
+          "potentialSavings": 103.6,
+          "recommendations": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "carbonFootprint": 103.6,
+          "modelUsed": "Global Model Used 9"
+        },
+        {
+          "floorPlanId": "Regional Floor Plan Id 10",
+          "efficiencyScore": 1.9,
+          "annualCostEstimate": 13329,
+          "potentialSavings": 165.3,
+          "recommendations": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "carbonFootprint": 165.3,
+          "modelUsed": "Regional Model Used 10"
+        },
+        {
+          "floorPlanId": "Custom Floor Plan Id 11",
+          "efficiencyScore": 2.5,
+          "annualCostEstimate": 15310,
+          "potentialSavings": 127,
+          "recommendations": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "carbonFootprint": 127,
+          "modelUsed": "Custom Model Used 11"
+        },
+        {
+          "floorPlanId": "Smart Floor Plan Id 12",
+          "efficiencyScore": 3.1,
+          "annualCostEstimate": 17291,
+          "potentialSavings": 188.7,
+          "recommendations": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "carbonFootprint": 188.7,
+          "modelUsed": "Smart Model Used 12"
+        },
+        {
+          "floorPlanId": "Rapid Floor Plan Id 13",
+          "efficiencyScore": 3.7,
+          "annualCostEstimate": 19272,
+          "potentialSavings": 150.4,
+          "recommendations": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "carbonFootprint": 150.4,
+          "modelUsed": "Rapid Model Used 13"
+        },
+        {
+          "floorPlanId": "Secure Floor Plan Id 14",
+          "efficiencyScore": 4.3,
+          "annualCostEstimate": 21253,
+          "potentialSavings": 212.1,
+          "recommendations": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "carbonFootprint": 212.1,
+          "modelUsed": "Secure Model Used 14"
+        },
+        {
+          "floorPlanId": "Modern Floor Plan Id 15",
+          "efficiencyScore": 4.9,
+          "annualCostEstimate": 18234,
+          "potentialSavings": 173.8,
+          "recommendations": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "carbonFootprint": 173.8,
+          "modelUsed": "Modern Model Used 15"
+        }
+      ]
+    },
+    {
+      "modelName": "HomeInspection",
+      "routeKey": "home-inspections",
+      "label": "Home Inspection",
+      "icon": "users",
+      "aiFunction": "analyzeHomeInspection",
+      "aiPrompt": "You are an AI analyst for A I Warehouse Manager. Analyze the provided Home Inspection data. The data includes: Floor Plan Id, Inspection Type, Overall Condition, Issues Found, Critical Issues, Estimated Repair Cost, Model Used. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "floorPlanId",
+          "label": "Floor Plan Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "inspectionType",
+          "label": "Inspection Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "overallCondition",
+          "label": "Overall Condition",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "issuesFound",
+          "label": "Issues Found",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "criticalIssues",
+          "label": "Critical Issues",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "estimatedRepairCost",
+          "label": "Estimated Repair Cost",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "modelUsed",
+          "label": "Model Used",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "floorPlanId": "Advanced Floor Plan Id 1",
+          "inspectionType": "Category A",
+          "overallCondition": "Advanced Overall Condition 1",
+          "issuesFound": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "criticalIssues": 10,
+          "estimatedRepairCost": 500,
+          "modelUsed": "Advanced Model Used 1"
+        },
+        {
+          "floorPlanId": "Premium Floor Plan Id 2",
+          "inspectionType": "Category B",
+          "overallCondition": "Premium Overall Condition 2",
+          "issuesFound": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "criticalIssues": 58,
+          "estimatedRepairCost": 2481,
+          "modelUsed": "Premium Model Used 2"
+        },
+        {
+          "floorPlanId": "Standard Floor Plan Id 3",
+          "inspectionType": "Category C",
+          "overallCondition": "Standard Overall Condition 3",
+          "issuesFound": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "criticalIssues": 106,
+          "estimatedRepairCost": 4462,
+          "modelUsed": "Standard Model Used 3"
+        },
+        {
+          "floorPlanId": "Elite Floor Plan Id 4",
+          "inspectionType": "Category D",
+          "overallCondition": "Elite Overall Condition 4",
+          "issuesFound": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "criticalIssues": 154,
+          "estimatedRepairCost": 6443,
+          "modelUsed": "Elite Model Used 4"
+        },
+        {
+          "floorPlanId": "Core Floor Plan Id 5",
+          "inspectionType": "Category E",
+          "overallCondition": "Core Overall Condition 5",
+          "issuesFound": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "criticalIssues": 102,
+          "estimatedRepairCost": 8424,
+          "modelUsed": "Core Model Used 5"
+        },
+        {
+          "floorPlanId": "Pro Floor Plan Id 6",
+          "inspectionType": "Premium Tier",
+          "overallCondition": "Pro Overall Condition 6",
+          "issuesFound": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "criticalIssues": 150,
+          "estimatedRepairCost": 10405,
+          "modelUsed": "Pro Model Used 6"
+        },
+        {
+          "floorPlanId": "Essential Floor Plan Id 7",
+          "inspectionType": "Standard Tier",
+          "overallCondition": "Essential Overall Condition 7",
+          "issuesFound": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "criticalIssues": 198,
+          "estimatedRepairCost": 12386,
+          "modelUsed": "Essential Model Used 7"
+        },
+        {
+          "floorPlanId": "Primary Floor Plan Id 8",
+          "inspectionType": "Basic Tier",
+          "overallCondition": "Primary Overall Condition 8",
+          "issuesFound": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "criticalIssues": 146,
+          "estimatedRepairCost": 9367,
+          "modelUsed": "Primary Model Used 8"
+        },
+        {
+          "floorPlanId": "Global Floor Plan Id 9",
+          "inspectionType": "Enterprise",
+          "overallCondition": "Global Overall Condition 9",
+          "issuesFound": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "criticalIssues": 194,
+          "estimatedRepairCost": 11348,
+          "modelUsed": "Global Model Used 9"
+        },
+        {
+          "floorPlanId": "Regional Floor Plan Id 10",
+          "inspectionType": "Starter",
+          "overallCondition": "Regional Overall Condition 10",
+          "issuesFound": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "criticalIssues": 242,
+          "estimatedRepairCost": 13329,
+          "modelUsed": "Regional Model Used 10"
+        },
+        {
+          "floorPlanId": "Custom Floor Plan Id 11",
+          "inspectionType": "Growth",
+          "overallCondition": "Custom Overall Condition 11",
+          "issuesFound": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "criticalIssues": 190,
+          "estimatedRepairCost": 15310,
+          "modelUsed": "Custom Model Used 11"
+        },
+        {
+          "floorPlanId": "Smart Floor Plan Id 12",
+          "inspectionType": "Scale",
+          "overallCondition": "Smart Overall Condition 12",
+          "issuesFound": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "criticalIssues": 238,
+          "estimatedRepairCost": 17291,
+          "modelUsed": "Smart Model Used 12"
+        },
+        {
+          "floorPlanId": "Rapid Floor Plan Id 13",
+          "inspectionType": "Foundation",
+          "overallCondition": "Rapid Overall Condition 13",
+          "issuesFound": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "criticalIssues": 286,
+          "estimatedRepairCost": 19272,
+          "modelUsed": "Rapid Model Used 13"
+        },
+        {
+          "floorPlanId": "Secure Floor Plan Id 14",
+          "inspectionType": "Advanced",
+          "overallCondition": "Secure Overall Condition 14",
+          "issuesFound": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "criticalIssues": 234,
+          "estimatedRepairCost": 21253,
+          "modelUsed": "Secure Model Used 14"
+        },
+        {
+          "floorPlanId": "Modern Floor Plan Id 15",
+          "inspectionType": "Professional",
+          "overallCondition": "Modern Overall Condition 15",
+          "issuesFound": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "criticalIssues": 282,
+          "estimatedRepairCost": 18234,
+          "modelUsed": "Modern Model Used 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Subscription",
+      "routeKey": "subscriptions",
+      "label": "Subscription",
+      "icon": "clipboard",
+      "aiFunction": "analyzeSubscription",
+      "aiPrompt": "You are an AI analyst for A I Warehouse Manager. Analyze the provided Subscription data. The data includes: User Id, Plan, Status, Credits Used, Credits Limit, Start Date, End Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "plan",
+          "label": "Plan",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "creditsUsed",
+          "label": "Credits Used",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "creditsLimit",
+          "label": "Credits Limit",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": "Advanced User Id 1",
+          "plan": "Advanced Plan 1",
+          "status": "active",
+          "creditsUsed": 10,
+          "creditsLimit": 10,
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01"
+        },
+        {
+          "userId": "Premium User Id 2",
+          "plan": "Premium Plan 2",
+          "status": "pending",
+          "creditsUsed": 58,
+          "creditsLimit": 58,
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03"
+        },
+        {
+          "userId": "Standard User Id 3",
+          "plan": "Standard Plan 3",
+          "status": "in_progress",
+          "creditsUsed": 106,
+          "creditsLimit": 106,
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05"
+        },
+        {
+          "userId": "Elite User Id 4",
+          "plan": "Elite Plan 4",
+          "status": "completed",
+          "creditsUsed": 154,
+          "creditsLimit": 154,
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07"
+        },
+        {
+          "userId": "Core User Id 5",
+          "plan": "Core Plan 5",
+          "status": "under_review",
+          "creditsUsed": 102,
+          "creditsLimit": 102,
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09"
+        },
+        {
+          "userId": "Pro User Id 6",
+          "plan": "Pro Plan 6",
+          "status": "approved",
+          "creditsUsed": 150,
+          "creditsLimit": 150,
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11"
+        },
+        {
+          "userId": "Essential User Id 7",
+          "plan": "Essential Plan 7",
+          "status": "active",
+          "creditsUsed": 198,
+          "creditsLimit": 198,
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13"
+        },
+        {
+          "userId": "Primary User Id 8",
+          "plan": "Primary Plan 8",
+          "status": "active",
+          "creditsUsed": 146,
+          "creditsLimit": 146,
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15"
+        },
+        {
+          "userId": "Global User Id 9",
+          "plan": "Global Plan 9",
+          "status": "active",
+          "creditsUsed": 194,
+          "creditsLimit": 194,
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17"
+        },
+        {
+          "userId": "Regional User Id 10",
+          "plan": "Regional Plan 10",
+          "status": "pending",
+          "creditsUsed": 242,
+          "creditsLimit": 242,
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19"
+        },
+        {
+          "userId": "Custom User Id 11",
+          "plan": "Custom Plan 11",
+          "status": "completed",
+          "creditsUsed": 190,
+          "creditsLimit": 190,
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21"
+        },
+        {
+          "userId": "Smart User Id 12",
+          "plan": "Smart Plan 12",
+          "status": "active",
+          "creditsUsed": 238,
+          "creditsLimit": 238,
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23"
+        },
+        {
+          "userId": "Rapid User Id 13",
+          "plan": "Rapid Plan 13",
+          "status": "in_progress",
+          "creditsUsed": 286,
+          "creditsLimit": 286,
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25"
+        },
+        {
+          "userId": "Secure User Id 14",
+          "plan": "Secure Plan 14",
+          "status": "active",
+          "creditsUsed": 234,
+          "creditsLimit": 234,
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27"
+        },
+        {
+          "userId": "Modern User Id 15",
+          "plan": "Modern Plan 15",
+          "status": "approved",
+          "creditsUsed": 282,
+          "creditsLimit": 282,
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "ShoppingList",
+      "routeKey": "shopping-lists",
+      "label": "Shopping List",
+      "icon": "database",
+      "aiFunction": "analyzeShoppingList",
+      "aiPrompt": "You are an AI analyst for A I Warehouse Manager. Analyze the provided Shopping List data. The data includes: User Id, Design Id, Name, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "designId",
+          "label": "Design Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": "Advanced User Id 1",
+          "designId": "Advanced Design Id 1",
+          "name": "Advanced Name 1",
+          "status": "active"
+        },
+        {
+          "userId": "Premium User Id 2",
+          "designId": "Premium Design Id 2",
+          "name": "Premium Name 2",
+          "status": "pending"
+        },
+        {
+          "userId": "Standard User Id 3",
+          "designId": "Standard Design Id 3",
+          "name": "Standard Name 3",
+          "status": "in_progress"
+        },
+        {
+          "userId": "Elite User Id 4",
+          "designId": "Elite Design Id 4",
+          "name": "Elite Name 4",
+          "status": "completed"
+        },
+        {
+          "userId": "Core User Id 5",
+          "designId": "Core Design Id 5",
+          "name": "Core Name 5",
+          "status": "under_review"
+        },
+        {
+          "userId": "Pro User Id 6",
+          "designId": "Pro Design Id 6",
+          "name": "Pro Name 6",
+          "status": "approved"
+        },
+        {
+          "userId": "Essential User Id 7",
+          "designId": "Essential Design Id 7",
+          "name": "Essential Name 7",
+          "status": "active"
+        },
+        {
+          "userId": "Primary User Id 8",
+          "designId": "Primary Design Id 8",
+          "name": "Primary Name 8",
+          "status": "active"
+        },
+        {
+          "userId": "Global User Id 9",
+          "designId": "Global Design Id 9",
+          "name": "Global Name 9",
+          "status": "active"
+        },
+        {
+          "userId": "Regional User Id 10",
+          "designId": "Regional Design Id 10",
+          "name": "Regional Name 10",
+          "status": "pending"
+        },
+        {
+          "userId": "Custom User Id 11",
+          "designId": "Custom Design Id 11",
+          "name": "Custom Name 11",
+          "status": "completed"
+        },
+        {
+          "userId": "Smart User Id 12",
+          "designId": "Smart Design Id 12",
+          "name": "Smart Name 12",
+          "status": "active"
+        },
+        {
+          "userId": "Rapid User Id 13",
+          "designId": "Rapid Design Id 13",
+          "name": "Rapid Name 13",
+          "status": "in_progress"
+        },
+        {
+          "userId": "Secure User Id 14",
+          "designId": "Secure Design Id 14",
+          "name": "Secure Name 14",
+          "status": "active"
+        },
+        {
+          "userId": "Modern User Id 15",
+          "designId": "Modern Design Id 15",
+          "name": "Modern Name 15",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Customer",
+      "routeKey": "customers",
+      "label": "Customer",
+      "icon": "heart",
+      "aiFunction": "analyzeCustomer",
+      "aiPrompt": "You are an AI analyst for A I Wholesale Distribution Optimizer. Analyze the provided Customer data. The data includes: Company Name, Contact Name, Email, Phone, Address, Territory, Segment, Lifetime Value, Total Orders, Avg Order Value, Payment Terms, Credit Limit, Status, Last Order Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "companyName",
+          "label": "Company Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactName",
+          "label": "Contact Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "territory",
+          "label": "Territory",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "segment",
+          "label": "Segment",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lifetimeValue",
+          "label": "Lifetime Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalOrders",
+          "label": "Total Orders",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "avgOrderValue",
+          "label": "Avg Order Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "paymentTerms",
+          "label": "Payment Terms",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "creditLimit",
+          "label": "Credit Limit",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastOrderDate",
+          "label": "Last Order Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "companyName": "Advanced Company 1",
+          "contactName": "James Wilson",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "territory": "Advanced Territory 1",
+          "segment": "Advanced Segment 1",
+          "lifetimeValue": 10,
+          "totalOrders": 10,
+          "avgOrderValue": 10,
+          "paymentTerms": "Advanced Payment Terms 1",
+          "creditLimit": 10,
+          "status": "active",
+          "lastOrderDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "companyName": "Premium Company 2",
+          "contactName": "Sarah Chen",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "territory": "Premium Territory 2",
+          "segment": "Premium Segment 2",
+          "lifetimeValue": 71.7,
+          "totalOrders": 58,
+          "avgOrderValue": 71.7,
+          "paymentTerms": "Premium Payment Terms 2",
+          "creditLimit": 71.7,
+          "status": "pending",
+          "lastOrderDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "companyName": "Standard Company 3",
+          "contactName": "Michael Brown",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "territory": "Standard Territory 3",
+          "segment": "Standard Segment 3",
+          "lifetimeValue": 33.4,
+          "totalOrders": 106,
+          "avgOrderValue": 33.4,
+          "paymentTerms": "Standard Payment Terms 3",
+          "creditLimit": 33.4,
+          "status": "in_progress",
+          "lastOrderDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "companyName": "Elite Company 4",
+          "contactName": "Emily Davis",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "territory": "Elite Territory 4",
+          "segment": "Elite Segment 4",
+          "lifetimeValue": 95.1,
+          "totalOrders": 154,
+          "avgOrderValue": 95.1,
+          "paymentTerms": "Elite Payment Terms 4",
+          "creditLimit": 95.1,
+          "status": "completed",
+          "lastOrderDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "companyName": "Core Company 5",
+          "contactName": "Robert Garcia",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "territory": "Core Territory 5",
+          "segment": "Core Segment 5",
+          "lifetimeValue": 56.8,
+          "totalOrders": 102,
+          "avgOrderValue": 56.8,
+          "paymentTerms": "Core Payment Terms 5",
+          "creditLimit": 56.8,
+          "status": "under_review",
+          "lastOrderDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "companyName": "Pro Company 6",
+          "contactName": "Lisa Anderson",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "territory": "Pro Territory 6",
+          "segment": "Pro Segment 6",
+          "lifetimeValue": 118.5,
+          "totalOrders": 150,
+          "avgOrderValue": 118.5,
+          "paymentTerms": "Pro Payment Terms 6",
+          "creditLimit": 118.5,
+          "status": "approved",
+          "lastOrderDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "companyName": "Essential Company 7",
+          "contactName": "David Martinez",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "territory": "Essential Territory 7",
+          "segment": "Essential Segment 7",
+          "lifetimeValue": 80.2,
+          "totalOrders": 198,
+          "avgOrderValue": 80.2,
+          "paymentTerms": "Essential Payment Terms 7",
+          "creditLimit": 80.2,
+          "status": "active",
+          "lastOrderDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "companyName": "Primary Company 8",
+          "contactName": "Jennifer Taylor",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "territory": "Primary Territory 8",
+          "segment": "Primary Segment 8",
+          "lifetimeValue": 141.9,
+          "totalOrders": 146,
+          "avgOrderValue": 141.9,
+          "paymentTerms": "Primary Payment Terms 8",
+          "creditLimit": 141.9,
+          "status": "active",
+          "lastOrderDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "companyName": "Global Company 9",
+          "contactName": "William Johnson",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "territory": "Global Territory 9",
+          "segment": "Global Segment 9",
+          "lifetimeValue": 103.6,
+          "totalOrders": 194,
+          "avgOrderValue": 103.6,
+          "paymentTerms": "Global Payment Terms 9",
+          "creditLimit": 103.6,
+          "status": "active",
+          "lastOrderDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "companyName": "Regional Company 10",
+          "contactName": "Maria Rodriguez",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "territory": "Regional Territory 10",
+          "segment": "Regional Segment 10",
+          "lifetimeValue": 165.3,
+          "totalOrders": 242,
+          "avgOrderValue": 165.3,
+          "paymentTerms": "Regional Payment Terms 10",
+          "creditLimit": 165.3,
+          "status": "pending",
+          "lastOrderDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "companyName": "Custom Company 11",
+          "contactName": "Thomas Lee",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "territory": "Custom Territory 11",
+          "segment": "Custom Segment 11",
+          "lifetimeValue": 127,
+          "totalOrders": 190,
+          "avgOrderValue": 127,
+          "paymentTerms": "Custom Payment Terms 11",
+          "creditLimit": 127,
+          "status": "completed",
+          "lastOrderDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "companyName": "Smart Company 12",
+          "contactName": "Patricia White",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "territory": "Smart Territory 12",
+          "segment": "Smart Segment 12",
+          "lifetimeValue": 188.7,
+          "totalOrders": 238,
+          "avgOrderValue": 188.7,
+          "paymentTerms": "Smart Payment Terms 12",
+          "creditLimit": 188.7,
+          "status": "active",
+          "lastOrderDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "companyName": "Rapid Company 13",
+          "contactName": "Christopher Hall",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "territory": "Rapid Territory 13",
+          "segment": "Rapid Segment 13",
+          "lifetimeValue": 150.4,
+          "totalOrders": 286,
+          "avgOrderValue": 150.4,
+          "paymentTerms": "Rapid Payment Terms 13",
+          "creditLimit": 150.4,
+          "status": "in_progress",
+          "lastOrderDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "companyName": "Secure Company 14",
+          "contactName": "Amanda Clark",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "territory": "Secure Territory 14",
+          "segment": "Secure Segment 14",
+          "lifetimeValue": 212.1,
+          "totalOrders": 234,
+          "avgOrderValue": 212.1,
+          "paymentTerms": "Secure Payment Terms 14",
+          "creditLimit": 212.1,
+          "status": "active",
+          "lastOrderDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "companyName": "Modern Company 15",
+          "contactName": "Daniel Wright",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "territory": "Modern Territory 15",
+          "segment": "Modern Segment 15",
+          "lifetimeValue": 173.8,
+          "totalOrders": 282,
+          "avgOrderValue": 173.8,
+          "paymentTerms": "Modern Payment Terms 15",
+          "creditLimit": 173.8,
+          "status": "approved",
+          "lastOrderDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Return",
+      "routeKey": "returns",
+      "label": "Return",
+      "icon": "shield",
+      "aiFunction": "analyzeReturn",
+      "aiPrompt": "You are an AI analyst for A I Wholesale Distribution Optimizer. Analyze the provided Return data. The data includes: Return Number, Order Number, Customer Name, Product, Quantity, Reason, Type, Refund Amount, Status, Territory, Filed Date, Resolved Date, Resolution, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "returnNumber",
+          "label": "Return Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "orderNumber",
+          "label": "Order Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "product",
+          "label": "Product",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "reason",
+          "label": "Reason",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "refundAmount",
+          "label": "Refund Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "territory",
+          "label": "Territory",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "filedDate",
+          "label": "Filed Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "resolvedDate",
+          "label": "Resolved Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "resolution",
+          "label": "Resolution",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "returnNumber": "Advanced Return Number 1",
+          "orderNumber": "Advanced Order Number 1",
+          "customerName": "James Wilson",
+          "product": "Advanced Product 1",
+          "quantity": 197,
+          "reason": "Advanced Reason 1",
+          "type": "Category A",
+          "refundAmount": 500,
+          "status": "active",
+          "territory": "Advanced Territory 1",
+          "filedDate": "2024-01-01",
+          "resolvedDate": "2024-01-01",
+          "resolution": "Advanced Resolution 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "returnNumber": "Premium Return Number 2",
+          "orderNumber": "Premium Order Number 2",
+          "customerName": "Sarah Chen",
+          "product": "Premium Product 2",
+          "quantity": 149,
+          "reason": "Premium Reason 2",
+          "type": "Category B",
+          "refundAmount": 2481,
+          "status": "pending",
+          "territory": "Premium Territory 2",
+          "filedDate": "2024-02-03",
+          "resolvedDate": "2024-02-03",
+          "resolution": "Premium Resolution 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "returnNumber": "Standard Return Number 3",
+          "orderNumber": "Standard Order Number 3",
+          "customerName": "Michael Brown",
+          "product": "Standard Product 3",
+          "quantity": 46,
+          "reason": "Standard Reason 3",
+          "type": "Category C",
+          "refundAmount": 4462,
+          "status": "in_progress",
+          "territory": "Standard Territory 3",
+          "filedDate": "2024-03-05",
+          "resolvedDate": "2024-03-05",
+          "resolution": "Standard Resolution 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "returnNumber": "Elite Return Number 4",
+          "orderNumber": "Elite Order Number 4",
+          "customerName": "Emily Davis",
+          "product": "Elite Product 4",
+          "quantity": 178,
+          "reason": "Elite Reason 4",
+          "type": "Category D",
+          "refundAmount": 6443,
+          "status": "completed",
+          "territory": "Elite Territory 4",
+          "filedDate": "2024-04-07",
+          "resolvedDate": "2024-04-07",
+          "resolution": "Elite Resolution 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "returnNumber": "Core Return Number 5",
+          "orderNumber": "Core Order Number 5",
+          "customerName": "Robert Garcia",
+          "product": "Core Product 5",
+          "quantity": 228,
+          "reason": "Core Reason 5",
+          "type": "Category E",
+          "refundAmount": 8424,
+          "status": "under_review",
+          "territory": "Core Territory 5",
+          "filedDate": "2024-05-09",
+          "resolvedDate": "2024-05-09",
+          "resolution": "Core Resolution 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "returnNumber": "Pro Return Number 6",
+          "orderNumber": "Pro Order Number 6",
+          "customerName": "Lisa Anderson",
+          "product": "Pro Product 6",
+          "quantity": 105,
+          "reason": "Pro Reason 6",
+          "type": "Premium Tier",
+          "refundAmount": 10405,
+          "status": "approved",
+          "territory": "Pro Territory 6",
+          "filedDate": "2024-06-11",
+          "resolvedDate": "2024-06-11",
+          "resolution": "Pro Resolution 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "returnNumber": "Essential Return Number 7",
+          "orderNumber": "Essential Order Number 7",
+          "customerName": "David Martinez",
+          "product": "Essential Product 7",
+          "quantity": 112,
+          "reason": "Essential Reason 7",
+          "type": "Standard Tier",
+          "refundAmount": 12386,
+          "status": "active",
+          "territory": "Essential Territory 7",
+          "filedDate": "2024-07-13",
+          "resolvedDate": "2024-07-13",
+          "resolution": "Essential Resolution 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "returnNumber": "Primary Return Number 8",
+          "orderNumber": "Primary Order Number 8",
+          "customerName": "Jennifer Taylor",
+          "product": "Primary Product 8",
+          "quantity": 61,
+          "reason": "Primary Reason 8",
+          "type": "Basic Tier",
+          "refundAmount": 9367,
+          "status": "active",
+          "territory": "Primary Territory 8",
+          "filedDate": "2024-08-15",
+          "resolvedDate": "2024-08-15",
+          "resolution": "Primary Resolution 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "returnNumber": "Global Return Number 9",
+          "orderNumber": "Global Order Number 9",
+          "customerName": "William Johnson",
+          "product": "Global Product 9",
+          "quantity": 65,
+          "reason": "Global Reason 9",
+          "type": "Enterprise",
+          "refundAmount": 11348,
+          "status": "active",
+          "territory": "Global Territory 9",
+          "filedDate": "2024-09-17",
+          "resolvedDate": "2024-09-17",
+          "resolution": "Global Resolution 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "returnNumber": "Regional Return Number 10",
+          "orderNumber": "Regional Order Number 10",
+          "customerName": "Maria Rodriguez",
+          "product": "Regional Product 10",
+          "quantity": 111,
+          "reason": "Regional Reason 10",
+          "type": "Starter",
+          "refundAmount": 13329,
+          "status": "pending",
+          "territory": "Regional Territory 10",
+          "filedDate": "2024-10-19",
+          "resolvedDate": "2024-10-19",
+          "resolution": "Regional Resolution 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "returnNumber": "Custom Return Number 11",
+          "orderNumber": "Custom Order Number 11",
+          "customerName": "Thomas Lee",
+          "product": "Custom Product 11",
+          "quantity": 248,
+          "reason": "Custom Reason 11",
+          "type": "Growth",
+          "refundAmount": 15310,
+          "status": "completed",
+          "territory": "Custom Territory 11",
+          "filedDate": "2024-11-21",
+          "resolvedDate": "2024-11-21",
+          "resolution": "Custom Resolution 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "returnNumber": "Smart Return Number 12",
+          "orderNumber": "Smart Order Number 12",
+          "customerName": "Patricia White",
+          "product": "Smart Product 12",
+          "quantity": 156,
+          "reason": "Smart Reason 12",
+          "type": "Scale",
+          "refundAmount": 17291,
+          "status": "active",
+          "territory": "Smart Territory 12",
+          "filedDate": "2024-12-23",
+          "resolvedDate": "2024-12-23",
+          "resolution": "Smart Resolution 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "returnNumber": "Rapid Return Number 13",
+          "orderNumber": "Rapid Order Number 13",
+          "customerName": "Christopher Hall",
+          "product": "Rapid Product 13",
+          "quantity": 147,
+          "reason": "Rapid Reason 13",
+          "type": "Foundation",
+          "refundAmount": 19272,
+          "status": "in_progress",
+          "territory": "Rapid Territory 13",
+          "filedDate": "2024-01-25",
+          "resolvedDate": "2024-01-25",
+          "resolution": "Rapid Resolution 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "returnNumber": "Secure Return Number 14",
+          "orderNumber": "Secure Order Number 14",
+          "customerName": "Amanda Clark",
+          "product": "Secure Product 14",
+          "quantity": 112,
+          "reason": "Secure Reason 14",
+          "type": "Advanced",
+          "refundAmount": 21253,
+          "status": "active",
+          "territory": "Secure Territory 14",
+          "filedDate": "2024-02-27",
+          "resolvedDate": "2024-02-27",
+          "resolution": "Secure Resolution 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "returnNumber": "Modern Return Number 15",
+          "orderNumber": "Modern Order Number 15",
+          "customerName": "Daniel Wright",
+          "product": "Modern Product 15",
+          "quantity": 277,
+          "reason": "Modern Reason 15",
+          "type": "Professional",
+          "refundAmount": 18234,
+          "status": "approved",
+          "territory": "Modern Territory 15",
+          "filedDate": "2024-03-01",
+          "resolvedDate": "2024-03-01",
+          "resolution": "Modern Resolution 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Contractor",
+      "routeKey": "contractors",
+      "label": "Contractor",
+      "icon": "layers",
+      "aiFunction": "analyzeContractor",
+      "aiPrompt": "You are an AI analyst for A I Warehouse Manager. Analyze the provided Contractor data. The data includes: Name, Company, Specialty, Email, Phone, Rating, Hourly Rate, Availability, Location, Verified. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "company",
+          "label": "Company",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "specialty",
+          "label": "Specialty",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "hourlyRate",
+          "label": "Hourly Rate",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "availability",
+          "label": "Availability",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "verified",
+          "label": "Verified",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "company": "Advanced Company 1",
+          "specialty": "Advanced Specialty 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "rating": 1.5,
+          "hourlyRate": 1.5,
+          "availability": "Advanced Availability 1",
+          "location": "New York",
+          "verified": true
+        },
+        {
+          "name": "Premium Name 2",
+          "company": "Premium Company 2",
+          "specialty": "Premium Specialty 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "rating": 2.1,
+          "hourlyRate": 2.1,
+          "availability": "Premium Availability 2",
+          "location": "Los Angeles",
+          "verified": true
+        },
+        {
+          "name": "Standard Name 3",
+          "company": "Standard Company 3",
+          "specialty": "Standard Specialty 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "rating": 2.7,
+          "hourlyRate": 2.7,
+          "availability": "Standard Availability 3",
+          "location": "Chicago",
+          "verified": false
+        },
+        {
+          "name": "Elite Name 4",
+          "company": "Elite Company 4",
+          "specialty": "Elite Specialty 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "rating": 3.3,
+          "hourlyRate": 3.3,
+          "availability": "Elite Availability 4",
+          "location": "Houston",
+          "verified": true
+        },
+        {
+          "name": "Core Name 5",
+          "company": "Core Company 5",
+          "specialty": "Core Specialty 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "rating": 3.9,
+          "hourlyRate": 3.9,
+          "availability": "Core Availability 5",
+          "location": "Phoenix",
+          "verified": false
+        },
+        {
+          "name": "Pro Name 6",
+          "company": "Pro Company 6",
+          "specialty": "Pro Specialty 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "rating": 4.5,
+          "hourlyRate": 4.5,
+          "availability": "Pro Availability 6",
+          "location": "San Francisco",
+          "verified": true
+        },
+        {
+          "name": "Essential Name 7",
+          "company": "Essential Company 7",
+          "specialty": "Essential Specialty 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "rating": 5.1,
+          "hourlyRate": 5.1,
+          "availability": "Essential Availability 7",
+          "location": "Seattle",
+          "verified": true
+        },
+        {
+          "name": "Primary Name 8",
+          "company": "Primary Company 8",
+          "specialty": "Primary Specialty 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "rating": 5.7,
+          "hourlyRate": 5.7,
+          "availability": "Primary Availability 8",
+          "location": "Boston",
+          "verified": false
+        },
+        {
+          "name": "Global Name 9",
+          "company": "Global Company 9",
+          "specialty": "Global Specialty 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "rating": 6.3,
+          "hourlyRate": 6.3,
+          "availability": "Global Availability 9",
+          "location": "Denver",
+          "verified": true
+        },
+        {
+          "name": "Regional Name 10",
+          "company": "Regional Company 10",
+          "specialty": "Regional Specialty 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "rating": 1.9,
+          "hourlyRate": 1.9,
+          "availability": "Regional Availability 10",
+          "location": "Miami",
+          "verified": true
+        },
+        {
+          "name": "Custom Name 11",
+          "company": "Custom Company 11",
+          "specialty": "Custom Specialty 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "rating": 2.5,
+          "hourlyRate": 2.5,
+          "availability": "Custom Availability 11",
+          "location": "Austin",
+          "verified": false
+        },
+        {
+          "name": "Smart Name 12",
+          "company": "Smart Company 12",
+          "specialty": "Smart Specialty 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "rating": 3.1,
+          "hourlyRate": 3.1,
+          "availability": "Smart Availability 12",
+          "location": "Portland",
+          "verified": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "company": "Rapid Company 13",
+          "specialty": "Rapid Specialty 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "rating": 3.7,
+          "hourlyRate": 3.7,
+          "availability": "Rapid Availability 13",
+          "location": "Dallas",
+          "verified": false
+        },
+        {
+          "name": "Secure Name 14",
+          "company": "Secure Company 14",
+          "specialty": "Secure Specialty 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "rating": 4.3,
+          "hourlyRate": 4.3,
+          "availability": "Secure Availability 14",
+          "location": "Atlanta",
+          "verified": true
+        },
+        {
+          "name": "Modern Name 15",
+          "company": "Modern Company 15",
+          "specialty": "Modern Specialty 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "rating": 4.9,
+          "hourlyRate": 4.9,
+          "availability": "Modern Availability 15",
+          "location": "Nashville",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "modelName": "Notification",
+      "routeKey": "notifications",
+      "label": "Notification",
+      "icon": "book",
+      "aiFunction": "analyzeNotification",
+      "aiPrompt": "You are an AI analyst for A I Wholesale Distribution Optimizer. Analyze the provided Notification data. The data includes: Type, Title, Message, Category, Related Entity, Related Entity Id, Is Read, Priority, User Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "relatedEntity",
+          "label": "Related Entity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "relatedEntityId",
+          "label": "Related Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "isRead",
+          "label": "Is Read",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "type": "Category A",
+          "title": "Advanced Title 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "Category A",
+          "relatedEntity": "Advanced Related Entity 1",
+          "relatedEntityId": 10,
+          "isRead": true,
+          "priority": "low",
+          "userId": 10
+        },
+        {
+          "type": "Category B",
+          "title": "Premium Title 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "Category B",
+          "relatedEntity": "Premium Related Entity 2",
+          "relatedEntityId": 58,
+          "isRead": true,
+          "priority": "medium",
+          "userId": 58
+        },
+        {
+          "type": "Category C",
+          "title": "Standard Title 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "Category C",
+          "relatedEntity": "Standard Related Entity 3",
+          "relatedEntityId": 106,
+          "isRead": false,
+          "priority": "high",
+          "userId": 106
+        },
+        {
+          "type": "Category D",
+          "title": "Elite Title 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "Category D",
+          "relatedEntity": "Elite Related Entity 4",
+          "relatedEntityId": 154,
+          "isRead": true,
+          "priority": "critical",
+          "userId": 154
+        },
+        {
+          "type": "Category E",
+          "title": "Core Title 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "Category E",
+          "relatedEntity": "Core Related Entity 5",
+          "relatedEntityId": 102,
+          "isRead": false,
+          "priority": "medium",
+          "userId": 102
+        },
+        {
+          "type": "Premium Tier",
+          "title": "Pro Title 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "Premium Tier",
+          "relatedEntity": "Pro Related Entity 6",
+          "relatedEntityId": 150,
+          "isRead": true,
+          "priority": "low",
+          "userId": 150
+        },
+        {
+          "type": "Standard Tier",
+          "title": "Essential Title 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "Standard Tier",
+          "relatedEntity": "Essential Related Entity 7",
+          "relatedEntityId": 198,
+          "isRead": true,
+          "priority": "medium",
+          "userId": 198
+        },
+        {
+          "type": "Basic Tier",
+          "title": "Primary Title 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "Basic Tier",
+          "relatedEntity": "Primary Related Entity 8",
+          "relatedEntityId": 146,
+          "isRead": false,
+          "priority": "high",
+          "userId": 146
+        },
+        {
+          "type": "Enterprise",
+          "title": "Global Title 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "Enterprise",
+          "relatedEntity": "Global Related Entity 9",
+          "relatedEntityId": 194,
+          "isRead": true,
+          "priority": "critical",
+          "userId": 194
+        },
+        {
+          "type": "Starter",
+          "title": "Regional Title 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "Starter",
+          "relatedEntity": "Regional Related Entity 10",
+          "relatedEntityId": 242,
+          "isRead": true,
+          "priority": "medium",
+          "userId": 242
+        },
+        {
+          "type": "Growth",
+          "title": "Custom Title 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "Growth",
+          "relatedEntity": "Custom Related Entity 11",
+          "relatedEntityId": 190,
+          "isRead": false,
+          "priority": "low",
+          "userId": 190
+        },
+        {
+          "type": "Scale",
+          "title": "Smart Title 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "category": "Scale",
+          "relatedEntity": "Smart Related Entity 12",
+          "relatedEntityId": 238,
+          "isRead": true,
+          "priority": "medium",
+          "userId": 238
+        },
+        {
+          "type": "Foundation",
+          "title": "Rapid Title 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "Foundation",
+          "relatedEntity": "Rapid Related Entity 13",
+          "relatedEntityId": 286,
+          "isRead": false,
+          "priority": "high",
+          "userId": 286
+        },
+        {
+          "type": "Advanced",
+          "title": "Secure Title 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "category": "Advanced",
+          "relatedEntity": "Secure Related Entity 14",
+          "relatedEntityId": 234,
+          "isRead": true,
+          "priority": "critical",
+          "userId": 234
+        },
+        {
+          "type": "Professional",
+          "title": "Modern Title 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "Professional",
+          "relatedEntity": "Modern Related Entity 15",
+          "relatedEntityId": 282,
+          "isRead": true,
+          "priority": "medium",
+          "userId": 282
+        }
+      ]
+    }
+  ]
+}

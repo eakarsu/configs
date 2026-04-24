@@ -1,0 +1,1687 @@
+{
+  "appName": "AI Review & Marketing Automation (Part 2)",
+  "dbName": "a_i_review_marketing_part2",
+  "folderName": "generated/AIReviewMarketingPart2",
+  "features": [
+    {
+      "modelName": "ReviewSummarie",
+      "routeKey": "review-summaries",
+      "label": "Review Summarie",
+      "icon": "map-pin",
+      "aiFunction": "analyzeReviewSummarie",
+      "aiPrompt": "You are an AI analyst for A I Review Response Manager. Analyze the provided Review Summarie data. The data includes: Product Name, Product Category, Total Reviews, Average Rating, Summary Text, Pros, Cons, Common Themes, Sentiment Breakdown, Ai Insights, Last Updated. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "productName",
+          "label": "Product Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "productCategory",
+          "label": "Product Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalReviews",
+          "label": "Total Reviews",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "averageRating",
+          "label": "Average Rating",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "summaryText",
+          "label": "Summary Text",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "pros",
+          "label": "Pros",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "cons",
+          "label": "Cons",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "commonThemes",
+          "label": "Common Themes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "sentimentBreakdown",
+          "label": "Sentiment Breakdown",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiInsights",
+          "label": "Ai Insights",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "lastUpdated",
+          "label": "Last Updated",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "productName": "Advanced Product 1",
+          "productCategory": "Category A",
+          "totalReviews": 10,
+          "averageRating": 1.5,
+          "summaryText": "Comprehensive solution designed for optimal performance and efficiency.",
+          "pros": "Comprehensive solution designed for optimal performance and efficiency.",
+          "cons": "Comprehensive solution designed for optimal performance and efficiency.",
+          "commonThemes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "sentimentBreakdown": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "aiInsights": "Comprehensive solution designed for optimal performance and efficiency.",
+          "lastUpdated": "2024-01-01"
+        },
+        {
+          "productName": "Premium Product 2",
+          "productCategory": "Category B",
+          "totalReviews": 58,
+          "averageRating": 2.1,
+          "summaryText": "Industry-leading approach with proven results across multiple deployments.",
+          "pros": "Industry-leading approach with proven results across multiple deployments.",
+          "cons": "Industry-leading approach with proven results across multiple deployments.",
+          "commonThemes": "Industry-leading approach with proven results across multiple deployments.",
+          "sentimentBreakdown": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "aiInsights": "Industry-leading approach with proven results across multiple deployments.",
+          "lastUpdated": "2024-02-03"
+        },
+        {
+          "productName": "Standard Product 3",
+          "productCategory": "Category C",
+          "totalReviews": 106,
+          "averageRating": 2.7,
+          "summaryText": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "pros": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "cons": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "commonThemes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "sentimentBreakdown": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "aiInsights": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "lastUpdated": "2024-03-05"
+        },
+        {
+          "productName": "Elite Product 4",
+          "productCategory": "Category D",
+          "totalReviews": 154,
+          "averageRating": 3.3,
+          "summaryText": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "pros": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "cons": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "commonThemes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "sentimentBreakdown": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "aiInsights": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "lastUpdated": "2024-04-07"
+        },
+        {
+          "productName": "Core Product 5",
+          "productCategory": "Category E",
+          "totalReviews": 102,
+          "averageRating": 3.9,
+          "summaryText": "Cost-effective strategy focused on sustainable long-term growth.",
+          "pros": "Cost-effective strategy focused on sustainable long-term growth.",
+          "cons": "Cost-effective strategy focused on sustainable long-term growth.",
+          "commonThemes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "sentimentBreakdown": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "aiInsights": "Cost-effective strategy focused on sustainable long-term growth.",
+          "lastUpdated": "2024-05-09"
+        },
+        {
+          "productName": "Pro Product 6",
+          "productCategory": "Premium Tier",
+          "totalReviews": 150,
+          "averageRating": 4.5,
+          "summaryText": "High-priority initiative aligned with organizational strategic objectives.",
+          "pros": "High-priority initiative aligned with organizational strategic objectives.",
+          "cons": "High-priority initiative aligned with organizational strategic objectives.",
+          "commonThemes": "High-priority initiative aligned with organizational strategic objectives.",
+          "sentimentBreakdown": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "aiInsights": "High-priority initiative aligned with organizational strategic objectives.",
+          "lastUpdated": "2024-06-11"
+        },
+        {
+          "productName": "Essential Product 7",
+          "productCategory": "Standard Tier",
+          "totalReviews": 198,
+          "averageRating": 5.1,
+          "summaryText": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "pros": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "cons": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "commonThemes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "sentimentBreakdown": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "aiInsights": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "lastUpdated": "2024-07-13"
+        },
+        {
+          "productName": "Primary Product 8",
+          "productCategory": "Basic Tier",
+          "totalReviews": 146,
+          "averageRating": 5.7,
+          "summaryText": "Innovative framework incorporating best practices and emerging technologies.",
+          "pros": "Innovative framework incorporating best practices and emerging technologies.",
+          "cons": "Innovative framework incorporating best practices and emerging technologies.",
+          "commonThemes": "Innovative framework incorporating best practices and emerging technologies.",
+          "sentimentBreakdown": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "aiInsights": "Innovative framework incorporating best practices and emerging technologies.",
+          "lastUpdated": "2024-08-15"
+        },
+        {
+          "productName": "Global Product 9",
+          "productCategory": "Enterprise",
+          "totalReviews": 194,
+          "averageRating": 6.3,
+          "summaryText": "Scalable architecture built to accommodate rapid expansion and change.",
+          "pros": "Scalable architecture built to accommodate rapid expansion and change.",
+          "cons": "Scalable architecture built to accommodate rapid expansion and change.",
+          "commonThemes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "sentimentBreakdown": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "aiInsights": "Scalable architecture built to accommodate rapid expansion and change.",
+          "lastUpdated": "2024-09-17"
+        },
+        {
+          "productName": "Regional Product 10",
+          "productCategory": "Starter",
+          "totalReviews": 242,
+          "averageRating": 1.9,
+          "summaryText": "Enterprise-grade solution with robust security and compliance features.",
+          "pros": "Enterprise-grade solution with robust security and compliance features.",
+          "cons": "Enterprise-grade solution with robust security and compliance features.",
+          "commonThemes": "Enterprise-grade solution with robust security and compliance features.",
+          "sentimentBreakdown": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "aiInsights": "Enterprise-grade solution with robust security and compliance features.",
+          "lastUpdated": "2024-10-19"
+        },
+        {
+          "productName": "Custom Product 11",
+          "productCategory": "Growth",
+          "totalReviews": 190,
+          "averageRating": 2.5,
+          "summaryText": "Integrated platform connecting multiple systems for seamless operations.",
+          "pros": "Integrated platform connecting multiple systems for seamless operations.",
+          "cons": "Integrated platform connecting multiple systems for seamless operations.",
+          "commonThemes": "Integrated platform connecting multiple systems for seamless operations.",
+          "sentimentBreakdown": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "aiInsights": "Integrated platform connecting multiple systems for seamless operations.",
+          "lastUpdated": "2024-11-21"
+        },
+        {
+          "productName": "Smart Product 12",
+          "productCategory": "Scale",
+          "totalReviews": 238,
+          "averageRating": 3.1,
+          "summaryText": "Automated workflow reducing manual intervention and human error.",
+          "pros": "Automated workflow reducing manual intervention and human error.",
+          "cons": "Automated workflow reducing manual intervention and human error.",
+          "commonThemes": "Automated workflow reducing manual intervention and human error.",
+          "sentimentBreakdown": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "aiInsights": "Automated workflow reducing manual intervention and human error.",
+          "lastUpdated": "2024-12-23"
+        },
+        {
+          "productName": "Rapid Product 13",
+          "productCategory": "Foundation",
+          "totalReviews": 286,
+          "averageRating": 3.7,
+          "summaryText": "Real-time monitoring system with intelligent alerting capabilities.",
+          "pros": "Real-time monitoring system with intelligent alerting capabilities.",
+          "cons": "Real-time monitoring system with intelligent alerting capabilities.",
+          "commonThemes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "sentimentBreakdown": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "aiInsights": "Real-time monitoring system with intelligent alerting capabilities.",
+          "lastUpdated": "2024-01-25"
+        },
+        {
+          "productName": "Secure Product 14",
+          "productCategory": "Advanced",
+          "totalReviews": 234,
+          "averageRating": 4.3,
+          "summaryText": "Customizable module adaptable to diverse operational requirements.",
+          "pros": "Customizable module adaptable to diverse operational requirements.",
+          "cons": "Customizable module adaptable to diverse operational requirements.",
+          "commonThemes": "Customizable module adaptable to diverse operational requirements.",
+          "sentimentBreakdown": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "aiInsights": "Customizable module adaptable to diverse operational requirements.",
+          "lastUpdated": "2024-02-27"
+        },
+        {
+          "productName": "Modern Product 15",
+          "productCategory": "Professional",
+          "totalReviews": 282,
+          "averageRating": 4.9,
+          "summaryText": "Performance-optimized design achieving superior throughput and reliability.",
+          "pros": "Performance-optimized design achieving superior throughput and reliability.",
+          "cons": "Performance-optimized design achieving superior throughput and reliability.",
+          "commonThemes": "Performance-optimized design achieving superior throughput and reliability.",
+          "sentimentBreakdown": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "aiInsights": "Performance-optimized design achieving superior throughput and reliability.",
+          "lastUpdated": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "CounterfeitDetection",
+      "routeKey": "counterfeit-detections",
+      "label": "Counterfeit Detection",
+      "icon": "shield",
+      "aiFunction": "analyzeCounterfeitDetection",
+      "aiPrompt": "You are an AI analyst for A I Review Response Manager. Analyze the provided Counterfeit Detection data. The data includes: Product Name, Seller Name, Platform, Review Count, Risk Level, Risk Score, Warning Signs, Suspicious Reviews, Ai Analysis, Status, Action Taken. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "productName",
+          "label": "Product Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sellerName",
+          "label": "Seller Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "platform",
+          "label": "Platform",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reviewCount",
+          "label": "Review Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "riskScore",
+          "label": "Risk Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "warningSigns",
+          "label": "Warning Signs",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "suspiciousReviews",
+          "label": "Suspicious Reviews",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "actionTaken",
+          "label": "Action Taken",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "productName": "Advanced Product 1",
+          "sellerName": "Advanced Seller 1",
+          "platform": "Advanced Platform 1",
+          "reviewCount": 114,
+          "riskLevel": "low",
+          "riskScore": 1.5,
+          "warningSigns": "Comprehensive solution designed for optimal performance and efficiency.",
+          "suspiciousReviews": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "actionTaken": "Advanced Action Taken 1"
+        },
+        {
+          "productName": "Premium Product 2",
+          "sellerName": "Premium Seller 2",
+          "platform": "Premium Platform 2",
+          "reviewCount": 168,
+          "riskLevel": "medium",
+          "riskScore": 2.1,
+          "warningSigns": "Industry-leading approach with proven results across multiple deployments.",
+          "suspiciousReviews": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "actionTaken": "Premium Action Taken 2"
+        },
+        {
+          "productName": "Standard Product 3",
+          "sellerName": "Standard Seller 3",
+          "platform": "Standard Platform 3",
+          "reviewCount": 134,
+          "riskLevel": "high",
+          "riskScore": 2.7,
+          "warningSigns": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "suspiciousReviews": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "actionTaken": "Standard Action Taken 3"
+        },
+        {
+          "productName": "Elite Product 4",
+          "sellerName": "Elite Seller 4",
+          "platform": "Elite Platform 4",
+          "reviewCount": 93,
+          "riskLevel": "critical",
+          "riskScore": 3.3,
+          "warningSigns": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "suspiciousReviews": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "actionTaken": "Elite Action Taken 4"
+        },
+        {
+          "productName": "Core Product 5",
+          "sellerName": "Core Seller 5",
+          "platform": "Core Platform 5",
+          "reviewCount": 86,
+          "riskLevel": "medium",
+          "riskScore": 3.9,
+          "warningSigns": "Cost-effective strategy focused on sustainable long-term growth.",
+          "suspiciousReviews": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "actionTaken": "Core Action Taken 5"
+        },
+        {
+          "productName": "Pro Product 6",
+          "sellerName": "Pro Seller 6",
+          "platform": "Pro Platform 6",
+          "reviewCount": 196,
+          "riskLevel": "low",
+          "riskScore": 4.5,
+          "warningSigns": "High-priority initiative aligned with organizational strategic objectives.",
+          "suspiciousReviews": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "actionTaken": "Pro Action Taken 6"
+        },
+        {
+          "productName": "Essential Product 7",
+          "sellerName": "Essential Seller 7",
+          "platform": "Essential Platform 7",
+          "reviewCount": 63,
+          "riskLevel": "medium",
+          "riskScore": 5.1,
+          "warningSigns": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "suspiciousReviews": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "actionTaken": "Essential Action Taken 7"
+        },
+        {
+          "productName": "Primary Product 8",
+          "sellerName": "Primary Seller 8",
+          "platform": "Primary Platform 8",
+          "reviewCount": 115,
+          "riskLevel": "high",
+          "riskScore": 5.7,
+          "warningSigns": "Innovative framework incorporating best practices and emerging technologies.",
+          "suspiciousReviews": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "actionTaken": "Primary Action Taken 8"
+        },
+        {
+          "productName": "Global Product 9",
+          "sellerName": "Global Seller 9",
+          "platform": "Global Platform 9",
+          "reviewCount": 187,
+          "riskLevel": "critical",
+          "riskScore": 6.3,
+          "warningSigns": "Scalable architecture built to accommodate rapid expansion and change.",
+          "suspiciousReviews": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "actionTaken": "Global Action Taken 9"
+        },
+        {
+          "productName": "Regional Product 10",
+          "sellerName": "Regional Seller 10",
+          "platform": "Regional Platform 10",
+          "reviewCount": 123,
+          "riskLevel": "medium",
+          "riskScore": 1.9,
+          "warningSigns": "Enterprise-grade solution with robust security and compliance features.",
+          "suspiciousReviews": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "actionTaken": "Regional Action Taken 10"
+        },
+        {
+          "productName": "Custom Product 11",
+          "sellerName": "Custom Seller 11",
+          "platform": "Custom Platform 11",
+          "reviewCount": 229,
+          "riskLevel": "low",
+          "riskScore": 2.5,
+          "warningSigns": "Integrated platform connecting multiple systems for seamless operations.",
+          "suspiciousReviews": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "actionTaken": "Custom Action Taken 11"
+        },
+        {
+          "productName": "Smart Product 12",
+          "sellerName": "Smart Seller 12",
+          "platform": "Smart Platform 12",
+          "reviewCount": 116,
+          "riskLevel": "medium",
+          "riskScore": 3.1,
+          "warningSigns": "Automated workflow reducing manual intervention and human error.",
+          "suspiciousReviews": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "actionTaken": "Smart Action Taken 12"
+        },
+        {
+          "productName": "Rapid Product 13",
+          "sellerName": "Rapid Seller 13",
+          "platform": "Rapid Platform 13",
+          "reviewCount": 224,
+          "riskLevel": "high",
+          "riskScore": 3.7,
+          "warningSigns": "Real-time monitoring system with intelligent alerting capabilities.",
+          "suspiciousReviews": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "actionTaken": "Rapid Action Taken 13"
+        },
+        {
+          "productName": "Secure Product 14",
+          "sellerName": "Secure Seller 14",
+          "platform": "Secure Platform 14",
+          "reviewCount": 130,
+          "riskLevel": "critical",
+          "riskScore": 4.3,
+          "warningSigns": "Customizable module adaptable to diverse operational requirements.",
+          "suspiciousReviews": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "actionTaken": "Secure Action Taken 14"
+        },
+        {
+          "productName": "Modern Product 15",
+          "sellerName": "Modern Seller 15",
+          "platform": "Modern Platform 15",
+          "reviewCount": 213,
+          "riskLevel": "medium",
+          "riskScore": 4.9,
+          "warningSigns": "Performance-optimized design achieving superior throughput and reliability.",
+          "suspiciousReviews": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "actionTaken": "Modern Action Taken 15"
+        }
+      ]
+    },
+    {
+      "modelName": "CampaignAnalytics",
+      "routeKey": "campaign-analytics",
+      "label": "Campaign Analytics",
+      "icon": "database",
+      "aiFunction": "analyzeCampaignAnalytics",
+      "aiPrompt": "You are an AI analyst for a I Marketing Automation. Analyze the provided Campaign Analytics data. The data includes: Campaign Id, Total Sent, Delivered, Opened, Clicked, Bounced, Unsubscribed, Conversions, Revenue, Recorded At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "campaignId",
+          "label": "Campaign Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalSent",
+          "label": "Total Sent",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "delivered",
+          "label": "Delivered",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "opened",
+          "label": "Opened",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "clicked",
+          "label": "Clicked",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bounced",
+          "label": "Bounced",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "unsubscribed",
+          "label": "Unsubscribed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "conversions",
+          "label": "Conversions",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "revenue",
+          "label": "Revenue",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "recordedAt",
+          "label": "Recorded At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "campaignId": "Advanced Campaign Id 1",
+          "totalSent": 10,
+          "delivered": 10,
+          "opened": 10,
+          "clicked": 10,
+          "bounced": 10,
+          "unsubscribed": 10,
+          "conversions": 10,
+          "revenue": 500,
+          "recordedAt": "2024-01-01"
+        },
+        {
+          "campaignId": "Premium Campaign Id 2",
+          "totalSent": 58,
+          "delivered": 58,
+          "opened": 58,
+          "clicked": 58,
+          "bounced": 58,
+          "unsubscribed": 58,
+          "conversions": 58,
+          "revenue": 2481,
+          "recordedAt": "2024-02-03"
+        },
+        {
+          "campaignId": "Standard Campaign Id 3",
+          "totalSent": 106,
+          "delivered": 106,
+          "opened": 106,
+          "clicked": 106,
+          "bounced": 106,
+          "unsubscribed": 106,
+          "conversions": 106,
+          "revenue": 4462,
+          "recordedAt": "2024-03-05"
+        },
+        {
+          "campaignId": "Elite Campaign Id 4",
+          "totalSent": 154,
+          "delivered": 154,
+          "opened": 154,
+          "clicked": 154,
+          "bounced": 154,
+          "unsubscribed": 154,
+          "conversions": 154,
+          "revenue": 6443,
+          "recordedAt": "2024-04-07"
+        },
+        {
+          "campaignId": "Core Campaign Id 5",
+          "totalSent": 102,
+          "delivered": 102,
+          "opened": 102,
+          "clicked": 102,
+          "bounced": 102,
+          "unsubscribed": 102,
+          "conversions": 102,
+          "revenue": 8424,
+          "recordedAt": "2024-05-09"
+        },
+        {
+          "campaignId": "Pro Campaign Id 6",
+          "totalSent": 150,
+          "delivered": 150,
+          "opened": 150,
+          "clicked": 150,
+          "bounced": 150,
+          "unsubscribed": 150,
+          "conversions": 150,
+          "revenue": 10405,
+          "recordedAt": "2024-06-11"
+        },
+        {
+          "campaignId": "Essential Campaign Id 7",
+          "totalSent": 198,
+          "delivered": 198,
+          "opened": 198,
+          "clicked": 198,
+          "bounced": 198,
+          "unsubscribed": 198,
+          "conversions": 198,
+          "revenue": 12386,
+          "recordedAt": "2024-07-13"
+        },
+        {
+          "campaignId": "Primary Campaign Id 8",
+          "totalSent": 146,
+          "delivered": 146,
+          "opened": 146,
+          "clicked": 146,
+          "bounced": 146,
+          "unsubscribed": 146,
+          "conversions": 146,
+          "revenue": 9367,
+          "recordedAt": "2024-08-15"
+        },
+        {
+          "campaignId": "Global Campaign Id 9",
+          "totalSent": 194,
+          "delivered": 194,
+          "opened": 194,
+          "clicked": 194,
+          "bounced": 194,
+          "unsubscribed": 194,
+          "conversions": 194,
+          "revenue": 11348,
+          "recordedAt": "2024-09-17"
+        },
+        {
+          "campaignId": "Regional Campaign Id 10",
+          "totalSent": 242,
+          "delivered": 242,
+          "opened": 242,
+          "clicked": 242,
+          "bounced": 242,
+          "unsubscribed": 242,
+          "conversions": 242,
+          "revenue": 13329,
+          "recordedAt": "2024-10-19"
+        },
+        {
+          "campaignId": "Custom Campaign Id 11",
+          "totalSent": 190,
+          "delivered": 190,
+          "opened": 190,
+          "clicked": 190,
+          "bounced": 190,
+          "unsubscribed": 190,
+          "conversions": 190,
+          "revenue": 15310,
+          "recordedAt": "2024-11-21"
+        },
+        {
+          "campaignId": "Smart Campaign Id 12",
+          "totalSent": 238,
+          "delivered": 238,
+          "opened": 238,
+          "clicked": 238,
+          "bounced": 238,
+          "unsubscribed": 238,
+          "conversions": 238,
+          "revenue": 17291,
+          "recordedAt": "2024-12-23"
+        },
+        {
+          "campaignId": "Rapid Campaign Id 13",
+          "totalSent": 286,
+          "delivered": 286,
+          "opened": 286,
+          "clicked": 286,
+          "bounced": 286,
+          "unsubscribed": 286,
+          "conversions": 286,
+          "revenue": 19272,
+          "recordedAt": "2024-01-25"
+        },
+        {
+          "campaignId": "Secure Campaign Id 14",
+          "totalSent": 234,
+          "delivered": 234,
+          "opened": 234,
+          "clicked": 234,
+          "bounced": 234,
+          "unsubscribed": 234,
+          "conversions": 234,
+          "revenue": 21253,
+          "recordedAt": "2024-02-27"
+        },
+        {
+          "campaignId": "Modern Campaign Id 15",
+          "totalSent": 282,
+          "delivered": 282,
+          "opened": 282,
+          "clicked": 282,
+          "bounced": 282,
+          "unsubscribed": 282,
+          "conversions": 282,
+          "revenue": 18234,
+          "recordedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "AIAttribution",
+      "routeKey": "a-i-attributions",
+      "label": "A I Attribution",
+      "icon": "map-pin",
+      "aiFunction": "analyzeAIAttribution",
+      "aiPrompt": "You are an AI analyst for a I Marketing Automation. Analyze the provided A I Attribution data. The data includes: User Id, Name, Model Type, Channels, Insights, Revenue, Conversions, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "modelType",
+          "label": "Model Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "channels",
+          "label": "Channels",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "insights",
+          "label": "Insights",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "revenue",
+          "label": "Revenue",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "conversions",
+          "label": "Conversions",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": "Advanced User Id 1",
+          "name": "Advanced Name 1",
+          "modelType": "Category A",
+          "channels": "Advanced Channels 1",
+          "insights": "Advanced Insights 1",
+          "revenue": 500,
+          "conversions": 10,
+          "status": "active"
+        },
+        {
+          "userId": "Premium User Id 2",
+          "name": "Premium Name 2",
+          "modelType": "Category B",
+          "channels": "Premium Channels 2",
+          "insights": "Premium Insights 2",
+          "revenue": 2481,
+          "conversions": 58,
+          "status": "pending"
+        },
+        {
+          "userId": "Standard User Id 3",
+          "name": "Standard Name 3",
+          "modelType": "Category C",
+          "channels": "Standard Channels 3",
+          "insights": "Standard Insights 3",
+          "revenue": 4462,
+          "conversions": 106,
+          "status": "in_progress"
+        },
+        {
+          "userId": "Elite User Id 4",
+          "name": "Elite Name 4",
+          "modelType": "Category D",
+          "channels": "Elite Channels 4",
+          "insights": "Elite Insights 4",
+          "revenue": 6443,
+          "conversions": 154,
+          "status": "completed"
+        },
+        {
+          "userId": "Core User Id 5",
+          "name": "Core Name 5",
+          "modelType": "Category E",
+          "channels": "Core Channels 5",
+          "insights": "Core Insights 5",
+          "revenue": 8424,
+          "conversions": 102,
+          "status": "under_review"
+        },
+        {
+          "userId": "Pro User Id 6",
+          "name": "Pro Name 6",
+          "modelType": "Premium Tier",
+          "channels": "Pro Channels 6",
+          "insights": "Pro Insights 6",
+          "revenue": 10405,
+          "conversions": 150,
+          "status": "approved"
+        },
+        {
+          "userId": "Essential User Id 7",
+          "name": "Essential Name 7",
+          "modelType": "Standard Tier",
+          "channels": "Essential Channels 7",
+          "insights": "Essential Insights 7",
+          "revenue": 12386,
+          "conversions": 198,
+          "status": "active"
+        },
+        {
+          "userId": "Primary User Id 8",
+          "name": "Primary Name 8",
+          "modelType": "Basic Tier",
+          "channels": "Primary Channels 8",
+          "insights": "Primary Insights 8",
+          "revenue": 9367,
+          "conversions": 146,
+          "status": "active"
+        },
+        {
+          "userId": "Global User Id 9",
+          "name": "Global Name 9",
+          "modelType": "Enterprise",
+          "channels": "Global Channels 9",
+          "insights": "Global Insights 9",
+          "revenue": 11348,
+          "conversions": 194,
+          "status": "active"
+        },
+        {
+          "userId": "Regional User Id 10",
+          "name": "Regional Name 10",
+          "modelType": "Starter",
+          "channels": "Regional Channels 10",
+          "insights": "Regional Insights 10",
+          "revenue": 13329,
+          "conversions": 242,
+          "status": "pending"
+        },
+        {
+          "userId": "Custom User Id 11",
+          "name": "Custom Name 11",
+          "modelType": "Growth",
+          "channels": "Custom Channels 11",
+          "insights": "Custom Insights 11",
+          "revenue": 15310,
+          "conversions": 190,
+          "status": "completed"
+        },
+        {
+          "userId": "Smart User Id 12",
+          "name": "Smart Name 12",
+          "modelType": "Scale",
+          "channels": "Smart Channels 12",
+          "insights": "Smart Insights 12",
+          "revenue": 17291,
+          "conversions": 238,
+          "status": "active"
+        },
+        {
+          "userId": "Rapid User Id 13",
+          "name": "Rapid Name 13",
+          "modelType": "Foundation",
+          "channels": "Rapid Channels 13",
+          "insights": "Rapid Insights 13",
+          "revenue": 19272,
+          "conversions": 286,
+          "status": "in_progress"
+        },
+        {
+          "userId": "Secure User Id 14",
+          "name": "Secure Name 14",
+          "modelType": "Advanced",
+          "channels": "Secure Channels 14",
+          "insights": "Secure Insights 14",
+          "revenue": 21253,
+          "conversions": 234,
+          "status": "active"
+        },
+        {
+          "userId": "Modern User Id 15",
+          "name": "Modern Name 15",
+          "modelType": "Professional",
+          "channels": "Modern Channels 15",
+          "insights": "Modern Insights 15",
+          "revenue": 18234,
+          "conversions": 282,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "TokenBlacklist",
+      "routeKey": "token-blacklists",
+      "label": "Token Blacklist",
+      "icon": "activity",
+      "aiFunction": "analyzeTokenBlacklist",
+      "aiPrompt": "You are an AI analyst for A I Review Response Manager. Analyze the provided Token Blacklist data. The data includes: Token Hash, Expires At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "tokenHash",
+          "label": "Token Hash",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "expiresAt",
+          "label": "Expires At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "tokenHash": "Advanced Token Hash 1",
+          "expiresAt": "2024-01-01"
+        },
+        {
+          "tokenHash": "Premium Token Hash 2",
+          "expiresAt": "2024-02-03"
+        },
+        {
+          "tokenHash": "Standard Token Hash 3",
+          "expiresAt": "2024-03-05"
+        },
+        {
+          "tokenHash": "Elite Token Hash 4",
+          "expiresAt": "2024-04-07"
+        },
+        {
+          "tokenHash": "Core Token Hash 5",
+          "expiresAt": "2024-05-09"
+        },
+        {
+          "tokenHash": "Pro Token Hash 6",
+          "expiresAt": "2024-06-11"
+        },
+        {
+          "tokenHash": "Essential Token Hash 7",
+          "expiresAt": "2024-07-13"
+        },
+        {
+          "tokenHash": "Primary Token Hash 8",
+          "expiresAt": "2024-08-15"
+        },
+        {
+          "tokenHash": "Global Token Hash 9",
+          "expiresAt": "2024-09-17"
+        },
+        {
+          "tokenHash": "Regional Token Hash 10",
+          "expiresAt": "2024-10-19"
+        },
+        {
+          "tokenHash": "Custom Token Hash 11",
+          "expiresAt": "2024-11-21"
+        },
+        {
+          "tokenHash": "Smart Token Hash 12",
+          "expiresAt": "2024-12-23"
+        },
+        {
+          "tokenHash": "Rapid Token Hash 13",
+          "expiresAt": "2024-01-25"
+        },
+        {
+          "tokenHash": "Secure Token Hash 14",
+          "expiresAt": "2024-02-27"
+        },
+        {
+          "tokenHash": "Modern Token Hash 15",
+          "expiresAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "TrendAnalyse",
+      "routeKey": "trend-analyses",
+      "label": "Trend Analyse",
+      "icon": "package",
+      "aiFunction": "analyzeTrendAnalyse",
+      "aiPrompt": "You are an AI analyst for A I Review Response Manager. Analyze the provided Trend Analyse data. The data includes: Analysis Name, Business Name, Date Range Start, Date Range End, Trend Direction, Sentiment Change, Emerging Topics, Declining Topics, Seasonal Patterns, Ai Prediction, Recommendations. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "analysisName",
+          "label": "Analysis Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "businessName",
+          "label": "Business Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dateRangeStart",
+          "label": "Date Range Start",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "dateRangeEnd",
+          "label": "Date Range End",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "trendDirection",
+          "label": "Trend Direction",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sentimentChange",
+          "label": "Sentiment Change",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "emergingTopics",
+          "label": "Emerging Topics",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "decliningTopics",
+          "label": "Declining Topics",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "seasonalPatterns",
+          "label": "Seasonal Patterns",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiPrediction",
+          "label": "Ai Prediction",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "recommendations",
+          "label": "Recommendations",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "analysisName": "Advanced Analysis 1",
+          "businessName": "Advanced Business 1",
+          "dateRangeStart": "2024-01-01",
+          "dateRangeEnd": "2024-01-01",
+          "trendDirection": "Advanced Trend Direction 1",
+          "sentimentChange": 10,
+          "emergingTopics": "Comprehensive solution designed for optimal performance and efficiency.",
+          "decliningTopics": "Comprehensive solution designed for optimal performance and efficiency.",
+          "seasonalPatterns": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "aiPrediction": "Comprehensive solution designed for optimal performance and efficiency.",
+          "recommendations": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "analysisName": "Premium Analysis 2",
+          "businessName": "Premium Business 2",
+          "dateRangeStart": "2024-02-03",
+          "dateRangeEnd": "2024-02-03",
+          "trendDirection": "Premium Trend Direction 2",
+          "sentimentChange": 71.7,
+          "emergingTopics": "Industry-leading approach with proven results across multiple deployments.",
+          "decliningTopics": "Industry-leading approach with proven results across multiple deployments.",
+          "seasonalPatterns": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "aiPrediction": "Industry-leading approach with proven results across multiple deployments.",
+          "recommendations": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "analysisName": "Standard Analysis 3",
+          "businessName": "Standard Business 3",
+          "dateRangeStart": "2024-03-05",
+          "dateRangeEnd": "2024-03-05",
+          "trendDirection": "Standard Trend Direction 3",
+          "sentimentChange": 33.4,
+          "emergingTopics": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "decliningTopics": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "seasonalPatterns": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "aiPrediction": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "recommendations": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "analysisName": "Elite Analysis 4",
+          "businessName": "Elite Business 4",
+          "dateRangeStart": "2024-04-07",
+          "dateRangeEnd": "2024-04-07",
+          "trendDirection": "Elite Trend Direction 4",
+          "sentimentChange": 95.1,
+          "emergingTopics": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "decliningTopics": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "seasonalPatterns": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "aiPrediction": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "recommendations": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "analysisName": "Core Analysis 5",
+          "businessName": "Core Business 5",
+          "dateRangeStart": "2024-05-09",
+          "dateRangeEnd": "2024-05-09",
+          "trendDirection": "Core Trend Direction 5",
+          "sentimentChange": 56.8,
+          "emergingTopics": "Cost-effective strategy focused on sustainable long-term growth.",
+          "decliningTopics": "Cost-effective strategy focused on sustainable long-term growth.",
+          "seasonalPatterns": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "aiPrediction": "Cost-effective strategy focused on sustainable long-term growth.",
+          "recommendations": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "analysisName": "Pro Analysis 6",
+          "businessName": "Pro Business 6",
+          "dateRangeStart": "2024-06-11",
+          "dateRangeEnd": "2024-06-11",
+          "trendDirection": "Pro Trend Direction 6",
+          "sentimentChange": 118.5,
+          "emergingTopics": "High-priority initiative aligned with organizational strategic objectives.",
+          "decliningTopics": "High-priority initiative aligned with organizational strategic objectives.",
+          "seasonalPatterns": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "aiPrediction": "High-priority initiative aligned with organizational strategic objectives.",
+          "recommendations": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "analysisName": "Essential Analysis 7",
+          "businessName": "Essential Business 7",
+          "dateRangeStart": "2024-07-13",
+          "dateRangeEnd": "2024-07-13",
+          "trendDirection": "Essential Trend Direction 7",
+          "sentimentChange": 80.2,
+          "emergingTopics": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "decliningTopics": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "seasonalPatterns": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "aiPrediction": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "recommendations": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "analysisName": "Primary Analysis 8",
+          "businessName": "Primary Business 8",
+          "dateRangeStart": "2024-08-15",
+          "dateRangeEnd": "2024-08-15",
+          "trendDirection": "Primary Trend Direction 8",
+          "sentimentChange": 141.9,
+          "emergingTopics": "Innovative framework incorporating best practices and emerging technologies.",
+          "decliningTopics": "Innovative framework incorporating best practices and emerging technologies.",
+          "seasonalPatterns": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "aiPrediction": "Innovative framework incorporating best practices and emerging technologies.",
+          "recommendations": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "analysisName": "Global Analysis 9",
+          "businessName": "Global Business 9",
+          "dateRangeStart": "2024-09-17",
+          "dateRangeEnd": "2024-09-17",
+          "trendDirection": "Global Trend Direction 9",
+          "sentimentChange": 103.6,
+          "emergingTopics": "Scalable architecture built to accommodate rapid expansion and change.",
+          "decliningTopics": "Scalable architecture built to accommodate rapid expansion and change.",
+          "seasonalPatterns": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "aiPrediction": "Scalable architecture built to accommodate rapid expansion and change.",
+          "recommendations": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "analysisName": "Regional Analysis 10",
+          "businessName": "Regional Business 10",
+          "dateRangeStart": "2024-10-19",
+          "dateRangeEnd": "2024-10-19",
+          "trendDirection": "Regional Trend Direction 10",
+          "sentimentChange": 165.3,
+          "emergingTopics": "Enterprise-grade solution with robust security and compliance features.",
+          "decliningTopics": "Enterprise-grade solution with robust security and compliance features.",
+          "seasonalPatterns": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "aiPrediction": "Enterprise-grade solution with robust security and compliance features.",
+          "recommendations": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "analysisName": "Custom Analysis 11",
+          "businessName": "Custom Business 11",
+          "dateRangeStart": "2024-11-21",
+          "dateRangeEnd": "2024-11-21",
+          "trendDirection": "Custom Trend Direction 11",
+          "sentimentChange": 127,
+          "emergingTopics": "Integrated platform connecting multiple systems for seamless operations.",
+          "decliningTopics": "Integrated platform connecting multiple systems for seamless operations.",
+          "seasonalPatterns": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "aiPrediction": "Integrated platform connecting multiple systems for seamless operations.",
+          "recommendations": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "analysisName": "Smart Analysis 12",
+          "businessName": "Smart Business 12",
+          "dateRangeStart": "2024-12-23",
+          "dateRangeEnd": "2024-12-23",
+          "trendDirection": "Smart Trend Direction 12",
+          "sentimentChange": 188.7,
+          "emergingTopics": "Automated workflow reducing manual intervention and human error.",
+          "decliningTopics": "Automated workflow reducing manual intervention and human error.",
+          "seasonalPatterns": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "aiPrediction": "Automated workflow reducing manual intervention and human error.",
+          "recommendations": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "analysisName": "Rapid Analysis 13",
+          "businessName": "Rapid Business 13",
+          "dateRangeStart": "2024-01-25",
+          "dateRangeEnd": "2024-01-25",
+          "trendDirection": "Rapid Trend Direction 13",
+          "sentimentChange": 150.4,
+          "emergingTopics": "Real-time monitoring system with intelligent alerting capabilities.",
+          "decliningTopics": "Real-time monitoring system with intelligent alerting capabilities.",
+          "seasonalPatterns": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "aiPrediction": "Real-time monitoring system with intelligent alerting capabilities.",
+          "recommendations": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "analysisName": "Secure Analysis 14",
+          "businessName": "Secure Business 14",
+          "dateRangeStart": "2024-02-27",
+          "dateRangeEnd": "2024-02-27",
+          "trendDirection": "Secure Trend Direction 14",
+          "sentimentChange": 212.1,
+          "emergingTopics": "Customizable module adaptable to diverse operational requirements.",
+          "decliningTopics": "Customizable module adaptable to diverse operational requirements.",
+          "seasonalPatterns": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "aiPrediction": "Customizable module adaptable to diverse operational requirements.",
+          "recommendations": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "analysisName": "Modern Analysis 15",
+          "businessName": "Modern Business 15",
+          "dateRangeStart": "2024-03-01",
+          "dateRangeEnd": "2024-03-01",
+          "trendDirection": "Modern Trend Direction 15",
+          "sentimentChange": 173.8,
+          "emergingTopics": "Performance-optimized design achieving superior throughput and reliability.",
+          "decliningTopics": "Performance-optimized design achieving superior throughput and reliability.",
+          "seasonalPatterns": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "aiPrediction": "Performance-optimized design achieving superior throughput and reliability.",
+          "recommendations": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "EnrollmentStep",
+      "routeKey": "enrollment-steps",
+      "label": "Enrollment Step",
+      "icon": "bell",
+      "aiFunction": "analyzeEnrollmentStep",
+      "aiPrompt": "You are an AI analyst for a I Marketing Automation. Analyze the provided Enrollment Step data. The data includes: Enrollment Id, Step Id, Scheduled At, Executed At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "enrollmentId",
+          "label": "Enrollment Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "stepId",
+          "label": "Step Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledAt",
+          "label": "Scheduled At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "executedAt",
+          "label": "Executed At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "enrollmentId": "Advanced Enrollment Id 1",
+          "stepId": "Advanced Step Id 1",
+          "scheduledAt": "2024-01-01",
+          "executedAt": "2024-01-01"
+        },
+        {
+          "enrollmentId": "Premium Enrollment Id 2",
+          "stepId": "Premium Step Id 2",
+          "scheduledAt": "2024-02-03",
+          "executedAt": "2024-02-03"
+        },
+        {
+          "enrollmentId": "Standard Enrollment Id 3",
+          "stepId": "Standard Step Id 3",
+          "scheduledAt": "2024-03-05",
+          "executedAt": "2024-03-05"
+        },
+        {
+          "enrollmentId": "Elite Enrollment Id 4",
+          "stepId": "Elite Step Id 4",
+          "scheduledAt": "2024-04-07",
+          "executedAt": "2024-04-07"
+        },
+        {
+          "enrollmentId": "Core Enrollment Id 5",
+          "stepId": "Core Step Id 5",
+          "scheduledAt": "2024-05-09",
+          "executedAt": "2024-05-09"
+        },
+        {
+          "enrollmentId": "Pro Enrollment Id 6",
+          "stepId": "Pro Step Id 6",
+          "scheduledAt": "2024-06-11",
+          "executedAt": "2024-06-11"
+        },
+        {
+          "enrollmentId": "Essential Enrollment Id 7",
+          "stepId": "Essential Step Id 7",
+          "scheduledAt": "2024-07-13",
+          "executedAt": "2024-07-13"
+        },
+        {
+          "enrollmentId": "Primary Enrollment Id 8",
+          "stepId": "Primary Step Id 8",
+          "scheduledAt": "2024-08-15",
+          "executedAt": "2024-08-15"
+        },
+        {
+          "enrollmentId": "Global Enrollment Id 9",
+          "stepId": "Global Step Id 9",
+          "scheduledAt": "2024-09-17",
+          "executedAt": "2024-09-17"
+        },
+        {
+          "enrollmentId": "Regional Enrollment Id 10",
+          "stepId": "Regional Step Id 10",
+          "scheduledAt": "2024-10-19",
+          "executedAt": "2024-10-19"
+        },
+        {
+          "enrollmentId": "Custom Enrollment Id 11",
+          "stepId": "Custom Step Id 11",
+          "scheduledAt": "2024-11-21",
+          "executedAt": "2024-11-21"
+        },
+        {
+          "enrollmentId": "Smart Enrollment Id 12",
+          "stepId": "Smart Step Id 12",
+          "scheduledAt": "2024-12-23",
+          "executedAt": "2024-12-23"
+        },
+        {
+          "enrollmentId": "Rapid Enrollment Id 13",
+          "stepId": "Rapid Step Id 13",
+          "scheduledAt": "2024-01-25",
+          "executedAt": "2024-01-25"
+        },
+        {
+          "enrollmentId": "Secure Enrollment Id 14",
+          "stepId": "Secure Step Id 14",
+          "scheduledAt": "2024-02-27",
+          "executedAt": "2024-02-27"
+        },
+        {
+          "enrollmentId": "Modern Enrollment Id 15",
+          "stepId": "Modern Step Id 15",
+          "scheduledAt": "2024-03-01",
+          "executedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "AIBudget",
+      "routeKey": "a-i-budgets",
+      "label": "A I Budget",
+      "icon": "package",
+      "aiFunction": "analyzeAIBudget",
+      "aiPrompt": "You are an AI analyst for a I Marketing Automation. Analyze the provided A I Budget data. The data includes: User Id, Name, Total Budget, Allocations, Recommendations, Projected R O I, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalBudget",
+          "label": "Total Budget",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "allocations",
+          "label": "Allocations",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recommendations",
+          "label": "Recommendations",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "projectedROI",
+          "label": "Projected R O I",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": "Advanced User Id 1",
+          "name": "Advanced Name 1",
+          "totalBudget": 500,
+          "allocations": "New York",
+          "recommendations": "Advanced Recommendations 1",
+          "projectedROI": 10,
+          "status": "active"
+        },
+        {
+          "userId": "Premium User Id 2",
+          "name": "Premium Name 2",
+          "totalBudget": 2481,
+          "allocations": "Los Angeles",
+          "recommendations": "Premium Recommendations 2",
+          "projectedROI": 71.7,
+          "status": "pending"
+        },
+        {
+          "userId": "Standard User Id 3",
+          "name": "Standard Name 3",
+          "totalBudget": 4462,
+          "allocations": "Chicago",
+          "recommendations": "Standard Recommendations 3",
+          "projectedROI": 33.4,
+          "status": "in_progress"
+        },
+        {
+          "userId": "Elite User Id 4",
+          "name": "Elite Name 4",
+          "totalBudget": 6443,
+          "allocations": "Houston",
+          "recommendations": "Elite Recommendations 4",
+          "projectedROI": 95.1,
+          "status": "completed"
+        },
+        {
+          "userId": "Core User Id 5",
+          "name": "Core Name 5",
+          "totalBudget": 8424,
+          "allocations": "Phoenix",
+          "recommendations": "Core Recommendations 5",
+          "projectedROI": 56.8,
+          "status": "under_review"
+        },
+        {
+          "userId": "Pro User Id 6",
+          "name": "Pro Name 6",
+          "totalBudget": 10405,
+          "allocations": "San Francisco",
+          "recommendations": "Pro Recommendations 6",
+          "projectedROI": 118.5,
+          "status": "approved"
+        },
+        {
+          "userId": "Essential User Id 7",
+          "name": "Essential Name 7",
+          "totalBudget": 12386,
+          "allocations": "Seattle",
+          "recommendations": "Essential Recommendations 7",
+          "projectedROI": 80.2,
+          "status": "active"
+        },
+        {
+          "userId": "Primary User Id 8",
+          "name": "Primary Name 8",
+          "totalBudget": 9367,
+          "allocations": "Boston",
+          "recommendations": "Primary Recommendations 8",
+          "projectedROI": 141.9,
+          "status": "active"
+        },
+        {
+          "userId": "Global User Id 9",
+          "name": "Global Name 9",
+          "totalBudget": 11348,
+          "allocations": "Denver",
+          "recommendations": "Global Recommendations 9",
+          "projectedROI": 103.6,
+          "status": "active"
+        },
+        {
+          "userId": "Regional User Id 10",
+          "name": "Regional Name 10",
+          "totalBudget": 13329,
+          "allocations": "Miami",
+          "recommendations": "Regional Recommendations 10",
+          "projectedROI": 165.3,
+          "status": "pending"
+        },
+        {
+          "userId": "Custom User Id 11",
+          "name": "Custom Name 11",
+          "totalBudget": 15310,
+          "allocations": "Austin",
+          "recommendations": "Custom Recommendations 11",
+          "projectedROI": 127,
+          "status": "completed"
+        },
+        {
+          "userId": "Smart User Id 12",
+          "name": "Smart Name 12",
+          "totalBudget": 17291,
+          "allocations": "Portland",
+          "recommendations": "Smart Recommendations 12",
+          "projectedROI": 188.7,
+          "status": "active"
+        },
+        {
+          "userId": "Rapid User Id 13",
+          "name": "Rapid Name 13",
+          "totalBudget": 19272,
+          "allocations": "Dallas",
+          "recommendations": "Rapid Recommendations 13",
+          "projectedROI": 150.4,
+          "status": "in_progress"
+        },
+        {
+          "userId": "Secure User Id 14",
+          "name": "Secure Name 14",
+          "totalBudget": 21253,
+          "allocations": "Atlanta",
+          "recommendations": "Secure Recommendations 14",
+          "projectedROI": 212.1,
+          "status": "active"
+        },
+        {
+          "userId": "Modern User Id 15",
+          "name": "Modern Name 15",
+          "totalBudget": 18234,
+          "allocations": "Nashville",
+          "recommendations": "Modern Recommendations 15",
+          "projectedROI": 173.8,
+          "status": "approved"
+        }
+      ]
+    }
+  ]
+}

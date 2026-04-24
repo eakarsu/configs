@@ -1,0 +1,2001 @@
+{
+  "appName": "A I Personal Safety Lone Worker Monitor",
+  "dbName": "a_i_personal_safety_lone_worker_monitor",
+  "folderName": "generated/AIPersonalSafetyLoneWorkerMonitor",
+  "features": [
+    {
+      "modelName": "Worker",
+      "routeKey": "workers",
+      "label": "Worker",
+      "icon": "activity",
+      "aiFunction": "analyzeWorker",
+      "aiPrompt": "You are an AI analyst for A I Personal Safety Lone Worker Monitor. Analyze the provided Worker data. The data includes: Name, Email, Phone, Department, Role, Status, Risk Level, Last Check In, Location. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive",
+            "emergency",
+            "offline"
+          ]
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastCheckIn",
+          "label": "Last Check In",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "department": "Category A",
+          "role": "Advanced Role 1",
+          "status": "active",
+          "riskLevel": "low",
+          "lastCheckIn": "2024-01-01",
+          "location": "New York"
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "department": "Category B",
+          "role": "Premium Role 2",
+          "status": "inactive",
+          "riskLevel": "medium",
+          "lastCheckIn": "2024-02-03",
+          "location": "Los Angeles"
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "department": "Category C",
+          "role": "Standard Role 3",
+          "status": "emergency",
+          "riskLevel": "high",
+          "lastCheckIn": "2024-03-05",
+          "location": "Chicago"
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "department": "Category D",
+          "role": "Elite Role 4",
+          "status": "offline",
+          "riskLevel": "critical",
+          "lastCheckIn": "2024-04-07",
+          "location": "Houston"
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "department": "Category E",
+          "role": "Core Role 5",
+          "status": "active",
+          "riskLevel": "medium",
+          "lastCheckIn": "2024-05-09",
+          "location": "Phoenix"
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "department": "Premium Tier",
+          "role": "Pro Role 6",
+          "status": "inactive",
+          "riskLevel": "low",
+          "lastCheckIn": "2024-06-11",
+          "location": "San Francisco"
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "department": "Standard Tier",
+          "role": "Essential Role 7",
+          "status": "emergency",
+          "riskLevel": "medium",
+          "lastCheckIn": "2024-07-13",
+          "location": "Seattle"
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "department": "Basic Tier",
+          "role": "Primary Role 8",
+          "status": "offline",
+          "riskLevel": "high",
+          "lastCheckIn": "2024-08-15",
+          "location": "Boston"
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "department": "Enterprise",
+          "role": "Global Role 9",
+          "status": "active",
+          "riskLevel": "critical",
+          "lastCheckIn": "2024-09-17",
+          "location": "Denver"
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "department": "Starter",
+          "role": "Regional Role 10",
+          "status": "inactive",
+          "riskLevel": "medium",
+          "lastCheckIn": "2024-10-19",
+          "location": "Miami"
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "department": "Growth",
+          "role": "Custom Role 11",
+          "status": "emergency",
+          "riskLevel": "low",
+          "lastCheckIn": "2024-11-21",
+          "location": "Austin"
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "department": "Scale",
+          "role": "Smart Role 12",
+          "status": "offline",
+          "riskLevel": "medium",
+          "lastCheckIn": "2024-12-23",
+          "location": "Portland"
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "department": "Foundation",
+          "role": "Rapid Role 13",
+          "status": "active",
+          "riskLevel": "high",
+          "lastCheckIn": "2024-01-25",
+          "location": "Dallas"
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "department": "Advanced",
+          "role": "Secure Role 14",
+          "status": "inactive",
+          "riskLevel": "critical",
+          "lastCheckIn": "2024-02-27",
+          "location": "Atlanta"
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "department": "Professional",
+          "role": "Modern Role 15",
+          "status": "emergency",
+          "riskLevel": "medium",
+          "lastCheckIn": "2024-03-01",
+          "location": "Nashville"
+        }
+      ]
+    },
+    {
+      "modelName": "Incident",
+      "routeKey": "incidents",
+      "label": "Incident",
+      "icon": "briefcase",
+      "aiFunction": "analyzeIncident",
+      "aiPrompt": "You are an AI analyst for A I Personal Safety Lone Worker Monitor. Analyze the provided Incident data. The data includes: Title, Description, Worker Id, Severity, Status, Location, Reported At, Resolved At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "workerId",
+          "label": "Worker Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "open",
+            "investigating",
+            "resolved",
+            "closed"
+          ]
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reportedAt",
+          "label": "Reported At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "resolvedAt",
+          "label": "Resolved At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "workerId": 10,
+          "severity": "low",
+          "status": "open",
+          "location": "New York",
+          "reportedAt": "2024-01-01",
+          "resolvedAt": "2024-01-01"
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "workerId": 58,
+          "severity": "medium",
+          "status": "investigating",
+          "location": "Los Angeles",
+          "reportedAt": "2024-02-03",
+          "resolvedAt": "2024-02-03"
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "workerId": 106,
+          "severity": "high",
+          "status": "resolved",
+          "location": "Chicago",
+          "reportedAt": "2024-03-05",
+          "resolvedAt": "2024-03-05"
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "workerId": 154,
+          "severity": "critical",
+          "status": "closed",
+          "location": "Houston",
+          "reportedAt": "2024-04-07",
+          "resolvedAt": "2024-04-07"
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "workerId": 102,
+          "severity": "low",
+          "status": "open",
+          "location": "Phoenix",
+          "reportedAt": "2024-05-09",
+          "resolvedAt": "2024-05-09"
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "workerId": 150,
+          "severity": "medium",
+          "status": "investigating",
+          "location": "San Francisco",
+          "reportedAt": "2024-06-11",
+          "resolvedAt": "2024-06-11"
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "workerId": 198,
+          "severity": "high",
+          "status": "resolved",
+          "location": "Seattle",
+          "reportedAt": "2024-07-13",
+          "resolvedAt": "2024-07-13"
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "workerId": 146,
+          "severity": "critical",
+          "status": "closed",
+          "location": "Boston",
+          "reportedAt": "2024-08-15",
+          "resolvedAt": "2024-08-15"
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "workerId": 194,
+          "severity": "low",
+          "status": "open",
+          "location": "Denver",
+          "reportedAt": "2024-09-17",
+          "resolvedAt": "2024-09-17"
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "workerId": 242,
+          "severity": "medium",
+          "status": "investigating",
+          "location": "Miami",
+          "reportedAt": "2024-10-19",
+          "resolvedAt": "2024-10-19"
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "workerId": 190,
+          "severity": "high",
+          "status": "resolved",
+          "location": "Austin",
+          "reportedAt": "2024-11-21",
+          "resolvedAt": "2024-11-21"
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "workerId": 238,
+          "severity": "critical",
+          "status": "closed",
+          "location": "Portland",
+          "reportedAt": "2024-12-23",
+          "resolvedAt": "2024-12-23"
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "workerId": 286,
+          "severity": "low",
+          "status": "open",
+          "location": "Dallas",
+          "reportedAt": "2024-01-25",
+          "resolvedAt": "2024-01-25"
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "workerId": 234,
+          "severity": "medium",
+          "status": "investigating",
+          "location": "Atlanta",
+          "reportedAt": "2024-02-27",
+          "resolvedAt": "2024-02-27"
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "workerId": 282,
+          "severity": "high",
+          "status": "resolved",
+          "location": "Nashville",
+          "reportedAt": "2024-03-01",
+          "resolvedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "CheckIn",
+      "routeKey": "check-ins",
+      "label": "Check In",
+      "icon": "clipboard",
+      "aiFunction": "analyzeCheckIn",
+      "aiPrompt": "You are an AI analyst for A I Personal Safety Lone Worker Monitor. Analyze the provided Check In data. The data includes: Worker Id, Status, Location, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "workerId",
+          "label": "Worker Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "safe",
+            "help_needed",
+            "no_response"
+          ]
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "workerId": 10,
+          "status": "safe",
+          "location": "New York",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "workerId": 58,
+          "status": "help_needed",
+          "location": "Los Angeles",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "workerId": 106,
+          "status": "no_response",
+          "location": "Chicago",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "workerId": 154,
+          "status": "safe",
+          "location": "Houston",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "workerId": 102,
+          "status": "help_needed",
+          "location": "Phoenix",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "workerId": 150,
+          "status": "no_response",
+          "location": "San Francisco",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "workerId": 198,
+          "status": "safe",
+          "location": "Seattle",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "workerId": 146,
+          "status": "help_needed",
+          "location": "Boston",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "workerId": 194,
+          "status": "no_response",
+          "location": "Denver",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "workerId": 242,
+          "status": "safe",
+          "location": "Miami",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "workerId": 190,
+          "status": "help_needed",
+          "location": "Austin",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "workerId": 238,
+          "status": "no_response",
+          "location": "Portland",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "workerId": 286,
+          "status": "safe",
+          "location": "Dallas",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "workerId": 234,
+          "status": "help_needed",
+          "location": "Atlanta",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "workerId": 282,
+          "status": "no_response",
+          "location": "Nashville",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Emergencie",
+      "routeKey": "emergencies",
+      "label": "Emergencie",
+      "icon": "database",
+      "aiFunction": "analyzeEmergencie",
+      "aiPrompt": "You are an AI analyst for A I Personal Safety Lone Worker Monitor. Analyze the provided Emergencie data. The data includes: Worker Id, Type, Status, Description, Location, Priority, Triggered At, Resolved At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "workerId",
+          "label": "Worker Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "sos",
+            "medical",
+            "fire",
+            "security",
+            "other"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "responding",
+            "resolved"
+          ]
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "triggeredAt",
+          "label": "Triggered At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "resolvedAt",
+          "label": "Resolved At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "workerId": 10,
+          "type": "sos",
+          "status": "active",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "location": "New York",
+          "priority": "low",
+          "triggeredAt": "2024-01-01",
+          "resolvedAt": "2024-01-01"
+        },
+        {
+          "workerId": 58,
+          "type": "medical",
+          "status": "responding",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "location": "Los Angeles",
+          "priority": "medium",
+          "triggeredAt": "2024-02-03",
+          "resolvedAt": "2024-02-03"
+        },
+        {
+          "workerId": 106,
+          "type": "fire",
+          "status": "resolved",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "location": "Chicago",
+          "priority": "high",
+          "triggeredAt": "2024-03-05",
+          "resolvedAt": "2024-03-05"
+        },
+        {
+          "workerId": 154,
+          "type": "security",
+          "status": "active",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "location": "Houston",
+          "priority": "critical",
+          "triggeredAt": "2024-04-07",
+          "resolvedAt": "2024-04-07"
+        },
+        {
+          "workerId": 102,
+          "type": "other",
+          "status": "responding",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "location": "Phoenix",
+          "priority": "low",
+          "triggeredAt": "2024-05-09",
+          "resolvedAt": "2024-05-09"
+        },
+        {
+          "workerId": 150,
+          "type": "sos",
+          "status": "resolved",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "location": "San Francisco",
+          "priority": "medium",
+          "triggeredAt": "2024-06-11",
+          "resolvedAt": "2024-06-11"
+        },
+        {
+          "workerId": 198,
+          "type": "medical",
+          "status": "active",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "location": "Seattle",
+          "priority": "high",
+          "triggeredAt": "2024-07-13",
+          "resolvedAt": "2024-07-13"
+        },
+        {
+          "workerId": 146,
+          "type": "fire",
+          "status": "responding",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "location": "Boston",
+          "priority": "critical",
+          "triggeredAt": "2024-08-15",
+          "resolvedAt": "2024-08-15"
+        },
+        {
+          "workerId": 194,
+          "type": "security",
+          "status": "resolved",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "location": "Denver",
+          "priority": "low",
+          "triggeredAt": "2024-09-17",
+          "resolvedAt": "2024-09-17"
+        },
+        {
+          "workerId": 242,
+          "type": "other",
+          "status": "active",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "location": "Miami",
+          "priority": "medium",
+          "triggeredAt": "2024-10-19",
+          "resolvedAt": "2024-10-19"
+        },
+        {
+          "workerId": 190,
+          "type": "sos",
+          "status": "responding",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "location": "Austin",
+          "priority": "high",
+          "triggeredAt": "2024-11-21",
+          "resolvedAt": "2024-11-21"
+        },
+        {
+          "workerId": 238,
+          "type": "medical",
+          "status": "resolved",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "location": "Portland",
+          "priority": "critical",
+          "triggeredAt": "2024-12-23",
+          "resolvedAt": "2024-12-23"
+        },
+        {
+          "workerId": 286,
+          "type": "fire",
+          "status": "active",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "location": "Dallas",
+          "priority": "low",
+          "triggeredAt": "2024-01-25",
+          "resolvedAt": "2024-01-25"
+        },
+        {
+          "workerId": 234,
+          "type": "security",
+          "status": "responding",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "location": "Atlanta",
+          "priority": "medium",
+          "triggeredAt": "2024-02-27",
+          "resolvedAt": "2024-02-27"
+        },
+        {
+          "workerId": 282,
+          "type": "other",
+          "status": "resolved",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "location": "Nashville",
+          "priority": "high",
+          "triggeredAt": "2024-03-01",
+          "resolvedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Location",
+      "routeKey": "locations",
+      "label": "Location",
+      "icon": "file-text",
+      "aiFunction": "analyzeLocation",
+      "aiPrompt": "You are an AI analyst for A I Personal Safety Lone Worker Monitor. Analyze the provided Location data. The data includes: Worker Id, Latitude, Longitude, Address, Zone, Risk Level, Recorded At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "workerId",
+          "label": "Worker Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "latitude",
+          "label": "Latitude",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "longitude",
+          "label": "Longitude",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "zone",
+          "label": "Zone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recordedAt",
+          "label": "Recorded At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "workerId": 10,
+          "latitude": 25,
+          "longitude": -120,
+          "address": "New York",
+          "zone": "Advanced Zone 1",
+          "riskLevel": "low",
+          "recordedAt": "2024-01-01"
+        },
+        {
+          "workerId": 58,
+          "latitude": 26.5,
+          "longitude": -117,
+          "address": "Los Angeles",
+          "zone": "Premium Zone 2",
+          "riskLevel": "medium",
+          "recordedAt": "2024-02-03"
+        },
+        {
+          "workerId": 106,
+          "latitude": 28,
+          "longitude": -114,
+          "address": "Chicago",
+          "zone": "Standard Zone 3",
+          "riskLevel": "high",
+          "recordedAt": "2024-03-05"
+        },
+        {
+          "workerId": 154,
+          "latitude": 29.5,
+          "longitude": -111,
+          "address": "Houston",
+          "zone": "Elite Zone 4",
+          "riskLevel": "critical",
+          "recordedAt": "2024-04-07"
+        },
+        {
+          "workerId": 102,
+          "latitude": 31,
+          "longitude": -108,
+          "address": "Phoenix",
+          "zone": "Core Zone 5",
+          "riskLevel": "medium",
+          "recordedAt": "2024-05-09"
+        },
+        {
+          "workerId": 150,
+          "latitude": 32.5,
+          "longitude": -105,
+          "address": "San Francisco",
+          "zone": "Pro Zone 6",
+          "riskLevel": "low",
+          "recordedAt": "2024-06-11"
+        },
+        {
+          "workerId": 198,
+          "latitude": 34,
+          "longitude": -102,
+          "address": "Seattle",
+          "zone": "Essential Zone 7",
+          "riskLevel": "medium",
+          "recordedAt": "2024-07-13"
+        },
+        {
+          "workerId": 146,
+          "latitude": 35.5,
+          "longitude": -99,
+          "address": "Boston",
+          "zone": "Primary Zone 8",
+          "riskLevel": "high",
+          "recordedAt": "2024-08-15"
+        },
+        {
+          "workerId": 194,
+          "latitude": 37,
+          "longitude": -96,
+          "address": "Denver",
+          "zone": "Global Zone 9",
+          "riskLevel": "critical",
+          "recordedAt": "2024-09-17"
+        },
+        {
+          "workerId": 242,
+          "latitude": 38.5,
+          "longitude": -93,
+          "address": "Miami",
+          "zone": "Regional Zone 10",
+          "riskLevel": "medium",
+          "recordedAt": "2024-10-19"
+        },
+        {
+          "workerId": 190,
+          "latitude": 40,
+          "longitude": -90,
+          "address": "Austin",
+          "zone": "Custom Zone 11",
+          "riskLevel": "low",
+          "recordedAt": "2024-11-21"
+        },
+        {
+          "workerId": 238,
+          "latitude": 41.5,
+          "longitude": -87,
+          "address": "Portland",
+          "zone": "Smart Zone 12",
+          "riskLevel": "medium",
+          "recordedAt": "2024-12-23"
+        },
+        {
+          "workerId": 286,
+          "latitude": 43,
+          "longitude": -84,
+          "address": "Dallas",
+          "zone": "Rapid Zone 13",
+          "riskLevel": "high",
+          "recordedAt": "2024-01-25"
+        },
+        {
+          "workerId": 234,
+          "latitude": 44.5,
+          "longitude": -81,
+          "address": "Atlanta",
+          "zone": "Secure Zone 14",
+          "riskLevel": "critical",
+          "recordedAt": "2024-02-27"
+        },
+        {
+          "workerId": 282,
+          "latitude": 46,
+          "longitude": -78,
+          "address": "Nashville",
+          "zone": "Modern Zone 15",
+          "riskLevel": "medium",
+          "recordedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "ComplianceRecord",
+      "routeKey": "compliance-records",
+      "label": "Compliance Record",
+      "icon": "heart",
+      "aiFunction": "analyzeComplianceRecord",
+      "aiPrompt": "You are an AI analyst for A I Personal Safety Lone Worker Monitor. Analyze the provided Compliance Record data. The data includes: Worker Id, Requirement, Status, Due Date, Completed Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "workerId",
+          "label": "Worker Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "requirement",
+          "label": "Requirement",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "compliant",
+            "non_compliant",
+            "pending",
+            "expired"
+          ]
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "completedDate",
+          "label": "Completed Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "workerId": 10,
+          "requirement": "Advanced Requirement 1",
+          "status": "compliant",
+          "dueDate": "2024-01-01",
+          "completedDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "workerId": 58,
+          "requirement": "Premium Requirement 2",
+          "status": "non_compliant",
+          "dueDate": "2024-02-03",
+          "completedDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "workerId": 106,
+          "requirement": "Standard Requirement 3",
+          "status": "pending",
+          "dueDate": "2024-03-05",
+          "completedDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "workerId": 154,
+          "requirement": "Elite Requirement 4",
+          "status": "expired",
+          "dueDate": "2024-04-07",
+          "completedDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "workerId": 102,
+          "requirement": "Core Requirement 5",
+          "status": "compliant",
+          "dueDate": "2024-05-09",
+          "completedDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "workerId": 150,
+          "requirement": "Pro Requirement 6",
+          "status": "non_compliant",
+          "dueDate": "2024-06-11",
+          "completedDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "workerId": 198,
+          "requirement": "Essential Requirement 7",
+          "status": "pending",
+          "dueDate": "2024-07-13",
+          "completedDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "workerId": 146,
+          "requirement": "Primary Requirement 8",
+          "status": "expired",
+          "dueDate": "2024-08-15",
+          "completedDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "workerId": 194,
+          "requirement": "Global Requirement 9",
+          "status": "compliant",
+          "dueDate": "2024-09-17",
+          "completedDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "workerId": 242,
+          "requirement": "Regional Requirement 10",
+          "status": "non_compliant",
+          "dueDate": "2024-10-19",
+          "completedDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "workerId": 190,
+          "requirement": "Custom Requirement 11",
+          "status": "pending",
+          "dueDate": "2024-11-21",
+          "completedDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "workerId": 238,
+          "requirement": "Smart Requirement 12",
+          "status": "expired",
+          "dueDate": "2024-12-23",
+          "completedDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "workerId": 286,
+          "requirement": "Rapid Requirement 13",
+          "status": "compliant",
+          "dueDate": "2024-01-25",
+          "completedDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "workerId": 234,
+          "requirement": "Secure Requirement 14",
+          "status": "non_compliant",
+          "dueDate": "2024-02-27",
+          "completedDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "workerId": 282,
+          "requirement": "Modern Requirement 15",
+          "status": "pending",
+          "dueDate": "2024-03-01",
+          "completedDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Shift",
+      "routeKey": "shifts",
+      "label": "Shift",
+      "icon": "layers",
+      "aiFunction": "analyzeShift",
+      "aiPrompt": "You are an AI analyst for A I Personal Safety Lone Worker Monitor. Analyze the provided Shift data. The data includes: Worker Id, Start Time, End Time, Location, Type, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "workerId",
+          "label": "Worker Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "day",
+            "night",
+            "swing",
+            "overtime"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "scheduled",
+            "active",
+            "completed",
+            "cancelled"
+          ]
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "workerId": 10,
+          "startTime": "2024-01-01",
+          "endTime": "2024-01-01",
+          "location": "New York",
+          "type": "day",
+          "status": "scheduled",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "workerId": 58,
+          "startTime": "2024-02-03",
+          "endTime": "2024-02-03",
+          "location": "Los Angeles",
+          "type": "night",
+          "status": "active",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "workerId": 106,
+          "startTime": "2024-03-05",
+          "endTime": "2024-03-05",
+          "location": "Chicago",
+          "type": "swing",
+          "status": "completed",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "workerId": 154,
+          "startTime": "2024-04-07",
+          "endTime": "2024-04-07",
+          "location": "Houston",
+          "type": "overtime",
+          "status": "cancelled",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "workerId": 102,
+          "startTime": "2024-05-09",
+          "endTime": "2024-05-09",
+          "location": "Phoenix",
+          "type": "day",
+          "status": "scheduled",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "workerId": 150,
+          "startTime": "2024-06-11",
+          "endTime": "2024-06-11",
+          "location": "San Francisco",
+          "type": "night",
+          "status": "active",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "workerId": 198,
+          "startTime": "2024-07-13",
+          "endTime": "2024-07-13",
+          "location": "Seattle",
+          "type": "swing",
+          "status": "completed",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "workerId": 146,
+          "startTime": "2024-08-15",
+          "endTime": "2024-08-15",
+          "location": "Boston",
+          "type": "overtime",
+          "status": "cancelled",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "workerId": 194,
+          "startTime": "2024-09-17",
+          "endTime": "2024-09-17",
+          "location": "Denver",
+          "type": "day",
+          "status": "scheduled",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "workerId": 242,
+          "startTime": "2024-10-19",
+          "endTime": "2024-10-19",
+          "location": "Miami",
+          "type": "night",
+          "status": "active",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "workerId": 190,
+          "startTime": "2024-11-21",
+          "endTime": "2024-11-21",
+          "location": "Austin",
+          "type": "swing",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "workerId": 238,
+          "startTime": "2024-12-23",
+          "endTime": "2024-12-23",
+          "location": "Portland",
+          "type": "overtime",
+          "status": "cancelled",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "workerId": 286,
+          "startTime": "2024-01-25",
+          "endTime": "2024-01-25",
+          "location": "Dallas",
+          "type": "day",
+          "status": "scheduled",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "workerId": 234,
+          "startTime": "2024-02-27",
+          "endTime": "2024-02-27",
+          "location": "Atlanta",
+          "type": "night",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "workerId": 282,
+          "startTime": "2024-03-01",
+          "endTime": "2024-03-01",
+          "location": "Nashville",
+          "type": "swing",
+          "status": "completed",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Hazard",
+      "routeKey": "hazards",
+      "label": "Hazard",
+      "icon": "map-pin",
+      "aiFunction": "analyzeHazard",
+      "aiPrompt": "You are an AI analyst for A I Personal Safety Lone Worker Monitor. Analyze the provided Hazard data. The data includes: Title, Description, Location, Severity, Status, Reported By, Reported At, Mitigated At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "identified",
+            "assessed",
+            "mitigated",
+            "closed"
+          ]
+        },
+        {
+          "key": "reportedBy",
+          "label": "Reported By",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "reportedAt",
+          "label": "Reported At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "mitigatedAt",
+          "label": "Mitigated At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "location": "New York",
+          "severity": "low",
+          "status": "identified",
+          "reportedBy": 10,
+          "reportedAt": "2024-01-01",
+          "mitigatedAt": "2024-01-01"
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "location": "Los Angeles",
+          "severity": "medium",
+          "status": "assessed",
+          "reportedBy": 58,
+          "reportedAt": "2024-02-03",
+          "mitigatedAt": "2024-02-03"
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "location": "Chicago",
+          "severity": "high",
+          "status": "mitigated",
+          "reportedBy": 106,
+          "reportedAt": "2024-03-05",
+          "mitigatedAt": "2024-03-05"
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "location": "Houston",
+          "severity": "critical",
+          "status": "closed",
+          "reportedBy": 154,
+          "reportedAt": "2024-04-07",
+          "mitigatedAt": "2024-04-07"
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "location": "Phoenix",
+          "severity": "low",
+          "status": "identified",
+          "reportedBy": 102,
+          "reportedAt": "2024-05-09",
+          "mitigatedAt": "2024-05-09"
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "location": "San Francisco",
+          "severity": "medium",
+          "status": "assessed",
+          "reportedBy": 150,
+          "reportedAt": "2024-06-11",
+          "mitigatedAt": "2024-06-11"
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "location": "Seattle",
+          "severity": "high",
+          "status": "mitigated",
+          "reportedBy": 198,
+          "reportedAt": "2024-07-13",
+          "mitigatedAt": "2024-07-13"
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "location": "Boston",
+          "severity": "critical",
+          "status": "closed",
+          "reportedBy": 146,
+          "reportedAt": "2024-08-15",
+          "mitigatedAt": "2024-08-15"
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "location": "Denver",
+          "severity": "low",
+          "status": "identified",
+          "reportedBy": 194,
+          "reportedAt": "2024-09-17",
+          "mitigatedAt": "2024-09-17"
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "location": "Miami",
+          "severity": "medium",
+          "status": "assessed",
+          "reportedBy": 242,
+          "reportedAt": "2024-10-19",
+          "mitigatedAt": "2024-10-19"
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "location": "Austin",
+          "severity": "high",
+          "status": "mitigated",
+          "reportedBy": 190,
+          "reportedAt": "2024-11-21",
+          "mitigatedAt": "2024-11-21"
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "location": "Portland",
+          "severity": "critical",
+          "status": "closed",
+          "reportedBy": 238,
+          "reportedAt": "2024-12-23",
+          "mitigatedAt": "2024-12-23"
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "location": "Dallas",
+          "severity": "low",
+          "status": "identified",
+          "reportedBy": 286,
+          "reportedAt": "2024-01-25",
+          "mitigatedAt": "2024-01-25"
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "location": "Atlanta",
+          "severity": "medium",
+          "status": "assessed",
+          "reportedBy": 234,
+          "reportedAt": "2024-02-27",
+          "mitigatedAt": "2024-02-27"
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "location": "Nashville",
+          "severity": "high",
+          "status": "mitigated",
+          "reportedBy": 282,
+          "reportedAt": "2024-03-01",
+          "mitigatedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "TrainingRecord",
+      "routeKey": "training-records",
+      "label": "Training Record",
+      "icon": "package",
+      "aiFunction": "analyzeTrainingRecord",
+      "aiPrompt": "You are an AI analyst for A I Personal Safety Lone Worker Monitor. Analyze the provided Training Record data. The data includes: Worker Id, Course Name, Category, Status, Score, Completed At, Expires At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "workerId",
+          "label": "Worker Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "courseName",
+          "label": "Course Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "not_started",
+            "in_progress",
+            "completed",
+            "expired"
+          ]
+        },
+        {
+          "key": "score",
+          "label": "Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "completedAt",
+          "label": "Completed At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "expiresAt",
+          "label": "Expires At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "workerId": 10,
+          "courseName": "Advanced Course 1",
+          "category": "Category A",
+          "status": "not_started",
+          "score": 10,
+          "completedAt": "2024-01-01",
+          "expiresAt": "2024-01-01"
+        },
+        {
+          "workerId": 58,
+          "courseName": "Premium Course 2",
+          "category": "Category B",
+          "status": "in_progress",
+          "score": 58,
+          "completedAt": "2024-02-03",
+          "expiresAt": "2024-02-03"
+        },
+        {
+          "workerId": 106,
+          "courseName": "Standard Course 3",
+          "category": "Category C",
+          "status": "completed",
+          "score": 106,
+          "completedAt": "2024-03-05",
+          "expiresAt": "2024-03-05"
+        },
+        {
+          "workerId": 154,
+          "courseName": "Elite Course 4",
+          "category": "Category D",
+          "status": "expired",
+          "score": 154,
+          "completedAt": "2024-04-07",
+          "expiresAt": "2024-04-07"
+        },
+        {
+          "workerId": 102,
+          "courseName": "Core Course 5",
+          "category": "Category E",
+          "status": "not_started",
+          "score": 102,
+          "completedAt": "2024-05-09",
+          "expiresAt": "2024-05-09"
+        },
+        {
+          "workerId": 150,
+          "courseName": "Pro Course 6",
+          "category": "Premium Tier",
+          "status": "in_progress",
+          "score": 150,
+          "completedAt": "2024-06-11",
+          "expiresAt": "2024-06-11"
+        },
+        {
+          "workerId": 198,
+          "courseName": "Essential Course 7",
+          "category": "Standard Tier",
+          "status": "completed",
+          "score": 198,
+          "completedAt": "2024-07-13",
+          "expiresAt": "2024-07-13"
+        },
+        {
+          "workerId": 146,
+          "courseName": "Primary Course 8",
+          "category": "Basic Tier",
+          "status": "expired",
+          "score": 146,
+          "completedAt": "2024-08-15",
+          "expiresAt": "2024-08-15"
+        },
+        {
+          "workerId": 194,
+          "courseName": "Global Course 9",
+          "category": "Enterprise",
+          "status": "not_started",
+          "score": 194,
+          "completedAt": "2024-09-17",
+          "expiresAt": "2024-09-17"
+        },
+        {
+          "workerId": 242,
+          "courseName": "Regional Course 10",
+          "category": "Starter",
+          "status": "in_progress",
+          "score": 242,
+          "completedAt": "2024-10-19",
+          "expiresAt": "2024-10-19"
+        },
+        {
+          "workerId": 190,
+          "courseName": "Custom Course 11",
+          "category": "Growth",
+          "status": "completed",
+          "score": 190,
+          "completedAt": "2024-11-21",
+          "expiresAt": "2024-11-21"
+        },
+        {
+          "workerId": 238,
+          "courseName": "Smart Course 12",
+          "category": "Scale",
+          "status": "expired",
+          "score": 238,
+          "completedAt": "2024-12-23",
+          "expiresAt": "2024-12-23"
+        },
+        {
+          "workerId": 286,
+          "courseName": "Rapid Course 13",
+          "category": "Foundation",
+          "status": "not_started",
+          "score": 286,
+          "completedAt": "2024-01-25",
+          "expiresAt": "2024-01-25"
+        },
+        {
+          "workerId": 234,
+          "courseName": "Secure Course 14",
+          "category": "Advanced",
+          "status": "in_progress",
+          "score": 234,
+          "completedAt": "2024-02-27",
+          "expiresAt": "2024-02-27"
+        },
+        {
+          "workerId": 282,
+          "courseName": "Modern Course 15",
+          "category": "Professional",
+          "status": "completed",
+          "score": 282,
+          "completedAt": "2024-03-01",
+          "expiresAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "EquipmentInspection",
+      "routeKey": "equipment-inspections",
+      "label": "Equipment Inspection",
+      "icon": "shield",
+      "aiFunction": "analyzeEquipmentInspection",
+      "aiPrompt": "You are an AI analyst for A I Personal Safety Lone Worker Monitor. Analyze the provided Equipment Inspection data. The data includes: Equipment Name, Equipment Type, Inspector Id, Status, Last Inspection, Next Inspection, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "equipmentName",
+          "label": "Equipment Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "equipmentType",
+          "label": "Equipment Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "inspectorId",
+          "label": "Inspector Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "passed",
+            "failed",
+            "needs_repair",
+            "retired"
+          ]
+        },
+        {
+          "key": "lastInspection",
+          "label": "Last Inspection",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "nextInspection",
+          "label": "Next Inspection",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "equipmentName": "Advanced Equipment 1",
+          "equipmentType": "Category A",
+          "inspectorId": 10,
+          "status": "passed",
+          "lastInspection": "2024-01-01",
+          "nextInspection": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "equipmentName": "Premium Equipment 2",
+          "equipmentType": "Category B",
+          "inspectorId": 58,
+          "status": "failed",
+          "lastInspection": "2024-02-03",
+          "nextInspection": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "equipmentName": "Standard Equipment 3",
+          "equipmentType": "Category C",
+          "inspectorId": 106,
+          "status": "needs_repair",
+          "lastInspection": "2024-03-05",
+          "nextInspection": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "equipmentName": "Elite Equipment 4",
+          "equipmentType": "Category D",
+          "inspectorId": 154,
+          "status": "retired",
+          "lastInspection": "2024-04-07",
+          "nextInspection": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "equipmentName": "Core Equipment 5",
+          "equipmentType": "Category E",
+          "inspectorId": 102,
+          "status": "passed",
+          "lastInspection": "2024-05-09",
+          "nextInspection": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "equipmentName": "Pro Equipment 6",
+          "equipmentType": "Premium Tier",
+          "inspectorId": 150,
+          "status": "failed",
+          "lastInspection": "2024-06-11",
+          "nextInspection": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "equipmentName": "Essential Equipment 7",
+          "equipmentType": "Standard Tier",
+          "inspectorId": 198,
+          "status": "needs_repair",
+          "lastInspection": "2024-07-13",
+          "nextInspection": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "equipmentName": "Primary Equipment 8",
+          "equipmentType": "Basic Tier",
+          "inspectorId": 146,
+          "status": "retired",
+          "lastInspection": "2024-08-15",
+          "nextInspection": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "equipmentName": "Global Equipment 9",
+          "equipmentType": "Enterprise",
+          "inspectorId": 194,
+          "status": "passed",
+          "lastInspection": "2024-09-17",
+          "nextInspection": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "equipmentName": "Regional Equipment 10",
+          "equipmentType": "Starter",
+          "inspectorId": 242,
+          "status": "failed",
+          "lastInspection": "2024-10-19",
+          "nextInspection": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "equipmentName": "Custom Equipment 11",
+          "equipmentType": "Growth",
+          "inspectorId": 190,
+          "status": "needs_repair",
+          "lastInspection": "2024-11-21",
+          "nextInspection": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "equipmentName": "Smart Equipment 12",
+          "equipmentType": "Scale",
+          "inspectorId": 238,
+          "status": "retired",
+          "lastInspection": "2024-12-23",
+          "nextInspection": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "equipmentName": "Rapid Equipment 13",
+          "equipmentType": "Foundation",
+          "inspectorId": 286,
+          "status": "passed",
+          "lastInspection": "2024-01-25",
+          "nextInspection": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "equipmentName": "Secure Equipment 14",
+          "equipmentType": "Advanced",
+          "inspectorId": 234,
+          "status": "failed",
+          "lastInspection": "2024-02-27",
+          "nextInspection": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "equipmentName": "Modern Equipment 15",
+          "equipmentType": "Professional",
+          "inspectorId": 282,
+          "status": "needs_repair",
+          "lastInspection": "2024-03-01",
+          "nextInspection": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

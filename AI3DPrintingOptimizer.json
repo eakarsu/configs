@@ -1,0 +1,2485 @@
+{
+  "appName": "A I 3 D Printing Optimizer",
+  "dbName": "a_i3_d_printing_optimizer",
+  "folderName": "generated/AI3DPrintingOptimizer",
+  "features": [
+    {
+      "modelName": "PrintParameter",
+      "routeKey": "print-parameters",
+      "label": "Print Parameter",
+      "icon": "activity",
+      "aiFunction": "analyzePrintParameter",
+      "aiPrompt": "You are an AI analyst for A I 3 D Printing Optimizer. Analyze the provided Print Parameter data. The data includes: Material Type, Geometry Type, Layer Height, Nozzle Temp, Bed Temp, Print Speed, Infill Density, Support Enabled. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "materialType",
+          "label": "Material Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "geometryType",
+          "label": "Geometry Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "layerHeight",
+          "label": "Layer Height",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "nozzleTemp",
+          "label": "Nozzle Temp",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bedTemp",
+          "label": "Bed Temp",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "printSpeed",
+          "label": "Print Speed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "infillDensity",
+          "label": "Infill Density",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "supportEnabled",
+          "label": "Support Enabled",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "materialType": "Category A",
+          "geometryType": "Category A",
+          "layerHeight": 10,
+          "nozzleTemp": 10,
+          "bedTemp": 10,
+          "printSpeed": 10,
+          "infillDensity": 10,
+          "supportEnabled": true
+        },
+        {
+          "materialType": "Category B",
+          "geometryType": "Category B",
+          "layerHeight": 71.7,
+          "nozzleTemp": 58,
+          "bedTemp": 58,
+          "printSpeed": 58,
+          "infillDensity": 58,
+          "supportEnabled": true
+        },
+        {
+          "materialType": "Category C",
+          "geometryType": "Category C",
+          "layerHeight": 33.4,
+          "nozzleTemp": 106,
+          "bedTemp": 106,
+          "printSpeed": 106,
+          "infillDensity": 106,
+          "supportEnabled": false
+        },
+        {
+          "materialType": "Category D",
+          "geometryType": "Category D",
+          "layerHeight": 95.1,
+          "nozzleTemp": 154,
+          "bedTemp": 154,
+          "printSpeed": 154,
+          "infillDensity": 154,
+          "supportEnabled": true
+        },
+        {
+          "materialType": "Category E",
+          "geometryType": "Category E",
+          "layerHeight": 56.8,
+          "nozzleTemp": 102,
+          "bedTemp": 102,
+          "printSpeed": 102,
+          "infillDensity": 102,
+          "supportEnabled": false
+        },
+        {
+          "materialType": "Premium Tier",
+          "geometryType": "Premium Tier",
+          "layerHeight": 118.5,
+          "nozzleTemp": 150,
+          "bedTemp": 150,
+          "printSpeed": 150,
+          "infillDensity": 150,
+          "supportEnabled": true
+        },
+        {
+          "materialType": "Standard Tier",
+          "geometryType": "Standard Tier",
+          "layerHeight": 80.2,
+          "nozzleTemp": 198,
+          "bedTemp": 198,
+          "printSpeed": 198,
+          "infillDensity": 198,
+          "supportEnabled": true
+        },
+        {
+          "materialType": "Basic Tier",
+          "geometryType": "Basic Tier",
+          "layerHeight": 141.9,
+          "nozzleTemp": 146,
+          "bedTemp": 146,
+          "printSpeed": 146,
+          "infillDensity": 146,
+          "supportEnabled": false
+        },
+        {
+          "materialType": "Enterprise",
+          "geometryType": "Enterprise",
+          "layerHeight": 103.6,
+          "nozzleTemp": 194,
+          "bedTemp": 194,
+          "printSpeed": 194,
+          "infillDensity": 194,
+          "supportEnabled": true
+        },
+        {
+          "materialType": "Starter",
+          "geometryType": "Starter",
+          "layerHeight": 165.3,
+          "nozzleTemp": 242,
+          "bedTemp": 242,
+          "printSpeed": 242,
+          "infillDensity": 242,
+          "supportEnabled": true
+        },
+        {
+          "materialType": "Growth",
+          "geometryType": "Growth",
+          "layerHeight": 127,
+          "nozzleTemp": 190,
+          "bedTemp": 190,
+          "printSpeed": 190,
+          "infillDensity": 190,
+          "supportEnabled": false
+        },
+        {
+          "materialType": "Scale",
+          "geometryType": "Scale",
+          "layerHeight": 188.7,
+          "nozzleTemp": 238,
+          "bedTemp": 238,
+          "printSpeed": 238,
+          "infillDensity": 238,
+          "supportEnabled": true
+        },
+        {
+          "materialType": "Foundation",
+          "geometryType": "Foundation",
+          "layerHeight": 150.4,
+          "nozzleTemp": 286,
+          "bedTemp": 286,
+          "printSpeed": 286,
+          "infillDensity": 286,
+          "supportEnabled": false
+        },
+        {
+          "materialType": "Advanced",
+          "geometryType": "Advanced",
+          "layerHeight": 212.1,
+          "nozzleTemp": 234,
+          "bedTemp": 234,
+          "printSpeed": 234,
+          "infillDensity": 234,
+          "supportEnabled": true
+        },
+        {
+          "materialType": "Professional",
+          "geometryType": "Professional",
+          "layerHeight": 173.8,
+          "nozzleTemp": 282,
+          "bedTemp": 282,
+          "printSpeed": 282,
+          "infillDensity": 282,
+          "supportEnabled": true
+        }
+      ]
+    },
+    {
+      "modelName": "FailurePrediction",
+      "routeKey": "failure-predictions",
+      "label": "Failure Prediction",
+      "icon": "briefcase",
+      "aiFunction": "analyzeFailurePrediction",
+      "aiPrompt": "You are an AI analyst for A I 3 D Printing Optimizer. Analyze the provided Failure Prediction data. The data includes: Print Name, Material Type, Layer Height, Nozzle Temp, Bed Temp, Print Speed, Geometry Complexity, Risk Level, Failure Type, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "printName",
+          "label": "Print Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "materialType",
+          "label": "Material Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "layerHeight",
+          "label": "Layer Height",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "nozzleTemp",
+          "label": "Nozzle Temp",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bedTemp",
+          "label": "Bed Temp",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "printSpeed",
+          "label": "Print Speed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "geometryComplexity",
+          "label": "Geometry Complexity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "failureType",
+          "label": "Failure Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "printName": "Advanced Print 1",
+          "materialType": "Category A",
+          "layerHeight": 10,
+          "nozzleTemp": 10,
+          "bedTemp": 10,
+          "printSpeed": 10,
+          "geometryComplexity": "Advanced Geometry Complexity 1",
+          "riskLevel": "low",
+          "failureType": "Category A",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "printName": "Premium Print 2",
+          "materialType": "Category B",
+          "layerHeight": 71.7,
+          "nozzleTemp": 58,
+          "bedTemp": 58,
+          "printSpeed": 58,
+          "geometryComplexity": "Premium Geometry Complexity 2",
+          "riskLevel": "medium",
+          "failureType": "Category B",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "printName": "Standard Print 3",
+          "materialType": "Category C",
+          "layerHeight": 33.4,
+          "nozzleTemp": 106,
+          "bedTemp": 106,
+          "printSpeed": 106,
+          "geometryComplexity": "Standard Geometry Complexity 3",
+          "riskLevel": "high",
+          "failureType": "Category C",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "printName": "Elite Print 4",
+          "materialType": "Category D",
+          "layerHeight": 95.1,
+          "nozzleTemp": 154,
+          "bedTemp": 154,
+          "printSpeed": 154,
+          "geometryComplexity": "Elite Geometry Complexity 4",
+          "riskLevel": "critical",
+          "failureType": "Category D",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "printName": "Core Print 5",
+          "materialType": "Category E",
+          "layerHeight": 56.8,
+          "nozzleTemp": 102,
+          "bedTemp": 102,
+          "printSpeed": 102,
+          "geometryComplexity": "Core Geometry Complexity 5",
+          "riskLevel": "medium",
+          "failureType": "Category E",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "printName": "Pro Print 6",
+          "materialType": "Premium Tier",
+          "layerHeight": 118.5,
+          "nozzleTemp": 150,
+          "bedTemp": 150,
+          "printSpeed": 150,
+          "geometryComplexity": "Pro Geometry Complexity 6",
+          "riskLevel": "low",
+          "failureType": "Premium Tier",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "printName": "Essential Print 7",
+          "materialType": "Standard Tier",
+          "layerHeight": 80.2,
+          "nozzleTemp": 198,
+          "bedTemp": 198,
+          "printSpeed": 198,
+          "geometryComplexity": "Essential Geometry Complexity 7",
+          "riskLevel": "medium",
+          "failureType": "Standard Tier",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "printName": "Primary Print 8",
+          "materialType": "Basic Tier",
+          "layerHeight": 141.9,
+          "nozzleTemp": 146,
+          "bedTemp": 146,
+          "printSpeed": 146,
+          "geometryComplexity": "Primary Geometry Complexity 8",
+          "riskLevel": "high",
+          "failureType": "Basic Tier",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "printName": "Global Print 9",
+          "materialType": "Enterprise",
+          "layerHeight": 103.6,
+          "nozzleTemp": 194,
+          "bedTemp": 194,
+          "printSpeed": 194,
+          "geometryComplexity": "Global Geometry Complexity 9",
+          "riskLevel": "critical",
+          "failureType": "Enterprise",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "printName": "Regional Print 10",
+          "materialType": "Starter",
+          "layerHeight": 165.3,
+          "nozzleTemp": 242,
+          "bedTemp": 242,
+          "printSpeed": 242,
+          "geometryComplexity": "Regional Geometry Complexity 10",
+          "riskLevel": "medium",
+          "failureType": "Starter",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "printName": "Custom Print 11",
+          "materialType": "Growth",
+          "layerHeight": 127,
+          "nozzleTemp": 190,
+          "bedTemp": 190,
+          "printSpeed": 190,
+          "geometryComplexity": "Custom Geometry Complexity 11",
+          "riskLevel": "low",
+          "failureType": "Growth",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "printName": "Smart Print 12",
+          "materialType": "Scale",
+          "layerHeight": 188.7,
+          "nozzleTemp": 238,
+          "bedTemp": 238,
+          "printSpeed": 238,
+          "geometryComplexity": "Smart Geometry Complexity 12",
+          "riskLevel": "medium",
+          "failureType": "Scale",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "printName": "Rapid Print 13",
+          "materialType": "Foundation",
+          "layerHeight": 150.4,
+          "nozzleTemp": 286,
+          "bedTemp": 286,
+          "printSpeed": 286,
+          "geometryComplexity": "Rapid Geometry Complexity 13",
+          "riskLevel": "high",
+          "failureType": "Foundation",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "printName": "Secure Print 14",
+          "materialType": "Advanced",
+          "layerHeight": 212.1,
+          "nozzleTemp": 234,
+          "bedTemp": 234,
+          "printSpeed": 234,
+          "geometryComplexity": "Secure Geometry Complexity 14",
+          "riskLevel": "critical",
+          "failureType": "Advanced",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "printName": "Modern Print 15",
+          "materialType": "Professional",
+          "layerHeight": 173.8,
+          "nozzleTemp": 282,
+          "bedTemp": 282,
+          "printSpeed": 282,
+          "geometryComplexity": "Modern Geometry Complexity 15",
+          "riskLevel": "medium",
+          "failureType": "Professional",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "MaterialSelection",
+      "routeKey": "material-selections",
+      "label": "Material Selection",
+      "icon": "clipboard",
+      "aiFunction": "analyzeMaterialSelection",
+      "aiPrompt": "You are an AI analyst for A I 3 D Printing Optimizer. Analyze the provided Material Selection data. The data includes: Project Name, Application, Strength Required, Flexibility Required, Heat Resistance, Chemical Resistance, Recommended Material, Budget Level, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "projectName",
+          "label": "Project Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "application",
+          "label": "Application",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "strengthRequired",
+          "label": "Strength Required",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "flexibilityRequired",
+          "label": "Flexibility Required",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "heatResistance",
+          "label": "Heat Resistance",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "chemicalResistance",
+          "label": "Chemical Resistance",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recommendedMaterial",
+          "label": "Recommended Material",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "budgetLevel",
+          "label": "Budget Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "projectName": "Advanced Project 1",
+          "application": "Advanced Application 1",
+          "strengthRequired": 10,
+          "flexibilityRequired": 10,
+          "heatResistance": "Advanced Heat Resistance 1",
+          "chemicalResistance": "Advanced Chemical Resistance 1",
+          "recommendedMaterial": "Advanced Recommended Material 1",
+          "budgetLevel": "low",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "projectName": "Premium Project 2",
+          "application": "Premium Application 2",
+          "strengthRequired": 58,
+          "flexibilityRequired": 58,
+          "heatResistance": "Premium Heat Resistance 2",
+          "chemicalResistance": "Premium Chemical Resistance 2",
+          "recommendedMaterial": "Premium Recommended Material 2",
+          "budgetLevel": "medium",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "projectName": "Standard Project 3",
+          "application": "Standard Application 3",
+          "strengthRequired": 106,
+          "flexibilityRequired": 106,
+          "heatResistance": "Standard Heat Resistance 3",
+          "chemicalResistance": "Standard Chemical Resistance 3",
+          "recommendedMaterial": "Standard Recommended Material 3",
+          "budgetLevel": "high",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "projectName": "Elite Project 4",
+          "application": "Elite Application 4",
+          "strengthRequired": 154,
+          "flexibilityRequired": 154,
+          "heatResistance": "Elite Heat Resistance 4",
+          "chemicalResistance": "Elite Chemical Resistance 4",
+          "recommendedMaterial": "Elite Recommended Material 4",
+          "budgetLevel": "critical",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "projectName": "Core Project 5",
+          "application": "Core Application 5",
+          "strengthRequired": 102,
+          "flexibilityRequired": 102,
+          "heatResistance": "Core Heat Resistance 5",
+          "chemicalResistance": "Core Chemical Resistance 5",
+          "recommendedMaterial": "Core Recommended Material 5",
+          "budgetLevel": "medium",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "projectName": "Pro Project 6",
+          "application": "Pro Application 6",
+          "strengthRequired": 150,
+          "flexibilityRequired": 150,
+          "heatResistance": "Pro Heat Resistance 6",
+          "chemicalResistance": "Pro Chemical Resistance 6",
+          "recommendedMaterial": "Pro Recommended Material 6",
+          "budgetLevel": "low",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "projectName": "Essential Project 7",
+          "application": "Essential Application 7",
+          "strengthRequired": 198,
+          "flexibilityRequired": 198,
+          "heatResistance": "Essential Heat Resistance 7",
+          "chemicalResistance": "Essential Chemical Resistance 7",
+          "recommendedMaterial": "Essential Recommended Material 7",
+          "budgetLevel": "medium",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "projectName": "Primary Project 8",
+          "application": "Primary Application 8",
+          "strengthRequired": 146,
+          "flexibilityRequired": 146,
+          "heatResistance": "Primary Heat Resistance 8",
+          "chemicalResistance": "Primary Chemical Resistance 8",
+          "recommendedMaterial": "Primary Recommended Material 8",
+          "budgetLevel": "high",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "projectName": "Global Project 9",
+          "application": "Global Application 9",
+          "strengthRequired": 194,
+          "flexibilityRequired": 194,
+          "heatResistance": "Global Heat Resistance 9",
+          "chemicalResistance": "Global Chemical Resistance 9",
+          "recommendedMaterial": "Global Recommended Material 9",
+          "budgetLevel": "critical",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "projectName": "Regional Project 10",
+          "application": "Regional Application 10",
+          "strengthRequired": 242,
+          "flexibilityRequired": 242,
+          "heatResistance": "Regional Heat Resistance 10",
+          "chemicalResistance": "Regional Chemical Resistance 10",
+          "recommendedMaterial": "Regional Recommended Material 10",
+          "budgetLevel": "medium",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "projectName": "Custom Project 11",
+          "application": "Custom Application 11",
+          "strengthRequired": 190,
+          "flexibilityRequired": 190,
+          "heatResistance": "Custom Heat Resistance 11",
+          "chemicalResistance": "Custom Chemical Resistance 11",
+          "recommendedMaterial": "Custom Recommended Material 11",
+          "budgetLevel": "low",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "projectName": "Smart Project 12",
+          "application": "Smart Application 12",
+          "strengthRequired": 238,
+          "flexibilityRequired": 238,
+          "heatResistance": "Smart Heat Resistance 12",
+          "chemicalResistance": "Smart Chemical Resistance 12",
+          "recommendedMaterial": "Smart Recommended Material 12",
+          "budgetLevel": "medium",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "projectName": "Rapid Project 13",
+          "application": "Rapid Application 13",
+          "strengthRequired": 286,
+          "flexibilityRequired": 286,
+          "heatResistance": "Rapid Heat Resistance 13",
+          "chemicalResistance": "Rapid Chemical Resistance 13",
+          "recommendedMaterial": "Rapid Recommended Material 13",
+          "budgetLevel": "high",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "projectName": "Secure Project 14",
+          "application": "Secure Application 14",
+          "strengthRequired": 234,
+          "flexibilityRequired": 234,
+          "heatResistance": "Secure Heat Resistance 14",
+          "chemicalResistance": "Secure Chemical Resistance 14",
+          "recommendedMaterial": "Secure Recommended Material 14",
+          "budgetLevel": "critical",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "projectName": "Modern Project 15",
+          "application": "Modern Application 15",
+          "strengthRequired": 282,
+          "flexibilityRequired": 282,
+          "heatResistance": "Modern Heat Resistance 15",
+          "chemicalResistance": "Modern Chemical Resistance 15",
+          "recommendedMaterial": "Modern Recommended Material 15",
+          "budgetLevel": "medium",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "BuildTimeEstimate",
+      "routeKey": "build-time-estimates",
+      "label": "Build Time Estimate",
+      "icon": "database",
+      "aiFunction": "analyzeBuildTimeEstimate",
+      "aiPrompt": "You are an AI analyst for A I 3 D Printing Optimizer. Analyze the provided Build Time Estimate data. The data includes: Model Name, Dimensions X, Dimensions Y, Dimensions Z, Layer Height, Infill Density, Print Speed, Material Type, Estimated Hours, Complexity. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "modelName",
+          "label": "Model Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dimensionsX",
+          "label": "Dimensions X",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "dimensionsY",
+          "label": "Dimensions Y",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "dimensionsZ",
+          "label": "Dimensions Z",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "layerHeight",
+          "label": "Layer Height",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "infillDensity",
+          "label": "Infill Density",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "printSpeed",
+          "label": "Print Speed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "materialType",
+          "label": "Material Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "estimatedHours",
+          "label": "Estimated Hours",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "complexity",
+          "label": "Complexity",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "modelName": "Advanced Model 1",
+          "dimensionsX": 10,
+          "dimensionsY": 10,
+          "dimensionsZ": 10,
+          "layerHeight": 10,
+          "infillDensity": 10,
+          "printSpeed": 10,
+          "materialType": "Category A",
+          "estimatedHours": 10,
+          "complexity": "Advanced Complexity 1"
+        },
+        {
+          "modelName": "Premium Model 2",
+          "dimensionsX": 71.7,
+          "dimensionsY": 71.7,
+          "dimensionsZ": 71.7,
+          "layerHeight": 71.7,
+          "infillDensity": 58,
+          "printSpeed": 58,
+          "materialType": "Category B",
+          "estimatedHours": 71.7,
+          "complexity": "Premium Complexity 2"
+        },
+        {
+          "modelName": "Standard Model 3",
+          "dimensionsX": 33.4,
+          "dimensionsY": 33.4,
+          "dimensionsZ": 33.4,
+          "layerHeight": 33.4,
+          "infillDensity": 106,
+          "printSpeed": 106,
+          "materialType": "Category C",
+          "estimatedHours": 33.4,
+          "complexity": "Standard Complexity 3"
+        },
+        {
+          "modelName": "Elite Model 4",
+          "dimensionsX": 95.1,
+          "dimensionsY": 95.1,
+          "dimensionsZ": 95.1,
+          "layerHeight": 95.1,
+          "infillDensity": 154,
+          "printSpeed": 154,
+          "materialType": "Category D",
+          "estimatedHours": 95.1,
+          "complexity": "Elite Complexity 4"
+        },
+        {
+          "modelName": "Core Model 5",
+          "dimensionsX": 56.8,
+          "dimensionsY": 56.8,
+          "dimensionsZ": 56.8,
+          "layerHeight": 56.8,
+          "infillDensity": 102,
+          "printSpeed": 102,
+          "materialType": "Category E",
+          "estimatedHours": 56.8,
+          "complexity": "Core Complexity 5"
+        },
+        {
+          "modelName": "Pro Model 6",
+          "dimensionsX": 118.5,
+          "dimensionsY": 118.5,
+          "dimensionsZ": 118.5,
+          "layerHeight": 118.5,
+          "infillDensity": 150,
+          "printSpeed": 150,
+          "materialType": "Premium Tier",
+          "estimatedHours": 118.5,
+          "complexity": "Pro Complexity 6"
+        },
+        {
+          "modelName": "Essential Model 7",
+          "dimensionsX": 80.2,
+          "dimensionsY": 80.2,
+          "dimensionsZ": 80.2,
+          "layerHeight": 80.2,
+          "infillDensity": 198,
+          "printSpeed": 198,
+          "materialType": "Standard Tier",
+          "estimatedHours": 80.2,
+          "complexity": "Essential Complexity 7"
+        },
+        {
+          "modelName": "Primary Model 8",
+          "dimensionsX": 141.9,
+          "dimensionsY": 141.9,
+          "dimensionsZ": 141.9,
+          "layerHeight": 141.9,
+          "infillDensity": 146,
+          "printSpeed": 146,
+          "materialType": "Basic Tier",
+          "estimatedHours": 141.9,
+          "complexity": "Primary Complexity 8"
+        },
+        {
+          "modelName": "Global Model 9",
+          "dimensionsX": 103.6,
+          "dimensionsY": 103.6,
+          "dimensionsZ": 103.6,
+          "layerHeight": 103.6,
+          "infillDensity": 194,
+          "printSpeed": 194,
+          "materialType": "Enterprise",
+          "estimatedHours": 103.6,
+          "complexity": "Global Complexity 9"
+        },
+        {
+          "modelName": "Regional Model 10",
+          "dimensionsX": 165.3,
+          "dimensionsY": 165.3,
+          "dimensionsZ": 165.3,
+          "layerHeight": 165.3,
+          "infillDensity": 242,
+          "printSpeed": 242,
+          "materialType": "Starter",
+          "estimatedHours": 165.3,
+          "complexity": "Regional Complexity 10"
+        },
+        {
+          "modelName": "Custom Model 11",
+          "dimensionsX": 127,
+          "dimensionsY": 127,
+          "dimensionsZ": 127,
+          "layerHeight": 127,
+          "infillDensity": 190,
+          "printSpeed": 190,
+          "materialType": "Growth",
+          "estimatedHours": 127,
+          "complexity": "Custom Complexity 11"
+        },
+        {
+          "modelName": "Smart Model 12",
+          "dimensionsX": 188.7,
+          "dimensionsY": 188.7,
+          "dimensionsZ": 188.7,
+          "layerHeight": 188.7,
+          "infillDensity": 238,
+          "printSpeed": 238,
+          "materialType": "Scale",
+          "estimatedHours": 188.7,
+          "complexity": "Smart Complexity 12"
+        },
+        {
+          "modelName": "Rapid Model 13",
+          "dimensionsX": 150.4,
+          "dimensionsY": 150.4,
+          "dimensionsZ": 150.4,
+          "layerHeight": 150.4,
+          "infillDensity": 286,
+          "printSpeed": 286,
+          "materialType": "Foundation",
+          "estimatedHours": 150.4,
+          "complexity": "Rapid Complexity 13"
+        },
+        {
+          "modelName": "Secure Model 14",
+          "dimensionsX": 212.1,
+          "dimensionsY": 212.1,
+          "dimensionsZ": 212.1,
+          "layerHeight": 212.1,
+          "infillDensity": 234,
+          "printSpeed": 234,
+          "materialType": "Advanced",
+          "estimatedHours": 212.1,
+          "complexity": "Secure Complexity 14"
+        },
+        {
+          "modelName": "Modern Model 15",
+          "dimensionsX": 173.8,
+          "dimensionsY": 173.8,
+          "dimensionsZ": 173.8,
+          "layerHeight": 173.8,
+          "infillDensity": 282,
+          "printSpeed": 282,
+          "materialType": "Professional",
+          "estimatedHours": 173.8,
+          "complexity": "Modern Complexity 15"
+        }
+      ]
+    },
+    {
+      "modelName": "QualityScore",
+      "routeKey": "quality-scores",
+      "label": "Quality Score",
+      "icon": "file-text",
+      "aiFunction": "analyzeQualityScore",
+      "aiPrompt": "You are an AI analyst for A I 3 D Printing Optimizer. Analyze the provided Quality Score data. The data includes: Print Name, Surface Quality, Dimensional Accuracy, Layer Adhesion, Detail Resolution, Warping Level, Stringing Level, Overall Score, Material Type, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "printName",
+          "label": "Print Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "surfaceQuality",
+          "label": "Surface Quality",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "dimensionalAccuracy",
+          "label": "Dimensional Accuracy",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "layerAdhesion",
+          "label": "Layer Adhesion",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "detailResolution",
+          "label": "Detail Resolution",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "warpingLevel",
+          "label": "Warping Level",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "stringingLevel",
+          "label": "Stringing Level",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "overallScore",
+          "label": "Overall Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "materialType",
+          "label": "Material Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "printName": "Advanced Print 1",
+          "surfaceQuality": 10,
+          "dimensionalAccuracy": 10,
+          "layerAdhesion": 10,
+          "detailResolution": 10,
+          "warpingLevel": 10,
+          "stringingLevel": 10,
+          "overallScore": 1.5,
+          "materialType": "Category A",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "printName": "Premium Print 2",
+          "surfaceQuality": 58,
+          "dimensionalAccuracy": 58,
+          "layerAdhesion": 58,
+          "detailResolution": 58,
+          "warpingLevel": 58,
+          "stringingLevel": 58,
+          "overallScore": 2.1,
+          "materialType": "Category B",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "printName": "Standard Print 3",
+          "surfaceQuality": 106,
+          "dimensionalAccuracy": 106,
+          "layerAdhesion": 106,
+          "detailResolution": 106,
+          "warpingLevel": 106,
+          "stringingLevel": 106,
+          "overallScore": 2.7,
+          "materialType": "Category C",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "printName": "Elite Print 4",
+          "surfaceQuality": 154,
+          "dimensionalAccuracy": 154,
+          "layerAdhesion": 154,
+          "detailResolution": 154,
+          "warpingLevel": 154,
+          "stringingLevel": 154,
+          "overallScore": 3.3,
+          "materialType": "Category D",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "printName": "Core Print 5",
+          "surfaceQuality": 102,
+          "dimensionalAccuracy": 102,
+          "layerAdhesion": 102,
+          "detailResolution": 102,
+          "warpingLevel": 102,
+          "stringingLevel": 102,
+          "overallScore": 3.9,
+          "materialType": "Category E",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "printName": "Pro Print 6",
+          "surfaceQuality": 150,
+          "dimensionalAccuracy": 150,
+          "layerAdhesion": 150,
+          "detailResolution": 150,
+          "warpingLevel": 150,
+          "stringingLevel": 150,
+          "overallScore": 4.5,
+          "materialType": "Premium Tier",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "printName": "Essential Print 7",
+          "surfaceQuality": 198,
+          "dimensionalAccuracy": 198,
+          "layerAdhesion": 198,
+          "detailResolution": 198,
+          "warpingLevel": 198,
+          "stringingLevel": 198,
+          "overallScore": 5.1,
+          "materialType": "Standard Tier",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "printName": "Primary Print 8",
+          "surfaceQuality": 146,
+          "dimensionalAccuracy": 146,
+          "layerAdhesion": 146,
+          "detailResolution": 146,
+          "warpingLevel": 146,
+          "stringingLevel": 146,
+          "overallScore": 5.7,
+          "materialType": "Basic Tier",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "printName": "Global Print 9",
+          "surfaceQuality": 194,
+          "dimensionalAccuracy": 194,
+          "layerAdhesion": 194,
+          "detailResolution": 194,
+          "warpingLevel": 194,
+          "stringingLevel": 194,
+          "overallScore": 6.3,
+          "materialType": "Enterprise",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "printName": "Regional Print 10",
+          "surfaceQuality": 242,
+          "dimensionalAccuracy": 242,
+          "layerAdhesion": 242,
+          "detailResolution": 242,
+          "warpingLevel": 242,
+          "stringingLevel": 242,
+          "overallScore": 1.9,
+          "materialType": "Starter",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "printName": "Custom Print 11",
+          "surfaceQuality": 190,
+          "dimensionalAccuracy": 190,
+          "layerAdhesion": 190,
+          "detailResolution": 190,
+          "warpingLevel": 190,
+          "stringingLevel": 190,
+          "overallScore": 2.5,
+          "materialType": "Growth",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "printName": "Smart Print 12",
+          "surfaceQuality": 238,
+          "dimensionalAccuracy": 238,
+          "layerAdhesion": 238,
+          "detailResolution": 238,
+          "warpingLevel": 238,
+          "stringingLevel": 238,
+          "overallScore": 3.1,
+          "materialType": "Scale",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "printName": "Rapid Print 13",
+          "surfaceQuality": 286,
+          "dimensionalAccuracy": 286,
+          "layerAdhesion": 286,
+          "detailResolution": 286,
+          "warpingLevel": 286,
+          "stringingLevel": 286,
+          "overallScore": 3.7,
+          "materialType": "Foundation",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "printName": "Secure Print 14",
+          "surfaceQuality": 234,
+          "dimensionalAccuracy": 234,
+          "layerAdhesion": 234,
+          "detailResolution": 234,
+          "warpingLevel": 234,
+          "stringingLevel": 234,
+          "overallScore": 4.3,
+          "materialType": "Advanced",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "printName": "Modern Print 15",
+          "surfaceQuality": 282,
+          "dimensionalAccuracy": 282,
+          "layerAdhesion": 282,
+          "detailResolution": 282,
+          "warpingLevel": 282,
+          "stringingLevel": 282,
+          "overallScore": 4.9,
+          "materialType": "Professional",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PrintJob",
+      "routeKey": "print-jobs",
+      "label": "Print Job",
+      "icon": "heart",
+      "aiFunction": "analyzePrintJob",
+      "aiPrompt": "You are an AI analyst for A I 3 D Printing Optimizer. Analyze the provided Print Job data. The data includes: Job Name, Printer Name, Material Type, Status, Priority, Estimated Time, File Name, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "jobName",
+          "label": "Job Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "printerName",
+          "label": "Printer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "materialType",
+          "label": "Material Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "estimatedTime",
+          "label": "Estimated Time",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "fileName",
+          "label": "File Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "jobName": "Advanced Job 1",
+          "printerName": "Advanced Printer 1",
+          "materialType": "Category A",
+          "status": "active",
+          "priority": "low",
+          "estimatedTime": 10,
+          "fileName": "Advanced File 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "jobName": "Premium Job 2",
+          "printerName": "Premium Printer 2",
+          "materialType": "Category B",
+          "status": "pending",
+          "priority": "medium",
+          "estimatedTime": 71.7,
+          "fileName": "Premium File 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "jobName": "Standard Job 3",
+          "printerName": "Standard Printer 3",
+          "materialType": "Category C",
+          "status": "in_progress",
+          "priority": "high",
+          "estimatedTime": 33.4,
+          "fileName": "Standard File 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "jobName": "Elite Job 4",
+          "printerName": "Elite Printer 4",
+          "materialType": "Category D",
+          "status": "completed",
+          "priority": "critical",
+          "estimatedTime": 95.1,
+          "fileName": "Elite File 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "jobName": "Core Job 5",
+          "printerName": "Core Printer 5",
+          "materialType": "Category E",
+          "status": "under_review",
+          "priority": "medium",
+          "estimatedTime": 56.8,
+          "fileName": "Core File 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "jobName": "Pro Job 6",
+          "printerName": "Pro Printer 6",
+          "materialType": "Premium Tier",
+          "status": "approved",
+          "priority": "low",
+          "estimatedTime": 118.5,
+          "fileName": "Pro File 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "jobName": "Essential Job 7",
+          "printerName": "Essential Printer 7",
+          "materialType": "Standard Tier",
+          "status": "active",
+          "priority": "medium",
+          "estimatedTime": 80.2,
+          "fileName": "Essential File 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "jobName": "Primary Job 8",
+          "printerName": "Primary Printer 8",
+          "materialType": "Basic Tier",
+          "status": "active",
+          "priority": "high",
+          "estimatedTime": 141.9,
+          "fileName": "Primary File 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "jobName": "Global Job 9",
+          "printerName": "Global Printer 9",
+          "materialType": "Enterprise",
+          "status": "active",
+          "priority": "critical",
+          "estimatedTime": 103.6,
+          "fileName": "Global File 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "jobName": "Regional Job 10",
+          "printerName": "Regional Printer 10",
+          "materialType": "Starter",
+          "status": "pending",
+          "priority": "medium",
+          "estimatedTime": 165.3,
+          "fileName": "Regional File 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "jobName": "Custom Job 11",
+          "printerName": "Custom Printer 11",
+          "materialType": "Growth",
+          "status": "completed",
+          "priority": "low",
+          "estimatedTime": 127,
+          "fileName": "Custom File 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "jobName": "Smart Job 12",
+          "printerName": "Smart Printer 12",
+          "materialType": "Scale",
+          "status": "active",
+          "priority": "medium",
+          "estimatedTime": 188.7,
+          "fileName": "Smart File 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "jobName": "Rapid Job 13",
+          "printerName": "Rapid Printer 13",
+          "materialType": "Foundation",
+          "status": "in_progress",
+          "priority": "high",
+          "estimatedTime": 150.4,
+          "fileName": "Rapid File 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "jobName": "Secure Job 14",
+          "printerName": "Secure Printer 14",
+          "materialType": "Advanced",
+          "status": "active",
+          "priority": "critical",
+          "estimatedTime": 212.1,
+          "fileName": "Secure File 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "jobName": "Modern Job 15",
+          "printerName": "Modern Printer 15",
+          "materialType": "Professional",
+          "status": "approved",
+          "priority": "medium",
+          "estimatedTime": 173.8,
+          "fileName": "Modern File 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Material",
+      "routeKey": "materials",
+      "label": "Material",
+      "icon": "layers",
+      "aiFunction": "analyzeMaterial",
+      "aiPrompt": "You are an AI analyst for A I 3 D Printing Optimizer. Analyze the provided Material data. The data includes: Name, Type, Brand, Color, Diameter, Weight Grams, Price, Nozzle Temp Min, Nozzle Temp Max, Bed Temp Min, Bed Temp Max, In Stock. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "brand",
+          "label": "Brand",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "color",
+          "label": "Color",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "diameter",
+          "label": "Diameter",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "weightGrams",
+          "label": "Weight Grams",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "price",
+          "label": "Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "nozzleTempMin",
+          "label": "Nozzle Temp Min",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "nozzleTempMax",
+          "label": "Nozzle Temp Max",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bedTempMin",
+          "label": "Bed Temp Min",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bedTempMax",
+          "label": "Bed Temp Max",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "inStock",
+          "label": "In Stock",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "brand": "Advanced Brand 1",
+          "color": "Advanced Color 1",
+          "diameter": 10,
+          "weightGrams": 10,
+          "price": 500,
+          "nozzleTempMin": 10,
+          "nozzleTempMax": 10,
+          "bedTempMin": 10,
+          "bedTempMax": 10,
+          "inStock": true
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "brand": "Premium Brand 2",
+          "color": "Premium Color 2",
+          "diameter": 71.7,
+          "weightGrams": 58,
+          "price": 2481,
+          "nozzleTempMin": 58,
+          "nozzleTempMax": 58,
+          "bedTempMin": 58,
+          "bedTempMax": 58,
+          "inStock": true
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "brand": "Standard Brand 3",
+          "color": "Standard Color 3",
+          "diameter": 33.4,
+          "weightGrams": 106,
+          "price": 4462,
+          "nozzleTempMin": 106,
+          "nozzleTempMax": 106,
+          "bedTempMin": 106,
+          "bedTempMax": 106,
+          "inStock": false
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "brand": "Elite Brand 4",
+          "color": "Elite Color 4",
+          "diameter": 95.1,
+          "weightGrams": 154,
+          "price": 6443,
+          "nozzleTempMin": 154,
+          "nozzleTempMax": 154,
+          "bedTempMin": 154,
+          "bedTempMax": 154,
+          "inStock": true
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "brand": "Core Brand 5",
+          "color": "Core Color 5",
+          "diameter": 56.8,
+          "weightGrams": 102,
+          "price": 8424,
+          "nozzleTempMin": 102,
+          "nozzleTempMax": 102,
+          "bedTempMin": 102,
+          "bedTempMax": 102,
+          "inStock": false
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "brand": "Pro Brand 6",
+          "color": "Pro Color 6",
+          "diameter": 118.5,
+          "weightGrams": 150,
+          "price": 10405,
+          "nozzleTempMin": 150,
+          "nozzleTempMax": 150,
+          "bedTempMin": 150,
+          "bedTempMax": 150,
+          "inStock": true
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "brand": "Essential Brand 7",
+          "color": "Essential Color 7",
+          "diameter": 80.2,
+          "weightGrams": 198,
+          "price": 12386,
+          "nozzleTempMin": 198,
+          "nozzleTempMax": 198,
+          "bedTempMin": 198,
+          "bedTempMax": 198,
+          "inStock": true
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "brand": "Primary Brand 8",
+          "color": "Primary Color 8",
+          "diameter": 141.9,
+          "weightGrams": 146,
+          "price": 9367,
+          "nozzleTempMin": 146,
+          "nozzleTempMax": 146,
+          "bedTempMin": 146,
+          "bedTempMax": 146,
+          "inStock": false
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "brand": "Global Brand 9",
+          "color": "Global Color 9",
+          "diameter": 103.6,
+          "weightGrams": 194,
+          "price": 11348,
+          "nozzleTempMin": 194,
+          "nozzleTempMax": 194,
+          "bedTempMin": 194,
+          "bedTempMax": 194,
+          "inStock": true
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "brand": "Regional Brand 10",
+          "color": "Regional Color 10",
+          "diameter": 165.3,
+          "weightGrams": 242,
+          "price": 13329,
+          "nozzleTempMin": 242,
+          "nozzleTempMax": 242,
+          "bedTempMin": 242,
+          "bedTempMax": 242,
+          "inStock": true
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "brand": "Custom Brand 11",
+          "color": "Custom Color 11",
+          "diameter": 127,
+          "weightGrams": 190,
+          "price": 15310,
+          "nozzleTempMin": 190,
+          "nozzleTempMax": 190,
+          "bedTempMin": 190,
+          "bedTempMax": 190,
+          "inStock": false
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "brand": "Smart Brand 12",
+          "color": "Smart Color 12",
+          "diameter": 188.7,
+          "weightGrams": 238,
+          "price": 17291,
+          "nozzleTempMin": 238,
+          "nozzleTempMax": 238,
+          "bedTempMin": 238,
+          "bedTempMax": 238,
+          "inStock": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "brand": "Rapid Brand 13",
+          "color": "Rapid Color 13",
+          "diameter": 150.4,
+          "weightGrams": 286,
+          "price": 19272,
+          "nozzleTempMin": 286,
+          "nozzleTempMax": 286,
+          "bedTempMin": 286,
+          "bedTempMax": 286,
+          "inStock": false
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "brand": "Secure Brand 14",
+          "color": "Secure Color 14",
+          "diameter": 212.1,
+          "weightGrams": 234,
+          "price": 21253,
+          "nozzleTempMin": 234,
+          "nozzleTempMax": 234,
+          "bedTempMin": 234,
+          "bedTempMax": 234,
+          "inStock": true
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "brand": "Modern Brand 15",
+          "color": "Modern Color 15",
+          "diameter": 173.8,
+          "weightGrams": 282,
+          "price": 18234,
+          "nozzleTempMin": 282,
+          "nozzleTempMax": 282,
+          "bedTempMin": 282,
+          "bedTempMax": 282,
+          "inStock": true
+        }
+      ]
+    },
+    {
+      "modelName": "Printer",
+      "routeKey": "printers",
+      "label": "Printer",
+      "icon": "map-pin",
+      "aiFunction": "analyzePrinter",
+      "aiPrompt": "You are an AI analyst for A I 3 D Printing Optimizer. Analyze the provided Printer data. The data includes: Name, Model, Manufacturer, Build Volume X, Build Volume Y, Build Volume Z, Nozzle Diameter, Max Temp, Heated Bed, Status, Total Print Hours, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "model",
+          "label": "Model",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "manufacturer",
+          "label": "Manufacturer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "buildVolumeX",
+          "label": "Build Volume X",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "buildVolumeY",
+          "label": "Build Volume Y",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "buildVolumeZ",
+          "label": "Build Volume Z",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "nozzleDiameter",
+          "label": "Nozzle Diameter",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "maxTemp",
+          "label": "Max Temp",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "heatedBed",
+          "label": "Heated Bed",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalPrintHours",
+          "label": "Total Print Hours",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "model": "Advanced Model 1",
+          "manufacturer": "Advanced Manufacturer 1",
+          "buildVolumeX": 10,
+          "buildVolumeY": 10,
+          "buildVolumeZ": 10,
+          "nozzleDiameter": 10,
+          "maxTemp": 10,
+          "heatedBed": true,
+          "status": "active",
+          "totalPrintHours": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "model": "Premium Model 2",
+          "manufacturer": "Premium Manufacturer 2",
+          "buildVolumeX": 58,
+          "buildVolumeY": 58,
+          "buildVolumeZ": 58,
+          "nozzleDiameter": 71.7,
+          "maxTemp": 58,
+          "heatedBed": true,
+          "status": "pending",
+          "totalPrintHours": 71.7,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "model": "Standard Model 3",
+          "manufacturer": "Standard Manufacturer 3",
+          "buildVolumeX": 106,
+          "buildVolumeY": 106,
+          "buildVolumeZ": 106,
+          "nozzleDiameter": 33.4,
+          "maxTemp": 106,
+          "heatedBed": false,
+          "status": "in_progress",
+          "totalPrintHours": 33.4,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "model": "Elite Model 4",
+          "manufacturer": "Elite Manufacturer 4",
+          "buildVolumeX": 154,
+          "buildVolumeY": 154,
+          "buildVolumeZ": 154,
+          "nozzleDiameter": 95.1,
+          "maxTemp": 154,
+          "heatedBed": true,
+          "status": "completed",
+          "totalPrintHours": 95.1,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "model": "Core Model 5",
+          "manufacturer": "Core Manufacturer 5",
+          "buildVolumeX": 102,
+          "buildVolumeY": 102,
+          "buildVolumeZ": 102,
+          "nozzleDiameter": 56.8,
+          "maxTemp": 102,
+          "heatedBed": false,
+          "status": "under_review",
+          "totalPrintHours": 56.8,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "model": "Pro Model 6",
+          "manufacturer": "Pro Manufacturer 6",
+          "buildVolumeX": 150,
+          "buildVolumeY": 150,
+          "buildVolumeZ": 150,
+          "nozzleDiameter": 118.5,
+          "maxTemp": 150,
+          "heatedBed": true,
+          "status": "approved",
+          "totalPrintHours": 118.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "model": "Essential Model 7",
+          "manufacturer": "Essential Manufacturer 7",
+          "buildVolumeX": 198,
+          "buildVolumeY": 198,
+          "buildVolumeZ": 198,
+          "nozzleDiameter": 80.2,
+          "maxTemp": 198,
+          "heatedBed": true,
+          "status": "active",
+          "totalPrintHours": 80.2,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "model": "Primary Model 8",
+          "manufacturer": "Primary Manufacturer 8",
+          "buildVolumeX": 146,
+          "buildVolumeY": 146,
+          "buildVolumeZ": 146,
+          "nozzleDiameter": 141.9,
+          "maxTemp": 146,
+          "heatedBed": false,
+          "status": "active",
+          "totalPrintHours": 141.9,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "model": "Global Model 9",
+          "manufacturer": "Global Manufacturer 9",
+          "buildVolumeX": 194,
+          "buildVolumeY": 194,
+          "buildVolumeZ": 194,
+          "nozzleDiameter": 103.6,
+          "maxTemp": 194,
+          "heatedBed": true,
+          "status": "active",
+          "totalPrintHours": 103.6,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "model": "Regional Model 10",
+          "manufacturer": "Regional Manufacturer 10",
+          "buildVolumeX": 242,
+          "buildVolumeY": 242,
+          "buildVolumeZ": 242,
+          "nozzleDiameter": 165.3,
+          "maxTemp": 242,
+          "heatedBed": true,
+          "status": "pending",
+          "totalPrintHours": 165.3,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "model": "Custom Model 11",
+          "manufacturer": "Custom Manufacturer 11",
+          "buildVolumeX": 190,
+          "buildVolumeY": 190,
+          "buildVolumeZ": 190,
+          "nozzleDiameter": 127,
+          "maxTemp": 190,
+          "heatedBed": false,
+          "status": "completed",
+          "totalPrintHours": 127,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "model": "Smart Model 12",
+          "manufacturer": "Smart Manufacturer 12",
+          "buildVolumeX": 238,
+          "buildVolumeY": 238,
+          "buildVolumeZ": 238,
+          "nozzleDiameter": 188.7,
+          "maxTemp": 238,
+          "heatedBed": true,
+          "status": "active",
+          "totalPrintHours": 188.7,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "model": "Rapid Model 13",
+          "manufacturer": "Rapid Manufacturer 13",
+          "buildVolumeX": 286,
+          "buildVolumeY": 286,
+          "buildVolumeZ": 286,
+          "nozzleDiameter": 150.4,
+          "maxTemp": 286,
+          "heatedBed": false,
+          "status": "in_progress",
+          "totalPrintHours": 150.4,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "model": "Secure Model 14",
+          "manufacturer": "Secure Manufacturer 14",
+          "buildVolumeX": 234,
+          "buildVolumeY": 234,
+          "buildVolumeZ": 234,
+          "nozzleDiameter": 212.1,
+          "maxTemp": 234,
+          "heatedBed": true,
+          "status": "active",
+          "totalPrintHours": 212.1,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "model": "Modern Model 15",
+          "manufacturer": "Modern Manufacturer 15",
+          "buildVolumeX": 282,
+          "buildVolumeY": 282,
+          "buildVolumeZ": 282,
+          "nozzleDiameter": 173.8,
+          "maxTemp": 282,
+          "heatedBed": true,
+          "status": "approved",
+          "totalPrintHours": 173.8,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PrintProfile",
+      "routeKey": "print-profiles",
+      "label": "Print Profile",
+      "icon": "package",
+      "aiFunction": "analyzePrintProfile",
+      "aiPrompt": "You are an AI analyst for A I 3 D Printing Optimizer. Analyze the provided Print Profile data. The data includes: Profile Name, Material Type, Layer Height, Nozzle Temp, Bed Temp, Print Speed, Infill Density, Retraction Enabled, Retraction Distance, Fan Speed, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "profileName",
+          "label": "Profile Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "materialType",
+          "label": "Material Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "layerHeight",
+          "label": "Layer Height",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "nozzleTemp",
+          "label": "Nozzle Temp",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bedTemp",
+          "label": "Bed Temp",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "printSpeed",
+          "label": "Print Speed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "infillDensity",
+          "label": "Infill Density",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "retractionEnabled",
+          "label": "Retraction Enabled",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "retractionDistance",
+          "label": "Retraction Distance",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "fanSpeed",
+          "label": "Fan Speed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "profileName": "Advanced Profile 1",
+          "materialType": "Category A",
+          "layerHeight": 10,
+          "nozzleTemp": 10,
+          "bedTemp": 10,
+          "printSpeed": 10,
+          "infillDensity": 10,
+          "retractionEnabled": true,
+          "retractionDistance": 10,
+          "fanSpeed": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "profileName": "Premium Profile 2",
+          "materialType": "Category B",
+          "layerHeight": 71.7,
+          "nozzleTemp": 58,
+          "bedTemp": 58,
+          "printSpeed": 58,
+          "infillDensity": 58,
+          "retractionEnabled": true,
+          "retractionDistance": 71.7,
+          "fanSpeed": 58,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "profileName": "Standard Profile 3",
+          "materialType": "Category C",
+          "layerHeight": 33.4,
+          "nozzleTemp": 106,
+          "bedTemp": 106,
+          "printSpeed": 106,
+          "infillDensity": 106,
+          "retractionEnabled": false,
+          "retractionDistance": 33.4,
+          "fanSpeed": 106,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "profileName": "Elite Profile 4",
+          "materialType": "Category D",
+          "layerHeight": 95.1,
+          "nozzleTemp": 154,
+          "bedTemp": 154,
+          "printSpeed": 154,
+          "infillDensity": 154,
+          "retractionEnabled": true,
+          "retractionDistance": 95.1,
+          "fanSpeed": 154,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "profileName": "Core Profile 5",
+          "materialType": "Category E",
+          "layerHeight": 56.8,
+          "nozzleTemp": 102,
+          "bedTemp": 102,
+          "printSpeed": 102,
+          "infillDensity": 102,
+          "retractionEnabled": false,
+          "retractionDistance": 56.8,
+          "fanSpeed": 102,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "profileName": "Pro Profile 6",
+          "materialType": "Premium Tier",
+          "layerHeight": 118.5,
+          "nozzleTemp": 150,
+          "bedTemp": 150,
+          "printSpeed": 150,
+          "infillDensity": 150,
+          "retractionEnabled": true,
+          "retractionDistance": 118.5,
+          "fanSpeed": 150,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "profileName": "Essential Profile 7",
+          "materialType": "Standard Tier",
+          "layerHeight": 80.2,
+          "nozzleTemp": 198,
+          "bedTemp": 198,
+          "printSpeed": 198,
+          "infillDensity": 198,
+          "retractionEnabled": true,
+          "retractionDistance": 80.2,
+          "fanSpeed": 198,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "profileName": "Primary Profile 8",
+          "materialType": "Basic Tier",
+          "layerHeight": 141.9,
+          "nozzleTemp": 146,
+          "bedTemp": 146,
+          "printSpeed": 146,
+          "infillDensity": 146,
+          "retractionEnabled": false,
+          "retractionDistance": 141.9,
+          "fanSpeed": 146,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "profileName": "Global Profile 9",
+          "materialType": "Enterprise",
+          "layerHeight": 103.6,
+          "nozzleTemp": 194,
+          "bedTemp": 194,
+          "printSpeed": 194,
+          "infillDensity": 194,
+          "retractionEnabled": true,
+          "retractionDistance": 103.6,
+          "fanSpeed": 194,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "profileName": "Regional Profile 10",
+          "materialType": "Starter",
+          "layerHeight": 165.3,
+          "nozzleTemp": 242,
+          "bedTemp": 242,
+          "printSpeed": 242,
+          "infillDensity": 242,
+          "retractionEnabled": true,
+          "retractionDistance": 165.3,
+          "fanSpeed": 242,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "profileName": "Custom Profile 11",
+          "materialType": "Growth",
+          "layerHeight": 127,
+          "nozzleTemp": 190,
+          "bedTemp": 190,
+          "printSpeed": 190,
+          "infillDensity": 190,
+          "retractionEnabled": false,
+          "retractionDistance": 127,
+          "fanSpeed": 190,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "profileName": "Smart Profile 12",
+          "materialType": "Scale",
+          "layerHeight": 188.7,
+          "nozzleTemp": 238,
+          "bedTemp": 238,
+          "printSpeed": 238,
+          "infillDensity": 238,
+          "retractionEnabled": true,
+          "retractionDistance": 188.7,
+          "fanSpeed": 238,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "profileName": "Rapid Profile 13",
+          "materialType": "Foundation",
+          "layerHeight": 150.4,
+          "nozzleTemp": 286,
+          "bedTemp": 286,
+          "printSpeed": 286,
+          "infillDensity": 286,
+          "retractionEnabled": false,
+          "retractionDistance": 150.4,
+          "fanSpeed": 286,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "profileName": "Secure Profile 14",
+          "materialType": "Advanced",
+          "layerHeight": 212.1,
+          "nozzleTemp": 234,
+          "bedTemp": 234,
+          "printSpeed": 234,
+          "infillDensity": 234,
+          "retractionEnabled": true,
+          "retractionDistance": 212.1,
+          "fanSpeed": 234,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "profileName": "Modern Profile 15",
+          "materialType": "Professional",
+          "layerHeight": 173.8,
+          "nozzleTemp": 282,
+          "bedTemp": 282,
+          "printSpeed": 282,
+          "infillDensity": 282,
+          "retractionEnabled": true,
+          "retractionDistance": 173.8,
+          "fanSpeed": 282,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "MaintenanceLog",
+      "routeKey": "maintenance-logs",
+      "label": "Maintenance Log",
+      "icon": "shield",
+      "aiFunction": "analyzeMaintenanceLog",
+      "aiPrompt": "You are an AI analyst for A I 3 D Printing Optimizer. Analyze the provided Maintenance Log data. The data includes: Printer Name, Maintenance Type, Description, Performed By, Cost, Next Maintenance Date, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "printerName",
+          "label": "Printer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "maintenanceType",
+          "label": "Maintenance Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "performedBy",
+          "label": "Performed By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "nextMaintenanceDate",
+          "label": "Next Maintenance Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "printerName": "Advanced Printer 1",
+          "maintenanceType": "Category A",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "performedBy": "Advanced Performed By 1",
+          "cost": 500,
+          "nextMaintenanceDate": "2024-01-01",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "printerName": "Premium Printer 2",
+          "maintenanceType": "Category B",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "performedBy": "Premium Performed By 2",
+          "cost": 2481,
+          "nextMaintenanceDate": "2024-02-03",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "printerName": "Standard Printer 3",
+          "maintenanceType": "Category C",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "performedBy": "Standard Performed By 3",
+          "cost": 4462,
+          "nextMaintenanceDate": "2024-03-05",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "printerName": "Elite Printer 4",
+          "maintenanceType": "Category D",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "performedBy": "Elite Performed By 4",
+          "cost": 6443,
+          "nextMaintenanceDate": "2024-04-07",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "printerName": "Core Printer 5",
+          "maintenanceType": "Category E",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "performedBy": "Core Performed By 5",
+          "cost": 8424,
+          "nextMaintenanceDate": "2024-05-09",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "printerName": "Pro Printer 6",
+          "maintenanceType": "Premium Tier",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "performedBy": "Pro Performed By 6",
+          "cost": 10405,
+          "nextMaintenanceDate": "2024-06-11",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "printerName": "Essential Printer 7",
+          "maintenanceType": "Standard Tier",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "performedBy": "Essential Performed By 7",
+          "cost": 12386,
+          "nextMaintenanceDate": "2024-07-13",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "printerName": "Primary Printer 8",
+          "maintenanceType": "Basic Tier",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "performedBy": "Primary Performed By 8",
+          "cost": 9367,
+          "nextMaintenanceDate": "2024-08-15",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "printerName": "Global Printer 9",
+          "maintenanceType": "Enterprise",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "performedBy": "Global Performed By 9",
+          "cost": 11348,
+          "nextMaintenanceDate": "2024-09-17",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "printerName": "Regional Printer 10",
+          "maintenanceType": "Starter",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "performedBy": "Regional Performed By 10",
+          "cost": 13329,
+          "nextMaintenanceDate": "2024-10-19",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "printerName": "Custom Printer 11",
+          "maintenanceType": "Growth",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "performedBy": "Custom Performed By 11",
+          "cost": 15310,
+          "nextMaintenanceDate": "2024-11-21",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "printerName": "Smart Printer 12",
+          "maintenanceType": "Scale",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "performedBy": "Smart Performed By 12",
+          "cost": 17291,
+          "nextMaintenanceDate": "2024-12-23",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "printerName": "Rapid Printer 13",
+          "maintenanceType": "Foundation",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "performedBy": "Rapid Performed By 13",
+          "cost": 19272,
+          "nextMaintenanceDate": "2024-01-25",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "printerName": "Secure Printer 14",
+          "maintenanceType": "Advanced",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "performedBy": "Secure Performed By 14",
+          "cost": 21253,
+          "nextMaintenanceDate": "2024-02-27",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "printerName": "Modern Printer 15",
+          "maintenanceType": "Professional",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "performedBy": "Modern Performed By 15",
+          "cost": 18234,
+          "nextMaintenanceDate": "2024-03-01",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

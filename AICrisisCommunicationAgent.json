@@ -1,0 +1,2926 @@
+{
+  "appName": "A I Crisis Communication Agent",
+  "dbName": "a_i_crisis_communication_agent",
+  "folderName": "generated/AICrisisCommunicationAgent",
+  "features": [
+    {
+      "modelName": "CrisisIncident",
+      "routeKey": "crisis-incidents",
+      "label": "Crisis Incident",
+      "icon": "activity",
+      "aiFunction": "analyzeCrisisIncident",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Crisis Incident data. The data includes: Title, Description, Severity, Status, Category, Location, Affected Stakeholders, Lead Responder. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "critical",
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "monitoring",
+            "resolved",
+            "closed"
+          ]
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "affectedStakeholders",
+          "label": "Affected Stakeholders",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "leadResponder",
+          "label": "Lead Responder",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "severity": "critical",
+          "status": "active",
+          "category": "Category A",
+          "location": "New York",
+          "affectedStakeholders": "Comprehensive solution designed for optimal performance and efficiency.",
+          "leadResponder": "Advanced Lead Responder 1"
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "severity": "high",
+          "status": "monitoring",
+          "category": "Category B",
+          "location": "Los Angeles",
+          "affectedStakeholders": "Industry-leading approach with proven results across multiple deployments.",
+          "leadResponder": "Premium Lead Responder 2"
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "severity": "medium",
+          "status": "resolved",
+          "category": "Category C",
+          "location": "Chicago",
+          "affectedStakeholders": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "leadResponder": "Standard Lead Responder 3"
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "severity": "low",
+          "status": "closed",
+          "category": "Category D",
+          "location": "Houston",
+          "affectedStakeholders": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "leadResponder": "Elite Lead Responder 4"
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "severity": "critical",
+          "status": "active",
+          "category": "Category E",
+          "location": "Phoenix",
+          "affectedStakeholders": "Cost-effective strategy focused on sustainable long-term growth.",
+          "leadResponder": "Core Lead Responder 5"
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "severity": "high",
+          "status": "monitoring",
+          "category": "Premium Tier",
+          "location": "San Francisco",
+          "affectedStakeholders": "High-priority initiative aligned with organizational strategic objectives.",
+          "leadResponder": "Pro Lead Responder 6"
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "severity": "medium",
+          "status": "resolved",
+          "category": "Standard Tier",
+          "location": "Seattle",
+          "affectedStakeholders": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "leadResponder": "Essential Lead Responder 7"
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "severity": "low",
+          "status": "closed",
+          "category": "Basic Tier",
+          "location": "Boston",
+          "affectedStakeholders": "Innovative framework incorporating best practices and emerging technologies.",
+          "leadResponder": "Primary Lead Responder 8"
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "severity": "critical",
+          "status": "active",
+          "category": "Enterprise",
+          "location": "Denver",
+          "affectedStakeholders": "Scalable architecture built to accommodate rapid expansion and change.",
+          "leadResponder": "Global Lead Responder 9"
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "severity": "high",
+          "status": "monitoring",
+          "category": "Starter",
+          "location": "Miami",
+          "affectedStakeholders": "Enterprise-grade solution with robust security and compliance features.",
+          "leadResponder": "Regional Lead Responder 10"
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "severity": "medium",
+          "status": "resolved",
+          "category": "Growth",
+          "location": "Austin",
+          "affectedStakeholders": "Integrated platform connecting multiple systems for seamless operations.",
+          "leadResponder": "Custom Lead Responder 11"
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "severity": "low",
+          "status": "closed",
+          "category": "Scale",
+          "location": "Portland",
+          "affectedStakeholders": "Automated workflow reducing manual intervention and human error.",
+          "leadResponder": "Smart Lead Responder 12"
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "severity": "critical",
+          "status": "active",
+          "category": "Foundation",
+          "location": "Dallas",
+          "affectedStakeholders": "Real-time monitoring system with intelligent alerting capabilities.",
+          "leadResponder": "Rapid Lead Responder 13"
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "severity": "high",
+          "status": "monitoring",
+          "category": "Advanced",
+          "location": "Atlanta",
+          "affectedStakeholders": "Customizable module adaptable to diverse operational requirements.",
+          "leadResponder": "Secure Lead Responder 14"
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "severity": "medium",
+          "status": "resolved",
+          "category": "Professional",
+          "location": "Nashville",
+          "affectedStakeholders": "Performance-optimized design achieving superior throughput and reliability.",
+          "leadResponder": "Modern Lead Responder 15"
+        }
+      ]
+    },
+    {
+      "modelName": "MediaMonitoring",
+      "routeKey": "media-monitorings",
+      "label": "Media Monitoring",
+      "icon": "briefcase",
+      "aiFunction": "analyzeMediaMonitoring",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Media Monitoring data. The data includes: Source, Title, Url, Sentiment, Reach, Platform, Summary, Published At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "url",
+          "label": "Url",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "sentiment",
+          "label": "Sentiment",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reach",
+          "label": "Reach",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "platform",
+          "label": "Platform",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "summary",
+          "label": "Summary",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "publishedAt",
+          "label": "Published At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "source": "Advanced Source 1",
+          "title": "Advanced Title 1",
+          "url": "Comprehensive solution designed for optimal performance and efficiency.",
+          "sentiment": "Advanced Sentiment 1",
+          "reach": 10,
+          "platform": "Advanced Platform 1",
+          "summary": "Comprehensive solution designed for optimal performance and efficiency.",
+          "publishedAt": "2024-01-01"
+        },
+        {
+          "source": "Premium Source 2",
+          "title": "Premium Title 2",
+          "url": "Industry-leading approach with proven results across multiple deployments.",
+          "sentiment": "Premium Sentiment 2",
+          "reach": 58,
+          "platform": "Premium Platform 2",
+          "summary": "Industry-leading approach with proven results across multiple deployments.",
+          "publishedAt": "2024-02-03"
+        },
+        {
+          "source": "Standard Source 3",
+          "title": "Standard Title 3",
+          "url": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "sentiment": "Standard Sentiment 3",
+          "reach": 106,
+          "platform": "Standard Platform 3",
+          "summary": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "publishedAt": "2024-03-05"
+        },
+        {
+          "source": "Elite Source 4",
+          "title": "Elite Title 4",
+          "url": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "sentiment": "Elite Sentiment 4",
+          "reach": 154,
+          "platform": "Elite Platform 4",
+          "summary": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "publishedAt": "2024-04-07"
+        },
+        {
+          "source": "Core Source 5",
+          "title": "Core Title 5",
+          "url": "Cost-effective strategy focused on sustainable long-term growth.",
+          "sentiment": "Core Sentiment 5",
+          "reach": 102,
+          "platform": "Core Platform 5",
+          "summary": "Cost-effective strategy focused on sustainable long-term growth.",
+          "publishedAt": "2024-05-09"
+        },
+        {
+          "source": "Pro Source 6",
+          "title": "Pro Title 6",
+          "url": "High-priority initiative aligned with organizational strategic objectives.",
+          "sentiment": "Pro Sentiment 6",
+          "reach": 150,
+          "platform": "Pro Platform 6",
+          "summary": "High-priority initiative aligned with organizational strategic objectives.",
+          "publishedAt": "2024-06-11"
+        },
+        {
+          "source": "Essential Source 7",
+          "title": "Essential Title 7",
+          "url": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "sentiment": "Essential Sentiment 7",
+          "reach": 198,
+          "platform": "Essential Platform 7",
+          "summary": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "publishedAt": "2024-07-13"
+        },
+        {
+          "source": "Primary Source 8",
+          "title": "Primary Title 8",
+          "url": "Innovative framework incorporating best practices and emerging technologies.",
+          "sentiment": "Primary Sentiment 8",
+          "reach": 146,
+          "platform": "Primary Platform 8",
+          "summary": "Innovative framework incorporating best practices and emerging technologies.",
+          "publishedAt": "2024-08-15"
+        },
+        {
+          "source": "Global Source 9",
+          "title": "Global Title 9",
+          "url": "Scalable architecture built to accommodate rapid expansion and change.",
+          "sentiment": "Global Sentiment 9",
+          "reach": 194,
+          "platform": "Global Platform 9",
+          "summary": "Scalable architecture built to accommodate rapid expansion and change.",
+          "publishedAt": "2024-09-17"
+        },
+        {
+          "source": "Regional Source 10",
+          "title": "Regional Title 10",
+          "url": "Enterprise-grade solution with robust security and compliance features.",
+          "sentiment": "Regional Sentiment 10",
+          "reach": 242,
+          "platform": "Regional Platform 10",
+          "summary": "Enterprise-grade solution with robust security and compliance features.",
+          "publishedAt": "2024-10-19"
+        },
+        {
+          "source": "Custom Source 11",
+          "title": "Custom Title 11",
+          "url": "Integrated platform connecting multiple systems for seamless operations.",
+          "sentiment": "Custom Sentiment 11",
+          "reach": 190,
+          "platform": "Custom Platform 11",
+          "summary": "Integrated platform connecting multiple systems for seamless operations.",
+          "publishedAt": "2024-11-21"
+        },
+        {
+          "source": "Smart Source 12",
+          "title": "Smart Title 12",
+          "url": "Automated workflow reducing manual intervention and human error.",
+          "sentiment": "Smart Sentiment 12",
+          "reach": 238,
+          "platform": "Smart Platform 12",
+          "summary": "Automated workflow reducing manual intervention and human error.",
+          "publishedAt": "2024-12-23"
+        },
+        {
+          "source": "Rapid Source 13",
+          "title": "Rapid Title 13",
+          "url": "Real-time monitoring system with intelligent alerting capabilities.",
+          "sentiment": "Rapid Sentiment 13",
+          "reach": 286,
+          "platform": "Rapid Platform 13",
+          "summary": "Real-time monitoring system with intelligent alerting capabilities.",
+          "publishedAt": "2024-01-25"
+        },
+        {
+          "source": "Secure Source 14",
+          "title": "Secure Title 14",
+          "url": "Customizable module adaptable to diverse operational requirements.",
+          "sentiment": "Secure Sentiment 14",
+          "reach": 234,
+          "platform": "Secure Platform 14",
+          "summary": "Customizable module adaptable to diverse operational requirements.",
+          "publishedAt": "2024-02-27"
+        },
+        {
+          "source": "Modern Source 15",
+          "title": "Modern Title 15",
+          "url": "Performance-optimized design achieving superior throughput and reliability.",
+          "sentiment": "Modern Sentiment 15",
+          "reach": 282,
+          "platform": "Modern Platform 15",
+          "summary": "Performance-optimized design achieving superior throughput and reliability.",
+          "publishedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Stakeholder",
+      "routeKey": "stakeholders",
+      "label": "Stakeholder",
+      "icon": "clipboard",
+      "aiFunction": "analyzeStakeholder",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Stakeholder data. The data includes: Name, Organization, Role, Email, Phone, Priority, Relationship, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "organization",
+          "label": "Organization",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ]
+        },
+        {
+          "key": "relationship",
+          "label": "Relationship",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "organization": "Advanced Organization 1",
+          "role": "Advanced Role 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "priority": "primary",
+          "relationship": "Advanced Relationship 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "organization": "Premium Organization 2",
+          "role": "Premium Role 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "priority": "secondary",
+          "relationship": "Premium Relationship 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "organization": "Standard Organization 3",
+          "role": "Standard Role 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "priority": "tertiary",
+          "relationship": "Standard Relationship 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "organization": "Elite Organization 4",
+          "role": "Elite Role 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "priority": "primary",
+          "relationship": "Elite Relationship 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "organization": "Core Organization 5",
+          "role": "Core Role 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "priority": "secondary",
+          "relationship": "Core Relationship 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "organization": "Pro Organization 6",
+          "role": "Pro Role 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "priority": "tertiary",
+          "relationship": "Pro Relationship 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "organization": "Essential Organization 7",
+          "role": "Essential Role 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "priority": "primary",
+          "relationship": "Essential Relationship 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "organization": "Primary Organization 8",
+          "role": "Primary Role 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "priority": "secondary",
+          "relationship": "Primary Relationship 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "organization": "Global Organization 9",
+          "role": "Global Role 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "priority": "tertiary",
+          "relationship": "Global Relationship 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "organization": "Regional Organization 10",
+          "role": "Regional Role 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "priority": "primary",
+          "relationship": "Regional Relationship 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "organization": "Custom Organization 11",
+          "role": "Custom Role 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "priority": "secondary",
+          "relationship": "Custom Relationship 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "organization": "Smart Organization 12",
+          "role": "Smart Role 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "priority": "tertiary",
+          "relationship": "Smart Relationship 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "organization": "Rapid Organization 13",
+          "role": "Rapid Role 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "priority": "primary",
+          "relationship": "Rapid Relationship 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "organization": "Secure Organization 14",
+          "role": "Secure Role 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "priority": "secondary",
+          "relationship": "Secure Relationship 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "organization": "Modern Organization 15",
+          "role": "Modern Role 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "priority": "tertiary",
+          "relationship": "Modern Relationship 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "ResponseTemplate",
+      "routeKey": "response-templates",
+      "label": "Response Template",
+      "icon": "database",
+      "aiFunction": "analyzeResponseTemplate",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Response Template data. The data includes: Name, Category, Template Text, Variables, Use Case, Tone, Last Used. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "templateText",
+          "label": "Template Text",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "variables",
+          "label": "Variables",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "useCase",
+          "label": "Use Case",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tone",
+          "label": "Tone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastUsed",
+          "label": "Last Used",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "templateText": "Comprehensive solution designed for optimal performance and efficiency.",
+          "variables": "Comprehensive solution designed for optimal performance and efficiency.",
+          "useCase": "Advanced Use Case 1",
+          "tone": "Advanced Tone 1",
+          "lastUsed": "2024-01-01"
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "templateText": "Industry-leading approach with proven results across multiple deployments.",
+          "variables": "Industry-leading approach with proven results across multiple deployments.",
+          "useCase": "Premium Use Case 2",
+          "tone": "Premium Tone 2",
+          "lastUsed": "2024-02-03"
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "templateText": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "variables": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "useCase": "Standard Use Case 3",
+          "tone": "Standard Tone 3",
+          "lastUsed": "2024-03-05"
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "templateText": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "variables": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "useCase": "Elite Use Case 4",
+          "tone": "Elite Tone 4",
+          "lastUsed": "2024-04-07"
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "templateText": "Cost-effective strategy focused on sustainable long-term growth.",
+          "variables": "Cost-effective strategy focused on sustainable long-term growth.",
+          "useCase": "Core Use Case 5",
+          "tone": "Core Tone 5",
+          "lastUsed": "2024-05-09"
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "templateText": "High-priority initiative aligned with organizational strategic objectives.",
+          "variables": "High-priority initiative aligned with organizational strategic objectives.",
+          "useCase": "Pro Use Case 6",
+          "tone": "Pro Tone 6",
+          "lastUsed": "2024-06-11"
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "templateText": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "variables": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "useCase": "Essential Use Case 7",
+          "tone": "Essential Tone 7",
+          "lastUsed": "2024-07-13"
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "templateText": "Innovative framework incorporating best practices and emerging technologies.",
+          "variables": "Innovative framework incorporating best practices and emerging technologies.",
+          "useCase": "Primary Use Case 8",
+          "tone": "Primary Tone 8",
+          "lastUsed": "2024-08-15"
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "templateText": "Scalable architecture built to accommodate rapid expansion and change.",
+          "variables": "Scalable architecture built to accommodate rapid expansion and change.",
+          "useCase": "Global Use Case 9",
+          "tone": "Global Tone 9",
+          "lastUsed": "2024-09-17"
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "templateText": "Enterprise-grade solution with robust security and compliance features.",
+          "variables": "Enterprise-grade solution with robust security and compliance features.",
+          "useCase": "Regional Use Case 10",
+          "tone": "Regional Tone 10",
+          "lastUsed": "2024-10-19"
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "templateText": "Integrated platform connecting multiple systems for seamless operations.",
+          "variables": "Integrated platform connecting multiple systems for seamless operations.",
+          "useCase": "Custom Use Case 11",
+          "tone": "Custom Tone 11",
+          "lastUsed": "2024-11-21"
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "templateText": "Automated workflow reducing manual intervention and human error.",
+          "variables": "Automated workflow reducing manual intervention and human error.",
+          "useCase": "Smart Use Case 12",
+          "tone": "Smart Tone 12",
+          "lastUsed": "2024-12-23"
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "templateText": "Real-time monitoring system with intelligent alerting capabilities.",
+          "variables": "Real-time monitoring system with intelligent alerting capabilities.",
+          "useCase": "Rapid Use Case 13",
+          "tone": "Rapid Tone 13",
+          "lastUsed": "2024-01-25"
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "templateText": "Customizable module adaptable to diverse operational requirements.",
+          "variables": "Customizable module adaptable to diverse operational requirements.",
+          "useCase": "Secure Use Case 14",
+          "tone": "Secure Tone 14",
+          "lastUsed": "2024-02-27"
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "templateText": "Performance-optimized design achieving superior throughput and reliability.",
+          "variables": "Performance-optimized design achieving superior throughput and reliability.",
+          "useCase": "Modern Use Case 15",
+          "tone": "Modern Tone 15",
+          "lastUsed": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "PressRelease",
+      "routeKey": "press-releases",
+      "label": "Press Release",
+      "icon": "file-text",
+      "aiFunction": "analyzePressRelease",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Press Release data. The data includes: Title, Content, Crisis Id, Status, Target Audience, Ai Generated. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "crisisId",
+          "label": "Crisis Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "draft",
+            "review",
+            "approved",
+            "published"
+          ]
+        },
+        {
+          "key": "targetAudience",
+          "label": "Target Audience",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiGenerated",
+          "label": "Ai Generated",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "crisisId": 10,
+          "status": "draft",
+          "targetAudience": "Advanced Target Audience 1",
+          "aiGenerated": true
+        },
+        {
+          "title": "Premium Title 2",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "crisisId": 58,
+          "status": "review",
+          "targetAudience": "Premium Target Audience 2",
+          "aiGenerated": true
+        },
+        {
+          "title": "Standard Title 3",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "crisisId": 106,
+          "status": "approved",
+          "targetAudience": "Standard Target Audience 3",
+          "aiGenerated": false
+        },
+        {
+          "title": "Elite Title 4",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "crisisId": 154,
+          "status": "published",
+          "targetAudience": "Elite Target Audience 4",
+          "aiGenerated": true
+        },
+        {
+          "title": "Core Title 5",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "crisisId": 102,
+          "status": "draft",
+          "targetAudience": "Core Target Audience 5",
+          "aiGenerated": false
+        },
+        {
+          "title": "Pro Title 6",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "crisisId": 150,
+          "status": "review",
+          "targetAudience": "Pro Target Audience 6",
+          "aiGenerated": true
+        },
+        {
+          "title": "Essential Title 7",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "crisisId": 198,
+          "status": "approved",
+          "targetAudience": "Essential Target Audience 7",
+          "aiGenerated": true
+        },
+        {
+          "title": "Primary Title 8",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "crisisId": 146,
+          "status": "published",
+          "targetAudience": "Primary Target Audience 8",
+          "aiGenerated": false
+        },
+        {
+          "title": "Global Title 9",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "crisisId": 194,
+          "status": "draft",
+          "targetAudience": "Global Target Audience 9",
+          "aiGenerated": true
+        },
+        {
+          "title": "Regional Title 10",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "crisisId": 242,
+          "status": "review",
+          "targetAudience": "Regional Target Audience 10",
+          "aiGenerated": true
+        },
+        {
+          "title": "Custom Title 11",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "crisisId": 190,
+          "status": "approved",
+          "targetAudience": "Custom Target Audience 11",
+          "aiGenerated": false
+        },
+        {
+          "title": "Smart Title 12",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "crisisId": 238,
+          "status": "published",
+          "targetAudience": "Smart Target Audience 12",
+          "aiGenerated": true
+        },
+        {
+          "title": "Rapid Title 13",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "crisisId": 286,
+          "status": "draft",
+          "targetAudience": "Rapid Target Audience 13",
+          "aiGenerated": false
+        },
+        {
+          "title": "Secure Title 14",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "crisisId": 234,
+          "status": "review",
+          "targetAudience": "Secure Target Audience 14",
+          "aiGenerated": true
+        },
+        {
+          "title": "Modern Title 15",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "crisisId": 282,
+          "status": "approved",
+          "targetAudience": "Modern Target Audience 15",
+          "aiGenerated": true
+        }
+      ]
+    },
+    {
+      "modelName": "SocialMediaResponse",
+      "routeKey": "social-media-responses",
+      "label": "Social Media Response",
+      "icon": "heart",
+      "aiFunction": "analyzeSocialMediaResponse",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Social Media Response data. The data includes: Platform, Message, Crisis Id, Status, Tone, Character Count, Ai Generated. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "platform",
+          "label": "Platform",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "crisisId",
+          "label": "Crisis Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "draft",
+            "scheduled",
+            "posted"
+          ]
+        },
+        {
+          "key": "tone",
+          "label": "Tone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "characterCount",
+          "label": "Character Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "aiGenerated",
+          "label": "Ai Generated",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "platform": "Advanced Platform 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "crisisId": 10,
+          "status": "draft",
+          "tone": "Advanced Tone 1",
+          "characterCount": 160,
+          "aiGenerated": true
+        },
+        {
+          "platform": "Premium Platform 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "crisisId": 58,
+          "status": "scheduled",
+          "tone": "Premium Tone 2",
+          "characterCount": 57,
+          "aiGenerated": true
+        },
+        {
+          "platform": "Standard Platform 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "crisisId": 106,
+          "status": "posted",
+          "tone": "Standard Tone 3",
+          "characterCount": 118,
+          "aiGenerated": false
+        },
+        {
+          "platform": "Elite Platform 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "crisisId": 154,
+          "status": "draft",
+          "tone": "Elite Tone 4",
+          "characterCount": 104,
+          "aiGenerated": true
+        },
+        {
+          "platform": "Core Platform 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "crisisId": 102,
+          "status": "scheduled",
+          "tone": "Core Tone 5",
+          "characterCount": 131,
+          "aiGenerated": false
+        },
+        {
+          "platform": "Pro Platform 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "crisisId": 150,
+          "status": "posted",
+          "tone": "Pro Tone 6",
+          "characterCount": 86,
+          "aiGenerated": true
+        },
+        {
+          "platform": "Essential Platform 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "crisisId": 198,
+          "status": "draft",
+          "tone": "Essential Tone 7",
+          "characterCount": 185,
+          "aiGenerated": true
+        },
+        {
+          "platform": "Primary Platform 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "crisisId": 146,
+          "status": "scheduled",
+          "tone": "Primary Tone 8",
+          "characterCount": 111,
+          "aiGenerated": false
+        },
+        {
+          "platform": "Global Platform 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "crisisId": 194,
+          "status": "posted",
+          "tone": "Global Tone 9",
+          "characterCount": 182,
+          "aiGenerated": true
+        },
+        {
+          "platform": "Regional Platform 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "crisisId": 242,
+          "status": "draft",
+          "tone": "Regional Tone 10",
+          "characterCount": 125,
+          "aiGenerated": true
+        },
+        {
+          "platform": "Custom Platform 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "crisisId": 190,
+          "status": "scheduled",
+          "tone": "Custom Tone 11",
+          "characterCount": 104,
+          "aiGenerated": false
+        },
+        {
+          "platform": "Smart Platform 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "crisisId": 238,
+          "status": "posted",
+          "tone": "Smart Tone 12",
+          "characterCount": 182,
+          "aiGenerated": true
+        },
+        {
+          "platform": "Rapid Platform 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "crisisId": 286,
+          "status": "draft",
+          "tone": "Rapid Tone 13",
+          "characterCount": 227,
+          "aiGenerated": false
+        },
+        {
+          "platform": "Secure Platform 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "crisisId": 234,
+          "status": "scheduled",
+          "tone": "Secure Tone 14",
+          "characterCount": 216,
+          "aiGenerated": true
+        },
+        {
+          "platform": "Modern Platform 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "crisisId": 282,
+          "status": "posted",
+          "tone": "Modern Tone 15",
+          "characterCount": 213,
+          "aiGenerated": true
+        }
+      ]
+    },
+    {
+      "modelName": "SentimentAnalyse",
+      "routeKey": "sentiment-analyses",
+      "label": "Sentiment Analyse",
+      "icon": "layers",
+      "aiFunction": "analyzeSentimentAnalyse",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Sentiment Analyse data. The data includes: Text Input, Sentiment Score, Sentiment Label, Key Phrases, Emotions, Source, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "textInput",
+          "label": "Text Input",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "sentimentScore",
+          "label": "Sentiment Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "sentimentLabel",
+          "label": "Sentiment Label",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "keyPhrases",
+          "label": "Key Phrases",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "emotions",
+          "label": "Emotions",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "textInput": "Comprehensive solution designed for optimal performance and efficiency.",
+          "sentimentScore": 1.5,
+          "sentimentLabel": "Advanced Sentiment Label 1",
+          "keyPhrases": "Comprehensive solution designed for optimal performance and efficiency.",
+          "emotions": "Comprehensive solution designed for optimal performance and efficiency.",
+          "source": "Advanced Source 1",
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "textInput": "Industry-leading approach with proven results across multiple deployments.",
+          "sentimentScore": 2.1,
+          "sentimentLabel": "Premium Sentiment Label 2",
+          "keyPhrases": "Industry-leading approach with proven results across multiple deployments.",
+          "emotions": "Industry-leading approach with proven results across multiple deployments.",
+          "source": "Premium Source 2",
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "textInput": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "sentimentScore": 2.7,
+          "sentimentLabel": "Standard Sentiment Label 3",
+          "keyPhrases": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "emotions": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "source": "Standard Source 3",
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "textInput": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "sentimentScore": 3.3,
+          "sentimentLabel": "Elite Sentiment Label 4",
+          "keyPhrases": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "emotions": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "source": "Elite Source 4",
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "textInput": "Cost-effective strategy focused on sustainable long-term growth.",
+          "sentimentScore": 3.9,
+          "sentimentLabel": "Core Sentiment Label 5",
+          "keyPhrases": "Cost-effective strategy focused on sustainable long-term growth.",
+          "emotions": "Cost-effective strategy focused on sustainable long-term growth.",
+          "source": "Core Source 5",
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "textInput": "High-priority initiative aligned with organizational strategic objectives.",
+          "sentimentScore": 4.5,
+          "sentimentLabel": "Pro Sentiment Label 6",
+          "keyPhrases": "High-priority initiative aligned with organizational strategic objectives.",
+          "emotions": "High-priority initiative aligned with organizational strategic objectives.",
+          "source": "Pro Source 6",
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "textInput": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "sentimentScore": 5.1,
+          "sentimentLabel": "Essential Sentiment Label 7",
+          "keyPhrases": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "emotions": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "source": "Essential Source 7",
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "textInput": "Innovative framework incorporating best practices and emerging technologies.",
+          "sentimentScore": 5.7,
+          "sentimentLabel": "Primary Sentiment Label 8",
+          "keyPhrases": "Innovative framework incorporating best practices and emerging technologies.",
+          "emotions": "Innovative framework incorporating best practices and emerging technologies.",
+          "source": "Primary Source 8",
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "textInput": "Scalable architecture built to accommodate rapid expansion and change.",
+          "sentimentScore": 6.3,
+          "sentimentLabel": "Global Sentiment Label 9",
+          "keyPhrases": "Scalable architecture built to accommodate rapid expansion and change.",
+          "emotions": "Scalable architecture built to accommodate rapid expansion and change.",
+          "source": "Global Source 9",
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "textInput": "Enterprise-grade solution with robust security and compliance features.",
+          "sentimentScore": 1.9,
+          "sentimentLabel": "Regional Sentiment Label 10",
+          "keyPhrases": "Enterprise-grade solution with robust security and compliance features.",
+          "emotions": "Enterprise-grade solution with robust security and compliance features.",
+          "source": "Regional Source 10",
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "textInput": "Integrated platform connecting multiple systems for seamless operations.",
+          "sentimentScore": 2.5,
+          "sentimentLabel": "Custom Sentiment Label 11",
+          "keyPhrases": "Integrated platform connecting multiple systems for seamless operations.",
+          "emotions": "Integrated platform connecting multiple systems for seamless operations.",
+          "source": "Custom Source 11",
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "textInput": "Automated workflow reducing manual intervention and human error.",
+          "sentimentScore": 3.1,
+          "sentimentLabel": "Smart Sentiment Label 12",
+          "keyPhrases": "Automated workflow reducing manual intervention and human error.",
+          "emotions": "Automated workflow reducing manual intervention and human error.",
+          "source": "Smart Source 12",
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "textInput": "Real-time monitoring system with intelligent alerting capabilities.",
+          "sentimentScore": 3.7,
+          "sentimentLabel": "Rapid Sentiment Label 13",
+          "keyPhrases": "Real-time monitoring system with intelligent alerting capabilities.",
+          "emotions": "Real-time monitoring system with intelligent alerting capabilities.",
+          "source": "Rapid Source 13",
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "textInput": "Customizable module adaptable to diverse operational requirements.",
+          "sentimentScore": 4.3,
+          "sentimentLabel": "Secure Sentiment Label 14",
+          "keyPhrases": "Customizable module adaptable to diverse operational requirements.",
+          "emotions": "Customizable module adaptable to diverse operational requirements.",
+          "source": "Secure Source 14",
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "textInput": "Performance-optimized design achieving superior throughput and reliability.",
+          "sentimentScore": 4.9,
+          "sentimentLabel": "Modern Sentiment Label 15",
+          "keyPhrases": "Performance-optimized design achieving superior throughput and reliability.",
+          "emotions": "Performance-optimized design achieving superior throughput and reliability.",
+          "source": "Modern Source 15",
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "CrisisSimulation",
+      "routeKey": "crisis-simulations",
+      "label": "Crisis Simulation",
+      "icon": "map-pin",
+      "aiFunction": "analyzeCrisisSimulation",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Crisis Simulation data. The data includes: Scenario Name, Description, Severity, Objectives, Participants, Status, Results, Lessons Learned, Scheduled Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "scenarioName",
+          "label": "Scenario Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "critical",
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        {
+          "key": "objectives",
+          "label": "Objectives",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "participants",
+          "label": "Participants",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "planned",
+            "in_progress",
+            "completed"
+          ]
+        },
+        {
+          "key": "results",
+          "label": "Results",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "lessonsLearned",
+          "label": "Lessons Learned",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "scenarioName": "Advanced Scenario 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "severity": "critical",
+          "objectives": "Comprehensive solution designed for optimal performance and efficiency.",
+          "participants": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "planned",
+          "results": "Comprehensive solution designed for optimal performance and efficiency.",
+          "lessonsLearned": "Comprehensive solution designed for optimal performance and efficiency.",
+          "scheduledDate": "2024-01-01"
+        },
+        {
+          "scenarioName": "Premium Scenario 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "severity": "high",
+          "objectives": "Industry-leading approach with proven results across multiple deployments.",
+          "participants": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "in_progress",
+          "results": "Industry-leading approach with proven results across multiple deployments.",
+          "lessonsLearned": "Industry-leading approach with proven results across multiple deployments.",
+          "scheduledDate": "2024-02-03"
+        },
+        {
+          "scenarioName": "Standard Scenario 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "severity": "medium",
+          "objectives": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "participants": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "completed",
+          "results": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "lessonsLearned": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "scheduledDate": "2024-03-05"
+        },
+        {
+          "scenarioName": "Elite Scenario 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "severity": "low",
+          "objectives": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "participants": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "planned",
+          "results": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "lessonsLearned": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "scheduledDate": "2024-04-07"
+        },
+        {
+          "scenarioName": "Core Scenario 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "severity": "critical",
+          "objectives": "Cost-effective strategy focused on sustainable long-term growth.",
+          "participants": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "in_progress",
+          "results": "Cost-effective strategy focused on sustainable long-term growth.",
+          "lessonsLearned": "Cost-effective strategy focused on sustainable long-term growth.",
+          "scheduledDate": "2024-05-09"
+        },
+        {
+          "scenarioName": "Pro Scenario 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "severity": "high",
+          "objectives": "High-priority initiative aligned with organizational strategic objectives.",
+          "participants": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "completed",
+          "results": "High-priority initiative aligned with organizational strategic objectives.",
+          "lessonsLearned": "High-priority initiative aligned with organizational strategic objectives.",
+          "scheduledDate": "2024-06-11"
+        },
+        {
+          "scenarioName": "Essential Scenario 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "severity": "medium",
+          "objectives": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "participants": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "planned",
+          "results": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "lessonsLearned": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "scheduledDate": "2024-07-13"
+        },
+        {
+          "scenarioName": "Primary Scenario 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "severity": "low",
+          "objectives": "Innovative framework incorporating best practices and emerging technologies.",
+          "participants": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "in_progress",
+          "results": "Innovative framework incorporating best practices and emerging technologies.",
+          "lessonsLearned": "Innovative framework incorporating best practices and emerging technologies.",
+          "scheduledDate": "2024-08-15"
+        },
+        {
+          "scenarioName": "Global Scenario 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "severity": "critical",
+          "objectives": "Scalable architecture built to accommodate rapid expansion and change.",
+          "participants": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "completed",
+          "results": "Scalable architecture built to accommodate rapid expansion and change.",
+          "lessonsLearned": "Scalable architecture built to accommodate rapid expansion and change.",
+          "scheduledDate": "2024-09-17"
+        },
+        {
+          "scenarioName": "Regional Scenario 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "severity": "high",
+          "objectives": "Enterprise-grade solution with robust security and compliance features.",
+          "participants": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "planned",
+          "results": "Enterprise-grade solution with robust security and compliance features.",
+          "lessonsLearned": "Enterprise-grade solution with robust security and compliance features.",
+          "scheduledDate": "2024-10-19"
+        },
+        {
+          "scenarioName": "Custom Scenario 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "severity": "medium",
+          "objectives": "Integrated platform connecting multiple systems for seamless operations.",
+          "participants": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "in_progress",
+          "results": "Integrated platform connecting multiple systems for seamless operations.",
+          "lessonsLearned": "Integrated platform connecting multiple systems for seamless operations.",
+          "scheduledDate": "2024-11-21"
+        },
+        {
+          "scenarioName": "Smart Scenario 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "severity": "low",
+          "objectives": "Automated workflow reducing manual intervention and human error.",
+          "participants": "Automated workflow reducing manual intervention and human error.",
+          "status": "completed",
+          "results": "Automated workflow reducing manual intervention and human error.",
+          "lessonsLearned": "Automated workflow reducing manual intervention and human error.",
+          "scheduledDate": "2024-12-23"
+        },
+        {
+          "scenarioName": "Rapid Scenario 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "severity": "critical",
+          "objectives": "Real-time monitoring system with intelligent alerting capabilities.",
+          "participants": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "planned",
+          "results": "Real-time monitoring system with intelligent alerting capabilities.",
+          "lessonsLearned": "Real-time monitoring system with intelligent alerting capabilities.",
+          "scheduledDate": "2024-01-25"
+        },
+        {
+          "scenarioName": "Secure Scenario 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "severity": "high",
+          "objectives": "Customizable module adaptable to diverse operational requirements.",
+          "participants": "Customizable module adaptable to diverse operational requirements.",
+          "status": "in_progress",
+          "results": "Customizable module adaptable to diverse operational requirements.",
+          "lessonsLearned": "Customizable module adaptable to diverse operational requirements.",
+          "scheduledDate": "2024-02-27"
+        },
+        {
+          "scenarioName": "Modern Scenario 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "severity": "medium",
+          "objectives": "Performance-optimized design achieving superior throughput and reliability.",
+          "participants": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "completed",
+          "results": "Performance-optimized design achieving superior throughput and reliability.",
+          "lessonsLearned": "Performance-optimized design achieving superior throughput and reliability.",
+          "scheduledDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "CommunicationLog",
+      "routeKey": "communication-logs",
+      "label": "Communication Log",
+      "icon": "package",
+      "aiFunction": "analyzeCommunicationLog",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Communication Log data. The data includes: Crisis Id, Channel, Sender, Recipient, Message, Direction, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "crisisId",
+          "label": "Crisis Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "channel",
+          "label": "Channel",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sender",
+          "label": "Sender",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recipient",
+          "label": "Recipient",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "direction",
+          "label": "Direction",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "inbound",
+            "outbound"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "crisisId": 10,
+          "channel": "Advanced Channel 1",
+          "sender": "Advanced Sender 1",
+          "recipient": "Advanced Recipient 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "direction": "inbound",
+          "status": "active"
+        },
+        {
+          "crisisId": 58,
+          "channel": "Premium Channel 2",
+          "sender": "Premium Sender 2",
+          "recipient": "Premium Recipient 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "direction": "outbound",
+          "status": "pending"
+        },
+        {
+          "crisisId": 106,
+          "channel": "Standard Channel 3",
+          "sender": "Standard Sender 3",
+          "recipient": "Standard Recipient 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "direction": "inbound",
+          "status": "in_progress"
+        },
+        {
+          "crisisId": 154,
+          "channel": "Elite Channel 4",
+          "sender": "Elite Sender 4",
+          "recipient": "Elite Recipient 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "direction": "outbound",
+          "status": "completed"
+        },
+        {
+          "crisisId": 102,
+          "channel": "Core Channel 5",
+          "sender": "Core Sender 5",
+          "recipient": "Core Recipient 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "direction": "inbound",
+          "status": "under_review"
+        },
+        {
+          "crisisId": 150,
+          "channel": "Pro Channel 6",
+          "sender": "Pro Sender 6",
+          "recipient": "Pro Recipient 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "direction": "outbound",
+          "status": "approved"
+        },
+        {
+          "crisisId": 198,
+          "channel": "Essential Channel 7",
+          "sender": "Essential Sender 7",
+          "recipient": "Essential Recipient 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "direction": "inbound",
+          "status": "active"
+        },
+        {
+          "crisisId": 146,
+          "channel": "Primary Channel 8",
+          "sender": "Primary Sender 8",
+          "recipient": "Primary Recipient 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "direction": "outbound",
+          "status": "active"
+        },
+        {
+          "crisisId": 194,
+          "channel": "Global Channel 9",
+          "sender": "Global Sender 9",
+          "recipient": "Global Recipient 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "direction": "inbound",
+          "status": "active"
+        },
+        {
+          "crisisId": 242,
+          "channel": "Regional Channel 10",
+          "sender": "Regional Sender 10",
+          "recipient": "Regional Recipient 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "direction": "outbound",
+          "status": "pending"
+        },
+        {
+          "crisisId": 190,
+          "channel": "Custom Channel 11",
+          "sender": "Custom Sender 11",
+          "recipient": "Custom Recipient 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "direction": "inbound",
+          "status": "completed"
+        },
+        {
+          "crisisId": 238,
+          "channel": "Smart Channel 12",
+          "sender": "Smart Sender 12",
+          "recipient": "Smart Recipient 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "direction": "outbound",
+          "status": "active"
+        },
+        {
+          "crisisId": 286,
+          "channel": "Rapid Channel 13",
+          "sender": "Rapid Sender 13",
+          "recipient": "Rapid Recipient 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "direction": "inbound",
+          "status": "in_progress"
+        },
+        {
+          "crisisId": 234,
+          "channel": "Secure Channel 14",
+          "sender": "Secure Sender 14",
+          "recipient": "Secure Recipient 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "direction": "outbound",
+          "status": "active"
+        },
+        {
+          "crisisId": 282,
+          "channel": "Modern Channel 15",
+          "sender": "Modern Sender 15",
+          "recipient": "Modern Recipient 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "direction": "inbound",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "TeamMember",
+      "routeKey": "team-members",
+      "label": "Team Member",
+      "icon": "shield",
+      "aiFunction": "analyzeTeamMember",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Team Member data. The data includes: Name, Email, Role, Department, Phone, Availability, Skills, Assigned Crisis Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "availability",
+          "label": "Availability",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "available",
+            "busy",
+            "offline"
+          ]
+        },
+        {
+          "key": "skills",
+          "label": "Skills",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "assignedCrisisId",
+          "label": "Assigned Crisis Id",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "role": "Advanced Role 1",
+          "department": "Category A",
+          "phone": "(555) 100-1000",
+          "availability": "available",
+          "skills": "Comprehensive solution designed for optimal performance and efficiency.",
+          "assignedCrisisId": 10
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "role": "Premium Role 2",
+          "department": "Category B",
+          "phone": "(556) 137-1113",
+          "availability": "busy",
+          "skills": "Industry-leading approach with proven results across multiple deployments.",
+          "assignedCrisisId": 58
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "role": "Standard Role 3",
+          "department": "Category C",
+          "phone": "(557) 174-1226",
+          "availability": "offline",
+          "skills": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "assignedCrisisId": 106
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "role": "Elite Role 4",
+          "department": "Category D",
+          "phone": "(558) 211-1339",
+          "availability": "available",
+          "skills": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "assignedCrisisId": 154
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "role": "Core Role 5",
+          "department": "Category E",
+          "phone": "(555) 248-1452",
+          "availability": "busy",
+          "skills": "Cost-effective strategy focused on sustainable long-term growth.",
+          "assignedCrisisId": 102
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "role": "Pro Role 6",
+          "department": "Premium Tier",
+          "phone": "(556) 285-1565",
+          "availability": "offline",
+          "skills": "High-priority initiative aligned with organizational strategic objectives.",
+          "assignedCrisisId": 150
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "role": "Essential Role 7",
+          "department": "Standard Tier",
+          "phone": "(557) 322-1678",
+          "availability": "available",
+          "skills": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "assignedCrisisId": 198
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "role": "Primary Role 8",
+          "department": "Basic Tier",
+          "phone": "(558) 359-1791",
+          "availability": "busy",
+          "skills": "Innovative framework incorporating best practices and emerging technologies.",
+          "assignedCrisisId": 146
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "role": "Global Role 9",
+          "department": "Enterprise",
+          "phone": "(555) 396-1904",
+          "availability": "offline",
+          "skills": "Scalable architecture built to accommodate rapid expansion and change.",
+          "assignedCrisisId": 194
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "role": "Regional Role 10",
+          "department": "Starter",
+          "phone": "(556) 433-2017",
+          "availability": "available",
+          "skills": "Enterprise-grade solution with robust security and compliance features.",
+          "assignedCrisisId": 242
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "role": "Custom Role 11",
+          "department": "Growth",
+          "phone": "(557) 470-2130",
+          "availability": "busy",
+          "skills": "Integrated platform connecting multiple systems for seamless operations.",
+          "assignedCrisisId": 190
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "role": "Smart Role 12",
+          "department": "Scale",
+          "phone": "(558) 507-2243",
+          "availability": "offline",
+          "skills": "Automated workflow reducing manual intervention and human error.",
+          "assignedCrisisId": 238
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "role": "Rapid Role 13",
+          "department": "Foundation",
+          "phone": "(555) 544-2356",
+          "availability": "available",
+          "skills": "Real-time monitoring system with intelligent alerting capabilities.",
+          "assignedCrisisId": 286
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "role": "Secure Role 14",
+          "department": "Advanced",
+          "phone": "(556) 581-2469",
+          "availability": "busy",
+          "skills": "Customizable module adaptable to diverse operational requirements.",
+          "assignedCrisisId": 234
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "role": "Modern Role 15",
+          "department": "Professional",
+          "phone": "(557) 618-2582",
+          "availability": "offline",
+          "skills": "Performance-optimized design achieving superior throughput and reliability.",
+          "assignedCrisisId": 282
+        }
+      ]
+    },
+    {
+      "modelName": "IncidentTimeline",
+      "routeKey": "incident-timelines",
+      "label": "Incident Timeline",
+      "icon": "star",
+      "aiFunction": "analyzeIncidentTimeline",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Incident Timeline data. The data includes: Crisis Id, Event Title, Event Description, Event Type, Timestamp, Reported By, Impact Level. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "crisisId",
+          "label": "Crisis Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "eventTitle",
+          "label": "Event Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "eventDescription",
+          "label": "Event Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "eventType",
+          "label": "Event Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "timestamp",
+          "label": "Timestamp",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "reportedBy",
+          "label": "Reported By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "impactLevel",
+          "label": "Impact Level",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "crisisId": 10,
+          "eventTitle": "Advanced Event Title 1",
+          "eventDescription": "Comprehensive solution designed for optimal performance and efficiency.",
+          "eventType": "Category A",
+          "timestamp": "2024-01-01",
+          "reportedBy": "Advanced Reported By 1",
+          "impactLevel": "low"
+        },
+        {
+          "crisisId": 58,
+          "eventTitle": "Premium Event Title 2",
+          "eventDescription": "Industry-leading approach with proven results across multiple deployments.",
+          "eventType": "Category B",
+          "timestamp": "2024-02-03",
+          "reportedBy": "Premium Reported By 2",
+          "impactLevel": "medium"
+        },
+        {
+          "crisisId": 106,
+          "eventTitle": "Standard Event Title 3",
+          "eventDescription": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "eventType": "Category C",
+          "timestamp": "2024-03-05",
+          "reportedBy": "Standard Reported By 3",
+          "impactLevel": "high"
+        },
+        {
+          "crisisId": 154,
+          "eventTitle": "Elite Event Title 4",
+          "eventDescription": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "eventType": "Category D",
+          "timestamp": "2024-04-07",
+          "reportedBy": "Elite Reported By 4",
+          "impactLevel": "critical"
+        },
+        {
+          "crisisId": 102,
+          "eventTitle": "Core Event Title 5",
+          "eventDescription": "Cost-effective strategy focused on sustainable long-term growth.",
+          "eventType": "Category E",
+          "timestamp": "2024-05-09",
+          "reportedBy": "Core Reported By 5",
+          "impactLevel": "medium"
+        },
+        {
+          "crisisId": 150,
+          "eventTitle": "Pro Event Title 6",
+          "eventDescription": "High-priority initiative aligned with organizational strategic objectives.",
+          "eventType": "Premium Tier",
+          "timestamp": "2024-06-11",
+          "reportedBy": "Pro Reported By 6",
+          "impactLevel": "low"
+        },
+        {
+          "crisisId": 198,
+          "eventTitle": "Essential Event Title 7",
+          "eventDescription": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "eventType": "Standard Tier",
+          "timestamp": "2024-07-13",
+          "reportedBy": "Essential Reported By 7",
+          "impactLevel": "medium"
+        },
+        {
+          "crisisId": 146,
+          "eventTitle": "Primary Event Title 8",
+          "eventDescription": "Innovative framework incorporating best practices and emerging technologies.",
+          "eventType": "Basic Tier",
+          "timestamp": "2024-08-15",
+          "reportedBy": "Primary Reported By 8",
+          "impactLevel": "high"
+        },
+        {
+          "crisisId": 194,
+          "eventTitle": "Global Event Title 9",
+          "eventDescription": "Scalable architecture built to accommodate rapid expansion and change.",
+          "eventType": "Enterprise",
+          "timestamp": "2024-09-17",
+          "reportedBy": "Global Reported By 9",
+          "impactLevel": "critical"
+        },
+        {
+          "crisisId": 242,
+          "eventTitle": "Regional Event Title 10",
+          "eventDescription": "Enterprise-grade solution with robust security and compliance features.",
+          "eventType": "Starter",
+          "timestamp": "2024-10-19",
+          "reportedBy": "Regional Reported By 10",
+          "impactLevel": "medium"
+        },
+        {
+          "crisisId": 190,
+          "eventTitle": "Custom Event Title 11",
+          "eventDescription": "Integrated platform connecting multiple systems for seamless operations.",
+          "eventType": "Growth",
+          "timestamp": "2024-11-21",
+          "reportedBy": "Custom Reported By 11",
+          "impactLevel": "low"
+        },
+        {
+          "crisisId": 238,
+          "eventTitle": "Smart Event Title 12",
+          "eventDescription": "Automated workflow reducing manual intervention and human error.",
+          "eventType": "Scale",
+          "timestamp": "2024-12-23",
+          "reportedBy": "Smart Reported By 12",
+          "impactLevel": "medium"
+        },
+        {
+          "crisisId": 286,
+          "eventTitle": "Rapid Event Title 13",
+          "eventDescription": "Real-time monitoring system with intelligent alerting capabilities.",
+          "eventType": "Foundation",
+          "timestamp": "2024-01-25",
+          "reportedBy": "Rapid Reported By 13",
+          "impactLevel": "high"
+        },
+        {
+          "crisisId": 234,
+          "eventTitle": "Secure Event Title 14",
+          "eventDescription": "Customizable module adaptable to diverse operational requirements.",
+          "eventType": "Advanced",
+          "timestamp": "2024-02-27",
+          "reportedBy": "Secure Reported By 14",
+          "impactLevel": "critical"
+        },
+        {
+          "crisisId": 282,
+          "eventTitle": "Modern Event Title 15",
+          "eventDescription": "Performance-optimized design achieving superior throughput and reliability.",
+          "eventType": "Professional",
+          "timestamp": "2024-03-01",
+          "reportedBy": "Modern Reported By 15",
+          "impactLevel": "medium"
+        }
+      ]
+    },
+    {
+      "modelName": "RiskAssessment",
+      "routeKey": "risk-assessments",
+      "label": "Risk Assessment",
+      "icon": "truck",
+      "aiFunction": "analyzeRiskAssessment",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Risk Assessment data. The data includes: Title, Description, Category, Likelihood, Impact, Risk Score, Mitigation Strategy, Status, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "likelihood",
+          "label": "Likelihood",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "impact",
+          "label": "Impact",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "riskScore",
+          "label": "Risk Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "mitigationStrategy",
+          "label": "Mitigation Strategy",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "identified",
+            "analyzing",
+            "mitigated",
+            "accepted"
+          ]
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "Category A",
+          "likelihood": 10,
+          "impact": 10,
+          "riskScore": 10,
+          "mitigationStrategy": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "identified",
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "Category B",
+          "likelihood": 58,
+          "impact": 58,
+          "riskScore": 58,
+          "mitigationStrategy": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "analyzing",
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "Category C",
+          "likelihood": 106,
+          "impact": 106,
+          "riskScore": 106,
+          "mitigationStrategy": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "mitigated",
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "Category D",
+          "likelihood": 154,
+          "impact": 154,
+          "riskScore": 154,
+          "mitigationStrategy": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "accepted",
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "Category E",
+          "likelihood": 102,
+          "impact": 102,
+          "riskScore": 102,
+          "mitigationStrategy": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "identified",
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "Premium Tier",
+          "likelihood": 150,
+          "impact": 150,
+          "riskScore": 150,
+          "mitigationStrategy": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "analyzing",
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "Standard Tier",
+          "likelihood": 198,
+          "impact": 198,
+          "riskScore": 198,
+          "mitigationStrategy": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "mitigated",
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "Basic Tier",
+          "likelihood": 146,
+          "impact": 146,
+          "riskScore": 146,
+          "mitigationStrategy": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "accepted",
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "Enterprise",
+          "likelihood": 194,
+          "impact": 194,
+          "riskScore": 194,
+          "mitigationStrategy": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "identified",
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "Starter",
+          "likelihood": 242,
+          "impact": 242,
+          "riskScore": 242,
+          "mitigationStrategy": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "analyzing",
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "Growth",
+          "likelihood": 190,
+          "impact": 190,
+          "riskScore": 190,
+          "mitigationStrategy": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "mitigated",
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "category": "Scale",
+          "likelihood": 238,
+          "impact": 238,
+          "riskScore": 238,
+          "mitigationStrategy": "Automated workflow reducing manual intervention and human error.",
+          "status": "accepted",
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "Foundation",
+          "likelihood": 286,
+          "impact": 286,
+          "riskScore": 286,
+          "mitigationStrategy": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "identified",
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "category": "Advanced",
+          "likelihood": 234,
+          "impact": 234,
+          "riskScore": 234,
+          "mitigationStrategy": "Customizable module adaptable to diverse operational requirements.",
+          "status": "analyzing",
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "Professional",
+          "likelihood": 282,
+          "impact": 282,
+          "riskScore": 282,
+          "mitigationStrategy": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "mitigated",
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "TalkingPoint",
+      "routeKey": "talking-points",
+      "label": "Talking Point",
+      "icon": "users",
+      "aiFunction": "analyzeTalkingPoint",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Talking Point data. The data includes: Crisis Id, Topic, Points, Target Audience, Tone, Spokesperson, Ai Generated, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "crisisId",
+          "label": "Crisis Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "topic",
+          "label": "Topic",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "points",
+          "label": "Points",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "targetAudience",
+          "label": "Target Audience",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tone",
+          "label": "Tone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "spokesperson",
+          "label": "Spokesperson",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiGenerated",
+          "label": "Ai Generated",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "draft",
+            "approved",
+            "used"
+          ]
+        }
+      ],
+      "sampleData": [
+        {
+          "crisisId": 10,
+          "topic": "Advanced Topic 1",
+          "points": "Comprehensive solution designed for optimal performance and efficiency.",
+          "targetAudience": "Advanced Target Audience 1",
+          "tone": "Advanced Tone 1",
+          "spokesperson": "Advanced Spokesperson 1",
+          "aiGenerated": true,
+          "status": "draft"
+        },
+        {
+          "crisisId": 58,
+          "topic": "Premium Topic 2",
+          "points": "Industry-leading approach with proven results across multiple deployments.",
+          "targetAudience": "Premium Target Audience 2",
+          "tone": "Premium Tone 2",
+          "spokesperson": "Premium Spokesperson 2",
+          "aiGenerated": true,
+          "status": "approved"
+        },
+        {
+          "crisisId": 106,
+          "topic": "Standard Topic 3",
+          "points": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "targetAudience": "Standard Target Audience 3",
+          "tone": "Standard Tone 3",
+          "spokesperson": "Standard Spokesperson 3",
+          "aiGenerated": false,
+          "status": "used"
+        },
+        {
+          "crisisId": 154,
+          "topic": "Elite Topic 4",
+          "points": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "targetAudience": "Elite Target Audience 4",
+          "tone": "Elite Tone 4",
+          "spokesperson": "Elite Spokesperson 4",
+          "aiGenerated": true,
+          "status": "draft"
+        },
+        {
+          "crisisId": 102,
+          "topic": "Core Topic 5",
+          "points": "Cost-effective strategy focused on sustainable long-term growth.",
+          "targetAudience": "Core Target Audience 5",
+          "tone": "Core Tone 5",
+          "spokesperson": "Core Spokesperson 5",
+          "aiGenerated": false,
+          "status": "approved"
+        },
+        {
+          "crisisId": 150,
+          "topic": "Pro Topic 6",
+          "points": "High-priority initiative aligned with organizational strategic objectives.",
+          "targetAudience": "Pro Target Audience 6",
+          "tone": "Pro Tone 6",
+          "spokesperson": "Pro Spokesperson 6",
+          "aiGenerated": true,
+          "status": "used"
+        },
+        {
+          "crisisId": 198,
+          "topic": "Essential Topic 7",
+          "points": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "targetAudience": "Essential Target Audience 7",
+          "tone": "Essential Tone 7",
+          "spokesperson": "Essential Spokesperson 7",
+          "aiGenerated": true,
+          "status": "draft"
+        },
+        {
+          "crisisId": 146,
+          "topic": "Primary Topic 8",
+          "points": "Innovative framework incorporating best practices and emerging technologies.",
+          "targetAudience": "Primary Target Audience 8",
+          "tone": "Primary Tone 8",
+          "spokesperson": "Primary Spokesperson 8",
+          "aiGenerated": false,
+          "status": "approved"
+        },
+        {
+          "crisisId": 194,
+          "topic": "Global Topic 9",
+          "points": "Scalable architecture built to accommodate rapid expansion and change.",
+          "targetAudience": "Global Target Audience 9",
+          "tone": "Global Tone 9",
+          "spokesperson": "Global Spokesperson 9",
+          "aiGenerated": true,
+          "status": "used"
+        },
+        {
+          "crisisId": 242,
+          "topic": "Regional Topic 10",
+          "points": "Enterprise-grade solution with robust security and compliance features.",
+          "targetAudience": "Regional Target Audience 10",
+          "tone": "Regional Tone 10",
+          "spokesperson": "Regional Spokesperson 10",
+          "aiGenerated": true,
+          "status": "draft"
+        },
+        {
+          "crisisId": 190,
+          "topic": "Custom Topic 11",
+          "points": "Integrated platform connecting multiple systems for seamless operations.",
+          "targetAudience": "Custom Target Audience 11",
+          "tone": "Custom Tone 11",
+          "spokesperson": "Custom Spokesperson 11",
+          "aiGenerated": false,
+          "status": "approved"
+        },
+        {
+          "crisisId": 238,
+          "topic": "Smart Topic 12",
+          "points": "Automated workflow reducing manual intervention and human error.",
+          "targetAudience": "Smart Target Audience 12",
+          "tone": "Smart Tone 12",
+          "spokesperson": "Smart Spokesperson 12",
+          "aiGenerated": true,
+          "status": "used"
+        },
+        {
+          "crisisId": 286,
+          "topic": "Rapid Topic 13",
+          "points": "Real-time monitoring system with intelligent alerting capabilities.",
+          "targetAudience": "Rapid Target Audience 13",
+          "tone": "Rapid Tone 13",
+          "spokesperson": "Rapid Spokesperson 13",
+          "aiGenerated": false,
+          "status": "draft"
+        },
+        {
+          "crisisId": 234,
+          "topic": "Secure Topic 14",
+          "points": "Customizable module adaptable to diverse operational requirements.",
+          "targetAudience": "Secure Target Audience 14",
+          "tone": "Secure Tone 14",
+          "spokesperson": "Secure Spokesperson 14",
+          "aiGenerated": true,
+          "status": "approved"
+        },
+        {
+          "crisisId": 282,
+          "topic": "Modern Topic 15",
+          "points": "Performance-optimized design achieving superior throughput and reliability.",
+          "targetAudience": "Modern Target Audience 15",
+          "tone": "Modern Tone 15",
+          "spokesperson": "Modern Spokesperson 15",
+          "aiGenerated": true,
+          "status": "used"
+        }
+      ]
+    },
+    {
+      "modelName": "PostCrisisAnalyse",
+      "routeKey": "post-crisis-analyses",
+      "label": "Post Crisis Analyse",
+      "icon": "zap",
+      "aiFunction": "analyzePostCrisisAnalyse",
+      "aiPrompt": "You are an AI analyst for A I Crisis Communication Agent. Analyze the provided Post Crisis Analyse data. The data includes: Crisis Id, Title, Summary, What Went Well, What Went Wrong, Recommendations, Metrics, Ai Analysis, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "crisisId",
+          "label": "Crisis Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "summary",
+          "label": "Summary",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "whatWentWell",
+          "label": "What Went Well",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "whatWentWrong",
+          "label": "What Went Wrong",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "recommendations",
+          "label": "Recommendations",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "metrics",
+          "label": "Metrics",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "draft",
+            "final"
+          ]
+        }
+      ],
+      "sampleData": [
+        {
+          "crisisId": 10,
+          "title": "Advanced Title 1",
+          "summary": "Comprehensive solution designed for optimal performance and efficiency.",
+          "whatWentWell": "Comprehensive solution designed for optimal performance and efficiency.",
+          "whatWentWrong": "Comprehensive solution designed for optimal performance and efficiency.",
+          "recommendations": "Comprehensive solution designed for optimal performance and efficiency.",
+          "metrics": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "draft"
+        },
+        {
+          "crisisId": 58,
+          "title": "Premium Title 2",
+          "summary": "Industry-leading approach with proven results across multiple deployments.",
+          "whatWentWell": "Industry-leading approach with proven results across multiple deployments.",
+          "whatWentWrong": "Industry-leading approach with proven results across multiple deployments.",
+          "recommendations": "Industry-leading approach with proven results across multiple deployments.",
+          "metrics": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "final"
+        },
+        {
+          "crisisId": 106,
+          "title": "Standard Title 3",
+          "summary": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "whatWentWell": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "whatWentWrong": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "recommendations": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "metrics": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "draft"
+        },
+        {
+          "crisisId": 154,
+          "title": "Elite Title 4",
+          "summary": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "whatWentWell": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "whatWentWrong": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "recommendations": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "metrics": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "final"
+        },
+        {
+          "crisisId": 102,
+          "title": "Core Title 5",
+          "summary": "Cost-effective strategy focused on sustainable long-term growth.",
+          "whatWentWell": "Cost-effective strategy focused on sustainable long-term growth.",
+          "whatWentWrong": "Cost-effective strategy focused on sustainable long-term growth.",
+          "recommendations": "Cost-effective strategy focused on sustainable long-term growth.",
+          "metrics": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "draft"
+        },
+        {
+          "crisisId": 150,
+          "title": "Pro Title 6",
+          "summary": "High-priority initiative aligned with organizational strategic objectives.",
+          "whatWentWell": "High-priority initiative aligned with organizational strategic objectives.",
+          "whatWentWrong": "High-priority initiative aligned with organizational strategic objectives.",
+          "recommendations": "High-priority initiative aligned with organizational strategic objectives.",
+          "metrics": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "final"
+        },
+        {
+          "crisisId": 198,
+          "title": "Essential Title 7",
+          "summary": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "whatWentWell": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "whatWentWrong": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "recommendations": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "metrics": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "draft"
+        },
+        {
+          "crisisId": 146,
+          "title": "Primary Title 8",
+          "summary": "Innovative framework incorporating best practices and emerging technologies.",
+          "whatWentWell": "Innovative framework incorporating best practices and emerging technologies.",
+          "whatWentWrong": "Innovative framework incorporating best practices and emerging technologies.",
+          "recommendations": "Innovative framework incorporating best practices and emerging technologies.",
+          "metrics": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "final"
+        },
+        {
+          "crisisId": 194,
+          "title": "Global Title 9",
+          "summary": "Scalable architecture built to accommodate rapid expansion and change.",
+          "whatWentWell": "Scalable architecture built to accommodate rapid expansion and change.",
+          "whatWentWrong": "Scalable architecture built to accommodate rapid expansion and change.",
+          "recommendations": "Scalable architecture built to accommodate rapid expansion and change.",
+          "metrics": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "draft"
+        },
+        {
+          "crisisId": 242,
+          "title": "Regional Title 10",
+          "summary": "Enterprise-grade solution with robust security and compliance features.",
+          "whatWentWell": "Enterprise-grade solution with robust security and compliance features.",
+          "whatWentWrong": "Enterprise-grade solution with robust security and compliance features.",
+          "recommendations": "Enterprise-grade solution with robust security and compliance features.",
+          "metrics": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "final"
+        },
+        {
+          "crisisId": 190,
+          "title": "Custom Title 11",
+          "summary": "Integrated platform connecting multiple systems for seamless operations.",
+          "whatWentWell": "Integrated platform connecting multiple systems for seamless operations.",
+          "whatWentWrong": "Integrated platform connecting multiple systems for seamless operations.",
+          "recommendations": "Integrated platform connecting multiple systems for seamless operations.",
+          "metrics": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "draft"
+        },
+        {
+          "crisisId": 238,
+          "title": "Smart Title 12",
+          "summary": "Automated workflow reducing manual intervention and human error.",
+          "whatWentWell": "Automated workflow reducing manual intervention and human error.",
+          "whatWentWrong": "Automated workflow reducing manual intervention and human error.",
+          "recommendations": "Automated workflow reducing manual intervention and human error.",
+          "metrics": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error.",
+          "status": "final"
+        },
+        {
+          "crisisId": 286,
+          "title": "Rapid Title 13",
+          "summary": "Real-time monitoring system with intelligent alerting capabilities.",
+          "whatWentWell": "Real-time monitoring system with intelligent alerting capabilities.",
+          "whatWentWrong": "Real-time monitoring system with intelligent alerting capabilities.",
+          "recommendations": "Real-time monitoring system with intelligent alerting capabilities.",
+          "metrics": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "draft"
+        },
+        {
+          "crisisId": 234,
+          "title": "Secure Title 14",
+          "summary": "Customizable module adaptable to diverse operational requirements.",
+          "whatWentWell": "Customizable module adaptable to diverse operational requirements.",
+          "whatWentWrong": "Customizable module adaptable to diverse operational requirements.",
+          "recommendations": "Customizable module adaptable to diverse operational requirements.",
+          "metrics": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements.",
+          "status": "final"
+        },
+        {
+          "crisisId": 282,
+          "title": "Modern Title 15",
+          "summary": "Performance-optimized design achieving superior throughput and reliability.",
+          "whatWentWell": "Performance-optimized design achieving superior throughput and reliability.",
+          "whatWentWrong": "Performance-optimized design achieving superior throughput and reliability.",
+          "recommendations": "Performance-optimized design achieving superior throughput and reliability.",
+          "metrics": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "draft"
+        }
+      ]
+    }
+  ]
+}

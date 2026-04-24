@@ -1,0 +1,6097 @@
+{
+  "appName": "AI Independent Restaurant (Part 1)",
+  "dbName": "a_i_independent_restaurant_part1",
+  "folderName": "generated/AIIndependentRestaurantPart1",
+  "features": [
+    {
+      "modelName": "MenuItem",
+      "routeKey": "menu-items",
+      "label": "Menu Item",
+      "icon": "star",
+      "aiFunction": "analyzeMenuItem",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Menu Item data. The data includes: Category Id, Name, Description, Price, Cost, Image Url, Allergens, Is Available, Is86d, Is Special, Special Start Date, Special End Date, Calories, Prep Time. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "categoryId",
+          "label": "Category Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "price",
+          "label": "Price",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "imageUrl",
+          "label": "Image Url",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "allergens",
+          "label": "Allergens",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isAvailable",
+          "label": "Is Available",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "is86d",
+          "label": "Is86d",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "isSpecial",
+          "label": "Is Special",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "specialStartDate",
+          "label": "Special Start Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "specialEndDate",
+          "label": "Special End Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "calories",
+          "label": "Calories",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "prepTime",
+          "label": "Prep Time",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "categoryId": "Category A",
+          "name": "Advanced Name 1",
+          "description": "Advanced Description 1",
+          "price": 500,
+          "cost": 500,
+          "imageUrl": "https://example.com/imageUrl/1",
+          "allergens": "Advanced Allergens 1",
+          "isAvailable": true,
+          "is86d": true,
+          "isSpecial": true,
+          "specialStartDate": "2024-01-01",
+          "specialEndDate": "2024-01-01",
+          "calories": 10,
+          "prepTime": 10
+        },
+        {
+          "categoryId": "Category B",
+          "name": "Premium Name 2",
+          "description": "Premium Description 2",
+          "price": 2481,
+          "cost": 2481,
+          "imageUrl": "https://example.com/imageUrl/2",
+          "allergens": "Premium Allergens 2",
+          "isAvailable": true,
+          "is86d": true,
+          "isSpecial": true,
+          "specialStartDate": "2024-02-03",
+          "specialEndDate": "2024-02-03",
+          "calories": 58,
+          "prepTime": 58
+        },
+        {
+          "categoryId": "Category C",
+          "name": "Standard Name 3",
+          "description": "Standard Description 3",
+          "price": 4462,
+          "cost": 4462,
+          "imageUrl": "https://example.com/imageUrl/3",
+          "allergens": "Standard Allergens 3",
+          "isAvailable": false,
+          "is86d": false,
+          "isSpecial": false,
+          "specialStartDate": "2024-03-05",
+          "specialEndDate": "2024-03-05",
+          "calories": 106,
+          "prepTime": 106
+        },
+        {
+          "categoryId": "Category D",
+          "name": "Elite Name 4",
+          "description": "Elite Description 4",
+          "price": 6443,
+          "cost": 6443,
+          "imageUrl": "https://example.com/imageUrl/4",
+          "allergens": "Elite Allergens 4",
+          "isAvailable": true,
+          "is86d": true,
+          "isSpecial": true,
+          "specialStartDate": "2024-04-07",
+          "specialEndDate": "2024-04-07",
+          "calories": 154,
+          "prepTime": 154
+        },
+        {
+          "categoryId": "Category E",
+          "name": "Core Name 5",
+          "description": "Core Description 5",
+          "price": 8424,
+          "cost": 8424,
+          "imageUrl": "https://example.com/imageUrl/5",
+          "allergens": "Core Allergens 5",
+          "isAvailable": false,
+          "is86d": false,
+          "isSpecial": false,
+          "specialStartDate": "2024-05-09",
+          "specialEndDate": "2024-05-09",
+          "calories": 102,
+          "prepTime": 102
+        },
+        {
+          "categoryId": "Premium Tier",
+          "name": "Pro Name 6",
+          "description": "Pro Description 6",
+          "price": 10405,
+          "cost": 10405,
+          "imageUrl": "https://example.com/imageUrl/6",
+          "allergens": "Pro Allergens 6",
+          "isAvailable": true,
+          "is86d": true,
+          "isSpecial": true,
+          "specialStartDate": "2024-06-11",
+          "specialEndDate": "2024-06-11",
+          "calories": 150,
+          "prepTime": 150
+        },
+        {
+          "categoryId": "Standard Tier",
+          "name": "Essential Name 7",
+          "description": "Essential Description 7",
+          "price": 12386,
+          "cost": 12386,
+          "imageUrl": "https://example.com/imageUrl/7",
+          "allergens": "Essential Allergens 7",
+          "isAvailable": true,
+          "is86d": true,
+          "isSpecial": true,
+          "specialStartDate": "2024-07-13",
+          "specialEndDate": "2024-07-13",
+          "calories": 198,
+          "prepTime": 198
+        },
+        {
+          "categoryId": "Basic Tier",
+          "name": "Primary Name 8",
+          "description": "Primary Description 8",
+          "price": 9367,
+          "cost": 9367,
+          "imageUrl": "https://example.com/imageUrl/8",
+          "allergens": "Primary Allergens 8",
+          "isAvailable": false,
+          "is86d": false,
+          "isSpecial": false,
+          "specialStartDate": "2024-08-15",
+          "specialEndDate": "2024-08-15",
+          "calories": 146,
+          "prepTime": 146
+        },
+        {
+          "categoryId": "Enterprise",
+          "name": "Global Name 9",
+          "description": "Global Description 9",
+          "price": 11348,
+          "cost": 11348,
+          "imageUrl": "https://example.com/imageUrl/9",
+          "allergens": "Global Allergens 9",
+          "isAvailable": true,
+          "is86d": true,
+          "isSpecial": true,
+          "specialStartDate": "2024-09-17",
+          "specialEndDate": "2024-09-17",
+          "calories": 194,
+          "prepTime": 194
+        },
+        {
+          "categoryId": "Starter",
+          "name": "Regional Name 10",
+          "description": "Regional Description 10",
+          "price": 13329,
+          "cost": 13329,
+          "imageUrl": "https://example.com/imageUrl/10",
+          "allergens": "Regional Allergens 10",
+          "isAvailable": true,
+          "is86d": true,
+          "isSpecial": true,
+          "specialStartDate": "2024-10-19",
+          "specialEndDate": "2024-10-19",
+          "calories": 242,
+          "prepTime": 242
+        },
+        {
+          "categoryId": "Growth",
+          "name": "Custom Name 11",
+          "description": "Custom Description 11",
+          "price": 15310,
+          "cost": 15310,
+          "imageUrl": "https://example.com/imageUrl/11",
+          "allergens": "Custom Allergens 11",
+          "isAvailable": false,
+          "is86d": false,
+          "isSpecial": false,
+          "specialStartDate": "2024-11-21",
+          "specialEndDate": "2024-11-21",
+          "calories": 190,
+          "prepTime": 190
+        },
+        {
+          "categoryId": "Scale",
+          "name": "Smart Name 12",
+          "description": "Smart Description 12",
+          "price": 17291,
+          "cost": 17291,
+          "imageUrl": "https://example.com/imageUrl/12",
+          "allergens": "Smart Allergens 12",
+          "isAvailable": true,
+          "is86d": true,
+          "isSpecial": true,
+          "specialStartDate": "2024-12-23",
+          "specialEndDate": "2024-12-23",
+          "calories": 238,
+          "prepTime": 238
+        },
+        {
+          "categoryId": "Foundation",
+          "name": "Rapid Name 13",
+          "description": "Rapid Description 13",
+          "price": 19272,
+          "cost": 19272,
+          "imageUrl": "https://example.com/imageUrl/13",
+          "allergens": "Rapid Allergens 13",
+          "isAvailable": false,
+          "is86d": false,
+          "isSpecial": false,
+          "specialStartDate": "2024-01-25",
+          "specialEndDate": "2024-01-25",
+          "calories": 286,
+          "prepTime": 286
+        },
+        {
+          "categoryId": "Advanced",
+          "name": "Secure Name 14",
+          "description": "Secure Description 14",
+          "price": 21253,
+          "cost": 21253,
+          "imageUrl": "https://example.com/imageUrl/14",
+          "allergens": "Secure Allergens 14",
+          "isAvailable": true,
+          "is86d": true,
+          "isSpecial": true,
+          "specialStartDate": "2024-02-27",
+          "specialEndDate": "2024-02-27",
+          "calories": 234,
+          "prepTime": 234
+        },
+        {
+          "categoryId": "Professional",
+          "name": "Modern Name 15",
+          "description": "Modern Description 15",
+          "price": 18234,
+          "cost": 18234,
+          "imageUrl": "https://example.com/imageUrl/15",
+          "allergens": "Modern Allergens 15",
+          "isAvailable": true,
+          "is86d": true,
+          "isSpecial": true,
+          "specialStartDate": "2024-03-01",
+          "specialEndDate": "2024-03-01",
+          "calories": 282,
+          "prepTime": 282
+        }
+      ]
+    },
+    {
+      "modelName": "MenuItemModifierGroup",
+      "routeKey": "menu-item-modifier-groups",
+      "label": "Menu Item Modifier Group",
+      "icon": "zap",
+      "aiFunction": "analyzeMenuItemModifierGroup",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Menu Item Modifier Group data. The data includes: Menu Item Id, Modifier Group Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "menuItemId",
+          "label": "Menu Item Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "modifierGroupId",
+          "label": "Modifier Group Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "menuItemId": "Advanced Menu Item Id 1",
+          "modifierGroupId": "Advanced Modifier Group Id 1"
+        },
+        {
+          "menuItemId": "Premium Menu Item Id 2",
+          "modifierGroupId": "Premium Modifier Group Id 2"
+        },
+        {
+          "menuItemId": "Standard Menu Item Id 3",
+          "modifierGroupId": "Standard Modifier Group Id 3"
+        },
+        {
+          "menuItemId": "Elite Menu Item Id 4",
+          "modifierGroupId": "Elite Modifier Group Id 4"
+        },
+        {
+          "menuItemId": "Core Menu Item Id 5",
+          "modifierGroupId": "Core Modifier Group Id 5"
+        },
+        {
+          "menuItemId": "Pro Menu Item Id 6",
+          "modifierGroupId": "Pro Modifier Group Id 6"
+        },
+        {
+          "menuItemId": "Essential Menu Item Id 7",
+          "modifierGroupId": "Essential Modifier Group Id 7"
+        },
+        {
+          "menuItemId": "Primary Menu Item Id 8",
+          "modifierGroupId": "Primary Modifier Group Id 8"
+        },
+        {
+          "menuItemId": "Global Menu Item Id 9",
+          "modifierGroupId": "Global Modifier Group Id 9"
+        },
+        {
+          "menuItemId": "Regional Menu Item Id 10",
+          "modifierGroupId": "Regional Modifier Group Id 10"
+        },
+        {
+          "menuItemId": "Custom Menu Item Id 11",
+          "modifierGroupId": "Custom Modifier Group Id 11"
+        },
+        {
+          "menuItemId": "Smart Menu Item Id 12",
+          "modifierGroupId": "Smart Modifier Group Id 12"
+        },
+        {
+          "menuItemId": "Rapid Menu Item Id 13",
+          "modifierGroupId": "Rapid Modifier Group Id 13"
+        },
+        {
+          "menuItemId": "Secure Menu Item Id 14",
+          "modifierGroupId": "Secure Modifier Group Id 14"
+        },
+        {
+          "menuItemId": "Modern Menu Item Id 15",
+          "modifierGroupId": "Modern Modifier Group Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Ingredient",
+      "routeKey": "ingredients",
+      "label": "Ingredient",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeIngredient",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Ingredient data. The data includes: Name, Unit, Current Stock, Par Level, Reorder Point, Cost, Vendor Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "unit",
+          "label": "Unit",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "currentStock",
+          "label": "Current Stock",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "parLevel",
+          "label": "Par Level",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "reorderPoint",
+          "label": "Reorder Point",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "vendorId",
+          "label": "Vendor Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "unit": "Advanced Unit 1",
+          "currentStock": 10,
+          "parLevel": 10,
+          "reorderPoint": 10,
+          "cost": 500,
+          "vendorId": "Advanced Vendor Id 1"
+        },
+        {
+          "name": "Premium Name 2",
+          "unit": "Premium Unit 2",
+          "currentStock": 71.7,
+          "parLevel": 71.7,
+          "reorderPoint": 71.7,
+          "cost": 2481,
+          "vendorId": "Premium Vendor Id 2"
+        },
+        {
+          "name": "Standard Name 3",
+          "unit": "Standard Unit 3",
+          "currentStock": 33.4,
+          "parLevel": 33.4,
+          "reorderPoint": 33.4,
+          "cost": 4462,
+          "vendorId": "Standard Vendor Id 3"
+        },
+        {
+          "name": "Elite Name 4",
+          "unit": "Elite Unit 4",
+          "currentStock": 95.1,
+          "parLevel": 95.1,
+          "reorderPoint": 95.1,
+          "cost": 6443,
+          "vendorId": "Elite Vendor Id 4"
+        },
+        {
+          "name": "Core Name 5",
+          "unit": "Core Unit 5",
+          "currentStock": 56.8,
+          "parLevel": 56.8,
+          "reorderPoint": 56.8,
+          "cost": 8424,
+          "vendorId": "Core Vendor Id 5"
+        },
+        {
+          "name": "Pro Name 6",
+          "unit": "Pro Unit 6",
+          "currentStock": 118.5,
+          "parLevel": 118.5,
+          "reorderPoint": 118.5,
+          "cost": 10405,
+          "vendorId": "Pro Vendor Id 6"
+        },
+        {
+          "name": "Essential Name 7",
+          "unit": "Essential Unit 7",
+          "currentStock": 80.2,
+          "parLevel": 80.2,
+          "reorderPoint": 80.2,
+          "cost": 12386,
+          "vendorId": "Essential Vendor Id 7"
+        },
+        {
+          "name": "Primary Name 8",
+          "unit": "Primary Unit 8",
+          "currentStock": 141.9,
+          "parLevel": 141.9,
+          "reorderPoint": 141.9,
+          "cost": 9367,
+          "vendorId": "Primary Vendor Id 8"
+        },
+        {
+          "name": "Global Name 9",
+          "unit": "Global Unit 9",
+          "currentStock": 103.6,
+          "parLevel": 103.6,
+          "reorderPoint": 103.6,
+          "cost": 11348,
+          "vendorId": "Global Vendor Id 9"
+        },
+        {
+          "name": "Regional Name 10",
+          "unit": "Regional Unit 10",
+          "currentStock": 165.3,
+          "parLevel": 165.3,
+          "reorderPoint": 165.3,
+          "cost": 13329,
+          "vendorId": "Regional Vendor Id 10"
+        },
+        {
+          "name": "Custom Name 11",
+          "unit": "Custom Unit 11",
+          "currentStock": 127,
+          "parLevel": 127,
+          "reorderPoint": 127,
+          "cost": 15310,
+          "vendorId": "Custom Vendor Id 11"
+        },
+        {
+          "name": "Smart Name 12",
+          "unit": "Smart Unit 12",
+          "currentStock": 188.7,
+          "parLevel": 188.7,
+          "reorderPoint": 188.7,
+          "cost": 17291,
+          "vendorId": "Smart Vendor Id 12"
+        },
+        {
+          "name": "Rapid Name 13",
+          "unit": "Rapid Unit 13",
+          "currentStock": 150.4,
+          "parLevel": 150.4,
+          "reorderPoint": 150.4,
+          "cost": 19272,
+          "vendorId": "Rapid Vendor Id 13"
+        },
+        {
+          "name": "Secure Name 14",
+          "unit": "Secure Unit 14",
+          "currentStock": 212.1,
+          "parLevel": 212.1,
+          "reorderPoint": 212.1,
+          "cost": 21253,
+          "vendorId": "Secure Vendor Id 14"
+        },
+        {
+          "name": "Modern Name 15",
+          "unit": "Modern Unit 15",
+          "currentStock": 173.8,
+          "parLevel": 173.8,
+          "reorderPoint": 173.8,
+          "cost": 18234,
+          "vendorId": "Modern Vendor Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "MenuItemIngredient",
+      "routeKey": "menu-item-ingredients",
+      "label": "Menu Item Ingredient",
+      "icon": "bell",
+      "aiFunction": "analyzeMenuItemIngredient",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Menu Item Ingredient data. The data includes: Menu Item Id, Ingredient Id, Quantity, Unit. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "menuItemId",
+          "label": "Menu Item Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ingredientId",
+          "label": "Ingredient Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "unit",
+          "label": "Unit",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "menuItemId": "Advanced Menu Item Id 1",
+          "ingredientId": "Advanced Ingredient Id 1",
+          "quantity": 10,
+          "unit": "Advanced Unit 1"
+        },
+        {
+          "menuItemId": "Premium Menu Item Id 2",
+          "ingredientId": "Premium Ingredient Id 2",
+          "quantity": 71.7,
+          "unit": "Premium Unit 2"
+        },
+        {
+          "menuItemId": "Standard Menu Item Id 3",
+          "ingredientId": "Standard Ingredient Id 3",
+          "quantity": 33.4,
+          "unit": "Standard Unit 3"
+        },
+        {
+          "menuItemId": "Elite Menu Item Id 4",
+          "ingredientId": "Elite Ingredient Id 4",
+          "quantity": 95.1,
+          "unit": "Elite Unit 4"
+        },
+        {
+          "menuItemId": "Core Menu Item Id 5",
+          "ingredientId": "Core Ingredient Id 5",
+          "quantity": 56.8,
+          "unit": "Core Unit 5"
+        },
+        {
+          "menuItemId": "Pro Menu Item Id 6",
+          "ingredientId": "Pro Ingredient Id 6",
+          "quantity": 118.5,
+          "unit": "Pro Unit 6"
+        },
+        {
+          "menuItemId": "Essential Menu Item Id 7",
+          "ingredientId": "Essential Ingredient Id 7",
+          "quantity": 80.2,
+          "unit": "Essential Unit 7"
+        },
+        {
+          "menuItemId": "Primary Menu Item Id 8",
+          "ingredientId": "Primary Ingredient Id 8",
+          "quantity": 141.9,
+          "unit": "Primary Unit 8"
+        },
+        {
+          "menuItemId": "Global Menu Item Id 9",
+          "ingredientId": "Global Ingredient Id 9",
+          "quantity": 103.6,
+          "unit": "Global Unit 9"
+        },
+        {
+          "menuItemId": "Regional Menu Item Id 10",
+          "ingredientId": "Regional Ingredient Id 10",
+          "quantity": 165.3,
+          "unit": "Regional Unit 10"
+        },
+        {
+          "menuItemId": "Custom Menu Item Id 11",
+          "ingredientId": "Custom Ingredient Id 11",
+          "quantity": 127,
+          "unit": "Custom Unit 11"
+        },
+        {
+          "menuItemId": "Smart Menu Item Id 12",
+          "ingredientId": "Smart Ingredient Id 12",
+          "quantity": 188.7,
+          "unit": "Smart Unit 12"
+        },
+        {
+          "menuItemId": "Rapid Menu Item Id 13",
+          "ingredientId": "Rapid Ingredient Id 13",
+          "quantity": 150.4,
+          "unit": "Rapid Unit 13"
+        },
+        {
+          "menuItemId": "Secure Menu Item Id 14",
+          "ingredientId": "Secure Ingredient Id 14",
+          "quantity": 212.1,
+          "unit": "Secure Unit 14"
+        },
+        {
+          "menuItemId": "Modern Menu Item Id 15",
+          "ingredientId": "Modern Ingredient Id 15",
+          "quantity": 173.8,
+          "unit": "Modern Unit 15"
+        }
+      ]
+    },
+    {
+      "modelName": "PurchaseOrderItem",
+      "routeKey": "purchase-order-items",
+      "label": "Purchase Order Item",
+      "icon": "check-circle",
+      "aiFunction": "analyzePurchaseOrderItem",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Purchase Order Item data. The data includes: Purchase Order Id, Ingredient Id, Quantity, Unit Price, Total Price, Received Qty. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "purchaseOrderId",
+          "label": "Purchase Order Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ingredientId",
+          "label": "Ingredient Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "unitPrice",
+          "label": "Unit Price",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "totalPrice",
+          "label": "Total Price",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "receivedQty",
+          "label": "Received Qty",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "purchaseOrderId": "Advanced Purchase Order Id 1",
+          "ingredientId": "Advanced Ingredient Id 1",
+          "quantity": 10,
+          "unitPrice": 500,
+          "totalPrice": 500,
+          "receivedQty": 10
+        },
+        {
+          "purchaseOrderId": "Premium Purchase Order Id 2",
+          "ingredientId": "Premium Ingredient Id 2",
+          "quantity": 71.7,
+          "unitPrice": 2481,
+          "totalPrice": 2481,
+          "receivedQty": 71.7
+        },
+        {
+          "purchaseOrderId": "Standard Purchase Order Id 3",
+          "ingredientId": "Standard Ingredient Id 3",
+          "quantity": 33.4,
+          "unitPrice": 4462,
+          "totalPrice": 4462,
+          "receivedQty": 33.4
+        },
+        {
+          "purchaseOrderId": "Elite Purchase Order Id 4",
+          "ingredientId": "Elite Ingredient Id 4",
+          "quantity": 95.1,
+          "unitPrice": 6443,
+          "totalPrice": 6443,
+          "receivedQty": 95.1
+        },
+        {
+          "purchaseOrderId": "Core Purchase Order Id 5",
+          "ingredientId": "Core Ingredient Id 5",
+          "quantity": 56.8,
+          "unitPrice": 8424,
+          "totalPrice": 8424,
+          "receivedQty": 56.8
+        },
+        {
+          "purchaseOrderId": "Pro Purchase Order Id 6",
+          "ingredientId": "Pro Ingredient Id 6",
+          "quantity": 118.5,
+          "unitPrice": 10405,
+          "totalPrice": 10405,
+          "receivedQty": 118.5
+        },
+        {
+          "purchaseOrderId": "Essential Purchase Order Id 7",
+          "ingredientId": "Essential Ingredient Id 7",
+          "quantity": 80.2,
+          "unitPrice": 12386,
+          "totalPrice": 12386,
+          "receivedQty": 80.2
+        },
+        {
+          "purchaseOrderId": "Primary Purchase Order Id 8",
+          "ingredientId": "Primary Ingredient Id 8",
+          "quantity": 141.9,
+          "unitPrice": 9367,
+          "totalPrice": 9367,
+          "receivedQty": 141.9
+        },
+        {
+          "purchaseOrderId": "Global Purchase Order Id 9",
+          "ingredientId": "Global Ingredient Id 9",
+          "quantity": 103.6,
+          "unitPrice": 11348,
+          "totalPrice": 11348,
+          "receivedQty": 103.6
+        },
+        {
+          "purchaseOrderId": "Regional Purchase Order Id 10",
+          "ingredientId": "Regional Ingredient Id 10",
+          "quantity": 165.3,
+          "unitPrice": 13329,
+          "totalPrice": 13329,
+          "receivedQty": 165.3
+        },
+        {
+          "purchaseOrderId": "Custom Purchase Order Id 11",
+          "ingredientId": "Custom Ingredient Id 11",
+          "quantity": 127,
+          "unitPrice": 15310,
+          "totalPrice": 15310,
+          "receivedQty": 127
+        },
+        {
+          "purchaseOrderId": "Smart Purchase Order Id 12",
+          "ingredientId": "Smart Ingredient Id 12",
+          "quantity": 188.7,
+          "unitPrice": 17291,
+          "totalPrice": 17291,
+          "receivedQty": 188.7
+        },
+        {
+          "purchaseOrderId": "Rapid Purchase Order Id 13",
+          "ingredientId": "Rapid Ingredient Id 13",
+          "quantity": 150.4,
+          "unitPrice": 19272,
+          "totalPrice": 19272,
+          "receivedQty": 150.4
+        },
+        {
+          "purchaseOrderId": "Secure Purchase Order Id 14",
+          "ingredientId": "Secure Ingredient Id 14",
+          "quantity": 212.1,
+          "unitPrice": 21253,
+          "totalPrice": 21253,
+          "receivedQty": 212.1
+        },
+        {
+          "purchaseOrderId": "Modern Purchase Order Id 15",
+          "ingredientId": "Modern Ingredient Id 15",
+          "quantity": 173.8,
+          "unitPrice": 18234,
+          "totalPrice": 18234,
+          "receivedQty": 173.8
+        }
+      ]
+    },
+    {
+      "modelName": "StockMovement",
+      "routeKey": "stock-movements",
+      "label": "Stock Movement",
+      "icon": "dollar-sign",
+      "aiFunction": "analyzeStockMovement",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Stock Movement data. The data includes: Ingredient Id, Quantity, Reason, Reference. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "ingredientId",
+          "label": "Ingredient Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "reason",
+          "label": "Reason",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reference",
+          "label": "Reference",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "ingredientId": "Advanced Ingredient Id 1",
+          "quantity": 10,
+          "reason": "Advanced Reason 1",
+          "reference": "Advanced Reference 1"
+        },
+        {
+          "ingredientId": "Premium Ingredient Id 2",
+          "quantity": 71.7,
+          "reason": "Premium Reason 2",
+          "reference": "Premium Reference 2"
+        },
+        {
+          "ingredientId": "Standard Ingredient Id 3",
+          "quantity": 33.4,
+          "reason": "Standard Reason 3",
+          "reference": "Standard Reference 3"
+        },
+        {
+          "ingredientId": "Elite Ingredient Id 4",
+          "quantity": 95.1,
+          "reason": "Elite Reason 4",
+          "reference": "Elite Reference 4"
+        },
+        {
+          "ingredientId": "Core Ingredient Id 5",
+          "quantity": 56.8,
+          "reason": "Core Reason 5",
+          "reference": "Core Reference 5"
+        },
+        {
+          "ingredientId": "Pro Ingredient Id 6",
+          "quantity": 118.5,
+          "reason": "Pro Reason 6",
+          "reference": "Pro Reference 6"
+        },
+        {
+          "ingredientId": "Essential Ingredient Id 7",
+          "quantity": 80.2,
+          "reason": "Essential Reason 7",
+          "reference": "Essential Reference 7"
+        },
+        {
+          "ingredientId": "Primary Ingredient Id 8",
+          "quantity": 141.9,
+          "reason": "Primary Reason 8",
+          "reference": "Primary Reference 8"
+        },
+        {
+          "ingredientId": "Global Ingredient Id 9",
+          "quantity": 103.6,
+          "reason": "Global Reason 9",
+          "reference": "Global Reference 9"
+        },
+        {
+          "ingredientId": "Regional Ingredient Id 10",
+          "quantity": 165.3,
+          "reason": "Regional Reason 10",
+          "reference": "Regional Reference 10"
+        },
+        {
+          "ingredientId": "Custom Ingredient Id 11",
+          "quantity": 127,
+          "reason": "Custom Reason 11",
+          "reference": "Custom Reference 11"
+        },
+        {
+          "ingredientId": "Smart Ingredient Id 12",
+          "quantity": 188.7,
+          "reason": "Smart Reason 12",
+          "reference": "Smart Reference 12"
+        },
+        {
+          "ingredientId": "Rapid Ingredient Id 13",
+          "quantity": 150.4,
+          "reason": "Rapid Reason 13",
+          "reference": "Rapid Reference 13"
+        },
+        {
+          "ingredientId": "Secure Ingredient Id 14",
+          "quantity": 212.1,
+          "reason": "Secure Reason 14",
+          "reference": "Secure Reference 14"
+        },
+        {
+          "ingredientId": "Modern Ingredient Id 15",
+          "quantity": 173.8,
+          "reason": "Modern Reason 15",
+          "reference": "Modern Reference 15"
+        }
+      ]
+    },
+    {
+      "modelName": "OrderItem",
+      "routeKey": "order-items",
+      "label": "Order Item",
+      "icon": "clipboard",
+      "aiFunction": "analyzeOrderItem",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Order Item data. The data includes: Order Id, Menu Item Id, Quantity, Unit Price, Total Price, Notes, Sent To Kitchen, Prepared At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "orderId",
+          "label": "Order Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "menuItemId",
+          "label": "Menu Item Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "unitPrice",
+          "label": "Unit Price",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "totalPrice",
+          "label": "Total Price",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sentToKitchen",
+          "label": "Sent To Kitchen",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "preparedAt",
+          "label": "Prepared At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "orderId": "Advanced Order Id 1",
+          "menuItemId": "Advanced Menu Item Id 1",
+          "quantity": 164,
+          "unitPrice": 500,
+          "totalPrice": 500,
+          "notes": "Advanced Notes 1",
+          "sentToKitchen": "2024-01-01",
+          "preparedAt": "2024-01-01"
+        },
+        {
+          "orderId": "Premium Order Id 2",
+          "menuItemId": "Premium Menu Item Id 2",
+          "quantity": 170,
+          "unitPrice": 2481,
+          "totalPrice": 2481,
+          "notes": "Premium Notes 2",
+          "sentToKitchen": "2024-02-03",
+          "preparedAt": "2024-02-03"
+        },
+        {
+          "orderId": "Standard Order Id 3",
+          "menuItemId": "Standard Menu Item Id 3",
+          "quantity": 79,
+          "unitPrice": 4462,
+          "totalPrice": 4462,
+          "notes": "Standard Notes 3",
+          "sentToKitchen": "2024-03-05",
+          "preparedAt": "2024-03-05"
+        },
+        {
+          "orderId": "Elite Order Id 4",
+          "menuItemId": "Elite Menu Item Id 4",
+          "quantity": 76,
+          "unitPrice": 6443,
+          "totalPrice": 6443,
+          "notes": "Elite Notes 4",
+          "sentToKitchen": "2024-04-07",
+          "preparedAt": "2024-04-07"
+        },
+        {
+          "orderId": "Core Order Id 5",
+          "menuItemId": "Core Menu Item Id 5",
+          "quantity": 169,
+          "unitPrice": 8424,
+          "totalPrice": 8424,
+          "notes": "Core Notes 5",
+          "sentToKitchen": "2024-05-09",
+          "preparedAt": "2024-05-09"
+        },
+        {
+          "orderId": "Pro Order Id 6",
+          "menuItemId": "Pro Menu Item Id 6",
+          "quantity": 232,
+          "unitPrice": 10405,
+          "totalPrice": 10405,
+          "notes": "Pro Notes 6",
+          "sentToKitchen": "2024-06-11",
+          "preparedAt": "2024-06-11"
+        },
+        {
+          "orderId": "Essential Order Id 7",
+          "menuItemId": "Essential Menu Item Id 7",
+          "quantity": 225,
+          "unitPrice": 12386,
+          "totalPrice": 12386,
+          "notes": "Essential Notes 7",
+          "sentToKitchen": "2024-07-13",
+          "preparedAt": "2024-07-13"
+        },
+        {
+          "orderId": "Primary Order Id 8",
+          "menuItemId": "Primary Menu Item Id 8",
+          "quantity": 217,
+          "unitPrice": 9367,
+          "totalPrice": 9367,
+          "notes": "Primary Notes 8",
+          "sentToKitchen": "2024-08-15",
+          "preparedAt": "2024-08-15"
+        },
+        {
+          "orderId": "Global Order Id 9",
+          "menuItemId": "Global Menu Item Id 9",
+          "quantity": 186,
+          "unitPrice": 11348,
+          "totalPrice": 11348,
+          "notes": "Global Notes 9",
+          "sentToKitchen": "2024-09-17",
+          "preparedAt": "2024-09-17"
+        },
+        {
+          "orderId": "Regional Order Id 10",
+          "menuItemId": "Regional Menu Item Id 10",
+          "quantity": 251,
+          "unitPrice": 13329,
+          "totalPrice": 13329,
+          "notes": "Regional Notes 10",
+          "sentToKitchen": "2024-10-19",
+          "preparedAt": "2024-10-19"
+        },
+        {
+          "orderId": "Custom Order Id 11",
+          "menuItemId": "Custom Menu Item Id 11",
+          "quantity": 244,
+          "unitPrice": 15310,
+          "totalPrice": 15310,
+          "notes": "Custom Notes 11",
+          "sentToKitchen": "2024-11-21",
+          "preparedAt": "2024-11-21"
+        },
+        {
+          "orderId": "Smart Order Id 12",
+          "menuItemId": "Smart Menu Item Id 12",
+          "quantity": 142,
+          "unitPrice": 17291,
+          "totalPrice": 17291,
+          "notes": "Smart Notes 12",
+          "sentToKitchen": "2024-12-23",
+          "preparedAt": "2024-12-23"
+        },
+        {
+          "orderId": "Rapid Order Id 13",
+          "menuItemId": "Rapid Menu Item Id 13",
+          "quantity": 236,
+          "unitPrice": 19272,
+          "totalPrice": 19272,
+          "notes": "Rapid Notes 13",
+          "sentToKitchen": "2024-01-25",
+          "preparedAt": "2024-01-25"
+        },
+        {
+          "orderId": "Secure Order Id 14",
+          "menuItemId": "Secure Menu Item Id 14",
+          "quantity": 248,
+          "unitPrice": 21253,
+          "totalPrice": 21253,
+          "notes": "Secure Notes 14",
+          "sentToKitchen": "2024-02-27",
+          "preparedAt": "2024-02-27"
+        },
+        {
+          "orderId": "Modern Order Id 15",
+          "menuItemId": "Modern Menu Item Id 15",
+          "quantity": 245,
+          "unitPrice": 18234,
+          "totalPrice": 18234,
+          "notes": "Modern Notes 15",
+          "sentToKitchen": "2024-03-01",
+          "preparedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "OrderItemModifier",
+      "routeKey": "order-item-modifiers",
+      "label": "Order Item Modifier",
+      "icon": "database",
+      "aiFunction": "analyzeOrderItemModifier",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Order Item Modifier data. The data includes: Order Item Id, Modifier Id, Price Adjustment. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "orderItemId",
+          "label": "Order Item Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "modifierId",
+          "label": "Modifier Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priceAdjustment",
+          "label": "Price Adjustment",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "orderItemId": "Advanced Order Item Id 1",
+          "modifierId": "Advanced Modifier Id 1",
+          "priceAdjustment": 500
+        },
+        {
+          "orderItemId": "Premium Order Item Id 2",
+          "modifierId": "Premium Modifier Id 2",
+          "priceAdjustment": 2481
+        },
+        {
+          "orderItemId": "Standard Order Item Id 3",
+          "modifierId": "Standard Modifier Id 3",
+          "priceAdjustment": 4462
+        },
+        {
+          "orderItemId": "Elite Order Item Id 4",
+          "modifierId": "Elite Modifier Id 4",
+          "priceAdjustment": 6443
+        },
+        {
+          "orderItemId": "Core Order Item Id 5",
+          "modifierId": "Core Modifier Id 5",
+          "priceAdjustment": 8424
+        },
+        {
+          "orderItemId": "Pro Order Item Id 6",
+          "modifierId": "Pro Modifier Id 6",
+          "priceAdjustment": 10405
+        },
+        {
+          "orderItemId": "Essential Order Item Id 7",
+          "modifierId": "Essential Modifier Id 7",
+          "priceAdjustment": 12386
+        },
+        {
+          "orderItemId": "Primary Order Item Id 8",
+          "modifierId": "Primary Modifier Id 8",
+          "priceAdjustment": 9367
+        },
+        {
+          "orderItemId": "Global Order Item Id 9",
+          "modifierId": "Global Modifier Id 9",
+          "priceAdjustment": 11348
+        },
+        {
+          "orderItemId": "Regional Order Item Id 10",
+          "modifierId": "Regional Modifier Id 10",
+          "priceAdjustment": 13329
+        },
+        {
+          "orderItemId": "Custom Order Item Id 11",
+          "modifierId": "Custom Modifier Id 11",
+          "priceAdjustment": 15310
+        },
+        {
+          "orderItemId": "Smart Order Item Id 12",
+          "modifierId": "Smart Modifier Id 12",
+          "priceAdjustment": 17291
+        },
+        {
+          "orderItemId": "Rapid Order Item Id 13",
+          "modifierId": "Rapid Modifier Id 13",
+          "priceAdjustment": 19272
+        },
+        {
+          "orderItemId": "Secure Order Item Id 14",
+          "modifierId": "Secure Modifier Id 14",
+          "priceAdjustment": 21253
+        },
+        {
+          "orderItemId": "Modern Order Item Id 15",
+          "modifierId": "Modern Modifier Id 15",
+          "priceAdjustment": 18234
+        }
+      ]
+    },
+    {
+      "modelName": "SplitCheckItem",
+      "routeKey": "split-check-items",
+      "label": "Split Check Item",
+      "icon": "map-pin",
+      "aiFunction": "analyzeSplitCheckItem",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Split Check Item data. The data includes: Split Check Id, Order Item Id, Quantity, Amount. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "splitCheckId",
+          "label": "Split Check Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "orderItemId",
+          "label": "Order Item Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "splitCheckId": "Advanced Split Check Id 1",
+          "orderItemId": "Advanced Order Item Id 1",
+          "quantity": 9,
+          "amount": 500
+        },
+        {
+          "splitCheckId": "Premium Split Check Id 2",
+          "orderItemId": "Premium Order Item Id 2",
+          "quantity": 165,
+          "amount": 2481
+        },
+        {
+          "splitCheckId": "Standard Split Check Id 3",
+          "orderItemId": "Standard Order Item Id 3",
+          "quantity": 179,
+          "amount": 4462
+        },
+        {
+          "splitCheckId": "Elite Split Check Id 4",
+          "orderItemId": "Elite Order Item Id 4",
+          "quantity": 128,
+          "amount": 6443
+        },
+        {
+          "splitCheckId": "Core Split Check Id 5",
+          "orderItemId": "Core Order Item Id 5",
+          "quantity": 93,
+          "amount": 8424
+        },
+        {
+          "splitCheckId": "Pro Split Check Id 6",
+          "orderItemId": "Pro Order Item Id 6",
+          "quantity": 127,
+          "amount": 10405
+        },
+        {
+          "splitCheckId": "Essential Split Check Id 7",
+          "orderItemId": "Essential Order Item Id 7",
+          "quantity": 135,
+          "amount": 12386
+        },
+        {
+          "splitCheckId": "Primary Split Check Id 8",
+          "orderItemId": "Primary Order Item Id 8",
+          "quantity": 139,
+          "amount": 9367
+        },
+        {
+          "splitCheckId": "Global Split Check Id 9",
+          "orderItemId": "Global Order Item Id 9",
+          "quantity": 165,
+          "amount": 11348
+        },
+        {
+          "splitCheckId": "Regional Split Check Id 10",
+          "orderItemId": "Regional Order Item Id 10",
+          "quantity": 134,
+          "amount": 13329
+        },
+        {
+          "splitCheckId": "Custom Split Check Id 11",
+          "orderItemId": "Custom Order Item Id 11",
+          "quantity": 205,
+          "amount": 15310
+        },
+        {
+          "splitCheckId": "Smart Split Check Id 12",
+          "orderItemId": "Smart Order Item Id 12",
+          "quantity": 214,
+          "amount": 17291
+        },
+        {
+          "splitCheckId": "Rapid Split Check Id 13",
+          "orderItemId": "Rapid Order Item Id 13",
+          "quantity": 258,
+          "amount": 19272
+        },
+        {
+          "splitCheckId": "Secure Split Check Id 14",
+          "orderItemId": "Secure Order Item Id 14",
+          "quantity": 211,
+          "amount": 21253
+        },
+        {
+          "splitCheckId": "Modern Split Check Id 15",
+          "orderItemId": "Modern Order Item Id 15",
+          "quantity": 252,
+          "amount": 18234
+        }
+      ]
+    },
+    {
+      "modelName": "Recipe",
+      "routeKey": "recipes",
+      "label": "Recipe",
+      "icon": "activity",
+      "aiFunction": "analyzeRecipe",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Recipe data. The data includes: Menu Item Id, Prep Time, Cook Time, Servings, Instructions, Notes, Video Url, Allergen Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "menuItemId",
+          "label": "Menu Item Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "prepTime",
+          "label": "Prep Time",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "cookTime",
+          "label": "Cook Time",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "servings",
+          "label": "Servings",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "instructions",
+          "label": "Instructions",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "videoUrl",
+          "label": "Video Url",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "allergenNotes",
+          "label": "Allergen Notes",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "menuItemId": "Advanced Menu Item Id 1",
+          "prepTime": 10,
+          "cookTime": 10,
+          "servings": 10,
+          "instructions": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "notes": "Advanced Notes 1",
+          "videoUrl": "https://example.com/videoUrl/1",
+          "allergenNotes": "Advanced Allergen Notes 1"
+        },
+        {
+          "menuItemId": "Premium Menu Item Id 2",
+          "prepTime": 58,
+          "cookTime": 58,
+          "servings": 58,
+          "instructions": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "notes": "Premium Notes 2",
+          "videoUrl": "https://example.com/videoUrl/2",
+          "allergenNotes": "Premium Allergen Notes 2"
+        },
+        {
+          "menuItemId": "Standard Menu Item Id 3",
+          "prepTime": 106,
+          "cookTime": 106,
+          "servings": 106,
+          "instructions": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "notes": "Standard Notes 3",
+          "videoUrl": "https://example.com/videoUrl/3",
+          "allergenNotes": "Standard Allergen Notes 3"
+        },
+        {
+          "menuItemId": "Elite Menu Item Id 4",
+          "prepTime": 154,
+          "cookTime": 154,
+          "servings": 154,
+          "instructions": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "notes": "Elite Notes 4",
+          "videoUrl": "https://example.com/videoUrl/4",
+          "allergenNotes": "Elite Allergen Notes 4"
+        },
+        {
+          "menuItemId": "Core Menu Item Id 5",
+          "prepTime": 102,
+          "cookTime": 102,
+          "servings": 102,
+          "instructions": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "notes": "Core Notes 5",
+          "videoUrl": "https://example.com/videoUrl/5",
+          "allergenNotes": "Core Allergen Notes 5"
+        },
+        {
+          "menuItemId": "Pro Menu Item Id 6",
+          "prepTime": 150,
+          "cookTime": 150,
+          "servings": 150,
+          "instructions": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "notes": "Pro Notes 6",
+          "videoUrl": "https://example.com/videoUrl/6",
+          "allergenNotes": "Pro Allergen Notes 6"
+        },
+        {
+          "menuItemId": "Essential Menu Item Id 7",
+          "prepTime": 198,
+          "cookTime": 198,
+          "servings": 198,
+          "instructions": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "notes": "Essential Notes 7",
+          "videoUrl": "https://example.com/videoUrl/7",
+          "allergenNotes": "Essential Allergen Notes 7"
+        },
+        {
+          "menuItemId": "Primary Menu Item Id 8",
+          "prepTime": 146,
+          "cookTime": 146,
+          "servings": 146,
+          "instructions": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "notes": "Primary Notes 8",
+          "videoUrl": "https://example.com/videoUrl/8",
+          "allergenNotes": "Primary Allergen Notes 8"
+        },
+        {
+          "menuItemId": "Global Menu Item Id 9",
+          "prepTime": 194,
+          "cookTime": 194,
+          "servings": 194,
+          "instructions": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "notes": "Global Notes 9",
+          "videoUrl": "https://example.com/videoUrl/9",
+          "allergenNotes": "Global Allergen Notes 9"
+        },
+        {
+          "menuItemId": "Regional Menu Item Id 10",
+          "prepTime": 242,
+          "cookTime": 242,
+          "servings": 242,
+          "instructions": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "notes": "Regional Notes 10",
+          "videoUrl": "https://example.com/videoUrl/10",
+          "allergenNotes": "Regional Allergen Notes 10"
+        },
+        {
+          "menuItemId": "Custom Menu Item Id 11",
+          "prepTime": 190,
+          "cookTime": 190,
+          "servings": 190,
+          "instructions": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "notes": "Custom Notes 11",
+          "videoUrl": "https://example.com/videoUrl/11",
+          "allergenNotes": "Custom Allergen Notes 11"
+        },
+        {
+          "menuItemId": "Smart Menu Item Id 12",
+          "prepTime": 238,
+          "cookTime": 238,
+          "servings": 238,
+          "instructions": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "notes": "Smart Notes 12",
+          "videoUrl": "https://example.com/videoUrl/12",
+          "allergenNotes": "Smart Allergen Notes 12"
+        },
+        {
+          "menuItemId": "Rapid Menu Item Id 13",
+          "prepTime": 286,
+          "cookTime": 286,
+          "servings": 286,
+          "instructions": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "notes": "Rapid Notes 13",
+          "videoUrl": "https://example.com/videoUrl/13",
+          "allergenNotes": "Rapid Allergen Notes 13"
+        },
+        {
+          "menuItemId": "Secure Menu Item Id 14",
+          "prepTime": 234,
+          "cookTime": 234,
+          "servings": 234,
+          "instructions": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "notes": "Secure Notes 14",
+          "videoUrl": "https://example.com/videoUrl/14",
+          "allergenNotes": "Secure Allergen Notes 14"
+        },
+        {
+          "menuItemId": "Modern Menu Item Id 15",
+          "prepTime": 282,
+          "cookTime": 282,
+          "servings": 282,
+          "instructions": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "notes": "Modern Notes 15",
+          "videoUrl": "https://example.com/videoUrl/15",
+          "allergenNotes": "Modern Allergen Notes 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Table",
+      "routeKey": "tables",
+      "label": "Table",
+      "icon": "layers",
+      "aiFunction": "analyzeTable",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Table data. The data includes: Number, Capacity, Section, Pos X, Pos Y. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "number",
+          "label": "Number",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "capacity",
+          "label": "Capacity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "section",
+          "label": "Section",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "posX",
+          "label": "Pos X",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "posY",
+          "label": "Pos Y",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "number": 189,
+          "capacity": 10,
+          "section": "Advanced Section 1",
+          "posX": 10,
+          "posY": 10
+        },
+        {
+          "number": 117,
+          "capacity": 58,
+          "section": "Premium Section 2",
+          "posX": 71.7,
+          "posY": 71.7
+        },
+        {
+          "number": 173,
+          "capacity": 106,
+          "section": "Standard Section 3",
+          "posX": 33.4,
+          "posY": 33.4
+        },
+        {
+          "number": 168,
+          "capacity": 154,
+          "section": "Elite Section 4",
+          "posX": 95.1,
+          "posY": 95.1
+        },
+        {
+          "number": 77,
+          "capacity": 102,
+          "section": "Core Section 5",
+          "posX": 56.8,
+          "posY": 56.8
+        },
+        {
+          "number": 152,
+          "capacity": 150,
+          "section": "Pro Section 6",
+          "posX": 118.5,
+          "posY": 118.5
+        },
+        {
+          "number": 175,
+          "capacity": 198,
+          "section": "Essential Section 7",
+          "posX": 80.2,
+          "posY": 80.2
+        },
+        {
+          "number": 241,
+          "capacity": 146,
+          "section": "Primary Section 8",
+          "posX": 141.9,
+          "posY": 141.9
+        },
+        {
+          "number": 111,
+          "capacity": 194,
+          "section": "Global Section 9",
+          "posX": 103.6,
+          "posY": 103.6
+        },
+        {
+          "number": 161,
+          "capacity": 242,
+          "section": "Regional Section 10",
+          "posX": 165.3,
+          "posY": 165.3
+        },
+        {
+          "number": 185,
+          "capacity": 190,
+          "section": "Custom Section 11",
+          "posX": 127,
+          "posY": 127
+        },
+        {
+          "number": 224,
+          "capacity": 238,
+          "section": "Smart Section 12",
+          "posX": 188.7,
+          "posY": 188.7
+        },
+        {
+          "number": 97,
+          "capacity": 286,
+          "section": "Rapid Section 13",
+          "posX": 150.4,
+          "posY": 150.4
+        },
+        {
+          "number": 276,
+          "capacity": 234,
+          "section": "Secure Section 14",
+          "posX": 212.1,
+          "posY": 212.1
+        },
+        {
+          "number": 203,
+          "capacity": 282,
+          "section": "Modern Section 15",
+          "posX": 173.8,
+          "posY": 173.8
+        }
+      ]
+    },
+    {
+      "modelName": "ModifierGroup",
+      "routeKey": "modifier-groups",
+      "label": "Modifier Group",
+      "icon": "truck",
+      "aiFunction": "analyzeModifierGroup",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Modifier Group data. The data includes: Name, Required, Min Select, Max Select. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "required",
+          "label": "Required",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "minSelect",
+          "label": "Min Select",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "maxSelect",
+          "label": "Max Select",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "required": true,
+          "minSelect": 10,
+          "maxSelect": 10
+        },
+        {
+          "name": "Premium Name 2",
+          "required": true,
+          "minSelect": 58,
+          "maxSelect": 58
+        },
+        {
+          "name": "Standard Name 3",
+          "required": false,
+          "minSelect": 106,
+          "maxSelect": 106
+        },
+        {
+          "name": "Elite Name 4",
+          "required": true,
+          "minSelect": 154,
+          "maxSelect": 154
+        },
+        {
+          "name": "Core Name 5",
+          "required": false,
+          "minSelect": 102,
+          "maxSelect": 102
+        },
+        {
+          "name": "Pro Name 6",
+          "required": true,
+          "minSelect": 150,
+          "maxSelect": 150
+        },
+        {
+          "name": "Essential Name 7",
+          "required": true,
+          "minSelect": 198,
+          "maxSelect": 198
+        },
+        {
+          "name": "Primary Name 8",
+          "required": false,
+          "minSelect": 146,
+          "maxSelect": 146
+        },
+        {
+          "name": "Global Name 9",
+          "required": true,
+          "minSelect": 194,
+          "maxSelect": 194
+        },
+        {
+          "name": "Regional Name 10",
+          "required": true,
+          "minSelect": 242,
+          "maxSelect": 242
+        },
+        {
+          "name": "Custom Name 11",
+          "required": false,
+          "minSelect": 190,
+          "maxSelect": 190
+        },
+        {
+          "name": "Smart Name 12",
+          "required": true,
+          "minSelect": 238,
+          "maxSelect": 238
+        },
+        {
+          "name": "Rapid Name 13",
+          "required": false,
+          "minSelect": 286,
+          "maxSelect": 286
+        },
+        {
+          "name": "Secure Name 14",
+          "required": true,
+          "minSelect": 234,
+          "maxSelect": 234
+        },
+        {
+          "name": "Modern Name 15",
+          "required": true,
+          "minSelect": 282,
+          "maxSelect": 282
+        }
+      ]
+    },
+    {
+      "modelName": "WasteRecord",
+      "routeKey": "waste-records",
+      "label": "Waste Record",
+      "icon": "activity",
+      "aiFunction": "analyzeWasteRecord",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Waste Record data. The data includes: Ingredient Id, Quantity, Reason, Cost, Recorded By. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "ingredientId",
+          "label": "Ingredient Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "reason",
+          "label": "Reason",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "recordedBy",
+          "label": "Recorded By",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "ingredientId": "Advanced Ingredient Id 1",
+          "quantity": 10,
+          "reason": "Advanced Reason 1",
+          "cost": 500,
+          "recordedBy": "Advanced Recorded By 1"
+        },
+        {
+          "ingredientId": "Premium Ingredient Id 2",
+          "quantity": 71.7,
+          "reason": "Premium Reason 2",
+          "cost": 2481,
+          "recordedBy": "Premium Recorded By 2"
+        },
+        {
+          "ingredientId": "Standard Ingredient Id 3",
+          "quantity": 33.4,
+          "reason": "Standard Reason 3",
+          "cost": 4462,
+          "recordedBy": "Standard Recorded By 3"
+        },
+        {
+          "ingredientId": "Elite Ingredient Id 4",
+          "quantity": 95.1,
+          "reason": "Elite Reason 4",
+          "cost": 6443,
+          "recordedBy": "Elite Recorded By 4"
+        },
+        {
+          "ingredientId": "Core Ingredient Id 5",
+          "quantity": 56.8,
+          "reason": "Core Reason 5",
+          "cost": 8424,
+          "recordedBy": "Core Recorded By 5"
+        },
+        {
+          "ingredientId": "Pro Ingredient Id 6",
+          "quantity": 118.5,
+          "reason": "Pro Reason 6",
+          "cost": 10405,
+          "recordedBy": "Pro Recorded By 6"
+        },
+        {
+          "ingredientId": "Essential Ingredient Id 7",
+          "quantity": 80.2,
+          "reason": "Essential Reason 7",
+          "cost": 12386,
+          "recordedBy": "Essential Recorded By 7"
+        },
+        {
+          "ingredientId": "Primary Ingredient Id 8",
+          "quantity": 141.9,
+          "reason": "Primary Reason 8",
+          "cost": 9367,
+          "recordedBy": "Primary Recorded By 8"
+        },
+        {
+          "ingredientId": "Global Ingredient Id 9",
+          "quantity": 103.6,
+          "reason": "Global Reason 9",
+          "cost": 11348,
+          "recordedBy": "Global Recorded By 9"
+        },
+        {
+          "ingredientId": "Regional Ingredient Id 10",
+          "quantity": 165.3,
+          "reason": "Regional Reason 10",
+          "cost": 13329,
+          "recordedBy": "Regional Recorded By 10"
+        },
+        {
+          "ingredientId": "Custom Ingredient Id 11",
+          "quantity": 127,
+          "reason": "Custom Reason 11",
+          "cost": 15310,
+          "recordedBy": "Custom Recorded By 11"
+        },
+        {
+          "ingredientId": "Smart Ingredient Id 12",
+          "quantity": 188.7,
+          "reason": "Smart Reason 12",
+          "cost": 17291,
+          "recordedBy": "Smart Recorded By 12"
+        },
+        {
+          "ingredientId": "Rapid Ingredient Id 13",
+          "quantity": 150.4,
+          "reason": "Rapid Reason 13",
+          "cost": 19272,
+          "recordedBy": "Rapid Recorded By 13"
+        },
+        {
+          "ingredientId": "Secure Ingredient Id 14",
+          "quantity": 212.1,
+          "reason": "Secure Reason 14",
+          "cost": 21253,
+          "recordedBy": "Secure Recorded By 14"
+        },
+        {
+          "ingredientId": "Modern Ingredient Id 15",
+          "quantity": 173.8,
+          "reason": "Modern Reason 15",
+          "cost": 18234,
+          "recordedBy": "Modern Recorded By 15"
+        }
+      ]
+    },
+    {
+      "modelName": "LoyaltyTransaction",
+      "routeKey": "loyalty-transactions",
+      "label": "Loyalty Transaction",
+      "icon": "star",
+      "aiFunction": "analyzeLoyaltyTransaction",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Loyalty Transaction data. The data includes: Loyalty Id, Points, Type, Description. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "loyaltyId",
+          "label": "Loyalty Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "points",
+          "label": "Points",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "loyaltyId": "Advanced Loyalty Id 1",
+          "points": 10,
+          "type": "Category A",
+          "description": "Advanced Description 1"
+        },
+        {
+          "loyaltyId": "Premium Loyalty Id 2",
+          "points": 58,
+          "type": "Category B",
+          "description": "Premium Description 2"
+        },
+        {
+          "loyaltyId": "Standard Loyalty Id 3",
+          "points": 106,
+          "type": "Category C",
+          "description": "Standard Description 3"
+        },
+        {
+          "loyaltyId": "Elite Loyalty Id 4",
+          "points": 154,
+          "type": "Category D",
+          "description": "Elite Description 4"
+        },
+        {
+          "loyaltyId": "Core Loyalty Id 5",
+          "points": 102,
+          "type": "Category E",
+          "description": "Core Description 5"
+        },
+        {
+          "loyaltyId": "Pro Loyalty Id 6",
+          "points": 150,
+          "type": "Premium Tier",
+          "description": "Pro Description 6"
+        },
+        {
+          "loyaltyId": "Essential Loyalty Id 7",
+          "points": 198,
+          "type": "Standard Tier",
+          "description": "Essential Description 7"
+        },
+        {
+          "loyaltyId": "Primary Loyalty Id 8",
+          "points": 146,
+          "type": "Basic Tier",
+          "description": "Primary Description 8"
+        },
+        {
+          "loyaltyId": "Global Loyalty Id 9",
+          "points": 194,
+          "type": "Enterprise",
+          "description": "Global Description 9"
+        },
+        {
+          "loyaltyId": "Regional Loyalty Id 10",
+          "points": 242,
+          "type": "Starter",
+          "description": "Regional Description 10"
+        },
+        {
+          "loyaltyId": "Custom Loyalty Id 11",
+          "points": 190,
+          "type": "Growth",
+          "description": "Custom Description 11"
+        },
+        {
+          "loyaltyId": "Smart Loyalty Id 12",
+          "points": 238,
+          "type": "Scale",
+          "description": "Smart Description 12"
+        },
+        {
+          "loyaltyId": "Rapid Loyalty Id 13",
+          "points": 286,
+          "type": "Foundation",
+          "description": "Rapid Description 13"
+        },
+        {
+          "loyaltyId": "Secure Loyalty Id 14",
+          "points": 234,
+          "type": "Advanced",
+          "description": "Secure Description 14"
+        },
+        {
+          "loyaltyId": "Modern Loyalty Id 15",
+          "points": 282,
+          "type": "Professional",
+          "description": "Modern Description 15"
+        }
+      ]
+    },
+    {
+      "modelName": "AIRecommendation",
+      "routeKey": "a-i-recommendations",
+      "label": "A I Recommendation",
+      "icon": "users",
+      "aiFunction": "analyzeAIRecommendation",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided A I Recommendation data. The data includes: Type, Title, Description, Data, Status, Applied At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "data",
+          "label": "Data",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "appliedAt",
+          "label": "Applied At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "type": "Category A",
+          "title": "Advanced Title 1",
+          "description": "Advanced Description 1",
+          "data": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "status": "active",
+          "appliedAt": "2024-01-01"
+        },
+        {
+          "type": "Category B",
+          "title": "Premium Title 2",
+          "description": "Premium Description 2",
+          "data": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "status": "pending",
+          "appliedAt": "2024-02-03"
+        },
+        {
+          "type": "Category C",
+          "title": "Standard Title 3",
+          "description": "Standard Description 3",
+          "data": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "status": "in_progress",
+          "appliedAt": "2024-03-05"
+        },
+        {
+          "type": "Category D",
+          "title": "Elite Title 4",
+          "description": "Elite Description 4",
+          "data": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "status": "completed",
+          "appliedAt": "2024-04-07"
+        },
+        {
+          "type": "Category E",
+          "title": "Core Title 5",
+          "description": "Core Description 5",
+          "data": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "status": "under_review",
+          "appliedAt": "2024-05-09"
+        },
+        {
+          "type": "Premium Tier",
+          "title": "Pro Title 6",
+          "description": "Pro Description 6",
+          "data": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "status": "approved",
+          "appliedAt": "2024-06-11"
+        },
+        {
+          "type": "Standard Tier",
+          "title": "Essential Title 7",
+          "description": "Essential Description 7",
+          "data": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "status": "active",
+          "appliedAt": "2024-07-13"
+        },
+        {
+          "type": "Basic Tier",
+          "title": "Primary Title 8",
+          "description": "Primary Description 8",
+          "data": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "status": "active",
+          "appliedAt": "2024-08-15"
+        },
+        {
+          "type": "Enterprise",
+          "title": "Global Title 9",
+          "description": "Global Description 9",
+          "data": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "status": "active",
+          "appliedAt": "2024-09-17"
+        },
+        {
+          "type": "Starter",
+          "title": "Regional Title 10",
+          "description": "Regional Description 10",
+          "data": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "status": "pending",
+          "appliedAt": "2024-10-19"
+        },
+        {
+          "type": "Growth",
+          "title": "Custom Title 11",
+          "description": "Custom Description 11",
+          "data": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "status": "completed",
+          "appliedAt": "2024-11-21"
+        },
+        {
+          "type": "Scale",
+          "title": "Smart Title 12",
+          "description": "Smart Description 12",
+          "data": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "status": "active",
+          "appliedAt": "2024-12-23"
+        },
+        {
+          "type": "Foundation",
+          "title": "Rapid Title 13",
+          "description": "Rapid Description 13",
+          "data": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "status": "in_progress",
+          "appliedAt": "2024-01-25"
+        },
+        {
+          "type": "Advanced",
+          "title": "Secure Title 14",
+          "description": "Secure Description 14",
+          "data": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "status": "active",
+          "appliedAt": "2024-02-27"
+        },
+        {
+          "type": "Professional",
+          "title": "Modern Title 15",
+          "description": "Modern Description 15",
+          "data": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "status": "approved",
+          "appliedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Integration",
+      "routeKey": "integrations",
+      "label": "Integration",
+      "icon": "bell",
+      "aiFunction": "analyzeIntegration",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Integration data. The data includes: Type, Name, Is Active, Config, Last Sync. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "config",
+          "label": "Config",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "lastSync",
+          "label": "Last Sync",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "type": "Category A",
+          "name": "Advanced Name 1",
+          "isActive": true,
+          "config": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "lastSync": "2024-01-01"
+        },
+        {
+          "type": "Category B",
+          "name": "Premium Name 2",
+          "isActive": true,
+          "config": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "lastSync": "2024-02-03"
+        },
+        {
+          "type": "Category C",
+          "name": "Standard Name 3",
+          "isActive": false,
+          "config": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "lastSync": "2024-03-05"
+        },
+        {
+          "type": "Category D",
+          "name": "Elite Name 4",
+          "isActive": true,
+          "config": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "lastSync": "2024-04-07"
+        },
+        {
+          "type": "Category E",
+          "name": "Core Name 5",
+          "isActive": false,
+          "config": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "lastSync": "2024-05-09"
+        },
+        {
+          "type": "Premium Tier",
+          "name": "Pro Name 6",
+          "isActive": true,
+          "config": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "lastSync": "2024-06-11"
+        },
+        {
+          "type": "Standard Tier",
+          "name": "Essential Name 7",
+          "isActive": true,
+          "config": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "lastSync": "2024-07-13"
+        },
+        {
+          "type": "Basic Tier",
+          "name": "Primary Name 8",
+          "isActive": false,
+          "config": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "lastSync": "2024-08-15"
+        },
+        {
+          "type": "Enterprise",
+          "name": "Global Name 9",
+          "isActive": true,
+          "config": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "lastSync": "2024-09-17"
+        },
+        {
+          "type": "Starter",
+          "name": "Regional Name 10",
+          "isActive": true,
+          "config": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "lastSync": "2024-10-19"
+        },
+        {
+          "type": "Growth",
+          "name": "Custom Name 11",
+          "isActive": false,
+          "config": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "lastSync": "2024-11-21"
+        },
+        {
+          "type": "Scale",
+          "name": "Smart Name 12",
+          "isActive": true,
+          "config": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "lastSync": "2024-12-23"
+        },
+        {
+          "type": "Foundation",
+          "name": "Rapid Name 13",
+          "isActive": false,
+          "config": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "lastSync": "2024-01-25"
+        },
+        {
+          "type": "Advanced",
+          "name": "Secure Name 14",
+          "isActive": true,
+          "config": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "lastSync": "2024-02-27"
+        },
+        {
+          "type": "Professional",
+          "name": "Modern Name 15",
+          "isActive": true,
+          "config": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "lastSync": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Settings",
+      "routeKey": "settings",
+      "label": "Settings",
+      "icon": "clipboard",
+      "aiFunction": "analyzeSettings",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Settings data. The data includes: Key, Value. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "key",
+          "label": "Key",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "value",
+          "label": "Value",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "key": "Advanced Key 1",
+          "value": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "key": "Premium Key 2",
+          "value": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "key": "Standard Key 3",
+          "value": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "key": "Elite Key 4",
+          "value": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "key": "Core Key 5",
+          "value": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "key": "Pro Key 6",
+          "value": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "key": "Essential Key 7",
+          "value": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "key": "Primary Key 8",
+          "value": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "key": "Global Key 9",
+          "value": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "key": "Regional Key 10",
+          "value": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "key": "Custom Key 11",
+          "value": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "key": "Smart Key 12",
+          "value": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "key": "Rapid Key 13",
+          "value": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "key": "Secure Key 14",
+          "value": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "key": "Modern Key 15",
+          "value": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "Staff",
+      "routeKey": "staffs",
+      "label": "Staff",
+      "icon": "activity",
+      "aiFunction": "analyzeStaff",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Staff data. The data includes: User Id, First Name, Last Name, Phone, Position, Hourly Rate, Hire Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "position",
+          "label": "Position",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "hourlyRate",
+          "label": "Hourly Rate",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "hireDate",
+          "label": "Hire Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": "Advanced User Id 1",
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "phone": "(555) 100-1000",
+          "position": "Advanced Position 1",
+          "hourlyRate": 1.5,
+          "hireDate": "2024-01-01"
+        },
+        {
+          "userId": "Premium User Id 2",
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "phone": "(556) 137-1113",
+          "position": "Premium Position 2",
+          "hourlyRate": 2.1,
+          "hireDate": "2024-02-03"
+        },
+        {
+          "userId": "Standard User Id 3",
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "phone": "(557) 174-1226",
+          "position": "Standard Position 3",
+          "hourlyRate": 2.7,
+          "hireDate": "2024-03-05"
+        },
+        {
+          "userId": "Elite User Id 4",
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "phone": "(558) 211-1339",
+          "position": "Elite Position 4",
+          "hourlyRate": 3.3,
+          "hireDate": "2024-04-07"
+        },
+        {
+          "userId": "Core User Id 5",
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "phone": "(555) 248-1452",
+          "position": "Core Position 5",
+          "hourlyRate": 3.9,
+          "hireDate": "2024-05-09"
+        },
+        {
+          "userId": "Pro User Id 6",
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "phone": "(556) 285-1565",
+          "position": "Pro Position 6",
+          "hourlyRate": 4.5,
+          "hireDate": "2024-06-11"
+        },
+        {
+          "userId": "Essential User Id 7",
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "phone": "(557) 322-1678",
+          "position": "Essential Position 7",
+          "hourlyRate": 5.1,
+          "hireDate": "2024-07-13"
+        },
+        {
+          "userId": "Primary User Id 8",
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "phone": "(558) 359-1791",
+          "position": "Primary Position 8",
+          "hourlyRate": 5.7,
+          "hireDate": "2024-08-15"
+        },
+        {
+          "userId": "Global User Id 9",
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "phone": "(555) 396-1904",
+          "position": "Global Position 9",
+          "hourlyRate": 6.3,
+          "hireDate": "2024-09-17"
+        },
+        {
+          "userId": "Regional User Id 10",
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "phone": "(556) 433-2017",
+          "position": "Regional Position 10",
+          "hourlyRate": 1.9,
+          "hireDate": "2024-10-19"
+        },
+        {
+          "userId": "Custom User Id 11",
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "phone": "(557) 470-2130",
+          "position": "Custom Position 11",
+          "hourlyRate": 2.5,
+          "hireDate": "2024-11-21"
+        },
+        {
+          "userId": "Smart User Id 12",
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "phone": "(558) 507-2243",
+          "position": "Smart Position 12",
+          "hourlyRate": 3.1,
+          "hireDate": "2024-12-23"
+        },
+        {
+          "userId": "Rapid User Id 13",
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "phone": "(555) 544-2356",
+          "position": "Rapid Position 13",
+          "hourlyRate": 3.7,
+          "hireDate": "2024-01-25"
+        },
+        {
+          "userId": "Secure User Id 14",
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "phone": "(556) 581-2469",
+          "position": "Secure Position 14",
+          "hourlyRate": 4.3,
+          "hireDate": "2024-02-27"
+        },
+        {
+          "userId": "Modern User Id 15",
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "phone": "(557) 618-2582",
+          "position": "Modern Position 15",
+          "hourlyRate": 4.9,
+          "hireDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Schedule",
+      "routeKey": "schedules",
+      "label": "Schedule",
+      "icon": "briefcase",
+      "aiFunction": "analyzeSchedule",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Schedule data. The data includes: Staff Id, Date, Start Time, End Time, Position, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "staffId",
+          "label": "Staff Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "position",
+          "label": "Position",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "staffId": "Advanced Staff Id 1",
+          "date": "2024-01-01",
+          "startTime": "2024-01-01",
+          "endTime": "2024-01-01",
+          "position": "Advanced Position 1",
+          "notes": "Advanced Notes 1"
+        },
+        {
+          "staffId": "Premium Staff Id 2",
+          "date": "2024-02-03",
+          "startTime": "2024-02-03",
+          "endTime": "2024-02-03",
+          "position": "Premium Position 2",
+          "notes": "Premium Notes 2"
+        },
+        {
+          "staffId": "Standard Staff Id 3",
+          "date": "2024-03-05",
+          "startTime": "2024-03-05",
+          "endTime": "2024-03-05",
+          "position": "Standard Position 3",
+          "notes": "Standard Notes 3"
+        },
+        {
+          "staffId": "Elite Staff Id 4",
+          "date": "2024-04-07",
+          "startTime": "2024-04-07",
+          "endTime": "2024-04-07",
+          "position": "Elite Position 4",
+          "notes": "Elite Notes 4"
+        },
+        {
+          "staffId": "Core Staff Id 5",
+          "date": "2024-05-09",
+          "startTime": "2024-05-09",
+          "endTime": "2024-05-09",
+          "position": "Core Position 5",
+          "notes": "Core Notes 5"
+        },
+        {
+          "staffId": "Pro Staff Id 6",
+          "date": "2024-06-11",
+          "startTime": "2024-06-11",
+          "endTime": "2024-06-11",
+          "position": "Pro Position 6",
+          "notes": "Pro Notes 6"
+        },
+        {
+          "staffId": "Essential Staff Id 7",
+          "date": "2024-07-13",
+          "startTime": "2024-07-13",
+          "endTime": "2024-07-13",
+          "position": "Essential Position 7",
+          "notes": "Essential Notes 7"
+        },
+        {
+          "staffId": "Primary Staff Id 8",
+          "date": "2024-08-15",
+          "startTime": "2024-08-15",
+          "endTime": "2024-08-15",
+          "position": "Primary Position 8",
+          "notes": "Primary Notes 8"
+        },
+        {
+          "staffId": "Global Staff Id 9",
+          "date": "2024-09-17",
+          "startTime": "2024-09-17",
+          "endTime": "2024-09-17",
+          "position": "Global Position 9",
+          "notes": "Global Notes 9"
+        },
+        {
+          "staffId": "Regional Staff Id 10",
+          "date": "2024-10-19",
+          "startTime": "2024-10-19",
+          "endTime": "2024-10-19",
+          "position": "Regional Position 10",
+          "notes": "Regional Notes 10"
+        },
+        {
+          "staffId": "Custom Staff Id 11",
+          "date": "2024-11-21",
+          "startTime": "2024-11-21",
+          "endTime": "2024-11-21",
+          "position": "Custom Position 11",
+          "notes": "Custom Notes 11"
+        },
+        {
+          "staffId": "Smart Staff Id 12",
+          "date": "2024-12-23",
+          "startTime": "2024-12-23",
+          "endTime": "2024-12-23",
+          "position": "Smart Position 12",
+          "notes": "Smart Notes 12"
+        },
+        {
+          "staffId": "Rapid Staff Id 13",
+          "date": "2024-01-25",
+          "startTime": "2024-01-25",
+          "endTime": "2024-01-25",
+          "position": "Rapid Position 13",
+          "notes": "Rapid Notes 13"
+        },
+        {
+          "staffId": "Secure Staff Id 14",
+          "date": "2024-02-27",
+          "startTime": "2024-02-27",
+          "endTime": "2024-02-27",
+          "position": "Secure Position 14",
+          "notes": "Secure Notes 14"
+        },
+        {
+          "staffId": "Modern Staff Id 15",
+          "date": "2024-03-01",
+          "startTime": "2024-03-01",
+          "endTime": "2024-03-01",
+          "position": "Modern Position 15",
+          "notes": "Modern Notes 15"
+        }
+      ]
+    },
+    {
+      "modelName": "TimeClock",
+      "routeKey": "time-clocks",
+      "label": "Time Clock",
+      "icon": "clipboard",
+      "aiFunction": "analyzeTimeClock",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Time Clock data. The data includes: Staff Id, Clock In, Clock Out, Break Start, Break End, Total Hours. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "staffId",
+          "label": "Staff Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "clockIn",
+          "label": "Clock In",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "clockOut",
+          "label": "Clock Out",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "breakStart",
+          "label": "Break Start",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "breakEnd",
+          "label": "Break End",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "totalHours",
+          "label": "Total Hours",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "staffId": "Advanced Staff Id 1",
+          "clockIn": "2024-01-01",
+          "clockOut": "2024-01-01",
+          "breakStart": "2024-01-01",
+          "breakEnd": "2024-01-01",
+          "totalHours": 10
+        },
+        {
+          "staffId": "Premium Staff Id 2",
+          "clockIn": "2024-02-03",
+          "clockOut": "2024-02-03",
+          "breakStart": "2024-02-03",
+          "breakEnd": "2024-02-03",
+          "totalHours": 71.7
+        },
+        {
+          "staffId": "Standard Staff Id 3",
+          "clockIn": "2024-03-05",
+          "clockOut": "2024-03-05",
+          "breakStart": "2024-03-05",
+          "breakEnd": "2024-03-05",
+          "totalHours": 33.4
+        },
+        {
+          "staffId": "Elite Staff Id 4",
+          "clockIn": "2024-04-07",
+          "clockOut": "2024-04-07",
+          "breakStart": "2024-04-07",
+          "breakEnd": "2024-04-07",
+          "totalHours": 95.1
+        },
+        {
+          "staffId": "Core Staff Id 5",
+          "clockIn": "2024-05-09",
+          "clockOut": "2024-05-09",
+          "breakStart": "2024-05-09",
+          "breakEnd": "2024-05-09",
+          "totalHours": 56.8
+        },
+        {
+          "staffId": "Pro Staff Id 6",
+          "clockIn": "2024-06-11",
+          "clockOut": "2024-06-11",
+          "breakStart": "2024-06-11",
+          "breakEnd": "2024-06-11",
+          "totalHours": 118.5
+        },
+        {
+          "staffId": "Essential Staff Id 7",
+          "clockIn": "2024-07-13",
+          "clockOut": "2024-07-13",
+          "breakStart": "2024-07-13",
+          "breakEnd": "2024-07-13",
+          "totalHours": 80.2
+        },
+        {
+          "staffId": "Primary Staff Id 8",
+          "clockIn": "2024-08-15",
+          "clockOut": "2024-08-15",
+          "breakStart": "2024-08-15",
+          "breakEnd": "2024-08-15",
+          "totalHours": 141.9
+        },
+        {
+          "staffId": "Global Staff Id 9",
+          "clockIn": "2024-09-17",
+          "clockOut": "2024-09-17",
+          "breakStart": "2024-09-17",
+          "breakEnd": "2024-09-17",
+          "totalHours": 103.6
+        },
+        {
+          "staffId": "Regional Staff Id 10",
+          "clockIn": "2024-10-19",
+          "clockOut": "2024-10-19",
+          "breakStart": "2024-10-19",
+          "breakEnd": "2024-10-19",
+          "totalHours": 165.3
+        },
+        {
+          "staffId": "Custom Staff Id 11",
+          "clockIn": "2024-11-21",
+          "clockOut": "2024-11-21",
+          "breakStart": "2024-11-21",
+          "breakEnd": "2024-11-21",
+          "totalHours": 127
+        },
+        {
+          "staffId": "Smart Staff Id 12",
+          "clockIn": "2024-12-23",
+          "clockOut": "2024-12-23",
+          "breakStart": "2024-12-23",
+          "breakEnd": "2024-12-23",
+          "totalHours": 188.7
+        },
+        {
+          "staffId": "Rapid Staff Id 13",
+          "clockIn": "2024-01-25",
+          "clockOut": "2024-01-25",
+          "breakStart": "2024-01-25",
+          "breakEnd": "2024-01-25",
+          "totalHours": 150.4
+        },
+        {
+          "staffId": "Secure Staff Id 14",
+          "clockIn": "2024-02-27",
+          "clockOut": "2024-02-27",
+          "breakStart": "2024-02-27",
+          "breakEnd": "2024-02-27",
+          "totalHours": 212.1
+        },
+        {
+          "staffId": "Modern Staff Id 15",
+          "clockIn": "2024-03-01",
+          "clockOut": "2024-03-01",
+          "breakStart": "2024-03-01",
+          "breakEnd": "2024-03-01",
+          "totalHours": 173.8
+        }
+      ]
+    },
+    {
+      "modelName": "TipDistribution",
+      "routeKey": "tip-distributions",
+      "label": "Tip Distribution",
+      "icon": "database",
+      "aiFunction": "analyzeTipDistribution",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Tip Distribution data. The data includes: Staff Id, Date, Amount, Source. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "staffId",
+          "label": "Staff Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "staffId": "Advanced Staff Id 1",
+          "date": "2024-01-01",
+          "amount": 500,
+          "source": "Advanced Source 1"
+        },
+        {
+          "staffId": "Premium Staff Id 2",
+          "date": "2024-02-03",
+          "amount": 2481,
+          "source": "Premium Source 2"
+        },
+        {
+          "staffId": "Standard Staff Id 3",
+          "date": "2024-03-05",
+          "amount": 4462,
+          "source": "Standard Source 3"
+        },
+        {
+          "staffId": "Elite Staff Id 4",
+          "date": "2024-04-07",
+          "amount": 6443,
+          "source": "Elite Source 4"
+        },
+        {
+          "staffId": "Core Staff Id 5",
+          "date": "2024-05-09",
+          "amount": 8424,
+          "source": "Core Source 5"
+        },
+        {
+          "staffId": "Pro Staff Id 6",
+          "date": "2024-06-11",
+          "amount": 10405,
+          "source": "Pro Source 6"
+        },
+        {
+          "staffId": "Essential Staff Id 7",
+          "date": "2024-07-13",
+          "amount": 12386,
+          "source": "Essential Source 7"
+        },
+        {
+          "staffId": "Primary Staff Id 8",
+          "date": "2024-08-15",
+          "amount": 9367,
+          "source": "Primary Source 8"
+        },
+        {
+          "staffId": "Global Staff Id 9",
+          "date": "2024-09-17",
+          "amount": 11348,
+          "source": "Global Source 9"
+        },
+        {
+          "staffId": "Regional Staff Id 10",
+          "date": "2024-10-19",
+          "amount": 13329,
+          "source": "Regional Source 10"
+        },
+        {
+          "staffId": "Custom Staff Id 11",
+          "date": "2024-11-21",
+          "amount": 15310,
+          "source": "Custom Source 11"
+        },
+        {
+          "staffId": "Smart Staff Id 12",
+          "date": "2024-12-23",
+          "amount": 17291,
+          "source": "Smart Source 12"
+        },
+        {
+          "staffId": "Rapid Staff Id 13",
+          "date": "2024-01-25",
+          "amount": 19272,
+          "source": "Rapid Source 13"
+        },
+        {
+          "staffId": "Secure Staff Id 14",
+          "date": "2024-02-27",
+          "amount": 21253,
+          "source": "Secure Source 14"
+        },
+        {
+          "staffId": "Modern Staff Id 15",
+          "date": "2024-03-01",
+          "amount": 18234,
+          "source": "Modern Source 15"
+        }
+      ]
+    },
+    {
+      "modelName": "PerformanceRecord",
+      "routeKey": "performance-records",
+      "label": "Performance Record",
+      "icon": "file-text",
+      "aiFunction": "analyzePerformanceRecord",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Performance Record data. The data includes: Staff Id, Date, Metric, Value, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "staffId",
+          "label": "Staff Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "metric",
+          "label": "Metric",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "value",
+          "label": "Value",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "staffId": "Advanced Staff Id 1",
+          "date": "2024-01-01",
+          "metric": "Advanced Metric 1",
+          "value": 10,
+          "notes": "Advanced Notes 1"
+        },
+        {
+          "staffId": "Premium Staff Id 2",
+          "date": "2024-02-03",
+          "metric": "Premium Metric 2",
+          "value": 71.7,
+          "notes": "Premium Notes 2"
+        },
+        {
+          "staffId": "Standard Staff Id 3",
+          "date": "2024-03-05",
+          "metric": "Standard Metric 3",
+          "value": 33.4,
+          "notes": "Standard Notes 3"
+        },
+        {
+          "staffId": "Elite Staff Id 4",
+          "date": "2024-04-07",
+          "metric": "Elite Metric 4",
+          "value": 95.1,
+          "notes": "Elite Notes 4"
+        },
+        {
+          "staffId": "Core Staff Id 5",
+          "date": "2024-05-09",
+          "metric": "Core Metric 5",
+          "value": 56.8,
+          "notes": "Core Notes 5"
+        },
+        {
+          "staffId": "Pro Staff Id 6",
+          "date": "2024-06-11",
+          "metric": "Pro Metric 6",
+          "value": 118.5,
+          "notes": "Pro Notes 6"
+        },
+        {
+          "staffId": "Essential Staff Id 7",
+          "date": "2024-07-13",
+          "metric": "Essential Metric 7",
+          "value": 80.2,
+          "notes": "Essential Notes 7"
+        },
+        {
+          "staffId": "Primary Staff Id 8",
+          "date": "2024-08-15",
+          "metric": "Primary Metric 8",
+          "value": 141.9,
+          "notes": "Primary Notes 8"
+        },
+        {
+          "staffId": "Global Staff Id 9",
+          "date": "2024-09-17",
+          "metric": "Global Metric 9",
+          "value": 103.6,
+          "notes": "Global Notes 9"
+        },
+        {
+          "staffId": "Regional Staff Id 10",
+          "date": "2024-10-19",
+          "metric": "Regional Metric 10",
+          "value": 165.3,
+          "notes": "Regional Notes 10"
+        },
+        {
+          "staffId": "Custom Staff Id 11",
+          "date": "2024-11-21",
+          "metric": "Custom Metric 11",
+          "value": 127,
+          "notes": "Custom Notes 11"
+        },
+        {
+          "staffId": "Smart Staff Id 12",
+          "date": "2024-12-23",
+          "metric": "Smart Metric 12",
+          "value": 188.7,
+          "notes": "Smart Notes 12"
+        },
+        {
+          "staffId": "Rapid Staff Id 13",
+          "date": "2024-01-25",
+          "metric": "Rapid Metric 13",
+          "value": 150.4,
+          "notes": "Rapid Notes 13"
+        },
+        {
+          "staffId": "Secure Staff Id 14",
+          "date": "2024-02-27",
+          "metric": "Secure Metric 14",
+          "value": 212.1,
+          "notes": "Secure Notes 14"
+        },
+        {
+          "staffId": "Modern Staff Id 15",
+          "date": "2024-03-01",
+          "metric": "Modern Metric 15",
+          "value": 173.8,
+          "notes": "Modern Notes 15"
+        }
+      ]
+    },
+    {
+      "modelName": "TrainingRecord",
+      "routeKey": "training-records",
+      "label": "Training Record",
+      "icon": "heart",
+      "aiFunction": "analyzeTrainingRecord",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Training Record data. The data includes: Staff Id, Training Name, Completed At, Expires At, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "staffId",
+          "label": "Staff Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "trainingName",
+          "label": "Training Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "completedAt",
+          "label": "Completed At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "expiresAt",
+          "label": "Expires At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "staffId": "Advanced Staff Id 1",
+          "trainingName": "Advanced Training 1",
+          "completedAt": "2024-01-01",
+          "expiresAt": "2024-01-01",
+          "notes": "Advanced Notes 1"
+        },
+        {
+          "staffId": "Premium Staff Id 2",
+          "trainingName": "Premium Training 2",
+          "completedAt": "2024-02-03",
+          "expiresAt": "2024-02-03",
+          "notes": "Premium Notes 2"
+        },
+        {
+          "staffId": "Standard Staff Id 3",
+          "trainingName": "Standard Training 3",
+          "completedAt": "2024-03-05",
+          "expiresAt": "2024-03-05",
+          "notes": "Standard Notes 3"
+        },
+        {
+          "staffId": "Elite Staff Id 4",
+          "trainingName": "Elite Training 4",
+          "completedAt": "2024-04-07",
+          "expiresAt": "2024-04-07",
+          "notes": "Elite Notes 4"
+        },
+        {
+          "staffId": "Core Staff Id 5",
+          "trainingName": "Core Training 5",
+          "completedAt": "2024-05-09",
+          "expiresAt": "2024-05-09",
+          "notes": "Core Notes 5"
+        },
+        {
+          "staffId": "Pro Staff Id 6",
+          "trainingName": "Pro Training 6",
+          "completedAt": "2024-06-11",
+          "expiresAt": "2024-06-11",
+          "notes": "Pro Notes 6"
+        },
+        {
+          "staffId": "Essential Staff Id 7",
+          "trainingName": "Essential Training 7",
+          "completedAt": "2024-07-13",
+          "expiresAt": "2024-07-13",
+          "notes": "Essential Notes 7"
+        },
+        {
+          "staffId": "Primary Staff Id 8",
+          "trainingName": "Primary Training 8",
+          "completedAt": "2024-08-15",
+          "expiresAt": "2024-08-15",
+          "notes": "Primary Notes 8"
+        },
+        {
+          "staffId": "Global Staff Id 9",
+          "trainingName": "Global Training 9",
+          "completedAt": "2024-09-17",
+          "expiresAt": "2024-09-17",
+          "notes": "Global Notes 9"
+        },
+        {
+          "staffId": "Regional Staff Id 10",
+          "trainingName": "Regional Training 10",
+          "completedAt": "2024-10-19",
+          "expiresAt": "2024-10-19",
+          "notes": "Regional Notes 10"
+        },
+        {
+          "staffId": "Custom Staff Id 11",
+          "trainingName": "Custom Training 11",
+          "completedAt": "2024-11-21",
+          "expiresAt": "2024-11-21",
+          "notes": "Custom Notes 11"
+        },
+        {
+          "staffId": "Smart Staff Id 12",
+          "trainingName": "Smart Training 12",
+          "completedAt": "2024-12-23",
+          "expiresAt": "2024-12-23",
+          "notes": "Smart Notes 12"
+        },
+        {
+          "staffId": "Rapid Staff Id 13",
+          "trainingName": "Rapid Training 13",
+          "completedAt": "2024-01-25",
+          "expiresAt": "2024-01-25",
+          "notes": "Rapid Notes 13"
+        },
+        {
+          "staffId": "Secure Staff Id 14",
+          "trainingName": "Secure Training 14",
+          "completedAt": "2024-02-27",
+          "expiresAt": "2024-02-27",
+          "notes": "Secure Notes 14"
+        },
+        {
+          "staffId": "Modern Staff Id 15",
+          "trainingName": "Modern Training 15",
+          "completedAt": "2024-03-01",
+          "expiresAt": "2024-03-01",
+          "notes": "Modern Notes 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Modifier",
+      "routeKey": "modifiers",
+      "label": "Modifier",
+      "icon": "users",
+      "aiFunction": "analyzeModifier",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Modifier data. The data includes: Group Id, Name, Price Adjustment, Is Default, Is Available. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "groupId",
+          "label": "Group Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priceAdjustment",
+          "label": "Price Adjustment",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "isDefault",
+          "label": "Is Default",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "isAvailable",
+          "label": "Is Available",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "groupId": "Advanced Group Id 1",
+          "name": "Advanced Name 1",
+          "priceAdjustment": 500,
+          "isDefault": true,
+          "isAvailable": true
+        },
+        {
+          "groupId": "Premium Group Id 2",
+          "name": "Premium Name 2",
+          "priceAdjustment": 2481,
+          "isDefault": true,
+          "isAvailable": true
+        },
+        {
+          "groupId": "Standard Group Id 3",
+          "name": "Standard Name 3",
+          "priceAdjustment": 4462,
+          "isDefault": false,
+          "isAvailable": false
+        },
+        {
+          "groupId": "Elite Group Id 4",
+          "name": "Elite Name 4",
+          "priceAdjustment": 6443,
+          "isDefault": true,
+          "isAvailable": true
+        },
+        {
+          "groupId": "Core Group Id 5",
+          "name": "Core Name 5",
+          "priceAdjustment": 8424,
+          "isDefault": false,
+          "isAvailable": false
+        },
+        {
+          "groupId": "Pro Group Id 6",
+          "name": "Pro Name 6",
+          "priceAdjustment": 10405,
+          "isDefault": true,
+          "isAvailable": true
+        },
+        {
+          "groupId": "Essential Group Id 7",
+          "name": "Essential Name 7",
+          "priceAdjustment": 12386,
+          "isDefault": true,
+          "isAvailable": true
+        },
+        {
+          "groupId": "Primary Group Id 8",
+          "name": "Primary Name 8",
+          "priceAdjustment": 9367,
+          "isDefault": false,
+          "isAvailable": false
+        },
+        {
+          "groupId": "Global Group Id 9",
+          "name": "Global Name 9",
+          "priceAdjustment": 11348,
+          "isDefault": true,
+          "isAvailable": true
+        },
+        {
+          "groupId": "Regional Group Id 10",
+          "name": "Regional Name 10",
+          "priceAdjustment": 13329,
+          "isDefault": true,
+          "isAvailable": true
+        },
+        {
+          "groupId": "Custom Group Id 11",
+          "name": "Custom Name 11",
+          "priceAdjustment": 15310,
+          "isDefault": false,
+          "isAvailable": false
+        },
+        {
+          "groupId": "Smart Group Id 12",
+          "name": "Smart Name 12",
+          "priceAdjustment": 17291,
+          "isDefault": true,
+          "isAvailable": true
+        },
+        {
+          "groupId": "Rapid Group Id 13",
+          "name": "Rapid Name 13",
+          "priceAdjustment": 19272,
+          "isDefault": false,
+          "isAvailable": false
+        },
+        {
+          "groupId": "Secure Group Id 14",
+          "name": "Secure Name 14",
+          "priceAdjustment": 21253,
+          "isDefault": true,
+          "isAvailable": true
+        },
+        {
+          "groupId": "Modern Group Id 15",
+          "name": "Modern Name 15",
+          "priceAdjustment": 18234,
+          "isDefault": true,
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "modelName": "PurchaseOrder",
+      "routeKey": "purchase-orders",
+      "label": "Purchase Order",
+      "icon": "calendar",
+      "aiFunction": "analyzePurchaseOrder",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Purchase Order data. The data includes: Vendor Id, Order Number, Order Date, Expected Date, Received Date, Subtotal, Tax, Total, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "vendorId",
+          "label": "Vendor Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "orderNumber",
+          "label": "Order Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "orderDate",
+          "label": "Order Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "expectedDate",
+          "label": "Expected Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "receivedDate",
+          "label": "Received Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "subtotal",
+          "label": "Subtotal",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "tax",
+          "label": "Tax",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "total",
+          "label": "Total",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "vendorId": "Advanced Vendor Id 1",
+          "orderNumber": "Advanced Order Number 1",
+          "orderDate": "2024-01-01",
+          "expectedDate": "2024-01-01",
+          "receivedDate": "2024-01-01",
+          "subtotal": 10,
+          "tax": 10,
+          "total": 10,
+          "notes": "Advanced Notes 1"
+        },
+        {
+          "vendorId": "Premium Vendor Id 2",
+          "orderNumber": "Premium Order Number 2",
+          "orderDate": "2024-02-03",
+          "expectedDate": "2024-02-03",
+          "receivedDate": "2024-02-03",
+          "subtotal": 71.7,
+          "tax": 71.7,
+          "total": 71.7,
+          "notes": "Premium Notes 2"
+        },
+        {
+          "vendorId": "Standard Vendor Id 3",
+          "orderNumber": "Standard Order Number 3",
+          "orderDate": "2024-03-05",
+          "expectedDate": "2024-03-05",
+          "receivedDate": "2024-03-05",
+          "subtotal": 33.4,
+          "tax": 33.4,
+          "total": 33.4,
+          "notes": "Standard Notes 3"
+        },
+        {
+          "vendorId": "Elite Vendor Id 4",
+          "orderNumber": "Elite Order Number 4",
+          "orderDate": "2024-04-07",
+          "expectedDate": "2024-04-07",
+          "receivedDate": "2024-04-07",
+          "subtotal": 95.1,
+          "tax": 95.1,
+          "total": 95.1,
+          "notes": "Elite Notes 4"
+        },
+        {
+          "vendorId": "Core Vendor Id 5",
+          "orderNumber": "Core Order Number 5",
+          "orderDate": "2024-05-09",
+          "expectedDate": "2024-05-09",
+          "receivedDate": "2024-05-09",
+          "subtotal": 56.8,
+          "tax": 56.8,
+          "total": 56.8,
+          "notes": "Core Notes 5"
+        },
+        {
+          "vendorId": "Pro Vendor Id 6",
+          "orderNumber": "Pro Order Number 6",
+          "orderDate": "2024-06-11",
+          "expectedDate": "2024-06-11",
+          "receivedDate": "2024-06-11",
+          "subtotal": 118.5,
+          "tax": 118.5,
+          "total": 118.5,
+          "notes": "Pro Notes 6"
+        },
+        {
+          "vendorId": "Essential Vendor Id 7",
+          "orderNumber": "Essential Order Number 7",
+          "orderDate": "2024-07-13",
+          "expectedDate": "2024-07-13",
+          "receivedDate": "2024-07-13",
+          "subtotal": 80.2,
+          "tax": 80.2,
+          "total": 80.2,
+          "notes": "Essential Notes 7"
+        },
+        {
+          "vendorId": "Primary Vendor Id 8",
+          "orderNumber": "Primary Order Number 8",
+          "orderDate": "2024-08-15",
+          "expectedDate": "2024-08-15",
+          "receivedDate": "2024-08-15",
+          "subtotal": 141.9,
+          "tax": 141.9,
+          "total": 141.9,
+          "notes": "Primary Notes 8"
+        },
+        {
+          "vendorId": "Global Vendor Id 9",
+          "orderNumber": "Global Order Number 9",
+          "orderDate": "2024-09-17",
+          "expectedDate": "2024-09-17",
+          "receivedDate": "2024-09-17",
+          "subtotal": 103.6,
+          "tax": 103.6,
+          "total": 103.6,
+          "notes": "Global Notes 9"
+        },
+        {
+          "vendorId": "Regional Vendor Id 10",
+          "orderNumber": "Regional Order Number 10",
+          "orderDate": "2024-10-19",
+          "expectedDate": "2024-10-19",
+          "receivedDate": "2024-10-19",
+          "subtotal": 165.3,
+          "tax": 165.3,
+          "total": 165.3,
+          "notes": "Regional Notes 10"
+        },
+        {
+          "vendorId": "Custom Vendor Id 11",
+          "orderNumber": "Custom Order Number 11",
+          "orderDate": "2024-11-21",
+          "expectedDate": "2024-11-21",
+          "receivedDate": "2024-11-21",
+          "subtotal": 127,
+          "tax": 127,
+          "total": 127,
+          "notes": "Custom Notes 11"
+        },
+        {
+          "vendorId": "Smart Vendor Id 12",
+          "orderNumber": "Smart Order Number 12",
+          "orderDate": "2024-12-23",
+          "expectedDate": "2024-12-23",
+          "receivedDate": "2024-12-23",
+          "subtotal": 188.7,
+          "tax": 188.7,
+          "total": 188.7,
+          "notes": "Smart Notes 12"
+        },
+        {
+          "vendorId": "Rapid Vendor Id 13",
+          "orderNumber": "Rapid Order Number 13",
+          "orderDate": "2024-01-25",
+          "expectedDate": "2024-01-25",
+          "receivedDate": "2024-01-25",
+          "subtotal": 150.4,
+          "tax": 150.4,
+          "total": 150.4,
+          "notes": "Rapid Notes 13"
+        },
+        {
+          "vendorId": "Secure Vendor Id 14",
+          "orderNumber": "Secure Order Number 14",
+          "orderDate": "2024-02-27",
+          "expectedDate": "2024-02-27",
+          "receivedDate": "2024-02-27",
+          "subtotal": 212.1,
+          "tax": 212.1,
+          "total": 212.1,
+          "notes": "Secure Notes 14"
+        },
+        {
+          "vendorId": "Modern Vendor Id 15",
+          "orderNumber": "Modern Order Number 15",
+          "orderDate": "2024-03-01",
+          "expectedDate": "2024-03-01",
+          "receivedDate": "2024-03-01",
+          "subtotal": 173.8,
+          "tax": 173.8,
+          "total": 173.8,
+          "notes": "Modern Notes 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Order",
+      "routeKey": "orders",
+      "label": "Order",
+      "icon": "briefcase",
+      "aiFunction": "analyzeOrder",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Order data. The data includes: Order Number, Table Id, Customer Id, Staff Id, Subtotal, Tax, Discount, Tip, Total, Payment Method, Notes, Source. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "orderNumber",
+          "label": "Order Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tableId",
+          "label": "Table Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "staffId",
+          "label": "Staff Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "subtotal",
+          "label": "Subtotal",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "tax",
+          "label": "Tax",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "discount",
+          "label": "Discount",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "tip",
+          "label": "Tip",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "total",
+          "label": "Total",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "orderNumber": "Advanced Order Number 1",
+          "tableId": "Advanced Table Id 1",
+          "customerId": "Advanced Customer Id 1",
+          "staffId": "Advanced Staff Id 1",
+          "subtotal": 10,
+          "tax": 10,
+          "discount": 10,
+          "tip": 10,
+          "total": 10,
+          "paymentMethod": "Advanced Payment Method 1",
+          "notes": "Advanced Notes 1",
+          "source": "Advanced Source 1"
+        },
+        {
+          "orderNumber": "Premium Order Number 2",
+          "tableId": "Premium Table Id 2",
+          "customerId": "Premium Customer Id 2",
+          "staffId": "Premium Staff Id 2",
+          "subtotal": 71.7,
+          "tax": 71.7,
+          "discount": 71.7,
+          "tip": 71.7,
+          "total": 71.7,
+          "paymentMethod": "Premium Payment Method 2",
+          "notes": "Premium Notes 2",
+          "source": "Premium Source 2"
+        },
+        {
+          "orderNumber": "Standard Order Number 3",
+          "tableId": "Standard Table Id 3",
+          "customerId": "Standard Customer Id 3",
+          "staffId": "Standard Staff Id 3",
+          "subtotal": 33.4,
+          "tax": 33.4,
+          "discount": 33.4,
+          "tip": 33.4,
+          "total": 33.4,
+          "paymentMethod": "Standard Payment Method 3",
+          "notes": "Standard Notes 3",
+          "source": "Standard Source 3"
+        },
+        {
+          "orderNumber": "Elite Order Number 4",
+          "tableId": "Elite Table Id 4",
+          "customerId": "Elite Customer Id 4",
+          "staffId": "Elite Staff Id 4",
+          "subtotal": 95.1,
+          "tax": 95.1,
+          "discount": 95.1,
+          "tip": 95.1,
+          "total": 95.1,
+          "paymentMethod": "Elite Payment Method 4",
+          "notes": "Elite Notes 4",
+          "source": "Elite Source 4"
+        },
+        {
+          "orderNumber": "Core Order Number 5",
+          "tableId": "Core Table Id 5",
+          "customerId": "Core Customer Id 5",
+          "staffId": "Core Staff Id 5",
+          "subtotal": 56.8,
+          "tax": 56.8,
+          "discount": 56.8,
+          "tip": 56.8,
+          "total": 56.8,
+          "paymentMethod": "Core Payment Method 5",
+          "notes": "Core Notes 5",
+          "source": "Core Source 5"
+        },
+        {
+          "orderNumber": "Pro Order Number 6",
+          "tableId": "Pro Table Id 6",
+          "customerId": "Pro Customer Id 6",
+          "staffId": "Pro Staff Id 6",
+          "subtotal": 118.5,
+          "tax": 118.5,
+          "discount": 118.5,
+          "tip": 118.5,
+          "total": 118.5,
+          "paymentMethod": "Pro Payment Method 6",
+          "notes": "Pro Notes 6",
+          "source": "Pro Source 6"
+        },
+        {
+          "orderNumber": "Essential Order Number 7",
+          "tableId": "Essential Table Id 7",
+          "customerId": "Essential Customer Id 7",
+          "staffId": "Essential Staff Id 7",
+          "subtotal": 80.2,
+          "tax": 80.2,
+          "discount": 80.2,
+          "tip": 80.2,
+          "total": 80.2,
+          "paymentMethod": "Essential Payment Method 7",
+          "notes": "Essential Notes 7",
+          "source": "Essential Source 7"
+        },
+        {
+          "orderNumber": "Primary Order Number 8",
+          "tableId": "Primary Table Id 8",
+          "customerId": "Primary Customer Id 8",
+          "staffId": "Primary Staff Id 8",
+          "subtotal": 141.9,
+          "tax": 141.9,
+          "discount": 141.9,
+          "tip": 141.9,
+          "total": 141.9,
+          "paymentMethod": "Primary Payment Method 8",
+          "notes": "Primary Notes 8",
+          "source": "Primary Source 8"
+        },
+        {
+          "orderNumber": "Global Order Number 9",
+          "tableId": "Global Table Id 9",
+          "customerId": "Global Customer Id 9",
+          "staffId": "Global Staff Id 9",
+          "subtotal": 103.6,
+          "tax": 103.6,
+          "discount": 103.6,
+          "tip": 103.6,
+          "total": 103.6,
+          "paymentMethod": "Global Payment Method 9",
+          "notes": "Global Notes 9",
+          "source": "Global Source 9"
+        },
+        {
+          "orderNumber": "Regional Order Number 10",
+          "tableId": "Regional Table Id 10",
+          "customerId": "Regional Customer Id 10",
+          "staffId": "Regional Staff Id 10",
+          "subtotal": 165.3,
+          "tax": 165.3,
+          "discount": 165.3,
+          "tip": 165.3,
+          "total": 165.3,
+          "paymentMethod": "Regional Payment Method 10",
+          "notes": "Regional Notes 10",
+          "source": "Regional Source 10"
+        },
+        {
+          "orderNumber": "Custom Order Number 11",
+          "tableId": "Custom Table Id 11",
+          "customerId": "Custom Customer Id 11",
+          "staffId": "Custom Staff Id 11",
+          "subtotal": 127,
+          "tax": 127,
+          "discount": 127,
+          "tip": 127,
+          "total": 127,
+          "paymentMethod": "Custom Payment Method 11",
+          "notes": "Custom Notes 11",
+          "source": "Custom Source 11"
+        },
+        {
+          "orderNumber": "Smart Order Number 12",
+          "tableId": "Smart Table Id 12",
+          "customerId": "Smart Customer Id 12",
+          "staffId": "Smart Staff Id 12",
+          "subtotal": 188.7,
+          "tax": 188.7,
+          "discount": 188.7,
+          "tip": 188.7,
+          "total": 188.7,
+          "paymentMethod": "Smart Payment Method 12",
+          "notes": "Smart Notes 12",
+          "source": "Smart Source 12"
+        },
+        {
+          "orderNumber": "Rapid Order Number 13",
+          "tableId": "Rapid Table Id 13",
+          "customerId": "Rapid Customer Id 13",
+          "staffId": "Rapid Staff Id 13",
+          "subtotal": 150.4,
+          "tax": 150.4,
+          "discount": 150.4,
+          "tip": 150.4,
+          "total": 150.4,
+          "paymentMethod": "Rapid Payment Method 13",
+          "notes": "Rapid Notes 13",
+          "source": "Rapid Source 13"
+        },
+        {
+          "orderNumber": "Secure Order Number 14",
+          "tableId": "Secure Table Id 14",
+          "customerId": "Secure Customer Id 14",
+          "staffId": "Secure Staff Id 14",
+          "subtotal": 212.1,
+          "tax": 212.1,
+          "discount": 212.1,
+          "tip": 212.1,
+          "total": 212.1,
+          "paymentMethod": "Secure Payment Method 14",
+          "notes": "Secure Notes 14",
+          "source": "Secure Source 14"
+        },
+        {
+          "orderNumber": "Modern Order Number 15",
+          "tableId": "Modern Table Id 15",
+          "customerId": "Modern Customer Id 15",
+          "staffId": "Modern Staff Id 15",
+          "subtotal": 173.8,
+          "tax": 173.8,
+          "discount": 173.8,
+          "tip": 173.8,
+          "total": 173.8,
+          "paymentMethod": "Modern Payment Method 15",
+          "notes": "Modern Notes 15",
+          "source": "Modern Source 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Payment",
+      "routeKey": "payments",
+      "label": "Payment",
+      "icon": "heart",
+      "aiFunction": "analyzePayment",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Payment data. The data includes: Order Id, Amount, Method, Reference, Status, Split Check Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "orderId",
+          "label": "Order Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "method",
+          "label": "Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reference",
+          "label": "Reference",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "splitCheckId",
+          "label": "Split Check Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "orderId": "Advanced Order Id 1",
+          "amount": 500,
+          "method": "Advanced Method 1",
+          "reference": "Advanced Reference 1",
+          "status": "active",
+          "splitCheckId": "Advanced Split Check Id 1"
+        },
+        {
+          "orderId": "Premium Order Id 2",
+          "amount": 2481,
+          "method": "Premium Method 2",
+          "reference": "Premium Reference 2",
+          "status": "pending",
+          "splitCheckId": "Premium Split Check Id 2"
+        },
+        {
+          "orderId": "Standard Order Id 3",
+          "amount": 4462,
+          "method": "Standard Method 3",
+          "reference": "Standard Reference 3",
+          "status": "in_progress",
+          "splitCheckId": "Standard Split Check Id 3"
+        },
+        {
+          "orderId": "Elite Order Id 4",
+          "amount": 6443,
+          "method": "Elite Method 4",
+          "reference": "Elite Reference 4",
+          "status": "completed",
+          "splitCheckId": "Elite Split Check Id 4"
+        },
+        {
+          "orderId": "Core Order Id 5",
+          "amount": 8424,
+          "method": "Core Method 5",
+          "reference": "Core Reference 5",
+          "status": "under_review",
+          "splitCheckId": "Core Split Check Id 5"
+        },
+        {
+          "orderId": "Pro Order Id 6",
+          "amount": 10405,
+          "method": "Pro Method 6",
+          "reference": "Pro Reference 6",
+          "status": "approved",
+          "splitCheckId": "Pro Split Check Id 6"
+        },
+        {
+          "orderId": "Essential Order Id 7",
+          "amount": 12386,
+          "method": "Essential Method 7",
+          "reference": "Essential Reference 7",
+          "status": "active",
+          "splitCheckId": "Essential Split Check Id 7"
+        },
+        {
+          "orderId": "Primary Order Id 8",
+          "amount": 9367,
+          "method": "Primary Method 8",
+          "reference": "Primary Reference 8",
+          "status": "active",
+          "splitCheckId": "Primary Split Check Id 8"
+        },
+        {
+          "orderId": "Global Order Id 9",
+          "amount": 11348,
+          "method": "Global Method 9",
+          "reference": "Global Reference 9",
+          "status": "active",
+          "splitCheckId": "Global Split Check Id 9"
+        },
+        {
+          "orderId": "Regional Order Id 10",
+          "amount": 13329,
+          "method": "Regional Method 10",
+          "reference": "Regional Reference 10",
+          "status": "pending",
+          "splitCheckId": "Regional Split Check Id 10"
+        },
+        {
+          "orderId": "Custom Order Id 11",
+          "amount": 15310,
+          "method": "Custom Method 11",
+          "reference": "Custom Reference 11",
+          "status": "completed",
+          "splitCheckId": "Custom Split Check Id 11"
+        },
+        {
+          "orderId": "Smart Order Id 12",
+          "amount": 17291,
+          "method": "Smart Method 12",
+          "reference": "Smart Reference 12",
+          "status": "active",
+          "splitCheckId": "Smart Split Check Id 12"
+        },
+        {
+          "orderId": "Rapid Order Id 13",
+          "amount": 19272,
+          "method": "Rapid Method 13",
+          "reference": "Rapid Reference 13",
+          "status": "in_progress",
+          "splitCheckId": "Rapid Split Check Id 13"
+        },
+        {
+          "orderId": "Secure Order Id 14",
+          "amount": 21253,
+          "method": "Secure Method 14",
+          "reference": "Secure Reference 14",
+          "status": "active",
+          "splitCheckId": "Secure Split Check Id 14"
+        },
+        {
+          "orderId": "Modern Order Id 15",
+          "amount": 18234,
+          "method": "Modern Method 15",
+          "reference": "Modern Reference 15",
+          "status": "approved",
+          "splitCheckId": "Modern Split Check Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "SplitCheck",
+      "routeKey": "split-checks",
+      "label": "Split Check",
+      "icon": "layers",
+      "aiFunction": "analyzeSplitCheck",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Split Check data. The data includes: Order Id, Guest Name, Guest Number, Subtotal, Tax, Tip, Total, Is Paid, Paid At, Payment Method. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "orderId",
+          "label": "Order Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "guestName",
+          "label": "Guest Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "guestNumber",
+          "label": "Guest Number",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "subtotal",
+          "label": "Subtotal",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "tax",
+          "label": "Tax",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "tip",
+          "label": "Tip",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "total",
+          "label": "Total",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "isPaid",
+          "label": "Is Paid",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "paidAt",
+          "label": "Paid At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "orderId": "Advanced Order Id 1",
+          "guestName": "Advanced Guest 1",
+          "guestNumber": 95,
+          "subtotal": 10,
+          "tax": 10,
+          "tip": 10,
+          "total": 10,
+          "isPaid": true,
+          "paidAt": "2024-01-01",
+          "paymentMethod": "Advanced Payment Method 1"
+        },
+        {
+          "orderId": "Premium Order Id 2",
+          "guestName": "Premium Guest 2",
+          "guestNumber": 140,
+          "subtotal": 71.7,
+          "tax": 71.7,
+          "tip": 71.7,
+          "total": 71.7,
+          "isPaid": true,
+          "paidAt": "2024-02-03",
+          "paymentMethod": "Premium Payment Method 2"
+        },
+        {
+          "orderId": "Standard Order Id 3",
+          "guestName": "Standard Guest 3",
+          "guestNumber": 126,
+          "subtotal": 33.4,
+          "tax": 33.4,
+          "tip": 33.4,
+          "total": 33.4,
+          "isPaid": false,
+          "paidAt": "2024-03-05",
+          "paymentMethod": "Standard Payment Method 3"
+        },
+        {
+          "orderId": "Elite Order Id 4",
+          "guestName": "Elite Guest 4",
+          "guestNumber": 155,
+          "subtotal": 95.1,
+          "tax": 95.1,
+          "tip": 95.1,
+          "total": 95.1,
+          "isPaid": true,
+          "paidAt": "2024-04-07",
+          "paymentMethod": "Elite Payment Method 4"
+        },
+        {
+          "orderId": "Core Order Id 5",
+          "guestName": "Core Guest 5",
+          "guestNumber": 216,
+          "subtotal": 56.8,
+          "tax": 56.8,
+          "tip": 56.8,
+          "total": 56.8,
+          "isPaid": false,
+          "paidAt": "2024-05-09",
+          "paymentMethod": "Core Payment Method 5"
+        },
+        {
+          "orderId": "Pro Order Id 6",
+          "guestName": "Pro Guest 6",
+          "guestNumber": 132,
+          "subtotal": 118.5,
+          "tax": 118.5,
+          "tip": 118.5,
+          "total": 118.5,
+          "isPaid": true,
+          "paidAt": "2024-06-11",
+          "paymentMethod": "Pro Payment Method 6"
+        },
+        {
+          "orderId": "Essential Order Id 7",
+          "guestName": "Essential Guest 7",
+          "guestNumber": 93,
+          "subtotal": 80.2,
+          "tax": 80.2,
+          "tip": 80.2,
+          "total": 80.2,
+          "isPaid": true,
+          "paidAt": "2024-07-13",
+          "paymentMethod": "Essential Payment Method 7"
+        },
+        {
+          "orderId": "Primary Order Id 8",
+          "guestName": "Primary Guest 8",
+          "guestNumber": 140,
+          "subtotal": 141.9,
+          "tax": 141.9,
+          "tip": 141.9,
+          "total": 141.9,
+          "isPaid": false,
+          "paidAt": "2024-08-15",
+          "paymentMethod": "Primary Payment Method 8"
+        },
+        {
+          "orderId": "Global Order Id 9",
+          "guestName": "Global Guest 9",
+          "guestNumber": 225,
+          "subtotal": 103.6,
+          "tax": 103.6,
+          "tip": 103.6,
+          "total": 103.6,
+          "isPaid": true,
+          "paidAt": "2024-09-17",
+          "paymentMethod": "Global Payment Method 9"
+        },
+        {
+          "orderId": "Regional Order Id 10",
+          "guestName": "Regional Guest 10",
+          "guestNumber": 242,
+          "subtotal": 165.3,
+          "tax": 165.3,
+          "tip": 165.3,
+          "total": 165.3,
+          "isPaid": true,
+          "paidAt": "2024-10-19",
+          "paymentMethod": "Regional Payment Method 10"
+        },
+        {
+          "orderId": "Custom Order Id 11",
+          "guestName": "Custom Guest 11",
+          "guestNumber": 128,
+          "subtotal": 127,
+          "tax": 127,
+          "tip": 127,
+          "total": 127,
+          "isPaid": false,
+          "paidAt": "2024-11-21",
+          "paymentMethod": "Custom Payment Method 11"
+        },
+        {
+          "orderId": "Smart Order Id 12",
+          "guestName": "Smart Guest 12",
+          "guestNumber": 136,
+          "subtotal": 188.7,
+          "tax": 188.7,
+          "tip": 188.7,
+          "total": 188.7,
+          "isPaid": true,
+          "paidAt": "2024-12-23",
+          "paymentMethod": "Smart Payment Method 12"
+        },
+        {
+          "orderId": "Rapid Order Id 13",
+          "guestName": "Rapid Guest 13",
+          "guestNumber": 252,
+          "subtotal": 150.4,
+          "tax": 150.4,
+          "tip": 150.4,
+          "total": 150.4,
+          "isPaid": false,
+          "paidAt": "2024-01-25",
+          "paymentMethod": "Rapid Payment Method 13"
+        },
+        {
+          "orderId": "Secure Order Id 14",
+          "guestName": "Secure Guest 14",
+          "guestNumber": 238,
+          "subtotal": 212.1,
+          "tax": 212.1,
+          "tip": 212.1,
+          "total": 212.1,
+          "isPaid": true,
+          "paidAt": "2024-02-27",
+          "paymentMethod": "Secure Payment Method 14"
+        },
+        {
+          "orderId": "Modern Order Id 15",
+          "guestName": "Modern Guest 15",
+          "guestNumber": 238,
+          "subtotal": 173.8,
+          "tax": 173.8,
+          "tip": 173.8,
+          "total": 173.8,
+          "isPaid": true,
+          "paidAt": "2024-03-01",
+          "paymentMethod": "Modern Payment Method 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Reservation",
+      "routeKey": "reservations",
+      "label": "Reservation",
+      "icon": "map-pin",
+      "aiFunction": "analyzeReservation",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Reservation data. The data includes: Customer Id, Customer Name, Customer Phone, Customer Email, Party Size, Date, Time, Table Id, Special Occasion, Notes, Source. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerPhone",
+          "label": "Customer Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerEmail",
+          "label": "Customer Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "partySize",
+          "label": "Party Size",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "time",
+          "label": "Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "tableId",
+          "label": "Table Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "specialOccasion",
+          "label": "Special Occasion",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": "Advanced Customer Id 1",
+          "customerName": "James Wilson",
+          "customerPhone": "(555) 100-1000",
+          "customerEmail": "james.wilson@example.com",
+          "partySize": 10,
+          "date": "2024-01-01",
+          "time": "2024-01-01",
+          "tableId": "Advanced Table Id 1",
+          "specialOccasion": "Advanced Special Occasion 1",
+          "notes": "Advanced Notes 1",
+          "source": "Advanced Source 1"
+        },
+        {
+          "customerId": "Premium Customer Id 2",
+          "customerName": "Sarah Chen",
+          "customerPhone": "(556) 137-1113",
+          "customerEmail": "sarah.chen@example.com",
+          "partySize": 58,
+          "date": "2024-02-03",
+          "time": "2024-02-03",
+          "tableId": "Premium Table Id 2",
+          "specialOccasion": "Premium Special Occasion 2",
+          "notes": "Premium Notes 2",
+          "source": "Premium Source 2"
+        },
+        {
+          "customerId": "Standard Customer Id 3",
+          "customerName": "Michael Brown",
+          "customerPhone": "(557) 174-1226",
+          "customerEmail": "michael.brown@example.com",
+          "partySize": 106,
+          "date": "2024-03-05",
+          "time": "2024-03-05",
+          "tableId": "Standard Table Id 3",
+          "specialOccasion": "Standard Special Occasion 3",
+          "notes": "Standard Notes 3",
+          "source": "Standard Source 3"
+        },
+        {
+          "customerId": "Elite Customer Id 4",
+          "customerName": "Emily Davis",
+          "customerPhone": "(558) 211-1339",
+          "customerEmail": "emily.davis@example.com",
+          "partySize": 154,
+          "date": "2024-04-07",
+          "time": "2024-04-07",
+          "tableId": "Elite Table Id 4",
+          "specialOccasion": "Elite Special Occasion 4",
+          "notes": "Elite Notes 4",
+          "source": "Elite Source 4"
+        },
+        {
+          "customerId": "Core Customer Id 5",
+          "customerName": "Robert Garcia",
+          "customerPhone": "(555) 248-1452",
+          "customerEmail": "robert.garcia@example.com",
+          "partySize": 102,
+          "date": "2024-05-09",
+          "time": "2024-05-09",
+          "tableId": "Core Table Id 5",
+          "specialOccasion": "Core Special Occasion 5",
+          "notes": "Core Notes 5",
+          "source": "Core Source 5"
+        },
+        {
+          "customerId": "Pro Customer Id 6",
+          "customerName": "Lisa Anderson",
+          "customerPhone": "(556) 285-1565",
+          "customerEmail": "lisa.anderson@example.com",
+          "partySize": 150,
+          "date": "2024-06-11",
+          "time": "2024-06-11",
+          "tableId": "Pro Table Id 6",
+          "specialOccasion": "Pro Special Occasion 6",
+          "notes": "Pro Notes 6",
+          "source": "Pro Source 6"
+        },
+        {
+          "customerId": "Essential Customer Id 7",
+          "customerName": "David Martinez",
+          "customerPhone": "(557) 322-1678",
+          "customerEmail": "david.martinez@example.com",
+          "partySize": 198,
+          "date": "2024-07-13",
+          "time": "2024-07-13",
+          "tableId": "Essential Table Id 7",
+          "specialOccasion": "Essential Special Occasion 7",
+          "notes": "Essential Notes 7",
+          "source": "Essential Source 7"
+        },
+        {
+          "customerId": "Primary Customer Id 8",
+          "customerName": "Jennifer Taylor",
+          "customerPhone": "(558) 359-1791",
+          "customerEmail": "jennifer.taylor@example.com",
+          "partySize": 146,
+          "date": "2024-08-15",
+          "time": "2024-08-15",
+          "tableId": "Primary Table Id 8",
+          "specialOccasion": "Primary Special Occasion 8",
+          "notes": "Primary Notes 8",
+          "source": "Primary Source 8"
+        },
+        {
+          "customerId": "Global Customer Id 9",
+          "customerName": "William Johnson",
+          "customerPhone": "(555) 396-1904",
+          "customerEmail": "william.johnson@example.com",
+          "partySize": 194,
+          "date": "2024-09-17",
+          "time": "2024-09-17",
+          "tableId": "Global Table Id 9",
+          "specialOccasion": "Global Special Occasion 9",
+          "notes": "Global Notes 9",
+          "source": "Global Source 9"
+        },
+        {
+          "customerId": "Regional Customer Id 10",
+          "customerName": "Maria Rodriguez",
+          "customerPhone": "(556) 433-2017",
+          "customerEmail": "maria.rodriguez@example.com",
+          "partySize": 242,
+          "date": "2024-10-19",
+          "time": "2024-10-19",
+          "tableId": "Regional Table Id 10",
+          "specialOccasion": "Regional Special Occasion 10",
+          "notes": "Regional Notes 10",
+          "source": "Regional Source 10"
+        },
+        {
+          "customerId": "Custom Customer Id 11",
+          "customerName": "Thomas Lee",
+          "customerPhone": "(557) 470-2130",
+          "customerEmail": "thomas.lee@example.com",
+          "partySize": 190,
+          "date": "2024-11-21",
+          "time": "2024-11-21",
+          "tableId": "Custom Table Id 11",
+          "specialOccasion": "Custom Special Occasion 11",
+          "notes": "Custom Notes 11",
+          "source": "Custom Source 11"
+        },
+        {
+          "customerId": "Smart Customer Id 12",
+          "customerName": "Patricia White",
+          "customerPhone": "(558) 507-2243",
+          "customerEmail": "patricia.white@example.com",
+          "partySize": 238,
+          "date": "2024-12-23",
+          "time": "2024-12-23",
+          "tableId": "Smart Table Id 12",
+          "specialOccasion": "Smart Special Occasion 12",
+          "notes": "Smart Notes 12",
+          "source": "Smart Source 12"
+        },
+        {
+          "customerId": "Rapid Customer Id 13",
+          "customerName": "Christopher Hall",
+          "customerPhone": "(555) 544-2356",
+          "customerEmail": "christopher.hall@example.com",
+          "partySize": 286,
+          "date": "2024-01-25",
+          "time": "2024-01-25",
+          "tableId": "Rapid Table Id 13",
+          "specialOccasion": "Rapid Special Occasion 13",
+          "notes": "Rapid Notes 13",
+          "source": "Rapid Source 13"
+        },
+        {
+          "customerId": "Secure Customer Id 14",
+          "customerName": "Amanda Clark",
+          "customerPhone": "(556) 581-2469",
+          "customerEmail": "amanda.clark@example.com",
+          "partySize": 234,
+          "date": "2024-02-27",
+          "time": "2024-02-27",
+          "tableId": "Secure Table Id 14",
+          "specialOccasion": "Secure Special Occasion 14",
+          "notes": "Secure Notes 14",
+          "source": "Secure Source 14"
+        },
+        {
+          "customerId": "Modern Customer Id 15",
+          "customerName": "Daniel Wright",
+          "customerPhone": "(557) 618-2582",
+          "customerEmail": "daniel.wright@example.com",
+          "partySize": 282,
+          "date": "2024-03-01",
+          "time": "2024-03-01",
+          "tableId": "Modern Table Id 15",
+          "specialOccasion": "Modern Special Occasion 15",
+          "notes": "Modern Notes 15",
+          "source": "Modern Source 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Vendor",
+      "routeKey": "vendors",
+      "label": "Vendor",
+      "icon": "book",
+      "aiFunction": "analyzeVendor",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Vendor data. The data includes: Name, Contact Name, Email, Phone, Address, Payment Terms, Notes, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactName",
+          "label": "Contact Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentTerms",
+          "label": "Payment Terms",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "contactName": "James Wilson",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "New York",
+          "paymentTerms": "Advanced Payment Terms 1",
+          "notes": "Advanced Notes 1",
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "contactName": "Sarah Chen",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Los Angeles",
+          "paymentTerms": "Premium Payment Terms 2",
+          "notes": "Premium Notes 2",
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "contactName": "Michael Brown",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Chicago",
+          "paymentTerms": "Standard Payment Terms 3",
+          "notes": "Standard Notes 3",
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "contactName": "Emily Davis",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Houston",
+          "paymentTerms": "Elite Payment Terms 4",
+          "notes": "Elite Notes 4",
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "contactName": "Robert Garcia",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Phoenix",
+          "paymentTerms": "Core Payment Terms 5",
+          "notes": "Core Notes 5",
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "contactName": "Lisa Anderson",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "San Francisco",
+          "paymentTerms": "Pro Payment Terms 6",
+          "notes": "Pro Notes 6",
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "contactName": "David Martinez",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Seattle",
+          "paymentTerms": "Essential Payment Terms 7",
+          "notes": "Essential Notes 7",
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "contactName": "Jennifer Taylor",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Boston",
+          "paymentTerms": "Primary Payment Terms 8",
+          "notes": "Primary Notes 8",
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "contactName": "William Johnson",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Denver",
+          "paymentTerms": "Global Payment Terms 9",
+          "notes": "Global Notes 9",
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "contactName": "Maria Rodriguez",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Miami",
+          "paymentTerms": "Regional Payment Terms 10",
+          "notes": "Regional Notes 10",
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "contactName": "Thomas Lee",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Austin",
+          "paymentTerms": "Custom Payment Terms 11",
+          "notes": "Custom Notes 11",
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "contactName": "Patricia White",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Portland",
+          "paymentTerms": "Smart Payment Terms 12",
+          "notes": "Smart Notes 12",
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "contactName": "Christopher Hall",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Dallas",
+          "paymentTerms": "Rapid Payment Terms 13",
+          "notes": "Rapid Notes 13",
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "contactName": "Amanda Clark",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Atlanta",
+          "paymentTerms": "Secure Payment Terms 14",
+          "notes": "Secure Notes 14",
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "contactName": "Daniel Wright",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Nashville",
+          "paymentTerms": "Modern Payment Terms 15",
+          "notes": "Modern Notes 15",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "Customer",
+      "routeKey": "customers",
+      "label": "Customer",
+      "icon": "package",
+      "aiFunction": "analyzeCustomer",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Customer data. The data includes: First Name, Last Name, Email, Phone, Address, Birthday, Anniversary, Dietary Prefs, Allergens, Notes, Vip Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "birthday",
+          "label": "Birthday",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "anniversary",
+          "label": "Anniversary",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "dietaryPrefs",
+          "label": "Dietary Prefs",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "allergens",
+          "label": "Allergens",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "vipStatus",
+          "label": "Vip Status",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "New York",
+          "birthday": "2024-01-01",
+          "anniversary": "2024-01-01",
+          "dietaryPrefs": "Advanced Dietary Prefs 1",
+          "allergens": "Advanced Allergens 1",
+          "notes": "Advanced Notes 1",
+          "vipStatus": true
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Los Angeles",
+          "birthday": "2024-02-03",
+          "anniversary": "2024-02-03",
+          "dietaryPrefs": "Premium Dietary Prefs 2",
+          "allergens": "Premium Allergens 2",
+          "notes": "Premium Notes 2",
+          "vipStatus": true
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Chicago",
+          "birthday": "2024-03-05",
+          "anniversary": "2024-03-05",
+          "dietaryPrefs": "Standard Dietary Prefs 3",
+          "allergens": "Standard Allergens 3",
+          "notes": "Standard Notes 3",
+          "vipStatus": false
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Houston",
+          "birthday": "2024-04-07",
+          "anniversary": "2024-04-07",
+          "dietaryPrefs": "Elite Dietary Prefs 4",
+          "allergens": "Elite Allergens 4",
+          "notes": "Elite Notes 4",
+          "vipStatus": true
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Phoenix",
+          "birthday": "2024-05-09",
+          "anniversary": "2024-05-09",
+          "dietaryPrefs": "Core Dietary Prefs 5",
+          "allergens": "Core Allergens 5",
+          "notes": "Core Notes 5",
+          "vipStatus": false
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "San Francisco",
+          "birthday": "2024-06-11",
+          "anniversary": "2024-06-11",
+          "dietaryPrefs": "Pro Dietary Prefs 6",
+          "allergens": "Pro Allergens 6",
+          "notes": "Pro Notes 6",
+          "vipStatus": true
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Seattle",
+          "birthday": "2024-07-13",
+          "anniversary": "2024-07-13",
+          "dietaryPrefs": "Essential Dietary Prefs 7",
+          "allergens": "Essential Allergens 7",
+          "notes": "Essential Notes 7",
+          "vipStatus": true
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Boston",
+          "birthday": "2024-08-15",
+          "anniversary": "2024-08-15",
+          "dietaryPrefs": "Primary Dietary Prefs 8",
+          "allergens": "Primary Allergens 8",
+          "notes": "Primary Notes 8",
+          "vipStatus": false
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Denver",
+          "birthday": "2024-09-17",
+          "anniversary": "2024-09-17",
+          "dietaryPrefs": "Global Dietary Prefs 9",
+          "allergens": "Global Allergens 9",
+          "notes": "Global Notes 9",
+          "vipStatus": true
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Miami",
+          "birthday": "2024-10-19",
+          "anniversary": "2024-10-19",
+          "dietaryPrefs": "Regional Dietary Prefs 10",
+          "allergens": "Regional Allergens 10",
+          "notes": "Regional Notes 10",
+          "vipStatus": true
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Austin",
+          "birthday": "2024-11-21",
+          "anniversary": "2024-11-21",
+          "dietaryPrefs": "Custom Dietary Prefs 11",
+          "allergens": "Custom Allergens 11",
+          "notes": "Custom Notes 11",
+          "vipStatus": false
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Portland",
+          "birthday": "2024-12-23",
+          "anniversary": "2024-12-23",
+          "dietaryPrefs": "Smart Dietary Prefs 12",
+          "allergens": "Smart Allergens 12",
+          "notes": "Smart Notes 12",
+          "vipStatus": true
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Dallas",
+          "birthday": "2024-01-25",
+          "anniversary": "2024-01-25",
+          "dietaryPrefs": "Rapid Dietary Prefs 13",
+          "allergens": "Rapid Allergens 13",
+          "notes": "Rapid Notes 13",
+          "vipStatus": false
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Atlanta",
+          "birthday": "2024-02-27",
+          "anniversary": "2024-02-27",
+          "dietaryPrefs": "Secure Dietary Prefs 14",
+          "allergens": "Secure Allergens 14",
+          "notes": "Secure Notes 14",
+          "vipStatus": true
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Nashville",
+          "birthday": "2024-03-01",
+          "anniversary": "2024-03-01",
+          "dietaryPrefs": "Modern Dietary Prefs 15",
+          "allergens": "Modern Allergens 15",
+          "notes": "Modern Notes 15",
+          "vipStatus": true
+        }
+      ]
+    },
+    {
+      "modelName": "LoyaltyPoints",
+      "routeKey": "loyalty-points",
+      "label": "Loyalty Points",
+      "icon": "shield",
+      "aiFunction": "analyzeLoyaltyPoints",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Loyalty Points data. The data includes: Customer Id, Points, Lifetime Points. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "points",
+          "label": "Points",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "lifetimePoints",
+          "label": "Lifetime Points",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": "Advanced Customer Id 1",
+          "points": 10,
+          "lifetimePoints": 10
+        },
+        {
+          "customerId": "Premium Customer Id 2",
+          "points": 58,
+          "lifetimePoints": 58
+        },
+        {
+          "customerId": "Standard Customer Id 3",
+          "points": 106,
+          "lifetimePoints": 106
+        },
+        {
+          "customerId": "Elite Customer Id 4",
+          "points": 154,
+          "lifetimePoints": 154
+        },
+        {
+          "customerId": "Core Customer Id 5",
+          "points": 102,
+          "lifetimePoints": 102
+        },
+        {
+          "customerId": "Pro Customer Id 6",
+          "points": 150,
+          "lifetimePoints": 150
+        },
+        {
+          "customerId": "Essential Customer Id 7",
+          "points": 198,
+          "lifetimePoints": 198
+        },
+        {
+          "customerId": "Primary Customer Id 8",
+          "points": 146,
+          "lifetimePoints": 146
+        },
+        {
+          "customerId": "Global Customer Id 9",
+          "points": 194,
+          "lifetimePoints": 194
+        },
+        {
+          "customerId": "Regional Customer Id 10",
+          "points": 242,
+          "lifetimePoints": 242
+        },
+        {
+          "customerId": "Custom Customer Id 11",
+          "points": 190,
+          "lifetimePoints": 190
+        },
+        {
+          "customerId": "Smart Customer Id 12",
+          "points": 238,
+          "lifetimePoints": 238
+        },
+        {
+          "customerId": "Rapid Customer Id 13",
+          "points": 286,
+          "lifetimePoints": 286
+        },
+        {
+          "customerId": "Secure Customer Id 14",
+          "points": 234,
+          "lifetimePoints": 234
+        },
+        {
+          "customerId": "Modern Customer Id 15",
+          "points": 282,
+          "lifetimePoints": 282
+        }
+      ]
+    },
+    {
+      "modelName": "Waitlist",
+      "routeKey": "waitlists",
+      "label": "Waitlist",
+      "icon": "package",
+      "aiFunction": "analyzeWaitlist",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Waitlist data. The data includes: Customer Name, Customer Phone, Party Size, Estimated Wait, Quoted Time, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerPhone",
+          "label": "Customer Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "partySize",
+          "label": "Party Size",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "estimatedWait",
+          "label": "Estimated Wait",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "quotedTime",
+          "label": "Quoted Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerName": "James Wilson",
+          "customerPhone": "(555) 100-1000",
+          "partySize": 10,
+          "estimatedWait": 10,
+          "quotedTime": "2024-01-01",
+          "notes": "Advanced Notes 1"
+        },
+        {
+          "customerName": "Sarah Chen",
+          "customerPhone": "(556) 137-1113",
+          "partySize": 58,
+          "estimatedWait": 58,
+          "quotedTime": "2024-02-03",
+          "notes": "Premium Notes 2"
+        },
+        {
+          "customerName": "Michael Brown",
+          "customerPhone": "(557) 174-1226",
+          "partySize": 106,
+          "estimatedWait": 106,
+          "quotedTime": "2024-03-05",
+          "notes": "Standard Notes 3"
+        },
+        {
+          "customerName": "Emily Davis",
+          "customerPhone": "(558) 211-1339",
+          "partySize": 154,
+          "estimatedWait": 154,
+          "quotedTime": "2024-04-07",
+          "notes": "Elite Notes 4"
+        },
+        {
+          "customerName": "Robert Garcia",
+          "customerPhone": "(555) 248-1452",
+          "partySize": 102,
+          "estimatedWait": 102,
+          "quotedTime": "2024-05-09",
+          "notes": "Core Notes 5"
+        },
+        {
+          "customerName": "Lisa Anderson",
+          "customerPhone": "(556) 285-1565",
+          "partySize": 150,
+          "estimatedWait": 150,
+          "quotedTime": "2024-06-11",
+          "notes": "Pro Notes 6"
+        },
+        {
+          "customerName": "David Martinez",
+          "customerPhone": "(557) 322-1678",
+          "partySize": 198,
+          "estimatedWait": 198,
+          "quotedTime": "2024-07-13",
+          "notes": "Essential Notes 7"
+        },
+        {
+          "customerName": "Jennifer Taylor",
+          "customerPhone": "(558) 359-1791",
+          "partySize": 146,
+          "estimatedWait": 146,
+          "quotedTime": "2024-08-15",
+          "notes": "Primary Notes 8"
+        },
+        {
+          "customerName": "William Johnson",
+          "customerPhone": "(555) 396-1904",
+          "partySize": 194,
+          "estimatedWait": 194,
+          "quotedTime": "2024-09-17",
+          "notes": "Global Notes 9"
+        },
+        {
+          "customerName": "Maria Rodriguez",
+          "customerPhone": "(556) 433-2017",
+          "partySize": 242,
+          "estimatedWait": 242,
+          "quotedTime": "2024-10-19",
+          "notes": "Regional Notes 10"
+        },
+        {
+          "customerName": "Thomas Lee",
+          "customerPhone": "(557) 470-2130",
+          "partySize": 190,
+          "estimatedWait": 190,
+          "quotedTime": "2024-11-21",
+          "notes": "Custom Notes 11"
+        },
+        {
+          "customerName": "Patricia White",
+          "customerPhone": "(558) 507-2243",
+          "partySize": 238,
+          "estimatedWait": 238,
+          "quotedTime": "2024-12-23",
+          "notes": "Smart Notes 12"
+        },
+        {
+          "customerName": "Christopher Hall",
+          "customerPhone": "(555) 544-2356",
+          "partySize": 286,
+          "estimatedWait": 286,
+          "quotedTime": "2024-01-25",
+          "notes": "Rapid Notes 13"
+        },
+        {
+          "customerName": "Amanda Clark",
+          "customerPhone": "(556) 581-2469",
+          "partySize": 234,
+          "estimatedWait": 234,
+          "quotedTime": "2024-02-27",
+          "notes": "Secure Notes 14"
+        },
+        {
+          "customerName": "Daniel Wright",
+          "customerPhone": "(557) 618-2582",
+          "partySize": 282,
+          "estimatedWait": 282,
+          "quotedTime": "2024-03-01",
+          "notes": "Modern Notes 15"
+        }
+      ]
+    },
+    {
+      "modelName": "DemandForecast",
+      "routeKey": "demand-forecasts",
+      "label": "Demand Forecast",
+      "icon": "zap",
+      "aiFunction": "analyzeDemandForecast",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Demand Forecast data. The data includes: Date, Day Of Week, Hour, Predicted Covers, Predicted Revenue, Confidence. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "dayOfWeek",
+          "label": "Day Of Week",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "hour",
+          "label": "Hour",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "predictedCovers",
+          "label": "Predicted Covers",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "predictedRevenue",
+          "label": "Predicted Revenue",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "confidence",
+          "label": "Confidence",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "date": "2024-01-01",
+          "dayOfWeek": 10,
+          "hour": 10,
+          "predictedCovers": 10,
+          "predictedRevenue": 500,
+          "confidence": 10
+        },
+        {
+          "date": "2024-02-03",
+          "dayOfWeek": 58,
+          "hour": 58,
+          "predictedCovers": 58,
+          "predictedRevenue": 2481,
+          "confidence": 71.7
+        },
+        {
+          "date": "2024-03-05",
+          "dayOfWeek": 106,
+          "hour": 106,
+          "predictedCovers": 106,
+          "predictedRevenue": 4462,
+          "confidence": 33.4
+        },
+        {
+          "date": "2024-04-07",
+          "dayOfWeek": 154,
+          "hour": 154,
+          "predictedCovers": 154,
+          "predictedRevenue": 6443,
+          "confidence": 95.1
+        },
+        {
+          "date": "2024-05-09",
+          "dayOfWeek": 102,
+          "hour": 102,
+          "predictedCovers": 102,
+          "predictedRevenue": 8424,
+          "confidence": 56.8
+        },
+        {
+          "date": "2024-06-11",
+          "dayOfWeek": 150,
+          "hour": 150,
+          "predictedCovers": 150,
+          "predictedRevenue": 10405,
+          "confidence": 118.5
+        },
+        {
+          "date": "2024-07-13",
+          "dayOfWeek": 198,
+          "hour": 198,
+          "predictedCovers": 198,
+          "predictedRevenue": 12386,
+          "confidence": 80.2
+        },
+        {
+          "date": "2024-08-15",
+          "dayOfWeek": 146,
+          "hour": 146,
+          "predictedCovers": 146,
+          "predictedRevenue": 9367,
+          "confidence": 141.9
+        },
+        {
+          "date": "2024-09-17",
+          "dayOfWeek": 194,
+          "hour": 194,
+          "predictedCovers": 194,
+          "predictedRevenue": 11348,
+          "confidence": 103.6
+        },
+        {
+          "date": "2024-10-19",
+          "dayOfWeek": 242,
+          "hour": 242,
+          "predictedCovers": 242,
+          "predictedRevenue": 13329,
+          "confidence": 165.3
+        },
+        {
+          "date": "2024-11-21",
+          "dayOfWeek": 190,
+          "hour": 190,
+          "predictedCovers": 190,
+          "predictedRevenue": 15310,
+          "confidence": 127
+        },
+        {
+          "date": "2024-12-23",
+          "dayOfWeek": 238,
+          "hour": 238,
+          "predictedCovers": 238,
+          "predictedRevenue": 17291,
+          "confidence": 188.7
+        },
+        {
+          "date": "2024-01-25",
+          "dayOfWeek": 286,
+          "hour": 286,
+          "predictedCovers": 286,
+          "predictedRevenue": 19272,
+          "confidence": 150.4
+        },
+        {
+          "date": "2024-02-27",
+          "dayOfWeek": 234,
+          "hour": 234,
+          "predictedCovers": 234,
+          "predictedRevenue": 21253,
+          "confidence": 212.1
+        },
+        {
+          "date": "2024-03-01",
+          "dayOfWeek": 282,
+          "hour": 282,
+          "predictedCovers": 282,
+          "predictedRevenue": 18234,
+          "confidence": 173.8
+        }
+      ]
+    },
+    {
+      "modelName": "SalesReport",
+      "routeKey": "sales-reports",
+      "label": "Sales Report",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeSalesReport",
+      "aiPrompt": "You are an AI analyst for independent Restaurant. Analyze the provided Sales Report data. The data includes: Date, Total Orders, Total Revenue, Total Tax, Total Tips, Total Discount, Avg Order Value, Top Items, Hourly Breakdown. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "totalOrders",
+          "label": "Total Orders",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "totalRevenue",
+          "label": "Total Revenue",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "totalTax",
+          "label": "Total Tax",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "totalTips",
+          "label": "Total Tips",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "totalDiscount",
+          "label": "Total Discount",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "avgOrderValue",
+          "label": "Avg Order Value",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "topItems",
+          "label": "Top Items",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "hourlyBreakdown",
+          "label": "Hourly Breakdown",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "date": "2024-01-01",
+          "totalOrders": 10,
+          "totalRevenue": 500,
+          "totalTax": 10,
+          "totalTips": 10,
+          "totalDiscount": 10,
+          "avgOrderValue": 10,
+          "topItems": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "hourlyBreakdown": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "date": "2024-02-03",
+          "totalOrders": 58,
+          "totalRevenue": 2481,
+          "totalTax": 71.7,
+          "totalTips": 71.7,
+          "totalDiscount": 71.7,
+          "avgOrderValue": 71.7,
+          "topItems": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "hourlyBreakdown": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "date": "2024-03-05",
+          "totalOrders": 106,
+          "totalRevenue": 4462,
+          "totalTax": 33.4,
+          "totalTips": 33.4,
+          "totalDiscount": 33.4,
+          "avgOrderValue": 33.4,
+          "topItems": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "hourlyBreakdown": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "date": "2024-04-07",
+          "totalOrders": 154,
+          "totalRevenue": 6443,
+          "totalTax": 95.1,
+          "totalTips": 95.1,
+          "totalDiscount": 95.1,
+          "avgOrderValue": 95.1,
+          "topItems": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "hourlyBreakdown": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "date": "2024-05-09",
+          "totalOrders": 102,
+          "totalRevenue": 8424,
+          "totalTax": 56.8,
+          "totalTips": 56.8,
+          "totalDiscount": 56.8,
+          "avgOrderValue": 56.8,
+          "topItems": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "hourlyBreakdown": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "date": "2024-06-11",
+          "totalOrders": 150,
+          "totalRevenue": 10405,
+          "totalTax": 118.5,
+          "totalTips": 118.5,
+          "totalDiscount": 118.5,
+          "avgOrderValue": 118.5,
+          "topItems": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "hourlyBreakdown": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "date": "2024-07-13",
+          "totalOrders": 198,
+          "totalRevenue": 12386,
+          "totalTax": 80.2,
+          "totalTips": 80.2,
+          "totalDiscount": 80.2,
+          "avgOrderValue": 80.2,
+          "topItems": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "hourlyBreakdown": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "date": "2024-08-15",
+          "totalOrders": 146,
+          "totalRevenue": 9367,
+          "totalTax": 141.9,
+          "totalTips": 141.9,
+          "totalDiscount": 141.9,
+          "avgOrderValue": 141.9,
+          "topItems": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "hourlyBreakdown": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "date": "2024-09-17",
+          "totalOrders": 194,
+          "totalRevenue": 11348,
+          "totalTax": 103.6,
+          "totalTips": 103.6,
+          "totalDiscount": 103.6,
+          "avgOrderValue": 103.6,
+          "topItems": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "hourlyBreakdown": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "date": "2024-10-19",
+          "totalOrders": 242,
+          "totalRevenue": 13329,
+          "totalTax": 165.3,
+          "totalTips": 165.3,
+          "totalDiscount": 165.3,
+          "avgOrderValue": 165.3,
+          "topItems": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "hourlyBreakdown": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "date": "2024-11-21",
+          "totalOrders": 190,
+          "totalRevenue": 15310,
+          "totalTax": 127,
+          "totalTips": 127,
+          "totalDiscount": 127,
+          "avgOrderValue": 127,
+          "topItems": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "hourlyBreakdown": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "date": "2024-12-23",
+          "totalOrders": 238,
+          "totalRevenue": 17291,
+          "totalTax": 188.7,
+          "totalTips": 188.7,
+          "totalDiscount": 188.7,
+          "avgOrderValue": 188.7,
+          "topItems": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "hourlyBreakdown": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "date": "2024-01-25",
+          "totalOrders": 286,
+          "totalRevenue": 19272,
+          "totalTax": 150.4,
+          "totalTips": 150.4,
+          "totalDiscount": 150.4,
+          "avgOrderValue": 150.4,
+          "topItems": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "hourlyBreakdown": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "date": "2024-02-27",
+          "totalOrders": 234,
+          "totalRevenue": 21253,
+          "totalTax": 212.1,
+          "totalTips": 212.1,
+          "totalDiscount": 212.1,
+          "avgOrderValue": 212.1,
+          "topItems": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "hourlyBreakdown": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "date": "2024-03-01",
+          "totalOrders": 282,
+          "totalRevenue": 18234,
+          "totalTax": 173.8,
+          "totalTips": 173.8,
+          "totalDiscount": 173.8,
+          "avgOrderValue": 173.8,
+          "topItems": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "hourlyBreakdown": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    }
+  ]
+}

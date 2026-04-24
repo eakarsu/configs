@@ -1,0 +1,3010 @@
+{
+  "appName": "AI Salesforce CRM (Part 6)",
+  "dbName": "a_i_salesforce_c_r_m_part6",
+  "folderName": "generated/AISalesforceCRMPart6",
+  "features": [
+    {
+      "modelName": "Journey",
+      "routeKey": "journeys",
+      "label": "Journey",
+      "icon": "heart",
+      "aiFunction": "analyzeJourney",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Journey data. The data includes: Name, Description, Status, Type, Trigger Type, Trigger Conditions, Entry Limit, Re Entry Allowed, Business Hours Only, Goal Type, Goal Conditions, Total Entered, Total Completed, Total Converted, Created By Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "triggerType",
+          "label": "Trigger Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "triggerConditions",
+          "label": "Trigger Conditions",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "entryLimit",
+          "label": "Entry Limit",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "reEntryAllowed",
+          "label": "Re Entry Allowed",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "businessHoursOnly",
+          "label": "Business Hours Only",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "goalType",
+          "label": "Goal Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "goalConditions",
+          "label": "Goal Conditions",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "totalEntered",
+          "label": "Total Entered",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "totalCompleted",
+          "label": "Total Completed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "totalConverted",
+          "label": "Total Converted",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "createdById",
+          "label": "Created By Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Advanced Description 1",
+          "status": "active",
+          "type": "Category A",
+          "triggerType": "Category A",
+          "triggerConditions": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "entryLimit": 10,
+          "reEntryAllowed": true,
+          "businessHoursOnly": true,
+          "goalType": "Category A",
+          "goalConditions": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "totalEntered": 10,
+          "totalCompleted": 10,
+          "totalConverted": 10,
+          "createdById": "Advanced Created By Id 1"
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Premium Description 2",
+          "status": "pending",
+          "type": "Category B",
+          "triggerType": "Category B",
+          "triggerConditions": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "entryLimit": 58,
+          "reEntryAllowed": true,
+          "businessHoursOnly": true,
+          "goalType": "Category B",
+          "goalConditions": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "totalEntered": 58,
+          "totalCompleted": 58,
+          "totalConverted": 58,
+          "createdById": "Premium Created By Id 2"
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Standard Description 3",
+          "status": "in_progress",
+          "type": "Category C",
+          "triggerType": "Category C",
+          "triggerConditions": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "entryLimit": 106,
+          "reEntryAllowed": false,
+          "businessHoursOnly": false,
+          "goalType": "Category C",
+          "goalConditions": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "totalEntered": 106,
+          "totalCompleted": 106,
+          "totalConverted": 106,
+          "createdById": "Standard Created By Id 3"
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Elite Description 4",
+          "status": "completed",
+          "type": "Category D",
+          "triggerType": "Category D",
+          "triggerConditions": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "entryLimit": 154,
+          "reEntryAllowed": true,
+          "businessHoursOnly": true,
+          "goalType": "Category D",
+          "goalConditions": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "totalEntered": 154,
+          "totalCompleted": 154,
+          "totalConverted": 154,
+          "createdById": "Elite Created By Id 4"
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Core Description 5",
+          "status": "under_review",
+          "type": "Category E",
+          "triggerType": "Category E",
+          "triggerConditions": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "entryLimit": 102,
+          "reEntryAllowed": false,
+          "businessHoursOnly": false,
+          "goalType": "Category E",
+          "goalConditions": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "totalEntered": 102,
+          "totalCompleted": 102,
+          "totalConverted": 102,
+          "createdById": "Core Created By Id 5"
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "Pro Description 6",
+          "status": "approved",
+          "type": "Premium Tier",
+          "triggerType": "Premium Tier",
+          "triggerConditions": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "entryLimit": 150,
+          "reEntryAllowed": true,
+          "businessHoursOnly": true,
+          "goalType": "Premium Tier",
+          "goalConditions": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "totalEntered": 150,
+          "totalCompleted": 150,
+          "totalConverted": 150,
+          "createdById": "Pro Created By Id 6"
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Essential Description 7",
+          "status": "active",
+          "type": "Standard Tier",
+          "triggerType": "Standard Tier",
+          "triggerConditions": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "entryLimit": 198,
+          "reEntryAllowed": true,
+          "businessHoursOnly": true,
+          "goalType": "Standard Tier",
+          "goalConditions": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "totalEntered": 198,
+          "totalCompleted": 198,
+          "totalConverted": 198,
+          "createdById": "Essential Created By Id 7"
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Primary Description 8",
+          "status": "active",
+          "type": "Basic Tier",
+          "triggerType": "Basic Tier",
+          "triggerConditions": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "entryLimit": 146,
+          "reEntryAllowed": false,
+          "businessHoursOnly": false,
+          "goalType": "Basic Tier",
+          "goalConditions": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "totalEntered": 146,
+          "totalCompleted": 146,
+          "totalConverted": 146,
+          "createdById": "Primary Created By Id 8"
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Global Description 9",
+          "status": "active",
+          "type": "Enterprise",
+          "triggerType": "Enterprise",
+          "triggerConditions": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "entryLimit": 194,
+          "reEntryAllowed": true,
+          "businessHoursOnly": true,
+          "goalType": "Enterprise",
+          "goalConditions": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "totalEntered": 194,
+          "totalCompleted": 194,
+          "totalConverted": 194,
+          "createdById": "Global Created By Id 9"
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Regional Description 10",
+          "status": "pending",
+          "type": "Starter",
+          "triggerType": "Starter",
+          "triggerConditions": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "entryLimit": 242,
+          "reEntryAllowed": true,
+          "businessHoursOnly": true,
+          "goalType": "Starter",
+          "goalConditions": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "totalEntered": 242,
+          "totalCompleted": 242,
+          "totalConverted": 242,
+          "createdById": "Regional Created By Id 10"
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Custom Description 11",
+          "status": "completed",
+          "type": "Growth",
+          "triggerType": "Growth",
+          "triggerConditions": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "entryLimit": 190,
+          "reEntryAllowed": false,
+          "businessHoursOnly": false,
+          "goalType": "Growth",
+          "goalConditions": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "totalEntered": 190,
+          "totalCompleted": 190,
+          "totalConverted": 190,
+          "createdById": "Custom Created By Id 11"
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Smart Description 12",
+          "status": "active",
+          "type": "Scale",
+          "triggerType": "Scale",
+          "triggerConditions": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "entryLimit": 238,
+          "reEntryAllowed": true,
+          "businessHoursOnly": true,
+          "goalType": "Scale",
+          "goalConditions": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "totalEntered": 238,
+          "totalCompleted": 238,
+          "totalConverted": 238,
+          "createdById": "Smart Created By Id 12"
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Rapid Description 13",
+          "status": "in_progress",
+          "type": "Foundation",
+          "triggerType": "Foundation",
+          "triggerConditions": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "entryLimit": 286,
+          "reEntryAllowed": false,
+          "businessHoursOnly": false,
+          "goalType": "Foundation",
+          "goalConditions": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "totalEntered": 286,
+          "totalCompleted": 286,
+          "totalConverted": 286,
+          "createdById": "Rapid Created By Id 13"
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Secure Description 14",
+          "status": "active",
+          "type": "Advanced",
+          "triggerType": "Advanced",
+          "triggerConditions": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "entryLimit": 234,
+          "reEntryAllowed": true,
+          "businessHoursOnly": true,
+          "goalType": "Advanced",
+          "goalConditions": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "totalEntered": 234,
+          "totalCompleted": 234,
+          "totalConverted": 234,
+          "createdById": "Secure Created By Id 14"
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Modern Description 15",
+          "status": "approved",
+          "type": "Professional",
+          "triggerType": "Professional",
+          "triggerConditions": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "entryLimit": 282,
+          "reEntryAllowed": true,
+          "businessHoursOnly": true,
+          "goalType": "Professional",
+          "goalConditions": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "totalEntered": 282,
+          "totalCompleted": 282,
+          "totalConverted": 282,
+          "createdById": "Modern Created By Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "ServiceResourceSkill",
+      "routeKey": "service-resource-skills",
+      "label": "Service Resource Skill",
+      "icon": "heart",
+      "aiFunction": "analyzeServiceResourceSkill",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Service Resource Skill data. The data includes: Resource Id, Skill Id, Skill Level, Effective Start, Effective End. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "resourceId",
+          "label": "Resource Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "skillId",
+          "label": "Skill Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "skillLevel",
+          "label": "Skill Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "effectiveStart",
+          "label": "Effective Start",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "effectiveEnd",
+          "label": "Effective End",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "resourceId": "Advanced Resource Id 1",
+          "skillId": "Advanced Skill Id 1",
+          "skillLevel": "low",
+          "effectiveStart": "2024-01-01",
+          "effectiveEnd": "2024-01-01"
+        },
+        {
+          "resourceId": "Premium Resource Id 2",
+          "skillId": "Premium Skill Id 2",
+          "skillLevel": "medium",
+          "effectiveStart": "2024-02-03",
+          "effectiveEnd": "2024-02-03"
+        },
+        {
+          "resourceId": "Standard Resource Id 3",
+          "skillId": "Standard Skill Id 3",
+          "skillLevel": "high",
+          "effectiveStart": "2024-03-05",
+          "effectiveEnd": "2024-03-05"
+        },
+        {
+          "resourceId": "Elite Resource Id 4",
+          "skillId": "Elite Skill Id 4",
+          "skillLevel": "critical",
+          "effectiveStart": "2024-04-07",
+          "effectiveEnd": "2024-04-07"
+        },
+        {
+          "resourceId": "Core Resource Id 5",
+          "skillId": "Core Skill Id 5",
+          "skillLevel": "medium",
+          "effectiveStart": "2024-05-09",
+          "effectiveEnd": "2024-05-09"
+        },
+        {
+          "resourceId": "Pro Resource Id 6",
+          "skillId": "Pro Skill Id 6",
+          "skillLevel": "low",
+          "effectiveStart": "2024-06-11",
+          "effectiveEnd": "2024-06-11"
+        },
+        {
+          "resourceId": "Essential Resource Id 7",
+          "skillId": "Essential Skill Id 7",
+          "skillLevel": "medium",
+          "effectiveStart": "2024-07-13",
+          "effectiveEnd": "2024-07-13"
+        },
+        {
+          "resourceId": "Primary Resource Id 8",
+          "skillId": "Primary Skill Id 8",
+          "skillLevel": "high",
+          "effectiveStart": "2024-08-15",
+          "effectiveEnd": "2024-08-15"
+        },
+        {
+          "resourceId": "Global Resource Id 9",
+          "skillId": "Global Skill Id 9",
+          "skillLevel": "critical",
+          "effectiveStart": "2024-09-17",
+          "effectiveEnd": "2024-09-17"
+        },
+        {
+          "resourceId": "Regional Resource Id 10",
+          "skillId": "Regional Skill Id 10",
+          "skillLevel": "medium",
+          "effectiveStart": "2024-10-19",
+          "effectiveEnd": "2024-10-19"
+        },
+        {
+          "resourceId": "Custom Resource Id 11",
+          "skillId": "Custom Skill Id 11",
+          "skillLevel": "low",
+          "effectiveStart": "2024-11-21",
+          "effectiveEnd": "2024-11-21"
+        },
+        {
+          "resourceId": "Smart Resource Id 12",
+          "skillId": "Smart Skill Id 12",
+          "skillLevel": "medium",
+          "effectiveStart": "2024-12-23",
+          "effectiveEnd": "2024-12-23"
+        },
+        {
+          "resourceId": "Rapid Resource Id 13",
+          "skillId": "Rapid Skill Id 13",
+          "skillLevel": "high",
+          "effectiveStart": "2024-01-25",
+          "effectiveEnd": "2024-01-25"
+        },
+        {
+          "resourceId": "Secure Resource Id 14",
+          "skillId": "Secure Skill Id 14",
+          "skillLevel": "critical",
+          "effectiveStart": "2024-02-27",
+          "effectiveEnd": "2024-02-27"
+        },
+        {
+          "resourceId": "Modern Resource Id 15",
+          "skillId": "Modern Skill Id 15",
+          "skillLevel": "medium",
+          "effectiveStart": "2024-03-01",
+          "effectiveEnd": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "ResourceAbsence",
+      "routeKey": "resource-absences",
+      "label": "Resource Absence",
+      "icon": "package",
+      "aiFunction": "analyzeResourceAbsence",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Resource Absence data. The data includes: Resource Id, Start Time, End Time, Description, Approved By. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "resourceId",
+          "label": "Resource Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "approvedBy",
+          "label": "Approved By",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "resourceId": "Advanced Resource Id 1",
+          "startTime": "2024-01-01",
+          "endTime": "2024-01-01",
+          "description": "Advanced Description 1",
+          "approvedBy": "Advanced Approved By 1"
+        },
+        {
+          "resourceId": "Premium Resource Id 2",
+          "startTime": "2024-02-03",
+          "endTime": "2024-02-03",
+          "description": "Premium Description 2",
+          "approvedBy": "Premium Approved By 2"
+        },
+        {
+          "resourceId": "Standard Resource Id 3",
+          "startTime": "2024-03-05",
+          "endTime": "2024-03-05",
+          "description": "Standard Description 3",
+          "approvedBy": "Standard Approved By 3"
+        },
+        {
+          "resourceId": "Elite Resource Id 4",
+          "startTime": "2024-04-07",
+          "endTime": "2024-04-07",
+          "description": "Elite Description 4",
+          "approvedBy": "Elite Approved By 4"
+        },
+        {
+          "resourceId": "Core Resource Id 5",
+          "startTime": "2024-05-09",
+          "endTime": "2024-05-09",
+          "description": "Core Description 5",
+          "approvedBy": "Core Approved By 5"
+        },
+        {
+          "resourceId": "Pro Resource Id 6",
+          "startTime": "2024-06-11",
+          "endTime": "2024-06-11",
+          "description": "Pro Description 6",
+          "approvedBy": "Pro Approved By 6"
+        },
+        {
+          "resourceId": "Essential Resource Id 7",
+          "startTime": "2024-07-13",
+          "endTime": "2024-07-13",
+          "description": "Essential Description 7",
+          "approvedBy": "Essential Approved By 7"
+        },
+        {
+          "resourceId": "Primary Resource Id 8",
+          "startTime": "2024-08-15",
+          "endTime": "2024-08-15",
+          "description": "Primary Description 8",
+          "approvedBy": "Primary Approved By 8"
+        },
+        {
+          "resourceId": "Global Resource Id 9",
+          "startTime": "2024-09-17",
+          "endTime": "2024-09-17",
+          "description": "Global Description 9",
+          "approvedBy": "Global Approved By 9"
+        },
+        {
+          "resourceId": "Regional Resource Id 10",
+          "startTime": "2024-10-19",
+          "endTime": "2024-10-19",
+          "description": "Regional Description 10",
+          "approvedBy": "Regional Approved By 10"
+        },
+        {
+          "resourceId": "Custom Resource Id 11",
+          "startTime": "2024-11-21",
+          "endTime": "2024-11-21",
+          "description": "Custom Description 11",
+          "approvedBy": "Custom Approved By 11"
+        },
+        {
+          "resourceId": "Smart Resource Id 12",
+          "startTime": "2024-12-23",
+          "endTime": "2024-12-23",
+          "description": "Smart Description 12",
+          "approvedBy": "Smart Approved By 12"
+        },
+        {
+          "resourceId": "Rapid Resource Id 13",
+          "startTime": "2024-01-25",
+          "endTime": "2024-01-25",
+          "description": "Rapid Description 13",
+          "approvedBy": "Rapid Approved By 13"
+        },
+        {
+          "resourceId": "Secure Resource Id 14",
+          "startTime": "2024-02-27",
+          "endTime": "2024-02-27",
+          "description": "Secure Description 14",
+          "approvedBy": "Secure Approved By 14"
+        },
+        {
+          "resourceId": "Modern Resource Id 15",
+          "startTime": "2024-03-01",
+          "endTime": "2024-03-01",
+          "description": "Modern Description 15",
+          "approvedBy": "Modern Approved By 15"
+        }
+      ]
+    },
+    {
+      "modelName": "TimeSheet",
+      "routeKey": "time-sheets",
+      "label": "Time Sheet",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeTimeSheet",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Time Sheet data. The data includes: Resource Id, Start Date, End Date, Total Hours, Approved By. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "resourceId",
+          "label": "Resource Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "totalHours",
+          "label": "Total Hours",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "approvedBy",
+          "label": "Approved By",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "resourceId": "Advanced Resource Id 1",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "totalHours": 10,
+          "approvedBy": "Advanced Approved By 1"
+        },
+        {
+          "resourceId": "Premium Resource Id 2",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "totalHours": 71.7,
+          "approvedBy": "Premium Approved By 2"
+        },
+        {
+          "resourceId": "Standard Resource Id 3",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "totalHours": 33.4,
+          "approvedBy": "Standard Approved By 3"
+        },
+        {
+          "resourceId": "Elite Resource Id 4",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "totalHours": 95.1,
+          "approvedBy": "Elite Approved By 4"
+        },
+        {
+          "resourceId": "Core Resource Id 5",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "totalHours": 56.8,
+          "approvedBy": "Core Approved By 5"
+        },
+        {
+          "resourceId": "Pro Resource Id 6",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "totalHours": 118.5,
+          "approvedBy": "Pro Approved By 6"
+        },
+        {
+          "resourceId": "Essential Resource Id 7",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "totalHours": 80.2,
+          "approvedBy": "Essential Approved By 7"
+        },
+        {
+          "resourceId": "Primary Resource Id 8",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "totalHours": 141.9,
+          "approvedBy": "Primary Approved By 8"
+        },
+        {
+          "resourceId": "Global Resource Id 9",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "totalHours": 103.6,
+          "approvedBy": "Global Approved By 9"
+        },
+        {
+          "resourceId": "Regional Resource Id 10",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "totalHours": 165.3,
+          "approvedBy": "Regional Approved By 10"
+        },
+        {
+          "resourceId": "Custom Resource Id 11",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "totalHours": 127,
+          "approvedBy": "Custom Approved By 11"
+        },
+        {
+          "resourceId": "Smart Resource Id 12",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "totalHours": 188.7,
+          "approvedBy": "Smart Approved By 12"
+        },
+        {
+          "resourceId": "Rapid Resource Id 13",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "totalHours": 150.4,
+          "approvedBy": "Rapid Approved By 13"
+        },
+        {
+          "resourceId": "Secure Resource Id 14",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "totalHours": 212.1,
+          "approvedBy": "Secure Approved By 14"
+        },
+        {
+          "resourceId": "Modern Resource Id 15",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "totalHours": 173.8,
+          "approvedBy": "Modern Approved By 15"
+        }
+      ]
+    },
+    {
+      "modelName": "CaseMilestone",
+      "routeKey": "case-milestones",
+      "label": "Case Milestone",
+      "icon": "database",
+      "aiFunction": "analyzeCaseMilestone",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Case Milestone data. The data includes: Case Id, Milestone Name, Target Date, Completed Date, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "milestoneName",
+          "label": "Milestone Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "targetDate",
+          "label": "Target Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "completedDate",
+          "label": "Completed Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseId": "Advanced Case Id 1",
+          "milestoneName": "Advanced Milestone 1",
+          "targetDate": "2024-01-01",
+          "completedDate": "2024-01-01",
+          "status": "active"
+        },
+        {
+          "caseId": "Premium Case Id 2",
+          "milestoneName": "Premium Milestone 2",
+          "targetDate": "2024-02-03",
+          "completedDate": "2024-02-03",
+          "status": "pending"
+        },
+        {
+          "caseId": "Standard Case Id 3",
+          "milestoneName": "Standard Milestone 3",
+          "targetDate": "2024-03-05",
+          "completedDate": "2024-03-05",
+          "status": "in_progress"
+        },
+        {
+          "caseId": "Elite Case Id 4",
+          "milestoneName": "Elite Milestone 4",
+          "targetDate": "2024-04-07",
+          "completedDate": "2024-04-07",
+          "status": "completed"
+        },
+        {
+          "caseId": "Core Case Id 5",
+          "milestoneName": "Core Milestone 5",
+          "targetDate": "2024-05-09",
+          "completedDate": "2024-05-09",
+          "status": "under_review"
+        },
+        {
+          "caseId": "Pro Case Id 6",
+          "milestoneName": "Pro Milestone 6",
+          "targetDate": "2024-06-11",
+          "completedDate": "2024-06-11",
+          "status": "approved"
+        },
+        {
+          "caseId": "Essential Case Id 7",
+          "milestoneName": "Essential Milestone 7",
+          "targetDate": "2024-07-13",
+          "completedDate": "2024-07-13",
+          "status": "active"
+        },
+        {
+          "caseId": "Primary Case Id 8",
+          "milestoneName": "Primary Milestone 8",
+          "targetDate": "2024-08-15",
+          "completedDate": "2024-08-15",
+          "status": "active"
+        },
+        {
+          "caseId": "Global Case Id 9",
+          "milestoneName": "Global Milestone 9",
+          "targetDate": "2024-09-17",
+          "completedDate": "2024-09-17",
+          "status": "active"
+        },
+        {
+          "caseId": "Regional Case Id 10",
+          "milestoneName": "Regional Milestone 10",
+          "targetDate": "2024-10-19",
+          "completedDate": "2024-10-19",
+          "status": "pending"
+        },
+        {
+          "caseId": "Custom Case Id 11",
+          "milestoneName": "Custom Milestone 11",
+          "targetDate": "2024-11-21",
+          "completedDate": "2024-11-21",
+          "status": "completed"
+        },
+        {
+          "caseId": "Smart Case Id 12",
+          "milestoneName": "Smart Milestone 12",
+          "targetDate": "2024-12-23",
+          "completedDate": "2024-12-23",
+          "status": "active"
+        },
+        {
+          "caseId": "Rapid Case Id 13",
+          "milestoneName": "Rapid Milestone 13",
+          "targetDate": "2024-01-25",
+          "completedDate": "2024-01-25",
+          "status": "in_progress"
+        },
+        {
+          "caseId": "Secure Case Id 14",
+          "milestoneName": "Secure Milestone 14",
+          "targetDate": "2024-02-27",
+          "completedDate": "2024-02-27",
+          "status": "active"
+        },
+        {
+          "caseId": "Modern Case Id 15",
+          "milestoneName": "Modern Milestone 15",
+          "targetDate": "2024-03-01",
+          "completedDate": "2024-03-01",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "KnowledgeCategory",
+      "routeKey": "knowledge-categorys",
+      "label": "Knowledge Category",
+      "icon": "check-circle",
+      "aiFunction": "analyzeKnowledgeCategory",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Knowledge Category data. The data includes: Name, Description, Parent Id, Sort Order, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "parentId",
+          "label": "Parent Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sortOrder",
+          "label": "Sort Order",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Advanced Description 1",
+          "parentId": "Advanced Parent Id 1",
+          "sortOrder": 10,
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Premium Description 2",
+          "parentId": "Premium Parent Id 2",
+          "sortOrder": 58,
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Standard Description 3",
+          "parentId": "Standard Parent Id 3",
+          "sortOrder": 106,
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Elite Description 4",
+          "parentId": "Elite Parent Id 4",
+          "sortOrder": 154,
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Core Description 5",
+          "parentId": "Core Parent Id 5",
+          "sortOrder": 102,
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "Pro Description 6",
+          "parentId": "Pro Parent Id 6",
+          "sortOrder": 150,
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Essential Description 7",
+          "parentId": "Essential Parent Id 7",
+          "sortOrder": 198,
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Primary Description 8",
+          "parentId": "Primary Parent Id 8",
+          "sortOrder": 146,
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Global Description 9",
+          "parentId": "Global Parent Id 9",
+          "sortOrder": 194,
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Regional Description 10",
+          "parentId": "Regional Parent Id 10",
+          "sortOrder": 242,
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Custom Description 11",
+          "parentId": "Custom Parent Id 11",
+          "sortOrder": 190,
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Smart Description 12",
+          "parentId": "Smart Parent Id 12",
+          "sortOrder": 238,
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Rapid Description 13",
+          "parentId": "Rapid Parent Id 13",
+          "sortOrder": 286,
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Secure Description 14",
+          "parentId": "Secure Parent Id 14",
+          "sortOrder": 234,
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Modern Description 15",
+          "parentId": "Modern Parent Id 15",
+          "sortOrder": 282,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "GuidedSellingQuestion",
+      "routeKey": "guided-selling-questions",
+      "label": "Guided Selling Question",
+      "icon": "check-circle",
+      "aiFunction": "analyzeGuidedSellingQuestion",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Guided Selling Question data. The data includes: Question Text, Question Type, Options, Help Text, Question Order, Is Required, Is Active, Filter Conditions. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "questionText",
+          "label": "Question Text",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "questionType",
+          "label": "Question Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "options",
+          "label": "Options",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "helpText",
+          "label": "Help Text",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "questionOrder",
+          "label": "Question Order",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "isRequired",
+          "label": "Is Required",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "filterConditions",
+          "label": "Filter Conditions",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "questionText": "Advanced Question Text 1",
+          "questionType": "Category A",
+          "options": "Advanced Options 1",
+          "helpText": "Advanced Help Text 1",
+          "questionOrder": 10,
+          "isRequired": true,
+          "isActive": true,
+          "filterConditions": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "questionText": "Premium Question Text 2",
+          "questionType": "Category B",
+          "options": "Premium Options 2",
+          "helpText": "Premium Help Text 2",
+          "questionOrder": 58,
+          "isRequired": true,
+          "isActive": true,
+          "filterConditions": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "questionText": "Standard Question Text 3",
+          "questionType": "Category C",
+          "options": "Standard Options 3",
+          "helpText": "Standard Help Text 3",
+          "questionOrder": 106,
+          "isRequired": false,
+          "isActive": false,
+          "filterConditions": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "questionText": "Elite Question Text 4",
+          "questionType": "Category D",
+          "options": "Elite Options 4",
+          "helpText": "Elite Help Text 4",
+          "questionOrder": 154,
+          "isRequired": true,
+          "isActive": true,
+          "filterConditions": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "questionText": "Core Question Text 5",
+          "questionType": "Category E",
+          "options": "Core Options 5",
+          "helpText": "Core Help Text 5",
+          "questionOrder": 102,
+          "isRequired": false,
+          "isActive": false,
+          "filterConditions": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "questionText": "Pro Question Text 6",
+          "questionType": "Premium Tier",
+          "options": "Pro Options 6",
+          "helpText": "Pro Help Text 6",
+          "questionOrder": 150,
+          "isRequired": true,
+          "isActive": true,
+          "filterConditions": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "questionText": "Essential Question Text 7",
+          "questionType": "Standard Tier",
+          "options": "Essential Options 7",
+          "helpText": "Essential Help Text 7",
+          "questionOrder": 198,
+          "isRequired": true,
+          "isActive": true,
+          "filterConditions": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "questionText": "Primary Question Text 8",
+          "questionType": "Basic Tier",
+          "options": "Primary Options 8",
+          "helpText": "Primary Help Text 8",
+          "questionOrder": 146,
+          "isRequired": false,
+          "isActive": false,
+          "filterConditions": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "questionText": "Global Question Text 9",
+          "questionType": "Enterprise",
+          "options": "Global Options 9",
+          "helpText": "Global Help Text 9",
+          "questionOrder": 194,
+          "isRequired": true,
+          "isActive": true,
+          "filterConditions": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "questionText": "Regional Question Text 10",
+          "questionType": "Starter",
+          "options": "Regional Options 10",
+          "helpText": "Regional Help Text 10",
+          "questionOrder": 242,
+          "isRequired": true,
+          "isActive": true,
+          "filterConditions": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "questionText": "Custom Question Text 11",
+          "questionType": "Growth",
+          "options": "Custom Options 11",
+          "helpText": "Custom Help Text 11",
+          "questionOrder": 190,
+          "isRequired": false,
+          "isActive": false,
+          "filterConditions": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "questionText": "Smart Question Text 12",
+          "questionType": "Scale",
+          "options": "Smart Options 12",
+          "helpText": "Smart Help Text 12",
+          "questionOrder": 238,
+          "isRequired": true,
+          "isActive": true,
+          "filterConditions": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "questionText": "Rapid Question Text 13",
+          "questionType": "Foundation",
+          "options": "Rapid Options 13",
+          "helpText": "Rapid Help Text 13",
+          "questionOrder": 286,
+          "isRequired": false,
+          "isActive": false,
+          "filterConditions": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "questionText": "Secure Question Text 14",
+          "questionType": "Advanced",
+          "options": "Secure Options 14",
+          "helpText": "Secure Help Text 14",
+          "questionOrder": 234,
+          "isRequired": true,
+          "isActive": true,
+          "filterConditions": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "questionText": "Modern Question Text 15",
+          "questionType": "Professional",
+          "options": "Modern Options 15",
+          "helpText": "Modern Help Text 15",
+          "questionOrder": 282,
+          "isRequired": true,
+          "isActive": true,
+          "filterConditions": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "TimeSheetEntry",
+      "routeKey": "time-sheet-entrys",
+      "label": "Time Sheet Entry",
+      "icon": "bell",
+      "aiFunction": "analyzeTimeSheetEntry",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Time Sheet Entry data. The data includes: Time Sheet Id, Resource Id, Work Order Id, Type, Start Time, End Time, Duration Hours, Description. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "timeSheetId",
+          "label": "Time Sheet Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "resourceId",
+          "label": "Resource Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "workOrderId",
+          "label": "Work Order Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "durationHours",
+          "label": "Duration Hours",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "timeSheetId": "Advanced Time Sheet Id 1",
+          "resourceId": "Advanced Resource Id 1",
+          "workOrderId": "Advanced Work Order Id 1",
+          "type": "Category A",
+          "startTime": "2024-01-01",
+          "endTime": "2024-01-01",
+          "durationHours": 1.5,
+          "description": "Advanced Description 1"
+        },
+        {
+          "timeSheetId": "Premium Time Sheet Id 2",
+          "resourceId": "Premium Resource Id 2",
+          "workOrderId": "Premium Work Order Id 2",
+          "type": "Category B",
+          "startTime": "2024-02-03",
+          "endTime": "2024-02-03",
+          "durationHours": 2.1,
+          "description": "Premium Description 2"
+        },
+        {
+          "timeSheetId": "Standard Time Sheet Id 3",
+          "resourceId": "Standard Resource Id 3",
+          "workOrderId": "Standard Work Order Id 3",
+          "type": "Category C",
+          "startTime": "2024-03-05",
+          "endTime": "2024-03-05",
+          "durationHours": 2.7,
+          "description": "Standard Description 3"
+        },
+        {
+          "timeSheetId": "Elite Time Sheet Id 4",
+          "resourceId": "Elite Resource Id 4",
+          "workOrderId": "Elite Work Order Id 4",
+          "type": "Category D",
+          "startTime": "2024-04-07",
+          "endTime": "2024-04-07",
+          "durationHours": 3.3,
+          "description": "Elite Description 4"
+        },
+        {
+          "timeSheetId": "Core Time Sheet Id 5",
+          "resourceId": "Core Resource Id 5",
+          "workOrderId": "Core Work Order Id 5",
+          "type": "Category E",
+          "startTime": "2024-05-09",
+          "endTime": "2024-05-09",
+          "durationHours": 3.9,
+          "description": "Core Description 5"
+        },
+        {
+          "timeSheetId": "Pro Time Sheet Id 6",
+          "resourceId": "Pro Resource Id 6",
+          "workOrderId": "Pro Work Order Id 6",
+          "type": "Premium Tier",
+          "startTime": "2024-06-11",
+          "endTime": "2024-06-11",
+          "durationHours": 4.5,
+          "description": "Pro Description 6"
+        },
+        {
+          "timeSheetId": "Essential Time Sheet Id 7",
+          "resourceId": "Essential Resource Id 7",
+          "workOrderId": "Essential Work Order Id 7",
+          "type": "Standard Tier",
+          "startTime": "2024-07-13",
+          "endTime": "2024-07-13",
+          "durationHours": 5.1,
+          "description": "Essential Description 7"
+        },
+        {
+          "timeSheetId": "Primary Time Sheet Id 8",
+          "resourceId": "Primary Resource Id 8",
+          "workOrderId": "Primary Work Order Id 8",
+          "type": "Basic Tier",
+          "startTime": "2024-08-15",
+          "endTime": "2024-08-15",
+          "durationHours": 5.7,
+          "description": "Primary Description 8"
+        },
+        {
+          "timeSheetId": "Global Time Sheet Id 9",
+          "resourceId": "Global Resource Id 9",
+          "workOrderId": "Global Work Order Id 9",
+          "type": "Enterprise",
+          "startTime": "2024-09-17",
+          "endTime": "2024-09-17",
+          "durationHours": 6.3,
+          "description": "Global Description 9"
+        },
+        {
+          "timeSheetId": "Regional Time Sheet Id 10",
+          "resourceId": "Regional Resource Id 10",
+          "workOrderId": "Regional Work Order Id 10",
+          "type": "Starter",
+          "startTime": "2024-10-19",
+          "endTime": "2024-10-19",
+          "durationHours": 1.9,
+          "description": "Regional Description 10"
+        },
+        {
+          "timeSheetId": "Custom Time Sheet Id 11",
+          "resourceId": "Custom Resource Id 11",
+          "workOrderId": "Custom Work Order Id 11",
+          "type": "Growth",
+          "startTime": "2024-11-21",
+          "endTime": "2024-11-21",
+          "durationHours": 2.5,
+          "description": "Custom Description 11"
+        },
+        {
+          "timeSheetId": "Smart Time Sheet Id 12",
+          "resourceId": "Smart Resource Id 12",
+          "workOrderId": "Smart Work Order Id 12",
+          "type": "Scale",
+          "startTime": "2024-12-23",
+          "endTime": "2024-12-23",
+          "durationHours": 3.1,
+          "description": "Smart Description 12"
+        },
+        {
+          "timeSheetId": "Rapid Time Sheet Id 13",
+          "resourceId": "Rapid Resource Id 13",
+          "workOrderId": "Rapid Work Order Id 13",
+          "type": "Foundation",
+          "startTime": "2024-01-25",
+          "endTime": "2024-01-25",
+          "durationHours": 3.7,
+          "description": "Rapid Description 13"
+        },
+        {
+          "timeSheetId": "Secure Time Sheet Id 14",
+          "resourceId": "Secure Resource Id 14",
+          "workOrderId": "Secure Work Order Id 14",
+          "type": "Advanced",
+          "startTime": "2024-02-27",
+          "endTime": "2024-02-27",
+          "durationHours": 4.3,
+          "description": "Secure Description 14"
+        },
+        {
+          "timeSheetId": "Modern Time Sheet Id 15",
+          "resourceId": "Modern Resource Id 15",
+          "workOrderId": "Modern Work Order Id 15",
+          "type": "Professional",
+          "startTime": "2024-03-01",
+          "endTime": "2024-03-01",
+          "durationHours": 4.9,
+          "description": "Modern Description 15"
+        }
+      ]
+    },
+    {
+      "modelName": "PriceBook",
+      "routeKey": "price-books",
+      "label": "Price Book",
+      "icon": "map-pin",
+      "aiFunction": "analyzePriceBook",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Price Book data. The data includes: Name, Description, Is Active, Is Standard. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "isStandard",
+          "label": "Is Standard",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Advanced Description 1",
+          "isActive": true,
+          "isStandard": true
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Premium Description 2",
+          "isActive": true,
+          "isStandard": true
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Standard Description 3",
+          "isActive": false,
+          "isStandard": false
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Elite Description 4",
+          "isActive": true,
+          "isStandard": true
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Core Description 5",
+          "isActive": false,
+          "isStandard": false
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "Pro Description 6",
+          "isActive": true,
+          "isStandard": true
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Essential Description 7",
+          "isActive": true,
+          "isStandard": true
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Primary Description 8",
+          "isActive": false,
+          "isStandard": false
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Global Description 9",
+          "isActive": true,
+          "isStandard": true
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Regional Description 10",
+          "isActive": true,
+          "isStandard": true
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Custom Description 11",
+          "isActive": false,
+          "isStandard": false
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Smart Description 12",
+          "isActive": true,
+          "isStandard": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Rapid Description 13",
+          "isActive": false,
+          "isStandard": false
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Secure Description 14",
+          "isActive": true,
+          "isStandard": true
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Modern Description 15",
+          "isActive": true,
+          "isStandard": true
+        }
+      ]
+    },
+    {
+      "modelName": "Invoice",
+      "routeKey": "invoices",
+      "label": "Invoice",
+      "icon": "heart",
+      "aiFunction": "analyzeInvoice",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Invoice data. The data includes: Invoice Number, Account Id, Contact Id, Order Id, Invoice Date, Due Date, Subtotal, Discount, Tax, Total Amount, Amount Paid, Balance, Description, Terms, Notes, Billing Street, Billing City, Billing State, Billing Postal Code, Billing Country, Owner Id, Sent At, Paid At, Payment Method, Payment Reference. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "invoiceNumber",
+          "label": "Invoice Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "accountId",
+          "label": "Account Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactId",
+          "label": "Contact Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "orderId",
+          "label": "Order Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "invoiceDate",
+          "label": "Invoice Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "subtotal",
+          "label": "Subtotal",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "discount",
+          "label": "Discount",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "tax",
+          "label": "Tax",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "totalAmount",
+          "label": "Total Amount",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "amountPaid",
+          "label": "Amount Paid",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "balance",
+          "label": "Balance",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "terms",
+          "label": "Terms",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "billingStreet",
+          "label": "Billing Street",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "billingCity",
+          "label": "Billing City",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "billingState",
+          "label": "Billing State",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "billingPostalCode",
+          "label": "Billing Postal Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "billingCountry",
+          "label": "Billing Country",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ownerId",
+          "label": "Owner Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sentAt",
+          "label": "Sent At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "paidAt",
+          "label": "Paid At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentReference",
+          "label": "Payment Reference",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "invoiceNumber": "Advanced Invoice Number 1",
+          "accountId": "Advanced Account Id 1",
+          "contactId": "Advanced Contact Id 1",
+          "orderId": "Advanced Order Id 1",
+          "invoiceDate": "2024-01-01",
+          "dueDate": "2024-01-01",
+          "subtotal": 10,
+          "discount": 10,
+          "tax": 10,
+          "totalAmount": 500,
+          "amountPaid": 500,
+          "balance": 10,
+          "description": "Advanced Description 1",
+          "terms": "Advanced Terms 1",
+          "notes": "Advanced Notes 1",
+          "billingStreet": "Advanced Billing Street 1",
+          "billingCity": "New York",
+          "billingState": "Advanced Billing State 1",
+          "billingPostalCode": "Advanced Billing Postal Code 1",
+          "billingCountry": "Advanced Billing Country 1",
+          "ownerId": "Advanced Owner Id 1",
+          "sentAt": "2024-01-01",
+          "paidAt": "2024-01-01",
+          "paymentMethod": "Advanced Payment Method 1",
+          "paymentReference": "Advanced Payment Reference 1"
+        },
+        {
+          "invoiceNumber": "Premium Invoice Number 2",
+          "accountId": "Premium Account Id 2",
+          "contactId": "Premium Contact Id 2",
+          "orderId": "Premium Order Id 2",
+          "invoiceDate": "2024-02-03",
+          "dueDate": "2024-02-03",
+          "subtotal": 71.7,
+          "discount": 71.7,
+          "tax": 71.7,
+          "totalAmount": 2481,
+          "amountPaid": 2481,
+          "balance": 71.7,
+          "description": "Premium Description 2",
+          "terms": "Premium Terms 2",
+          "notes": "Premium Notes 2",
+          "billingStreet": "Premium Billing Street 2",
+          "billingCity": "Los Angeles",
+          "billingState": "Premium Billing State 2",
+          "billingPostalCode": "Premium Billing Postal Code 2",
+          "billingCountry": "Premium Billing Country 2",
+          "ownerId": "Premium Owner Id 2",
+          "sentAt": "2024-02-03",
+          "paidAt": "2024-02-03",
+          "paymentMethod": "Premium Payment Method 2",
+          "paymentReference": "Premium Payment Reference 2"
+        },
+        {
+          "invoiceNumber": "Standard Invoice Number 3",
+          "accountId": "Standard Account Id 3",
+          "contactId": "Standard Contact Id 3",
+          "orderId": "Standard Order Id 3",
+          "invoiceDate": "2024-03-05",
+          "dueDate": "2024-03-05",
+          "subtotal": 33.4,
+          "discount": 33.4,
+          "tax": 33.4,
+          "totalAmount": 4462,
+          "amountPaid": 4462,
+          "balance": 33.4,
+          "description": "Standard Description 3",
+          "terms": "Standard Terms 3",
+          "notes": "Standard Notes 3",
+          "billingStreet": "Standard Billing Street 3",
+          "billingCity": "Chicago",
+          "billingState": "Standard Billing State 3",
+          "billingPostalCode": "Standard Billing Postal Code 3",
+          "billingCountry": "Standard Billing Country 3",
+          "ownerId": "Standard Owner Id 3",
+          "sentAt": "2024-03-05",
+          "paidAt": "2024-03-05",
+          "paymentMethod": "Standard Payment Method 3",
+          "paymentReference": "Standard Payment Reference 3"
+        },
+        {
+          "invoiceNumber": "Elite Invoice Number 4",
+          "accountId": "Elite Account Id 4",
+          "contactId": "Elite Contact Id 4",
+          "orderId": "Elite Order Id 4",
+          "invoiceDate": "2024-04-07",
+          "dueDate": "2024-04-07",
+          "subtotal": 95.1,
+          "discount": 95.1,
+          "tax": 95.1,
+          "totalAmount": 6443,
+          "amountPaid": 6443,
+          "balance": 95.1,
+          "description": "Elite Description 4",
+          "terms": "Elite Terms 4",
+          "notes": "Elite Notes 4",
+          "billingStreet": "Elite Billing Street 4",
+          "billingCity": "Houston",
+          "billingState": "Elite Billing State 4",
+          "billingPostalCode": "Elite Billing Postal Code 4",
+          "billingCountry": "Elite Billing Country 4",
+          "ownerId": "Elite Owner Id 4",
+          "sentAt": "2024-04-07",
+          "paidAt": "2024-04-07",
+          "paymentMethod": "Elite Payment Method 4",
+          "paymentReference": "Elite Payment Reference 4"
+        },
+        {
+          "invoiceNumber": "Core Invoice Number 5",
+          "accountId": "Core Account Id 5",
+          "contactId": "Core Contact Id 5",
+          "orderId": "Core Order Id 5",
+          "invoiceDate": "2024-05-09",
+          "dueDate": "2024-05-09",
+          "subtotal": 56.8,
+          "discount": 56.8,
+          "tax": 56.8,
+          "totalAmount": 8424,
+          "amountPaid": 8424,
+          "balance": 56.8,
+          "description": "Core Description 5",
+          "terms": "Core Terms 5",
+          "notes": "Core Notes 5",
+          "billingStreet": "Core Billing Street 5",
+          "billingCity": "Phoenix",
+          "billingState": "Core Billing State 5",
+          "billingPostalCode": "Core Billing Postal Code 5",
+          "billingCountry": "Core Billing Country 5",
+          "ownerId": "Core Owner Id 5",
+          "sentAt": "2024-05-09",
+          "paidAt": "2024-05-09",
+          "paymentMethod": "Core Payment Method 5",
+          "paymentReference": "Core Payment Reference 5"
+        },
+        {
+          "invoiceNumber": "Pro Invoice Number 6",
+          "accountId": "Pro Account Id 6",
+          "contactId": "Pro Contact Id 6",
+          "orderId": "Pro Order Id 6",
+          "invoiceDate": "2024-06-11",
+          "dueDate": "2024-06-11",
+          "subtotal": 118.5,
+          "discount": 118.5,
+          "tax": 118.5,
+          "totalAmount": 10405,
+          "amountPaid": 10405,
+          "balance": 118.5,
+          "description": "Pro Description 6",
+          "terms": "Pro Terms 6",
+          "notes": "Pro Notes 6",
+          "billingStreet": "Pro Billing Street 6",
+          "billingCity": "San Francisco",
+          "billingState": "Pro Billing State 6",
+          "billingPostalCode": "Pro Billing Postal Code 6",
+          "billingCountry": "Pro Billing Country 6",
+          "ownerId": "Pro Owner Id 6",
+          "sentAt": "2024-06-11",
+          "paidAt": "2024-06-11",
+          "paymentMethod": "Pro Payment Method 6",
+          "paymentReference": "Pro Payment Reference 6"
+        },
+        {
+          "invoiceNumber": "Essential Invoice Number 7",
+          "accountId": "Essential Account Id 7",
+          "contactId": "Essential Contact Id 7",
+          "orderId": "Essential Order Id 7",
+          "invoiceDate": "2024-07-13",
+          "dueDate": "2024-07-13",
+          "subtotal": 80.2,
+          "discount": 80.2,
+          "tax": 80.2,
+          "totalAmount": 12386,
+          "amountPaid": 12386,
+          "balance": 80.2,
+          "description": "Essential Description 7",
+          "terms": "Essential Terms 7",
+          "notes": "Essential Notes 7",
+          "billingStreet": "Essential Billing Street 7",
+          "billingCity": "Seattle",
+          "billingState": "Essential Billing State 7",
+          "billingPostalCode": "Essential Billing Postal Code 7",
+          "billingCountry": "Essential Billing Country 7",
+          "ownerId": "Essential Owner Id 7",
+          "sentAt": "2024-07-13",
+          "paidAt": "2024-07-13",
+          "paymentMethod": "Essential Payment Method 7",
+          "paymentReference": "Essential Payment Reference 7"
+        },
+        {
+          "invoiceNumber": "Primary Invoice Number 8",
+          "accountId": "Primary Account Id 8",
+          "contactId": "Primary Contact Id 8",
+          "orderId": "Primary Order Id 8",
+          "invoiceDate": "2024-08-15",
+          "dueDate": "2024-08-15",
+          "subtotal": 141.9,
+          "discount": 141.9,
+          "tax": 141.9,
+          "totalAmount": 9367,
+          "amountPaid": 9367,
+          "balance": 141.9,
+          "description": "Primary Description 8",
+          "terms": "Primary Terms 8",
+          "notes": "Primary Notes 8",
+          "billingStreet": "Primary Billing Street 8",
+          "billingCity": "Boston",
+          "billingState": "Primary Billing State 8",
+          "billingPostalCode": "Primary Billing Postal Code 8",
+          "billingCountry": "Primary Billing Country 8",
+          "ownerId": "Primary Owner Id 8",
+          "sentAt": "2024-08-15",
+          "paidAt": "2024-08-15",
+          "paymentMethod": "Primary Payment Method 8",
+          "paymentReference": "Primary Payment Reference 8"
+        },
+        {
+          "invoiceNumber": "Global Invoice Number 9",
+          "accountId": "Global Account Id 9",
+          "contactId": "Global Contact Id 9",
+          "orderId": "Global Order Id 9",
+          "invoiceDate": "2024-09-17",
+          "dueDate": "2024-09-17",
+          "subtotal": 103.6,
+          "discount": 103.6,
+          "tax": 103.6,
+          "totalAmount": 11348,
+          "amountPaid": 11348,
+          "balance": 103.6,
+          "description": "Global Description 9",
+          "terms": "Global Terms 9",
+          "notes": "Global Notes 9",
+          "billingStreet": "Global Billing Street 9",
+          "billingCity": "Denver",
+          "billingState": "Global Billing State 9",
+          "billingPostalCode": "Global Billing Postal Code 9",
+          "billingCountry": "Global Billing Country 9",
+          "ownerId": "Global Owner Id 9",
+          "sentAt": "2024-09-17",
+          "paidAt": "2024-09-17",
+          "paymentMethod": "Global Payment Method 9",
+          "paymentReference": "Global Payment Reference 9"
+        },
+        {
+          "invoiceNumber": "Regional Invoice Number 10",
+          "accountId": "Regional Account Id 10",
+          "contactId": "Regional Contact Id 10",
+          "orderId": "Regional Order Id 10",
+          "invoiceDate": "2024-10-19",
+          "dueDate": "2024-10-19",
+          "subtotal": 165.3,
+          "discount": 165.3,
+          "tax": 165.3,
+          "totalAmount": 13329,
+          "amountPaid": 13329,
+          "balance": 165.3,
+          "description": "Regional Description 10",
+          "terms": "Regional Terms 10",
+          "notes": "Regional Notes 10",
+          "billingStreet": "Regional Billing Street 10",
+          "billingCity": "Miami",
+          "billingState": "Regional Billing State 10",
+          "billingPostalCode": "Regional Billing Postal Code 10",
+          "billingCountry": "Regional Billing Country 10",
+          "ownerId": "Regional Owner Id 10",
+          "sentAt": "2024-10-19",
+          "paidAt": "2024-10-19",
+          "paymentMethod": "Regional Payment Method 10",
+          "paymentReference": "Regional Payment Reference 10"
+        },
+        {
+          "invoiceNumber": "Custom Invoice Number 11",
+          "accountId": "Custom Account Id 11",
+          "contactId": "Custom Contact Id 11",
+          "orderId": "Custom Order Id 11",
+          "invoiceDate": "2024-11-21",
+          "dueDate": "2024-11-21",
+          "subtotal": 127,
+          "discount": 127,
+          "tax": 127,
+          "totalAmount": 15310,
+          "amountPaid": 15310,
+          "balance": 127,
+          "description": "Custom Description 11",
+          "terms": "Custom Terms 11",
+          "notes": "Custom Notes 11",
+          "billingStreet": "Custom Billing Street 11",
+          "billingCity": "Austin",
+          "billingState": "Custom Billing State 11",
+          "billingPostalCode": "Custom Billing Postal Code 11",
+          "billingCountry": "Custom Billing Country 11",
+          "ownerId": "Custom Owner Id 11",
+          "sentAt": "2024-11-21",
+          "paidAt": "2024-11-21",
+          "paymentMethod": "Custom Payment Method 11",
+          "paymentReference": "Custom Payment Reference 11"
+        },
+        {
+          "invoiceNumber": "Smart Invoice Number 12",
+          "accountId": "Smart Account Id 12",
+          "contactId": "Smart Contact Id 12",
+          "orderId": "Smart Order Id 12",
+          "invoiceDate": "2024-12-23",
+          "dueDate": "2024-12-23",
+          "subtotal": 188.7,
+          "discount": 188.7,
+          "tax": 188.7,
+          "totalAmount": 17291,
+          "amountPaid": 17291,
+          "balance": 188.7,
+          "description": "Smart Description 12",
+          "terms": "Smart Terms 12",
+          "notes": "Smart Notes 12",
+          "billingStreet": "Smart Billing Street 12",
+          "billingCity": "Portland",
+          "billingState": "Smart Billing State 12",
+          "billingPostalCode": "Smart Billing Postal Code 12",
+          "billingCountry": "Smart Billing Country 12",
+          "ownerId": "Smart Owner Id 12",
+          "sentAt": "2024-12-23",
+          "paidAt": "2024-12-23",
+          "paymentMethod": "Smart Payment Method 12",
+          "paymentReference": "Smart Payment Reference 12"
+        },
+        {
+          "invoiceNumber": "Rapid Invoice Number 13",
+          "accountId": "Rapid Account Id 13",
+          "contactId": "Rapid Contact Id 13",
+          "orderId": "Rapid Order Id 13",
+          "invoiceDate": "2024-01-25",
+          "dueDate": "2024-01-25",
+          "subtotal": 150.4,
+          "discount": 150.4,
+          "tax": 150.4,
+          "totalAmount": 19272,
+          "amountPaid": 19272,
+          "balance": 150.4,
+          "description": "Rapid Description 13",
+          "terms": "Rapid Terms 13",
+          "notes": "Rapid Notes 13",
+          "billingStreet": "Rapid Billing Street 13",
+          "billingCity": "Dallas",
+          "billingState": "Rapid Billing State 13",
+          "billingPostalCode": "Rapid Billing Postal Code 13",
+          "billingCountry": "Rapid Billing Country 13",
+          "ownerId": "Rapid Owner Id 13",
+          "sentAt": "2024-01-25",
+          "paidAt": "2024-01-25",
+          "paymentMethod": "Rapid Payment Method 13",
+          "paymentReference": "Rapid Payment Reference 13"
+        },
+        {
+          "invoiceNumber": "Secure Invoice Number 14",
+          "accountId": "Secure Account Id 14",
+          "contactId": "Secure Contact Id 14",
+          "orderId": "Secure Order Id 14",
+          "invoiceDate": "2024-02-27",
+          "dueDate": "2024-02-27",
+          "subtotal": 212.1,
+          "discount": 212.1,
+          "tax": 212.1,
+          "totalAmount": 21253,
+          "amountPaid": 21253,
+          "balance": 212.1,
+          "description": "Secure Description 14",
+          "terms": "Secure Terms 14",
+          "notes": "Secure Notes 14",
+          "billingStreet": "Secure Billing Street 14",
+          "billingCity": "Atlanta",
+          "billingState": "Secure Billing State 14",
+          "billingPostalCode": "Secure Billing Postal Code 14",
+          "billingCountry": "Secure Billing Country 14",
+          "ownerId": "Secure Owner Id 14",
+          "sentAt": "2024-02-27",
+          "paidAt": "2024-02-27",
+          "paymentMethod": "Secure Payment Method 14",
+          "paymentReference": "Secure Payment Reference 14"
+        },
+        {
+          "invoiceNumber": "Modern Invoice Number 15",
+          "accountId": "Modern Account Id 15",
+          "contactId": "Modern Contact Id 15",
+          "orderId": "Modern Order Id 15",
+          "invoiceDate": "2024-03-01",
+          "dueDate": "2024-03-01",
+          "subtotal": 173.8,
+          "discount": 173.8,
+          "tax": 173.8,
+          "totalAmount": 18234,
+          "amountPaid": 18234,
+          "balance": 173.8,
+          "description": "Modern Description 15",
+          "terms": "Modern Terms 15",
+          "notes": "Modern Notes 15",
+          "billingStreet": "Modern Billing Street 15",
+          "billingCity": "Nashville",
+          "billingState": "Modern Billing State 15",
+          "billingPostalCode": "Modern Billing Postal Code 15",
+          "billingCountry": "Modern Billing Country 15",
+          "ownerId": "Modern Owner Id 15",
+          "sentAt": "2024-03-01",
+          "paidAt": "2024-03-01",
+          "paymentMethod": "Modern Payment Method 15",
+          "paymentReference": "Modern Payment Reference 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Payment",
+      "routeKey": "payments",
+      "label": "Payment",
+      "icon": "map-pin",
+      "aiFunction": "analyzePayment",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Payment data. The data includes: Invoice Id, Amount, Payment Date, Payment Method, Reference, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "invoiceId",
+          "label": "Invoice Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "paymentDate",
+          "label": "Payment Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reference",
+          "label": "Reference",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "invoiceId": "Advanced Invoice Id 1",
+          "amount": 500,
+          "paymentDate": "2024-01-01",
+          "paymentMethod": "Advanced Payment Method 1",
+          "reference": "Advanced Reference 1",
+          "notes": "Advanced Notes 1"
+        },
+        {
+          "invoiceId": "Premium Invoice Id 2",
+          "amount": 2481,
+          "paymentDate": "2024-02-03",
+          "paymentMethod": "Premium Payment Method 2",
+          "reference": "Premium Reference 2",
+          "notes": "Premium Notes 2"
+        },
+        {
+          "invoiceId": "Standard Invoice Id 3",
+          "amount": 4462,
+          "paymentDate": "2024-03-05",
+          "paymentMethod": "Standard Payment Method 3",
+          "reference": "Standard Reference 3",
+          "notes": "Standard Notes 3"
+        },
+        {
+          "invoiceId": "Elite Invoice Id 4",
+          "amount": 6443,
+          "paymentDate": "2024-04-07",
+          "paymentMethod": "Elite Payment Method 4",
+          "reference": "Elite Reference 4",
+          "notes": "Elite Notes 4"
+        },
+        {
+          "invoiceId": "Core Invoice Id 5",
+          "amount": 8424,
+          "paymentDate": "2024-05-09",
+          "paymentMethod": "Core Payment Method 5",
+          "reference": "Core Reference 5",
+          "notes": "Core Notes 5"
+        },
+        {
+          "invoiceId": "Pro Invoice Id 6",
+          "amount": 10405,
+          "paymentDate": "2024-06-11",
+          "paymentMethod": "Pro Payment Method 6",
+          "reference": "Pro Reference 6",
+          "notes": "Pro Notes 6"
+        },
+        {
+          "invoiceId": "Essential Invoice Id 7",
+          "amount": 12386,
+          "paymentDate": "2024-07-13",
+          "paymentMethod": "Essential Payment Method 7",
+          "reference": "Essential Reference 7",
+          "notes": "Essential Notes 7"
+        },
+        {
+          "invoiceId": "Primary Invoice Id 8",
+          "amount": 9367,
+          "paymentDate": "2024-08-15",
+          "paymentMethod": "Primary Payment Method 8",
+          "reference": "Primary Reference 8",
+          "notes": "Primary Notes 8"
+        },
+        {
+          "invoiceId": "Global Invoice Id 9",
+          "amount": 11348,
+          "paymentDate": "2024-09-17",
+          "paymentMethod": "Global Payment Method 9",
+          "reference": "Global Reference 9",
+          "notes": "Global Notes 9"
+        },
+        {
+          "invoiceId": "Regional Invoice Id 10",
+          "amount": 13329,
+          "paymentDate": "2024-10-19",
+          "paymentMethod": "Regional Payment Method 10",
+          "reference": "Regional Reference 10",
+          "notes": "Regional Notes 10"
+        },
+        {
+          "invoiceId": "Custom Invoice Id 11",
+          "amount": 15310,
+          "paymentDate": "2024-11-21",
+          "paymentMethod": "Custom Payment Method 11",
+          "reference": "Custom Reference 11",
+          "notes": "Custom Notes 11"
+        },
+        {
+          "invoiceId": "Smart Invoice Id 12",
+          "amount": 17291,
+          "paymentDate": "2024-12-23",
+          "paymentMethod": "Smart Payment Method 12",
+          "reference": "Smart Reference 12",
+          "notes": "Smart Notes 12"
+        },
+        {
+          "invoiceId": "Rapid Invoice Id 13",
+          "amount": 19272,
+          "paymentDate": "2024-01-25",
+          "paymentMethod": "Rapid Payment Method 13",
+          "reference": "Rapid Reference 13",
+          "notes": "Rapid Notes 13"
+        },
+        {
+          "invoiceId": "Secure Invoice Id 14",
+          "amount": 21253,
+          "paymentDate": "2024-02-27",
+          "paymentMethod": "Secure Payment Method 14",
+          "reference": "Secure Reference 14",
+          "notes": "Secure Notes 14"
+        },
+        {
+          "invoiceId": "Modern Invoice Id 15",
+          "amount": 18234,
+          "paymentDate": "2024-03-01",
+          "paymentMethod": "Modern Payment Method 15",
+          "reference": "Modern Reference 15",
+          "notes": "Modern Notes 15"
+        }
+      ]
+    },
+    {
+      "modelName": "AssetCase",
+      "routeKey": "asset-cases",
+      "label": "Asset Case",
+      "icon": "shield",
+      "aiFunction": "analyzeAssetCase",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Asset Case data. The data includes: Asset Id, Case Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "assetId",
+          "label": "Asset Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "assetId": "Advanced Asset Id 1",
+          "caseId": "Advanced Case Id 1"
+        },
+        {
+          "assetId": "Premium Asset Id 2",
+          "caseId": "Premium Case Id 2"
+        },
+        {
+          "assetId": "Standard Asset Id 3",
+          "caseId": "Standard Case Id 3"
+        },
+        {
+          "assetId": "Elite Asset Id 4",
+          "caseId": "Elite Case Id 4"
+        },
+        {
+          "assetId": "Core Asset Id 5",
+          "caseId": "Core Case Id 5"
+        },
+        {
+          "assetId": "Pro Asset Id 6",
+          "caseId": "Pro Case Id 6"
+        },
+        {
+          "assetId": "Essential Asset Id 7",
+          "caseId": "Essential Case Id 7"
+        },
+        {
+          "assetId": "Primary Asset Id 8",
+          "caseId": "Primary Case Id 8"
+        },
+        {
+          "assetId": "Global Asset Id 9",
+          "caseId": "Global Case Id 9"
+        },
+        {
+          "assetId": "Regional Asset Id 10",
+          "caseId": "Regional Case Id 10"
+        },
+        {
+          "assetId": "Custom Asset Id 11",
+          "caseId": "Custom Case Id 11"
+        },
+        {
+          "assetId": "Smart Asset Id 12",
+          "caseId": "Smart Case Id 12"
+        },
+        {
+          "assetId": "Rapid Asset Id 13",
+          "caseId": "Rapid Case Id 13"
+        },
+        {
+          "assetId": "Secure Asset Id 14",
+          "caseId": "Secure Case Id 14"
+        },
+        {
+          "assetId": "Modern Asset Id 15",
+          "caseId": "Modern Case Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "MaintenancePlan",
+      "routeKey": "maintenance-plans",
+      "label": "Maintenance Plan",
+      "icon": "calendar",
+      "aiFunction": "analyzeMaintenancePlan",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Maintenance Plan data. The data includes: Title, Work Type Id, Asset Id, Next Suggested Date, Territory Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "workTypeId",
+          "label": "Work Type Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assetId",
+          "label": "Asset Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "nextSuggestedDate",
+          "label": "Next Suggested Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "territoryId",
+          "label": "Territory Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "workTypeId": "Category A",
+          "assetId": "Advanced Asset Id 1",
+          "nextSuggestedDate": "2024-01-01",
+          "territoryId": "Advanced Territory Id 1"
+        },
+        {
+          "title": "Premium Title 2",
+          "workTypeId": "Category B",
+          "assetId": "Premium Asset Id 2",
+          "nextSuggestedDate": "2024-02-03",
+          "territoryId": "Premium Territory Id 2"
+        },
+        {
+          "title": "Standard Title 3",
+          "workTypeId": "Category C",
+          "assetId": "Standard Asset Id 3",
+          "nextSuggestedDate": "2024-03-05",
+          "territoryId": "Standard Territory Id 3"
+        },
+        {
+          "title": "Elite Title 4",
+          "workTypeId": "Category D",
+          "assetId": "Elite Asset Id 4",
+          "nextSuggestedDate": "2024-04-07",
+          "territoryId": "Elite Territory Id 4"
+        },
+        {
+          "title": "Core Title 5",
+          "workTypeId": "Category E",
+          "assetId": "Core Asset Id 5",
+          "nextSuggestedDate": "2024-05-09",
+          "territoryId": "Core Territory Id 5"
+        },
+        {
+          "title": "Pro Title 6",
+          "workTypeId": "Premium Tier",
+          "assetId": "Pro Asset Id 6",
+          "nextSuggestedDate": "2024-06-11",
+          "territoryId": "Pro Territory Id 6"
+        },
+        {
+          "title": "Essential Title 7",
+          "workTypeId": "Standard Tier",
+          "assetId": "Essential Asset Id 7",
+          "nextSuggestedDate": "2024-07-13",
+          "territoryId": "Essential Territory Id 7"
+        },
+        {
+          "title": "Primary Title 8",
+          "workTypeId": "Basic Tier",
+          "assetId": "Primary Asset Id 8",
+          "nextSuggestedDate": "2024-08-15",
+          "territoryId": "Primary Territory Id 8"
+        },
+        {
+          "title": "Global Title 9",
+          "workTypeId": "Enterprise",
+          "assetId": "Global Asset Id 9",
+          "nextSuggestedDate": "2024-09-17",
+          "territoryId": "Global Territory Id 9"
+        },
+        {
+          "title": "Regional Title 10",
+          "workTypeId": "Starter",
+          "assetId": "Regional Asset Id 10",
+          "nextSuggestedDate": "2024-10-19",
+          "territoryId": "Regional Territory Id 10"
+        },
+        {
+          "title": "Custom Title 11",
+          "workTypeId": "Growth",
+          "assetId": "Custom Asset Id 11",
+          "nextSuggestedDate": "2024-11-21",
+          "territoryId": "Custom Territory Id 11"
+        },
+        {
+          "title": "Smart Title 12",
+          "workTypeId": "Scale",
+          "assetId": "Smart Asset Id 12",
+          "nextSuggestedDate": "2024-12-23",
+          "territoryId": "Smart Territory Id 12"
+        },
+        {
+          "title": "Rapid Title 13",
+          "workTypeId": "Foundation",
+          "assetId": "Rapid Asset Id 13",
+          "nextSuggestedDate": "2024-01-25",
+          "territoryId": "Rapid Territory Id 13"
+        },
+        {
+          "title": "Secure Title 14",
+          "workTypeId": "Advanced",
+          "assetId": "Secure Asset Id 14",
+          "nextSuggestedDate": "2024-02-27",
+          "territoryId": "Secure Territory Id 14"
+        },
+        {
+          "title": "Modern Title 15",
+          "workTypeId": "Professional",
+          "assetId": "Modern Asset Id 15",
+          "nextSuggestedDate": "2024-03-01",
+          "territoryId": "Modern Territory Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Shift",
+      "routeKey": "shifts",
+      "label": "Shift",
+      "icon": "zap",
+      "aiFunction": "analyzeShift",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Shift data. The data includes: Territory Id, Label, Start Time, End Time, Resource Id, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "territoryId",
+          "label": "Territory Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "label",
+          "label": "Label",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "resourceId",
+          "label": "Resource Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "territoryId": "Advanced Territory Id 1",
+          "label": "Advanced Label 1",
+          "startTime": "2024-01-01",
+          "endTime": "2024-01-01",
+          "resourceId": "Advanced Resource Id 1",
+          "status": "active"
+        },
+        {
+          "territoryId": "Premium Territory Id 2",
+          "label": "Premium Label 2",
+          "startTime": "2024-02-03",
+          "endTime": "2024-02-03",
+          "resourceId": "Premium Resource Id 2",
+          "status": "pending"
+        },
+        {
+          "territoryId": "Standard Territory Id 3",
+          "label": "Standard Label 3",
+          "startTime": "2024-03-05",
+          "endTime": "2024-03-05",
+          "resourceId": "Standard Resource Id 3",
+          "status": "in_progress"
+        },
+        {
+          "territoryId": "Elite Territory Id 4",
+          "label": "Elite Label 4",
+          "startTime": "2024-04-07",
+          "endTime": "2024-04-07",
+          "resourceId": "Elite Resource Id 4",
+          "status": "completed"
+        },
+        {
+          "territoryId": "Core Territory Id 5",
+          "label": "Core Label 5",
+          "startTime": "2024-05-09",
+          "endTime": "2024-05-09",
+          "resourceId": "Core Resource Id 5",
+          "status": "under_review"
+        },
+        {
+          "territoryId": "Pro Territory Id 6",
+          "label": "Pro Label 6",
+          "startTime": "2024-06-11",
+          "endTime": "2024-06-11",
+          "resourceId": "Pro Resource Id 6",
+          "status": "approved"
+        },
+        {
+          "territoryId": "Essential Territory Id 7",
+          "label": "Essential Label 7",
+          "startTime": "2024-07-13",
+          "endTime": "2024-07-13",
+          "resourceId": "Essential Resource Id 7",
+          "status": "active"
+        },
+        {
+          "territoryId": "Primary Territory Id 8",
+          "label": "Primary Label 8",
+          "startTime": "2024-08-15",
+          "endTime": "2024-08-15",
+          "resourceId": "Primary Resource Id 8",
+          "status": "active"
+        },
+        {
+          "territoryId": "Global Territory Id 9",
+          "label": "Global Label 9",
+          "startTime": "2024-09-17",
+          "endTime": "2024-09-17",
+          "resourceId": "Global Resource Id 9",
+          "status": "active"
+        },
+        {
+          "territoryId": "Regional Territory Id 10",
+          "label": "Regional Label 10",
+          "startTime": "2024-10-19",
+          "endTime": "2024-10-19",
+          "resourceId": "Regional Resource Id 10",
+          "status": "pending"
+        },
+        {
+          "territoryId": "Custom Territory Id 11",
+          "label": "Custom Label 11",
+          "startTime": "2024-11-21",
+          "endTime": "2024-11-21",
+          "resourceId": "Custom Resource Id 11",
+          "status": "completed"
+        },
+        {
+          "territoryId": "Smart Territory Id 12",
+          "label": "Smart Label 12",
+          "startTime": "2024-12-23",
+          "endTime": "2024-12-23",
+          "resourceId": "Smart Resource Id 12",
+          "status": "active"
+        },
+        {
+          "territoryId": "Rapid Territory Id 13",
+          "label": "Rapid Label 13",
+          "startTime": "2024-01-25",
+          "endTime": "2024-01-25",
+          "resourceId": "Rapid Resource Id 13",
+          "status": "in_progress"
+        },
+        {
+          "territoryId": "Secure Territory Id 14",
+          "label": "Secure Label 14",
+          "startTime": "2024-02-27",
+          "endTime": "2024-02-27",
+          "resourceId": "Secure Resource Id 14",
+          "status": "active"
+        },
+        {
+          "territoryId": "Modern Territory Id 15",
+          "label": "Modern Label 15",
+          "startTime": "2024-03-01",
+          "endTime": "2024-03-01",
+          "resourceId": "Modern Resource Id 15",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "SchedulingPolicy",
+      "routeKey": "scheduling-policys",
+      "label": "Scheduling Policy",
+      "icon": "check-circle",
+      "aiFunction": "analyzeSchedulingPolicy",
+      "aiPrompt": "You are an AI analyst for salesforce. Analyze the provided Scheduling Policy data. The data includes: Name, Policy Type, Travel Time Optimization, Skill Matching, Priority Weight, Territory Preference, Max Travel Distance, Same Day Policy, Emergency Override. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "policyType",
+          "label": "Policy Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "travelTimeOptimization",
+          "label": "Travel Time Optimization",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "skillMatching",
+          "label": "Skill Matching",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "priorityWeight",
+          "label": "Priority Weight",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "territoryPreference",
+          "label": "Territory Preference",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "maxTravelDistance",
+          "label": "Max Travel Distance",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "sameDayPolicy",
+          "label": "Same Day Policy",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "emergencyOverride",
+          "label": "Emergency Override",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "policyType": "Category A",
+          "travelTimeOptimization": true,
+          "skillMatching": true,
+          "priorityWeight": 10,
+          "territoryPreference": "Advanced Territory Preference 1",
+          "maxTravelDistance": 10,
+          "sameDayPolicy": "Advanced Same Day Policy 1",
+          "emergencyOverride": true
+        },
+        {
+          "name": "Premium Name 2",
+          "policyType": "Category B",
+          "travelTimeOptimization": true,
+          "skillMatching": true,
+          "priorityWeight": 58,
+          "territoryPreference": "Premium Territory Preference 2",
+          "maxTravelDistance": 71.7,
+          "sameDayPolicy": "Premium Same Day Policy 2",
+          "emergencyOverride": true
+        },
+        {
+          "name": "Standard Name 3",
+          "policyType": "Category C",
+          "travelTimeOptimization": false,
+          "skillMatching": false,
+          "priorityWeight": 106,
+          "territoryPreference": "Standard Territory Preference 3",
+          "maxTravelDistance": 33.4,
+          "sameDayPolicy": "Standard Same Day Policy 3",
+          "emergencyOverride": false
+        },
+        {
+          "name": "Elite Name 4",
+          "policyType": "Category D",
+          "travelTimeOptimization": true,
+          "skillMatching": true,
+          "priorityWeight": 154,
+          "territoryPreference": "Elite Territory Preference 4",
+          "maxTravelDistance": 95.1,
+          "sameDayPolicy": "Elite Same Day Policy 4",
+          "emergencyOverride": true
+        },
+        {
+          "name": "Core Name 5",
+          "policyType": "Category E",
+          "travelTimeOptimization": false,
+          "skillMatching": false,
+          "priorityWeight": 102,
+          "territoryPreference": "Core Territory Preference 5",
+          "maxTravelDistance": 56.8,
+          "sameDayPolicy": "Core Same Day Policy 5",
+          "emergencyOverride": false
+        },
+        {
+          "name": "Pro Name 6",
+          "policyType": "Premium Tier",
+          "travelTimeOptimization": true,
+          "skillMatching": true,
+          "priorityWeight": 150,
+          "territoryPreference": "Pro Territory Preference 6",
+          "maxTravelDistance": 118.5,
+          "sameDayPolicy": "Pro Same Day Policy 6",
+          "emergencyOverride": true
+        },
+        {
+          "name": "Essential Name 7",
+          "policyType": "Standard Tier",
+          "travelTimeOptimization": true,
+          "skillMatching": true,
+          "priorityWeight": 198,
+          "territoryPreference": "Essential Territory Preference 7",
+          "maxTravelDistance": 80.2,
+          "sameDayPolicy": "Essential Same Day Policy 7",
+          "emergencyOverride": true
+        },
+        {
+          "name": "Primary Name 8",
+          "policyType": "Basic Tier",
+          "travelTimeOptimization": false,
+          "skillMatching": false,
+          "priorityWeight": 146,
+          "territoryPreference": "Primary Territory Preference 8",
+          "maxTravelDistance": 141.9,
+          "sameDayPolicy": "Primary Same Day Policy 8",
+          "emergencyOverride": false
+        },
+        {
+          "name": "Global Name 9",
+          "policyType": "Enterprise",
+          "travelTimeOptimization": true,
+          "skillMatching": true,
+          "priorityWeight": 194,
+          "territoryPreference": "Global Territory Preference 9",
+          "maxTravelDistance": 103.6,
+          "sameDayPolicy": "Global Same Day Policy 9",
+          "emergencyOverride": true
+        },
+        {
+          "name": "Regional Name 10",
+          "policyType": "Starter",
+          "travelTimeOptimization": true,
+          "skillMatching": true,
+          "priorityWeight": 242,
+          "territoryPreference": "Regional Territory Preference 10",
+          "maxTravelDistance": 165.3,
+          "sameDayPolicy": "Regional Same Day Policy 10",
+          "emergencyOverride": true
+        },
+        {
+          "name": "Custom Name 11",
+          "policyType": "Growth",
+          "travelTimeOptimization": false,
+          "skillMatching": false,
+          "priorityWeight": 190,
+          "territoryPreference": "Custom Territory Preference 11",
+          "maxTravelDistance": 127,
+          "sameDayPolicy": "Custom Same Day Policy 11",
+          "emergencyOverride": false
+        },
+        {
+          "name": "Smart Name 12",
+          "policyType": "Scale",
+          "travelTimeOptimization": true,
+          "skillMatching": true,
+          "priorityWeight": 238,
+          "territoryPreference": "Smart Territory Preference 12",
+          "maxTravelDistance": 188.7,
+          "sameDayPolicy": "Smart Same Day Policy 12",
+          "emergencyOverride": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "policyType": "Foundation",
+          "travelTimeOptimization": false,
+          "skillMatching": false,
+          "priorityWeight": 286,
+          "territoryPreference": "Rapid Territory Preference 13",
+          "maxTravelDistance": 150.4,
+          "sameDayPolicy": "Rapid Same Day Policy 13",
+          "emergencyOverride": false
+        },
+        {
+          "name": "Secure Name 14",
+          "policyType": "Advanced",
+          "travelTimeOptimization": true,
+          "skillMatching": true,
+          "priorityWeight": 234,
+          "territoryPreference": "Secure Territory Preference 14",
+          "maxTravelDistance": 212.1,
+          "sameDayPolicy": "Secure Same Day Policy 14",
+          "emergencyOverride": true
+        },
+        {
+          "name": "Modern Name 15",
+          "policyType": "Professional",
+          "travelTimeOptimization": true,
+          "skillMatching": true,
+          "priorityWeight": 282,
+          "territoryPreference": "Modern Territory Preference 15",
+          "maxTravelDistance": 173.8,
+          "sameDayPolicy": "Modern Same Day Policy 15",
+          "emergencyOverride": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3766 @@
+{
+  "appName": "A I Insurance Underwriting Agent",
+  "dbName": "a_i_insurance_underwriting_agent",
+  "folderName": "generated/AIInsuranceUnderwritingAgent",
+  "features": [
+    {
+      "modelName": "Policie",
+      "routeKey": "policies",
+      "label": "Policie",
+      "icon": "activity",
+      "aiFunction": "analyzePolicie",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Policie data. The data includes: Policy Number, Customer Name, Policy Type, Coverage Amount, Premium, Status, Start Date, End Date, Deductible, Description. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "policyNumber",
+          "label": "Policy Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "policyType",
+          "label": "Policy Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "coverageAmount",
+          "label": "Coverage Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "premium",
+          "label": "Premium",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "deductible",
+          "label": "Deductible",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "policyNumber": "Advanced Policy Number 1",
+          "customerName": "James Wilson",
+          "policyType": "Category A",
+          "coverageAmount": 500,
+          "premium": 10,
+          "status": "active",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "deductible": 10,
+          "description": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "policyNumber": "Premium Policy Number 2",
+          "customerName": "Sarah Chen",
+          "policyType": "Category B",
+          "coverageAmount": 2481,
+          "premium": 71.7,
+          "status": "pending",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "deductible": 71.7,
+          "description": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "policyNumber": "Standard Policy Number 3",
+          "customerName": "Michael Brown",
+          "policyType": "Category C",
+          "coverageAmount": 4462,
+          "premium": 33.4,
+          "status": "in_progress",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "deductible": 33.4,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "policyNumber": "Elite Policy Number 4",
+          "customerName": "Emily Davis",
+          "policyType": "Category D",
+          "coverageAmount": 6443,
+          "premium": 95.1,
+          "status": "completed",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "deductible": 95.1,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "policyNumber": "Core Policy Number 5",
+          "customerName": "Robert Garcia",
+          "policyType": "Category E",
+          "coverageAmount": 8424,
+          "premium": 56.8,
+          "status": "under_review",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "deductible": 56.8,
+          "description": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "policyNumber": "Pro Policy Number 6",
+          "customerName": "Lisa Anderson",
+          "policyType": "Premium Tier",
+          "coverageAmount": 10405,
+          "premium": 118.5,
+          "status": "approved",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "deductible": 118.5,
+          "description": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "policyNumber": "Essential Policy Number 7",
+          "customerName": "David Martinez",
+          "policyType": "Standard Tier",
+          "coverageAmount": 12386,
+          "premium": 80.2,
+          "status": "active",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "deductible": 80.2,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "policyNumber": "Primary Policy Number 8",
+          "customerName": "Jennifer Taylor",
+          "policyType": "Basic Tier",
+          "coverageAmount": 9367,
+          "premium": 141.9,
+          "status": "active",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "deductible": 141.9,
+          "description": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "policyNumber": "Global Policy Number 9",
+          "customerName": "William Johnson",
+          "policyType": "Enterprise",
+          "coverageAmount": 11348,
+          "premium": 103.6,
+          "status": "active",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "deductible": 103.6,
+          "description": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "policyNumber": "Regional Policy Number 10",
+          "customerName": "Maria Rodriguez",
+          "policyType": "Starter",
+          "coverageAmount": 13329,
+          "premium": 165.3,
+          "status": "pending",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "deductible": 165.3,
+          "description": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "policyNumber": "Custom Policy Number 11",
+          "customerName": "Thomas Lee",
+          "policyType": "Growth",
+          "coverageAmount": 15310,
+          "premium": 127,
+          "status": "completed",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "deductible": 127,
+          "description": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "policyNumber": "Smart Policy Number 12",
+          "customerName": "Patricia White",
+          "policyType": "Scale",
+          "coverageAmount": 17291,
+          "premium": 188.7,
+          "status": "active",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "deductible": 188.7,
+          "description": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "policyNumber": "Rapid Policy Number 13",
+          "customerName": "Christopher Hall",
+          "policyType": "Foundation",
+          "coverageAmount": 19272,
+          "premium": 150.4,
+          "status": "in_progress",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "deductible": 150.4,
+          "description": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "policyNumber": "Secure Policy Number 14",
+          "customerName": "Amanda Clark",
+          "policyType": "Advanced",
+          "coverageAmount": 21253,
+          "premium": 212.1,
+          "status": "active",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "deductible": 212.1,
+          "description": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "policyNumber": "Modern Policy Number 15",
+          "customerName": "Daniel Wright",
+          "policyType": "Professional",
+          "coverageAmount": 18234,
+          "premium": 173.8,
+          "status": "approved",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "deductible": 173.8,
+          "description": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Customer",
+      "routeKey": "customers",
+      "label": "Customer",
+      "icon": "briefcase",
+      "aiFunction": "analyzeCustomer",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Customer data. The data includes: Name, Email, Phone, Address, Date Of Birth, Risk Score, Customer Type, Company Name, Annual Revenue, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "dateOfBirth",
+          "label": "Date Of Birth",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "riskScore",
+          "label": "Risk Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "customerType",
+          "label": "Customer Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "companyName",
+          "label": "Company Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "annualRevenue",
+          "label": "Annual Revenue",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "dateOfBirth": "2024-01-01",
+          "riskScore": 10,
+          "customerType": "Category A",
+          "companyName": "Advanced Company 1",
+          "annualRevenue": 500,
+          "status": "active"
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "dateOfBirth": "2024-02-03",
+          "riskScore": 58,
+          "customerType": "Category B",
+          "companyName": "Premium Company 2",
+          "annualRevenue": 2481,
+          "status": "pending"
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "dateOfBirth": "2024-03-05",
+          "riskScore": 106,
+          "customerType": "Category C",
+          "companyName": "Standard Company 3",
+          "annualRevenue": 4462,
+          "status": "in_progress"
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "dateOfBirth": "2024-04-07",
+          "riskScore": 154,
+          "customerType": "Category D",
+          "companyName": "Elite Company 4",
+          "annualRevenue": 6443,
+          "status": "completed"
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "dateOfBirth": "2024-05-09",
+          "riskScore": 102,
+          "customerType": "Category E",
+          "companyName": "Core Company 5",
+          "annualRevenue": 8424,
+          "status": "under_review"
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "dateOfBirth": "2024-06-11",
+          "riskScore": 150,
+          "customerType": "Premium Tier",
+          "companyName": "Pro Company 6",
+          "annualRevenue": 10405,
+          "status": "approved"
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "dateOfBirth": "2024-07-13",
+          "riskScore": 198,
+          "customerType": "Standard Tier",
+          "companyName": "Essential Company 7",
+          "annualRevenue": 12386,
+          "status": "active"
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "dateOfBirth": "2024-08-15",
+          "riskScore": 146,
+          "customerType": "Basic Tier",
+          "companyName": "Primary Company 8",
+          "annualRevenue": 9367,
+          "status": "active"
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "dateOfBirth": "2024-09-17",
+          "riskScore": 194,
+          "customerType": "Enterprise",
+          "companyName": "Global Company 9",
+          "annualRevenue": 11348,
+          "status": "active"
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "dateOfBirth": "2024-10-19",
+          "riskScore": 242,
+          "customerType": "Starter",
+          "companyName": "Regional Company 10",
+          "annualRevenue": 13329,
+          "status": "pending"
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "dateOfBirth": "2024-11-21",
+          "riskScore": 190,
+          "customerType": "Growth",
+          "companyName": "Custom Company 11",
+          "annualRevenue": 15310,
+          "status": "completed"
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "dateOfBirth": "2024-12-23",
+          "riskScore": 238,
+          "customerType": "Scale",
+          "companyName": "Smart Company 12",
+          "annualRevenue": 17291,
+          "status": "active"
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "dateOfBirth": "2024-01-25",
+          "riskScore": 286,
+          "customerType": "Foundation",
+          "companyName": "Rapid Company 13",
+          "annualRevenue": 19272,
+          "status": "in_progress"
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "dateOfBirth": "2024-02-27",
+          "riskScore": 234,
+          "customerType": "Advanced",
+          "companyName": "Secure Company 14",
+          "annualRevenue": 21253,
+          "status": "active"
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "dateOfBirth": "2024-03-01",
+          "riskScore": 282,
+          "customerType": "Professional",
+          "companyName": "Modern Company 15",
+          "annualRevenue": 18234,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Claim",
+      "routeKey": "claims",
+      "label": "Claim",
+      "icon": "clipboard",
+      "aiFunction": "analyzeClaim",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Claim data. The data includes: Claim Number, Policy Number, Claimant Name, Claim Type, Claim Amount, Status, Incident Date, Description, Adjuster Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "claimNumber",
+          "label": "Claim Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "policyNumber",
+          "label": "Policy Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "claimantName",
+          "label": "Claimant Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "claimType",
+          "label": "Claim Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "claimAmount",
+          "label": "Claim Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "incidentDate",
+          "label": "Incident Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "adjusterNotes",
+          "label": "Adjuster Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "claimNumber": "Advanced Claim Number 1",
+          "policyNumber": "Advanced Policy Number 1",
+          "claimantName": "Advanced Claimant 1",
+          "claimType": "Category A",
+          "claimAmount": 500,
+          "status": "active",
+          "incidentDate": "2024-01-01",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "adjusterNotes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "claimNumber": "Premium Claim Number 2",
+          "policyNumber": "Premium Policy Number 2",
+          "claimantName": "Premium Claimant 2",
+          "claimType": "Category B",
+          "claimAmount": 2481,
+          "status": "pending",
+          "incidentDate": "2024-02-03",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "adjusterNotes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "claimNumber": "Standard Claim Number 3",
+          "policyNumber": "Standard Policy Number 3",
+          "claimantName": "Standard Claimant 3",
+          "claimType": "Category C",
+          "claimAmount": 4462,
+          "status": "in_progress",
+          "incidentDate": "2024-03-05",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "adjusterNotes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "claimNumber": "Elite Claim Number 4",
+          "policyNumber": "Elite Policy Number 4",
+          "claimantName": "Elite Claimant 4",
+          "claimType": "Category D",
+          "claimAmount": 6443,
+          "status": "completed",
+          "incidentDate": "2024-04-07",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "adjusterNotes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "claimNumber": "Core Claim Number 5",
+          "policyNumber": "Core Policy Number 5",
+          "claimantName": "Core Claimant 5",
+          "claimType": "Category E",
+          "claimAmount": 8424,
+          "status": "under_review",
+          "incidentDate": "2024-05-09",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "adjusterNotes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "claimNumber": "Pro Claim Number 6",
+          "policyNumber": "Pro Policy Number 6",
+          "claimantName": "Pro Claimant 6",
+          "claimType": "Premium Tier",
+          "claimAmount": 10405,
+          "status": "approved",
+          "incidentDate": "2024-06-11",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "adjusterNotes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "claimNumber": "Essential Claim Number 7",
+          "policyNumber": "Essential Policy Number 7",
+          "claimantName": "Essential Claimant 7",
+          "claimType": "Standard Tier",
+          "claimAmount": 12386,
+          "status": "active",
+          "incidentDate": "2024-07-13",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "adjusterNotes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "claimNumber": "Primary Claim Number 8",
+          "policyNumber": "Primary Policy Number 8",
+          "claimantName": "Primary Claimant 8",
+          "claimType": "Basic Tier",
+          "claimAmount": 9367,
+          "status": "active",
+          "incidentDate": "2024-08-15",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "adjusterNotes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "claimNumber": "Global Claim Number 9",
+          "policyNumber": "Global Policy Number 9",
+          "claimantName": "Global Claimant 9",
+          "claimType": "Enterprise",
+          "claimAmount": 11348,
+          "status": "active",
+          "incidentDate": "2024-09-17",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "adjusterNotes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "claimNumber": "Regional Claim Number 10",
+          "policyNumber": "Regional Policy Number 10",
+          "claimantName": "Regional Claimant 10",
+          "claimType": "Starter",
+          "claimAmount": 13329,
+          "status": "pending",
+          "incidentDate": "2024-10-19",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "adjusterNotes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "claimNumber": "Custom Claim Number 11",
+          "policyNumber": "Custom Policy Number 11",
+          "claimantName": "Custom Claimant 11",
+          "claimType": "Growth",
+          "claimAmount": 15310,
+          "status": "completed",
+          "incidentDate": "2024-11-21",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "adjusterNotes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "claimNumber": "Smart Claim Number 12",
+          "policyNumber": "Smart Policy Number 12",
+          "claimantName": "Smart Claimant 12",
+          "claimType": "Scale",
+          "claimAmount": 17291,
+          "status": "active",
+          "incidentDate": "2024-12-23",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "adjusterNotes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "claimNumber": "Rapid Claim Number 13",
+          "policyNumber": "Rapid Policy Number 13",
+          "claimantName": "Rapid Claimant 13",
+          "claimType": "Foundation",
+          "claimAmount": 19272,
+          "status": "in_progress",
+          "incidentDate": "2024-01-25",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "adjusterNotes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "claimNumber": "Secure Claim Number 14",
+          "policyNumber": "Secure Policy Number 14",
+          "claimantName": "Secure Claimant 14",
+          "claimType": "Advanced",
+          "claimAmount": 21253,
+          "status": "active",
+          "incidentDate": "2024-02-27",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "adjusterNotes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "claimNumber": "Modern Claim Number 15",
+          "policyNumber": "Modern Policy Number 15",
+          "claimantName": "Modern Claimant 15",
+          "claimType": "Professional",
+          "claimAmount": 18234,
+          "status": "approved",
+          "incidentDate": "2024-03-01",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "adjusterNotes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "RiskAssessment",
+      "routeKey": "risk-assessments",
+      "label": "Risk Assessment",
+      "icon": "database",
+      "aiFunction": "analyzeRiskAssessment",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Risk Assessment data. The data includes: Entity Name, Entity Type, Risk Category, Risk Score, Risk Level, Factors, Location, Industry, Annual Revenue, Employee Count, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "entityName",
+          "label": "Entity Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "riskCategory",
+          "label": "Risk Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "riskScore",
+          "label": "Risk Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "factors",
+          "label": "Factors",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "industry",
+          "label": "Industry",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "annualRevenue",
+          "label": "Annual Revenue",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "employeeCount",
+          "label": "Employee Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "entityName": "Advanced Entity 1",
+          "entityType": "Category A",
+          "riskCategory": "Category A",
+          "riskScore": 10,
+          "riskLevel": "low",
+          "factors": "Comprehensive solution designed for optimal performance and efficiency.",
+          "location": "New York",
+          "industry": "Advanced Industry 1",
+          "annualRevenue": 500,
+          "employeeCount": 63,
+          "status": "active"
+        },
+        {
+          "entityName": "Premium Entity 2",
+          "entityType": "Category B",
+          "riskCategory": "Category B",
+          "riskScore": 58,
+          "riskLevel": "medium",
+          "factors": "Industry-leading approach with proven results across multiple deployments.",
+          "location": "Los Angeles",
+          "industry": "Premium Industry 2",
+          "annualRevenue": 2481,
+          "employeeCount": 55,
+          "status": "pending"
+        },
+        {
+          "entityName": "Standard Entity 3",
+          "entityType": "Category C",
+          "riskCategory": "Category C",
+          "riskScore": 106,
+          "riskLevel": "high",
+          "factors": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "location": "Chicago",
+          "industry": "Standard Industry 3",
+          "annualRevenue": 4462,
+          "employeeCount": 83,
+          "status": "in_progress"
+        },
+        {
+          "entityName": "Elite Entity 4",
+          "entityType": "Category D",
+          "riskCategory": "Category D",
+          "riskScore": 154,
+          "riskLevel": "critical",
+          "factors": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "location": "Houston",
+          "industry": "Elite Industry 4",
+          "annualRevenue": 6443,
+          "employeeCount": 113,
+          "status": "completed"
+        },
+        {
+          "entityName": "Core Entity 5",
+          "entityType": "Category E",
+          "riskCategory": "Category E",
+          "riskScore": 102,
+          "riskLevel": "medium",
+          "factors": "Cost-effective strategy focused on sustainable long-term growth.",
+          "location": "Phoenix",
+          "industry": "Core Industry 5",
+          "annualRevenue": 8424,
+          "employeeCount": 191,
+          "status": "under_review"
+        },
+        {
+          "entityName": "Pro Entity 6",
+          "entityType": "Premium Tier",
+          "riskCategory": "Premium Tier",
+          "riskScore": 150,
+          "riskLevel": "low",
+          "factors": "High-priority initiative aligned with organizational strategic objectives.",
+          "location": "San Francisco",
+          "industry": "Pro Industry 6",
+          "annualRevenue": 10405,
+          "employeeCount": 202,
+          "status": "approved"
+        },
+        {
+          "entityName": "Essential Entity 7",
+          "entityType": "Standard Tier",
+          "riskCategory": "Standard Tier",
+          "riskScore": 198,
+          "riskLevel": "medium",
+          "factors": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "location": "Seattle",
+          "industry": "Essential Industry 7",
+          "annualRevenue": 12386,
+          "employeeCount": 217,
+          "status": "active"
+        },
+        {
+          "entityName": "Primary Entity 8",
+          "entityType": "Basic Tier",
+          "riskCategory": "Basic Tier",
+          "riskScore": 146,
+          "riskLevel": "high",
+          "factors": "Innovative framework incorporating best practices and emerging technologies.",
+          "location": "Boston",
+          "industry": "Primary Industry 8",
+          "annualRevenue": 9367,
+          "employeeCount": 62,
+          "status": "active"
+        },
+        {
+          "entityName": "Global Entity 9",
+          "entityType": "Enterprise",
+          "riskCategory": "Enterprise",
+          "riskScore": 194,
+          "riskLevel": "critical",
+          "factors": "Scalable architecture built to accommodate rapid expansion and change.",
+          "location": "Denver",
+          "industry": "Global Industry 9",
+          "annualRevenue": 11348,
+          "employeeCount": 209,
+          "status": "active"
+        },
+        {
+          "entityName": "Regional Entity 10",
+          "entityType": "Starter",
+          "riskCategory": "Starter",
+          "riskScore": 242,
+          "riskLevel": "medium",
+          "factors": "Enterprise-grade solution with robust security and compliance features.",
+          "location": "Miami",
+          "industry": "Regional Industry 10",
+          "annualRevenue": 13329,
+          "employeeCount": 234,
+          "status": "pending"
+        },
+        {
+          "entityName": "Custom Entity 11",
+          "entityType": "Growth",
+          "riskCategory": "Growth",
+          "riskScore": 190,
+          "riskLevel": "low",
+          "factors": "Integrated platform connecting multiple systems for seamless operations.",
+          "location": "Austin",
+          "industry": "Custom Industry 11",
+          "annualRevenue": 15310,
+          "employeeCount": 177,
+          "status": "completed"
+        },
+        {
+          "entityName": "Smart Entity 12",
+          "entityType": "Scale",
+          "riskCategory": "Scale",
+          "riskScore": 238,
+          "riskLevel": "medium",
+          "factors": "Automated workflow reducing manual intervention and human error.",
+          "location": "Portland",
+          "industry": "Smart Industry 12",
+          "annualRevenue": 17291,
+          "employeeCount": 268,
+          "status": "active"
+        },
+        {
+          "entityName": "Rapid Entity 13",
+          "entityType": "Foundation",
+          "riskCategory": "Foundation",
+          "riskScore": 286,
+          "riskLevel": "high",
+          "factors": "Real-time monitoring system with intelligent alerting capabilities.",
+          "location": "Dallas",
+          "industry": "Rapid Industry 13",
+          "annualRevenue": 19272,
+          "employeeCount": 242,
+          "status": "in_progress"
+        },
+        {
+          "entityName": "Secure Entity 14",
+          "entityType": "Advanced",
+          "riskCategory": "Advanced",
+          "riskScore": 234,
+          "riskLevel": "critical",
+          "factors": "Customizable module adaptable to diverse operational requirements.",
+          "location": "Atlanta",
+          "industry": "Secure Industry 14",
+          "annualRevenue": 21253,
+          "employeeCount": 187,
+          "status": "active"
+        },
+        {
+          "entityName": "Modern Entity 15",
+          "entityType": "Professional",
+          "riskCategory": "Professional",
+          "riskScore": 282,
+          "riskLevel": "medium",
+          "factors": "Performance-optimized design achieving superior throughput and reliability.",
+          "location": "Nashville",
+          "industry": "Modern Industry 15",
+          "annualRevenue": 18234,
+          "employeeCount": 282,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "UnderwritingRule",
+      "routeKey": "underwriting-rules",
+      "label": "Underwriting Rule",
+      "icon": "file-text",
+      "aiFunction": "analyzeUnderwritingRule",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Underwriting Rule data. The data includes: Rule Name, Rule Code, Category, Condition Text, Action Text, Priority, Policy Type, Threshold Value, Status, Description. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "ruleName",
+          "label": "Rule Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ruleCode",
+          "label": "Rule Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "conditionText",
+          "label": "Condition Text",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "actionText",
+          "label": "Action Text",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "policyType",
+          "label": "Policy Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "thresholdValue",
+          "label": "Threshold Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "ruleName": "Advanced Rule 1",
+          "ruleCode": "Advanced Rule Code 1",
+          "category": "Category A",
+          "conditionText": "Comprehensive solution designed for optimal performance and efficiency.",
+          "actionText": "Comprehensive solution designed for optimal performance and efficiency.",
+          "priority": 10,
+          "policyType": "Category A",
+          "thresholdValue": 10,
+          "status": "active",
+          "description": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "ruleName": "Premium Rule 2",
+          "ruleCode": "Premium Rule Code 2",
+          "category": "Category B",
+          "conditionText": "Industry-leading approach with proven results across multiple deployments.",
+          "actionText": "Industry-leading approach with proven results across multiple deployments.",
+          "priority": 58,
+          "policyType": "Category B",
+          "thresholdValue": 71.7,
+          "status": "pending",
+          "description": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "ruleName": "Standard Rule 3",
+          "ruleCode": "Standard Rule Code 3",
+          "category": "Category C",
+          "conditionText": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "actionText": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "priority": 106,
+          "policyType": "Category C",
+          "thresholdValue": 33.4,
+          "status": "in_progress",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "ruleName": "Elite Rule 4",
+          "ruleCode": "Elite Rule Code 4",
+          "category": "Category D",
+          "conditionText": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "actionText": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "priority": 154,
+          "policyType": "Category D",
+          "thresholdValue": 95.1,
+          "status": "completed",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "ruleName": "Core Rule 5",
+          "ruleCode": "Core Rule Code 5",
+          "category": "Category E",
+          "conditionText": "Cost-effective strategy focused on sustainable long-term growth.",
+          "actionText": "Cost-effective strategy focused on sustainable long-term growth.",
+          "priority": 102,
+          "policyType": "Category E",
+          "thresholdValue": 56.8,
+          "status": "under_review",
+          "description": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "ruleName": "Pro Rule 6",
+          "ruleCode": "Pro Rule Code 6",
+          "category": "Premium Tier",
+          "conditionText": "High-priority initiative aligned with organizational strategic objectives.",
+          "actionText": "High-priority initiative aligned with organizational strategic objectives.",
+          "priority": 150,
+          "policyType": "Premium Tier",
+          "thresholdValue": 118.5,
+          "status": "approved",
+          "description": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "ruleName": "Essential Rule 7",
+          "ruleCode": "Essential Rule Code 7",
+          "category": "Standard Tier",
+          "conditionText": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "actionText": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "priority": 198,
+          "policyType": "Standard Tier",
+          "thresholdValue": 80.2,
+          "status": "active",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "ruleName": "Primary Rule 8",
+          "ruleCode": "Primary Rule Code 8",
+          "category": "Basic Tier",
+          "conditionText": "Innovative framework incorporating best practices and emerging technologies.",
+          "actionText": "Innovative framework incorporating best practices and emerging technologies.",
+          "priority": 146,
+          "policyType": "Basic Tier",
+          "thresholdValue": 141.9,
+          "status": "active",
+          "description": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "ruleName": "Global Rule 9",
+          "ruleCode": "Global Rule Code 9",
+          "category": "Enterprise",
+          "conditionText": "Scalable architecture built to accommodate rapid expansion and change.",
+          "actionText": "Scalable architecture built to accommodate rapid expansion and change.",
+          "priority": 194,
+          "policyType": "Enterprise",
+          "thresholdValue": 103.6,
+          "status": "active",
+          "description": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "ruleName": "Regional Rule 10",
+          "ruleCode": "Regional Rule Code 10",
+          "category": "Starter",
+          "conditionText": "Enterprise-grade solution with robust security and compliance features.",
+          "actionText": "Enterprise-grade solution with robust security and compliance features.",
+          "priority": 242,
+          "policyType": "Starter",
+          "thresholdValue": 165.3,
+          "status": "pending",
+          "description": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "ruleName": "Custom Rule 11",
+          "ruleCode": "Custom Rule Code 11",
+          "category": "Growth",
+          "conditionText": "Integrated platform connecting multiple systems for seamless operations.",
+          "actionText": "Integrated platform connecting multiple systems for seamless operations.",
+          "priority": 190,
+          "policyType": "Growth",
+          "thresholdValue": 127,
+          "status": "completed",
+          "description": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "ruleName": "Smart Rule 12",
+          "ruleCode": "Smart Rule Code 12",
+          "category": "Scale",
+          "conditionText": "Automated workflow reducing manual intervention and human error.",
+          "actionText": "Automated workflow reducing manual intervention and human error.",
+          "priority": 238,
+          "policyType": "Scale",
+          "thresholdValue": 188.7,
+          "status": "active",
+          "description": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "ruleName": "Rapid Rule 13",
+          "ruleCode": "Rapid Rule Code 13",
+          "category": "Foundation",
+          "conditionText": "Real-time monitoring system with intelligent alerting capabilities.",
+          "actionText": "Real-time monitoring system with intelligent alerting capabilities.",
+          "priority": 286,
+          "policyType": "Foundation",
+          "thresholdValue": 150.4,
+          "status": "in_progress",
+          "description": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "ruleName": "Secure Rule 14",
+          "ruleCode": "Secure Rule Code 14",
+          "category": "Advanced",
+          "conditionText": "Customizable module adaptable to diverse operational requirements.",
+          "actionText": "Customizable module adaptable to diverse operational requirements.",
+          "priority": 234,
+          "policyType": "Advanced",
+          "thresholdValue": 212.1,
+          "status": "active",
+          "description": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "ruleName": "Modern Rule 15",
+          "ruleCode": "Modern Rule Code 15",
+          "category": "Professional",
+          "conditionText": "Performance-optimized design achieving superior throughput and reliability.",
+          "actionText": "Performance-optimized design achieving superior throughput and reliability.",
+          "priority": 282,
+          "policyType": "Professional",
+          "thresholdValue": 173.8,
+          "status": "approved",
+          "description": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "FraudAlert",
+      "routeKey": "fraud-alerts",
+      "label": "Fraud Alert",
+      "icon": "heart",
+      "aiFunction": "analyzeFraudAlert",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Fraud Alert data. The data includes: Alert Number, Policy Number, Claim Number, Alert Type, Severity, Description, Indicators, Suspect Name, Estimated Loss, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "alertNumber",
+          "label": "Alert Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "policyNumber",
+          "label": "Policy Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "claimNumber",
+          "label": "Claim Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "alertType",
+          "label": "Alert Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "indicators",
+          "label": "Indicators",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "suspectName",
+          "label": "Suspect Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "estimatedLoss",
+          "label": "Estimated Loss",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "alertNumber": "Advanced Alert Number 1",
+          "policyNumber": "Advanced Policy Number 1",
+          "claimNumber": "Advanced Claim Number 1",
+          "alertType": "Category A",
+          "severity": "low",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "indicators": "Comprehensive solution designed for optimal performance and efficiency.",
+          "suspectName": "Advanced Suspect 1",
+          "estimatedLoss": 10,
+          "status": "active"
+        },
+        {
+          "alertNumber": "Premium Alert Number 2",
+          "policyNumber": "Premium Policy Number 2",
+          "claimNumber": "Premium Claim Number 2",
+          "alertType": "Category B",
+          "severity": "medium",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "indicators": "Industry-leading approach with proven results across multiple deployments.",
+          "suspectName": "Premium Suspect 2",
+          "estimatedLoss": 71.7,
+          "status": "pending"
+        },
+        {
+          "alertNumber": "Standard Alert Number 3",
+          "policyNumber": "Standard Policy Number 3",
+          "claimNumber": "Standard Claim Number 3",
+          "alertType": "Category C",
+          "severity": "high",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "indicators": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "suspectName": "Standard Suspect 3",
+          "estimatedLoss": 33.4,
+          "status": "in_progress"
+        },
+        {
+          "alertNumber": "Elite Alert Number 4",
+          "policyNumber": "Elite Policy Number 4",
+          "claimNumber": "Elite Claim Number 4",
+          "alertType": "Category D",
+          "severity": "critical",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "indicators": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "suspectName": "Elite Suspect 4",
+          "estimatedLoss": 95.1,
+          "status": "completed"
+        },
+        {
+          "alertNumber": "Core Alert Number 5",
+          "policyNumber": "Core Policy Number 5",
+          "claimNumber": "Core Claim Number 5",
+          "alertType": "Category E",
+          "severity": "medium",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "indicators": "Cost-effective strategy focused on sustainable long-term growth.",
+          "suspectName": "Core Suspect 5",
+          "estimatedLoss": 56.8,
+          "status": "under_review"
+        },
+        {
+          "alertNumber": "Pro Alert Number 6",
+          "policyNumber": "Pro Policy Number 6",
+          "claimNumber": "Pro Claim Number 6",
+          "alertType": "Premium Tier",
+          "severity": "low",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "indicators": "High-priority initiative aligned with organizational strategic objectives.",
+          "suspectName": "Pro Suspect 6",
+          "estimatedLoss": 118.5,
+          "status": "approved"
+        },
+        {
+          "alertNumber": "Essential Alert Number 7",
+          "policyNumber": "Essential Policy Number 7",
+          "claimNumber": "Essential Claim Number 7",
+          "alertType": "Standard Tier",
+          "severity": "medium",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "indicators": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "suspectName": "Essential Suspect 7",
+          "estimatedLoss": 80.2,
+          "status": "active"
+        },
+        {
+          "alertNumber": "Primary Alert Number 8",
+          "policyNumber": "Primary Policy Number 8",
+          "claimNumber": "Primary Claim Number 8",
+          "alertType": "Basic Tier",
+          "severity": "high",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "indicators": "Innovative framework incorporating best practices and emerging technologies.",
+          "suspectName": "Primary Suspect 8",
+          "estimatedLoss": 141.9,
+          "status": "active"
+        },
+        {
+          "alertNumber": "Global Alert Number 9",
+          "policyNumber": "Global Policy Number 9",
+          "claimNumber": "Global Claim Number 9",
+          "alertType": "Enterprise",
+          "severity": "critical",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "indicators": "Scalable architecture built to accommodate rapid expansion and change.",
+          "suspectName": "Global Suspect 9",
+          "estimatedLoss": 103.6,
+          "status": "active"
+        },
+        {
+          "alertNumber": "Regional Alert Number 10",
+          "policyNumber": "Regional Policy Number 10",
+          "claimNumber": "Regional Claim Number 10",
+          "alertType": "Starter",
+          "severity": "medium",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "indicators": "Enterprise-grade solution with robust security and compliance features.",
+          "suspectName": "Regional Suspect 10",
+          "estimatedLoss": 165.3,
+          "status": "pending"
+        },
+        {
+          "alertNumber": "Custom Alert Number 11",
+          "policyNumber": "Custom Policy Number 11",
+          "claimNumber": "Custom Claim Number 11",
+          "alertType": "Growth",
+          "severity": "low",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "indicators": "Integrated platform connecting multiple systems for seamless operations.",
+          "suspectName": "Custom Suspect 11",
+          "estimatedLoss": 127,
+          "status": "completed"
+        },
+        {
+          "alertNumber": "Smart Alert Number 12",
+          "policyNumber": "Smart Policy Number 12",
+          "claimNumber": "Smart Claim Number 12",
+          "alertType": "Scale",
+          "severity": "medium",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "indicators": "Automated workflow reducing manual intervention and human error.",
+          "suspectName": "Smart Suspect 12",
+          "estimatedLoss": 188.7,
+          "status": "active"
+        },
+        {
+          "alertNumber": "Rapid Alert Number 13",
+          "policyNumber": "Rapid Policy Number 13",
+          "claimNumber": "Rapid Claim Number 13",
+          "alertType": "Foundation",
+          "severity": "high",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "indicators": "Real-time monitoring system with intelligent alerting capabilities.",
+          "suspectName": "Rapid Suspect 13",
+          "estimatedLoss": 150.4,
+          "status": "in_progress"
+        },
+        {
+          "alertNumber": "Secure Alert Number 14",
+          "policyNumber": "Secure Policy Number 14",
+          "claimNumber": "Secure Claim Number 14",
+          "alertType": "Advanced",
+          "severity": "critical",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "indicators": "Customizable module adaptable to diverse operational requirements.",
+          "suspectName": "Secure Suspect 14",
+          "estimatedLoss": 212.1,
+          "status": "active"
+        },
+        {
+          "alertNumber": "Modern Alert Number 15",
+          "policyNumber": "Modern Policy Number 15",
+          "claimNumber": "Modern Claim Number 15",
+          "alertType": "Professional",
+          "severity": "medium",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "indicators": "Performance-optimized design achieving superior throughput and reliability.",
+          "suspectName": "Modern Suspect 15",
+          "estimatedLoss": 173.8,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "PremiumCalculation",
+      "routeKey": "premium-calculations",
+      "label": "Premium Calculation",
+      "icon": "layers",
+      "aiFunction": "analyzePremiumCalculation",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Premium Calculation data. The data includes: Calculation Name, Policy Type, Base Premium, Risk Multiplier, Coverage Amount, Deductible, Customer Name, Factors, Final Premium, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "calculationName",
+          "label": "Calculation Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "policyType",
+          "label": "Policy Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "basePremium",
+          "label": "Base Premium",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "riskMultiplier",
+          "label": "Risk Multiplier",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "coverageAmount",
+          "label": "Coverage Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "deductible",
+          "label": "Deductible",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "factors",
+          "label": "Factors",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "finalPremium",
+          "label": "Final Premium",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "calculationName": "Advanced Calculation 1",
+          "policyType": "Category A",
+          "basePremium": 10,
+          "riskMultiplier": 10,
+          "coverageAmount": 500,
+          "deductible": 10,
+          "customerName": "James Wilson",
+          "factors": "Comprehensive solution designed for optimal performance and efficiency.",
+          "finalPremium": 10,
+          "status": "active"
+        },
+        {
+          "calculationName": "Premium Calculation 2",
+          "policyType": "Category B",
+          "basePremium": 71.7,
+          "riskMultiplier": 71.7,
+          "coverageAmount": 2481,
+          "deductible": 71.7,
+          "customerName": "Sarah Chen",
+          "factors": "Industry-leading approach with proven results across multiple deployments.",
+          "finalPremium": 71.7,
+          "status": "pending"
+        },
+        {
+          "calculationName": "Standard Calculation 3",
+          "policyType": "Category C",
+          "basePremium": 33.4,
+          "riskMultiplier": 33.4,
+          "coverageAmount": 4462,
+          "deductible": 33.4,
+          "customerName": "Michael Brown",
+          "factors": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "finalPremium": 33.4,
+          "status": "in_progress"
+        },
+        {
+          "calculationName": "Elite Calculation 4",
+          "policyType": "Category D",
+          "basePremium": 95.1,
+          "riskMultiplier": 95.1,
+          "coverageAmount": 6443,
+          "deductible": 95.1,
+          "customerName": "Emily Davis",
+          "factors": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "finalPremium": 95.1,
+          "status": "completed"
+        },
+        {
+          "calculationName": "Core Calculation 5",
+          "policyType": "Category E",
+          "basePremium": 56.8,
+          "riskMultiplier": 56.8,
+          "coverageAmount": 8424,
+          "deductible": 56.8,
+          "customerName": "Robert Garcia",
+          "factors": "Cost-effective strategy focused on sustainable long-term growth.",
+          "finalPremium": 56.8,
+          "status": "under_review"
+        },
+        {
+          "calculationName": "Pro Calculation 6",
+          "policyType": "Premium Tier",
+          "basePremium": 118.5,
+          "riskMultiplier": 118.5,
+          "coverageAmount": 10405,
+          "deductible": 118.5,
+          "customerName": "Lisa Anderson",
+          "factors": "High-priority initiative aligned with organizational strategic objectives.",
+          "finalPremium": 118.5,
+          "status": "approved"
+        },
+        {
+          "calculationName": "Essential Calculation 7",
+          "policyType": "Standard Tier",
+          "basePremium": 80.2,
+          "riskMultiplier": 80.2,
+          "coverageAmount": 12386,
+          "deductible": 80.2,
+          "customerName": "David Martinez",
+          "factors": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "finalPremium": 80.2,
+          "status": "active"
+        },
+        {
+          "calculationName": "Primary Calculation 8",
+          "policyType": "Basic Tier",
+          "basePremium": 141.9,
+          "riskMultiplier": 141.9,
+          "coverageAmount": 9367,
+          "deductible": 141.9,
+          "customerName": "Jennifer Taylor",
+          "factors": "Innovative framework incorporating best practices and emerging technologies.",
+          "finalPremium": 141.9,
+          "status": "active"
+        },
+        {
+          "calculationName": "Global Calculation 9",
+          "policyType": "Enterprise",
+          "basePremium": 103.6,
+          "riskMultiplier": 103.6,
+          "coverageAmount": 11348,
+          "deductible": 103.6,
+          "customerName": "William Johnson",
+          "factors": "Scalable architecture built to accommodate rapid expansion and change.",
+          "finalPremium": 103.6,
+          "status": "active"
+        },
+        {
+          "calculationName": "Regional Calculation 10",
+          "policyType": "Starter",
+          "basePremium": 165.3,
+          "riskMultiplier": 165.3,
+          "coverageAmount": 13329,
+          "deductible": 165.3,
+          "customerName": "Maria Rodriguez",
+          "factors": "Enterprise-grade solution with robust security and compliance features.",
+          "finalPremium": 165.3,
+          "status": "pending"
+        },
+        {
+          "calculationName": "Custom Calculation 11",
+          "policyType": "Growth",
+          "basePremium": 127,
+          "riskMultiplier": 127,
+          "coverageAmount": 15310,
+          "deductible": 127,
+          "customerName": "Thomas Lee",
+          "factors": "Integrated platform connecting multiple systems for seamless operations.",
+          "finalPremium": 127,
+          "status": "completed"
+        },
+        {
+          "calculationName": "Smart Calculation 12",
+          "policyType": "Scale",
+          "basePremium": 188.7,
+          "riskMultiplier": 188.7,
+          "coverageAmount": 17291,
+          "deductible": 188.7,
+          "customerName": "Patricia White",
+          "factors": "Automated workflow reducing manual intervention and human error.",
+          "finalPremium": 188.7,
+          "status": "active"
+        },
+        {
+          "calculationName": "Rapid Calculation 13",
+          "policyType": "Foundation",
+          "basePremium": 150.4,
+          "riskMultiplier": 150.4,
+          "coverageAmount": 19272,
+          "deductible": 150.4,
+          "customerName": "Christopher Hall",
+          "factors": "Real-time monitoring system with intelligent alerting capabilities.",
+          "finalPremium": 150.4,
+          "status": "in_progress"
+        },
+        {
+          "calculationName": "Secure Calculation 14",
+          "policyType": "Advanced",
+          "basePremium": 212.1,
+          "riskMultiplier": 212.1,
+          "coverageAmount": 21253,
+          "deductible": 212.1,
+          "customerName": "Amanda Clark",
+          "factors": "Customizable module adaptable to diverse operational requirements.",
+          "finalPremium": 212.1,
+          "status": "active"
+        },
+        {
+          "calculationName": "Modern Calculation 15",
+          "policyType": "Professional",
+          "basePremium": 173.8,
+          "riskMultiplier": 173.8,
+          "coverageAmount": 18234,
+          "deductible": 173.8,
+          "customerName": "Daniel Wright",
+          "factors": "Performance-optimized design achieving superior throughput and reliability.",
+          "finalPremium": 173.8,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Document",
+      "routeKey": "documents",
+      "label": "Document",
+      "icon": "map-pin",
+      "aiFunction": "analyzeDocument",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Document data. The data includes: Document Name, Document Type, Policy Number, Customer Name, Content Summary, File Size, Classification, Confidence Score, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "documentName",
+          "label": "Document Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "documentType",
+          "label": "Document Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "policyNumber",
+          "label": "Policy Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contentSummary",
+          "label": "Content Summary",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "fileSize",
+          "label": "File Size",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "classification",
+          "label": "Classification",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "confidenceScore",
+          "label": "Confidence Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "documentName": "Advanced Document 1",
+          "documentType": "Category A",
+          "policyNumber": "Advanced Policy Number 1",
+          "customerName": "James Wilson",
+          "contentSummary": "Comprehensive solution designed for optimal performance and efficiency.",
+          "fileSize": "Advanced File Size 1",
+          "classification": "Advanced Classification 1",
+          "confidenceScore": 1.5,
+          "status": "active"
+        },
+        {
+          "documentName": "Premium Document 2",
+          "documentType": "Category B",
+          "policyNumber": "Premium Policy Number 2",
+          "customerName": "Sarah Chen",
+          "contentSummary": "Industry-leading approach with proven results across multiple deployments.",
+          "fileSize": "Premium File Size 2",
+          "classification": "Premium Classification 2",
+          "confidenceScore": 2.1,
+          "status": "pending"
+        },
+        {
+          "documentName": "Standard Document 3",
+          "documentType": "Category C",
+          "policyNumber": "Standard Policy Number 3",
+          "customerName": "Michael Brown",
+          "contentSummary": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "fileSize": "Standard File Size 3",
+          "classification": "Standard Classification 3",
+          "confidenceScore": 2.7,
+          "status": "in_progress"
+        },
+        {
+          "documentName": "Elite Document 4",
+          "documentType": "Category D",
+          "policyNumber": "Elite Policy Number 4",
+          "customerName": "Emily Davis",
+          "contentSummary": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "fileSize": "Elite File Size 4",
+          "classification": "Elite Classification 4",
+          "confidenceScore": 3.3,
+          "status": "completed"
+        },
+        {
+          "documentName": "Core Document 5",
+          "documentType": "Category E",
+          "policyNumber": "Core Policy Number 5",
+          "customerName": "Robert Garcia",
+          "contentSummary": "Cost-effective strategy focused on sustainable long-term growth.",
+          "fileSize": "Core File Size 5",
+          "classification": "Core Classification 5",
+          "confidenceScore": 3.9,
+          "status": "under_review"
+        },
+        {
+          "documentName": "Pro Document 6",
+          "documentType": "Premium Tier",
+          "policyNumber": "Pro Policy Number 6",
+          "customerName": "Lisa Anderson",
+          "contentSummary": "High-priority initiative aligned with organizational strategic objectives.",
+          "fileSize": "Pro File Size 6",
+          "classification": "Pro Classification 6",
+          "confidenceScore": 4.5,
+          "status": "approved"
+        },
+        {
+          "documentName": "Essential Document 7",
+          "documentType": "Standard Tier",
+          "policyNumber": "Essential Policy Number 7",
+          "customerName": "David Martinez",
+          "contentSummary": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "fileSize": "Essential File Size 7",
+          "classification": "Essential Classification 7",
+          "confidenceScore": 5.1,
+          "status": "active"
+        },
+        {
+          "documentName": "Primary Document 8",
+          "documentType": "Basic Tier",
+          "policyNumber": "Primary Policy Number 8",
+          "customerName": "Jennifer Taylor",
+          "contentSummary": "Innovative framework incorporating best practices and emerging technologies.",
+          "fileSize": "Primary File Size 8",
+          "classification": "Primary Classification 8",
+          "confidenceScore": 5.7,
+          "status": "active"
+        },
+        {
+          "documentName": "Global Document 9",
+          "documentType": "Enterprise",
+          "policyNumber": "Global Policy Number 9",
+          "customerName": "William Johnson",
+          "contentSummary": "Scalable architecture built to accommodate rapid expansion and change.",
+          "fileSize": "Global File Size 9",
+          "classification": "Global Classification 9",
+          "confidenceScore": 6.3,
+          "status": "active"
+        },
+        {
+          "documentName": "Regional Document 10",
+          "documentType": "Starter",
+          "policyNumber": "Regional Policy Number 10",
+          "customerName": "Maria Rodriguez",
+          "contentSummary": "Enterprise-grade solution with robust security and compliance features.",
+          "fileSize": "Regional File Size 10",
+          "classification": "Regional Classification 10",
+          "confidenceScore": 1.9,
+          "status": "pending"
+        },
+        {
+          "documentName": "Custom Document 11",
+          "documentType": "Growth",
+          "policyNumber": "Custom Policy Number 11",
+          "customerName": "Thomas Lee",
+          "contentSummary": "Integrated platform connecting multiple systems for seamless operations.",
+          "fileSize": "Custom File Size 11",
+          "classification": "Custom Classification 11",
+          "confidenceScore": 2.5,
+          "status": "completed"
+        },
+        {
+          "documentName": "Smart Document 12",
+          "documentType": "Scale",
+          "policyNumber": "Smart Policy Number 12",
+          "customerName": "Patricia White",
+          "contentSummary": "Automated workflow reducing manual intervention and human error.",
+          "fileSize": "Smart File Size 12",
+          "classification": "Smart Classification 12",
+          "confidenceScore": 3.1,
+          "status": "active"
+        },
+        {
+          "documentName": "Rapid Document 13",
+          "documentType": "Foundation",
+          "policyNumber": "Rapid Policy Number 13",
+          "customerName": "Christopher Hall",
+          "contentSummary": "Real-time monitoring system with intelligent alerting capabilities.",
+          "fileSize": "Rapid File Size 13",
+          "classification": "Rapid Classification 13",
+          "confidenceScore": 3.7,
+          "status": "in_progress"
+        },
+        {
+          "documentName": "Secure Document 14",
+          "documentType": "Advanced",
+          "policyNumber": "Secure Policy Number 14",
+          "customerName": "Amanda Clark",
+          "contentSummary": "Customizable module adaptable to diverse operational requirements.",
+          "fileSize": "Secure File Size 14",
+          "classification": "Secure Classification 14",
+          "confidenceScore": 4.3,
+          "status": "active"
+        },
+        {
+          "documentName": "Modern Document 15",
+          "documentType": "Professional",
+          "policyNumber": "Modern Policy Number 15",
+          "customerName": "Daniel Wright",
+          "contentSummary": "Performance-optimized design achieving superior throughput and reliability.",
+          "fileSize": "Modern File Size 15",
+          "classification": "Modern Classification 15",
+          "confidenceScore": 4.9,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "ComplianceRecord",
+      "routeKey": "compliance-records",
+      "label": "Compliance Record",
+      "icon": "package",
+      "aiFunction": "analyzeComplianceRecord",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Compliance Record data. The data includes: Regulation Name, Regulation Code, Category, Jurisdiction, Requirement, Compliance Status, Due Date, Responsible Party, Findings, Severity. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "regulationName",
+          "label": "Regulation Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "regulationCode",
+          "label": "Regulation Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "requirement",
+          "label": "Requirement",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "complianceStatus",
+          "label": "Compliance Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "responsibleParty",
+          "label": "Responsible Party",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "findings",
+          "label": "Findings",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "regulationName": "Advanced Regulation 1",
+          "regulationCode": "Advanced Regulation Code 1",
+          "category": "Category A",
+          "jurisdiction": "Advanced Jurisdiction 1",
+          "requirement": "Comprehensive solution designed for optimal performance and efficiency.",
+          "complianceStatus": "active",
+          "dueDate": "2024-01-01",
+          "responsibleParty": "Advanced Responsible Party 1",
+          "findings": "Comprehensive solution designed for optimal performance and efficiency.",
+          "severity": "low"
+        },
+        {
+          "regulationName": "Premium Regulation 2",
+          "regulationCode": "Premium Regulation Code 2",
+          "category": "Category B",
+          "jurisdiction": "Premium Jurisdiction 2",
+          "requirement": "Industry-leading approach with proven results across multiple deployments.",
+          "complianceStatus": "pending",
+          "dueDate": "2024-02-03",
+          "responsibleParty": "Premium Responsible Party 2",
+          "findings": "Industry-leading approach with proven results across multiple deployments.",
+          "severity": "medium"
+        },
+        {
+          "regulationName": "Standard Regulation 3",
+          "regulationCode": "Standard Regulation Code 3",
+          "category": "Category C",
+          "jurisdiction": "Standard Jurisdiction 3",
+          "requirement": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "complianceStatus": "in_progress",
+          "dueDate": "2024-03-05",
+          "responsibleParty": "Standard Responsible Party 3",
+          "findings": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "severity": "high"
+        },
+        {
+          "regulationName": "Elite Regulation 4",
+          "regulationCode": "Elite Regulation Code 4",
+          "category": "Category D",
+          "jurisdiction": "Elite Jurisdiction 4",
+          "requirement": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "complianceStatus": "completed",
+          "dueDate": "2024-04-07",
+          "responsibleParty": "Elite Responsible Party 4",
+          "findings": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "severity": "critical"
+        },
+        {
+          "regulationName": "Core Regulation 5",
+          "regulationCode": "Core Regulation Code 5",
+          "category": "Category E",
+          "jurisdiction": "Core Jurisdiction 5",
+          "requirement": "Cost-effective strategy focused on sustainable long-term growth.",
+          "complianceStatus": "under_review",
+          "dueDate": "2024-05-09",
+          "responsibleParty": "Core Responsible Party 5",
+          "findings": "Cost-effective strategy focused on sustainable long-term growth.",
+          "severity": "medium"
+        },
+        {
+          "regulationName": "Pro Regulation 6",
+          "regulationCode": "Pro Regulation Code 6",
+          "category": "Premium Tier",
+          "jurisdiction": "Pro Jurisdiction 6",
+          "requirement": "High-priority initiative aligned with organizational strategic objectives.",
+          "complianceStatus": "approved",
+          "dueDate": "2024-06-11",
+          "responsibleParty": "Pro Responsible Party 6",
+          "findings": "High-priority initiative aligned with organizational strategic objectives.",
+          "severity": "low"
+        },
+        {
+          "regulationName": "Essential Regulation 7",
+          "regulationCode": "Essential Regulation Code 7",
+          "category": "Standard Tier",
+          "jurisdiction": "Essential Jurisdiction 7",
+          "requirement": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "complianceStatus": "active",
+          "dueDate": "2024-07-13",
+          "responsibleParty": "Essential Responsible Party 7",
+          "findings": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "severity": "medium"
+        },
+        {
+          "regulationName": "Primary Regulation 8",
+          "regulationCode": "Primary Regulation Code 8",
+          "category": "Basic Tier",
+          "jurisdiction": "Primary Jurisdiction 8",
+          "requirement": "Innovative framework incorporating best practices and emerging technologies.",
+          "complianceStatus": "active",
+          "dueDate": "2024-08-15",
+          "responsibleParty": "Primary Responsible Party 8",
+          "findings": "Innovative framework incorporating best practices and emerging technologies.",
+          "severity": "high"
+        },
+        {
+          "regulationName": "Global Regulation 9",
+          "regulationCode": "Global Regulation Code 9",
+          "category": "Enterprise",
+          "jurisdiction": "Global Jurisdiction 9",
+          "requirement": "Scalable architecture built to accommodate rapid expansion and change.",
+          "complianceStatus": "active",
+          "dueDate": "2024-09-17",
+          "responsibleParty": "Global Responsible Party 9",
+          "findings": "Scalable architecture built to accommodate rapid expansion and change.",
+          "severity": "critical"
+        },
+        {
+          "regulationName": "Regional Regulation 10",
+          "regulationCode": "Regional Regulation Code 10",
+          "category": "Starter",
+          "jurisdiction": "Regional Jurisdiction 10",
+          "requirement": "Enterprise-grade solution with robust security and compliance features.",
+          "complianceStatus": "pending",
+          "dueDate": "2024-10-19",
+          "responsibleParty": "Regional Responsible Party 10",
+          "findings": "Enterprise-grade solution with robust security and compliance features.",
+          "severity": "medium"
+        },
+        {
+          "regulationName": "Custom Regulation 11",
+          "regulationCode": "Custom Regulation Code 11",
+          "category": "Growth",
+          "jurisdiction": "Custom Jurisdiction 11",
+          "requirement": "Integrated platform connecting multiple systems for seamless operations.",
+          "complianceStatus": "completed",
+          "dueDate": "2024-11-21",
+          "responsibleParty": "Custom Responsible Party 11",
+          "findings": "Integrated platform connecting multiple systems for seamless operations.",
+          "severity": "low"
+        },
+        {
+          "regulationName": "Smart Regulation 12",
+          "regulationCode": "Smart Regulation Code 12",
+          "category": "Scale",
+          "jurisdiction": "Smart Jurisdiction 12",
+          "requirement": "Automated workflow reducing manual intervention and human error.",
+          "complianceStatus": "active",
+          "dueDate": "2024-12-23",
+          "responsibleParty": "Smart Responsible Party 12",
+          "findings": "Automated workflow reducing manual intervention and human error.",
+          "severity": "medium"
+        },
+        {
+          "regulationName": "Rapid Regulation 13",
+          "regulationCode": "Rapid Regulation Code 13",
+          "category": "Foundation",
+          "jurisdiction": "Rapid Jurisdiction 13",
+          "requirement": "Real-time monitoring system with intelligent alerting capabilities.",
+          "complianceStatus": "in_progress",
+          "dueDate": "2024-01-25",
+          "responsibleParty": "Rapid Responsible Party 13",
+          "findings": "Real-time monitoring system with intelligent alerting capabilities.",
+          "severity": "high"
+        },
+        {
+          "regulationName": "Secure Regulation 14",
+          "regulationCode": "Secure Regulation Code 14",
+          "category": "Advanced",
+          "jurisdiction": "Secure Jurisdiction 14",
+          "requirement": "Customizable module adaptable to diverse operational requirements.",
+          "complianceStatus": "active",
+          "dueDate": "2024-02-27",
+          "responsibleParty": "Secure Responsible Party 14",
+          "findings": "Customizable module adaptable to diverse operational requirements.",
+          "severity": "critical"
+        },
+        {
+          "regulationName": "Modern Regulation 15",
+          "regulationCode": "Modern Regulation Code 15",
+          "category": "Professional",
+          "jurisdiction": "Modern Jurisdiction 15",
+          "requirement": "Performance-optimized design achieving superior throughput and reliability.",
+          "complianceStatus": "approved",
+          "dueDate": "2024-03-01",
+          "responsibleParty": "Modern Responsible Party 15",
+          "findings": "Performance-optimized design achieving superior throughput and reliability.",
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "modelName": "ReinsuranceTreatie",
+      "routeKey": "reinsurance-treaties",
+      "label": "Reinsurance Treatie",
+      "icon": "shield",
+      "aiFunction": "analyzeReinsuranceTreatie",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Reinsurance Treatie data. The data includes: Treaty Name, Treaty Number, Reinsurer Name, Treaty Type, Coverage Limit, Retention Amount, Premium Rate, Effective Date, Expiry Date, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "treatyName",
+          "label": "Treaty Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "treatyNumber",
+          "label": "Treaty Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reinsurerName",
+          "label": "Reinsurer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "treatyType",
+          "label": "Treaty Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "coverageLimit",
+          "label": "Coverage Limit",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "retentionAmount",
+          "label": "Retention Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "premiumRate",
+          "label": "Premium Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "treatyName": "Advanced Treaty 1",
+          "treatyNumber": "Advanced Treaty Number 1",
+          "reinsurerName": "Advanced Reinsurer 1",
+          "treatyType": "Category A",
+          "coverageLimit": 10,
+          "retentionAmount": 500,
+          "premiumRate": 1.5,
+          "effectiveDate": "2024-01-01",
+          "expiryDate": "2024-01-01",
+          "status": "active"
+        },
+        {
+          "treatyName": "Premium Treaty 2",
+          "treatyNumber": "Premium Treaty Number 2",
+          "reinsurerName": "Premium Reinsurer 2",
+          "treatyType": "Category B",
+          "coverageLimit": 71.7,
+          "retentionAmount": 2481,
+          "premiumRate": 2.1,
+          "effectiveDate": "2024-02-03",
+          "expiryDate": "2024-02-03",
+          "status": "pending"
+        },
+        {
+          "treatyName": "Standard Treaty 3",
+          "treatyNumber": "Standard Treaty Number 3",
+          "reinsurerName": "Standard Reinsurer 3",
+          "treatyType": "Category C",
+          "coverageLimit": 33.4,
+          "retentionAmount": 4462,
+          "premiumRate": 2.7,
+          "effectiveDate": "2024-03-05",
+          "expiryDate": "2024-03-05",
+          "status": "in_progress"
+        },
+        {
+          "treatyName": "Elite Treaty 4",
+          "treatyNumber": "Elite Treaty Number 4",
+          "reinsurerName": "Elite Reinsurer 4",
+          "treatyType": "Category D",
+          "coverageLimit": 95.1,
+          "retentionAmount": 6443,
+          "premiumRate": 3.3,
+          "effectiveDate": "2024-04-07",
+          "expiryDate": "2024-04-07",
+          "status": "completed"
+        },
+        {
+          "treatyName": "Core Treaty 5",
+          "treatyNumber": "Core Treaty Number 5",
+          "reinsurerName": "Core Reinsurer 5",
+          "treatyType": "Category E",
+          "coverageLimit": 56.8,
+          "retentionAmount": 8424,
+          "premiumRate": 3.9,
+          "effectiveDate": "2024-05-09",
+          "expiryDate": "2024-05-09",
+          "status": "under_review"
+        },
+        {
+          "treatyName": "Pro Treaty 6",
+          "treatyNumber": "Pro Treaty Number 6",
+          "reinsurerName": "Pro Reinsurer 6",
+          "treatyType": "Premium Tier",
+          "coverageLimit": 118.5,
+          "retentionAmount": 10405,
+          "premiumRate": 4.5,
+          "effectiveDate": "2024-06-11",
+          "expiryDate": "2024-06-11",
+          "status": "approved"
+        },
+        {
+          "treatyName": "Essential Treaty 7",
+          "treatyNumber": "Essential Treaty Number 7",
+          "reinsurerName": "Essential Reinsurer 7",
+          "treatyType": "Standard Tier",
+          "coverageLimit": 80.2,
+          "retentionAmount": 12386,
+          "premiumRate": 5.1,
+          "effectiveDate": "2024-07-13",
+          "expiryDate": "2024-07-13",
+          "status": "active"
+        },
+        {
+          "treatyName": "Primary Treaty 8",
+          "treatyNumber": "Primary Treaty Number 8",
+          "reinsurerName": "Primary Reinsurer 8",
+          "treatyType": "Basic Tier",
+          "coverageLimit": 141.9,
+          "retentionAmount": 9367,
+          "premiumRate": 5.7,
+          "effectiveDate": "2024-08-15",
+          "expiryDate": "2024-08-15",
+          "status": "active"
+        },
+        {
+          "treatyName": "Global Treaty 9",
+          "treatyNumber": "Global Treaty Number 9",
+          "reinsurerName": "Global Reinsurer 9",
+          "treatyType": "Enterprise",
+          "coverageLimit": 103.6,
+          "retentionAmount": 11348,
+          "premiumRate": 6.3,
+          "effectiveDate": "2024-09-17",
+          "expiryDate": "2024-09-17",
+          "status": "active"
+        },
+        {
+          "treatyName": "Regional Treaty 10",
+          "treatyNumber": "Regional Treaty Number 10",
+          "reinsurerName": "Regional Reinsurer 10",
+          "treatyType": "Starter",
+          "coverageLimit": 165.3,
+          "retentionAmount": 13329,
+          "premiumRate": 1.9,
+          "effectiveDate": "2024-10-19",
+          "expiryDate": "2024-10-19",
+          "status": "pending"
+        },
+        {
+          "treatyName": "Custom Treaty 11",
+          "treatyNumber": "Custom Treaty Number 11",
+          "reinsurerName": "Custom Reinsurer 11",
+          "treatyType": "Growth",
+          "coverageLimit": 127,
+          "retentionAmount": 15310,
+          "premiumRate": 2.5,
+          "effectiveDate": "2024-11-21",
+          "expiryDate": "2024-11-21",
+          "status": "completed"
+        },
+        {
+          "treatyName": "Smart Treaty 12",
+          "treatyNumber": "Smart Treaty Number 12",
+          "reinsurerName": "Smart Reinsurer 12",
+          "treatyType": "Scale",
+          "coverageLimit": 188.7,
+          "retentionAmount": 17291,
+          "premiumRate": 3.1,
+          "effectiveDate": "2024-12-23",
+          "expiryDate": "2024-12-23",
+          "status": "active"
+        },
+        {
+          "treatyName": "Rapid Treaty 13",
+          "treatyNumber": "Rapid Treaty Number 13",
+          "reinsurerName": "Rapid Reinsurer 13",
+          "treatyType": "Foundation",
+          "coverageLimit": 150.4,
+          "retentionAmount": 19272,
+          "premiumRate": 3.7,
+          "effectiveDate": "2024-01-25",
+          "expiryDate": "2024-01-25",
+          "status": "in_progress"
+        },
+        {
+          "treatyName": "Secure Treaty 14",
+          "treatyNumber": "Secure Treaty Number 14",
+          "reinsurerName": "Secure Reinsurer 14",
+          "treatyType": "Advanced",
+          "coverageLimit": 212.1,
+          "retentionAmount": 21253,
+          "premiumRate": 4.3,
+          "effectiveDate": "2024-02-27",
+          "expiryDate": "2024-02-27",
+          "status": "active"
+        },
+        {
+          "treatyName": "Modern Treaty 15",
+          "treatyNumber": "Modern Treaty Number 15",
+          "reinsurerName": "Modern Reinsurer 15",
+          "treatyType": "Professional",
+          "coverageLimit": 173.8,
+          "retentionAmount": 18234,
+          "premiumRate": 4.9,
+          "effectiveDate": "2024-03-01",
+          "expiryDate": "2024-03-01",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "LossRatio",
+      "routeKey": "loss-ratios",
+      "label": "Loss Ratio",
+      "icon": "star",
+      "aiFunction": "analyzeLossRatio",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Loss Ratio data. The data includes: Analysis Name, Policy Type, Period, Earned Premium, Incurred Losses, Loss Ratio, Expense Ratio, Combined Ratio, Trend, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "analysisName",
+          "label": "Analysis Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "policyType",
+          "label": "Policy Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "period",
+          "label": "Period",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "earnedPremium",
+          "label": "Earned Premium",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "incurredLosses",
+          "label": "Incurred Losses",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "lossRatio",
+          "label": "Loss Ratio",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "expenseRatio",
+          "label": "Expense Ratio",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "combinedRatio",
+          "label": "Combined Ratio",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "trend",
+          "label": "Trend",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "analysisName": "Advanced Analysis 1",
+          "policyType": "Category A",
+          "period": "Advanced Period 1",
+          "earnedPremium": 10,
+          "incurredLosses": 10,
+          "lossRatio": 1.5,
+          "expenseRatio": 1.5,
+          "combinedRatio": 1.5,
+          "trend": "Advanced Trend 1",
+          "status": "active"
+        },
+        {
+          "analysisName": "Premium Analysis 2",
+          "policyType": "Category B",
+          "period": "Premium Period 2",
+          "earnedPremium": 71.7,
+          "incurredLosses": 71.7,
+          "lossRatio": 2.1,
+          "expenseRatio": 2.1,
+          "combinedRatio": 2.1,
+          "trend": "Premium Trend 2",
+          "status": "pending"
+        },
+        {
+          "analysisName": "Standard Analysis 3",
+          "policyType": "Category C",
+          "period": "Standard Period 3",
+          "earnedPremium": 33.4,
+          "incurredLosses": 33.4,
+          "lossRatio": 2.7,
+          "expenseRatio": 2.7,
+          "combinedRatio": 2.7,
+          "trend": "Standard Trend 3",
+          "status": "in_progress"
+        },
+        {
+          "analysisName": "Elite Analysis 4",
+          "policyType": "Category D",
+          "period": "Elite Period 4",
+          "earnedPremium": 95.1,
+          "incurredLosses": 95.1,
+          "lossRatio": 3.3,
+          "expenseRatio": 3.3,
+          "combinedRatio": 3.3,
+          "trend": "Elite Trend 4",
+          "status": "completed"
+        },
+        {
+          "analysisName": "Core Analysis 5",
+          "policyType": "Category E",
+          "period": "Core Period 5",
+          "earnedPremium": 56.8,
+          "incurredLosses": 56.8,
+          "lossRatio": 3.9,
+          "expenseRatio": 3.9,
+          "combinedRatio": 3.9,
+          "trend": "Core Trend 5",
+          "status": "under_review"
+        },
+        {
+          "analysisName": "Pro Analysis 6",
+          "policyType": "Premium Tier",
+          "period": "Pro Period 6",
+          "earnedPremium": 118.5,
+          "incurredLosses": 118.5,
+          "lossRatio": 4.5,
+          "expenseRatio": 4.5,
+          "combinedRatio": 4.5,
+          "trend": "Pro Trend 6",
+          "status": "approved"
+        },
+        {
+          "analysisName": "Essential Analysis 7",
+          "policyType": "Standard Tier",
+          "period": "Essential Period 7",
+          "earnedPremium": 80.2,
+          "incurredLosses": 80.2,
+          "lossRatio": 5.1,
+          "expenseRatio": 5.1,
+          "combinedRatio": 5.1,
+          "trend": "Essential Trend 7",
+          "status": "active"
+        },
+        {
+          "analysisName": "Primary Analysis 8",
+          "policyType": "Basic Tier",
+          "period": "Primary Period 8",
+          "earnedPremium": 141.9,
+          "incurredLosses": 141.9,
+          "lossRatio": 5.7,
+          "expenseRatio": 5.7,
+          "combinedRatio": 5.7,
+          "trend": "Primary Trend 8",
+          "status": "active"
+        },
+        {
+          "analysisName": "Global Analysis 9",
+          "policyType": "Enterprise",
+          "period": "Global Period 9",
+          "earnedPremium": 103.6,
+          "incurredLosses": 103.6,
+          "lossRatio": 6.3,
+          "expenseRatio": 6.3,
+          "combinedRatio": 6.3,
+          "trend": "Global Trend 9",
+          "status": "active"
+        },
+        {
+          "analysisName": "Regional Analysis 10",
+          "policyType": "Starter",
+          "period": "Regional Period 10",
+          "earnedPremium": 165.3,
+          "incurredLosses": 165.3,
+          "lossRatio": 1.9,
+          "expenseRatio": 1.9,
+          "combinedRatio": 1.9,
+          "trend": "Regional Trend 10",
+          "status": "pending"
+        },
+        {
+          "analysisName": "Custom Analysis 11",
+          "policyType": "Growth",
+          "period": "Custom Period 11",
+          "earnedPremium": 127,
+          "incurredLosses": 127,
+          "lossRatio": 2.5,
+          "expenseRatio": 2.5,
+          "combinedRatio": 2.5,
+          "trend": "Custom Trend 11",
+          "status": "completed"
+        },
+        {
+          "analysisName": "Smart Analysis 12",
+          "policyType": "Scale",
+          "period": "Smart Period 12",
+          "earnedPremium": 188.7,
+          "incurredLosses": 188.7,
+          "lossRatio": 3.1,
+          "expenseRatio": 3.1,
+          "combinedRatio": 3.1,
+          "trend": "Smart Trend 12",
+          "status": "active"
+        },
+        {
+          "analysisName": "Rapid Analysis 13",
+          "policyType": "Foundation",
+          "period": "Rapid Period 13",
+          "earnedPremium": 150.4,
+          "incurredLosses": 150.4,
+          "lossRatio": 3.7,
+          "expenseRatio": 3.7,
+          "combinedRatio": 3.7,
+          "trend": "Rapid Trend 13",
+          "status": "in_progress"
+        },
+        {
+          "analysisName": "Secure Analysis 14",
+          "policyType": "Advanced",
+          "period": "Secure Period 14",
+          "earnedPremium": 212.1,
+          "incurredLosses": 212.1,
+          "lossRatio": 4.3,
+          "expenseRatio": 4.3,
+          "combinedRatio": 4.3,
+          "trend": "Secure Trend 14",
+          "status": "active"
+        },
+        {
+          "analysisName": "Modern Analysis 15",
+          "policyType": "Professional",
+          "period": "Modern Period 15",
+          "earnedPremium": 173.8,
+          "incurredLosses": 173.8,
+          "lossRatio": 4.9,
+          "expenseRatio": 4.9,
+          "combinedRatio": 4.9,
+          "trend": "Modern Trend 15",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "AgentsBroker",
+      "routeKey": "agents-brokers",
+      "label": "Agents Broker",
+      "icon": "truck",
+      "aiFunction": "analyzeAgentsBroker",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Agents Broker data. The data includes: Name, License Number, Agent Type, Email, Phone, Agency Name, Commission Rate, Total Policies, Total Premium, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "licenseNumber",
+          "label": "License Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "agentType",
+          "label": "Agent Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "agencyName",
+          "label": "Agency Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "commissionRate",
+          "label": "Commission Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalPolicies",
+          "label": "Total Policies",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "totalPremium",
+          "label": "Total Premium",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "licenseNumber": "Advanced License Number 1",
+          "agentType": "Category A",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "agencyName": "Advanced Agency 1",
+          "commissionRate": 1.5,
+          "totalPolicies": 10,
+          "totalPremium": 10,
+          "status": "active"
+        },
+        {
+          "name": "Premium Name 2",
+          "licenseNumber": "Premium License Number 2",
+          "agentType": "Category B",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "agencyName": "Premium Agency 2",
+          "commissionRate": 2.1,
+          "totalPolicies": 58,
+          "totalPremium": 71.7,
+          "status": "pending"
+        },
+        {
+          "name": "Standard Name 3",
+          "licenseNumber": "Standard License Number 3",
+          "agentType": "Category C",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "agencyName": "Standard Agency 3",
+          "commissionRate": 2.7,
+          "totalPolicies": 106,
+          "totalPremium": 33.4,
+          "status": "in_progress"
+        },
+        {
+          "name": "Elite Name 4",
+          "licenseNumber": "Elite License Number 4",
+          "agentType": "Category D",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "agencyName": "Elite Agency 4",
+          "commissionRate": 3.3,
+          "totalPolicies": 154,
+          "totalPremium": 95.1,
+          "status": "completed"
+        },
+        {
+          "name": "Core Name 5",
+          "licenseNumber": "Core License Number 5",
+          "agentType": "Category E",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "agencyName": "Core Agency 5",
+          "commissionRate": 3.9,
+          "totalPolicies": 102,
+          "totalPremium": 56.8,
+          "status": "under_review"
+        },
+        {
+          "name": "Pro Name 6",
+          "licenseNumber": "Pro License Number 6",
+          "agentType": "Premium Tier",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "agencyName": "Pro Agency 6",
+          "commissionRate": 4.5,
+          "totalPolicies": 150,
+          "totalPremium": 118.5,
+          "status": "approved"
+        },
+        {
+          "name": "Essential Name 7",
+          "licenseNumber": "Essential License Number 7",
+          "agentType": "Standard Tier",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "agencyName": "Essential Agency 7",
+          "commissionRate": 5.1,
+          "totalPolicies": 198,
+          "totalPremium": 80.2,
+          "status": "active"
+        },
+        {
+          "name": "Primary Name 8",
+          "licenseNumber": "Primary License Number 8",
+          "agentType": "Basic Tier",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "agencyName": "Primary Agency 8",
+          "commissionRate": 5.7,
+          "totalPolicies": 146,
+          "totalPremium": 141.9,
+          "status": "active"
+        },
+        {
+          "name": "Global Name 9",
+          "licenseNumber": "Global License Number 9",
+          "agentType": "Enterprise",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "agencyName": "Global Agency 9",
+          "commissionRate": 6.3,
+          "totalPolicies": 194,
+          "totalPremium": 103.6,
+          "status": "active"
+        },
+        {
+          "name": "Regional Name 10",
+          "licenseNumber": "Regional License Number 10",
+          "agentType": "Starter",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "agencyName": "Regional Agency 10",
+          "commissionRate": 1.9,
+          "totalPolicies": 242,
+          "totalPremium": 165.3,
+          "status": "pending"
+        },
+        {
+          "name": "Custom Name 11",
+          "licenseNumber": "Custom License Number 11",
+          "agentType": "Growth",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "agencyName": "Custom Agency 11",
+          "commissionRate": 2.5,
+          "totalPolicies": 190,
+          "totalPremium": 127,
+          "status": "completed"
+        },
+        {
+          "name": "Smart Name 12",
+          "licenseNumber": "Smart License Number 12",
+          "agentType": "Scale",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "agencyName": "Smart Agency 12",
+          "commissionRate": 3.1,
+          "totalPolicies": 238,
+          "totalPremium": 188.7,
+          "status": "active"
+        },
+        {
+          "name": "Rapid Name 13",
+          "licenseNumber": "Rapid License Number 13",
+          "agentType": "Foundation",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "agencyName": "Rapid Agency 13",
+          "commissionRate": 3.7,
+          "totalPolicies": 286,
+          "totalPremium": 150.4,
+          "status": "in_progress"
+        },
+        {
+          "name": "Secure Name 14",
+          "licenseNumber": "Secure License Number 14",
+          "agentType": "Advanced",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "agencyName": "Secure Agency 14",
+          "commissionRate": 4.3,
+          "totalPolicies": 234,
+          "totalPremium": 212.1,
+          "status": "active"
+        },
+        {
+          "name": "Modern Name 15",
+          "licenseNumber": "Modern License Number 15",
+          "agentType": "Professional",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "agencyName": "Modern Agency 15",
+          "commissionRate": 4.9,
+          "totalPolicies": 282,
+          "totalPremium": 173.8,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "AuditLog",
+      "routeKey": "audit-logs",
+      "label": "Audit Log",
+      "icon": "users",
+      "aiFunction": "analyzeAuditLog",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Audit Log data. The data includes: Action, Entity Type, Entity Id, User Name, User Role, Ip Address, Details, Old Value, New Value, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userName",
+          "label": "User Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userRole",
+          "label": "User Role",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ipAddress",
+          "label": "Ip Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "details",
+          "label": "Details",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "oldValue",
+          "label": "Old Value",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "newValue",
+          "label": "New Value",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "action": "Advanced Action 1",
+          "entityType": "Category A",
+          "entityId": "Advanced Entity Id 1",
+          "userName": "Advanced User 1",
+          "userRole": "Advanced User Role 1",
+          "ipAddress": "New York",
+          "details": "Comprehensive solution designed for optimal performance and efficiency.",
+          "oldValue": "Comprehensive solution designed for optimal performance and efficiency.",
+          "newValue": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "action": "Premium Action 2",
+          "entityType": "Category B",
+          "entityId": "Premium Entity Id 2",
+          "userName": "Premium User 2",
+          "userRole": "Premium User Role 2",
+          "ipAddress": "Los Angeles",
+          "details": "Industry-leading approach with proven results across multiple deployments.",
+          "oldValue": "Industry-leading approach with proven results across multiple deployments.",
+          "newValue": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "action": "Standard Action 3",
+          "entityType": "Category C",
+          "entityId": "Standard Entity Id 3",
+          "userName": "Standard User 3",
+          "userRole": "Standard User Role 3",
+          "ipAddress": "Chicago",
+          "details": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "oldValue": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "newValue": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "action": "Elite Action 4",
+          "entityType": "Category D",
+          "entityId": "Elite Entity Id 4",
+          "userName": "Elite User 4",
+          "userRole": "Elite User Role 4",
+          "ipAddress": "Houston",
+          "details": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "oldValue": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "newValue": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "action": "Core Action 5",
+          "entityType": "Category E",
+          "entityId": "Core Entity Id 5",
+          "userName": "Core User 5",
+          "userRole": "Core User Role 5",
+          "ipAddress": "Phoenix",
+          "details": "Cost-effective strategy focused on sustainable long-term growth.",
+          "oldValue": "Cost-effective strategy focused on sustainable long-term growth.",
+          "newValue": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "action": "Pro Action 6",
+          "entityType": "Premium Tier",
+          "entityId": "Pro Entity Id 6",
+          "userName": "Pro User 6",
+          "userRole": "Pro User Role 6",
+          "ipAddress": "San Francisco",
+          "details": "High-priority initiative aligned with organizational strategic objectives.",
+          "oldValue": "High-priority initiative aligned with organizational strategic objectives.",
+          "newValue": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "action": "Essential Action 7",
+          "entityType": "Standard Tier",
+          "entityId": "Essential Entity Id 7",
+          "userName": "Essential User 7",
+          "userRole": "Essential User Role 7",
+          "ipAddress": "Seattle",
+          "details": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "oldValue": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "newValue": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "action": "Primary Action 8",
+          "entityType": "Basic Tier",
+          "entityId": "Primary Entity Id 8",
+          "userName": "Primary User 8",
+          "userRole": "Primary User Role 8",
+          "ipAddress": "Boston",
+          "details": "Innovative framework incorporating best practices and emerging technologies.",
+          "oldValue": "Innovative framework incorporating best practices and emerging technologies.",
+          "newValue": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "action": "Global Action 9",
+          "entityType": "Enterprise",
+          "entityId": "Global Entity Id 9",
+          "userName": "Global User 9",
+          "userRole": "Global User Role 9",
+          "ipAddress": "Denver",
+          "details": "Scalable architecture built to accommodate rapid expansion and change.",
+          "oldValue": "Scalable architecture built to accommodate rapid expansion and change.",
+          "newValue": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "action": "Regional Action 10",
+          "entityType": "Starter",
+          "entityId": "Regional Entity Id 10",
+          "userName": "Regional User 10",
+          "userRole": "Regional User Role 10",
+          "ipAddress": "Miami",
+          "details": "Enterprise-grade solution with robust security and compliance features.",
+          "oldValue": "Enterprise-grade solution with robust security and compliance features.",
+          "newValue": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "action": "Custom Action 11",
+          "entityType": "Growth",
+          "entityId": "Custom Entity Id 11",
+          "userName": "Custom User 11",
+          "userRole": "Custom User Role 11",
+          "ipAddress": "Austin",
+          "details": "Integrated platform connecting multiple systems for seamless operations.",
+          "oldValue": "Integrated platform connecting multiple systems for seamless operations.",
+          "newValue": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "action": "Smart Action 12",
+          "entityType": "Scale",
+          "entityId": "Smart Entity Id 12",
+          "userName": "Smart User 12",
+          "userRole": "Smart User Role 12",
+          "ipAddress": "Portland",
+          "details": "Automated workflow reducing manual intervention and human error.",
+          "oldValue": "Automated workflow reducing manual intervention and human error.",
+          "newValue": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "action": "Rapid Action 13",
+          "entityType": "Foundation",
+          "entityId": "Rapid Entity Id 13",
+          "userName": "Rapid User 13",
+          "userRole": "Rapid User Role 13",
+          "ipAddress": "Dallas",
+          "details": "Real-time monitoring system with intelligent alerting capabilities.",
+          "oldValue": "Real-time monitoring system with intelligent alerting capabilities.",
+          "newValue": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "action": "Secure Action 14",
+          "entityType": "Advanced",
+          "entityId": "Secure Entity Id 14",
+          "userName": "Secure User 14",
+          "userRole": "Secure User Role 14",
+          "ipAddress": "Atlanta",
+          "details": "Customizable module adaptable to diverse operational requirements.",
+          "oldValue": "Customizable module adaptable to diverse operational requirements.",
+          "newValue": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "action": "Modern Action 15",
+          "entityType": "Professional",
+          "entityId": "Modern Entity Id 15",
+          "userName": "Modern User 15",
+          "userRole": "Modern User Role 15",
+          "ipAddress": "Nashville",
+          "details": "Performance-optimized design achieving superior throughput and reliability.",
+          "oldValue": "Performance-optimized design achieving superior throughput and reliability.",
+          "newValue": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Report",
+      "routeKey": "reports",
+      "label": "Report",
+      "icon": "zap",
+      "aiFunction": "analyzeReport",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Report data. The data includes: Report Name, Report Type, Category, Period, Generated By, Summary, Total Policies, Total Premium, Total Claims, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "reportName",
+          "label": "Report Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reportType",
+          "label": "Report Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "period",
+          "label": "Period",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "generatedBy",
+          "label": "Generated By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "summary",
+          "label": "Summary",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "totalPolicies",
+          "label": "Total Policies",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "totalPremium",
+          "label": "Total Premium",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalClaims",
+          "label": "Total Claims",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "reportName": "Advanced Report 1",
+          "reportType": "Category A",
+          "category": "Category A",
+          "period": "Advanced Period 1",
+          "generatedBy": "Advanced Generated By 1",
+          "summary": "Comprehensive solution designed for optimal performance and efficiency.",
+          "totalPolicies": 10,
+          "totalPremium": 10,
+          "totalClaims": 10,
+          "status": "active"
+        },
+        {
+          "reportName": "Premium Report 2",
+          "reportType": "Category B",
+          "category": "Category B",
+          "period": "Premium Period 2",
+          "generatedBy": "Premium Generated By 2",
+          "summary": "Industry-leading approach with proven results across multiple deployments.",
+          "totalPolicies": 58,
+          "totalPremium": 71.7,
+          "totalClaims": 71.7,
+          "status": "pending"
+        },
+        {
+          "reportName": "Standard Report 3",
+          "reportType": "Category C",
+          "category": "Category C",
+          "period": "Standard Period 3",
+          "generatedBy": "Standard Generated By 3",
+          "summary": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "totalPolicies": 106,
+          "totalPremium": 33.4,
+          "totalClaims": 33.4,
+          "status": "in_progress"
+        },
+        {
+          "reportName": "Elite Report 4",
+          "reportType": "Category D",
+          "category": "Category D",
+          "period": "Elite Period 4",
+          "generatedBy": "Elite Generated By 4",
+          "summary": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "totalPolicies": 154,
+          "totalPremium": 95.1,
+          "totalClaims": 95.1,
+          "status": "completed"
+        },
+        {
+          "reportName": "Core Report 5",
+          "reportType": "Category E",
+          "category": "Category E",
+          "period": "Core Period 5",
+          "generatedBy": "Core Generated By 5",
+          "summary": "Cost-effective strategy focused on sustainable long-term growth.",
+          "totalPolicies": 102,
+          "totalPremium": 56.8,
+          "totalClaims": 56.8,
+          "status": "under_review"
+        },
+        {
+          "reportName": "Pro Report 6",
+          "reportType": "Premium Tier",
+          "category": "Premium Tier",
+          "period": "Pro Period 6",
+          "generatedBy": "Pro Generated By 6",
+          "summary": "High-priority initiative aligned with organizational strategic objectives.",
+          "totalPolicies": 150,
+          "totalPremium": 118.5,
+          "totalClaims": 118.5,
+          "status": "approved"
+        },
+        {
+          "reportName": "Essential Report 7",
+          "reportType": "Standard Tier",
+          "category": "Standard Tier",
+          "period": "Essential Period 7",
+          "generatedBy": "Essential Generated By 7",
+          "summary": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "totalPolicies": 198,
+          "totalPremium": 80.2,
+          "totalClaims": 80.2,
+          "status": "active"
+        },
+        {
+          "reportName": "Primary Report 8",
+          "reportType": "Basic Tier",
+          "category": "Basic Tier",
+          "period": "Primary Period 8",
+          "generatedBy": "Primary Generated By 8",
+          "summary": "Innovative framework incorporating best practices and emerging technologies.",
+          "totalPolicies": 146,
+          "totalPremium": 141.9,
+          "totalClaims": 141.9,
+          "status": "active"
+        },
+        {
+          "reportName": "Global Report 9",
+          "reportType": "Enterprise",
+          "category": "Enterprise",
+          "period": "Global Period 9",
+          "generatedBy": "Global Generated By 9",
+          "summary": "Scalable architecture built to accommodate rapid expansion and change.",
+          "totalPolicies": 194,
+          "totalPremium": 103.6,
+          "totalClaims": 103.6,
+          "status": "active"
+        },
+        {
+          "reportName": "Regional Report 10",
+          "reportType": "Starter",
+          "category": "Starter",
+          "period": "Regional Period 10",
+          "generatedBy": "Regional Generated By 10",
+          "summary": "Enterprise-grade solution with robust security and compliance features.",
+          "totalPolicies": 242,
+          "totalPremium": 165.3,
+          "totalClaims": 165.3,
+          "status": "pending"
+        },
+        {
+          "reportName": "Custom Report 11",
+          "reportType": "Growth",
+          "category": "Growth",
+          "period": "Custom Period 11",
+          "generatedBy": "Custom Generated By 11",
+          "summary": "Integrated platform connecting multiple systems for seamless operations.",
+          "totalPolicies": 190,
+          "totalPremium": 127,
+          "totalClaims": 127,
+          "status": "completed"
+        },
+        {
+          "reportName": "Smart Report 12",
+          "reportType": "Scale",
+          "category": "Scale",
+          "period": "Smart Period 12",
+          "generatedBy": "Smart Generated By 12",
+          "summary": "Automated workflow reducing manual intervention and human error.",
+          "totalPolicies": 238,
+          "totalPremium": 188.7,
+          "totalClaims": 188.7,
+          "status": "active"
+        },
+        {
+          "reportName": "Rapid Report 13",
+          "reportType": "Foundation",
+          "category": "Foundation",
+          "period": "Rapid Period 13",
+          "generatedBy": "Rapid Generated By 13",
+          "summary": "Real-time monitoring system with intelligent alerting capabilities.",
+          "totalPolicies": 286,
+          "totalPremium": 150.4,
+          "totalClaims": 150.4,
+          "status": "in_progress"
+        },
+        {
+          "reportName": "Secure Report 14",
+          "reportType": "Advanced",
+          "category": "Advanced",
+          "period": "Secure Period 14",
+          "generatedBy": "Secure Generated By 14",
+          "summary": "Customizable module adaptable to diverse operational requirements.",
+          "totalPolicies": 234,
+          "totalPremium": 212.1,
+          "totalClaims": 212.1,
+          "status": "active"
+        },
+        {
+          "reportName": "Modern Report 15",
+          "reportType": "Professional",
+          "category": "Professional",
+          "period": "Modern Period 15",
+          "generatedBy": "Modern Generated By 15",
+          "summary": "Performance-optimized design achieving superior throughput and reliability.",
+          "totalPolicies": 282,
+          "totalPremium": 173.8,
+          "totalClaims": 173.8,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "PolicyRenewal",
+      "routeKey": "policy-renewals",
+      "label": "Policy Renewal",
+      "icon": "bar-chart",
+      "aiFunction": "analyzePolicyRenewal",
+      "aiPrompt": "You are an AI analyst for A I Insurance Underwriting Agent. Analyze the provided Policy Renewal data. The data includes: Policy Number, Customer Name, Policy Type, Current Premium, Proposed Premium, Renewal Date, Expiry Date, Risk Change, Claims History, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "policyNumber",
+          "label": "Policy Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "policyType",
+          "label": "Policy Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "currentPremium",
+          "label": "Current Premium",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "proposedPremium",
+          "label": "Proposed Premium",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "renewalDate",
+          "label": "Renewal Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "riskChange",
+          "label": "Risk Change",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "claimsHistory",
+          "label": "Claims History",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "policyNumber": "Advanced Policy Number 1",
+          "customerName": "James Wilson",
+          "policyType": "Category A",
+          "currentPremium": 10,
+          "proposedPremium": 10,
+          "renewalDate": "2024-01-01",
+          "expiryDate": "2024-01-01",
+          "riskChange": "Advanced Risk Change 1",
+          "claimsHistory": "Advanced Claims History 1",
+          "status": "active"
+        },
+        {
+          "policyNumber": "Premium Policy Number 2",
+          "customerName": "Sarah Chen",
+          "policyType": "Category B",
+          "currentPremium": 71.7,
+          "proposedPremium": 71.7,
+          "renewalDate": "2024-02-03",
+          "expiryDate": "2024-02-03",
+          "riskChange": "Premium Risk Change 2",
+          "claimsHistory": "Premium Claims History 2",
+          "status": "pending"
+        },
+        {
+          "policyNumber": "Standard Policy Number 3",
+          "customerName": "Michael Brown",
+          "policyType": "Category C",
+          "currentPremium": 33.4,
+          "proposedPremium": 33.4,
+          "renewalDate": "2024-03-05",
+          "expiryDate": "2024-03-05",
+          "riskChange": "Standard Risk Change 3",
+          "claimsHistory": "Standard Claims History 3",
+          "status": "in_progress"
+        },
+        {
+          "policyNumber": "Elite Policy Number 4",
+          "customerName": "Emily Davis",
+          "policyType": "Category D",
+          "currentPremium": 95.1,
+          "proposedPremium": 95.1,
+          "renewalDate": "2024-04-07",
+          "expiryDate": "2024-04-07",
+          "riskChange": "Elite Risk Change 4",
+          "claimsHistory": "Elite Claims History 4",
+          "status": "completed"
+        },
+        {
+          "policyNumber": "Core Policy Number 5",
+          "customerName": "Robert Garcia",
+          "policyType": "Category E",
+          "currentPremium": 56.8,
+          "proposedPremium": 56.8,
+          "renewalDate": "2024-05-09",
+          "expiryDate": "2024-05-09",
+          "riskChange": "Core Risk Change 5",
+          "claimsHistory": "Core Claims History 5",
+          "status": "under_review"
+        },
+        {
+          "policyNumber": "Pro Policy Number 6",
+          "customerName": "Lisa Anderson",
+          "policyType": "Premium Tier",
+          "currentPremium": 118.5,
+          "proposedPremium": 118.5,
+          "renewalDate": "2024-06-11",
+          "expiryDate": "2024-06-11",
+          "riskChange": "Pro Risk Change 6",
+          "claimsHistory": "Pro Claims History 6",
+          "status": "approved"
+        },
+        {
+          "policyNumber": "Essential Policy Number 7",
+          "customerName": "David Martinez",
+          "policyType": "Standard Tier",
+          "currentPremium": 80.2,
+          "proposedPremium": 80.2,
+          "renewalDate": "2024-07-13",
+          "expiryDate": "2024-07-13",
+          "riskChange": "Essential Risk Change 7",
+          "claimsHistory": "Essential Claims History 7",
+          "status": "active"
+        },
+        {
+          "policyNumber": "Primary Policy Number 8",
+          "customerName": "Jennifer Taylor",
+          "policyType": "Basic Tier",
+          "currentPremium": 141.9,
+          "proposedPremium": 141.9,
+          "renewalDate": "2024-08-15",
+          "expiryDate": "2024-08-15",
+          "riskChange": "Primary Risk Change 8",
+          "claimsHistory": "Primary Claims History 8",
+          "status": "active"
+        },
+        {
+          "policyNumber": "Global Policy Number 9",
+          "customerName": "William Johnson",
+          "policyType": "Enterprise",
+          "currentPremium": 103.6,
+          "proposedPremium": 103.6,
+          "renewalDate": "2024-09-17",
+          "expiryDate": "2024-09-17",
+          "riskChange": "Global Risk Change 9",
+          "claimsHistory": "Global Claims History 9",
+          "status": "active"
+        },
+        {
+          "policyNumber": "Regional Policy Number 10",
+          "customerName": "Maria Rodriguez",
+          "policyType": "Starter",
+          "currentPremium": 165.3,
+          "proposedPremium": 165.3,
+          "renewalDate": "2024-10-19",
+          "expiryDate": "2024-10-19",
+          "riskChange": "Regional Risk Change 10",
+          "claimsHistory": "Regional Claims History 10",
+          "status": "pending"
+        },
+        {
+          "policyNumber": "Custom Policy Number 11",
+          "customerName": "Thomas Lee",
+          "policyType": "Growth",
+          "currentPremium": 127,
+          "proposedPremium": 127,
+          "renewalDate": "2024-11-21",
+          "expiryDate": "2024-11-21",
+          "riskChange": "Custom Risk Change 11",
+          "claimsHistory": "Custom Claims History 11",
+          "status": "completed"
+        },
+        {
+          "policyNumber": "Smart Policy Number 12",
+          "customerName": "Patricia White",
+          "policyType": "Scale",
+          "currentPremium": 188.7,
+          "proposedPremium": 188.7,
+          "renewalDate": "2024-12-23",
+          "expiryDate": "2024-12-23",
+          "riskChange": "Smart Risk Change 12",
+          "claimsHistory": "Smart Claims History 12",
+          "status": "active"
+        },
+        {
+          "policyNumber": "Rapid Policy Number 13",
+          "customerName": "Christopher Hall",
+          "policyType": "Foundation",
+          "currentPremium": 150.4,
+          "proposedPremium": 150.4,
+          "renewalDate": "2024-01-25",
+          "expiryDate": "2024-01-25",
+          "riskChange": "Rapid Risk Change 13",
+          "claimsHistory": "Rapid Claims History 13",
+          "status": "in_progress"
+        },
+        {
+          "policyNumber": "Secure Policy Number 14",
+          "customerName": "Amanda Clark",
+          "policyType": "Advanced",
+          "currentPremium": 212.1,
+          "proposedPremium": 212.1,
+          "renewalDate": "2024-02-27",
+          "expiryDate": "2024-02-27",
+          "riskChange": "Secure Risk Change 14",
+          "claimsHistory": "Secure Claims History 14",
+          "status": "active"
+        },
+        {
+          "policyNumber": "Modern Policy Number 15",
+          "customerName": "Daniel Wright",
+          "policyType": "Professional",
+          "currentPremium": 173.8,
+          "proposedPremium": 173.8,
+          "renewalDate": "2024-03-01",
+          "expiryDate": "2024-03-01",
+          "riskChange": "Modern Risk Change 15",
+          "claimsHistory": "Modern Claims History 15",
+          "status": "approved"
+        }
+      ]
+    }
+  ]
+}

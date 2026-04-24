@@ -1,0 +1,4312 @@
+{
+  "appName": "AI Car Dealership Sales",
+  "dbName": "a_i_car_dealership",
+  "folderName": "generated/AICarDealership",
+  "features": [
+    {
+      "modelName": "Inventory",
+      "routeKey": "inventorys",
+      "label": "Inventory",
+      "icon": "activity",
+      "aiFunction": "analyzeInventory",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Inventory data. The data includes: Vin, Make, Model, Year, Trim, Color, Mileage, Purchase Price, Listing Price, Ai Suggested Price, Condition, Body Type, Status, Days On Lot. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "vin",
+          "label": "Vin",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "make",
+          "label": "Make",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "model",
+          "label": "Model",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "year",
+          "label": "Year",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "trim",
+          "label": "Trim",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "color",
+          "label": "Color",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mileage",
+          "label": "Mileage",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "purchasePrice",
+          "label": "Purchase Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "listingPrice",
+          "label": "Listing Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "aiSuggestedPrice",
+          "label": "Ai Suggested Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "condition",
+          "label": "Condition",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "bodyType",
+          "label": "Body Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "daysOnLot",
+          "label": "Days On Lot",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "vin": "Advanced Vin 1",
+          "make": "Advanced Make 1",
+          "model": "Advanced Model 1",
+          "year": 2020,
+          "trim": "Advanced Trim 1",
+          "color": "Advanced Color 1",
+          "mileage": 18,
+          "purchasePrice": 500,
+          "listingPrice": 500,
+          "aiSuggestedPrice": 500,
+          "condition": "Advanced Condition 1",
+          "bodyType": "Category A",
+          "status": "active",
+          "daysOnLot": 10
+        },
+        {
+          "vin": "Premium Vin 2",
+          "make": "Premium Make 2",
+          "model": "Premium Model 2",
+          "year": 2021,
+          "trim": "Premium Trim 2",
+          "color": "Premium Color 2",
+          "mileage": 21,
+          "purchasePrice": 2481,
+          "listingPrice": 2481,
+          "aiSuggestedPrice": 2481,
+          "condition": "Premium Condition 2",
+          "bodyType": "Category B",
+          "status": "pending",
+          "daysOnLot": 58
+        },
+        {
+          "vin": "Standard Vin 3",
+          "make": "Standard Make 3",
+          "model": "Standard Model 3",
+          "year": 2022,
+          "trim": "Standard Trim 3",
+          "color": "Standard Color 3",
+          "mileage": 24,
+          "purchasePrice": 4462,
+          "listingPrice": 4462,
+          "aiSuggestedPrice": 4462,
+          "condition": "Standard Condition 3",
+          "bodyType": "Category C",
+          "status": "in_progress",
+          "daysOnLot": 106
+        },
+        {
+          "vin": "Elite Vin 4",
+          "make": "Elite Make 4",
+          "model": "Elite Model 4",
+          "year": 2023,
+          "trim": "Elite Trim 4",
+          "color": "Elite Color 4",
+          "mileage": 27,
+          "purchasePrice": 6443,
+          "listingPrice": 6443,
+          "aiSuggestedPrice": 6443,
+          "condition": "Elite Condition 4",
+          "bodyType": "Category D",
+          "status": "completed",
+          "daysOnLot": 154
+        },
+        {
+          "vin": "Core Vin 5",
+          "make": "Core Make 5",
+          "model": "Core Model 5",
+          "year": 2024,
+          "trim": "Core Trim 5",
+          "color": "Core Color 5",
+          "mileage": 30,
+          "purchasePrice": 8424,
+          "listingPrice": 8424,
+          "aiSuggestedPrice": 8424,
+          "condition": "Core Condition 5",
+          "bodyType": "Category E",
+          "status": "under_review",
+          "daysOnLot": 102
+        },
+        {
+          "vin": "Pro Vin 6",
+          "make": "Pro Make 6",
+          "model": "Pro Model 6",
+          "year": 2025,
+          "trim": "Pro Trim 6",
+          "color": "Pro Color 6",
+          "mileage": 33,
+          "purchasePrice": 10405,
+          "listingPrice": 10405,
+          "aiSuggestedPrice": 10405,
+          "condition": "Pro Condition 6",
+          "bodyType": "Premium Tier",
+          "status": "approved",
+          "daysOnLot": 150
+        },
+        {
+          "vin": "Essential Vin 7",
+          "make": "Essential Make 7",
+          "model": "Essential Model 7",
+          "year": 2020,
+          "trim": "Essential Trim 7",
+          "color": "Essential Color 7",
+          "mileage": 36,
+          "purchasePrice": 12386,
+          "listingPrice": 12386,
+          "aiSuggestedPrice": 12386,
+          "condition": "Essential Condition 7",
+          "bodyType": "Standard Tier",
+          "status": "active",
+          "daysOnLot": 198
+        },
+        {
+          "vin": "Primary Vin 8",
+          "make": "Primary Make 8",
+          "model": "Primary Model 8",
+          "year": 2021,
+          "trim": "Primary Trim 8",
+          "color": "Primary Color 8",
+          "mileage": 39,
+          "purchasePrice": 9367,
+          "listingPrice": 9367,
+          "aiSuggestedPrice": 9367,
+          "condition": "Primary Condition 8",
+          "bodyType": "Basic Tier",
+          "status": "active",
+          "daysOnLot": 146
+        },
+        {
+          "vin": "Global Vin 9",
+          "make": "Global Make 9",
+          "model": "Global Model 9",
+          "year": 2022,
+          "trim": "Global Trim 9",
+          "color": "Global Color 9",
+          "mileage": 42,
+          "purchasePrice": 11348,
+          "listingPrice": 11348,
+          "aiSuggestedPrice": 11348,
+          "condition": "Global Condition 9",
+          "bodyType": "Enterprise",
+          "status": "active",
+          "daysOnLot": 194
+        },
+        {
+          "vin": "Regional Vin 10",
+          "make": "Regional Make 10",
+          "model": "Regional Model 10",
+          "year": 2023,
+          "trim": "Regional Trim 10",
+          "color": "Regional Color 10",
+          "mileage": 45,
+          "purchasePrice": 13329,
+          "listingPrice": 13329,
+          "aiSuggestedPrice": 13329,
+          "condition": "Regional Condition 10",
+          "bodyType": "Starter",
+          "status": "pending",
+          "daysOnLot": 242
+        },
+        {
+          "vin": "Custom Vin 11",
+          "make": "Custom Make 11",
+          "model": "Custom Model 11",
+          "year": 2024,
+          "trim": "Custom Trim 11",
+          "color": "Custom Color 11",
+          "mileage": 48,
+          "purchasePrice": 15310,
+          "listingPrice": 15310,
+          "aiSuggestedPrice": 15310,
+          "condition": "Custom Condition 11",
+          "bodyType": "Growth",
+          "status": "completed",
+          "daysOnLot": 190
+        },
+        {
+          "vin": "Smart Vin 12",
+          "make": "Smart Make 12",
+          "model": "Smart Model 12",
+          "year": 2025,
+          "trim": "Smart Trim 12",
+          "color": "Smart Color 12",
+          "mileage": 51,
+          "purchasePrice": 17291,
+          "listingPrice": 17291,
+          "aiSuggestedPrice": 17291,
+          "condition": "Smart Condition 12",
+          "bodyType": "Scale",
+          "status": "active",
+          "daysOnLot": 238
+        },
+        {
+          "vin": "Rapid Vin 13",
+          "make": "Rapid Make 13",
+          "model": "Rapid Model 13",
+          "year": 2020,
+          "trim": "Rapid Trim 13",
+          "color": "Rapid Color 13",
+          "mileage": 54,
+          "purchasePrice": 19272,
+          "listingPrice": 19272,
+          "aiSuggestedPrice": 19272,
+          "condition": "Rapid Condition 13",
+          "bodyType": "Foundation",
+          "status": "in_progress",
+          "daysOnLot": 286
+        },
+        {
+          "vin": "Secure Vin 14",
+          "make": "Secure Make 14",
+          "model": "Secure Model 14",
+          "year": 2021,
+          "trim": "Secure Trim 14",
+          "color": "Secure Color 14",
+          "mileage": 57,
+          "purchasePrice": 21253,
+          "listingPrice": 21253,
+          "aiSuggestedPrice": 21253,
+          "condition": "Secure Condition 14",
+          "bodyType": "Advanced",
+          "status": "active",
+          "daysOnLot": 234
+        },
+        {
+          "vin": "Modern Vin 15",
+          "make": "Modern Make 15",
+          "model": "Modern Model 15",
+          "year": 2022,
+          "trim": "Modern Trim 15",
+          "color": "Modern Color 15",
+          "mileage": 60,
+          "purchasePrice": 18234,
+          "listingPrice": 18234,
+          "aiSuggestedPrice": 18234,
+          "condition": "Modern Condition 15",
+          "bodyType": "Professional",
+          "status": "approved",
+          "daysOnLot": 282
+        }
+      ]
+    },
+    {
+      "modelName": "Customer",
+      "routeKey": "customers",
+      "label": "Customer",
+      "icon": "briefcase",
+      "aiFunction": "analyzeCustomer",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Customer data. The data includes: First Name, Last Name, Email, Phone, Budget Min, Budget Max, Preferred Make, Preferred Type, Credit Score Range, Financing Needed, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "budgetMin",
+          "label": "Budget Min",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "budgetMax",
+          "label": "Budget Max",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "preferredMake",
+          "label": "Preferred Make",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "preferredType",
+          "label": "Preferred Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "creditScoreRange",
+          "label": "Credit Score Range",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "financingNeeded",
+          "label": "Financing Needed",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "budgetMin": 500,
+          "budgetMax": 500,
+          "preferredMake": "Advanced Preferred Make 1",
+          "preferredType": "Category A",
+          "creditScoreRange": "Advanced Credit Score Range 1",
+          "financingNeeded": true,
+          "status": "active"
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "budgetMin": 2481,
+          "budgetMax": 2481,
+          "preferredMake": "Premium Preferred Make 2",
+          "preferredType": "Category B",
+          "creditScoreRange": "Premium Credit Score Range 2",
+          "financingNeeded": true,
+          "status": "pending"
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "budgetMin": 4462,
+          "budgetMax": 4462,
+          "preferredMake": "Standard Preferred Make 3",
+          "preferredType": "Category C",
+          "creditScoreRange": "Standard Credit Score Range 3",
+          "financingNeeded": false,
+          "status": "in_progress"
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "budgetMin": 6443,
+          "budgetMax": 6443,
+          "preferredMake": "Elite Preferred Make 4",
+          "preferredType": "Category D",
+          "creditScoreRange": "Elite Credit Score Range 4",
+          "financingNeeded": true,
+          "status": "completed"
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "budgetMin": 8424,
+          "budgetMax": 8424,
+          "preferredMake": "Core Preferred Make 5",
+          "preferredType": "Category E",
+          "creditScoreRange": "Core Credit Score Range 5",
+          "financingNeeded": false,
+          "status": "under_review"
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "budgetMin": 10405,
+          "budgetMax": 10405,
+          "preferredMake": "Pro Preferred Make 6",
+          "preferredType": "Premium Tier",
+          "creditScoreRange": "Pro Credit Score Range 6",
+          "financingNeeded": true,
+          "status": "approved"
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "budgetMin": 12386,
+          "budgetMax": 12386,
+          "preferredMake": "Essential Preferred Make 7",
+          "preferredType": "Standard Tier",
+          "creditScoreRange": "Essential Credit Score Range 7",
+          "financingNeeded": true,
+          "status": "active"
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "budgetMin": 9367,
+          "budgetMax": 9367,
+          "preferredMake": "Primary Preferred Make 8",
+          "preferredType": "Basic Tier",
+          "creditScoreRange": "Primary Credit Score Range 8",
+          "financingNeeded": false,
+          "status": "active"
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "budgetMin": 11348,
+          "budgetMax": 11348,
+          "preferredMake": "Global Preferred Make 9",
+          "preferredType": "Enterprise",
+          "creditScoreRange": "Global Credit Score Range 9",
+          "financingNeeded": true,
+          "status": "active"
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "budgetMin": 13329,
+          "budgetMax": 13329,
+          "preferredMake": "Regional Preferred Make 10",
+          "preferredType": "Starter",
+          "creditScoreRange": "Regional Credit Score Range 10",
+          "financingNeeded": true,
+          "status": "pending"
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "budgetMin": 15310,
+          "budgetMax": 15310,
+          "preferredMake": "Custom Preferred Make 11",
+          "preferredType": "Growth",
+          "creditScoreRange": "Custom Credit Score Range 11",
+          "financingNeeded": false,
+          "status": "completed"
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "budgetMin": 17291,
+          "budgetMax": 17291,
+          "preferredMake": "Smart Preferred Make 12",
+          "preferredType": "Scale",
+          "creditScoreRange": "Smart Credit Score Range 12",
+          "financingNeeded": true,
+          "status": "active"
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "budgetMin": 19272,
+          "budgetMax": 19272,
+          "preferredMake": "Rapid Preferred Make 13",
+          "preferredType": "Foundation",
+          "creditScoreRange": "Rapid Credit Score Range 13",
+          "financingNeeded": false,
+          "status": "in_progress"
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "budgetMin": 21253,
+          "budgetMax": 21253,
+          "preferredMake": "Secure Preferred Make 14",
+          "preferredType": "Advanced",
+          "creditScoreRange": "Secure Credit Score Range 14",
+          "financingNeeded": true,
+          "status": "active"
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "budgetMin": 18234,
+          "budgetMax": 18234,
+          "preferredMake": "Modern Preferred Make 15",
+          "preferredType": "Professional",
+          "creditScoreRange": "Modern Credit Score Range 15",
+          "financingNeeded": true,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "TradeIn",
+      "routeKey": "trade-ins",
+      "label": "Trade In",
+      "icon": "clipboard",
+      "aiFunction": "analyzeTradeIn",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Trade In data. The data includes: Customer Id, Make, Model, Year, Mileage, Condition, Photo Url, Ai Valuation, Market Value, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "make",
+          "label": "Make",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "model",
+          "label": "Model",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "year",
+          "label": "Year",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "mileage",
+          "label": "Mileage",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "condition",
+          "label": "Condition",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "photoUrl",
+          "label": "Photo Url",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiValuation",
+          "label": "Ai Valuation",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "marketValue",
+          "label": "Market Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": 10,
+          "make": "Advanced Make 1",
+          "model": "Advanced Model 1",
+          "year": 2020,
+          "mileage": 18,
+          "condition": "Advanced Condition 1",
+          "photoUrl": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiValuation": 10,
+          "marketValue": 10,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "customerId": 58,
+          "make": "Premium Make 2",
+          "model": "Premium Model 2",
+          "year": 2021,
+          "mileage": 21,
+          "condition": "Premium Condition 2",
+          "photoUrl": "Industry-leading approach with proven results across multiple deployments.",
+          "aiValuation": 71.7,
+          "marketValue": 71.7,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "customerId": 106,
+          "make": "Standard Make 3",
+          "model": "Standard Model 3",
+          "year": 2022,
+          "mileage": 24,
+          "condition": "Standard Condition 3",
+          "photoUrl": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiValuation": 33.4,
+          "marketValue": 33.4,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "customerId": 154,
+          "make": "Elite Make 4",
+          "model": "Elite Model 4",
+          "year": 2023,
+          "mileage": 27,
+          "condition": "Elite Condition 4",
+          "photoUrl": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiValuation": 95.1,
+          "marketValue": 95.1,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "customerId": 102,
+          "make": "Core Make 5",
+          "model": "Core Model 5",
+          "year": 2024,
+          "mileage": 30,
+          "condition": "Core Condition 5",
+          "photoUrl": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiValuation": 56.8,
+          "marketValue": 56.8,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "customerId": 150,
+          "make": "Pro Make 6",
+          "model": "Pro Model 6",
+          "year": 2025,
+          "mileage": 33,
+          "condition": "Pro Condition 6",
+          "photoUrl": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiValuation": 118.5,
+          "marketValue": 118.5,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "customerId": 198,
+          "make": "Essential Make 7",
+          "model": "Essential Model 7",
+          "year": 2020,
+          "mileage": 36,
+          "condition": "Essential Condition 7",
+          "photoUrl": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiValuation": 80.2,
+          "marketValue": 80.2,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "customerId": 146,
+          "make": "Primary Make 8",
+          "model": "Primary Model 8",
+          "year": 2021,
+          "mileage": 39,
+          "condition": "Primary Condition 8",
+          "photoUrl": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiValuation": 141.9,
+          "marketValue": 141.9,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "customerId": 194,
+          "make": "Global Make 9",
+          "model": "Global Model 9",
+          "year": 2022,
+          "mileage": 42,
+          "condition": "Global Condition 9",
+          "photoUrl": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiValuation": 103.6,
+          "marketValue": 103.6,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "customerId": 242,
+          "make": "Regional Make 10",
+          "model": "Regional Model 10",
+          "year": 2023,
+          "mileage": 45,
+          "condition": "Regional Condition 10",
+          "photoUrl": "Enterprise-grade solution with robust security and compliance features.",
+          "aiValuation": 165.3,
+          "marketValue": 165.3,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "customerId": 190,
+          "make": "Custom Make 11",
+          "model": "Custom Model 11",
+          "year": 2024,
+          "mileage": 48,
+          "condition": "Custom Condition 11",
+          "photoUrl": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiValuation": 127,
+          "marketValue": 127,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "customerId": 238,
+          "make": "Smart Make 12",
+          "model": "Smart Model 12",
+          "year": 2025,
+          "mileage": 51,
+          "condition": "Smart Condition 12",
+          "photoUrl": "Automated workflow reducing manual intervention and human error.",
+          "aiValuation": 188.7,
+          "marketValue": 188.7,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "customerId": 286,
+          "make": "Rapid Make 13",
+          "model": "Rapid Model 13",
+          "year": 2020,
+          "mileage": 54,
+          "condition": "Rapid Condition 13",
+          "photoUrl": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiValuation": 150.4,
+          "marketValue": 150.4,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "customerId": 234,
+          "make": "Secure Make 14",
+          "model": "Secure Model 14",
+          "year": 2021,
+          "mileage": 57,
+          "condition": "Secure Condition 14",
+          "photoUrl": "Customizable module adaptable to diverse operational requirements.",
+          "aiValuation": 212.1,
+          "marketValue": 212.1,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "customerId": 282,
+          "make": "Modern Make 15",
+          "model": "Modern Model 15",
+          "year": 2022,
+          "mileage": 60,
+          "condition": "Modern Condition 15",
+          "photoUrl": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiValuation": 173.8,
+          "marketValue": 173.8,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "FniProduct",
+      "routeKey": "fni-products",
+      "label": "Fni Product",
+      "icon": "database",
+      "aiFunction": "analyzeFniProduct",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Fni Product data. The data includes: Name, Description, Category, Base Price, Commission Rate, Provider, Coverage Term, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "basePrice",
+          "label": "Base Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "commissionRate",
+          "label": "Commission Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "provider",
+          "label": "Provider",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "coverageTerm",
+          "label": "Coverage Term",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "Category A",
+          "basePrice": 500,
+          "commissionRate": 1.5,
+          "provider": "Advanced Provider 1",
+          "coverageTerm": "Advanced Coverage Term 1",
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "Category B",
+          "basePrice": 2481,
+          "commissionRate": 2.1,
+          "provider": "Premium Provider 2",
+          "coverageTerm": "Premium Coverage Term 2",
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "Category C",
+          "basePrice": 4462,
+          "commissionRate": 2.7,
+          "provider": "Standard Provider 3",
+          "coverageTerm": "Standard Coverage Term 3",
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "Category D",
+          "basePrice": 6443,
+          "commissionRate": 3.3,
+          "provider": "Elite Provider 4",
+          "coverageTerm": "Elite Coverage Term 4",
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "Category E",
+          "basePrice": 8424,
+          "commissionRate": 3.9,
+          "provider": "Core Provider 5",
+          "coverageTerm": "Core Coverage Term 5",
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "Premium Tier",
+          "basePrice": 10405,
+          "commissionRate": 4.5,
+          "provider": "Pro Provider 6",
+          "coverageTerm": "Pro Coverage Term 6",
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "Standard Tier",
+          "basePrice": 12386,
+          "commissionRate": 5.1,
+          "provider": "Essential Provider 7",
+          "coverageTerm": "Essential Coverage Term 7",
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "Basic Tier",
+          "basePrice": 9367,
+          "commissionRate": 5.7,
+          "provider": "Primary Provider 8",
+          "coverageTerm": "Primary Coverage Term 8",
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "Enterprise",
+          "basePrice": 11348,
+          "commissionRate": 6.3,
+          "provider": "Global Provider 9",
+          "coverageTerm": "Global Coverage Term 9",
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "Starter",
+          "basePrice": 13329,
+          "commissionRate": 1.9,
+          "provider": "Regional Provider 10",
+          "coverageTerm": "Regional Coverage Term 10",
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "Growth",
+          "basePrice": 15310,
+          "commissionRate": 2.5,
+          "provider": "Custom Provider 11",
+          "coverageTerm": "Custom Coverage Term 11",
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "category": "Scale",
+          "basePrice": 17291,
+          "commissionRate": 3.1,
+          "provider": "Smart Provider 12",
+          "coverageTerm": "Smart Coverage Term 12",
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "Foundation",
+          "basePrice": 19272,
+          "commissionRate": 3.7,
+          "provider": "Rapid Provider 13",
+          "coverageTerm": "Rapid Coverage Term 13",
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "category": "Advanced",
+          "basePrice": 21253,
+          "commissionRate": 4.3,
+          "provider": "Secure Provider 14",
+          "coverageTerm": "Secure Coverage Term 14",
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "Professional",
+          "basePrice": 18234,
+          "commissionRate": 4.9,
+          "provider": "Modern Provider 15",
+          "coverageTerm": "Modern Coverage Term 15",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "Lead",
+      "routeKey": "leads",
+      "label": "Lead",
+      "icon": "file-text",
+      "aiFunction": "analyzeLead",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Lead data. The data includes: Customer Name, Email, Phone, Source, Interest Type, Vehicle Interest, Ai Score, Status, Last Contact, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "interestType",
+          "label": "Interest Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "vehicleInterest",
+          "label": "Vehicle Interest",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiScore",
+          "label": "Ai Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastContact",
+          "label": "Last Contact",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerName": "James Wilson",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "source": "Advanced Source 1",
+          "interestType": "Category A",
+          "vehicleInterest": "Advanced Vehicle Interest 1",
+          "aiScore": 10,
+          "status": "active",
+          "lastContact": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "customerName": "Sarah Chen",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "source": "Premium Source 2",
+          "interestType": "Category B",
+          "vehicleInterest": "Premium Vehicle Interest 2",
+          "aiScore": 58,
+          "status": "pending",
+          "lastContact": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "customerName": "Michael Brown",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "source": "Standard Source 3",
+          "interestType": "Category C",
+          "vehicleInterest": "Standard Vehicle Interest 3",
+          "aiScore": 106,
+          "status": "in_progress",
+          "lastContact": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "customerName": "Emily Davis",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "source": "Elite Source 4",
+          "interestType": "Category D",
+          "vehicleInterest": "Elite Vehicle Interest 4",
+          "aiScore": 154,
+          "status": "completed",
+          "lastContact": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "customerName": "Robert Garcia",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "source": "Core Source 5",
+          "interestType": "Category E",
+          "vehicleInterest": "Core Vehicle Interest 5",
+          "aiScore": 102,
+          "status": "under_review",
+          "lastContact": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "customerName": "Lisa Anderson",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "source": "Pro Source 6",
+          "interestType": "Premium Tier",
+          "vehicleInterest": "Pro Vehicle Interest 6",
+          "aiScore": 150,
+          "status": "approved",
+          "lastContact": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "customerName": "David Martinez",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "source": "Essential Source 7",
+          "interestType": "Standard Tier",
+          "vehicleInterest": "Essential Vehicle Interest 7",
+          "aiScore": 198,
+          "status": "active",
+          "lastContact": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "customerName": "Jennifer Taylor",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "source": "Primary Source 8",
+          "interestType": "Basic Tier",
+          "vehicleInterest": "Primary Vehicle Interest 8",
+          "aiScore": 146,
+          "status": "active",
+          "lastContact": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "customerName": "William Johnson",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "source": "Global Source 9",
+          "interestType": "Enterprise",
+          "vehicleInterest": "Global Vehicle Interest 9",
+          "aiScore": 194,
+          "status": "active",
+          "lastContact": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "customerName": "Maria Rodriguez",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "source": "Regional Source 10",
+          "interestType": "Starter",
+          "vehicleInterest": "Regional Vehicle Interest 10",
+          "aiScore": 242,
+          "status": "pending",
+          "lastContact": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "customerName": "Thomas Lee",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "source": "Custom Source 11",
+          "interestType": "Growth",
+          "vehicleInterest": "Custom Vehicle Interest 11",
+          "aiScore": 190,
+          "status": "completed",
+          "lastContact": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "customerName": "Patricia White",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "source": "Smart Source 12",
+          "interestType": "Scale",
+          "vehicleInterest": "Smart Vehicle Interest 12",
+          "aiScore": 238,
+          "status": "active",
+          "lastContact": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "customerName": "Christopher Hall",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "source": "Rapid Source 13",
+          "interestType": "Foundation",
+          "vehicleInterest": "Rapid Vehicle Interest 13",
+          "aiScore": 286,
+          "status": "in_progress",
+          "lastContact": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "customerName": "Amanda Clark",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "source": "Secure Source 14",
+          "interestType": "Advanced",
+          "vehicleInterest": "Secure Vehicle Interest 14",
+          "aiScore": 234,
+          "status": "active",
+          "lastContact": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "customerName": "Daniel Wright",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "source": "Modern Source 15",
+          "interestType": "Professional",
+          "vehicleInterest": "Modern Vehicle Interest 15",
+          "aiScore": 282,
+          "status": "approved",
+          "lastContact": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Deal",
+      "routeKey": "deals",
+      "label": "Deal",
+      "icon": "heart",
+      "aiFunction": "analyzeDeal",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Deal data. The data includes: Customer Id, Vehicle Id, Trade In Id, Sale Price, Trade In Value, Fni Total, Total Deal Value, Profit Margin, Status, Sales Person. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "vehicleId",
+          "label": "Vehicle Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "tradeInId",
+          "label": "Trade In Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "salePrice",
+          "label": "Sale Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "tradeInValue",
+          "label": "Trade In Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "fniTotal",
+          "label": "Fni Total",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalDealValue",
+          "label": "Total Deal Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "profitMargin",
+          "label": "Profit Margin",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "salesPerson",
+          "label": "Sales Person",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": 10,
+          "vehicleId": 10,
+          "tradeInId": 10,
+          "salePrice": 500,
+          "tradeInValue": 10,
+          "fniTotal": 10,
+          "totalDealValue": 10,
+          "profitMargin": 10,
+          "status": "active",
+          "salesPerson": "Advanced Sales Person 1"
+        },
+        {
+          "customerId": 58,
+          "vehicleId": 58,
+          "tradeInId": 58,
+          "salePrice": 2481,
+          "tradeInValue": 71.7,
+          "fniTotal": 71.7,
+          "totalDealValue": 71.7,
+          "profitMargin": 71.7,
+          "status": "pending",
+          "salesPerson": "Premium Sales Person 2"
+        },
+        {
+          "customerId": 106,
+          "vehicleId": 106,
+          "tradeInId": 106,
+          "salePrice": 4462,
+          "tradeInValue": 33.4,
+          "fniTotal": 33.4,
+          "totalDealValue": 33.4,
+          "profitMargin": 33.4,
+          "status": "in_progress",
+          "salesPerson": "Standard Sales Person 3"
+        },
+        {
+          "customerId": 154,
+          "vehicleId": 154,
+          "tradeInId": 154,
+          "salePrice": 6443,
+          "tradeInValue": 95.1,
+          "fniTotal": 95.1,
+          "totalDealValue": 95.1,
+          "profitMargin": 95.1,
+          "status": "completed",
+          "salesPerson": "Elite Sales Person 4"
+        },
+        {
+          "customerId": 102,
+          "vehicleId": 102,
+          "tradeInId": 102,
+          "salePrice": 8424,
+          "tradeInValue": 56.8,
+          "fniTotal": 56.8,
+          "totalDealValue": 56.8,
+          "profitMargin": 56.8,
+          "status": "under_review",
+          "salesPerson": "Core Sales Person 5"
+        },
+        {
+          "customerId": 150,
+          "vehicleId": 150,
+          "tradeInId": 150,
+          "salePrice": 10405,
+          "tradeInValue": 118.5,
+          "fniTotal": 118.5,
+          "totalDealValue": 118.5,
+          "profitMargin": 118.5,
+          "status": "approved",
+          "salesPerson": "Pro Sales Person 6"
+        },
+        {
+          "customerId": 198,
+          "vehicleId": 198,
+          "tradeInId": 198,
+          "salePrice": 12386,
+          "tradeInValue": 80.2,
+          "fniTotal": 80.2,
+          "totalDealValue": 80.2,
+          "profitMargin": 80.2,
+          "status": "active",
+          "salesPerson": "Essential Sales Person 7"
+        },
+        {
+          "customerId": 146,
+          "vehicleId": 146,
+          "tradeInId": 146,
+          "salePrice": 9367,
+          "tradeInValue": 141.9,
+          "fniTotal": 141.9,
+          "totalDealValue": 141.9,
+          "profitMargin": 141.9,
+          "status": "active",
+          "salesPerson": "Primary Sales Person 8"
+        },
+        {
+          "customerId": 194,
+          "vehicleId": 194,
+          "tradeInId": 194,
+          "salePrice": 11348,
+          "tradeInValue": 103.6,
+          "fniTotal": 103.6,
+          "totalDealValue": 103.6,
+          "profitMargin": 103.6,
+          "status": "active",
+          "salesPerson": "Global Sales Person 9"
+        },
+        {
+          "customerId": 242,
+          "vehicleId": 242,
+          "tradeInId": 242,
+          "salePrice": 13329,
+          "tradeInValue": 165.3,
+          "fniTotal": 165.3,
+          "totalDealValue": 165.3,
+          "profitMargin": 165.3,
+          "status": "pending",
+          "salesPerson": "Regional Sales Person 10"
+        },
+        {
+          "customerId": 190,
+          "vehicleId": 190,
+          "tradeInId": 190,
+          "salePrice": 15310,
+          "tradeInValue": 127,
+          "fniTotal": 127,
+          "totalDealValue": 127,
+          "profitMargin": 127,
+          "status": "completed",
+          "salesPerson": "Custom Sales Person 11"
+        },
+        {
+          "customerId": 238,
+          "vehicleId": 238,
+          "tradeInId": 238,
+          "salePrice": 17291,
+          "tradeInValue": 188.7,
+          "fniTotal": 188.7,
+          "totalDealValue": 188.7,
+          "profitMargin": 188.7,
+          "status": "active",
+          "salesPerson": "Smart Sales Person 12"
+        },
+        {
+          "customerId": 286,
+          "vehicleId": 286,
+          "tradeInId": 286,
+          "salePrice": 19272,
+          "tradeInValue": 150.4,
+          "fniTotal": 150.4,
+          "totalDealValue": 150.4,
+          "profitMargin": 150.4,
+          "status": "in_progress",
+          "salesPerson": "Rapid Sales Person 13"
+        },
+        {
+          "customerId": 234,
+          "vehicleId": 234,
+          "tradeInId": 234,
+          "salePrice": 21253,
+          "tradeInValue": 212.1,
+          "fniTotal": 212.1,
+          "totalDealValue": 212.1,
+          "profitMargin": 212.1,
+          "status": "active",
+          "salesPerson": "Secure Sales Person 14"
+        },
+        {
+          "customerId": 282,
+          "vehicleId": 282,
+          "tradeInId": 282,
+          "salePrice": 18234,
+          "tradeInValue": 173.8,
+          "fniTotal": 173.8,
+          "totalDealValue": 173.8,
+          "profitMargin": 173.8,
+          "status": "approved",
+          "salesPerson": "Modern Sales Person 15"
+        }
+      ]
+    },
+    {
+      "modelName": "ServiceAppointment",
+      "routeKey": "service-appointments",
+      "label": "Service Appointment",
+      "icon": "layers",
+      "aiFunction": "analyzeServiceAppointment",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Service Appointment data. The data includes: Customer Id, Vehicle Description, Service Type, Scheduled Date, Estimated Duration, Assigned Technician, Mileage At Service, Description, Parts Cost, Labor Cost, Total Cost, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "vehicleDescription",
+          "label": "Vehicle Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serviceType",
+          "label": "Service Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "estimatedDuration",
+          "label": "Estimated Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "assignedTechnician",
+          "label": "Assigned Technician",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mileageAtService",
+          "label": "Mileage At Service",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "partsCost",
+          "label": "Parts Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "laborCost",
+          "label": "Labor Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalCost",
+          "label": "Total Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": 10,
+          "vehicleDescription": "Advanced Vehicle Description 1",
+          "serviceType": "Category A",
+          "scheduledDate": "2024-01-01",
+          "estimatedDuration": 10,
+          "assignedTechnician": "Advanced Assigned Technician 1",
+          "mileageAtService": 18,
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "partsCost": 500,
+          "laborCost": 500,
+          "totalCost": 500,
+          "status": "active"
+        },
+        {
+          "customerId": 58,
+          "vehicleDescription": "Premium Vehicle Description 2",
+          "serviceType": "Category B",
+          "scheduledDate": "2024-02-03",
+          "estimatedDuration": 58,
+          "assignedTechnician": "Premium Assigned Technician 2",
+          "mileageAtService": 21,
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "partsCost": 2481,
+          "laborCost": 2481,
+          "totalCost": 2481,
+          "status": "pending"
+        },
+        {
+          "customerId": 106,
+          "vehicleDescription": "Standard Vehicle Description 3",
+          "serviceType": "Category C",
+          "scheduledDate": "2024-03-05",
+          "estimatedDuration": 106,
+          "assignedTechnician": "Standard Assigned Technician 3",
+          "mileageAtService": 24,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "partsCost": 4462,
+          "laborCost": 4462,
+          "totalCost": 4462,
+          "status": "in_progress"
+        },
+        {
+          "customerId": 154,
+          "vehicleDescription": "Elite Vehicle Description 4",
+          "serviceType": "Category D",
+          "scheduledDate": "2024-04-07",
+          "estimatedDuration": 154,
+          "assignedTechnician": "Elite Assigned Technician 4",
+          "mileageAtService": 27,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "partsCost": 6443,
+          "laborCost": 6443,
+          "totalCost": 6443,
+          "status": "completed"
+        },
+        {
+          "customerId": 102,
+          "vehicleDescription": "Core Vehicle Description 5",
+          "serviceType": "Category E",
+          "scheduledDate": "2024-05-09",
+          "estimatedDuration": 102,
+          "assignedTechnician": "Core Assigned Technician 5",
+          "mileageAtService": 30,
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "partsCost": 8424,
+          "laborCost": 8424,
+          "totalCost": 8424,
+          "status": "under_review"
+        },
+        {
+          "customerId": 150,
+          "vehicleDescription": "Pro Vehicle Description 6",
+          "serviceType": "Premium Tier",
+          "scheduledDate": "2024-06-11",
+          "estimatedDuration": 150,
+          "assignedTechnician": "Pro Assigned Technician 6",
+          "mileageAtService": 33,
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "partsCost": 10405,
+          "laborCost": 10405,
+          "totalCost": 10405,
+          "status": "approved"
+        },
+        {
+          "customerId": 198,
+          "vehicleDescription": "Essential Vehicle Description 7",
+          "serviceType": "Standard Tier",
+          "scheduledDate": "2024-07-13",
+          "estimatedDuration": 198,
+          "assignedTechnician": "Essential Assigned Technician 7",
+          "mileageAtService": 36,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "partsCost": 12386,
+          "laborCost": 12386,
+          "totalCost": 12386,
+          "status": "active"
+        },
+        {
+          "customerId": 146,
+          "vehicleDescription": "Primary Vehicle Description 8",
+          "serviceType": "Basic Tier",
+          "scheduledDate": "2024-08-15",
+          "estimatedDuration": 146,
+          "assignedTechnician": "Primary Assigned Technician 8",
+          "mileageAtService": 39,
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "partsCost": 9367,
+          "laborCost": 9367,
+          "totalCost": 9367,
+          "status": "active"
+        },
+        {
+          "customerId": 194,
+          "vehicleDescription": "Global Vehicle Description 9",
+          "serviceType": "Enterprise",
+          "scheduledDate": "2024-09-17",
+          "estimatedDuration": 194,
+          "assignedTechnician": "Global Assigned Technician 9",
+          "mileageAtService": 42,
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "partsCost": 11348,
+          "laborCost": 11348,
+          "totalCost": 11348,
+          "status": "active"
+        },
+        {
+          "customerId": 242,
+          "vehicleDescription": "Regional Vehicle Description 10",
+          "serviceType": "Starter",
+          "scheduledDate": "2024-10-19",
+          "estimatedDuration": 242,
+          "assignedTechnician": "Regional Assigned Technician 10",
+          "mileageAtService": 45,
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "partsCost": 13329,
+          "laborCost": 13329,
+          "totalCost": 13329,
+          "status": "pending"
+        },
+        {
+          "customerId": 190,
+          "vehicleDescription": "Custom Vehicle Description 11",
+          "serviceType": "Growth",
+          "scheduledDate": "2024-11-21",
+          "estimatedDuration": 190,
+          "assignedTechnician": "Custom Assigned Technician 11",
+          "mileageAtService": 48,
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "partsCost": 15310,
+          "laborCost": 15310,
+          "totalCost": 15310,
+          "status": "completed"
+        },
+        {
+          "customerId": 238,
+          "vehicleDescription": "Smart Vehicle Description 12",
+          "serviceType": "Scale",
+          "scheduledDate": "2024-12-23",
+          "estimatedDuration": 238,
+          "assignedTechnician": "Smart Assigned Technician 12",
+          "mileageAtService": 51,
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "partsCost": 17291,
+          "laborCost": 17291,
+          "totalCost": 17291,
+          "status": "active"
+        },
+        {
+          "customerId": 286,
+          "vehicleDescription": "Rapid Vehicle Description 13",
+          "serviceType": "Foundation",
+          "scheduledDate": "2024-01-25",
+          "estimatedDuration": 286,
+          "assignedTechnician": "Rapid Assigned Technician 13",
+          "mileageAtService": 54,
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "partsCost": 19272,
+          "laborCost": 19272,
+          "totalCost": 19272,
+          "status": "in_progress"
+        },
+        {
+          "customerId": 234,
+          "vehicleDescription": "Secure Vehicle Description 14",
+          "serviceType": "Advanced",
+          "scheduledDate": "2024-02-27",
+          "estimatedDuration": 234,
+          "assignedTechnician": "Secure Assigned Technician 14",
+          "mileageAtService": 57,
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "partsCost": 21253,
+          "laborCost": 21253,
+          "totalCost": 21253,
+          "status": "active"
+        },
+        {
+          "customerId": 282,
+          "vehicleDescription": "Modern Vehicle Description 15",
+          "serviceType": "Professional",
+          "scheduledDate": "2024-03-01",
+          "estimatedDuration": 282,
+          "assignedTechnician": "Modern Assigned Technician 15",
+          "mileageAtService": 60,
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "partsCost": 18234,
+          "laborCost": 18234,
+          "totalCost": 18234,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "VehicleInspection",
+      "routeKey": "vehicle-inspections",
+      "label": "Vehicle Inspection",
+      "icon": "map-pin",
+      "aiFunction": "analyzeVehicleInspection",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Vehicle Inspection data. The data includes: Vehicle Id, Inspector Name, Inspection Type, Inspection Date, Engine Rating, Transmission Rating, Brakes Rating, Suspension Rating, Tires Rating, Exterior Rating, Interior Rating, Electrical Rating, Overall Score, Issues Found, Reconditioning Cost, Passed, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "vehicleId",
+          "label": "Vehicle Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "inspectorName",
+          "label": "Inspector Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "inspectionType",
+          "label": "Inspection Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "inspectionDate",
+          "label": "Inspection Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "engineRating",
+          "label": "Engine Rating",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "transmissionRating",
+          "label": "Transmission Rating",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "brakesRating",
+          "label": "Brakes Rating",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "suspensionRating",
+          "label": "Suspension Rating",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tiresRating",
+          "label": "Tires Rating",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "exteriorRating",
+          "label": "Exterior Rating",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "interiorRating",
+          "label": "Interior Rating",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "electricalRating",
+          "label": "Electrical Rating",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "overallScore",
+          "label": "Overall Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "issuesFound",
+          "label": "Issues Found",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "reconditioningCost",
+          "label": "Reconditioning Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "passed",
+          "label": "Passed",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "vehicleId": 10,
+          "inspectorName": "Advanced Inspector 1",
+          "inspectionType": "Category A",
+          "inspectionDate": "2024-01-01",
+          "engineRating": "Advanced Engine Rating 1",
+          "transmissionRating": "Advanced Transmission Rating 1",
+          "brakesRating": "Advanced Brakes Rating 1",
+          "suspensionRating": "Advanced Suspension Rating 1",
+          "tiresRating": "Advanced Tires Rating 1",
+          "exteriorRating": "Advanced Exterior Rating 1",
+          "interiorRating": "Advanced Interior Rating 1",
+          "electricalRating": "Advanced Electrical Rating 1",
+          "overallScore": 10,
+          "issuesFound": "Comprehensive solution designed for optimal performance and efficiency.",
+          "reconditioningCost": 500,
+          "passed": true,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "vehicleId": 58,
+          "inspectorName": "Premium Inspector 2",
+          "inspectionType": "Category B",
+          "inspectionDate": "2024-02-03",
+          "engineRating": "Premium Engine Rating 2",
+          "transmissionRating": "Premium Transmission Rating 2",
+          "brakesRating": "Premium Brakes Rating 2",
+          "suspensionRating": "Premium Suspension Rating 2",
+          "tiresRating": "Premium Tires Rating 2",
+          "exteriorRating": "Premium Exterior Rating 2",
+          "interiorRating": "Premium Interior Rating 2",
+          "electricalRating": "Premium Electrical Rating 2",
+          "overallScore": 58,
+          "issuesFound": "Industry-leading approach with proven results across multiple deployments.",
+          "reconditioningCost": 2481,
+          "passed": true,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "vehicleId": 106,
+          "inspectorName": "Standard Inspector 3",
+          "inspectionType": "Category C",
+          "inspectionDate": "2024-03-05",
+          "engineRating": "Standard Engine Rating 3",
+          "transmissionRating": "Standard Transmission Rating 3",
+          "brakesRating": "Standard Brakes Rating 3",
+          "suspensionRating": "Standard Suspension Rating 3",
+          "tiresRating": "Standard Tires Rating 3",
+          "exteriorRating": "Standard Exterior Rating 3",
+          "interiorRating": "Standard Interior Rating 3",
+          "electricalRating": "Standard Electrical Rating 3",
+          "overallScore": 106,
+          "issuesFound": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "reconditioningCost": 4462,
+          "passed": false,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "vehicleId": 154,
+          "inspectorName": "Elite Inspector 4",
+          "inspectionType": "Category D",
+          "inspectionDate": "2024-04-07",
+          "engineRating": "Elite Engine Rating 4",
+          "transmissionRating": "Elite Transmission Rating 4",
+          "brakesRating": "Elite Brakes Rating 4",
+          "suspensionRating": "Elite Suspension Rating 4",
+          "tiresRating": "Elite Tires Rating 4",
+          "exteriorRating": "Elite Exterior Rating 4",
+          "interiorRating": "Elite Interior Rating 4",
+          "electricalRating": "Elite Electrical Rating 4",
+          "overallScore": 154,
+          "issuesFound": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "reconditioningCost": 6443,
+          "passed": true,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "vehicleId": 102,
+          "inspectorName": "Core Inspector 5",
+          "inspectionType": "Category E",
+          "inspectionDate": "2024-05-09",
+          "engineRating": "Core Engine Rating 5",
+          "transmissionRating": "Core Transmission Rating 5",
+          "brakesRating": "Core Brakes Rating 5",
+          "suspensionRating": "Core Suspension Rating 5",
+          "tiresRating": "Core Tires Rating 5",
+          "exteriorRating": "Core Exterior Rating 5",
+          "interiorRating": "Core Interior Rating 5",
+          "electricalRating": "Core Electrical Rating 5",
+          "overallScore": 102,
+          "issuesFound": "Cost-effective strategy focused on sustainable long-term growth.",
+          "reconditioningCost": 8424,
+          "passed": false,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "vehicleId": 150,
+          "inspectorName": "Pro Inspector 6",
+          "inspectionType": "Premium Tier",
+          "inspectionDate": "2024-06-11",
+          "engineRating": "Pro Engine Rating 6",
+          "transmissionRating": "Pro Transmission Rating 6",
+          "brakesRating": "Pro Brakes Rating 6",
+          "suspensionRating": "Pro Suspension Rating 6",
+          "tiresRating": "Pro Tires Rating 6",
+          "exteriorRating": "Pro Exterior Rating 6",
+          "interiorRating": "Pro Interior Rating 6",
+          "electricalRating": "Pro Electrical Rating 6",
+          "overallScore": 150,
+          "issuesFound": "High-priority initiative aligned with organizational strategic objectives.",
+          "reconditioningCost": 10405,
+          "passed": true,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "vehicleId": 198,
+          "inspectorName": "Essential Inspector 7",
+          "inspectionType": "Standard Tier",
+          "inspectionDate": "2024-07-13",
+          "engineRating": "Essential Engine Rating 7",
+          "transmissionRating": "Essential Transmission Rating 7",
+          "brakesRating": "Essential Brakes Rating 7",
+          "suspensionRating": "Essential Suspension Rating 7",
+          "tiresRating": "Essential Tires Rating 7",
+          "exteriorRating": "Essential Exterior Rating 7",
+          "interiorRating": "Essential Interior Rating 7",
+          "electricalRating": "Essential Electrical Rating 7",
+          "overallScore": 198,
+          "issuesFound": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "reconditioningCost": 12386,
+          "passed": true,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "vehicleId": 146,
+          "inspectorName": "Primary Inspector 8",
+          "inspectionType": "Basic Tier",
+          "inspectionDate": "2024-08-15",
+          "engineRating": "Primary Engine Rating 8",
+          "transmissionRating": "Primary Transmission Rating 8",
+          "brakesRating": "Primary Brakes Rating 8",
+          "suspensionRating": "Primary Suspension Rating 8",
+          "tiresRating": "Primary Tires Rating 8",
+          "exteriorRating": "Primary Exterior Rating 8",
+          "interiorRating": "Primary Interior Rating 8",
+          "electricalRating": "Primary Electrical Rating 8",
+          "overallScore": 146,
+          "issuesFound": "Innovative framework incorporating best practices and emerging technologies.",
+          "reconditioningCost": 9367,
+          "passed": false,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "vehicleId": 194,
+          "inspectorName": "Global Inspector 9",
+          "inspectionType": "Enterprise",
+          "inspectionDate": "2024-09-17",
+          "engineRating": "Global Engine Rating 9",
+          "transmissionRating": "Global Transmission Rating 9",
+          "brakesRating": "Global Brakes Rating 9",
+          "suspensionRating": "Global Suspension Rating 9",
+          "tiresRating": "Global Tires Rating 9",
+          "exteriorRating": "Global Exterior Rating 9",
+          "interiorRating": "Global Interior Rating 9",
+          "electricalRating": "Global Electrical Rating 9",
+          "overallScore": 194,
+          "issuesFound": "Scalable architecture built to accommodate rapid expansion and change.",
+          "reconditioningCost": 11348,
+          "passed": true,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "vehicleId": 242,
+          "inspectorName": "Regional Inspector 10",
+          "inspectionType": "Starter",
+          "inspectionDate": "2024-10-19",
+          "engineRating": "Regional Engine Rating 10",
+          "transmissionRating": "Regional Transmission Rating 10",
+          "brakesRating": "Regional Brakes Rating 10",
+          "suspensionRating": "Regional Suspension Rating 10",
+          "tiresRating": "Regional Tires Rating 10",
+          "exteriorRating": "Regional Exterior Rating 10",
+          "interiorRating": "Regional Interior Rating 10",
+          "electricalRating": "Regional Electrical Rating 10",
+          "overallScore": 242,
+          "issuesFound": "Enterprise-grade solution with robust security and compliance features.",
+          "reconditioningCost": 13329,
+          "passed": true,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "vehicleId": 190,
+          "inspectorName": "Custom Inspector 11",
+          "inspectionType": "Growth",
+          "inspectionDate": "2024-11-21",
+          "engineRating": "Custom Engine Rating 11",
+          "transmissionRating": "Custom Transmission Rating 11",
+          "brakesRating": "Custom Brakes Rating 11",
+          "suspensionRating": "Custom Suspension Rating 11",
+          "tiresRating": "Custom Tires Rating 11",
+          "exteriorRating": "Custom Exterior Rating 11",
+          "interiorRating": "Custom Interior Rating 11",
+          "electricalRating": "Custom Electrical Rating 11",
+          "overallScore": 190,
+          "issuesFound": "Integrated platform connecting multiple systems for seamless operations.",
+          "reconditioningCost": 15310,
+          "passed": false,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "vehicleId": 238,
+          "inspectorName": "Smart Inspector 12",
+          "inspectionType": "Scale",
+          "inspectionDate": "2024-12-23",
+          "engineRating": "Smart Engine Rating 12",
+          "transmissionRating": "Smart Transmission Rating 12",
+          "brakesRating": "Smart Brakes Rating 12",
+          "suspensionRating": "Smart Suspension Rating 12",
+          "tiresRating": "Smart Tires Rating 12",
+          "exteriorRating": "Smart Exterior Rating 12",
+          "interiorRating": "Smart Interior Rating 12",
+          "electricalRating": "Smart Electrical Rating 12",
+          "overallScore": 238,
+          "issuesFound": "Automated workflow reducing manual intervention and human error.",
+          "reconditioningCost": 17291,
+          "passed": true,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "vehicleId": 286,
+          "inspectorName": "Rapid Inspector 13",
+          "inspectionType": "Foundation",
+          "inspectionDate": "2024-01-25",
+          "engineRating": "Rapid Engine Rating 13",
+          "transmissionRating": "Rapid Transmission Rating 13",
+          "brakesRating": "Rapid Brakes Rating 13",
+          "suspensionRating": "Rapid Suspension Rating 13",
+          "tiresRating": "Rapid Tires Rating 13",
+          "exteriorRating": "Rapid Exterior Rating 13",
+          "interiorRating": "Rapid Interior Rating 13",
+          "electricalRating": "Rapid Electrical Rating 13",
+          "overallScore": 286,
+          "issuesFound": "Real-time monitoring system with intelligent alerting capabilities.",
+          "reconditioningCost": 19272,
+          "passed": false,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "vehicleId": 234,
+          "inspectorName": "Secure Inspector 14",
+          "inspectionType": "Advanced",
+          "inspectionDate": "2024-02-27",
+          "engineRating": "Secure Engine Rating 14",
+          "transmissionRating": "Secure Transmission Rating 14",
+          "brakesRating": "Secure Brakes Rating 14",
+          "suspensionRating": "Secure Suspension Rating 14",
+          "tiresRating": "Secure Tires Rating 14",
+          "exteriorRating": "Secure Exterior Rating 14",
+          "interiorRating": "Secure Interior Rating 14",
+          "electricalRating": "Secure Electrical Rating 14",
+          "overallScore": 234,
+          "issuesFound": "Customizable module adaptable to diverse operational requirements.",
+          "reconditioningCost": 21253,
+          "passed": true,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "vehicleId": 282,
+          "inspectorName": "Modern Inspector 15",
+          "inspectionType": "Professional",
+          "inspectionDate": "2024-03-01",
+          "engineRating": "Modern Engine Rating 15",
+          "transmissionRating": "Modern Transmission Rating 15",
+          "brakesRating": "Modern Brakes Rating 15",
+          "suspensionRating": "Modern Suspension Rating 15",
+          "tiresRating": "Modern Tires Rating 15",
+          "exteriorRating": "Modern Exterior Rating 15",
+          "interiorRating": "Modern Interior Rating 15",
+          "electricalRating": "Modern Electrical Rating 15",
+          "overallScore": 282,
+          "issuesFound": "Performance-optimized design achieving superior throughput and reliability.",
+          "reconditioningCost": 18234,
+          "passed": true,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "TestDrive",
+      "routeKey": "test-drives",
+      "label": "Test Drive",
+      "icon": "package",
+      "aiFunction": "analyzeTestDrive",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Test Drive data. The data includes: Customer Id, Vehicle Id, Customer Name, Vehicle Description, Scheduled Date, Duration Minutes, Sales Person, Route Type, License Verified, Insurance Verified, Pre Drive Interest, Post Drive Interest, Feedback, Outcome, Follow Up Date, Notes, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "vehicleId",
+          "label": "Vehicle Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "vehicleDescription",
+          "label": "Vehicle Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "durationMinutes",
+          "label": "Duration Minutes",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "salesPerson",
+          "label": "Sales Person",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "routeType",
+          "label": "Route Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "licenseVerified",
+          "label": "License Verified",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "insuranceVerified",
+          "label": "Insurance Verified",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "preDriveInterest",
+          "label": "Pre Drive Interest",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "postDriveInterest",
+          "label": "Post Drive Interest",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "feedback",
+          "label": "Feedback",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "outcome",
+          "label": "Outcome",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "followUpDate",
+          "label": "Follow Up Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": 10,
+          "vehicleId": 10,
+          "customerName": "James Wilson",
+          "vehicleDescription": "Advanced Vehicle Description 1",
+          "scheduledDate": "2024-01-01",
+          "durationMinutes": 10,
+          "salesPerson": "Advanced Sales Person 1",
+          "routeType": "Category A",
+          "licenseVerified": true,
+          "insuranceVerified": true,
+          "preDriveInterest": 10,
+          "postDriveInterest": 10,
+          "feedback": "Comprehensive solution designed for optimal performance and efficiency.",
+          "outcome": "Advanced Outcome 1",
+          "followUpDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "customerId": 58,
+          "vehicleId": 58,
+          "customerName": "Sarah Chen",
+          "vehicleDescription": "Premium Vehicle Description 2",
+          "scheduledDate": "2024-02-03",
+          "durationMinutes": 58,
+          "salesPerson": "Premium Sales Person 2",
+          "routeType": "Category B",
+          "licenseVerified": true,
+          "insuranceVerified": true,
+          "preDriveInterest": 58,
+          "postDriveInterest": 58,
+          "feedback": "Industry-leading approach with proven results across multiple deployments.",
+          "outcome": "Premium Outcome 2",
+          "followUpDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "customerId": 106,
+          "vehicleId": 106,
+          "customerName": "Michael Brown",
+          "vehicleDescription": "Standard Vehicle Description 3",
+          "scheduledDate": "2024-03-05",
+          "durationMinutes": 106,
+          "salesPerson": "Standard Sales Person 3",
+          "routeType": "Category C",
+          "licenseVerified": false,
+          "insuranceVerified": false,
+          "preDriveInterest": 106,
+          "postDriveInterest": 106,
+          "feedback": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "outcome": "Standard Outcome 3",
+          "followUpDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "customerId": 154,
+          "vehicleId": 154,
+          "customerName": "Emily Davis",
+          "vehicleDescription": "Elite Vehicle Description 4",
+          "scheduledDate": "2024-04-07",
+          "durationMinutes": 154,
+          "salesPerson": "Elite Sales Person 4",
+          "routeType": "Category D",
+          "licenseVerified": true,
+          "insuranceVerified": true,
+          "preDriveInterest": 154,
+          "postDriveInterest": 154,
+          "feedback": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "outcome": "Elite Outcome 4",
+          "followUpDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "customerId": 102,
+          "vehicleId": 102,
+          "customerName": "Robert Garcia",
+          "vehicleDescription": "Core Vehicle Description 5",
+          "scheduledDate": "2024-05-09",
+          "durationMinutes": 102,
+          "salesPerson": "Core Sales Person 5",
+          "routeType": "Category E",
+          "licenseVerified": false,
+          "insuranceVerified": false,
+          "preDriveInterest": 102,
+          "postDriveInterest": 102,
+          "feedback": "Cost-effective strategy focused on sustainable long-term growth.",
+          "outcome": "Core Outcome 5",
+          "followUpDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "customerId": 150,
+          "vehicleId": 150,
+          "customerName": "Lisa Anderson",
+          "vehicleDescription": "Pro Vehicle Description 6",
+          "scheduledDate": "2024-06-11",
+          "durationMinutes": 150,
+          "salesPerson": "Pro Sales Person 6",
+          "routeType": "Premium Tier",
+          "licenseVerified": true,
+          "insuranceVerified": true,
+          "preDriveInterest": 150,
+          "postDriveInterest": 150,
+          "feedback": "High-priority initiative aligned with organizational strategic objectives.",
+          "outcome": "Pro Outcome 6",
+          "followUpDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "customerId": 198,
+          "vehicleId": 198,
+          "customerName": "David Martinez",
+          "vehicleDescription": "Essential Vehicle Description 7",
+          "scheduledDate": "2024-07-13",
+          "durationMinutes": 198,
+          "salesPerson": "Essential Sales Person 7",
+          "routeType": "Standard Tier",
+          "licenseVerified": true,
+          "insuranceVerified": true,
+          "preDriveInterest": 198,
+          "postDriveInterest": 198,
+          "feedback": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "outcome": "Essential Outcome 7",
+          "followUpDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "customerId": 146,
+          "vehicleId": 146,
+          "customerName": "Jennifer Taylor",
+          "vehicleDescription": "Primary Vehicle Description 8",
+          "scheduledDate": "2024-08-15",
+          "durationMinutes": 146,
+          "salesPerson": "Primary Sales Person 8",
+          "routeType": "Basic Tier",
+          "licenseVerified": false,
+          "insuranceVerified": false,
+          "preDriveInterest": 146,
+          "postDriveInterest": 146,
+          "feedback": "Innovative framework incorporating best practices and emerging technologies.",
+          "outcome": "Primary Outcome 8",
+          "followUpDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "customerId": 194,
+          "vehicleId": 194,
+          "customerName": "William Johnson",
+          "vehicleDescription": "Global Vehicle Description 9",
+          "scheduledDate": "2024-09-17",
+          "durationMinutes": 194,
+          "salesPerson": "Global Sales Person 9",
+          "routeType": "Enterprise",
+          "licenseVerified": true,
+          "insuranceVerified": true,
+          "preDriveInterest": 194,
+          "postDriveInterest": 194,
+          "feedback": "Scalable architecture built to accommodate rapid expansion and change.",
+          "outcome": "Global Outcome 9",
+          "followUpDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "customerId": 242,
+          "vehicleId": 242,
+          "customerName": "Maria Rodriguez",
+          "vehicleDescription": "Regional Vehicle Description 10",
+          "scheduledDate": "2024-10-19",
+          "durationMinutes": 242,
+          "salesPerson": "Regional Sales Person 10",
+          "routeType": "Starter",
+          "licenseVerified": true,
+          "insuranceVerified": true,
+          "preDriveInterest": 242,
+          "postDriveInterest": 242,
+          "feedback": "Enterprise-grade solution with robust security and compliance features.",
+          "outcome": "Regional Outcome 10",
+          "followUpDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "customerId": 190,
+          "vehicleId": 190,
+          "customerName": "Thomas Lee",
+          "vehicleDescription": "Custom Vehicle Description 11",
+          "scheduledDate": "2024-11-21",
+          "durationMinutes": 190,
+          "salesPerson": "Custom Sales Person 11",
+          "routeType": "Growth",
+          "licenseVerified": false,
+          "insuranceVerified": false,
+          "preDriveInterest": 190,
+          "postDriveInterest": 190,
+          "feedback": "Integrated platform connecting multiple systems for seamless operations.",
+          "outcome": "Custom Outcome 11",
+          "followUpDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "customerId": 238,
+          "vehicleId": 238,
+          "customerName": "Patricia White",
+          "vehicleDescription": "Smart Vehicle Description 12",
+          "scheduledDate": "2024-12-23",
+          "durationMinutes": 238,
+          "salesPerson": "Smart Sales Person 12",
+          "routeType": "Scale",
+          "licenseVerified": true,
+          "insuranceVerified": true,
+          "preDriveInterest": 238,
+          "postDriveInterest": 238,
+          "feedback": "Automated workflow reducing manual intervention and human error.",
+          "outcome": "Smart Outcome 12",
+          "followUpDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "customerId": 286,
+          "vehicleId": 286,
+          "customerName": "Christopher Hall",
+          "vehicleDescription": "Rapid Vehicle Description 13",
+          "scheduledDate": "2024-01-25",
+          "durationMinutes": 286,
+          "salesPerson": "Rapid Sales Person 13",
+          "routeType": "Foundation",
+          "licenseVerified": false,
+          "insuranceVerified": false,
+          "preDriveInterest": 286,
+          "postDriveInterest": 286,
+          "feedback": "Real-time monitoring system with intelligent alerting capabilities.",
+          "outcome": "Rapid Outcome 13",
+          "followUpDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "customerId": 234,
+          "vehicleId": 234,
+          "customerName": "Amanda Clark",
+          "vehicleDescription": "Secure Vehicle Description 14",
+          "scheduledDate": "2024-02-27",
+          "durationMinutes": 234,
+          "salesPerson": "Secure Sales Person 14",
+          "routeType": "Advanced",
+          "licenseVerified": true,
+          "insuranceVerified": true,
+          "preDriveInterest": 234,
+          "postDriveInterest": 234,
+          "feedback": "Customizable module adaptable to diverse operational requirements.",
+          "outcome": "Secure Outcome 14",
+          "followUpDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "customerId": 282,
+          "vehicleId": 282,
+          "customerName": "Daniel Wright",
+          "vehicleDescription": "Modern Vehicle Description 15",
+          "scheduledDate": "2024-03-01",
+          "durationMinutes": 282,
+          "salesPerson": "Modern Sales Person 15",
+          "routeType": "Professional",
+          "licenseVerified": true,
+          "insuranceVerified": true,
+          "preDriveInterest": 282,
+          "postDriveInterest": 282,
+          "feedback": "Performance-optimized design achieving superior throughput and reliability.",
+          "outcome": "Modern Outcome 15",
+          "followUpDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "CustomerFollowup",
+      "routeKey": "customer-followups",
+      "label": "Customer Followup",
+      "icon": "shield",
+      "aiFunction": "analyzeCustomerFollowup",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Customer Followup data. The data includes: Customer Id, Customer Name, Contact Type, Direction, Subject, Notes, Outcome, Sales Person, Follow Up Date, Sentiment, Priority, Status, Contact Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactType",
+          "label": "Contact Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "direction",
+          "label": "Direction",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "subject",
+          "label": "Subject",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "outcome",
+          "label": "Outcome",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "salesPerson",
+          "label": "Sales Person",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "followUpDate",
+          "label": "Follow Up Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "sentiment",
+          "label": "Sentiment",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactDate",
+          "label": "Contact Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": 10,
+          "customerName": "James Wilson",
+          "contactType": "Category A",
+          "direction": "Advanced Direction 1",
+          "subject": "Advanced Subject 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "outcome": "Advanced Outcome 1",
+          "salesPerson": "Advanced Sales Person 1",
+          "followUpDate": "2024-01-01",
+          "sentiment": "Advanced Sentiment 1",
+          "priority": "low",
+          "status": "active",
+          "contactDate": "2024-01-01"
+        },
+        {
+          "customerId": 58,
+          "customerName": "Sarah Chen",
+          "contactType": "Category B",
+          "direction": "Premium Direction 2",
+          "subject": "Premium Subject 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "outcome": "Premium Outcome 2",
+          "salesPerson": "Premium Sales Person 2",
+          "followUpDate": "2024-02-03",
+          "sentiment": "Premium Sentiment 2",
+          "priority": "medium",
+          "status": "pending",
+          "contactDate": "2024-02-03"
+        },
+        {
+          "customerId": 106,
+          "customerName": "Michael Brown",
+          "contactType": "Category C",
+          "direction": "Standard Direction 3",
+          "subject": "Standard Subject 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "outcome": "Standard Outcome 3",
+          "salesPerson": "Standard Sales Person 3",
+          "followUpDate": "2024-03-05",
+          "sentiment": "Standard Sentiment 3",
+          "priority": "high",
+          "status": "in_progress",
+          "contactDate": "2024-03-05"
+        },
+        {
+          "customerId": 154,
+          "customerName": "Emily Davis",
+          "contactType": "Category D",
+          "direction": "Elite Direction 4",
+          "subject": "Elite Subject 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "outcome": "Elite Outcome 4",
+          "salesPerson": "Elite Sales Person 4",
+          "followUpDate": "2024-04-07",
+          "sentiment": "Elite Sentiment 4",
+          "priority": "critical",
+          "status": "completed",
+          "contactDate": "2024-04-07"
+        },
+        {
+          "customerId": 102,
+          "customerName": "Robert Garcia",
+          "contactType": "Category E",
+          "direction": "Core Direction 5",
+          "subject": "Core Subject 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "outcome": "Core Outcome 5",
+          "salesPerson": "Core Sales Person 5",
+          "followUpDate": "2024-05-09",
+          "sentiment": "Core Sentiment 5",
+          "priority": "medium",
+          "status": "under_review",
+          "contactDate": "2024-05-09"
+        },
+        {
+          "customerId": 150,
+          "customerName": "Lisa Anderson",
+          "contactType": "Premium Tier",
+          "direction": "Pro Direction 6",
+          "subject": "Pro Subject 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "outcome": "Pro Outcome 6",
+          "salesPerson": "Pro Sales Person 6",
+          "followUpDate": "2024-06-11",
+          "sentiment": "Pro Sentiment 6",
+          "priority": "low",
+          "status": "approved",
+          "contactDate": "2024-06-11"
+        },
+        {
+          "customerId": 198,
+          "customerName": "David Martinez",
+          "contactType": "Standard Tier",
+          "direction": "Essential Direction 7",
+          "subject": "Essential Subject 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "outcome": "Essential Outcome 7",
+          "salesPerson": "Essential Sales Person 7",
+          "followUpDate": "2024-07-13",
+          "sentiment": "Essential Sentiment 7",
+          "priority": "medium",
+          "status": "active",
+          "contactDate": "2024-07-13"
+        },
+        {
+          "customerId": 146,
+          "customerName": "Jennifer Taylor",
+          "contactType": "Basic Tier",
+          "direction": "Primary Direction 8",
+          "subject": "Primary Subject 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "outcome": "Primary Outcome 8",
+          "salesPerson": "Primary Sales Person 8",
+          "followUpDate": "2024-08-15",
+          "sentiment": "Primary Sentiment 8",
+          "priority": "high",
+          "status": "active",
+          "contactDate": "2024-08-15"
+        },
+        {
+          "customerId": 194,
+          "customerName": "William Johnson",
+          "contactType": "Enterprise",
+          "direction": "Global Direction 9",
+          "subject": "Global Subject 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "outcome": "Global Outcome 9",
+          "salesPerson": "Global Sales Person 9",
+          "followUpDate": "2024-09-17",
+          "sentiment": "Global Sentiment 9",
+          "priority": "critical",
+          "status": "active",
+          "contactDate": "2024-09-17"
+        },
+        {
+          "customerId": 242,
+          "customerName": "Maria Rodriguez",
+          "contactType": "Starter",
+          "direction": "Regional Direction 10",
+          "subject": "Regional Subject 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "outcome": "Regional Outcome 10",
+          "salesPerson": "Regional Sales Person 10",
+          "followUpDate": "2024-10-19",
+          "sentiment": "Regional Sentiment 10",
+          "priority": "medium",
+          "status": "pending",
+          "contactDate": "2024-10-19"
+        },
+        {
+          "customerId": 190,
+          "customerName": "Thomas Lee",
+          "contactType": "Growth",
+          "direction": "Custom Direction 11",
+          "subject": "Custom Subject 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "outcome": "Custom Outcome 11",
+          "salesPerson": "Custom Sales Person 11",
+          "followUpDate": "2024-11-21",
+          "sentiment": "Custom Sentiment 11",
+          "priority": "low",
+          "status": "completed",
+          "contactDate": "2024-11-21"
+        },
+        {
+          "customerId": 238,
+          "customerName": "Patricia White",
+          "contactType": "Scale",
+          "direction": "Smart Direction 12",
+          "subject": "Smart Subject 12",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "outcome": "Smart Outcome 12",
+          "salesPerson": "Smart Sales Person 12",
+          "followUpDate": "2024-12-23",
+          "sentiment": "Smart Sentiment 12",
+          "priority": "medium",
+          "status": "active",
+          "contactDate": "2024-12-23"
+        },
+        {
+          "customerId": 286,
+          "customerName": "Christopher Hall",
+          "contactType": "Foundation",
+          "direction": "Rapid Direction 13",
+          "subject": "Rapid Subject 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "outcome": "Rapid Outcome 13",
+          "salesPerson": "Rapid Sales Person 13",
+          "followUpDate": "2024-01-25",
+          "sentiment": "Rapid Sentiment 13",
+          "priority": "high",
+          "status": "in_progress",
+          "contactDate": "2024-01-25"
+        },
+        {
+          "customerId": 234,
+          "customerName": "Amanda Clark",
+          "contactType": "Advanced",
+          "direction": "Secure Direction 14",
+          "subject": "Secure Subject 14",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "outcome": "Secure Outcome 14",
+          "salesPerson": "Secure Sales Person 14",
+          "followUpDate": "2024-02-27",
+          "sentiment": "Secure Sentiment 14",
+          "priority": "critical",
+          "status": "active",
+          "contactDate": "2024-02-27"
+        },
+        {
+          "customerId": 282,
+          "customerName": "Daniel Wright",
+          "contactType": "Professional",
+          "direction": "Modern Direction 15",
+          "subject": "Modern Subject 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "outcome": "Modern Outcome 15",
+          "salesPerson": "Modern Sales Person 15",
+          "followUpDate": "2024-03-01",
+          "sentiment": "Modern Sentiment 15",
+          "priority": "medium",
+          "status": "approved",
+          "contactDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "MarketingCampaign",
+      "routeKey": "marketing-campaigns",
+      "label": "Marketing Campaign",
+      "icon": "star",
+      "aiFunction": "analyzeMarketingCampaign",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Marketing Campaign data. The data includes: Name, Campaign Type, Channel, Target Audience, Start Date, End Date, Budget, Spent, Leads Generated, Deals Closed, Revenue Attributed, Impressions, Clicks, Conversion Rate, Roi, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "campaignType",
+          "label": "Campaign Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "channel",
+          "label": "Channel",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "targetAudience",
+          "label": "Target Audience",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "budget",
+          "label": "Budget",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "spent",
+          "label": "Spent",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "leadsGenerated",
+          "label": "Leads Generated",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "dealsClosed",
+          "label": "Deals Closed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "revenueAttributed",
+          "label": "Revenue Attributed",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "impressions",
+          "label": "Impressions",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "clicks",
+          "label": "Clicks",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "conversionRate",
+          "label": "Conversion Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "roi",
+          "label": "Roi",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "campaignType": "Category A",
+          "channel": "Advanced Channel 1",
+          "targetAudience": "Advanced Target Audience 1",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "budget": 500,
+          "spent": 10,
+          "leadsGenerated": 10,
+          "dealsClosed": 10,
+          "revenueAttributed": 500,
+          "impressions": 10,
+          "clicks": 10,
+          "conversionRate": 1.5,
+          "roi": 10,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "campaignType": "Category B",
+          "channel": "Premium Channel 2",
+          "targetAudience": "Premium Target Audience 2",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "budget": 2481,
+          "spent": 71.7,
+          "leadsGenerated": 58,
+          "dealsClosed": 58,
+          "revenueAttributed": 2481,
+          "impressions": 58,
+          "clicks": 58,
+          "conversionRate": 2.1,
+          "roi": 71.7,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "campaignType": "Category C",
+          "channel": "Standard Channel 3",
+          "targetAudience": "Standard Target Audience 3",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "budget": 4462,
+          "spent": 33.4,
+          "leadsGenerated": 106,
+          "dealsClosed": 106,
+          "revenueAttributed": 4462,
+          "impressions": 106,
+          "clicks": 106,
+          "conversionRate": 2.7,
+          "roi": 33.4,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "campaignType": "Category D",
+          "channel": "Elite Channel 4",
+          "targetAudience": "Elite Target Audience 4",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "budget": 6443,
+          "spent": 95.1,
+          "leadsGenerated": 154,
+          "dealsClosed": 154,
+          "revenueAttributed": 6443,
+          "impressions": 154,
+          "clicks": 154,
+          "conversionRate": 3.3,
+          "roi": 95.1,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "campaignType": "Category E",
+          "channel": "Core Channel 5",
+          "targetAudience": "Core Target Audience 5",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "budget": 8424,
+          "spent": 56.8,
+          "leadsGenerated": 102,
+          "dealsClosed": 102,
+          "revenueAttributed": 8424,
+          "impressions": 102,
+          "clicks": 102,
+          "conversionRate": 3.9,
+          "roi": 56.8,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "campaignType": "Premium Tier",
+          "channel": "Pro Channel 6",
+          "targetAudience": "Pro Target Audience 6",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "budget": 10405,
+          "spent": 118.5,
+          "leadsGenerated": 150,
+          "dealsClosed": 150,
+          "revenueAttributed": 10405,
+          "impressions": 150,
+          "clicks": 150,
+          "conversionRate": 4.5,
+          "roi": 118.5,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "campaignType": "Standard Tier",
+          "channel": "Essential Channel 7",
+          "targetAudience": "Essential Target Audience 7",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "budget": 12386,
+          "spent": 80.2,
+          "leadsGenerated": 198,
+          "dealsClosed": 198,
+          "revenueAttributed": 12386,
+          "impressions": 198,
+          "clicks": 198,
+          "conversionRate": 5.1,
+          "roi": 80.2,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "campaignType": "Basic Tier",
+          "channel": "Primary Channel 8",
+          "targetAudience": "Primary Target Audience 8",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "budget": 9367,
+          "spent": 141.9,
+          "leadsGenerated": 146,
+          "dealsClosed": 146,
+          "revenueAttributed": 9367,
+          "impressions": 146,
+          "clicks": 146,
+          "conversionRate": 5.7,
+          "roi": 141.9,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "campaignType": "Enterprise",
+          "channel": "Global Channel 9",
+          "targetAudience": "Global Target Audience 9",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "budget": 11348,
+          "spent": 103.6,
+          "leadsGenerated": 194,
+          "dealsClosed": 194,
+          "revenueAttributed": 11348,
+          "impressions": 194,
+          "clicks": 194,
+          "conversionRate": 6.3,
+          "roi": 103.6,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "campaignType": "Starter",
+          "channel": "Regional Channel 10",
+          "targetAudience": "Regional Target Audience 10",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "budget": 13329,
+          "spent": 165.3,
+          "leadsGenerated": 242,
+          "dealsClosed": 242,
+          "revenueAttributed": 13329,
+          "impressions": 242,
+          "clicks": 242,
+          "conversionRate": 1.9,
+          "roi": 165.3,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "campaignType": "Growth",
+          "channel": "Custom Channel 11",
+          "targetAudience": "Custom Target Audience 11",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "budget": 15310,
+          "spent": 127,
+          "leadsGenerated": 190,
+          "dealsClosed": 190,
+          "revenueAttributed": 15310,
+          "impressions": 190,
+          "clicks": 190,
+          "conversionRate": 2.5,
+          "roi": 127,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "campaignType": "Scale",
+          "channel": "Smart Channel 12",
+          "targetAudience": "Smart Target Audience 12",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "budget": 17291,
+          "spent": 188.7,
+          "leadsGenerated": 238,
+          "dealsClosed": 238,
+          "revenueAttributed": 17291,
+          "impressions": 238,
+          "clicks": 238,
+          "conversionRate": 3.1,
+          "roi": 188.7,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "campaignType": "Foundation",
+          "channel": "Rapid Channel 13",
+          "targetAudience": "Rapid Target Audience 13",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "budget": 19272,
+          "spent": 150.4,
+          "leadsGenerated": 286,
+          "dealsClosed": 286,
+          "revenueAttributed": 19272,
+          "impressions": 286,
+          "clicks": 286,
+          "conversionRate": 3.7,
+          "roi": 150.4,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "campaignType": "Advanced",
+          "channel": "Secure Channel 14",
+          "targetAudience": "Secure Target Audience 14",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "budget": 21253,
+          "spent": 212.1,
+          "leadsGenerated": 234,
+          "dealsClosed": 234,
+          "revenueAttributed": 21253,
+          "impressions": 234,
+          "clicks": 234,
+          "conversionRate": 4.3,
+          "roi": 212.1,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "campaignType": "Professional",
+          "channel": "Modern Channel 15",
+          "targetAudience": "Modern Target Audience 15",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "budget": 18234,
+          "spent": 173.8,
+          "leadsGenerated": 282,
+          "dealsClosed": 282,
+          "revenueAttributed": 18234,
+          "impressions": 282,
+          "clicks": 282,
+          "conversionRate": 4.9,
+          "roi": 173.8,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Staff",
+      "routeKey": "staffs",
+      "label": "Staff",
+      "icon": "truck",
+      "aiFunction": "analyzeStaff",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Staff data. The data includes: First Name, Last Name, Email, Phone, Role, Department, Hire Date, Salary, Commission Rate, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "hireDate",
+          "label": "Hire Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "salary",
+          "label": "Salary",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "commissionRate",
+          "label": "Commission Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "role": "Advanced Role 1",
+          "department": "Category A",
+          "hireDate": "2024-01-01",
+          "salary": 500,
+          "commissionRate": 1.5,
+          "status": "active"
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "role": "Premium Role 2",
+          "department": "Category B",
+          "hireDate": "2024-02-03",
+          "salary": 2481,
+          "commissionRate": 2.1,
+          "status": "pending"
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "role": "Standard Role 3",
+          "department": "Category C",
+          "hireDate": "2024-03-05",
+          "salary": 4462,
+          "commissionRate": 2.7,
+          "status": "in_progress"
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "role": "Elite Role 4",
+          "department": "Category D",
+          "hireDate": "2024-04-07",
+          "salary": 6443,
+          "commissionRate": 3.3,
+          "status": "completed"
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "role": "Core Role 5",
+          "department": "Category E",
+          "hireDate": "2024-05-09",
+          "salary": 8424,
+          "commissionRate": 3.9,
+          "status": "under_review"
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "role": "Pro Role 6",
+          "department": "Premium Tier",
+          "hireDate": "2024-06-11",
+          "salary": 10405,
+          "commissionRate": 4.5,
+          "status": "approved"
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "role": "Essential Role 7",
+          "department": "Standard Tier",
+          "hireDate": "2024-07-13",
+          "salary": 12386,
+          "commissionRate": 5.1,
+          "status": "active"
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "role": "Primary Role 8",
+          "department": "Basic Tier",
+          "hireDate": "2024-08-15",
+          "salary": 9367,
+          "commissionRate": 5.7,
+          "status": "active"
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "role": "Global Role 9",
+          "department": "Enterprise",
+          "hireDate": "2024-09-17",
+          "salary": 11348,
+          "commissionRate": 6.3,
+          "status": "active"
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "role": "Regional Role 10",
+          "department": "Starter",
+          "hireDate": "2024-10-19",
+          "salary": 13329,
+          "commissionRate": 1.9,
+          "status": "pending"
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "role": "Custom Role 11",
+          "department": "Growth",
+          "hireDate": "2024-11-21",
+          "salary": 15310,
+          "commissionRate": 2.5,
+          "status": "completed"
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "role": "Smart Role 12",
+          "department": "Scale",
+          "hireDate": "2024-12-23",
+          "salary": 17291,
+          "commissionRate": 3.1,
+          "status": "active"
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "role": "Rapid Role 13",
+          "department": "Foundation",
+          "hireDate": "2024-01-25",
+          "salary": 19272,
+          "commissionRate": 3.7,
+          "status": "in_progress"
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "role": "Secure Role 14",
+          "department": "Advanced",
+          "hireDate": "2024-02-27",
+          "salary": 21253,
+          "commissionRate": 4.3,
+          "status": "active"
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "role": "Modern Role 15",
+          "department": "Professional",
+          "hireDate": "2024-03-01",
+          "salary": 18234,
+          "commissionRate": 4.9,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Commission",
+      "routeKey": "commissions",
+      "label": "Commission",
+      "icon": "users",
+      "aiFunction": "analyzeCommission",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Commission data. The data includes: Staff Id, Deal Id, Commission Type, Sale Amount, Commission Rate, Commission Amount, Pay Period, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "staffId",
+          "label": "Staff Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "dealId",
+          "label": "Deal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "commissionType",
+          "label": "Commission Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "saleAmount",
+          "label": "Sale Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "commissionRate",
+          "label": "Commission Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "commissionAmount",
+          "label": "Commission Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "payPeriod",
+          "label": "Pay Period",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "staffId": 10,
+          "dealId": 10,
+          "commissionType": "Category A",
+          "saleAmount": 500,
+          "commissionRate": 1.5,
+          "commissionAmount": 500,
+          "payPeriod": "Advanced Pay Period 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "staffId": 58,
+          "dealId": 58,
+          "commissionType": "Category B",
+          "saleAmount": 2481,
+          "commissionRate": 2.1,
+          "commissionAmount": 2481,
+          "payPeriod": "Premium Pay Period 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "staffId": 106,
+          "dealId": 106,
+          "commissionType": "Category C",
+          "saleAmount": 4462,
+          "commissionRate": 2.7,
+          "commissionAmount": 4462,
+          "payPeriod": "Standard Pay Period 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "staffId": 154,
+          "dealId": 154,
+          "commissionType": "Category D",
+          "saleAmount": 6443,
+          "commissionRate": 3.3,
+          "commissionAmount": 6443,
+          "payPeriod": "Elite Pay Period 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "staffId": 102,
+          "dealId": 102,
+          "commissionType": "Category E",
+          "saleAmount": 8424,
+          "commissionRate": 3.9,
+          "commissionAmount": 8424,
+          "payPeriod": "Core Pay Period 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "staffId": 150,
+          "dealId": 150,
+          "commissionType": "Premium Tier",
+          "saleAmount": 10405,
+          "commissionRate": 4.5,
+          "commissionAmount": 10405,
+          "payPeriod": "Pro Pay Period 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "staffId": 198,
+          "dealId": 198,
+          "commissionType": "Standard Tier",
+          "saleAmount": 12386,
+          "commissionRate": 5.1,
+          "commissionAmount": 12386,
+          "payPeriod": "Essential Pay Period 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "staffId": 146,
+          "dealId": 146,
+          "commissionType": "Basic Tier",
+          "saleAmount": 9367,
+          "commissionRate": 5.7,
+          "commissionAmount": 9367,
+          "payPeriod": "Primary Pay Period 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "staffId": 194,
+          "dealId": 194,
+          "commissionType": "Enterprise",
+          "saleAmount": 11348,
+          "commissionRate": 6.3,
+          "commissionAmount": 11348,
+          "payPeriod": "Global Pay Period 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "staffId": 242,
+          "dealId": 242,
+          "commissionType": "Starter",
+          "saleAmount": 13329,
+          "commissionRate": 1.9,
+          "commissionAmount": 13329,
+          "payPeriod": "Regional Pay Period 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "staffId": 190,
+          "dealId": 190,
+          "commissionType": "Growth",
+          "saleAmount": 15310,
+          "commissionRate": 2.5,
+          "commissionAmount": 15310,
+          "payPeriod": "Custom Pay Period 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "staffId": 238,
+          "dealId": 238,
+          "commissionType": "Scale",
+          "saleAmount": 17291,
+          "commissionRate": 3.1,
+          "commissionAmount": 17291,
+          "payPeriod": "Smart Pay Period 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "staffId": 286,
+          "dealId": 286,
+          "commissionType": "Foundation",
+          "saleAmount": 19272,
+          "commissionRate": 3.7,
+          "commissionAmount": 19272,
+          "payPeriod": "Rapid Pay Period 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "staffId": 234,
+          "dealId": 234,
+          "commissionType": "Advanced",
+          "saleAmount": 21253,
+          "commissionRate": 4.3,
+          "commissionAmount": 21253,
+          "payPeriod": "Secure Pay Period 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "staffId": 282,
+          "dealId": 282,
+          "commissionType": "Professional",
+          "saleAmount": 18234,
+          "commissionRate": 4.9,
+          "commissionAmount": 18234,
+          "payPeriod": "Modern Pay Period 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Document",
+      "routeKey": "documents",
+      "label": "Document",
+      "icon": "zap",
+      "aiFunction": "analyzeDocument",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Document data. The data includes: Title, Document Type, Related To, Related Id, Description, File Name, File Size, Uploaded By, Expiry Date, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "documentType",
+          "label": "Document Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "relatedTo",
+          "label": "Related To",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "relatedId",
+          "label": "Related Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "fileName",
+          "label": "File Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fileSize",
+          "label": "File Size",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "uploadedBy",
+          "label": "Uploaded By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "documentType": "Category A",
+          "relatedTo": "Advanced Related To 1",
+          "relatedId": 10,
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "fileName": "Advanced File 1",
+          "fileSize": "Advanced File Size 1",
+          "uploadedBy": "Advanced Uploaded By 1",
+          "expiryDate": "2024-01-01",
+          "status": "active"
+        },
+        {
+          "title": "Premium Title 2",
+          "documentType": "Category B",
+          "relatedTo": "Premium Related To 2",
+          "relatedId": 58,
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "fileName": "Premium File 2",
+          "fileSize": "Premium File Size 2",
+          "uploadedBy": "Premium Uploaded By 2",
+          "expiryDate": "2024-02-03",
+          "status": "pending"
+        },
+        {
+          "title": "Standard Title 3",
+          "documentType": "Category C",
+          "relatedTo": "Standard Related To 3",
+          "relatedId": 106,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "fileName": "Standard File 3",
+          "fileSize": "Standard File Size 3",
+          "uploadedBy": "Standard Uploaded By 3",
+          "expiryDate": "2024-03-05",
+          "status": "in_progress"
+        },
+        {
+          "title": "Elite Title 4",
+          "documentType": "Category D",
+          "relatedTo": "Elite Related To 4",
+          "relatedId": 154,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "fileName": "Elite File 4",
+          "fileSize": "Elite File Size 4",
+          "uploadedBy": "Elite Uploaded By 4",
+          "expiryDate": "2024-04-07",
+          "status": "completed"
+        },
+        {
+          "title": "Core Title 5",
+          "documentType": "Category E",
+          "relatedTo": "Core Related To 5",
+          "relatedId": 102,
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "fileName": "Core File 5",
+          "fileSize": "Core File Size 5",
+          "uploadedBy": "Core Uploaded By 5",
+          "expiryDate": "2024-05-09",
+          "status": "under_review"
+        },
+        {
+          "title": "Pro Title 6",
+          "documentType": "Premium Tier",
+          "relatedTo": "Pro Related To 6",
+          "relatedId": 150,
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "fileName": "Pro File 6",
+          "fileSize": "Pro File Size 6",
+          "uploadedBy": "Pro Uploaded By 6",
+          "expiryDate": "2024-06-11",
+          "status": "approved"
+        },
+        {
+          "title": "Essential Title 7",
+          "documentType": "Standard Tier",
+          "relatedTo": "Essential Related To 7",
+          "relatedId": 198,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "fileName": "Essential File 7",
+          "fileSize": "Essential File Size 7",
+          "uploadedBy": "Essential Uploaded By 7",
+          "expiryDate": "2024-07-13",
+          "status": "active"
+        },
+        {
+          "title": "Primary Title 8",
+          "documentType": "Basic Tier",
+          "relatedTo": "Primary Related To 8",
+          "relatedId": 146,
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "fileName": "Primary File 8",
+          "fileSize": "Primary File Size 8",
+          "uploadedBy": "Primary Uploaded By 8",
+          "expiryDate": "2024-08-15",
+          "status": "active"
+        },
+        {
+          "title": "Global Title 9",
+          "documentType": "Enterprise",
+          "relatedTo": "Global Related To 9",
+          "relatedId": 194,
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "fileName": "Global File 9",
+          "fileSize": "Global File Size 9",
+          "uploadedBy": "Global Uploaded By 9",
+          "expiryDate": "2024-09-17",
+          "status": "active"
+        },
+        {
+          "title": "Regional Title 10",
+          "documentType": "Starter",
+          "relatedTo": "Regional Related To 10",
+          "relatedId": 242,
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "fileName": "Regional File 10",
+          "fileSize": "Regional File Size 10",
+          "uploadedBy": "Regional Uploaded By 10",
+          "expiryDate": "2024-10-19",
+          "status": "pending"
+        },
+        {
+          "title": "Custom Title 11",
+          "documentType": "Growth",
+          "relatedTo": "Custom Related To 11",
+          "relatedId": 190,
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "fileName": "Custom File 11",
+          "fileSize": "Custom File Size 11",
+          "uploadedBy": "Custom Uploaded By 11",
+          "expiryDate": "2024-11-21",
+          "status": "completed"
+        },
+        {
+          "title": "Smart Title 12",
+          "documentType": "Scale",
+          "relatedTo": "Smart Related To 12",
+          "relatedId": 238,
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "fileName": "Smart File 12",
+          "fileSize": "Smart File Size 12",
+          "uploadedBy": "Smart Uploaded By 12",
+          "expiryDate": "2024-12-23",
+          "status": "active"
+        },
+        {
+          "title": "Rapid Title 13",
+          "documentType": "Foundation",
+          "relatedTo": "Rapid Related To 13",
+          "relatedId": 286,
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "fileName": "Rapid File 13",
+          "fileSize": "Rapid File Size 13",
+          "uploadedBy": "Rapid Uploaded By 13",
+          "expiryDate": "2024-01-25",
+          "status": "in_progress"
+        },
+        {
+          "title": "Secure Title 14",
+          "documentType": "Advanced",
+          "relatedTo": "Secure Related To 14",
+          "relatedId": 234,
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "fileName": "Secure File 14",
+          "fileSize": "Secure File Size 14",
+          "uploadedBy": "Secure Uploaded By 14",
+          "expiryDate": "2024-02-27",
+          "status": "active"
+        },
+        {
+          "title": "Modern Title 15",
+          "documentType": "Professional",
+          "relatedTo": "Modern Related To 15",
+          "relatedId": 282,
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "fileName": "Modern File 15",
+          "fileSize": "Modern File Size 15",
+          "uploadedBy": "Modern Uploaded By 15",
+          "expiryDate": "2024-03-01",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "DealershipSetting",
+      "routeKey": "dealership-settings",
+      "label": "Dealership Setting",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeDealershipSetting",
+      "aiPrompt": "You are an AI analyst for A I Car Dealership Sales Optimizer. Analyze the provided Dealership Setting data. The data includes: Category, Setting Key, Setting Value, Label, Value Type. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "settingKey",
+          "label": "Setting Key",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "settingValue",
+          "label": "Setting Value",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "label",
+          "label": "Label",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "valueType",
+          "label": "Value Type",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "category": "Category A",
+          "settingKey": "Advanced Setting Key 1",
+          "settingValue": "Comprehensive solution designed for optimal performance and efficiency.",
+          "label": "Advanced Label 1",
+          "valueType": "Category A"
+        },
+        {
+          "category": "Category B",
+          "settingKey": "Premium Setting Key 2",
+          "settingValue": "Industry-leading approach with proven results across multiple deployments.",
+          "label": "Premium Label 2",
+          "valueType": "Category B"
+        },
+        {
+          "category": "Category C",
+          "settingKey": "Standard Setting Key 3",
+          "settingValue": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "label": "Standard Label 3",
+          "valueType": "Category C"
+        },
+        {
+          "category": "Category D",
+          "settingKey": "Elite Setting Key 4",
+          "settingValue": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "label": "Elite Label 4",
+          "valueType": "Category D"
+        },
+        {
+          "category": "Category E",
+          "settingKey": "Core Setting Key 5",
+          "settingValue": "Cost-effective strategy focused on sustainable long-term growth.",
+          "label": "Core Label 5",
+          "valueType": "Category E"
+        },
+        {
+          "category": "Premium Tier",
+          "settingKey": "Pro Setting Key 6",
+          "settingValue": "High-priority initiative aligned with organizational strategic objectives.",
+          "label": "Pro Label 6",
+          "valueType": "Premium Tier"
+        },
+        {
+          "category": "Standard Tier",
+          "settingKey": "Essential Setting Key 7",
+          "settingValue": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "label": "Essential Label 7",
+          "valueType": "Standard Tier"
+        },
+        {
+          "category": "Basic Tier",
+          "settingKey": "Primary Setting Key 8",
+          "settingValue": "Innovative framework incorporating best practices and emerging technologies.",
+          "label": "Primary Label 8",
+          "valueType": "Basic Tier"
+        },
+        {
+          "category": "Enterprise",
+          "settingKey": "Global Setting Key 9",
+          "settingValue": "Scalable architecture built to accommodate rapid expansion and change.",
+          "label": "Global Label 9",
+          "valueType": "Enterprise"
+        },
+        {
+          "category": "Starter",
+          "settingKey": "Regional Setting Key 10",
+          "settingValue": "Enterprise-grade solution with robust security and compliance features.",
+          "label": "Regional Label 10",
+          "valueType": "Starter"
+        },
+        {
+          "category": "Growth",
+          "settingKey": "Custom Setting Key 11",
+          "settingValue": "Integrated platform connecting multiple systems for seamless operations.",
+          "label": "Custom Label 11",
+          "valueType": "Growth"
+        },
+        {
+          "category": "Scale",
+          "settingKey": "Smart Setting Key 12",
+          "settingValue": "Automated workflow reducing manual intervention and human error.",
+          "label": "Smart Label 12",
+          "valueType": "Scale"
+        },
+        {
+          "category": "Foundation",
+          "settingKey": "Rapid Setting Key 13",
+          "settingValue": "Real-time monitoring system with intelligent alerting capabilities.",
+          "label": "Rapid Label 13",
+          "valueType": "Foundation"
+        },
+        {
+          "category": "Advanced",
+          "settingKey": "Secure Setting Key 14",
+          "settingValue": "Customizable module adaptable to diverse operational requirements.",
+          "label": "Secure Label 14",
+          "valueType": "Advanced"
+        },
+        {
+          "category": "Professional",
+          "settingKey": "Modern Setting Key 15",
+          "settingValue": "Performance-optimized design achieving superior throughput and reliability.",
+          "label": "Modern Label 15",
+          "valueType": "Professional"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4480 @@
+{
+  "appName": "AI DevOps Monitoring & Incident Management",
+  "dbName": "ai_devops_monitoring",
+  "folderName": "generated/AIDevOpsMonitoring",
+  "features": [
+    {
+      "label": "Error Report",
+      "modelName": "ErrorReport",
+      "routeKey": "errorReports",
+      "icon": "🐛",
+      "aiFunction": "analyzeErrorReport",
+      "aiPrompt": "Analyze this Error Report data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "errorType",
+          "label": "Error Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "stackTrace",
+          "label": "Stack Trace",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "sourceFile",
+          "label": "Source File",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "lineNumber",
+          "label": "Line Number",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "environment",
+          "label": "Environment",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "occurrenceCount",
+          "label": "Occurrences",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "firstSeenAt",
+          "label": "First Seen",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "lastSeenAt",
+          "label": "Last Seen",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "aiSuggestion",
+          "label": "AI Fix Suggestion",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isResolved",
+          "label": "Resolved",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Alpha Title",
+          "errorType": "Alpha Type",
+          "severity": "Critical",
+          "stackTrace": "Alpha stack trace content for enterprise scenario.",
+          "sourceFile": "Alpha Source File",
+          "lineNumber": 120,
+          "environment": "Alpha Environment",
+          "status": "Active",
+          "occurrenceCount": 39,
+          "firstSeenAt": "2026-07-27",
+          "lastSeenAt": "2026-01-16",
+          "assignedTo": "Alpha Assigned To",
+          "aiSuggestion": "Alpha ai fix suggestion content for enterprise scenario.",
+          "isResolved": true
+        },
+        {
+          "title": "Beta Title",
+          "errorType": "Beta Type",
+          "severity": "High",
+          "stackTrace": "Beta stack trace content for startup scenario.",
+          "sourceFile": "Beta Source File",
+          "lineNumber": 652,
+          "environment": "Beta Environment",
+          "status": "Pending",
+          "occurrenceCount": 415,
+          "firstSeenAt": "2026-08-01",
+          "lastSeenAt": "2026-10-27",
+          "assignedTo": "Beta Assigned To",
+          "aiSuggestion": "Beta ai fix suggestion content for startup scenario.",
+          "isResolved": false
+        },
+        {
+          "title": "Gamma Title",
+          "errorType": "Gamma Type",
+          "severity": "Medium",
+          "stackTrace": "Gamma stack trace content for smb scenario.",
+          "sourceFile": "Gamma Source File",
+          "lineNumber": 497,
+          "environment": "Gamma Environment",
+          "status": "Review",
+          "occurrenceCount": 236,
+          "firstSeenAt": "2026-08-13",
+          "lastSeenAt": "2026-11-22",
+          "assignedTo": "Gamma Assigned To",
+          "aiSuggestion": "Gamma ai fix suggestion content for smb scenario.",
+          "isResolved": true
+        },
+        {
+          "title": "Delta Title",
+          "errorType": "Delta Type",
+          "severity": "Low",
+          "stackTrace": "Delta stack trace content for agency scenario.",
+          "sourceFile": "Delta Source File",
+          "lineNumber": 5,
+          "environment": "Delta Environment",
+          "status": "Approved",
+          "occurrenceCount": 213,
+          "firstSeenAt": "2026-01-21",
+          "lastSeenAt": "2026-10-20",
+          "assignedTo": "Delta Assigned To",
+          "aiSuggestion": "Delta ai fix suggestion content for agency scenario.",
+          "isResolved": false
+        },
+        {
+          "title": "Epsilon Title",
+          "errorType": "Epsilon Type",
+          "severity": "Info",
+          "stackTrace": "Epsilon stack trace content for freelancer scenario.",
+          "sourceFile": "Epsilon Source File",
+          "lineNumber": 38,
+          "environment": "Epsilon Environment",
+          "status": "Draft",
+          "occurrenceCount": 491,
+          "firstSeenAt": "2026-01-01",
+          "lastSeenAt": "2026-05-12",
+          "assignedTo": "Epsilon Assigned To",
+          "aiSuggestion": "Epsilon ai fix suggestion content for freelancer scenario.",
+          "isResolved": true
+        },
+        {
+          "title": "Zeta Title",
+          "errorType": "Zeta Type",
+          "severity": "Warning",
+          "stackTrace": "Zeta stack trace content for government scenario.",
+          "sourceFile": "Zeta Source File",
+          "lineNumber": 534,
+          "environment": "Zeta Environment",
+          "status": "Live",
+          "occurrenceCount": 223,
+          "firstSeenAt": "2026-12-28",
+          "lastSeenAt": "2026-03-15",
+          "assignedTo": "Zeta Assigned To",
+          "aiSuggestion": "Zeta ai fix suggestion content for government scenario.",
+          "isResolved": false
+        },
+        {
+          "title": "Eta Title",
+          "errorType": "Eta Type",
+          "severity": "Notice",
+          "stackTrace": "Eta stack trace content for nonprofit scenario.",
+          "sourceFile": "Eta Source File",
+          "lineNumber": 638,
+          "environment": "Eta Environment",
+          "status": "Paused",
+          "occurrenceCount": 421,
+          "firstSeenAt": "2026-11-18",
+          "lastSeenAt": "2026-10-26",
+          "assignedTo": "Eta Assigned To",
+          "aiSuggestion": "Eta ai fix suggestion content for nonprofit scenario.",
+          "isResolved": true
+        },
+        {
+          "title": "Theta Title",
+          "errorType": "Theta Type",
+          "severity": "Alert",
+          "stackTrace": "Theta stack trace content for healthcare scenario.",
+          "sourceFile": "Theta Source File",
+          "lineNumber": 539,
+          "environment": "Theta Environment",
+          "status": "Archived",
+          "occurrenceCount": 32,
+          "firstSeenAt": "2026-01-15",
+          "lastSeenAt": "2026-09-27",
+          "assignedTo": "Theta Assigned To",
+          "aiSuggestion": "Theta ai fix suggestion content for healthcare scenario.",
+          "isResolved": false
+        },
+        {
+          "title": "Iota Title",
+          "errorType": "Iota Type",
+          "severity": "Emergency",
+          "stackTrace": "Iota stack trace content for finance scenario.",
+          "sourceFile": "Iota Source File",
+          "lineNumber": 909,
+          "environment": "Iota Environment",
+          "status": "Beta",
+          "occurrenceCount": 437,
+          "firstSeenAt": "2026-06-28",
+          "lastSeenAt": "2026-07-24",
+          "assignedTo": "Iota Assigned To",
+          "aiSuggestion": "Iota ai fix suggestion content for finance scenario.",
+          "isResolved": true
+        },
+        {
+          "title": "Kappa Title",
+          "errorType": "Kappa Type",
+          "severity": "Debug",
+          "stackTrace": "Kappa stack trace content for education scenario.",
+          "sourceFile": "Kappa Source File",
+          "lineNumber": 92,
+          "environment": "Kappa Environment",
+          "status": "GA",
+          "occurrenceCount": 365,
+          "firstSeenAt": "2026-06-03",
+          "lastSeenAt": "2026-06-05",
+          "assignedTo": "Kappa Assigned To",
+          "aiSuggestion": "Kappa ai fix suggestion content for education scenario.",
+          "isResolved": false
+        },
+        {
+          "title": "Lambda Title",
+          "errorType": "Lambda Type",
+          "severity": "Trace",
+          "stackTrace": "Lambda stack trace content for retail scenario.",
+          "sourceFile": "Lambda Source File",
+          "lineNumber": 730,
+          "environment": "Lambda Environment",
+          "status": "Completed",
+          "occurrenceCount": 380,
+          "firstSeenAt": "2026-11-16",
+          "lastSeenAt": "2026-06-06",
+          "assignedTo": "Lambda Assigned To",
+          "aiSuggestion": "Lambda ai fix suggestion content for retail scenario.",
+          "isResolved": true
+        },
+        {
+          "title": "Mu Title",
+          "errorType": "Mu Type",
+          "severity": "Fatal",
+          "stackTrace": "Mu stack trace content for tech scenario.",
+          "sourceFile": "Mu Source File",
+          "lineNumber": 690,
+          "environment": "Mu Environment",
+          "status": "In Progress",
+          "occurrenceCount": 498,
+          "firstSeenAt": "2026-11-16",
+          "lastSeenAt": "2026-02-21",
+          "assignedTo": "Mu Assigned To",
+          "aiSuggestion": "Mu ai fix suggestion content for tech scenario.",
+          "isResolved": false
+        },
+        {
+          "title": "Nu Title",
+          "errorType": "Nu Type",
+          "severity": "Major",
+          "stackTrace": "Nu stack trace content for legal scenario.",
+          "sourceFile": "Nu Source File",
+          "lineNumber": 53,
+          "environment": "Nu Environment",
+          "status": "Scheduled",
+          "occurrenceCount": 147,
+          "firstSeenAt": "2026-02-11",
+          "lastSeenAt": "2026-09-03",
+          "assignedTo": "Nu Assigned To",
+          "aiSuggestion": "Nu ai fix suggestion content for legal scenario.",
+          "isResolved": true
+        },
+        {
+          "title": "Xi Title",
+          "errorType": "Xi Type",
+          "severity": "Minor",
+          "stackTrace": "Xi stack trace content for real estate scenario.",
+          "sourceFile": "Xi Source File",
+          "lineNumber": 703,
+          "environment": "Xi Environment",
+          "status": "Failed",
+          "occurrenceCount": 132,
+          "firstSeenAt": "2026-05-23",
+          "lastSeenAt": "2026-04-08",
+          "assignedTo": "Xi Assigned To",
+          "aiSuggestion": "Xi ai fix suggestion content for real estate scenario.",
+          "isResolved": false
+        },
+        {
+          "title": "Omicron Title",
+          "errorType": "Omicron Type",
+          "severity": "Trivial",
+          "stackTrace": "Omicron stack trace content for manufacturing scenario.",
+          "sourceFile": "Omicron Source File",
+          "lineNumber": 40,
+          "environment": "Omicron Environment",
+          "status": "Cancelled",
+          "occurrenceCount": 96,
+          "firstSeenAt": "2026-03-25",
+          "lastSeenAt": "2026-09-17",
+          "assignedTo": "Omicron Assigned To",
+          "aiSuggestion": "Omicron ai fix suggestion content for manufacturing scenario.",
+          "isResolved": true
+        }
+      ]
+    },
+    {
+      "label": "Crash Log",
+      "modelName": "CrashLog",
+      "routeKey": "crashLogs",
+      "icon": "💥",
+      "aiFunction": "analyzeCrashLog",
+      "aiPrompt": "Analyze this Crash Log data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "appName",
+          "label": "App",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "appVersion",
+          "label": "Version",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "platform",
+          "label": "Platform",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "osVersion",
+          "label": "OS Version",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "deviceModel",
+          "label": "Device",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "crashTrace",
+          "label": "Crash Trace",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "crashType",
+          "label": "Crash Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "affectedUsers",
+          "label": "Affected Users",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "crashedAt",
+          "label": "Crashed At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "context",
+          "label": "Context",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isRegression",
+          "label": "Regression",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "appName": "Alpha App",
+          "appVersion": "Alpha Version",
+          "platform": "Alpha Platform",
+          "osVersion": "Alpha OS Version",
+          "deviceModel": "Alpha Device",
+          "crashTrace": "Alpha crash trace content for enterprise scenario.",
+          "crashType": "Alpha Type",
+          "affectedUsers": 4,
+          "crashedAt": "2026-01-13",
+          "status": "Active",
+          "context": "Alpha context — comprehensive details for enterprise use case with actionable insights.",
+          "isRegression": true
+        },
+        {
+          "appName": "Beta App",
+          "appVersion": "Beta Version",
+          "platform": "Beta Platform",
+          "osVersion": "Beta OS Version",
+          "deviceModel": "Beta Device",
+          "crashTrace": "Beta crash trace content for startup scenario.",
+          "crashType": "Beta Type",
+          "affectedUsers": 369,
+          "crashedAt": "2026-03-04",
+          "status": "Pending",
+          "context": "Beta context — comprehensive details for startup use case with actionable insights.",
+          "isRegression": false
+        },
+        {
+          "appName": "Gamma App",
+          "appVersion": "Gamma Version",
+          "platform": "Gamma Platform",
+          "osVersion": "Gamma OS Version",
+          "deviceModel": "Gamma Device",
+          "crashTrace": "Gamma crash trace content for smb scenario.",
+          "crashType": "Gamma Type",
+          "affectedUsers": 686,
+          "crashedAt": "2026-11-02",
+          "status": "Review",
+          "context": "Gamma context — comprehensive details for smb use case with actionable insights.",
+          "isRegression": true
+        },
+        {
+          "appName": "Delta App",
+          "appVersion": "Delta Version",
+          "platform": "Delta Platform",
+          "osVersion": "Delta OS Version",
+          "deviceModel": "Delta Device",
+          "crashTrace": "Delta crash trace content for agency scenario.",
+          "crashType": "Delta Type",
+          "affectedUsers": 169,
+          "crashedAt": "2026-05-17",
+          "status": "Approved",
+          "context": "Delta context — comprehensive details for agency use case with actionable insights.",
+          "isRegression": false
+        },
+        {
+          "appName": "Epsilon App",
+          "appVersion": "Epsilon Version",
+          "platform": "Epsilon Platform",
+          "osVersion": "Epsilon OS Version",
+          "deviceModel": "Epsilon Device",
+          "crashTrace": "Epsilon crash trace content for freelancer scenario.",
+          "crashType": "Epsilon Type",
+          "affectedUsers": 871,
+          "crashedAt": "2026-09-27",
+          "status": "Draft",
+          "context": "Epsilon context — comprehensive details for freelancer use case with actionable insights.",
+          "isRegression": true
+        },
+        {
+          "appName": "Zeta App",
+          "appVersion": "Zeta Version",
+          "platform": "Zeta Platform",
+          "osVersion": "Zeta OS Version",
+          "deviceModel": "Zeta Device",
+          "crashTrace": "Zeta crash trace content for government scenario.",
+          "crashType": "Zeta Type",
+          "affectedUsers": 722,
+          "crashedAt": "2026-09-13",
+          "status": "Live",
+          "context": "Zeta context — comprehensive details for government use case with actionable insights.",
+          "isRegression": false
+        },
+        {
+          "appName": "Eta App",
+          "appVersion": "Eta Version",
+          "platform": "Eta Platform",
+          "osVersion": "Eta OS Version",
+          "deviceModel": "Eta Device",
+          "crashTrace": "Eta crash trace content for nonprofit scenario.",
+          "crashType": "Eta Type",
+          "affectedUsers": 207,
+          "crashedAt": "2026-08-06",
+          "status": "Paused",
+          "context": "Eta context — comprehensive details for nonprofit use case with actionable insights.",
+          "isRegression": true
+        },
+        {
+          "appName": "Theta App",
+          "appVersion": "Theta Version",
+          "platform": "Theta Platform",
+          "osVersion": "Theta OS Version",
+          "deviceModel": "Theta Device",
+          "crashTrace": "Theta crash trace content for healthcare scenario.",
+          "crashType": "Theta Type",
+          "affectedUsers": 881,
+          "crashedAt": "2026-12-16",
+          "status": "Archived",
+          "context": "Theta context — comprehensive details for healthcare use case with actionable insights.",
+          "isRegression": false
+        },
+        {
+          "appName": "Iota App",
+          "appVersion": "Iota Version",
+          "platform": "Iota Platform",
+          "osVersion": "Iota OS Version",
+          "deviceModel": "Iota Device",
+          "crashTrace": "Iota crash trace content for finance scenario.",
+          "crashType": "Iota Type",
+          "affectedUsers": 482,
+          "crashedAt": "2026-12-18",
+          "status": "Beta",
+          "context": "Iota context — comprehensive details for finance use case with actionable insights.",
+          "isRegression": true
+        },
+        {
+          "appName": "Kappa App",
+          "appVersion": "Kappa Version",
+          "platform": "Kappa Platform",
+          "osVersion": "Kappa OS Version",
+          "deviceModel": "Kappa Device",
+          "crashTrace": "Kappa crash trace content for education scenario.",
+          "crashType": "Kappa Type",
+          "affectedUsers": 108,
+          "crashedAt": "2026-10-17",
+          "status": "GA",
+          "context": "Kappa context — comprehensive details for education use case with actionable insights.",
+          "isRegression": false
+        },
+        {
+          "appName": "Lambda App",
+          "appVersion": "Lambda Version",
+          "platform": "Lambda Platform",
+          "osVersion": "Lambda OS Version",
+          "deviceModel": "Lambda Device",
+          "crashTrace": "Lambda crash trace content for retail scenario.",
+          "crashType": "Lambda Type",
+          "affectedUsers": 31,
+          "crashedAt": "2026-08-20",
+          "status": "Completed",
+          "context": "Lambda context — comprehensive details for retail use case with actionable insights.",
+          "isRegression": true
+        },
+        {
+          "appName": "Mu App",
+          "appVersion": "Mu Version",
+          "platform": "Mu Platform",
+          "osVersion": "Mu OS Version",
+          "deviceModel": "Mu Device",
+          "crashTrace": "Mu crash trace content for tech scenario.",
+          "crashType": "Mu Type",
+          "affectedUsers": 547,
+          "crashedAt": "2026-12-03",
+          "status": "In Progress",
+          "context": "Mu context — comprehensive details for tech use case with actionable insights.",
+          "isRegression": false
+        },
+        {
+          "appName": "Nu App",
+          "appVersion": "Nu Version",
+          "platform": "Nu Platform",
+          "osVersion": "Nu OS Version",
+          "deviceModel": "Nu Device",
+          "crashTrace": "Nu crash trace content for legal scenario.",
+          "crashType": "Nu Type",
+          "affectedUsers": 409,
+          "crashedAt": "2026-10-19",
+          "status": "Scheduled",
+          "context": "Nu context — comprehensive details for legal use case with actionable insights.",
+          "isRegression": true
+        },
+        {
+          "appName": "Xi App",
+          "appVersion": "Xi Version",
+          "platform": "Xi Platform",
+          "osVersion": "Xi OS Version",
+          "deviceModel": "Xi Device",
+          "crashTrace": "Xi crash trace content for real estate scenario.",
+          "crashType": "Xi Type",
+          "affectedUsers": 913,
+          "crashedAt": "2026-09-19",
+          "status": "Failed",
+          "context": "Xi context — comprehensive details for real estate use case with actionable insights.",
+          "isRegression": false
+        },
+        {
+          "appName": "Omicron App",
+          "appVersion": "Omicron Version",
+          "platform": "Omicron Platform",
+          "osVersion": "Omicron OS Version",
+          "deviceModel": "Omicron Device",
+          "crashTrace": "Omicron crash trace content for manufacturing scenario.",
+          "crashType": "Omicron Type",
+          "affectedUsers": 251,
+          "crashedAt": "2026-01-06",
+          "status": "Cancelled",
+          "context": "Omicron context — comprehensive details for manufacturing use case with actionable insights.",
+          "isRegression": true
+        }
+      ]
+    },
+    {
+      "label": "Error Group",
+      "modelName": "ErrorGroup",
+      "routeKey": "errorGroups",
+      "icon": "📦",
+      "aiFunction": "analyzeErrorGroup",
+      "aiPrompt": "Analyze this Error Group data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "fingerprint",
+          "label": "Fingerprint",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "errorType",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "eventCount",
+          "label": "Event Count",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "userCount",
+          "label": "User Count",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "firstSeen",
+          "label": "First Seen",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "lastSeen",
+          "label": "Last Seen",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "aiRootCause",
+          "label": "AI Root Cause",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isMuted",
+          "label": "Muted",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "fingerprint": "Alpha Fingerprint",
+          "title": "Alpha Title",
+          "errorType": "Alpha Type",
+          "eventCount": 493,
+          "userCount": 175,
+          "firstSeen": "Alpha First Seen",
+          "lastSeen": "Alpha Last Seen",
+          "status": "Active",
+          "assignedTo": "Alpha Assigned To",
+          "priority": "Critical",
+          "aiRootCause": "Alpha ai root cause content for enterprise scenario.",
+          "isMuted": true
+        },
+        {
+          "fingerprint": "Beta Fingerprint",
+          "title": "Beta Title",
+          "errorType": "Beta Type",
+          "eventCount": 368,
+          "userCount": 498,
+          "firstSeen": "Beta First Seen",
+          "lastSeen": "Beta Last Seen",
+          "status": "Pending",
+          "assignedTo": "Beta Assigned To",
+          "priority": "High",
+          "aiRootCause": "Beta ai root cause content for startup scenario.",
+          "isMuted": false
+        },
+        {
+          "fingerprint": "Gamma Fingerprint",
+          "title": "Gamma Title",
+          "errorType": "Gamma Type",
+          "eventCount": 91,
+          "userCount": 260,
+          "firstSeen": "Gamma First Seen",
+          "lastSeen": "Gamma Last Seen",
+          "status": "Review",
+          "assignedTo": "Gamma Assigned To",
+          "priority": "Medium",
+          "aiRootCause": "Gamma ai root cause content for smb scenario.",
+          "isMuted": true
+        },
+        {
+          "fingerprint": "Delta Fingerprint",
+          "title": "Delta Title",
+          "errorType": "Delta Type",
+          "eventCount": 343,
+          "userCount": 476,
+          "firstSeen": "Delta First Seen",
+          "lastSeen": "Delta Last Seen",
+          "status": "Approved",
+          "assignedTo": "Delta Assigned To",
+          "priority": "Low",
+          "aiRootCause": "Delta ai root cause content for agency scenario.",
+          "isMuted": false
+        },
+        {
+          "fingerprint": "Epsilon Fingerprint",
+          "title": "Epsilon Title",
+          "errorType": "Epsilon Type",
+          "eventCount": 118,
+          "userCount": 135,
+          "firstSeen": "Epsilon First Seen",
+          "lastSeen": "Epsilon Last Seen",
+          "status": "Draft",
+          "assignedTo": "Epsilon Assigned To",
+          "priority": "Info",
+          "aiRootCause": "Epsilon ai root cause content for freelancer scenario.",
+          "isMuted": true
+        },
+        {
+          "fingerprint": "Zeta Fingerprint",
+          "title": "Zeta Title",
+          "errorType": "Zeta Type",
+          "eventCount": 279,
+          "userCount": 448,
+          "firstSeen": "Zeta First Seen",
+          "lastSeen": "Zeta Last Seen",
+          "status": "Live",
+          "assignedTo": "Zeta Assigned To",
+          "priority": "Warning",
+          "aiRootCause": "Zeta ai root cause content for government scenario.",
+          "isMuted": false
+        },
+        {
+          "fingerprint": "Eta Fingerprint",
+          "title": "Eta Title",
+          "errorType": "Eta Type",
+          "eventCount": 255,
+          "userCount": 451,
+          "firstSeen": "Eta First Seen",
+          "lastSeen": "Eta Last Seen",
+          "status": "Paused",
+          "assignedTo": "Eta Assigned To",
+          "priority": "Notice",
+          "aiRootCause": "Eta ai root cause content for nonprofit scenario.",
+          "isMuted": true
+        },
+        {
+          "fingerprint": "Theta Fingerprint",
+          "title": "Theta Title",
+          "errorType": "Theta Type",
+          "eventCount": 48,
+          "userCount": 323,
+          "firstSeen": "Theta First Seen",
+          "lastSeen": "Theta Last Seen",
+          "status": "Archived",
+          "assignedTo": "Theta Assigned To",
+          "priority": "Alert",
+          "aiRootCause": "Theta ai root cause content for healthcare scenario.",
+          "isMuted": false
+        },
+        {
+          "fingerprint": "Iota Fingerprint",
+          "title": "Iota Title",
+          "errorType": "Iota Type",
+          "eventCount": 259,
+          "userCount": 162,
+          "firstSeen": "Iota First Seen",
+          "lastSeen": "Iota Last Seen",
+          "status": "Beta",
+          "assignedTo": "Iota Assigned To",
+          "priority": "Emergency",
+          "aiRootCause": "Iota ai root cause content for finance scenario.",
+          "isMuted": true
+        },
+        {
+          "fingerprint": "Kappa Fingerprint",
+          "title": "Kappa Title",
+          "errorType": "Kappa Type",
+          "eventCount": 190,
+          "userCount": 456,
+          "firstSeen": "Kappa First Seen",
+          "lastSeen": "Kappa Last Seen",
+          "status": "GA",
+          "assignedTo": "Kappa Assigned To",
+          "priority": "Debug",
+          "aiRootCause": "Kappa ai root cause content for education scenario.",
+          "isMuted": false
+        },
+        {
+          "fingerprint": "Lambda Fingerprint",
+          "title": "Lambda Title",
+          "errorType": "Lambda Type",
+          "eventCount": 311,
+          "userCount": 344,
+          "firstSeen": "Lambda First Seen",
+          "lastSeen": "Lambda Last Seen",
+          "status": "Completed",
+          "assignedTo": "Lambda Assigned To",
+          "priority": "Trace",
+          "aiRootCause": "Lambda ai root cause content for retail scenario.",
+          "isMuted": true
+        },
+        {
+          "fingerprint": "Mu Fingerprint",
+          "title": "Mu Title",
+          "errorType": "Mu Type",
+          "eventCount": 421,
+          "userCount": 355,
+          "firstSeen": "Mu First Seen",
+          "lastSeen": "Mu Last Seen",
+          "status": "In Progress",
+          "assignedTo": "Mu Assigned To",
+          "priority": "Fatal",
+          "aiRootCause": "Mu ai root cause content for tech scenario.",
+          "isMuted": false
+        },
+        {
+          "fingerprint": "Nu Fingerprint",
+          "title": "Nu Title",
+          "errorType": "Nu Type",
+          "eventCount": 492,
+          "userCount": 460,
+          "firstSeen": "Nu First Seen",
+          "lastSeen": "Nu Last Seen",
+          "status": "Scheduled",
+          "assignedTo": "Nu Assigned To",
+          "priority": "Major",
+          "aiRootCause": "Nu ai root cause content for legal scenario.",
+          "isMuted": true
+        },
+        {
+          "fingerprint": "Xi Fingerprint",
+          "title": "Xi Title",
+          "errorType": "Xi Type",
+          "eventCount": 131,
+          "userCount": 22,
+          "firstSeen": "Xi First Seen",
+          "lastSeen": "Xi Last Seen",
+          "status": "Failed",
+          "assignedTo": "Xi Assigned To",
+          "priority": "Minor",
+          "aiRootCause": "Xi ai root cause content for real estate scenario.",
+          "isMuted": false
+        },
+        {
+          "fingerprint": "Omicron Fingerprint",
+          "title": "Omicron Title",
+          "errorType": "Omicron Type",
+          "eventCount": 143,
+          "userCount": 246,
+          "firstSeen": "Omicron First Seen",
+          "lastSeen": "Omicron Last Seen",
+          "status": "Cancelled",
+          "assignedTo": "Omicron Assigned To",
+          "priority": "Trivial",
+          "aiRootCause": "Omicron ai root cause content for manufacturing scenario.",
+          "isMuted": true
+        }
+      ]
+    },
+    {
+      "label": "Log Stream",
+      "modelName": "LogStream",
+      "routeKey": "logStreams",
+      "icon": "📝",
+      "aiFunction": "analyzeLogStream",
+      "aiPrompt": "Analyze this Log Stream data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Stream Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "sourceApp",
+          "label": "Source App",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "logLevel",
+          "label": "Log Level",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "logMessage",
+          "label": "Log Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "traceId",
+          "label": "Trace ID",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "spanId",
+          "label": "Span ID",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "timestamp",
+          "label": "Timestamp",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "host",
+          "label": "Host",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "serviceName",
+          "label": "Service",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "metadata",
+          "label": "Metadata JSON",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "retentionDays",
+          "label": "Retention Days",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "isIndexed",
+          "label": "Indexed",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Alpha Stream Name",
+          "sourceApp": "Alpha Source App",
+          "logLevel": "Beginner",
+          "logMessage": "Alpha log message content for enterprise scenario.",
+          "traceId": "Alpha Trace ID",
+          "spanId": "Alpha Span ID",
+          "timestamp": "2026-10-07",
+          "host": "Alpha Host",
+          "serviceName": "Alpha Service",
+          "metadata": "{\"key\":\"alpha_config\",\"value\":\"Sample data for Alpha\",\"items\":[1,2,3]}",
+          "retentionDays": 240,
+          "isIndexed": true
+        },
+        {
+          "name": "Beta Stream Name",
+          "sourceApp": "Beta Source App",
+          "logLevel": "Intermediate",
+          "logMessage": "Beta log message content for startup scenario.",
+          "traceId": "Beta Trace ID",
+          "spanId": "Beta Span ID",
+          "timestamp": "2026-03-17",
+          "host": "Beta Host",
+          "serviceName": "Beta Service",
+          "metadata": "{\"key\":\"beta_config\",\"value\":\"Sample data for Beta\",\"items\":[1,2,3]}",
+          "retentionDays": 982,
+          "isIndexed": false
+        },
+        {
+          "name": "Gamma Stream Name",
+          "sourceApp": "Gamma Source App",
+          "logLevel": "Advanced",
+          "logMessage": "Gamma log message content for smb scenario.",
+          "traceId": "Gamma Trace ID",
+          "spanId": "Gamma Span ID",
+          "timestamp": "2026-04-02",
+          "host": "Gamma Host",
+          "serviceName": "Gamma Service",
+          "metadata": "{\"key\":\"gamma_config\",\"value\":\"Sample data for Gamma\",\"items\":[1,2,3]}",
+          "retentionDays": 806,
+          "isIndexed": true
+        },
+        {
+          "name": "Delta Stream Name",
+          "sourceApp": "Delta Source App",
+          "logLevel": "Expert",
+          "logMessage": "Delta log message content for agency scenario.",
+          "traceId": "Delta Trace ID",
+          "spanId": "Delta Span ID",
+          "timestamp": "2026-11-19",
+          "host": "Delta Host",
+          "serviceName": "Delta Service",
+          "metadata": "{\"key\":\"delta_config\",\"value\":\"Sample data for Delta\",\"items\":[1,2,3]}",
+          "retentionDays": 63,
+          "isIndexed": false
+        },
+        {
+          "name": "Epsilon Stream Name",
+          "sourceApp": "Epsilon Source App",
+          "logLevel": "Beginner",
+          "logMessage": "Epsilon log message content for freelancer scenario.",
+          "traceId": "Epsilon Trace ID",
+          "spanId": "Epsilon Span ID",
+          "timestamp": "2026-10-03",
+          "host": "Epsilon Host",
+          "serviceName": "Epsilon Service",
+          "metadata": "{\"key\":\"epsilon_config\",\"value\":\"Sample data for Epsilon\",\"items\":[1,2,3]}",
+          "retentionDays": 363,
+          "isIndexed": true
+        },
+        {
+          "name": "Zeta Stream Name",
+          "sourceApp": "Zeta Source App",
+          "logLevel": "Intermediate",
+          "logMessage": "Zeta log message content for government scenario.",
+          "traceId": "Zeta Trace ID",
+          "spanId": "Zeta Span ID",
+          "timestamp": "2026-10-03",
+          "host": "Zeta Host",
+          "serviceName": "Zeta Service",
+          "metadata": "{\"key\":\"zeta_config\",\"value\":\"Sample data for Zeta\",\"items\":[1,2,3]}",
+          "retentionDays": 736,
+          "isIndexed": false
+        },
+        {
+          "name": "Eta Stream Name",
+          "sourceApp": "Eta Source App",
+          "logLevel": "Advanced",
+          "logMessage": "Eta log message content for nonprofit scenario.",
+          "traceId": "Eta Trace ID",
+          "spanId": "Eta Span ID",
+          "timestamp": "2026-02-07",
+          "host": "Eta Host",
+          "serviceName": "Eta Service",
+          "metadata": "{\"key\":\"eta_config\",\"value\":\"Sample data for Eta\",\"items\":[1,2,3]}",
+          "retentionDays": 368,
+          "isIndexed": true
+        },
+        {
+          "name": "Theta Stream Name",
+          "sourceApp": "Theta Source App",
+          "logLevel": "Expert",
+          "logMessage": "Theta log message content for healthcare scenario.",
+          "traceId": "Theta Trace ID",
+          "spanId": "Theta Span ID",
+          "timestamp": "2026-01-24",
+          "host": "Theta Host",
+          "serviceName": "Theta Service",
+          "metadata": "{\"key\":\"theta_config\",\"value\":\"Sample data for Theta\",\"items\":[1,2,3]}",
+          "retentionDays": 428,
+          "isIndexed": false
+        },
+        {
+          "name": "Iota Stream Name",
+          "sourceApp": "Iota Source App",
+          "logLevel": "Beginner",
+          "logMessage": "Iota log message content for finance scenario.",
+          "traceId": "Iota Trace ID",
+          "spanId": "Iota Span ID",
+          "timestamp": "2026-06-17",
+          "host": "Iota Host",
+          "serviceName": "Iota Service",
+          "metadata": "{\"key\":\"iota_config\",\"value\":\"Sample data for Iota\",\"items\":[1,2,3]}",
+          "retentionDays": 560,
+          "isIndexed": true
+        },
+        {
+          "name": "Kappa Stream Name",
+          "sourceApp": "Kappa Source App",
+          "logLevel": "Intermediate",
+          "logMessage": "Kappa log message content for education scenario.",
+          "traceId": "Kappa Trace ID",
+          "spanId": "Kappa Span ID",
+          "timestamp": "2026-02-10",
+          "host": "Kappa Host",
+          "serviceName": "Kappa Service",
+          "metadata": "{\"key\":\"kappa_config\",\"value\":\"Sample data for Kappa\",\"items\":[1,2,3]}",
+          "retentionDays": 141,
+          "isIndexed": false
+        },
+        {
+          "name": "Lambda Stream Name",
+          "sourceApp": "Lambda Source App",
+          "logLevel": "Advanced",
+          "logMessage": "Lambda log message content for retail scenario.",
+          "traceId": "Lambda Trace ID",
+          "spanId": "Lambda Span ID",
+          "timestamp": "2026-07-21",
+          "host": "Lambda Host",
+          "serviceName": "Lambda Service",
+          "metadata": "{\"key\":\"lambda_config\",\"value\":\"Sample data for Lambda\",\"items\":[1,2,3]}",
+          "retentionDays": 162,
+          "isIndexed": true
+        },
+        {
+          "name": "Mu Stream Name",
+          "sourceApp": "Mu Source App",
+          "logLevel": "Expert",
+          "logMessage": "Mu log message content for tech scenario.",
+          "traceId": "Mu Trace ID",
+          "spanId": "Mu Span ID",
+          "timestamp": "2026-06-20",
+          "host": "Mu Host",
+          "serviceName": "Mu Service",
+          "metadata": "{\"key\":\"mu_config\",\"value\":\"Sample data for Mu\",\"items\":[1,2,3]}",
+          "retentionDays": 707,
+          "isIndexed": false
+        },
+        {
+          "name": "Nu Stream Name",
+          "sourceApp": "Nu Source App",
+          "logLevel": "Beginner",
+          "logMessage": "Nu log message content for legal scenario.",
+          "traceId": "Nu Trace ID",
+          "spanId": "Nu Span ID",
+          "timestamp": "2026-03-24",
+          "host": "Nu Host",
+          "serviceName": "Nu Service",
+          "metadata": "{\"key\":\"nu_config\",\"value\":\"Sample data for Nu\",\"items\":[1,2,3]}",
+          "retentionDays": 104,
+          "isIndexed": true
+        },
+        {
+          "name": "Xi Stream Name",
+          "sourceApp": "Xi Source App",
+          "logLevel": "Intermediate",
+          "logMessage": "Xi log message content for real estate scenario.",
+          "traceId": "Xi Trace ID",
+          "spanId": "Xi Span ID",
+          "timestamp": "2026-05-18",
+          "host": "Xi Host",
+          "serviceName": "Xi Service",
+          "metadata": "{\"key\":\"xi_config\",\"value\":\"Sample data for Xi\",\"items\":[1,2,3]}",
+          "retentionDays": 204,
+          "isIndexed": false
+        },
+        {
+          "name": "Omicron Stream Name",
+          "sourceApp": "Omicron Source App",
+          "logLevel": "Advanced",
+          "logMessage": "Omicron log message content for manufacturing scenario.",
+          "traceId": "Omicron Trace ID",
+          "spanId": "Omicron Span ID",
+          "timestamp": "2026-10-01",
+          "host": "Omicron Host",
+          "serviceName": "Omicron Service",
+          "metadata": "{\"key\":\"omicron_config\",\"value\":\"Sample data for Omicron\",\"items\":[1,2,3]}",
+          "retentionDays": 504,
+          "isIndexed": true
+        }
+      ]
+    },
+    {
+      "label": "Log Alert",
+      "modelName": "LogAlert",
+      "routeKey": "logAlerts",
+      "icon": "🚨",
+      "aiFunction": "analyzeLogAlert",
+      "aiPrompt": "Analyze this Log Alert data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Alert Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "query",
+          "label": "Search Query",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "condition",
+          "label": "Condition",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "threshold",
+          "label": "Threshold",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "notifyChannel",
+          "label": "Notify Channel",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "windowMinutes",
+          "label": "Window (min)",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "triggerCount",
+          "label": "Triggers",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "lastTriggeredAt",
+          "label": "Last Triggered",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "isActive",
+          "label": "Active",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "aiPattern",
+          "label": "AI Pattern",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Alpha Alert Name",
+          "query": "Alpha Search Query",
+          "condition": "Alpha Condition",
+          "threshold": 773.63,
+          "severity": "Critical",
+          "notifyChannel": "Email",
+          "windowMinutes": 1334,
+          "status": "Active",
+          "triggerCount": 34,
+          "lastTriggeredAt": "2026-10-07",
+          "isActive": true,
+          "aiPattern": "Alpha ai pattern content for enterprise scenario."
+        },
+        {
+          "name": "Beta Alert Name",
+          "query": "Beta Search Query",
+          "condition": "Beta Condition",
+          "threshold": 196.83,
+          "severity": "High",
+          "notifyChannel": "SMS",
+          "windowMinutes": 155,
+          "status": "Pending",
+          "triggerCount": 462,
+          "lastTriggeredAt": "2026-04-24",
+          "isActive": false,
+          "aiPattern": "Beta ai pattern content for startup scenario."
+        },
+        {
+          "name": "Gamma Alert Name",
+          "query": "Gamma Search Query",
+          "condition": "Gamma Condition",
+          "threshold": 958.21,
+          "severity": "Medium",
+          "notifyChannel": "Slack",
+          "windowMinutes": 2528,
+          "status": "Review",
+          "triggerCount": 158,
+          "lastTriggeredAt": "2026-06-11",
+          "isActive": true,
+          "aiPattern": "Gamma ai pattern content for smb scenario."
+        },
+        {
+          "name": "Delta Alert Name",
+          "query": "Delta Search Query",
+          "condition": "Delta Condition",
+          "threshold": 844.75,
+          "severity": "Low",
+          "notifyChannel": "Push",
+          "windowMinutes": 2470,
+          "status": "Approved",
+          "triggerCount": 243,
+          "lastTriggeredAt": "2026-07-17",
+          "isActive": false,
+          "aiPattern": "Delta ai pattern content for agency scenario."
+        },
+        {
+          "name": "Epsilon Alert Name",
+          "query": "Epsilon Search Query",
+          "condition": "Epsilon Condition",
+          "threshold": 708.33,
+          "severity": "Info",
+          "notifyChannel": "Webhook",
+          "windowMinutes": 516,
+          "status": "Draft",
+          "triggerCount": 101,
+          "lastTriggeredAt": "2026-06-06",
+          "isActive": true,
+          "aiPattern": "Epsilon ai pattern content for freelancer scenario."
+        },
+        {
+          "name": "Zeta Alert Name",
+          "query": "Zeta Search Query",
+          "condition": "Zeta Condition",
+          "threshold": 905.21,
+          "severity": "Warning",
+          "notifyChannel": "Teams",
+          "windowMinutes": 3258,
+          "status": "Live",
+          "triggerCount": 404,
+          "lastTriggeredAt": "2026-08-21",
+          "isActive": false,
+          "aiPattern": "Zeta ai pattern content for government scenario."
+        },
+        {
+          "name": "Eta Alert Name",
+          "query": "Eta Search Query",
+          "condition": "Eta Condition",
+          "threshold": 606.44,
+          "severity": "Notice",
+          "notifyChannel": "Discord",
+          "windowMinutes": 246,
+          "status": "Paused",
+          "triggerCount": 251,
+          "lastTriggeredAt": "2026-01-16",
+          "isActive": true,
+          "aiPattern": "Eta ai pattern content for nonprofit scenario."
+        },
+        {
+          "name": "Theta Alert Name",
+          "query": "Theta Search Query",
+          "condition": "Theta Condition",
+          "threshold": 170.7,
+          "severity": "Alert",
+          "notifyChannel": "WhatsApp",
+          "windowMinutes": 387,
+          "status": "Archived",
+          "triggerCount": 102,
+          "lastTriggeredAt": "2026-05-09",
+          "isActive": false,
+          "aiPattern": "Theta ai pattern content for healthcare scenario."
+        },
+        {
+          "name": "Iota Alert Name",
+          "query": "Iota Search Query",
+          "condition": "Iota Condition",
+          "threshold": 571.51,
+          "severity": "Emergency",
+          "notifyChannel": "Telegram",
+          "windowMinutes": 1608,
+          "status": "Beta",
+          "triggerCount": 192,
+          "lastTriggeredAt": "2026-04-26",
+          "isActive": true,
+          "aiPattern": "Iota ai pattern content for finance scenario."
+        },
+        {
+          "name": "Kappa Alert Name",
+          "query": "Kappa Search Query",
+          "condition": "Kappa Condition",
+          "threshold": 956.8,
+          "severity": "Debug",
+          "notifyChannel": "In-App",
+          "windowMinutes": 3220,
+          "status": "GA",
+          "triggerCount": 332,
+          "lastTriggeredAt": "2026-09-18",
+          "isActive": false,
+          "aiPattern": "Kappa ai pattern content for education scenario."
+        },
+        {
+          "name": "Lambda Alert Name",
+          "query": "Lambda Search Query",
+          "condition": "Lambda Condition",
+          "threshold": 444.21,
+          "severity": "Trace",
+          "notifyChannel": "Email",
+          "windowMinutes": 2626,
+          "status": "Completed",
+          "triggerCount": 20,
+          "lastTriggeredAt": "2026-06-12",
+          "isActive": true,
+          "aiPattern": "Lambda ai pattern content for retail scenario."
+        },
+        {
+          "name": "Mu Alert Name",
+          "query": "Mu Search Query",
+          "condition": "Mu Condition",
+          "threshold": 994.19,
+          "severity": "Fatal",
+          "notifyChannel": "SMS",
+          "windowMinutes": 3098,
+          "status": "In Progress",
+          "triggerCount": 85,
+          "lastTriggeredAt": "2026-05-06",
+          "isActive": false,
+          "aiPattern": "Mu ai pattern content for tech scenario."
+        },
+        {
+          "name": "Nu Alert Name",
+          "query": "Nu Search Query",
+          "condition": "Nu Condition",
+          "threshold": 967.78,
+          "severity": "Major",
+          "notifyChannel": "Slack",
+          "windowMinutes": 1291,
+          "status": "Scheduled",
+          "triggerCount": 284,
+          "lastTriggeredAt": "2026-02-12",
+          "isActive": true,
+          "aiPattern": "Nu ai pattern content for legal scenario."
+        },
+        {
+          "name": "Xi Alert Name",
+          "query": "Xi Search Query",
+          "condition": "Xi Condition",
+          "threshold": 472.11,
+          "severity": "Minor",
+          "notifyChannel": "Push",
+          "windowMinutes": 3446,
+          "status": "Failed",
+          "triggerCount": 412,
+          "lastTriggeredAt": "2026-02-18",
+          "isActive": false,
+          "aiPattern": "Xi ai pattern content for real estate scenario."
+        },
+        {
+          "name": "Omicron Alert Name",
+          "query": "Omicron Search Query",
+          "condition": "Omicron Condition",
+          "threshold": 49.45,
+          "severity": "Trivial",
+          "notifyChannel": "Webhook",
+          "windowMinutes": 3073,
+          "status": "Cancelled",
+          "triggerCount": 484,
+          "lastTriggeredAt": "2026-11-11",
+          "isActive": true,
+          "aiPattern": "Omicron ai pattern content for manufacturing scenario."
+        }
+      ]
+    },
+    {
+      "label": "Status Page",
+      "modelName": "StatusPage",
+      "routeKey": "statusPages",
+      "icon": "📊",
+      "aiFunction": "analyzeStatusPage",
+      "aiPrompt": "Analyze this Status Page data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Page Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "domain",
+          "label": "Domain",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "overallStatus",
+          "label": "Overall Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "components",
+          "label": "Components JSON",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "theme",
+          "label": "Theme",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "lastIncidentAt",
+          "label": "Last Incident",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "subscriberCount",
+          "label": "Subscribers",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "uptimePercent",
+          "label": "Uptime %",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "timezone",
+          "label": "Timezone",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "isPublic",
+          "label": "Public",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "customCss",
+          "label": "Custom CSS",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Alpha Page Name",
+          "domain": "Alpha Domain",
+          "overallStatus": "Active",
+          "components": "Alpha components json content for enterprise scenario.",
+          "theme": "Alpha Theme",
+          "lastIncidentAt": "2026-09-16",
+          "subscriberCount": 39,
+          "uptimePercent": 69,
+          "timezone": "America/New_York",
+          "isPublic": true,
+          "customCss": "Alpha custom css content for enterprise scenario."
+        },
+        {
+          "name": "Beta Page Name",
+          "domain": "Beta Domain",
+          "overallStatus": "Pending",
+          "components": "Beta components json content for startup scenario.",
+          "theme": "Beta Theme",
+          "lastIncidentAt": "2026-06-15",
+          "subscriberCount": 410,
+          "uptimePercent": 81.4,
+          "timezone": "America/Chicago",
+          "isPublic": false,
+          "customCss": "Beta custom css content for startup scenario."
+        },
+        {
+          "name": "Gamma Page Name",
+          "domain": "Gamma Domain",
+          "overallStatus": "Review",
+          "components": "Gamma components json content for smb scenario.",
+          "theme": "Gamma Theme",
+          "lastIncidentAt": "2026-01-22",
+          "subscriberCount": 169,
+          "uptimePercent": 71.8,
+          "timezone": "America/Denver",
+          "isPublic": true,
+          "customCss": "Gamma custom css content for smb scenario."
+        },
+        {
+          "name": "Delta Page Name",
+          "domain": "Delta Domain",
+          "overallStatus": "Approved",
+          "components": "Delta components json content for agency scenario.",
+          "theme": "Delta Theme",
+          "lastIncidentAt": "2026-08-06",
+          "subscriberCount": 157,
+          "uptimePercent": 69.2,
+          "timezone": "America/Los_Angeles",
+          "isPublic": false,
+          "customCss": "Delta custom css content for agency scenario."
+        },
+        {
+          "name": "Epsilon Page Name",
+          "domain": "Epsilon Domain",
+          "overallStatus": "Draft",
+          "components": "Epsilon components json content for freelancer scenario.",
+          "theme": "Epsilon Theme",
+          "lastIncidentAt": "2026-08-07",
+          "subscriberCount": 80,
+          "uptimePercent": 62.9,
+          "timezone": "Europe/London",
+          "isPublic": true,
+          "customCss": "Epsilon custom css content for freelancer scenario."
+        },
+        {
+          "name": "Zeta Page Name",
+          "domain": "Zeta Domain",
+          "overallStatus": "Live",
+          "components": "Zeta components json content for government scenario.",
+          "theme": "Zeta Theme",
+          "lastIncidentAt": "2026-11-10",
+          "subscriberCount": 428,
+          "uptimePercent": 85.5,
+          "timezone": "Europe/Paris",
+          "isPublic": false,
+          "customCss": "Zeta custom css content for government scenario."
+        },
+        {
+          "name": "Eta Page Name",
+          "domain": "Eta Domain",
+          "overallStatus": "Paused",
+          "components": "Eta components json content for nonprofit scenario.",
+          "theme": "Eta Theme",
+          "lastIncidentAt": "2026-01-15",
+          "subscriberCount": 375,
+          "uptimePercent": 61.1,
+          "timezone": "Europe/Berlin",
+          "isPublic": true,
+          "customCss": "Eta custom css content for nonprofit scenario."
+        },
+        {
+          "name": "Theta Page Name",
+          "domain": "Theta Domain",
+          "overallStatus": "Archived",
+          "components": "Theta components json content for healthcare scenario.",
+          "theme": "Theta Theme",
+          "lastIncidentAt": "2026-01-27",
+          "subscriberCount": 493,
+          "uptimePercent": 44.7,
+          "timezone": "Asia/Tokyo",
+          "isPublic": false,
+          "customCss": "Theta custom css content for healthcare scenario."
+        },
+        {
+          "name": "Iota Page Name",
+          "domain": "Iota Domain",
+          "overallStatus": "Beta",
+          "components": "Iota components json content for finance scenario.",
+          "theme": "Iota Theme",
+          "lastIncidentAt": "2026-05-19",
+          "subscriberCount": 249,
+          "uptimePercent": 45.9,
+          "timezone": "Asia/Shanghai",
+          "isPublic": true,
+          "customCss": "Iota custom css content for finance scenario."
+        },
+        {
+          "name": "Kappa Page Name",
+          "domain": "Kappa Domain",
+          "overallStatus": "GA",
+          "components": "Kappa components json content for education scenario.",
+          "theme": "Kappa Theme",
+          "lastIncidentAt": "2026-04-23",
+          "subscriberCount": 321,
+          "uptimePercent": 79.9,
+          "timezone": "Australia/Sydney",
+          "isPublic": false,
+          "customCss": "Kappa custom css content for education scenario."
+        },
+        {
+          "name": "Lambda Page Name",
+          "domain": "Lambda Domain",
+          "overallStatus": "Completed",
+          "components": "Lambda components json content for retail scenario.",
+          "theme": "Lambda Theme",
+          "lastIncidentAt": "2026-12-09",
+          "subscriberCount": 361,
+          "uptimePercent": 68.2,
+          "timezone": "Pacific/Auckland",
+          "isPublic": true,
+          "customCss": "Lambda custom css content for retail scenario."
+        },
+        {
+          "name": "Mu Page Name",
+          "domain": "Mu Domain",
+          "overallStatus": "In Progress",
+          "components": "Mu components json content for tech scenario.",
+          "theme": "Mu Theme",
+          "lastIncidentAt": "2026-06-15",
+          "subscriberCount": 115,
+          "uptimePercent": 81,
+          "timezone": "America/Toronto",
+          "isPublic": false,
+          "customCss": "Mu custom css content for tech scenario."
+        },
+        {
+          "name": "Nu Page Name",
+          "domain": "Nu Domain",
+          "overallStatus": "Scheduled",
+          "components": "Nu components json content for legal scenario.",
+          "theme": "Nu Theme",
+          "lastIncidentAt": "2026-02-07",
+          "subscriberCount": 359,
+          "uptimePercent": 68.2,
+          "timezone": "Europe/Rome",
+          "isPublic": true,
+          "customCss": "Nu custom css content for legal scenario."
+        },
+        {
+          "name": "Xi Page Name",
+          "domain": "Xi Domain",
+          "overallStatus": "Failed",
+          "components": "Xi components json content for real estate scenario.",
+          "theme": "Xi Theme",
+          "lastIncidentAt": "2026-07-06",
+          "subscriberCount": 43,
+          "uptimePercent": 87.7,
+          "timezone": "Asia/Singapore",
+          "isPublic": false,
+          "customCss": "Xi custom css content for real estate scenario."
+        },
+        {
+          "name": "Omicron Page Name",
+          "domain": "Omicron Domain",
+          "overallStatus": "Cancelled",
+          "components": "Omicron components json content for manufacturing scenario.",
+          "theme": "Omicron Theme",
+          "lastIncidentAt": "2026-02-26",
+          "subscriberCount": 214,
+          "uptimePercent": 64.1,
+          "timezone": "America/Sao_Paulo",
+          "isPublic": true,
+          "customCss": "Omicron custom css content for manufacturing scenario."
+        }
+      ]
+    },
+    {
+      "label": "Uptime Monitor",
+      "modelName": "UptimeMonitor",
+      "routeKey": "uptimeMonitors",
+      "icon": "✅",
+      "aiFunction": "analyzeUptimeMonitor",
+      "aiPrompt": "Analyze this Uptime Monitor data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Monitor Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "url",
+          "label": "URL",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "method",
+          "label": "Method",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "intervalSeconds",
+          "label": "Interval (sec)",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "timeoutMs",
+          "label": "Timeout (ms)",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "uptimePercent",
+          "label": "Uptime %",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "avgResponseMs",
+          "label": "Avg Response (ms)",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "lastCheckedAt",
+          "label": "Last Checked",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "region",
+          "label": "Region",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "consecutiveFails",
+          "label": "Consecutive Fails",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "isActive",
+          "label": "Active",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "headers",
+          "label": "Headers JSON",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "notifyChannel",
+          "label": "Notify Channel",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Alpha Monitor Name",
+          "url": "https://alpha.example.com",
+          "method": "Alpha Type",
+          "intervalSeconds": 578,
+          "timeoutMs": 408,
+          "status": "Active",
+          "uptimePercent": 75.7,
+          "avgResponseMs": 452,
+          "lastCheckedAt": "2026-09-08",
+          "region": "Alpha Region",
+          "consecutiveFails": 416,
+          "isActive": true,
+          "headers": "Alpha headers json content for enterprise scenario.",
+          "notifyChannel": "Email"
+        },
+        {
+          "name": "Beta Monitor Name",
+          "url": "https://beta.example.com",
+          "method": "Beta Type",
+          "intervalSeconds": 2533,
+          "timeoutMs": 1072,
+          "status": "Pending",
+          "uptimePercent": 59.3,
+          "avgResponseMs": 668,
+          "lastCheckedAt": "2026-06-01",
+          "region": "Beta Region",
+          "consecutiveFails": 694,
+          "isActive": false,
+          "headers": "Beta headers json content for startup scenario.",
+          "notifyChannel": "SMS"
+        },
+        {
+          "name": "Gamma Monitor Name",
+          "url": "https://gamma.example.com",
+          "method": "Gamma Type",
+          "intervalSeconds": 3505,
+          "timeoutMs": 2324,
+          "status": "Review",
+          "uptimePercent": 47.8,
+          "avgResponseMs": 44,
+          "lastCheckedAt": "2026-03-18",
+          "region": "Gamma Region",
+          "consecutiveFails": 284,
+          "isActive": true,
+          "headers": "Gamma headers json content for smb scenario.",
+          "notifyChannel": "Slack"
+        },
+        {
+          "name": "Delta Monitor Name",
+          "url": "https://delta.example.com",
+          "method": "Delta Type",
+          "intervalSeconds": 2254,
+          "timeoutMs": 2156,
+          "status": "Approved",
+          "uptimePercent": 94.4,
+          "avgResponseMs": 337,
+          "lastCheckedAt": "2026-03-28",
+          "region": "Delta Region",
+          "consecutiveFails": 110,
+          "isActive": false,
+          "headers": "Delta headers json content for agency scenario.",
+          "notifyChannel": "Push"
+        },
+        {
+          "name": "Epsilon Monitor Name",
+          "url": "https://epsilon.example.com",
+          "method": "Epsilon Type",
+          "intervalSeconds": 3163,
+          "timeoutMs": 1604,
+          "status": "Draft",
+          "uptimePercent": 81.3,
+          "avgResponseMs": 281,
+          "lastCheckedAt": "2026-10-08",
+          "region": "Epsilon Region",
+          "consecutiveFails": 465,
+          "isActive": true,
+          "headers": "Epsilon headers json content for freelancer scenario.",
+          "notifyChannel": "Webhook"
+        },
+        {
+          "name": "Zeta Monitor Name",
+          "url": "https://zeta.example.com",
+          "method": "Zeta Type",
+          "intervalSeconds": 2586,
+          "timeoutMs": 1690,
+          "status": "Live",
+          "uptimePercent": 46.6,
+          "avgResponseMs": 104,
+          "lastCheckedAt": "2026-01-22",
+          "region": "Zeta Region",
+          "consecutiveFails": 245,
+          "isActive": false,
+          "headers": "Zeta headers json content for government scenario.",
+          "notifyChannel": "Teams"
+        },
+        {
+          "name": "Eta Monitor Name",
+          "url": "https://eta.example.com",
+          "method": "Eta Type",
+          "intervalSeconds": 561,
+          "timeoutMs": 2529,
+          "status": "Paused",
+          "uptimePercent": 61.2,
+          "avgResponseMs": 286,
+          "lastCheckedAt": "2026-10-15",
+          "region": "Eta Region",
+          "consecutiveFails": 446,
+          "isActive": true,
+          "headers": "Eta headers json content for nonprofit scenario.",
+          "notifyChannel": "Discord"
+        },
+        {
+          "name": "Theta Monitor Name",
+          "url": "https://theta.example.com",
+          "method": "Theta Type",
+          "intervalSeconds": 780,
+          "timeoutMs": 2235,
+          "status": "Archived",
+          "uptimePercent": 60.3,
+          "avgResponseMs": 614,
+          "lastCheckedAt": "2026-01-14",
+          "region": "Theta Region",
+          "consecutiveFails": 620,
+          "isActive": false,
+          "headers": "Theta headers json content for healthcare scenario.",
+          "notifyChannel": "WhatsApp"
+        },
+        {
+          "name": "Iota Monitor Name",
+          "url": "https://iota.example.com",
+          "method": "Iota Type",
+          "intervalSeconds": 86,
+          "timeoutMs": 214,
+          "status": "Beta",
+          "uptimePercent": 63.1,
+          "avgResponseMs": 447,
+          "lastCheckedAt": "2026-10-06",
+          "region": "Iota Region",
+          "consecutiveFails": 409,
+          "isActive": true,
+          "headers": "Iota headers json content for finance scenario.",
+          "notifyChannel": "Telegram"
+        },
+        {
+          "name": "Kappa Monitor Name",
+          "url": "https://kappa.example.com",
+          "method": "Kappa Type",
+          "intervalSeconds": 1168,
+          "timeoutMs": 3218,
+          "status": "GA",
+          "uptimePercent": 76.9,
+          "avgResponseMs": 909,
+          "lastCheckedAt": "2026-07-04",
+          "region": "Kappa Region",
+          "consecutiveFails": 732,
+          "isActive": false,
+          "headers": "Kappa headers json content for education scenario.",
+          "notifyChannel": "In-App"
+        },
+        {
+          "name": "Lambda Monitor Name",
+          "url": "https://lambda.example.com",
+          "method": "Lambda Type",
+          "intervalSeconds": 429,
+          "timeoutMs": 3598,
+          "status": "Completed",
+          "uptimePercent": 46,
+          "avgResponseMs": 660,
+          "lastCheckedAt": "2026-02-22",
+          "region": "Lambda Region",
+          "consecutiveFails": 674,
+          "isActive": true,
+          "headers": "Lambda headers json content for retail scenario.",
+          "notifyChannel": "Email"
+        },
+        {
+          "name": "Mu Monitor Name",
+          "url": "https://mu.example.com",
+          "method": "Mu Type",
+          "intervalSeconds": 3404,
+          "timeoutMs": 2771,
+          "status": "In Progress",
+          "uptimePercent": 66.2,
+          "avgResponseMs": 311,
+          "lastCheckedAt": "2026-03-06",
+          "region": "Mu Region",
+          "consecutiveFails": 321,
+          "isActive": false,
+          "headers": "Mu headers json content for tech scenario.",
+          "notifyChannel": "SMS"
+        },
+        {
+          "name": "Nu Monitor Name",
+          "url": "https://nu.example.com",
+          "method": "Nu Type",
+          "intervalSeconds": 1551,
+          "timeoutMs": 1696,
+          "status": "Scheduled",
+          "uptimePercent": 61.2,
+          "avgResponseMs": 781,
+          "lastCheckedAt": "2026-01-25",
+          "region": "Nu Region",
+          "consecutiveFails": 36,
+          "isActive": true,
+          "headers": "Nu headers json content for legal scenario.",
+          "notifyChannel": "Slack"
+        },
+        {
+          "name": "Xi Monitor Name",
+          "url": "https://xi.example.com",
+          "method": "Xi Type",
+          "intervalSeconds": 3152,
+          "timeoutMs": 2473,
+          "status": "Failed",
+          "uptimePercent": 74.9,
+          "avgResponseMs": 880,
+          "lastCheckedAt": "2026-01-01",
+          "region": "Xi Region",
+          "consecutiveFails": 906,
+          "isActive": false,
+          "headers": "Xi headers json content for real estate scenario.",
+          "notifyChannel": "Push"
+        },
+        {
+          "name": "Omicron Monitor Name",
+          "url": "https://omicron.example.com",
+          "method": "Omicron Type",
+          "intervalSeconds": 2629,
+          "timeoutMs": 2723,
+          "status": "Cancelled",
+          "uptimePercent": 57.9,
+          "avgResponseMs": 630,
+          "lastCheckedAt": "2026-06-10",
+          "region": "Omicron Region",
+          "consecutiveFails": 622,
+          "isActive": true,
+          "headers": "Omicron headers json content for manufacturing scenario.",
+          "notifyChannel": "Webhook"
+        }
+      ]
+    },
+    {
+      "label": "Incident Report",
+      "modelName": "IncidentReport",
+      "routeKey": "incidentReports",
+      "icon": "🔥",
+      "aiFunction": "analyzeIncidentReport",
+      "aiPrompt": "Analyze this Incident Report data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "startedAt",
+          "label": "Started At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "resolvedAt",
+          "label": "Resolved At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "durationMinutes",
+          "label": "Duration (min)",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "impactedServices",
+          "label": "Impacted Services",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "affectedUsers",
+          "label": "Affected Users",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "commander",
+          "label": "Incident Commander",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "timeline",
+          "label": "Timeline",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "rootCause",
+          "label": "Root Cause",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiPostMortem",
+          "label": "AI Post-Mortem",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Alpha Title",
+          "severity": "Critical",
+          "status": "Active",
+          "description": "Alpha description — comprehensive details for enterprise use case with actionable insights.",
+          "startedAt": "2026-12-16",
+          "resolvedAt": "2026-01-09",
+          "durationMinutes": 550,
+          "impactedServices": "Alpha Impacted Services",
+          "affectedUsers": 526,
+          "commander": "Alpha Incident Commander",
+          "timeline": "Alpha timeline content for enterprise scenario.",
+          "rootCause": "Alpha root cause content for enterprise scenario.",
+          "aiPostMortem": "Alpha ai post-mortem content for enterprise scenario."
+        },
+        {
+          "title": "Beta Title",
+          "severity": "High",
+          "status": "Pending",
+          "description": "Beta description — comprehensive details for startup use case with actionable insights.",
+          "startedAt": "2026-06-02",
+          "resolvedAt": "2026-06-13",
+          "durationMinutes": 3255,
+          "impactedServices": "Beta Impacted Services",
+          "affectedUsers": 301,
+          "commander": "Beta Incident Commander",
+          "timeline": "Beta timeline content for startup scenario.",
+          "rootCause": "Beta root cause content for startup scenario.",
+          "aiPostMortem": "Beta ai post-mortem content for startup scenario."
+        },
+        {
+          "title": "Gamma Title",
+          "severity": "Medium",
+          "status": "Review",
+          "description": "Gamma description — comprehensive details for smb use case with actionable insights.",
+          "startedAt": "2026-09-16",
+          "resolvedAt": "2026-03-16",
+          "durationMinutes": 2824,
+          "impactedServices": "Gamma Impacted Services",
+          "affectedUsers": 258,
+          "commander": "Gamma Incident Commander",
+          "timeline": "Gamma timeline content for smb scenario.",
+          "rootCause": "Gamma root cause content for smb scenario.",
+          "aiPostMortem": "Gamma ai post-mortem content for smb scenario."
+        },
+        {
+          "title": "Delta Title",
+          "severity": "Low",
+          "status": "Approved",
+          "description": "Delta description — comprehensive details for agency use case with actionable insights.",
+          "startedAt": "2026-03-19",
+          "resolvedAt": "2026-11-19",
+          "durationMinutes": 523,
+          "impactedServices": "Delta Impacted Services",
+          "affectedUsers": 30,
+          "commander": "Delta Incident Commander",
+          "timeline": "Delta timeline content for agency scenario.",
+          "rootCause": "Delta root cause content for agency scenario.",
+          "aiPostMortem": "Delta ai post-mortem content for agency scenario."
+        },
+        {
+          "title": "Epsilon Title",
+          "severity": "Info",
+          "status": "Draft",
+          "description": "Epsilon description — comprehensive details for freelancer use case with actionable insights.",
+          "startedAt": "2026-06-03",
+          "resolvedAt": "2026-03-16",
+          "durationMinutes": 710,
+          "impactedServices": "Epsilon Impacted Services",
+          "affectedUsers": 543,
+          "commander": "Epsilon Incident Commander",
+          "timeline": "Epsilon timeline content for freelancer scenario.",
+          "rootCause": "Epsilon root cause content for freelancer scenario.",
+          "aiPostMortem": "Epsilon ai post-mortem content for freelancer scenario."
+        },
+        {
+          "title": "Zeta Title",
+          "severity": "Warning",
+          "status": "Live",
+          "description": "Zeta description — comprehensive details for government use case with actionable insights.",
+          "startedAt": "2026-02-01",
+          "resolvedAt": "2026-07-22",
+          "durationMinutes": 3166,
+          "impactedServices": "Zeta Impacted Services",
+          "affectedUsers": 738,
+          "commander": "Zeta Incident Commander",
+          "timeline": "Zeta timeline content for government scenario.",
+          "rootCause": "Zeta root cause content for government scenario.",
+          "aiPostMortem": "Zeta ai post-mortem content for government scenario."
+        },
+        {
+          "title": "Eta Title",
+          "severity": "Notice",
+          "status": "Paused",
+          "description": "Eta description — comprehensive details for nonprofit use case with actionable insights.",
+          "startedAt": "2026-09-18",
+          "resolvedAt": "2026-10-12",
+          "durationMinutes": 3514,
+          "impactedServices": "Eta Impacted Services",
+          "affectedUsers": 47,
+          "commander": "Eta Incident Commander",
+          "timeline": "Eta timeline content for nonprofit scenario.",
+          "rootCause": "Eta root cause content for nonprofit scenario.",
+          "aiPostMortem": "Eta ai post-mortem content for nonprofit scenario."
+        },
+        {
+          "title": "Theta Title",
+          "severity": "Alert",
+          "status": "Archived",
+          "description": "Theta description — comprehensive details for healthcare use case with actionable insights.",
+          "startedAt": "2026-04-05",
+          "resolvedAt": "2026-05-17",
+          "durationMinutes": 2468,
+          "impactedServices": "Theta Impacted Services",
+          "affectedUsers": 693,
+          "commander": "Theta Incident Commander",
+          "timeline": "Theta timeline content for healthcare scenario.",
+          "rootCause": "Theta root cause content for healthcare scenario.",
+          "aiPostMortem": "Theta ai post-mortem content for healthcare scenario."
+        },
+        {
+          "title": "Iota Title",
+          "severity": "Emergency",
+          "status": "Beta",
+          "description": "Iota description — comprehensive details for finance use case with actionable insights.",
+          "startedAt": "2026-11-06",
+          "resolvedAt": "2026-01-15",
+          "durationMinutes": 247,
+          "impactedServices": "Iota Impacted Services",
+          "affectedUsers": 494,
+          "commander": "Iota Incident Commander",
+          "timeline": "Iota timeline content for finance scenario.",
+          "rootCause": "Iota root cause content for finance scenario.",
+          "aiPostMortem": "Iota ai post-mortem content for finance scenario."
+        },
+        {
+          "title": "Kappa Title",
+          "severity": "Debug",
+          "status": "GA",
+          "description": "Kappa description — comprehensive details for education use case with actionable insights.",
+          "startedAt": "2026-12-01",
+          "resolvedAt": "2026-03-12",
+          "durationMinutes": 3340,
+          "impactedServices": "Kappa Impacted Services",
+          "affectedUsers": 883,
+          "commander": "Kappa Incident Commander",
+          "timeline": "Kappa timeline content for education scenario.",
+          "rootCause": "Kappa root cause content for education scenario.",
+          "aiPostMortem": "Kappa ai post-mortem content for education scenario."
+        },
+        {
+          "title": "Lambda Title",
+          "severity": "Trace",
+          "status": "Completed",
+          "description": "Lambda description — comprehensive details for retail use case with actionable insights.",
+          "startedAt": "2026-02-26",
+          "resolvedAt": "2026-03-13",
+          "durationMinutes": 2190,
+          "impactedServices": "Lambda Impacted Services",
+          "affectedUsers": 973,
+          "commander": "Lambda Incident Commander",
+          "timeline": "Lambda timeline content for retail scenario.",
+          "rootCause": "Lambda root cause content for retail scenario.",
+          "aiPostMortem": "Lambda ai post-mortem content for retail scenario."
+        },
+        {
+          "title": "Mu Title",
+          "severity": "Fatal",
+          "status": "In Progress",
+          "description": "Mu description — comprehensive details for tech use case with actionable insights.",
+          "startedAt": "2026-06-04",
+          "resolvedAt": "2026-05-03",
+          "durationMinutes": 2777,
+          "impactedServices": "Mu Impacted Services",
+          "affectedUsers": 228,
+          "commander": "Mu Incident Commander",
+          "timeline": "Mu timeline content for tech scenario.",
+          "rootCause": "Mu root cause content for tech scenario.",
+          "aiPostMortem": "Mu ai post-mortem content for tech scenario."
+        },
+        {
+          "title": "Nu Title",
+          "severity": "Major",
+          "status": "Scheduled",
+          "description": "Nu description — comprehensive details for legal use case with actionable insights.",
+          "startedAt": "2026-05-03",
+          "resolvedAt": "2026-01-04",
+          "durationMinutes": 1301,
+          "impactedServices": "Nu Impacted Services",
+          "affectedUsers": 399,
+          "commander": "Nu Incident Commander",
+          "timeline": "Nu timeline content for legal scenario.",
+          "rootCause": "Nu root cause content for legal scenario.",
+          "aiPostMortem": "Nu ai post-mortem content for legal scenario."
+        },
+        {
+          "title": "Xi Title",
+          "severity": "Minor",
+          "status": "Failed",
+          "description": "Xi description — comprehensive details for real estate use case with actionable insights.",
+          "startedAt": "2026-12-18",
+          "resolvedAt": "2026-03-05",
+          "durationMinutes": 1411,
+          "impactedServices": "Xi Impacted Services",
+          "affectedUsers": 157,
+          "commander": "Xi Incident Commander",
+          "timeline": "Xi timeline content for real estate scenario.",
+          "rootCause": "Xi root cause content for real estate scenario.",
+          "aiPostMortem": "Xi ai post-mortem content for real estate scenario."
+        },
+        {
+          "title": "Omicron Title",
+          "severity": "Trivial",
+          "status": "Cancelled",
+          "description": "Omicron description — comprehensive details for manufacturing use case with actionable insights.",
+          "startedAt": "2026-08-28",
+          "resolvedAt": "2026-11-05",
+          "durationMinutes": 1308,
+          "impactedServices": "Omicron Impacted Services",
+          "affectedUsers": 113,
+          "commander": "Omicron Incident Commander",
+          "timeline": "Omicron timeline content for manufacturing scenario.",
+          "rootCause": "Omicron root cause content for manufacturing scenario.",
+          "aiPostMortem": "Omicron ai post-mortem content for manufacturing scenario."
+        }
+      ]
+    },
+    {
+      "label": "Service Health",
+      "modelName": "ServiceHealth",
+      "routeKey": "serviceHealths",
+      "icon": "💚",
+      "aiFunction": "analyzeServiceHealth",
+      "aiPrompt": "Analyze this Service Health data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "serviceName",
+          "label": "Service",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "uptimePercent",
+          "label": "Uptime %",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "avgResponseMs",
+          "label": "Avg Response (ms)",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "errorRate",
+          "label": "Error Rate %",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "requestsPerMin",
+          "label": "Requests/min",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "lastCheckedAt",
+          "label": "Last Checked",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "region",
+          "label": "Region",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "dependencies",
+          "label": "Dependencies",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "version",
+          "label": "Version",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "cpuUsage",
+          "label": "CPU %",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "memoryUsage",
+          "label": "Memory %",
+          "type": "FLOAT",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "serviceName": "Alpha Service",
+          "status": "Active",
+          "uptimePercent": 58.9,
+          "avgResponseMs": 990,
+          "errorRate": 601,
+          "requestsPerMin": 883,
+          "lastCheckedAt": "2026-08-02",
+          "region": "Alpha Region",
+          "dependencies": "Alpha dependencies content for enterprise scenario.",
+          "version": "Alpha Version",
+          "cpuUsage": 277.17,
+          "memoryUsage": 596.73
+        },
+        {
+          "serviceName": "Beta Service",
+          "status": "Pending",
+          "uptimePercent": 45,
+          "avgResponseMs": 572,
+          "errorRate": 276,
+          "requestsPerMin": 557,
+          "lastCheckedAt": "2026-02-14",
+          "region": "Beta Region",
+          "dependencies": "Beta dependencies content for startup scenario.",
+          "version": "Beta Version",
+          "cpuUsage": 554.97,
+          "memoryUsage": 431.36
+        },
+        {
+          "serviceName": "Gamma Service",
+          "status": "Review",
+          "uptimePercent": 85,
+          "avgResponseMs": 585,
+          "errorRate": 701,
+          "requestsPerMin": 35,
+          "lastCheckedAt": "2026-10-03",
+          "region": "Gamma Region",
+          "dependencies": "Gamma dependencies content for smb scenario.",
+          "version": "Gamma Version",
+          "cpuUsage": 630.29,
+          "memoryUsage": 840.24
+        },
+        {
+          "serviceName": "Delta Service",
+          "status": "Approved",
+          "uptimePercent": 65.6,
+          "avgResponseMs": 991,
+          "errorRate": 990,
+          "requestsPerMin": 159,
+          "lastCheckedAt": "2026-09-15",
+          "region": "Delta Region",
+          "dependencies": "Delta dependencies content for agency scenario.",
+          "version": "Delta Version",
+          "cpuUsage": 709.75,
+          "memoryUsage": 912.2
+        },
+        {
+          "serviceName": "Epsilon Service",
+          "status": "Draft",
+          "uptimePercent": 96.8,
+          "avgResponseMs": 236,
+          "errorRate": 18,
+          "requestsPerMin": 705,
+          "lastCheckedAt": "2026-06-25",
+          "region": "Epsilon Region",
+          "dependencies": "Epsilon dependencies content for freelancer scenario.",
+          "version": "Epsilon Version",
+          "cpuUsage": 182.9,
+          "memoryUsage": 594.93
+        },
+        {
+          "serviceName": "Zeta Service",
+          "status": "Live",
+          "uptimePercent": 85.2,
+          "avgResponseMs": 28,
+          "errorRate": 885,
+          "requestsPerMin": 636,
+          "lastCheckedAt": "2026-12-25",
+          "region": "Zeta Region",
+          "dependencies": "Zeta dependencies content for government scenario.",
+          "version": "Zeta Version",
+          "cpuUsage": 225.67,
+          "memoryUsage": 314.67
+        },
+        {
+          "serviceName": "Eta Service",
+          "status": "Paused",
+          "uptimePercent": 63.6,
+          "avgResponseMs": 409,
+          "errorRate": 168,
+          "requestsPerMin": 851,
+          "lastCheckedAt": "2026-12-05",
+          "region": "Eta Region",
+          "dependencies": "Eta dependencies content for nonprofit scenario.",
+          "version": "Eta Version",
+          "cpuUsage": 413.85,
+          "memoryUsage": 851.02
+        },
+        {
+          "serviceName": "Theta Service",
+          "status": "Archived",
+          "uptimePercent": 59.3,
+          "avgResponseMs": 939,
+          "errorRate": 882,
+          "requestsPerMin": 668,
+          "lastCheckedAt": "2026-11-22",
+          "region": "Theta Region",
+          "dependencies": "Theta dependencies content for healthcare scenario.",
+          "version": "Theta Version",
+          "cpuUsage": 436.19,
+          "memoryUsage": 556.77
+        },
+        {
+          "serviceName": "Iota Service",
+          "status": "Beta",
+          "uptimePercent": 89.5,
+          "avgResponseMs": 349,
+          "errorRate": 281,
+          "requestsPerMin": 756,
+          "lastCheckedAt": "2026-06-18",
+          "region": "Iota Region",
+          "dependencies": "Iota dependencies content for finance scenario.",
+          "version": "Iota Version",
+          "cpuUsage": 155.99,
+          "memoryUsage": 59.66
+        },
+        {
+          "serviceName": "Kappa Service",
+          "status": "GA",
+          "uptimePercent": 86.8,
+          "avgResponseMs": 835,
+          "errorRate": 338,
+          "requestsPerMin": 656,
+          "lastCheckedAt": "2026-09-19",
+          "region": "Kappa Region",
+          "dependencies": "Kappa dependencies content for education scenario.",
+          "version": "Kappa Version",
+          "cpuUsage": 775.59,
+          "memoryUsage": 716.59
+        },
+        {
+          "serviceName": "Lambda Service",
+          "status": "Completed",
+          "uptimePercent": 75.3,
+          "avgResponseMs": 789,
+          "errorRate": 840,
+          "requestsPerMin": 62,
+          "lastCheckedAt": "2026-02-25",
+          "region": "Lambda Region",
+          "dependencies": "Lambda dependencies content for retail scenario.",
+          "version": "Lambda Version",
+          "cpuUsage": 481.36,
+          "memoryUsage": 258.62
+        },
+        {
+          "serviceName": "Mu Service",
+          "status": "In Progress",
+          "uptimePercent": 95.7,
+          "avgResponseMs": 636,
+          "errorRate": 54,
+          "requestsPerMin": 192,
+          "lastCheckedAt": "2026-11-16",
+          "region": "Mu Region",
+          "dependencies": "Mu dependencies content for tech scenario.",
+          "version": "Mu Version",
+          "cpuUsage": 236.5,
+          "memoryUsage": 428.67
+        },
+        {
+          "serviceName": "Nu Service",
+          "status": "Scheduled",
+          "uptimePercent": 45.4,
+          "avgResponseMs": 798,
+          "errorRate": 754,
+          "requestsPerMin": 602,
+          "lastCheckedAt": "2026-03-06",
+          "region": "Nu Region",
+          "dependencies": "Nu dependencies content for legal scenario.",
+          "version": "Nu Version",
+          "cpuUsage": 90.82,
+          "memoryUsage": 267.2
+        },
+        {
+          "serviceName": "Xi Service",
+          "status": "Failed",
+          "uptimePercent": 43.9,
+          "avgResponseMs": 682,
+          "errorRate": 421,
+          "requestsPerMin": 802,
+          "lastCheckedAt": "2026-09-19",
+          "region": "Xi Region",
+          "dependencies": "Xi dependencies content for real estate scenario.",
+          "version": "Xi Version",
+          "cpuUsage": 223.43,
+          "memoryUsage": 692.9
+        },
+        {
+          "serviceName": "Omicron Service",
+          "status": "Cancelled",
+          "uptimePercent": 41.1,
+          "avgResponseMs": 765,
+          "errorRate": 101,
+          "requestsPerMin": 507,
+          "lastCheckedAt": "2026-09-16",
+          "region": "Omicron Region",
+          "dependencies": "Omicron dependencies content for manufacturing scenario.",
+          "version": "Omicron Version",
+          "cpuUsage": 480.01,
+          "memoryUsage": 204.75
+        }
+      ]
+    },
+    {
+      "label": "Response Time",
+      "modelName": "ResponseTime",
+      "routeKey": "responseTimes",
+      "icon": "⏱️",
+      "aiFunction": "analyzeResponseTime",
+      "aiPrompt": "Analyze this Response Time data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "endpoint",
+          "label": "Endpoint",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "method",
+          "label": "Method",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "p50Ms",
+          "label": "P50 (ms)",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "p95Ms",
+          "label": "P95 (ms)",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "p99Ms",
+          "label": "P99 (ms)",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "requestCount",
+          "label": "Requests",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "errorRate",
+          "label": "Error Rate %",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "period",
+          "label": "Period",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "recordedAt",
+          "label": "Recorded At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "region",
+          "label": "Region",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "AI Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "endpoint": "https://alpha.example.com",
+          "method": "Alpha Type",
+          "p50Ms": 573.21,
+          "p95Ms": 637.7,
+          "p99Ms": 330.98,
+          "requestCount": 187,
+          "errorRate": 92.9,
+          "period": "Daily",
+          "recordedAt": "2026-12-15",
+          "region": "Alpha Region",
+          "aiAnalysis": "AI Analysis for Alpha: Recommend optimizing operations workflows. 38% improvement potential."
+        },
+        {
+          "endpoint": "https://beta.example.com",
+          "method": "Beta Type",
+          "p50Ms": 955.54,
+          "p95Ms": 363.17,
+          "p99Ms": 753.21,
+          "requestCount": 5,
+          "errorRate": 88,
+          "period": "Weekly",
+          "recordedAt": "2026-09-08",
+          "region": "Beta Region",
+          "aiAnalysis": "AI Analysis for Beta: Recommend optimizing sales workflows. 12% improvement potential."
+        },
+        {
+          "endpoint": "https://gamma.example.com",
+          "method": "Gamma Type",
+          "p50Ms": 823.63,
+          "p95Ms": 654.15,
+          "p99Ms": 704.66,
+          "requestCount": 136,
+          "errorRate": 56,
+          "period": "Monthly",
+          "recordedAt": "2026-05-14",
+          "region": "Gamma Region",
+          "aiAnalysis": "AI Analysis for Gamma: Recommend optimizing marketing workflows. 39% improvement potential."
+        },
+        {
+          "endpoint": "https://delta.example.com",
+          "method": "Delta Type",
+          "p50Ms": 119.02,
+          "p95Ms": 786.78,
+          "p99Ms": 906.18,
+          "requestCount": 485,
+          "errorRate": 56.3,
+          "period": "Quarterly",
+          "recordedAt": "2026-02-22",
+          "region": "Delta Region",
+          "aiAnalysis": "AI Analysis for Delta: Recommend optimizing finance workflows. 27% improvement potential."
+        },
+        {
+          "endpoint": "https://epsilon.example.com",
+          "method": "Epsilon Type",
+          "p50Ms": 282.61,
+          "p95Ms": 130.24,
+          "p99Ms": 260.21,
+          "requestCount": 327,
+          "errorRate": 72.9,
+          "period": "Hourly",
+          "recordedAt": "2026-11-19",
+          "region": "Epsilon Region",
+          "aiAnalysis": "AI Analysis for Epsilon: Recommend optimizing hr workflows. 32% improvement potential."
+        },
+        {
+          "endpoint": "https://zeta.example.com",
+          "method": "Zeta Type",
+          "p50Ms": 954.03,
+          "p95Ms": 90.69,
+          "p99Ms": 108.8,
+          "requestCount": 486,
+          "errorRate": 93.9,
+          "period": "Bi-weekly",
+          "recordedAt": "2026-10-28",
+          "region": "Zeta Region",
+          "aiAnalysis": "AI Analysis for Zeta: Recommend optimizing engineering workflows. 28% improvement potential."
+        },
+        {
+          "endpoint": "https://eta.example.com",
+          "method": "Eta Type",
+          "p50Ms": 578.85,
+          "p95Ms": 834.66,
+          "p99Ms": 242.31,
+          "requestCount": 143,
+          "errorRate": 99.7,
+          "period": "Annual",
+          "recordedAt": "2026-05-19",
+          "region": "Eta Region",
+          "aiAnalysis": "AI Analysis for Eta: Recommend optimizing support workflows. 15% improvement potential."
+        },
+        {
+          "endpoint": "https://theta.example.com",
+          "method": "Theta Type",
+          "p50Ms": 722.36,
+          "p95Ms": 370.22,
+          "p99Ms": 322.85,
+          "requestCount": 127,
+          "errorRate": 67.8,
+          "period": "Real-time",
+          "recordedAt": "2026-06-04",
+          "region": "Theta Region",
+          "aiAnalysis": "AI Analysis for Theta: Recommend optimizing legal workflows. 31% improvement potential."
+        },
+        {
+          "endpoint": "https://iota.example.com",
+          "method": "Iota Type",
+          "p50Ms": 531.46,
+          "p95Ms": 775.98,
+          "p99Ms": 176.05,
+          "requestCount": 125,
+          "errorRate": 93.2,
+          "period": "Every 5 min",
+          "recordedAt": "2026-10-03",
+          "region": "Iota Region",
+          "aiAnalysis": "AI Analysis for Iota: Recommend optimizing admin workflows. 22% improvement potential."
+        },
+        {
+          "endpoint": "https://kappa.example.com",
+          "method": "Kappa Type",
+          "p50Ms": 952.71,
+          "p95Ms": 538.3,
+          "p99Ms": 707.71,
+          "requestCount": 130,
+          "errorRate": 66.3,
+          "period": "Every 15 min",
+          "recordedAt": "2026-02-04",
+          "region": "Kappa Region",
+          "aiAnalysis": "AI Analysis for Kappa: Recommend optimizing analytics workflows. 22% improvement potential."
+        },
+        {
+          "endpoint": "https://lambda.example.com",
+          "method": "Lambda Type",
+          "p50Ms": 702.53,
+          "p95Ms": 48.93,
+          "p99Ms": 997.62,
+          "requestCount": 170,
+          "errorRate": 47.2,
+          "period": "Every 30 min",
+          "recordedAt": "2026-05-01",
+          "region": "Lambda Region",
+          "aiAnalysis": "AI Analysis for Lambda: Recommend optimizing security workflows. 28% improvement potential."
+        },
+        {
+          "endpoint": "https://mu.example.com",
+          "method": "Mu Type",
+          "p50Ms": 571.97,
+          "p95Ms": 391.84,
+          "p99Ms": 58.3,
+          "requestCount": 386,
+          "errorRate": 47.9,
+          "period": "Daily",
+          "recordedAt": "2026-06-26",
+          "region": "Mu Region",
+          "aiAnalysis": "AI Analysis for Mu: Recommend optimizing compliance workflows. 10% improvement potential."
+        },
+        {
+          "endpoint": "https://nu.example.com",
+          "method": "Nu Type",
+          "p50Ms": 539.19,
+          "p95Ms": 167.66,
+          "p99Ms": 710.91,
+          "requestCount": 498,
+          "errorRate": 92.6,
+          "period": "Weekly",
+          "recordedAt": "2026-07-24",
+          "region": "Nu Region",
+          "aiAnalysis": "AI Analysis for Nu: Recommend optimizing infrastructure workflows. 32% improvement potential."
+        },
+        {
+          "endpoint": "https://xi.example.com",
+          "method": "Xi Type",
+          "p50Ms": 788.55,
+          "p95Ms": 150.11,
+          "p99Ms": 33.86,
+          "requestCount": 3,
+          "errorRate": 86,
+          "period": "Monthly",
+          "recordedAt": "2026-07-25",
+          "region": "Xi Region",
+          "aiAnalysis": "AI Analysis for Xi: Recommend optimizing product workflows. 37% improvement potential."
+        },
+        {
+          "endpoint": "https://omicron.example.com",
+          "method": "Omicron Type",
+          "p50Ms": 822.93,
+          "p95Ms": 396.18,
+          "p99Ms": 995.37,
+          "requestCount": 171,
+          "errorRate": 87.6,
+          "period": "Quarterly",
+          "recordedAt": "2026-02-17",
+          "region": "Omicron Region",
+          "aiAnalysis": "AI Analysis for Omicron: Recommend optimizing research workflows. 15% improvement potential."
+        }
+      ]
+    },
+    {
+      "label": "SLA Monitor",
+      "modelName": "SLAMonitor",
+      "routeKey": "slaMonitors",
+      "icon": "📋",
+      "aiFunction": "analyzeSLAMonitor",
+      "aiPrompt": "Analyze this SLA Monitor data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "SLA Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "serviceName",
+          "label": "Service",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "targetUptime",
+          "label": "Target Uptime %",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "actualUptime",
+          "label": "Actual Uptime %",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "targetResponseMs",
+          "label": "Target Response (ms)",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "actualResponseMs",
+          "label": "Actual Response (ms)",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "period",
+          "label": "Period",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "violationCount",
+          "label": "Violations",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "lastCheckedAt",
+          "label": "Last Checked",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "aiRecommendation",
+          "label": "AI Recommendation",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isMet",
+          "label": "SLA Met",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Alpha SLA Name",
+          "serviceName": "Alpha Service",
+          "targetUptime": 459.38,
+          "actualUptime": 399.42,
+          "targetResponseMs": 564.59,
+          "actualResponseMs": 251.56,
+          "period": "Daily",
+          "status": "Active",
+          "violationCount": 296,
+          "lastCheckedAt": "2026-03-07",
+          "aiRecommendation": "AI Analysis for Alpha: Recommend optimizing operations workflows. 17% improvement potential.",
+          "isMet": true
+        },
+        {
+          "name": "Beta SLA Name",
+          "serviceName": "Beta Service",
+          "targetUptime": 313.44,
+          "actualUptime": 129.21,
+          "targetResponseMs": 481.94,
+          "actualResponseMs": 648.42,
+          "period": "Weekly",
+          "status": "Pending",
+          "violationCount": 486,
+          "lastCheckedAt": "2026-11-26",
+          "aiRecommendation": "AI Analysis for Beta: Recommend optimizing sales workflows. 31% improvement potential.",
+          "isMet": false
+        },
+        {
+          "name": "Gamma SLA Name",
+          "serviceName": "Gamma Service",
+          "targetUptime": 272.18,
+          "actualUptime": 440.79,
+          "targetResponseMs": 403.47,
+          "actualResponseMs": 921.1,
+          "period": "Monthly",
+          "status": "Review",
+          "violationCount": 288,
+          "lastCheckedAt": "2026-04-21",
+          "aiRecommendation": "AI Analysis for Gamma: Recommend optimizing marketing workflows. 20% improvement potential.",
+          "isMet": true
+        },
+        {
+          "name": "Delta SLA Name",
+          "serviceName": "Delta Service",
+          "targetUptime": 971.54,
+          "actualUptime": 207.22,
+          "targetResponseMs": 224.76,
+          "actualResponseMs": 55.07,
+          "period": "Quarterly",
+          "status": "Approved",
+          "violationCount": 385,
+          "lastCheckedAt": "2026-02-15",
+          "aiRecommendation": "AI Analysis for Delta: Recommend optimizing finance workflows. 23% improvement potential.",
+          "isMet": false
+        },
+        {
+          "name": "Epsilon SLA Name",
+          "serviceName": "Epsilon Service",
+          "targetUptime": 788.02,
+          "actualUptime": 35.8,
+          "targetResponseMs": 466.82,
+          "actualResponseMs": 147.8,
+          "period": "Hourly",
+          "status": "Draft",
+          "violationCount": 466,
+          "lastCheckedAt": "2026-10-02",
+          "aiRecommendation": "AI Analysis for Epsilon: Recommend optimizing hr workflows. 35% improvement potential.",
+          "isMet": true
+        },
+        {
+          "name": "Zeta SLA Name",
+          "serviceName": "Zeta Service",
+          "targetUptime": 367.3,
+          "actualUptime": 930.39,
+          "targetResponseMs": 148.57,
+          "actualResponseMs": 749.62,
+          "period": "Bi-weekly",
+          "status": "Live",
+          "violationCount": 401,
+          "lastCheckedAt": "2026-12-05",
+          "aiRecommendation": "AI Analysis for Zeta: Recommend optimizing engineering workflows. 16% improvement potential.",
+          "isMet": false
+        },
+        {
+          "name": "Eta SLA Name",
+          "serviceName": "Eta Service",
+          "targetUptime": 539.65,
+          "actualUptime": 442.71,
+          "targetResponseMs": 928.91,
+          "actualResponseMs": 285.44,
+          "period": "Annual",
+          "status": "Paused",
+          "violationCount": 82,
+          "lastCheckedAt": "2026-04-08",
+          "aiRecommendation": "AI Analysis for Eta: Recommend optimizing support workflows. 12% improvement potential.",
+          "isMet": true
+        },
+        {
+          "name": "Theta SLA Name",
+          "serviceName": "Theta Service",
+          "targetUptime": 875.92,
+          "actualUptime": 148.11,
+          "targetResponseMs": 700.61,
+          "actualResponseMs": 226.35,
+          "period": "Real-time",
+          "status": "Archived",
+          "violationCount": 40,
+          "lastCheckedAt": "2026-10-20",
+          "aiRecommendation": "AI Analysis for Theta: Recommend optimizing legal workflows. 33% improvement potential.",
+          "isMet": false
+        },
+        {
+          "name": "Iota SLA Name",
+          "serviceName": "Iota Service",
+          "targetUptime": 110.68,
+          "actualUptime": 854.02,
+          "targetResponseMs": 973.98,
+          "actualResponseMs": 322.58,
+          "period": "Every 5 min",
+          "status": "Beta",
+          "violationCount": 485,
+          "lastCheckedAt": "2026-02-26",
+          "aiRecommendation": "AI Analysis for Iota: Recommend optimizing admin workflows. 14% improvement potential.",
+          "isMet": true
+        },
+        {
+          "name": "Kappa SLA Name",
+          "serviceName": "Kappa Service",
+          "targetUptime": 338.81,
+          "actualUptime": 290.12,
+          "targetResponseMs": 914.86,
+          "actualResponseMs": 85.61,
+          "period": "Every 15 min",
+          "status": "GA",
+          "violationCount": 136,
+          "lastCheckedAt": "2026-06-23",
+          "aiRecommendation": "AI Analysis for Kappa: Recommend optimizing analytics workflows. 17% improvement potential.",
+          "isMet": false
+        },
+        {
+          "name": "Lambda SLA Name",
+          "serviceName": "Lambda Service",
+          "targetUptime": 110.16,
+          "actualUptime": 290.86,
+          "targetResponseMs": 755.12,
+          "actualResponseMs": 246.95,
+          "period": "Every 30 min",
+          "status": "Completed",
+          "violationCount": 465,
+          "lastCheckedAt": "2026-07-26",
+          "aiRecommendation": "AI Analysis for Lambda: Recommend optimizing security workflows. 33% improvement potential.",
+          "isMet": true
+        },
+        {
+          "name": "Mu SLA Name",
+          "serviceName": "Mu Service",
+          "targetUptime": 241.83,
+          "actualUptime": 234.71,
+          "targetResponseMs": 83.31,
+          "actualResponseMs": 231.94,
+          "period": "Daily",
+          "status": "In Progress",
+          "violationCount": 253,
+          "lastCheckedAt": "2026-10-03",
+          "aiRecommendation": "AI Analysis for Mu: Recommend optimizing compliance workflows. 18% improvement potential.",
+          "isMet": false
+        },
+        {
+          "name": "Nu SLA Name",
+          "serviceName": "Nu Service",
+          "targetUptime": 665.82,
+          "actualUptime": 359.09,
+          "targetResponseMs": 128.61,
+          "actualResponseMs": 663.14,
+          "period": "Weekly",
+          "status": "Scheduled",
+          "violationCount": 499,
+          "lastCheckedAt": "2026-10-03",
+          "aiRecommendation": "AI Analysis for Nu: Recommend optimizing infrastructure workflows. 19% improvement potential.",
+          "isMet": true
+        },
+        {
+          "name": "Xi SLA Name",
+          "serviceName": "Xi Service",
+          "targetUptime": 679.95,
+          "actualUptime": 201.28,
+          "targetResponseMs": 841.13,
+          "actualResponseMs": 628.44,
+          "period": "Monthly",
+          "status": "Failed",
+          "violationCount": 52,
+          "lastCheckedAt": "2026-12-28",
+          "aiRecommendation": "AI Analysis for Xi: Recommend optimizing product workflows. 34% improvement potential.",
+          "isMet": false
+        },
+        {
+          "name": "Omicron SLA Name",
+          "serviceName": "Omicron Service",
+          "targetUptime": 164.5,
+          "actualUptime": 385.69,
+          "targetResponseMs": 791.48,
+          "actualResponseMs": 942.68,
+          "period": "Quarterly",
+          "status": "Cancelled",
+          "violationCount": 482,
+          "lastCheckedAt": "2026-11-23",
+          "aiRecommendation": "AI Analysis for Omicron: Recommend optimizing research workflows. 33% improvement potential.",
+          "isMet": true
+        }
+      ]
+    },
+    {
+      "label": "On-Call Schedule",
+      "modelName": "OnCallSchedule",
+      "routeKey": "onCallSchedules",
+      "icon": "📞",
+      "aiFunction": "analyzeOnCallSchedule",
+      "aiPrompt": "Analyze this On-Call Schedule data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Schedule Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "teamName",
+          "label": "Team",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "currentOnCall",
+          "label": "Current On-Call",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "nextOnCall",
+          "label": "Next On-Call",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "rotationStart",
+          "label": "Rotation Start",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "rotationFrequency",
+          "label": "Frequency",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "members",
+          "label": "Members JSON",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "escalationPolicy",
+          "label": "Escalation Policy",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "timezone",
+          "label": "Timezone",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "handoffCount",
+          "label": "Handoffs",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "isActive",
+          "label": "Active",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Alpha Schedule Name",
+          "teamName": "Alpha Team",
+          "currentOnCall": "Alpha Current On-Call",
+          "nextOnCall": "Alpha Next On-Call",
+          "rotationStart": "2026-06-20",
+          "rotationFrequency": "Daily",
+          "members": "Alpha members json content for enterprise scenario.",
+          "escalationPolicy": "Alpha Escalation Policy",
+          "timezone": "America/New_York",
+          "handoffCount": 269,
+          "isActive": true
+        },
+        {
+          "name": "Beta Schedule Name",
+          "teamName": "Beta Team",
+          "currentOnCall": "Beta Current On-Call",
+          "nextOnCall": "Beta Next On-Call",
+          "rotationStart": "2026-09-08",
+          "rotationFrequency": "Weekly",
+          "members": "Beta members json content for startup scenario.",
+          "escalationPolicy": "Beta Escalation Policy",
+          "timezone": "America/Chicago",
+          "handoffCount": 319,
+          "isActive": false
+        },
+        {
+          "name": "Gamma Schedule Name",
+          "teamName": "Gamma Team",
+          "currentOnCall": "Gamma Current On-Call",
+          "nextOnCall": "Gamma Next On-Call",
+          "rotationStart": "2026-12-21",
+          "rotationFrequency": "Monthly",
+          "members": "Gamma members json content for smb scenario.",
+          "escalationPolicy": "Gamma Escalation Policy",
+          "timezone": "America/Denver",
+          "handoffCount": 497,
+          "isActive": true
+        },
+        {
+          "name": "Delta Schedule Name",
+          "teamName": "Delta Team",
+          "currentOnCall": "Delta Current On-Call",
+          "nextOnCall": "Delta Next On-Call",
+          "rotationStart": "2026-05-20",
+          "rotationFrequency": "Quarterly",
+          "members": "Delta members json content for agency scenario.",
+          "escalationPolicy": "Delta Escalation Policy",
+          "timezone": "America/Los_Angeles",
+          "handoffCount": 201,
+          "isActive": false
+        },
+        {
+          "name": "Epsilon Schedule Name",
+          "teamName": "Epsilon Team",
+          "currentOnCall": "Epsilon Current On-Call",
+          "nextOnCall": "Epsilon Next On-Call",
+          "rotationStart": "2026-01-15",
+          "rotationFrequency": "Hourly",
+          "members": "Epsilon members json content for freelancer scenario.",
+          "escalationPolicy": "Epsilon Escalation Policy",
+          "timezone": "Europe/London",
+          "handoffCount": 473,
+          "isActive": true
+        },
+        {
+          "name": "Zeta Schedule Name",
+          "teamName": "Zeta Team",
+          "currentOnCall": "Zeta Current On-Call",
+          "nextOnCall": "Zeta Next On-Call",
+          "rotationStart": "2026-12-18",
+          "rotationFrequency": "Bi-weekly",
+          "members": "Zeta members json content for government scenario.",
+          "escalationPolicy": "Zeta Escalation Policy",
+          "timezone": "Europe/Paris",
+          "handoffCount": 152,
+          "isActive": false
+        },
+        {
+          "name": "Eta Schedule Name",
+          "teamName": "Eta Team",
+          "currentOnCall": "Eta Current On-Call",
+          "nextOnCall": "Eta Next On-Call",
+          "rotationStart": "2026-06-07",
+          "rotationFrequency": "Annual",
+          "members": "Eta members json content for nonprofit scenario.",
+          "escalationPolicy": "Eta Escalation Policy",
+          "timezone": "Europe/Berlin",
+          "handoffCount": 194,
+          "isActive": true
+        },
+        {
+          "name": "Theta Schedule Name",
+          "teamName": "Theta Team",
+          "currentOnCall": "Theta Current On-Call",
+          "nextOnCall": "Theta Next On-Call",
+          "rotationStart": "2026-06-16",
+          "rotationFrequency": "Real-time",
+          "members": "Theta members json content for healthcare scenario.",
+          "escalationPolicy": "Theta Escalation Policy",
+          "timezone": "Asia/Tokyo",
+          "handoffCount": 258,
+          "isActive": false
+        },
+        {
+          "name": "Iota Schedule Name",
+          "teamName": "Iota Team",
+          "currentOnCall": "Iota Current On-Call",
+          "nextOnCall": "Iota Next On-Call",
+          "rotationStart": "2026-08-09",
+          "rotationFrequency": "Every 5 min",
+          "members": "Iota members json content for finance scenario.",
+          "escalationPolicy": "Iota Escalation Policy",
+          "timezone": "Asia/Shanghai",
+          "handoffCount": 413,
+          "isActive": true
+        },
+        {
+          "name": "Kappa Schedule Name",
+          "teamName": "Kappa Team",
+          "currentOnCall": "Kappa Current On-Call",
+          "nextOnCall": "Kappa Next On-Call",
+          "rotationStart": "2026-12-19",
+          "rotationFrequency": "Every 15 min",
+          "members": "Kappa members json content for education scenario.",
+          "escalationPolicy": "Kappa Escalation Policy",
+          "timezone": "Australia/Sydney",
+          "handoffCount": 162,
+          "isActive": false
+        },
+        {
+          "name": "Lambda Schedule Name",
+          "teamName": "Lambda Team",
+          "currentOnCall": "Lambda Current On-Call",
+          "nextOnCall": "Lambda Next On-Call",
+          "rotationStart": "2026-08-26",
+          "rotationFrequency": "Every 30 min",
+          "members": "Lambda members json content for retail scenario.",
+          "escalationPolicy": "Lambda Escalation Policy",
+          "timezone": "Pacific/Auckland",
+          "handoffCount": 84,
+          "isActive": true
+        },
+        {
+          "name": "Mu Schedule Name",
+          "teamName": "Mu Team",
+          "currentOnCall": "Mu Current On-Call",
+          "nextOnCall": "Mu Next On-Call",
+          "rotationStart": "2026-09-10",
+          "rotationFrequency": "Daily",
+          "members": "Mu members json content for tech scenario.",
+          "escalationPolicy": "Mu Escalation Policy",
+          "timezone": "America/Toronto",
+          "handoffCount": 161,
+          "isActive": false
+        },
+        {
+          "name": "Nu Schedule Name",
+          "teamName": "Nu Team",
+          "currentOnCall": "Nu Current On-Call",
+          "nextOnCall": "Nu Next On-Call",
+          "rotationStart": "2026-12-18",
+          "rotationFrequency": "Weekly",
+          "members": "Nu members json content for legal scenario.",
+          "escalationPolicy": "Nu Escalation Policy",
+          "timezone": "Europe/Rome",
+          "handoffCount": 366,
+          "isActive": true
+        },
+        {
+          "name": "Xi Schedule Name",
+          "teamName": "Xi Team",
+          "currentOnCall": "Xi Current On-Call",
+          "nextOnCall": "Xi Next On-Call",
+          "rotationStart": "2026-10-06",
+          "rotationFrequency": "Monthly",
+          "members": "Xi members json content for real estate scenario.",
+          "escalationPolicy": "Xi Escalation Policy",
+          "timezone": "Asia/Singapore",
+          "handoffCount": 148,
+          "isActive": false
+        },
+        {
+          "name": "Omicron Schedule Name",
+          "teamName": "Omicron Team",
+          "currentOnCall": "Omicron Current On-Call",
+          "nextOnCall": "Omicron Next On-Call",
+          "rotationStart": "2026-02-03",
+          "rotationFrequency": "Quarterly",
+          "members": "Omicron members json content for manufacturing scenario.",
+          "escalationPolicy": "Omicron Escalation Policy",
+          "timezone": "America/Sao_Paulo",
+          "handoffCount": 118,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "label": "Post-Mortem",
+      "modelName": "PostMortem",
+      "routeKey": "postMortems",
+      "icon": "📖",
+      "aiFunction": "analyzePostMortem",
+      "aiPrompt": "Analyze this Post-Mortem data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "incidentRef",
+          "label": "Incident Ref",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "incidentDate",
+          "label": "Incident Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "summary",
+          "label": "Summary",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "timeline",
+          "label": "Timeline",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "rootCause",
+          "label": "Root Cause",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "impact",
+          "label": "Impact",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "actionItems",
+          "label": "Action Items",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "author",
+          "label": "Author",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "lessonsLearned",
+          "label": "Lessons Learned",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "AI Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Alpha Title",
+          "incidentRef": "Alpha Incident Ref",
+          "incidentDate": "2026-02-03",
+          "summary": "Alpha summary — comprehensive details for enterprise use case with actionable insights.",
+          "timeline": "Alpha timeline content for enterprise scenario.",
+          "rootCause": "Alpha root cause content for enterprise scenario.",
+          "impact": "Alpha impact content for enterprise scenario.",
+          "actionItems": "Alpha action items content for enterprise scenario.",
+          "author": "Alpha Author",
+          "status": "Active",
+          "reviewDate": "2026-04-20",
+          "lessonsLearned": "Alpha lessons learned content for enterprise scenario.",
+          "aiAnalysis": "AI Analysis for Alpha: Recommend optimizing operations workflows. 18% improvement potential."
+        },
+        {
+          "title": "Beta Title",
+          "incidentRef": "Beta Incident Ref",
+          "incidentDate": "2026-12-07",
+          "summary": "Beta summary — comprehensive details for startup use case with actionable insights.",
+          "timeline": "Beta timeline content for startup scenario.",
+          "rootCause": "Beta root cause content for startup scenario.",
+          "impact": "Beta impact content for startup scenario.",
+          "actionItems": "Beta action items content for startup scenario.",
+          "author": "Beta Author",
+          "status": "Pending",
+          "reviewDate": "2026-10-13",
+          "lessonsLearned": "Beta lessons learned content for startup scenario.",
+          "aiAnalysis": "AI Analysis for Beta: Recommend optimizing sales workflows. 15% improvement potential."
+        },
+        {
+          "title": "Gamma Title",
+          "incidentRef": "Gamma Incident Ref",
+          "incidentDate": "2026-02-26",
+          "summary": "Gamma summary — comprehensive details for smb use case with actionable insights.",
+          "timeline": "Gamma timeline content for smb scenario.",
+          "rootCause": "Gamma root cause content for smb scenario.",
+          "impact": "Gamma impact content for smb scenario.",
+          "actionItems": "Gamma action items content for smb scenario.",
+          "author": "Gamma Author",
+          "status": "Review",
+          "reviewDate": "2026-10-01",
+          "lessonsLearned": "Gamma lessons learned content for smb scenario.",
+          "aiAnalysis": "AI Analysis for Gamma: Recommend optimizing marketing workflows. 38% improvement potential."
+        },
+        {
+          "title": "Delta Title",
+          "incidentRef": "Delta Incident Ref",
+          "incidentDate": "2026-05-22",
+          "summary": "Delta summary — comprehensive details for agency use case with actionable insights.",
+          "timeline": "Delta timeline content for agency scenario.",
+          "rootCause": "Delta root cause content for agency scenario.",
+          "impact": "Delta impact content for agency scenario.",
+          "actionItems": "Delta action items content for agency scenario.",
+          "author": "Delta Author",
+          "status": "Approved",
+          "reviewDate": "2026-07-18",
+          "lessonsLearned": "Delta lessons learned content for agency scenario.",
+          "aiAnalysis": "AI Analysis for Delta: Recommend optimizing finance workflows. 23% improvement potential."
+        },
+        {
+          "title": "Epsilon Title",
+          "incidentRef": "Epsilon Incident Ref",
+          "incidentDate": "2026-05-04",
+          "summary": "Epsilon summary — comprehensive details for freelancer use case with actionable insights.",
+          "timeline": "Epsilon timeline content for freelancer scenario.",
+          "rootCause": "Epsilon root cause content for freelancer scenario.",
+          "impact": "Epsilon impact content for freelancer scenario.",
+          "actionItems": "Epsilon action items content for freelancer scenario.",
+          "author": "Epsilon Author",
+          "status": "Draft",
+          "reviewDate": "2026-02-21",
+          "lessonsLearned": "Epsilon lessons learned content for freelancer scenario.",
+          "aiAnalysis": "AI Analysis for Epsilon: Recommend optimizing hr workflows. 23% improvement potential."
+        },
+        {
+          "title": "Zeta Title",
+          "incidentRef": "Zeta Incident Ref",
+          "incidentDate": "2026-07-23",
+          "summary": "Zeta summary — comprehensive details for government use case with actionable insights.",
+          "timeline": "Zeta timeline content for government scenario.",
+          "rootCause": "Zeta root cause content for government scenario.",
+          "impact": "Zeta impact content for government scenario.",
+          "actionItems": "Zeta action items content for government scenario.",
+          "author": "Zeta Author",
+          "status": "Live",
+          "reviewDate": "2026-05-08",
+          "lessonsLearned": "Zeta lessons learned content for government scenario.",
+          "aiAnalysis": "AI Analysis for Zeta: Recommend optimizing engineering workflows. 31% improvement potential."
+        },
+        {
+          "title": "Eta Title",
+          "incidentRef": "Eta Incident Ref",
+          "incidentDate": "2026-11-12",
+          "summary": "Eta summary — comprehensive details for nonprofit use case with actionable insights.",
+          "timeline": "Eta timeline content for nonprofit scenario.",
+          "rootCause": "Eta root cause content for nonprofit scenario.",
+          "impact": "Eta impact content for nonprofit scenario.",
+          "actionItems": "Eta action items content for nonprofit scenario.",
+          "author": "Eta Author",
+          "status": "Paused",
+          "reviewDate": "2026-11-02",
+          "lessonsLearned": "Eta lessons learned content for nonprofit scenario.",
+          "aiAnalysis": "AI Analysis for Eta: Recommend optimizing support workflows. 11% improvement potential."
+        },
+        {
+          "title": "Theta Title",
+          "incidentRef": "Theta Incident Ref",
+          "incidentDate": "2026-02-08",
+          "summary": "Theta summary — comprehensive details for healthcare use case with actionable insights.",
+          "timeline": "Theta timeline content for healthcare scenario.",
+          "rootCause": "Theta root cause content for healthcare scenario.",
+          "impact": "Theta impact content for healthcare scenario.",
+          "actionItems": "Theta action items content for healthcare scenario.",
+          "author": "Theta Author",
+          "status": "Archived",
+          "reviewDate": "2026-04-09",
+          "lessonsLearned": "Theta lessons learned content for healthcare scenario.",
+          "aiAnalysis": "AI Analysis for Theta: Recommend optimizing legal workflows. 24% improvement potential."
+        },
+        {
+          "title": "Iota Title",
+          "incidentRef": "Iota Incident Ref",
+          "incidentDate": "2026-03-07",
+          "summary": "Iota summary — comprehensive details for finance use case with actionable insights.",
+          "timeline": "Iota timeline content for finance scenario.",
+          "rootCause": "Iota root cause content for finance scenario.",
+          "impact": "Iota impact content for finance scenario.",
+          "actionItems": "Iota action items content for finance scenario.",
+          "author": "Iota Author",
+          "status": "Beta",
+          "reviewDate": "2026-01-18",
+          "lessonsLearned": "Iota lessons learned content for finance scenario.",
+          "aiAnalysis": "AI Analysis for Iota: Recommend optimizing admin workflows. 22% improvement potential."
+        },
+        {
+          "title": "Kappa Title",
+          "incidentRef": "Kappa Incident Ref",
+          "incidentDate": "2026-03-14",
+          "summary": "Kappa summary — comprehensive details for education use case with actionable insights.",
+          "timeline": "Kappa timeline content for education scenario.",
+          "rootCause": "Kappa root cause content for education scenario.",
+          "impact": "Kappa impact content for education scenario.",
+          "actionItems": "Kappa action items content for education scenario.",
+          "author": "Kappa Author",
+          "status": "GA",
+          "reviewDate": "2026-01-13",
+          "lessonsLearned": "Kappa lessons learned content for education scenario.",
+          "aiAnalysis": "AI Analysis for Kappa: Recommend optimizing analytics workflows. 24% improvement potential."
+        },
+        {
+          "title": "Lambda Title",
+          "incidentRef": "Lambda Incident Ref",
+          "incidentDate": "2026-06-21",
+          "summary": "Lambda summary — comprehensive details for retail use case with actionable insights.",
+          "timeline": "Lambda timeline content for retail scenario.",
+          "rootCause": "Lambda root cause content for retail scenario.",
+          "impact": "Lambda impact content for retail scenario.",
+          "actionItems": "Lambda action items content for retail scenario.",
+          "author": "Lambda Author",
+          "status": "Completed",
+          "reviewDate": "2026-04-20",
+          "lessonsLearned": "Lambda lessons learned content for retail scenario.",
+          "aiAnalysis": "AI Analysis for Lambda: Recommend optimizing security workflows. 23% improvement potential."
+        },
+        {
+          "title": "Mu Title",
+          "incidentRef": "Mu Incident Ref",
+          "incidentDate": "2026-08-09",
+          "summary": "Mu summary — comprehensive details for tech use case with actionable insights.",
+          "timeline": "Mu timeline content for tech scenario.",
+          "rootCause": "Mu root cause content for tech scenario.",
+          "impact": "Mu impact content for tech scenario.",
+          "actionItems": "Mu action items content for tech scenario.",
+          "author": "Mu Author",
+          "status": "In Progress",
+          "reviewDate": "2026-02-28",
+          "lessonsLearned": "Mu lessons learned content for tech scenario.",
+          "aiAnalysis": "AI Analysis for Mu: Recommend optimizing compliance workflows. 26% improvement potential."
+        },
+        {
+          "title": "Nu Title",
+          "incidentRef": "Nu Incident Ref",
+          "incidentDate": "2026-10-18",
+          "summary": "Nu summary — comprehensive details for legal use case with actionable insights.",
+          "timeline": "Nu timeline content for legal scenario.",
+          "rootCause": "Nu root cause content for legal scenario.",
+          "impact": "Nu impact content for legal scenario.",
+          "actionItems": "Nu action items content for legal scenario.",
+          "author": "Nu Author",
+          "status": "Scheduled",
+          "reviewDate": "2026-10-25",
+          "lessonsLearned": "Nu lessons learned content for legal scenario.",
+          "aiAnalysis": "AI Analysis for Nu: Recommend optimizing infrastructure workflows. 29% improvement potential."
+        },
+        {
+          "title": "Xi Title",
+          "incidentRef": "Xi Incident Ref",
+          "incidentDate": "2026-07-15",
+          "summary": "Xi summary — comprehensive details for real estate use case with actionable insights.",
+          "timeline": "Xi timeline content for real estate scenario.",
+          "rootCause": "Xi root cause content for real estate scenario.",
+          "impact": "Xi impact content for real estate scenario.",
+          "actionItems": "Xi action items content for real estate scenario.",
+          "author": "Xi Author",
+          "status": "Failed",
+          "reviewDate": "2026-10-07",
+          "lessonsLearned": "Xi lessons learned content for real estate scenario.",
+          "aiAnalysis": "AI Analysis for Xi: Recommend optimizing product workflows. 21% improvement potential."
+        },
+        {
+          "title": "Omicron Title",
+          "incidentRef": "Omicron Incident Ref",
+          "incidentDate": "2026-01-17",
+          "summary": "Omicron summary — comprehensive details for manufacturing use case with actionable insights.",
+          "timeline": "Omicron timeline content for manufacturing scenario.",
+          "rootCause": "Omicron root cause content for manufacturing scenario.",
+          "impact": "Omicron impact content for manufacturing scenario.",
+          "actionItems": "Omicron action items content for manufacturing scenario.",
+          "author": "Omicron Author",
+          "status": "Cancelled",
+          "reviewDate": "2026-04-18",
+          "lessonsLearned": "Omicron lessons learned content for manufacturing scenario.",
+          "aiAnalysis": "AI Analysis for Omicron: Recommend optimizing research workflows. 15% improvement potential."
+        }
+      ]
+    },
+    {
+      "label": "Deploy Event",
+      "modelName": "DeployEvent",
+      "routeKey": "deployEvents",
+      "icon": "🚀",
+      "aiFunction": "analyzeDeployEvent",
+      "aiPrompt": "Analyze this Deploy Event data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "appName",
+          "label": "App",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "version",
+          "label": "Version",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "environment",
+          "label": "Environment",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "deployedBy",
+          "label": "Deployed By",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "deployedAt",
+          "label": "Deployed At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "durationSeconds",
+          "label": "Duration (sec)",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "commitHash",
+          "label": "Commit Hash",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "changelog",
+          "label": "Changelog",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "rollbackCount",
+          "label": "Rollbacks",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "isRollback",
+          "label": "Is Rollback",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "healthCheckResult",
+          "label": "Health Check",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "appName": "Alpha App",
+          "version": "Alpha Version",
+          "environment": "Alpha Environment",
+          "deployedBy": "Alpha Deployed By",
+          "deployedAt": "2026-09-25",
+          "durationSeconds": 1774,
+          "status": "Active",
+          "commitHash": "Alpha Commit Hash",
+          "changelog": "Alpha changelog content for enterprise scenario.",
+          "rollbackCount": 44,
+          "isRollback": true,
+          "healthCheckResult": "Alpha health check content for enterprise scenario."
+        },
+        {
+          "appName": "Beta App",
+          "version": "Beta Version",
+          "environment": "Beta Environment",
+          "deployedBy": "Beta Deployed By",
+          "deployedAt": "2026-03-28",
+          "durationSeconds": 2151,
+          "status": "Pending",
+          "commitHash": "Beta Commit Hash",
+          "changelog": "Beta changelog content for startup scenario.",
+          "rollbackCount": 404,
+          "isRollback": false,
+          "healthCheckResult": "Beta health check content for startup scenario."
+        },
+        {
+          "appName": "Gamma App",
+          "version": "Gamma Version",
+          "environment": "Gamma Environment",
+          "deployedBy": "Gamma Deployed By",
+          "deployedAt": "2026-05-20",
+          "durationSeconds": 2771,
+          "status": "Review",
+          "commitHash": "Gamma Commit Hash",
+          "changelog": "Gamma changelog content for smb scenario.",
+          "rollbackCount": 29,
+          "isRollback": true,
+          "healthCheckResult": "Gamma health check content for smb scenario."
+        },
+        {
+          "appName": "Delta App",
+          "version": "Delta Version",
+          "environment": "Delta Environment",
+          "deployedBy": "Delta Deployed By",
+          "deployedAt": "2026-02-19",
+          "durationSeconds": 182,
+          "status": "Approved",
+          "commitHash": "Delta Commit Hash",
+          "changelog": "Delta changelog content for agency scenario.",
+          "rollbackCount": 133,
+          "isRollback": false,
+          "healthCheckResult": "Delta health check content for agency scenario."
+        },
+        {
+          "appName": "Epsilon App",
+          "version": "Epsilon Version",
+          "environment": "Epsilon Environment",
+          "deployedBy": "Epsilon Deployed By",
+          "deployedAt": "2026-02-19",
+          "durationSeconds": 2375,
+          "status": "Draft",
+          "commitHash": "Epsilon Commit Hash",
+          "changelog": "Epsilon changelog content for freelancer scenario.",
+          "rollbackCount": 303,
+          "isRollback": true,
+          "healthCheckResult": "Epsilon health check content for freelancer scenario."
+        },
+        {
+          "appName": "Zeta App",
+          "version": "Zeta Version",
+          "environment": "Zeta Environment",
+          "deployedBy": "Zeta Deployed By",
+          "deployedAt": "2026-07-26",
+          "durationSeconds": 881,
+          "status": "Live",
+          "commitHash": "Zeta Commit Hash",
+          "changelog": "Zeta changelog content for government scenario.",
+          "rollbackCount": 154,
+          "isRollback": false,
+          "healthCheckResult": "Zeta health check content for government scenario."
+        },
+        {
+          "appName": "Eta App",
+          "version": "Eta Version",
+          "environment": "Eta Environment",
+          "deployedBy": "Eta Deployed By",
+          "deployedAt": "2026-02-22",
+          "durationSeconds": 3655,
+          "status": "Paused",
+          "commitHash": "Eta Commit Hash",
+          "changelog": "Eta changelog content for nonprofit scenario.",
+          "rollbackCount": 195,
+          "isRollback": true,
+          "healthCheckResult": "Eta health check content for nonprofit scenario."
+        },
+        {
+          "appName": "Theta App",
+          "version": "Theta Version",
+          "environment": "Theta Environment",
+          "deployedBy": "Theta Deployed By",
+          "deployedAt": "2026-05-23",
+          "durationSeconds": 1984,
+          "status": "Archived",
+          "commitHash": "Theta Commit Hash",
+          "changelog": "Theta changelog content for healthcare scenario.",
+          "rollbackCount": 117,
+          "isRollback": false,
+          "healthCheckResult": "Theta health check content for healthcare scenario."
+        },
+        {
+          "appName": "Iota App",
+          "version": "Iota Version",
+          "environment": "Iota Environment",
+          "deployedBy": "Iota Deployed By",
+          "deployedAt": "2026-09-03",
+          "durationSeconds": 1174,
+          "status": "Beta",
+          "commitHash": "Iota Commit Hash",
+          "changelog": "Iota changelog content for finance scenario.",
+          "rollbackCount": 298,
+          "isRollback": true,
+          "healthCheckResult": "Iota health check content for finance scenario."
+        },
+        {
+          "appName": "Kappa App",
+          "version": "Kappa Version",
+          "environment": "Kappa Environment",
+          "deployedBy": "Kappa Deployed By",
+          "deployedAt": "2026-08-25",
+          "durationSeconds": 1510,
+          "status": "GA",
+          "commitHash": "Kappa Commit Hash",
+          "changelog": "Kappa changelog content for education scenario.",
+          "rollbackCount": 337,
+          "isRollback": false,
+          "healthCheckResult": "Kappa health check content for education scenario."
+        },
+        {
+          "appName": "Lambda App",
+          "version": "Lambda Version",
+          "environment": "Lambda Environment",
+          "deployedBy": "Lambda Deployed By",
+          "deployedAt": "2026-12-09",
+          "durationSeconds": 1023,
+          "status": "Completed",
+          "commitHash": "Lambda Commit Hash",
+          "changelog": "Lambda changelog content for retail scenario.",
+          "rollbackCount": 135,
+          "isRollback": true,
+          "healthCheckResult": "Lambda health check content for retail scenario."
+        },
+        {
+          "appName": "Mu App",
+          "version": "Mu Version",
+          "environment": "Mu Environment",
+          "deployedBy": "Mu Deployed By",
+          "deployedAt": "2026-05-07",
+          "durationSeconds": 3569,
+          "status": "In Progress",
+          "commitHash": "Mu Commit Hash",
+          "changelog": "Mu changelog content for tech scenario.",
+          "rollbackCount": 307,
+          "isRollback": false,
+          "healthCheckResult": "Mu health check content for tech scenario."
+        },
+        {
+          "appName": "Nu App",
+          "version": "Nu Version",
+          "environment": "Nu Environment",
+          "deployedBy": "Nu Deployed By",
+          "deployedAt": "2026-04-15",
+          "durationSeconds": 2516,
+          "status": "Scheduled",
+          "commitHash": "Nu Commit Hash",
+          "changelog": "Nu changelog content for legal scenario.",
+          "rollbackCount": 350,
+          "isRollback": true,
+          "healthCheckResult": "Nu health check content for legal scenario."
+        },
+        {
+          "appName": "Xi App",
+          "version": "Xi Version",
+          "environment": "Xi Environment",
+          "deployedBy": "Xi Deployed By",
+          "deployedAt": "2026-02-12",
+          "durationSeconds": 2303,
+          "status": "Failed",
+          "commitHash": "Xi Commit Hash",
+          "changelog": "Xi changelog content for real estate scenario.",
+          "rollbackCount": 375,
+          "isRollback": false,
+          "healthCheckResult": "Xi health check content for real estate scenario."
+        },
+        {
+          "appName": "Omicron App",
+          "version": "Omicron Version",
+          "environment": "Omicron Environment",
+          "deployedBy": "Omicron Deployed By",
+          "deployedAt": "2026-06-11",
+          "durationSeconds": 603,
+          "status": "Cancelled",
+          "commitHash": "Omicron Commit Hash",
+          "changelog": "Omicron changelog content for manufacturing scenario.",
+          "rollbackCount": 13,
+          "isRollback": true,
+          "healthCheckResult": "Omicron health check content for manufacturing scenario."
+        }
+      ]
+    },
+    {
+      "label": "AI Ops Insight",
+      "modelName": "AIOpsInsight",
+      "routeKey": "aiOpsInsights",
+      "icon": "🤖",
+      "aiFunction": "analyzeAIOpsInsight",
+      "aiPrompt": "Analyze this AI Ops Insight data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "insightType",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "affectedService",
+          "label": "Affected Service",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "confidence",
+          "label": "Confidence",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "recommendation",
+          "label": "Recommendation",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "evidence",
+          "label": "Evidence",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "detectedAt",
+          "label": "Detected At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "isActionable",
+          "label": "Actionable",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "estimatedImpact",
+          "label": "Est. Impact Users",
+          "type": "INTEGER",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Alpha Title",
+          "insightType": "Alpha Type",
+          "description": "Alpha description — comprehensive details for enterprise use case with actionable insights.",
+          "affectedService": "Alpha Affected Service",
+          "confidence": 71.9,
+          "severity": "Critical",
+          "recommendation": "AI Analysis for Alpha: Recommend optimizing operations workflows. 30% improvement potential.",
+          "evidence": "Alpha evidence content for enterprise scenario.",
+          "detectedAt": "2026-01-18",
+          "isActionable": true,
+          "status": "Active",
+          "estimatedImpact": 808
+        },
+        {
+          "title": "Beta Title",
+          "insightType": "Beta Type",
+          "description": "Beta description — comprehensive details for startup use case with actionable insights.",
+          "affectedService": "Beta Affected Service",
+          "confidence": 45.1,
+          "severity": "High",
+          "recommendation": "AI Analysis for Beta: Recommend optimizing sales workflows. 37% improvement potential.",
+          "evidence": "Beta evidence content for startup scenario.",
+          "detectedAt": "2026-08-19",
+          "isActionable": false,
+          "status": "Pending",
+          "estimatedImpact": 479
+        },
+        {
+          "title": "Gamma Title",
+          "insightType": "Gamma Type",
+          "description": "Gamma description — comprehensive details for smb use case with actionable insights.",
+          "affectedService": "Gamma Affected Service",
+          "confidence": 74.1,
+          "severity": "Medium",
+          "recommendation": "AI Analysis for Gamma: Recommend optimizing marketing workflows. 17% improvement potential.",
+          "evidence": "Gamma evidence content for smb scenario.",
+          "detectedAt": "2026-04-25",
+          "isActionable": true,
+          "status": "Review",
+          "estimatedImpact": 832
+        },
+        {
+          "title": "Delta Title",
+          "insightType": "Delta Type",
+          "description": "Delta description — comprehensive details for agency use case with actionable insights.",
+          "affectedService": "Delta Affected Service",
+          "confidence": 77.5,
+          "severity": "Low",
+          "recommendation": "AI Analysis for Delta: Recommend optimizing finance workflows. 13% improvement potential.",
+          "evidence": "Delta evidence content for agency scenario.",
+          "detectedAt": "2026-01-24",
+          "isActionable": false,
+          "status": "Approved",
+          "estimatedImpact": 546
+        },
+        {
+          "title": "Epsilon Title",
+          "insightType": "Epsilon Type",
+          "description": "Epsilon description — comprehensive details for freelancer use case with actionable insights.",
+          "affectedService": "Epsilon Affected Service",
+          "confidence": 72,
+          "severity": "Info",
+          "recommendation": "AI Analysis for Epsilon: Recommend optimizing hr workflows. 31% improvement potential.",
+          "evidence": "Epsilon evidence content for freelancer scenario.",
+          "detectedAt": "2026-06-28",
+          "isActionable": true,
+          "status": "Draft",
+          "estimatedImpact": 742
+        },
+        {
+          "title": "Zeta Title",
+          "insightType": "Zeta Type",
+          "description": "Zeta description — comprehensive details for government use case with actionable insights.",
+          "affectedService": "Zeta Affected Service",
+          "confidence": 55.9,
+          "severity": "Warning",
+          "recommendation": "AI Analysis for Zeta: Recommend optimizing engineering workflows. 23% improvement potential.",
+          "evidence": "Zeta evidence content for government scenario.",
+          "detectedAt": "2026-02-20",
+          "isActionable": false,
+          "status": "Live",
+          "estimatedImpact": 219
+        },
+        {
+          "title": "Eta Title",
+          "insightType": "Eta Type",
+          "description": "Eta description — comprehensive details for nonprofit use case with actionable insights.",
+          "affectedService": "Eta Affected Service",
+          "confidence": 73.9,
+          "severity": "Notice",
+          "recommendation": "AI Analysis for Eta: Recommend optimizing support workflows. 36% improvement potential.",
+          "evidence": "Eta evidence content for nonprofit scenario.",
+          "detectedAt": "2026-12-20",
+          "isActionable": true,
+          "status": "Paused",
+          "estimatedImpact": 745
+        },
+        {
+          "title": "Theta Title",
+          "insightType": "Theta Type",
+          "description": "Theta description — comprehensive details for healthcare use case with actionable insights.",
+          "affectedService": "Theta Affected Service",
+          "confidence": 76,
+          "severity": "Alert",
+          "recommendation": "AI Analysis for Theta: Recommend optimizing legal workflows. 10% improvement potential.",
+          "evidence": "Theta evidence content for healthcare scenario.",
+          "detectedAt": "2026-09-21",
+          "isActionable": false,
+          "status": "Archived",
+          "estimatedImpact": 645
+        },
+        {
+          "title": "Iota Title",
+          "insightType": "Iota Type",
+          "description": "Iota description — comprehensive details for finance use case with actionable insights.",
+          "affectedService": "Iota Affected Service",
+          "confidence": 93.5,
+          "severity": "Emergency",
+          "recommendation": "AI Analysis for Iota: Recommend optimizing admin workflows. 15% improvement potential.",
+          "evidence": "Iota evidence content for finance scenario.",
+          "detectedAt": "2026-02-21",
+          "isActionable": true,
+          "status": "Beta",
+          "estimatedImpact": 924
+        },
+        {
+          "title": "Kappa Title",
+          "insightType": "Kappa Type",
+          "description": "Kappa description — comprehensive details for education use case with actionable insights.",
+          "affectedService": "Kappa Affected Service",
+          "confidence": 56.5,
+          "severity": "Debug",
+          "recommendation": "AI Analysis for Kappa: Recommend optimizing analytics workflows. 21% improvement potential.",
+          "evidence": "Kappa evidence content for education scenario.",
+          "detectedAt": "2026-06-01",
+          "isActionable": false,
+          "status": "GA",
+          "estimatedImpact": 892
+        },
+        {
+          "title": "Lambda Title",
+          "insightType": "Lambda Type",
+          "description": "Lambda description — comprehensive details for retail use case with actionable insights.",
+          "affectedService": "Lambda Affected Service",
+          "confidence": 71.4,
+          "severity": "Trace",
+          "recommendation": "AI Analysis for Lambda: Recommend optimizing security workflows. 15% improvement potential.",
+          "evidence": "Lambda evidence content for retail scenario.",
+          "detectedAt": "2026-10-18",
+          "isActionable": true,
+          "status": "Completed",
+          "estimatedImpact": 433
+        },
+        {
+          "title": "Mu Title",
+          "insightType": "Mu Type",
+          "description": "Mu description — comprehensive details for tech use case with actionable insights.",
+          "affectedService": "Mu Affected Service",
+          "confidence": 88.1,
+          "severity": "Fatal",
+          "recommendation": "AI Analysis for Mu: Recommend optimizing compliance workflows. 30% improvement potential.",
+          "evidence": "Mu evidence content for tech scenario.",
+          "detectedAt": "2026-03-19",
+          "isActionable": false,
+          "status": "In Progress",
+          "estimatedImpact": 465
+        },
+        {
+          "title": "Nu Title",
+          "insightType": "Nu Type",
+          "description": "Nu description — comprehensive details for legal use case with actionable insights.",
+          "affectedService": "Nu Affected Service",
+          "confidence": 55.5,
+          "severity": "Major",
+          "recommendation": "AI Analysis for Nu: Recommend optimizing infrastructure workflows. 16% improvement potential.",
+          "evidence": "Nu evidence content for legal scenario.",
+          "detectedAt": "2026-12-08",
+          "isActionable": true,
+          "status": "Scheduled",
+          "estimatedImpact": 693
+        },
+        {
+          "title": "Xi Title",
+          "insightType": "Xi Type",
+          "description": "Xi description — comprehensive details for real estate use case with actionable insights.",
+          "affectedService": "Xi Affected Service",
+          "confidence": 57.1,
+          "severity": "Minor",
+          "recommendation": "AI Analysis for Xi: Recommend optimizing product workflows. 38% improvement potential.",
+          "evidence": "Xi evidence content for real estate scenario.",
+          "detectedAt": "2026-06-27",
+          "isActionable": false,
+          "status": "Failed",
+          "estimatedImpact": 451
+        },
+        {
+          "title": "Omicron Title",
+          "insightType": "Omicron Type",
+          "description": "Omicron description — comprehensive details for manufacturing use case with actionable insights.",
+          "affectedService": "Omicron Affected Service",
+          "confidence": 82.8,
+          "severity": "Trivial",
+          "recommendation": "AI Analysis for Omicron: Recommend optimizing research workflows. 28% improvement potential.",
+          "evidence": "Omicron evidence content for manufacturing scenario.",
+          "detectedAt": "2026-04-08",
+          "isActionable": true,
+          "status": "Cancelled",
+          "estimatedImpact": 454
+        }
+      ]
+    }
+  ]
+}

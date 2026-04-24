@@ -1,0 +1,1326 @@
+{
+  "appName": "AI Shipping & Delivery (Part 2)",
+  "dbName": "a_i_shipping_delivery_part2",
+  "folderName": "generated/AIShippingDeliveryPart2",
+  "features": [
+    {
+      "modelName": "Invoice",
+      "routeKey": "invoices",
+      "label": "Invoice",
+      "icon": "star",
+      "aiFunction": "analyzeInvoice",
+      "aiPrompt": "You are an AI analyst for A I Maritime Shipping Port Logistics. Analyze the provided Invoice data. The data includes: Invoice Number, Client Name, Vessel Name, Service Type, Amount, Currency, Issue Date, Due Date, Payment Status, Payment Date, Port Charges, Handling Charges, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "invoiceNumber",
+          "label": "Invoice Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "clientName",
+          "label": "Client Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "vesselName",
+          "label": "Vessel Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serviceType",
+          "label": "Service Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "currency",
+          "label": "Currency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "issueDate",
+          "label": "Issue Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "paymentStatus",
+          "label": "Payment Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentDate",
+          "label": "Payment Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "portCharges",
+          "label": "Port Charges",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "handlingCharges",
+          "label": "Handling Charges",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "invoiceNumber": "Advanced Invoice Number 1",
+          "clientName": "James Wilson",
+          "vesselName": "Advanced Vessel 1",
+          "serviceType": "Category A",
+          "amount": 500,
+          "currency": "Advanced Currency 1",
+          "issueDate": "2024-01-01",
+          "dueDate": "2024-01-01",
+          "paymentStatus": "active",
+          "paymentDate": "2024-01-01",
+          "portCharges": 10,
+          "handlingCharges": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "invoiceNumber": "Premium Invoice Number 2",
+          "clientName": "Sarah Chen",
+          "vesselName": "Premium Vessel 2",
+          "serviceType": "Category B",
+          "amount": 2481,
+          "currency": "Premium Currency 2",
+          "issueDate": "2024-02-03",
+          "dueDate": "2024-02-03",
+          "paymentStatus": "pending",
+          "paymentDate": "2024-02-03",
+          "portCharges": 71.7,
+          "handlingCharges": 71.7,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "invoiceNumber": "Standard Invoice Number 3",
+          "clientName": "Michael Brown",
+          "vesselName": "Standard Vessel 3",
+          "serviceType": "Category C",
+          "amount": 4462,
+          "currency": "Standard Currency 3",
+          "issueDate": "2024-03-05",
+          "dueDate": "2024-03-05",
+          "paymentStatus": "in_progress",
+          "paymentDate": "2024-03-05",
+          "portCharges": 33.4,
+          "handlingCharges": 33.4,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "invoiceNumber": "Elite Invoice Number 4",
+          "clientName": "Emily Davis",
+          "vesselName": "Elite Vessel 4",
+          "serviceType": "Category D",
+          "amount": 6443,
+          "currency": "Elite Currency 4",
+          "issueDate": "2024-04-07",
+          "dueDate": "2024-04-07",
+          "paymentStatus": "completed",
+          "paymentDate": "2024-04-07",
+          "portCharges": 95.1,
+          "handlingCharges": 95.1,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "invoiceNumber": "Core Invoice Number 5",
+          "clientName": "Robert Garcia",
+          "vesselName": "Core Vessel 5",
+          "serviceType": "Category E",
+          "amount": 8424,
+          "currency": "Core Currency 5",
+          "issueDate": "2024-05-09",
+          "dueDate": "2024-05-09",
+          "paymentStatus": "under_review",
+          "paymentDate": "2024-05-09",
+          "portCharges": 56.8,
+          "handlingCharges": 56.8,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "invoiceNumber": "Pro Invoice Number 6",
+          "clientName": "Lisa Anderson",
+          "vesselName": "Pro Vessel 6",
+          "serviceType": "Premium Tier",
+          "amount": 10405,
+          "currency": "Pro Currency 6",
+          "issueDate": "2024-06-11",
+          "dueDate": "2024-06-11",
+          "paymentStatus": "approved",
+          "paymentDate": "2024-06-11",
+          "portCharges": 118.5,
+          "handlingCharges": 118.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "invoiceNumber": "Essential Invoice Number 7",
+          "clientName": "David Martinez",
+          "vesselName": "Essential Vessel 7",
+          "serviceType": "Standard Tier",
+          "amount": 12386,
+          "currency": "Essential Currency 7",
+          "issueDate": "2024-07-13",
+          "dueDate": "2024-07-13",
+          "paymentStatus": "active",
+          "paymentDate": "2024-07-13",
+          "portCharges": 80.2,
+          "handlingCharges": 80.2,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "invoiceNumber": "Primary Invoice Number 8",
+          "clientName": "Jennifer Taylor",
+          "vesselName": "Primary Vessel 8",
+          "serviceType": "Basic Tier",
+          "amount": 9367,
+          "currency": "Primary Currency 8",
+          "issueDate": "2024-08-15",
+          "dueDate": "2024-08-15",
+          "paymentStatus": "active",
+          "paymentDate": "2024-08-15",
+          "portCharges": 141.9,
+          "handlingCharges": 141.9,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "invoiceNumber": "Global Invoice Number 9",
+          "clientName": "William Johnson",
+          "vesselName": "Global Vessel 9",
+          "serviceType": "Enterprise",
+          "amount": 11348,
+          "currency": "Global Currency 9",
+          "issueDate": "2024-09-17",
+          "dueDate": "2024-09-17",
+          "paymentStatus": "active",
+          "paymentDate": "2024-09-17",
+          "portCharges": 103.6,
+          "handlingCharges": 103.6,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "invoiceNumber": "Regional Invoice Number 10",
+          "clientName": "Maria Rodriguez",
+          "vesselName": "Regional Vessel 10",
+          "serviceType": "Starter",
+          "amount": 13329,
+          "currency": "Regional Currency 10",
+          "issueDate": "2024-10-19",
+          "dueDate": "2024-10-19",
+          "paymentStatus": "pending",
+          "paymentDate": "2024-10-19",
+          "portCharges": 165.3,
+          "handlingCharges": 165.3,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "invoiceNumber": "Custom Invoice Number 11",
+          "clientName": "Thomas Lee",
+          "vesselName": "Custom Vessel 11",
+          "serviceType": "Growth",
+          "amount": 15310,
+          "currency": "Custom Currency 11",
+          "issueDate": "2024-11-21",
+          "dueDate": "2024-11-21",
+          "paymentStatus": "completed",
+          "paymentDate": "2024-11-21",
+          "portCharges": 127,
+          "handlingCharges": 127,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "invoiceNumber": "Smart Invoice Number 12",
+          "clientName": "Patricia White",
+          "vesselName": "Smart Vessel 12",
+          "serviceType": "Scale",
+          "amount": 17291,
+          "currency": "Smart Currency 12",
+          "issueDate": "2024-12-23",
+          "dueDate": "2024-12-23",
+          "paymentStatus": "active",
+          "paymentDate": "2024-12-23",
+          "portCharges": 188.7,
+          "handlingCharges": 188.7,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "invoiceNumber": "Rapid Invoice Number 13",
+          "clientName": "Christopher Hall",
+          "vesselName": "Rapid Vessel 13",
+          "serviceType": "Foundation",
+          "amount": 19272,
+          "currency": "Rapid Currency 13",
+          "issueDate": "2024-01-25",
+          "dueDate": "2024-01-25",
+          "paymentStatus": "in_progress",
+          "paymentDate": "2024-01-25",
+          "portCharges": 150.4,
+          "handlingCharges": 150.4,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "invoiceNumber": "Secure Invoice Number 14",
+          "clientName": "Amanda Clark",
+          "vesselName": "Secure Vessel 14",
+          "serviceType": "Advanced",
+          "amount": 21253,
+          "currency": "Secure Currency 14",
+          "issueDate": "2024-02-27",
+          "dueDate": "2024-02-27",
+          "paymentStatus": "active",
+          "paymentDate": "2024-02-27",
+          "portCharges": 212.1,
+          "handlingCharges": 212.1,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "invoiceNumber": "Modern Invoice Number 15",
+          "clientName": "Daniel Wright",
+          "vesselName": "Modern Vessel 15",
+          "serviceType": "Professional",
+          "amount": 18234,
+          "currency": "Modern Currency 15",
+          "issueDate": "2024-03-01",
+          "dueDate": "2024-03-01",
+          "paymentStatus": "approved",
+          "paymentDate": "2024-03-01",
+          "portCharges": 173.8,
+          "handlingCharges": 173.8,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Warehouse",
+      "routeKey": "warehouses",
+      "label": "Warehouse",
+      "icon": "zap",
+      "aiFunction": "analyzeWarehouse",
+      "aiPrompt": "You are an AI analyst for A I Maritime Shipping Port Logistics. Analyze the provided Warehouse data. The data includes: Warehouse Id, Zone, Rack Number, Cargo Type, Quantity, Unit, Weight Tons, Owner, Arrival Date, Expiry Date, Temperature Required, Occupancy Pct, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "warehouseId",
+          "label": "Warehouse Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "zone",
+          "label": "Zone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rackNumber",
+          "label": "Rack Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cargoType",
+          "label": "Cargo Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "unit",
+          "label": "Unit",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "weightTons",
+          "label": "Weight Tons",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "owner",
+          "label": "Owner",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "arrivalDate",
+          "label": "Arrival Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "temperatureRequired",
+          "label": "Temperature Required",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "occupancyPct",
+          "label": "Occupancy Pct",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "city",
+          "label": "City",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive"
+          ]
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive"
+          ]
+        },
+        {
+          "key": "zipCode",
+          "label": "Zip Code",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive"
+          ]
+        },
+        {
+          "key": "capacity",
+          "label": "Capacity",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive"
+          ]
+        },
+        {
+          "key": "currentLoad",
+          "label": "Current Load",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive"
+          ]
+        },
+        {
+          "key": "managerId",
+          "label": "Manager Id",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive"
+          ]
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive"
+          ]
+        },
+        {
+          "key": "operatingHours",
+          "label": "Operating Hours",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive"
+          ]
+        }
+      ],
+      "sampleData": [
+        {
+          "warehouseId": "Advanced Warehouse Id 1",
+          "zone": "Advanced Zone 1",
+          "rackNumber": "Advanced Rack Number 1",
+          "cargoType": "Category A",
+          "quantity": 16,
+          "unit": "Advanced Unit 1",
+          "weightTons": 10,
+          "owner": "Advanced Owner 1",
+          "arrivalDate": "2024-01-01",
+          "expiryDate": "2024-01-01",
+          "temperatureRequired": true,
+          "occupancyPct": 10,
+          "status": "active"
+        },
+        {
+          "warehouseId": "Premium Warehouse Id 2",
+          "zone": "Premium Zone 2",
+          "rackNumber": "Premium Rack Number 2",
+          "cargoType": "Category B",
+          "quantity": 192,
+          "unit": "Premium Unit 2",
+          "weightTons": 71.7,
+          "owner": "Premium Owner 2",
+          "arrivalDate": "2024-02-03",
+          "expiryDate": "2024-02-03",
+          "temperatureRequired": true,
+          "occupancyPct": 71.7,
+          "status": "pending"
+        },
+        {
+          "warehouseId": "Standard Warehouse Id 3",
+          "zone": "Standard Zone 3",
+          "rackNumber": "Standard Rack Number 3",
+          "cargoType": "Category C",
+          "quantity": 41,
+          "unit": "Standard Unit 3",
+          "weightTons": 33.4,
+          "owner": "Standard Owner 3",
+          "arrivalDate": "2024-03-05",
+          "expiryDate": "2024-03-05",
+          "temperatureRequired": false,
+          "occupancyPct": 33.4,
+          "status": "in_progress"
+        },
+        {
+          "warehouseId": "Elite Warehouse Id 4",
+          "zone": "Elite Zone 4",
+          "rackNumber": "Elite Rack Number 4",
+          "cargoType": "Category D",
+          "quantity": 70,
+          "unit": "Elite Unit 4",
+          "weightTons": 95.1,
+          "owner": "Elite Owner 4",
+          "arrivalDate": "2024-04-07",
+          "expiryDate": "2024-04-07",
+          "temperatureRequired": true,
+          "occupancyPct": 95.1,
+          "status": "completed"
+        },
+        {
+          "warehouseId": "Core Warehouse Id 5",
+          "zone": "Core Zone 5",
+          "rackNumber": "Core Rack Number 5",
+          "cargoType": "Category E",
+          "quantity": 208,
+          "unit": "Core Unit 5",
+          "weightTons": 56.8,
+          "owner": "Core Owner 5",
+          "arrivalDate": "2024-05-09",
+          "expiryDate": "2024-05-09",
+          "temperatureRequired": false,
+          "occupancyPct": 56.8,
+          "status": "under_review"
+        },
+        {
+          "warehouseId": "Pro Warehouse Id 6",
+          "zone": "Pro Zone 6",
+          "rackNumber": "Pro Rack Number 6",
+          "cargoType": "Premium Tier",
+          "quantity": 207,
+          "unit": "Pro Unit 6",
+          "weightTons": 118.5,
+          "owner": "Pro Owner 6",
+          "arrivalDate": "2024-06-11",
+          "expiryDate": "2024-06-11",
+          "temperatureRequired": true,
+          "occupancyPct": 118.5,
+          "status": "approved"
+        },
+        {
+          "warehouseId": "Essential Warehouse Id 7",
+          "zone": "Essential Zone 7",
+          "rackNumber": "Essential Rack Number 7",
+          "cargoType": "Standard Tier",
+          "quantity": 227,
+          "unit": "Essential Unit 7",
+          "weightTons": 80.2,
+          "owner": "Essential Owner 7",
+          "arrivalDate": "2024-07-13",
+          "expiryDate": "2024-07-13",
+          "temperatureRequired": true,
+          "occupancyPct": 80.2,
+          "status": "active"
+        },
+        {
+          "warehouseId": "Primary Warehouse Id 8",
+          "zone": "Primary Zone 8",
+          "rackNumber": "Primary Rack Number 8",
+          "cargoType": "Basic Tier",
+          "quantity": 124,
+          "unit": "Primary Unit 8",
+          "weightTons": 141.9,
+          "owner": "Primary Owner 8",
+          "arrivalDate": "2024-08-15",
+          "expiryDate": "2024-08-15",
+          "temperatureRequired": false,
+          "occupancyPct": 141.9,
+          "status": "active"
+        },
+        {
+          "warehouseId": "Global Warehouse Id 9",
+          "zone": "Global Zone 9",
+          "rackNumber": "Global Rack Number 9",
+          "cargoType": "Enterprise",
+          "quantity": 108,
+          "unit": "Global Unit 9",
+          "weightTons": 103.6,
+          "owner": "Global Owner 9",
+          "arrivalDate": "2024-09-17",
+          "expiryDate": "2024-09-17",
+          "temperatureRequired": true,
+          "occupancyPct": 103.6,
+          "status": "active"
+        },
+        {
+          "warehouseId": "Regional Warehouse Id 10",
+          "zone": "Regional Zone 10",
+          "rackNumber": "Regional Rack Number 10",
+          "cargoType": "Starter",
+          "quantity": 100,
+          "unit": "Regional Unit 10",
+          "weightTons": 165.3,
+          "owner": "Regional Owner 10",
+          "arrivalDate": "2024-10-19",
+          "expiryDate": "2024-10-19",
+          "temperatureRequired": true,
+          "occupancyPct": 165.3,
+          "status": "pending"
+        },
+        {
+          "warehouseId": "Custom Warehouse Id 11",
+          "zone": "Custom Zone 11",
+          "rackNumber": "Custom Rack Number 11",
+          "cargoType": "Growth",
+          "quantity": 170,
+          "unit": "Custom Unit 11",
+          "weightTons": 127,
+          "owner": "Custom Owner 11",
+          "arrivalDate": "2024-11-21",
+          "expiryDate": "2024-11-21",
+          "temperatureRequired": false,
+          "occupancyPct": 127,
+          "status": "completed"
+        },
+        {
+          "warehouseId": "Smart Warehouse Id 12",
+          "zone": "Smart Zone 12",
+          "rackNumber": "Smart Rack Number 12",
+          "cargoType": "Scale",
+          "quantity": 254,
+          "unit": "Smart Unit 12",
+          "weightTons": 188.7,
+          "owner": "Smart Owner 12",
+          "arrivalDate": "2024-12-23",
+          "expiryDate": "2024-12-23",
+          "temperatureRequired": true,
+          "occupancyPct": 188.7,
+          "status": "active"
+        },
+        {
+          "warehouseId": "Rapid Warehouse Id 13",
+          "zone": "Rapid Zone 13",
+          "rackNumber": "Rapid Rack Number 13",
+          "cargoType": "Foundation",
+          "quantity": 189,
+          "unit": "Rapid Unit 13",
+          "weightTons": 150.4,
+          "owner": "Rapid Owner 13",
+          "arrivalDate": "2024-01-25",
+          "expiryDate": "2024-01-25",
+          "temperatureRequired": false,
+          "occupancyPct": 150.4,
+          "status": "in_progress"
+        },
+        {
+          "warehouseId": "Secure Warehouse Id 14",
+          "zone": "Secure Zone 14",
+          "rackNumber": "Secure Rack Number 14",
+          "cargoType": "Advanced",
+          "quantity": 282,
+          "unit": "Secure Unit 14",
+          "weightTons": 212.1,
+          "owner": "Secure Owner 14",
+          "arrivalDate": "2024-02-27",
+          "expiryDate": "2024-02-27",
+          "temperatureRequired": true,
+          "occupancyPct": 212.1,
+          "status": "active"
+        },
+        {
+          "warehouseId": "Modern Warehouse Id 15",
+          "zone": "Modern Zone 15",
+          "rackNumber": "Modern Rack Number 15",
+          "cargoType": "Professional",
+          "quantity": 254,
+          "unit": "Modern Unit 15",
+          "weightTons": 173.8,
+          "owner": "Modern Owner 15",
+          "arrivalDate": "2024-03-01",
+          "expiryDate": "2024-03-01",
+          "temperatureRequired": true,
+          "occupancyPct": 173.8,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "ShippingDocument",
+      "routeKey": "shipping-documents",
+      "label": "Shipping Document",
+      "icon": "book",
+      "aiFunction": "analyzeShippingDocument",
+      "aiPrompt": "You are an AI analyst for A I Maritime Shipping Port Logistics. Analyze the provided Shipping Document data. The data includes: Document Number, Document Type, Vessel Name, Voyage Number, Shipper, Consignee, Origin Port, Destination Port, Issue Date, Expiry Date, Status, Issuing Authority, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "documentNumber",
+          "label": "Document Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "documentType",
+          "label": "Document Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "vesselName",
+          "label": "Vessel Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "voyageNumber",
+          "label": "Voyage Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "shipper",
+          "label": "Shipper",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "consignee",
+          "label": "Consignee",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "originPort",
+          "label": "Origin Port",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "destinationPort",
+          "label": "Destination Port",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "issueDate",
+          "label": "Issue Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "issuingAuthority",
+          "label": "Issuing Authority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "documentNumber": "Advanced Document Number 1",
+          "documentType": "Category A",
+          "vesselName": "Advanced Vessel 1",
+          "voyageNumber": "Advanced Voyage Number 1",
+          "shipper": "Advanced Shipper 1",
+          "consignee": "Advanced Consignee 1",
+          "originPort": "Advanced Origin Port 1",
+          "destinationPort": "Advanced Destination Port 1",
+          "issueDate": "2024-01-01",
+          "expiryDate": "2024-01-01",
+          "status": "active",
+          "issuingAuthority": "Advanced Issuing Authority 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "documentNumber": "Premium Document Number 2",
+          "documentType": "Category B",
+          "vesselName": "Premium Vessel 2",
+          "voyageNumber": "Premium Voyage Number 2",
+          "shipper": "Premium Shipper 2",
+          "consignee": "Premium Consignee 2",
+          "originPort": "Premium Origin Port 2",
+          "destinationPort": "Premium Destination Port 2",
+          "issueDate": "2024-02-03",
+          "expiryDate": "2024-02-03",
+          "status": "pending",
+          "issuingAuthority": "Premium Issuing Authority 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "documentNumber": "Standard Document Number 3",
+          "documentType": "Category C",
+          "vesselName": "Standard Vessel 3",
+          "voyageNumber": "Standard Voyage Number 3",
+          "shipper": "Standard Shipper 3",
+          "consignee": "Standard Consignee 3",
+          "originPort": "Standard Origin Port 3",
+          "destinationPort": "Standard Destination Port 3",
+          "issueDate": "2024-03-05",
+          "expiryDate": "2024-03-05",
+          "status": "in_progress",
+          "issuingAuthority": "Standard Issuing Authority 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "documentNumber": "Elite Document Number 4",
+          "documentType": "Category D",
+          "vesselName": "Elite Vessel 4",
+          "voyageNumber": "Elite Voyage Number 4",
+          "shipper": "Elite Shipper 4",
+          "consignee": "Elite Consignee 4",
+          "originPort": "Elite Origin Port 4",
+          "destinationPort": "Elite Destination Port 4",
+          "issueDate": "2024-04-07",
+          "expiryDate": "2024-04-07",
+          "status": "completed",
+          "issuingAuthority": "Elite Issuing Authority 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "documentNumber": "Core Document Number 5",
+          "documentType": "Category E",
+          "vesselName": "Core Vessel 5",
+          "voyageNumber": "Core Voyage Number 5",
+          "shipper": "Core Shipper 5",
+          "consignee": "Core Consignee 5",
+          "originPort": "Core Origin Port 5",
+          "destinationPort": "Core Destination Port 5",
+          "issueDate": "2024-05-09",
+          "expiryDate": "2024-05-09",
+          "status": "under_review",
+          "issuingAuthority": "Core Issuing Authority 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "documentNumber": "Pro Document Number 6",
+          "documentType": "Premium Tier",
+          "vesselName": "Pro Vessel 6",
+          "voyageNumber": "Pro Voyage Number 6",
+          "shipper": "Pro Shipper 6",
+          "consignee": "Pro Consignee 6",
+          "originPort": "Pro Origin Port 6",
+          "destinationPort": "Pro Destination Port 6",
+          "issueDate": "2024-06-11",
+          "expiryDate": "2024-06-11",
+          "status": "approved",
+          "issuingAuthority": "Pro Issuing Authority 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "documentNumber": "Essential Document Number 7",
+          "documentType": "Standard Tier",
+          "vesselName": "Essential Vessel 7",
+          "voyageNumber": "Essential Voyage Number 7",
+          "shipper": "Essential Shipper 7",
+          "consignee": "Essential Consignee 7",
+          "originPort": "Essential Origin Port 7",
+          "destinationPort": "Essential Destination Port 7",
+          "issueDate": "2024-07-13",
+          "expiryDate": "2024-07-13",
+          "status": "active",
+          "issuingAuthority": "Essential Issuing Authority 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "documentNumber": "Primary Document Number 8",
+          "documentType": "Basic Tier",
+          "vesselName": "Primary Vessel 8",
+          "voyageNumber": "Primary Voyage Number 8",
+          "shipper": "Primary Shipper 8",
+          "consignee": "Primary Consignee 8",
+          "originPort": "Primary Origin Port 8",
+          "destinationPort": "Primary Destination Port 8",
+          "issueDate": "2024-08-15",
+          "expiryDate": "2024-08-15",
+          "status": "active",
+          "issuingAuthority": "Primary Issuing Authority 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "documentNumber": "Global Document Number 9",
+          "documentType": "Enterprise",
+          "vesselName": "Global Vessel 9",
+          "voyageNumber": "Global Voyage Number 9",
+          "shipper": "Global Shipper 9",
+          "consignee": "Global Consignee 9",
+          "originPort": "Global Origin Port 9",
+          "destinationPort": "Global Destination Port 9",
+          "issueDate": "2024-09-17",
+          "expiryDate": "2024-09-17",
+          "status": "active",
+          "issuingAuthority": "Global Issuing Authority 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "documentNumber": "Regional Document Number 10",
+          "documentType": "Starter",
+          "vesselName": "Regional Vessel 10",
+          "voyageNumber": "Regional Voyage Number 10",
+          "shipper": "Regional Shipper 10",
+          "consignee": "Regional Consignee 10",
+          "originPort": "Regional Origin Port 10",
+          "destinationPort": "Regional Destination Port 10",
+          "issueDate": "2024-10-19",
+          "expiryDate": "2024-10-19",
+          "status": "pending",
+          "issuingAuthority": "Regional Issuing Authority 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "documentNumber": "Custom Document Number 11",
+          "documentType": "Growth",
+          "vesselName": "Custom Vessel 11",
+          "voyageNumber": "Custom Voyage Number 11",
+          "shipper": "Custom Shipper 11",
+          "consignee": "Custom Consignee 11",
+          "originPort": "Custom Origin Port 11",
+          "destinationPort": "Custom Destination Port 11",
+          "issueDate": "2024-11-21",
+          "expiryDate": "2024-11-21",
+          "status": "completed",
+          "issuingAuthority": "Custom Issuing Authority 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "documentNumber": "Smart Document Number 12",
+          "documentType": "Scale",
+          "vesselName": "Smart Vessel 12",
+          "voyageNumber": "Smart Voyage Number 12",
+          "shipper": "Smart Shipper 12",
+          "consignee": "Smart Consignee 12",
+          "originPort": "Smart Origin Port 12",
+          "destinationPort": "Smart Destination Port 12",
+          "issueDate": "2024-12-23",
+          "expiryDate": "2024-12-23",
+          "status": "active",
+          "issuingAuthority": "Smart Issuing Authority 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "documentNumber": "Rapid Document Number 13",
+          "documentType": "Foundation",
+          "vesselName": "Rapid Vessel 13",
+          "voyageNumber": "Rapid Voyage Number 13",
+          "shipper": "Rapid Shipper 13",
+          "consignee": "Rapid Consignee 13",
+          "originPort": "Rapid Origin Port 13",
+          "destinationPort": "Rapid Destination Port 13",
+          "issueDate": "2024-01-25",
+          "expiryDate": "2024-01-25",
+          "status": "in_progress",
+          "issuingAuthority": "Rapid Issuing Authority 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "documentNumber": "Secure Document Number 14",
+          "documentType": "Advanced",
+          "vesselName": "Secure Vessel 14",
+          "voyageNumber": "Secure Voyage Number 14",
+          "shipper": "Secure Shipper 14",
+          "consignee": "Secure Consignee 14",
+          "originPort": "Secure Origin Port 14",
+          "destinationPort": "Secure Destination Port 14",
+          "issueDate": "2024-02-27",
+          "expiryDate": "2024-02-27",
+          "status": "active",
+          "issuingAuthority": "Secure Issuing Authority 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "documentNumber": "Modern Document Number 15",
+          "documentType": "Professional",
+          "vesselName": "Modern Vessel 15",
+          "voyageNumber": "Modern Voyage Number 15",
+          "shipper": "Modern Shipper 15",
+          "consignee": "Modern Consignee 15",
+          "originPort": "Modern Origin Port 15",
+          "destinationPort": "Modern Destination Port 15",
+          "issueDate": "2024-03-01",
+          "expiryDate": "2024-03-01",
+          "status": "approved",
+          "issuingAuthority": "Modern Issuing Authority 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Driver",
+      "routeKey": "drivers",
+      "label": "Driver",
+      "icon": "file-text",
+      "aiFunction": "analyzeDriver",
+      "aiPrompt": "You are an AI analyst for A I Last- Mile Delivery Optimizer. Analyze the provided Driver data. The data includes: Name, Email, Phone, License Number, Status, Rating, Total Deliveries, Current Location, Vehicle Id, Hire Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "available",
+            "on_delivery",
+            "off_duty",
+            "on_break"
+          ]
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "available",
+            "on_delivery",
+            "off_duty",
+            "on_break"
+          ]
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "available",
+            "on_delivery",
+            "off_duty",
+            "on_break"
+          ]
+        },
+        {
+          "key": "licenseNumber",
+          "label": "License Number",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "available",
+            "on_delivery",
+            "off_duty",
+            "on_break"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "available",
+            "on_delivery",
+            "off_duty",
+            "on_break"
+          ]
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "totalDeliveries",
+          "label": "Total Deliveries",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "currentLocation",
+          "label": "Current Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "vehicleId",
+          "label": "Vehicle Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "hireDate",
+          "label": "Hire Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "licenseNumber": "available",
+          "status": "available",
+          "rating": 1.5,
+          "totalDeliveries": 10,
+          "currentLocation": "New York",
+          "vehicleId": 10,
+          "hireDate": "2024-01-01"
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "licenseNumber": "on_delivery",
+          "status": "on_delivery",
+          "rating": 2.1,
+          "totalDeliveries": 58,
+          "currentLocation": "Los Angeles",
+          "vehicleId": 58,
+          "hireDate": "2024-02-03"
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "licenseNumber": "off_duty",
+          "status": "off_duty",
+          "rating": 2.7,
+          "totalDeliveries": 106,
+          "currentLocation": "Chicago",
+          "vehicleId": 106,
+          "hireDate": "2024-03-05"
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "licenseNumber": "on_break",
+          "status": "on_break",
+          "rating": 3.3,
+          "totalDeliveries": 154,
+          "currentLocation": "Houston",
+          "vehicleId": 154,
+          "hireDate": "2024-04-07"
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "licenseNumber": "available",
+          "status": "available",
+          "rating": 3.9,
+          "totalDeliveries": 102,
+          "currentLocation": "Phoenix",
+          "vehicleId": 102,
+          "hireDate": "2024-05-09"
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "licenseNumber": "on_delivery",
+          "status": "on_delivery",
+          "rating": 4.5,
+          "totalDeliveries": 150,
+          "currentLocation": "San Francisco",
+          "vehicleId": 150,
+          "hireDate": "2024-06-11"
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "licenseNumber": "off_duty",
+          "status": "off_duty",
+          "rating": 5.1,
+          "totalDeliveries": 198,
+          "currentLocation": "Seattle",
+          "vehicleId": 198,
+          "hireDate": "2024-07-13"
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "licenseNumber": "on_break",
+          "status": "on_break",
+          "rating": 5.7,
+          "totalDeliveries": 146,
+          "currentLocation": "Boston",
+          "vehicleId": 146,
+          "hireDate": "2024-08-15"
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "licenseNumber": "available",
+          "status": "available",
+          "rating": 6.3,
+          "totalDeliveries": 194,
+          "currentLocation": "Denver",
+          "vehicleId": 194,
+          "hireDate": "2024-09-17"
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "licenseNumber": "on_delivery",
+          "status": "on_delivery",
+          "rating": 1.9,
+          "totalDeliveries": 242,
+          "currentLocation": "Miami",
+          "vehicleId": 242,
+          "hireDate": "2024-10-19"
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "licenseNumber": "off_duty",
+          "status": "off_duty",
+          "rating": 2.5,
+          "totalDeliveries": 190,
+          "currentLocation": "Austin",
+          "vehicleId": 190,
+          "hireDate": "2024-11-21"
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "licenseNumber": "on_break",
+          "status": "on_break",
+          "rating": 3.1,
+          "totalDeliveries": 238,
+          "currentLocation": "Portland",
+          "vehicleId": 238,
+          "hireDate": "2024-12-23"
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "licenseNumber": "available",
+          "status": "available",
+          "rating": 3.7,
+          "totalDeliveries": 286,
+          "currentLocation": "Dallas",
+          "vehicleId": 286,
+          "hireDate": "2024-01-25"
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "licenseNumber": "on_delivery",
+          "status": "on_delivery",
+          "rating": 4.3,
+          "totalDeliveries": 234,
+          "currentLocation": "Atlanta",
+          "vehicleId": 234,
+          "hireDate": "2024-02-27"
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "licenseNumber": "off_duty",
+          "status": "off_duty",
+          "rating": 4.9,
+          "totalDeliveries": 282,
+          "currentLocation": "Nashville",
+          "vehicleId": 282,
+          "hireDate": "2024-03-01"
+        }
+      ]
+    }
+  ]
+}

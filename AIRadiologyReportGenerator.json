@@ -1,0 +1,2149 @@
+{
+  "appName": "A I Radiology Report Generator",
+  "dbName": "a_i_radiology_report_generator",
+  "folderName": "generated/AIRadiologyReportGenerator",
+  "features": [
+    {
+      "modelName": "Patient",
+      "routeKey": "patients",
+      "label": "Patient",
+      "icon": "activity",
+      "aiFunction": "analyzePatient",
+      "aiPrompt": "You are an AI analyst for A I Radiology Report Generator. Analyze the provided Patient data. The data includes: Mrn, First Name, Last Name, Date Of Birth, Gender, Phone, Email, Address, Insurance Provider, Insurance Id, Emergency Contact, Allergies, Medical History, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "mrn",
+          "label": "Mrn",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dateOfBirth",
+          "label": "Date Of Birth",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "gender",
+          "label": "Gender",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "insuranceProvider",
+          "label": "Insurance Provider",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "insuranceId",
+          "label": "Insurance Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "emergencyContact",
+          "label": "Emergency Contact",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "allergies",
+          "label": "Allergies",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "medicalHistory",
+          "label": "Medical History",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "mrn": "Advanced Mrn 1",
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "dateOfBirth": "2024-01-01",
+          "gender": "Advanced Gender 1",
+          "phone": "(555) 100-1000",
+          "email": "james.wilson@example.com",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "insuranceProvider": "Advanced Insurance Provider 1",
+          "insuranceId": "Advanced Insurance Id 1",
+          "emergencyContact": "Advanced Emergency Contact 1",
+          "allergies": "Comprehensive solution designed for optimal performance and efficiency.",
+          "medicalHistory": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "mrn": "Premium Mrn 2",
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "dateOfBirth": "2024-02-03",
+          "gender": "Premium Gender 2",
+          "phone": "(556) 137-1113",
+          "email": "sarah.chen@example.com",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "insuranceProvider": "Premium Insurance Provider 2",
+          "insuranceId": "Premium Insurance Id 2",
+          "emergencyContact": "Premium Emergency Contact 2",
+          "allergies": "Industry-leading approach with proven results across multiple deployments.",
+          "medicalHistory": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "mrn": "Standard Mrn 3",
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "dateOfBirth": "2024-03-05",
+          "gender": "Standard Gender 3",
+          "phone": "(557) 174-1226",
+          "email": "michael.brown@example.com",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "insuranceProvider": "Standard Insurance Provider 3",
+          "insuranceId": "Standard Insurance Id 3",
+          "emergencyContact": "Standard Emergency Contact 3",
+          "allergies": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "medicalHistory": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "mrn": "Elite Mrn 4",
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "dateOfBirth": "2024-04-07",
+          "gender": "Elite Gender 4",
+          "phone": "(558) 211-1339",
+          "email": "emily.davis@example.com",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "insuranceProvider": "Elite Insurance Provider 4",
+          "insuranceId": "Elite Insurance Id 4",
+          "emergencyContact": "Elite Emergency Contact 4",
+          "allergies": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "medicalHistory": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "mrn": "Core Mrn 5",
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "dateOfBirth": "2024-05-09",
+          "gender": "Core Gender 5",
+          "phone": "(555) 248-1452",
+          "email": "robert.garcia@example.com",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "insuranceProvider": "Core Insurance Provider 5",
+          "insuranceId": "Core Insurance Id 5",
+          "emergencyContact": "Core Emergency Contact 5",
+          "allergies": "Cost-effective strategy focused on sustainable long-term growth.",
+          "medicalHistory": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "mrn": "Pro Mrn 6",
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "dateOfBirth": "2024-06-11",
+          "gender": "Pro Gender 6",
+          "phone": "(556) 285-1565",
+          "email": "lisa.anderson@example.com",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "insuranceProvider": "Pro Insurance Provider 6",
+          "insuranceId": "Pro Insurance Id 6",
+          "emergencyContact": "Pro Emergency Contact 6",
+          "allergies": "High-priority initiative aligned with organizational strategic objectives.",
+          "medicalHistory": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "mrn": "Essential Mrn 7",
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "dateOfBirth": "2024-07-13",
+          "gender": "Essential Gender 7",
+          "phone": "(557) 322-1678",
+          "email": "david.martinez@example.com",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "insuranceProvider": "Essential Insurance Provider 7",
+          "insuranceId": "Essential Insurance Id 7",
+          "emergencyContact": "Essential Emergency Contact 7",
+          "allergies": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "medicalHistory": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "mrn": "Primary Mrn 8",
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "dateOfBirth": "2024-08-15",
+          "gender": "Primary Gender 8",
+          "phone": "(558) 359-1791",
+          "email": "jennifer.taylor@example.com",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "insuranceProvider": "Primary Insurance Provider 8",
+          "insuranceId": "Primary Insurance Id 8",
+          "emergencyContact": "Primary Emergency Contact 8",
+          "allergies": "Innovative framework incorporating best practices and emerging technologies.",
+          "medicalHistory": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "mrn": "Global Mrn 9",
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "dateOfBirth": "2024-09-17",
+          "gender": "Global Gender 9",
+          "phone": "(555) 396-1904",
+          "email": "william.johnson@example.com",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "insuranceProvider": "Global Insurance Provider 9",
+          "insuranceId": "Global Insurance Id 9",
+          "emergencyContact": "Global Emergency Contact 9",
+          "allergies": "Scalable architecture built to accommodate rapid expansion and change.",
+          "medicalHistory": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "mrn": "Regional Mrn 10",
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "dateOfBirth": "2024-10-19",
+          "gender": "Regional Gender 10",
+          "phone": "(556) 433-2017",
+          "email": "maria.rodriguez@example.com",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "insuranceProvider": "Regional Insurance Provider 10",
+          "insuranceId": "Regional Insurance Id 10",
+          "emergencyContact": "Regional Emergency Contact 10",
+          "allergies": "Enterprise-grade solution with robust security and compliance features.",
+          "medicalHistory": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "mrn": "Custom Mrn 11",
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "dateOfBirth": "2024-11-21",
+          "gender": "Custom Gender 11",
+          "phone": "(557) 470-2130",
+          "email": "thomas.lee@example.com",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "insuranceProvider": "Custom Insurance Provider 11",
+          "insuranceId": "Custom Insurance Id 11",
+          "emergencyContact": "Custom Emergency Contact 11",
+          "allergies": "Integrated platform connecting multiple systems for seamless operations.",
+          "medicalHistory": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "mrn": "Smart Mrn 12",
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "dateOfBirth": "2024-12-23",
+          "gender": "Smart Gender 12",
+          "phone": "(558) 507-2243",
+          "email": "patricia.white@example.com",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "insuranceProvider": "Smart Insurance Provider 12",
+          "insuranceId": "Smart Insurance Id 12",
+          "emergencyContact": "Smart Emergency Contact 12",
+          "allergies": "Automated workflow reducing manual intervention and human error.",
+          "medicalHistory": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "mrn": "Rapid Mrn 13",
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "dateOfBirth": "2024-01-25",
+          "gender": "Rapid Gender 13",
+          "phone": "(555) 544-2356",
+          "email": "christopher.hall@example.com",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "insuranceProvider": "Rapid Insurance Provider 13",
+          "insuranceId": "Rapid Insurance Id 13",
+          "emergencyContact": "Rapid Emergency Contact 13",
+          "allergies": "Real-time monitoring system with intelligent alerting capabilities.",
+          "medicalHistory": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "mrn": "Secure Mrn 14",
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "dateOfBirth": "2024-02-27",
+          "gender": "Secure Gender 14",
+          "phone": "(556) 581-2469",
+          "email": "amanda.clark@example.com",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "insuranceProvider": "Secure Insurance Provider 14",
+          "insuranceId": "Secure Insurance Id 14",
+          "emergencyContact": "Secure Emergency Contact 14",
+          "allergies": "Customizable module adaptable to diverse operational requirements.",
+          "medicalHistory": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "mrn": "Modern Mrn 15",
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "dateOfBirth": "2024-03-01",
+          "gender": "Modern Gender 15",
+          "phone": "(557) 618-2582",
+          "email": "daniel.wright@example.com",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "insuranceProvider": "Modern Insurance Provider 15",
+          "insuranceId": "Modern Insurance Id 15",
+          "emergencyContact": "Modern Emergency Contact 15",
+          "allergies": "Performance-optimized design achieving superior throughput and reliability.",
+          "medicalHistory": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Radiologist",
+      "routeKey": "radiologists",
+      "label": "Radiologist",
+      "icon": "briefcase",
+      "aiFunction": "analyzeRadiologist",
+      "aiPrompt": "You are an AI analyst for A I Radiology Report Generator. Analyze the provided Radiologist data. The data includes: Employee Id, First Name, Last Name, Specialization, License Number, Email, Phone, Years Experience, Board Certified, Status, Shift, Reports Today, Accuracy Rate. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "employeeId",
+          "label": "Employee Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "specialization",
+          "label": "Specialization",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "licenseNumber",
+          "label": "License Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "yearsExperience",
+          "label": "Years Experience",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "boardCertified",
+          "label": "Board Certified",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "shift",
+          "label": "Shift",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reportsToday",
+          "label": "Reports Today",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "accuracyRate",
+          "label": "Accuracy Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "employeeId": "Advanced Employee Id 1",
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "specialization": "Advanced Specialization 1",
+          "licenseNumber": "Advanced License Number 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "yearsExperience": 2020,
+          "boardCertified": true,
+          "status": "active",
+          "shift": "Advanced Shift 1",
+          "reportsToday": 10,
+          "accuracyRate": 1.5
+        },
+        {
+          "employeeId": "Premium Employee Id 2",
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "specialization": "Premium Specialization 2",
+          "licenseNumber": "Premium License Number 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "yearsExperience": 2021,
+          "boardCertified": true,
+          "status": "pending",
+          "shift": "Premium Shift 2",
+          "reportsToday": 58,
+          "accuracyRate": 2.1
+        },
+        {
+          "employeeId": "Standard Employee Id 3",
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "specialization": "Standard Specialization 3",
+          "licenseNumber": "Standard License Number 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "yearsExperience": 2022,
+          "boardCertified": false,
+          "status": "in_progress",
+          "shift": "Standard Shift 3",
+          "reportsToday": 106,
+          "accuracyRate": 2.7
+        },
+        {
+          "employeeId": "Elite Employee Id 4",
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "specialization": "Elite Specialization 4",
+          "licenseNumber": "Elite License Number 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "yearsExperience": 2023,
+          "boardCertified": true,
+          "status": "completed",
+          "shift": "Elite Shift 4",
+          "reportsToday": 154,
+          "accuracyRate": 3.3
+        },
+        {
+          "employeeId": "Core Employee Id 5",
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "specialization": "Core Specialization 5",
+          "licenseNumber": "Core License Number 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "yearsExperience": 2024,
+          "boardCertified": false,
+          "status": "under_review",
+          "shift": "Core Shift 5",
+          "reportsToday": 102,
+          "accuracyRate": 3.9
+        },
+        {
+          "employeeId": "Pro Employee Id 6",
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "specialization": "Pro Specialization 6",
+          "licenseNumber": "Pro License Number 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "yearsExperience": 2025,
+          "boardCertified": true,
+          "status": "approved",
+          "shift": "Pro Shift 6",
+          "reportsToday": 150,
+          "accuracyRate": 4.5
+        },
+        {
+          "employeeId": "Essential Employee Id 7",
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "specialization": "Essential Specialization 7",
+          "licenseNumber": "Essential License Number 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "yearsExperience": 2020,
+          "boardCertified": true,
+          "status": "active",
+          "shift": "Essential Shift 7",
+          "reportsToday": 198,
+          "accuracyRate": 5.1
+        },
+        {
+          "employeeId": "Primary Employee Id 8",
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "specialization": "Primary Specialization 8",
+          "licenseNumber": "Primary License Number 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "yearsExperience": 2021,
+          "boardCertified": false,
+          "status": "active",
+          "shift": "Primary Shift 8",
+          "reportsToday": 146,
+          "accuracyRate": 5.7
+        },
+        {
+          "employeeId": "Global Employee Id 9",
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "specialization": "Global Specialization 9",
+          "licenseNumber": "Global License Number 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "yearsExperience": 2022,
+          "boardCertified": true,
+          "status": "active",
+          "shift": "Global Shift 9",
+          "reportsToday": 194,
+          "accuracyRate": 6.3
+        },
+        {
+          "employeeId": "Regional Employee Id 10",
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "specialization": "Regional Specialization 10",
+          "licenseNumber": "Regional License Number 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "yearsExperience": 2023,
+          "boardCertified": true,
+          "status": "pending",
+          "shift": "Regional Shift 10",
+          "reportsToday": 242,
+          "accuracyRate": 1.9
+        },
+        {
+          "employeeId": "Custom Employee Id 11",
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "specialization": "Custom Specialization 11",
+          "licenseNumber": "Custom License Number 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "yearsExperience": 2024,
+          "boardCertified": false,
+          "status": "completed",
+          "shift": "Custom Shift 11",
+          "reportsToday": 190,
+          "accuracyRate": 2.5
+        },
+        {
+          "employeeId": "Smart Employee Id 12",
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "specialization": "Smart Specialization 12",
+          "licenseNumber": "Smart License Number 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "yearsExperience": 2025,
+          "boardCertified": true,
+          "status": "active",
+          "shift": "Smart Shift 12",
+          "reportsToday": 238,
+          "accuracyRate": 3.1
+        },
+        {
+          "employeeId": "Rapid Employee Id 13",
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "specialization": "Rapid Specialization 13",
+          "licenseNumber": "Rapid License Number 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "yearsExperience": 2020,
+          "boardCertified": false,
+          "status": "in_progress",
+          "shift": "Rapid Shift 13",
+          "reportsToday": 286,
+          "accuracyRate": 3.7
+        },
+        {
+          "employeeId": "Secure Employee Id 14",
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "specialization": "Secure Specialization 14",
+          "licenseNumber": "Secure License Number 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "yearsExperience": 2021,
+          "boardCertified": true,
+          "status": "active",
+          "shift": "Secure Shift 14",
+          "reportsToday": 234,
+          "accuracyRate": 4.3
+        },
+        {
+          "employeeId": "Modern Employee Id 15",
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "specialization": "Modern Specialization 15",
+          "licenseNumber": "Modern License Number 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "yearsExperience": 2022,
+          "boardCertified": true,
+          "status": "approved",
+          "shift": "Modern Shift 15",
+          "reportsToday": 282,
+          "accuracyRate": 4.9
+        }
+      ]
+    },
+    {
+      "modelName": "Modalitie",
+      "routeKey": "modalities",
+      "label": "Modalitie",
+      "icon": "clipboard",
+      "aiFunction": "analyzeModalitie",
+      "aiPrompt": "You are an AI analyst for A I Radiology Report Generator. Analyze the provided Modalitie data. The data includes: Name, Code, Description, Body Parts, Avg Duration Minutes, Radiation Dose, Contrast Required, Preparation Instructions, Cost Range, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "code",
+          "label": "Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "bodyParts",
+          "label": "Body Parts",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "avgDurationMinutes",
+          "label": "Avg Duration Minutes",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "radiationDose",
+          "label": "Radiation Dose",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contrastRequired",
+          "label": "Contrast Required",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "preparationInstructions",
+          "label": "Preparation Instructions",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "costRange",
+          "label": "Cost Range",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "code": "Advanced Code 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "bodyParts": "Comprehensive solution designed for optimal performance and efficiency.",
+          "avgDurationMinutes": 10,
+          "radiationDose": "Advanced Radiation Dose 1",
+          "contrastRequired": true,
+          "preparationInstructions": "Comprehensive solution designed for optimal performance and efficiency.",
+          "costRange": "Advanced Cost Range 1",
+          "status": "active"
+        },
+        {
+          "name": "Premium Name 2",
+          "code": "Premium Code 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "bodyParts": "Industry-leading approach with proven results across multiple deployments.",
+          "avgDurationMinutes": 58,
+          "radiationDose": "Premium Radiation Dose 2",
+          "contrastRequired": true,
+          "preparationInstructions": "Industry-leading approach with proven results across multiple deployments.",
+          "costRange": "Premium Cost Range 2",
+          "status": "pending"
+        },
+        {
+          "name": "Standard Name 3",
+          "code": "Standard Code 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "bodyParts": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "avgDurationMinutes": 106,
+          "radiationDose": "Standard Radiation Dose 3",
+          "contrastRequired": false,
+          "preparationInstructions": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "costRange": "Standard Cost Range 3",
+          "status": "in_progress"
+        },
+        {
+          "name": "Elite Name 4",
+          "code": "Elite Code 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "bodyParts": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "avgDurationMinutes": 154,
+          "radiationDose": "Elite Radiation Dose 4",
+          "contrastRequired": true,
+          "preparationInstructions": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "costRange": "Elite Cost Range 4",
+          "status": "completed"
+        },
+        {
+          "name": "Core Name 5",
+          "code": "Core Code 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "bodyParts": "Cost-effective strategy focused on sustainable long-term growth.",
+          "avgDurationMinutes": 102,
+          "radiationDose": "Core Radiation Dose 5",
+          "contrastRequired": false,
+          "preparationInstructions": "Cost-effective strategy focused on sustainable long-term growth.",
+          "costRange": "Core Cost Range 5",
+          "status": "under_review"
+        },
+        {
+          "name": "Pro Name 6",
+          "code": "Pro Code 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "bodyParts": "High-priority initiative aligned with organizational strategic objectives.",
+          "avgDurationMinutes": 150,
+          "radiationDose": "Pro Radiation Dose 6",
+          "contrastRequired": true,
+          "preparationInstructions": "High-priority initiative aligned with organizational strategic objectives.",
+          "costRange": "Pro Cost Range 6",
+          "status": "approved"
+        },
+        {
+          "name": "Essential Name 7",
+          "code": "Essential Code 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "bodyParts": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "avgDurationMinutes": 198,
+          "radiationDose": "Essential Radiation Dose 7",
+          "contrastRequired": true,
+          "preparationInstructions": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "costRange": "Essential Cost Range 7",
+          "status": "active"
+        },
+        {
+          "name": "Primary Name 8",
+          "code": "Primary Code 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "bodyParts": "Innovative framework incorporating best practices and emerging technologies.",
+          "avgDurationMinutes": 146,
+          "radiationDose": "Primary Radiation Dose 8",
+          "contrastRequired": false,
+          "preparationInstructions": "Innovative framework incorporating best practices and emerging technologies.",
+          "costRange": "Primary Cost Range 8",
+          "status": "active"
+        },
+        {
+          "name": "Global Name 9",
+          "code": "Global Code 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "bodyParts": "Scalable architecture built to accommodate rapid expansion and change.",
+          "avgDurationMinutes": 194,
+          "radiationDose": "Global Radiation Dose 9",
+          "contrastRequired": true,
+          "preparationInstructions": "Scalable architecture built to accommodate rapid expansion and change.",
+          "costRange": "Global Cost Range 9",
+          "status": "active"
+        },
+        {
+          "name": "Regional Name 10",
+          "code": "Regional Code 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "bodyParts": "Enterprise-grade solution with robust security and compliance features.",
+          "avgDurationMinutes": 242,
+          "radiationDose": "Regional Radiation Dose 10",
+          "contrastRequired": true,
+          "preparationInstructions": "Enterprise-grade solution with robust security and compliance features.",
+          "costRange": "Regional Cost Range 10",
+          "status": "pending"
+        },
+        {
+          "name": "Custom Name 11",
+          "code": "Custom Code 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "bodyParts": "Integrated platform connecting multiple systems for seamless operations.",
+          "avgDurationMinutes": 190,
+          "radiationDose": "Custom Radiation Dose 11",
+          "contrastRequired": false,
+          "preparationInstructions": "Integrated platform connecting multiple systems for seamless operations.",
+          "costRange": "Custom Cost Range 11",
+          "status": "completed"
+        },
+        {
+          "name": "Smart Name 12",
+          "code": "Smart Code 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "bodyParts": "Automated workflow reducing manual intervention and human error.",
+          "avgDurationMinutes": 238,
+          "radiationDose": "Smart Radiation Dose 12",
+          "contrastRequired": true,
+          "preparationInstructions": "Automated workflow reducing manual intervention and human error.",
+          "costRange": "Smart Cost Range 12",
+          "status": "active"
+        },
+        {
+          "name": "Rapid Name 13",
+          "code": "Rapid Code 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "bodyParts": "Real-time monitoring system with intelligent alerting capabilities.",
+          "avgDurationMinutes": 286,
+          "radiationDose": "Rapid Radiation Dose 13",
+          "contrastRequired": false,
+          "preparationInstructions": "Real-time monitoring system with intelligent alerting capabilities.",
+          "costRange": "Rapid Cost Range 13",
+          "status": "in_progress"
+        },
+        {
+          "name": "Secure Name 14",
+          "code": "Secure Code 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "bodyParts": "Customizable module adaptable to diverse operational requirements.",
+          "avgDurationMinutes": 234,
+          "radiationDose": "Secure Radiation Dose 14",
+          "contrastRequired": true,
+          "preparationInstructions": "Customizable module adaptable to diverse operational requirements.",
+          "costRange": "Secure Cost Range 14",
+          "status": "active"
+        },
+        {
+          "name": "Modern Name 15",
+          "code": "Modern Code 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "bodyParts": "Performance-optimized design achieving superior throughput and reliability.",
+          "avgDurationMinutes": 282,
+          "radiationDose": "Modern Radiation Dose 15",
+          "contrastRequired": true,
+          "preparationInstructions": "Performance-optimized design achieving superior throughput and reliability.",
+          "costRange": "Modern Cost Range 15",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Studie",
+      "routeKey": "studies",
+      "label": "Studie",
+      "icon": "database",
+      "aiFunction": "analyzeStudie",
+      "aiPrompt": "You are an AI analyst for A I Radiology Report Generator. Analyze the provided Studie data. The data includes: Accession Number, Patient Id, Modality Id, Radiologist Id, Study Date, Body Part, Clinical Indication, Priority, Status, Findings, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "accessionNumber",
+          "label": "Accession Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "patientId",
+          "label": "Patient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "modalityId",
+          "label": "Modality Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "radiologistId",
+          "label": "Radiologist Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "studyDate",
+          "label": "Study Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "bodyPart",
+          "label": "Body Part",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "clinicalIndication",
+          "label": "Clinical Indication",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "findings",
+          "label": "Findings",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "accessionNumber": "Advanced Accession Number 1",
+          "patientId": 10,
+          "modalityId": 10,
+          "radiologistId": 10,
+          "studyDate": "2024-01-01",
+          "bodyPart": "Advanced Body Part 1",
+          "clinicalIndication": "Comprehensive solution designed for optimal performance and efficiency.",
+          "priority": "low",
+          "status": "active",
+          "findings": "Comprehensive solution designed for optimal performance and efficiency.",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "accessionNumber": "Premium Accession Number 2",
+          "patientId": 58,
+          "modalityId": 58,
+          "radiologistId": 58,
+          "studyDate": "2024-02-03",
+          "bodyPart": "Premium Body Part 2",
+          "clinicalIndication": "Industry-leading approach with proven results across multiple deployments.",
+          "priority": "medium",
+          "status": "pending",
+          "findings": "Industry-leading approach with proven results across multiple deployments.",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "accessionNumber": "Standard Accession Number 3",
+          "patientId": 106,
+          "modalityId": 106,
+          "radiologistId": 106,
+          "studyDate": "2024-03-05",
+          "bodyPart": "Standard Body Part 3",
+          "clinicalIndication": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "priority": "high",
+          "status": "in_progress",
+          "findings": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "accessionNumber": "Elite Accession Number 4",
+          "patientId": 154,
+          "modalityId": 154,
+          "radiologistId": 154,
+          "studyDate": "2024-04-07",
+          "bodyPart": "Elite Body Part 4",
+          "clinicalIndication": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "priority": "critical",
+          "status": "completed",
+          "findings": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "accessionNumber": "Core Accession Number 5",
+          "patientId": 102,
+          "modalityId": 102,
+          "radiologistId": 102,
+          "studyDate": "2024-05-09",
+          "bodyPart": "Core Body Part 5",
+          "clinicalIndication": "Cost-effective strategy focused on sustainable long-term growth.",
+          "priority": "medium",
+          "status": "under_review",
+          "findings": "Cost-effective strategy focused on sustainable long-term growth.",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "accessionNumber": "Pro Accession Number 6",
+          "patientId": 150,
+          "modalityId": 150,
+          "radiologistId": 150,
+          "studyDate": "2024-06-11",
+          "bodyPart": "Pro Body Part 6",
+          "clinicalIndication": "High-priority initiative aligned with organizational strategic objectives.",
+          "priority": "low",
+          "status": "approved",
+          "findings": "High-priority initiative aligned with organizational strategic objectives.",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "accessionNumber": "Essential Accession Number 7",
+          "patientId": 198,
+          "modalityId": 198,
+          "radiologistId": 198,
+          "studyDate": "2024-07-13",
+          "bodyPart": "Essential Body Part 7",
+          "clinicalIndication": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "priority": "medium",
+          "status": "active",
+          "findings": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "accessionNumber": "Primary Accession Number 8",
+          "patientId": 146,
+          "modalityId": 146,
+          "radiologistId": 146,
+          "studyDate": "2024-08-15",
+          "bodyPart": "Primary Body Part 8",
+          "clinicalIndication": "Innovative framework incorporating best practices and emerging technologies.",
+          "priority": "high",
+          "status": "active",
+          "findings": "Innovative framework incorporating best practices and emerging technologies.",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "accessionNumber": "Global Accession Number 9",
+          "patientId": 194,
+          "modalityId": 194,
+          "radiologistId": 194,
+          "studyDate": "2024-09-17",
+          "bodyPart": "Global Body Part 9",
+          "clinicalIndication": "Scalable architecture built to accommodate rapid expansion and change.",
+          "priority": "critical",
+          "status": "active",
+          "findings": "Scalable architecture built to accommodate rapid expansion and change.",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "accessionNumber": "Regional Accession Number 10",
+          "patientId": 242,
+          "modalityId": 242,
+          "radiologistId": 242,
+          "studyDate": "2024-10-19",
+          "bodyPart": "Regional Body Part 10",
+          "clinicalIndication": "Enterprise-grade solution with robust security and compliance features.",
+          "priority": "medium",
+          "status": "pending",
+          "findings": "Enterprise-grade solution with robust security and compliance features.",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "accessionNumber": "Custom Accession Number 11",
+          "patientId": 190,
+          "modalityId": 190,
+          "radiologistId": 190,
+          "studyDate": "2024-11-21",
+          "bodyPart": "Custom Body Part 11",
+          "clinicalIndication": "Integrated platform connecting multiple systems for seamless operations.",
+          "priority": "low",
+          "status": "completed",
+          "findings": "Integrated platform connecting multiple systems for seamless operations.",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "accessionNumber": "Smart Accession Number 12",
+          "patientId": 238,
+          "modalityId": 238,
+          "radiologistId": 238,
+          "studyDate": "2024-12-23",
+          "bodyPart": "Smart Body Part 12",
+          "clinicalIndication": "Automated workflow reducing manual intervention and human error.",
+          "priority": "medium",
+          "status": "active",
+          "findings": "Automated workflow reducing manual intervention and human error.",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "accessionNumber": "Rapid Accession Number 13",
+          "patientId": 286,
+          "modalityId": 286,
+          "radiologistId": 286,
+          "studyDate": "2024-01-25",
+          "bodyPart": "Rapid Body Part 13",
+          "clinicalIndication": "Real-time monitoring system with intelligent alerting capabilities.",
+          "priority": "high",
+          "status": "in_progress",
+          "findings": "Real-time monitoring system with intelligent alerting capabilities.",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "accessionNumber": "Secure Accession Number 14",
+          "patientId": 234,
+          "modalityId": 234,
+          "radiologistId": 234,
+          "studyDate": "2024-02-27",
+          "bodyPart": "Secure Body Part 14",
+          "clinicalIndication": "Customizable module adaptable to diverse operational requirements.",
+          "priority": "critical",
+          "status": "active",
+          "findings": "Customizable module adaptable to diverse operational requirements.",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "accessionNumber": "Modern Accession Number 15",
+          "patientId": 282,
+          "modalityId": 282,
+          "radiologistId": 282,
+          "studyDate": "2024-03-01",
+          "bodyPart": "Modern Body Part 15",
+          "clinicalIndication": "Performance-optimized design achieving superior throughput and reliability.",
+          "priority": "medium",
+          "status": "approved",
+          "findings": "Performance-optimized design achieving superior throughput and reliability.",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "ReportTemplate",
+      "routeKey": "report-templates",
+      "label": "Report Template",
+      "icon": "file-text",
+      "aiFunction": "analyzeReportTemplate",
+      "aiPrompt": "You are an AI analyst for A I Radiology Report Generator. Analyze the provided Report Template data. The data includes: Name, Modality, Body Part, Template Text, Sections, Category, Is Default, Usage Count, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "modality",
+          "label": "Modality",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "bodyPart",
+          "label": "Body Part",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "templateText",
+          "label": "Template Text",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "sections",
+          "label": "Sections",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isDefault",
+          "label": "Is Default",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "usageCount",
+          "label": "Usage Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "modality": "Advanced Modality 1",
+          "bodyPart": "Advanced Body Part 1",
+          "templateText": "Comprehensive solution designed for optimal performance and efficiency.",
+          "sections": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "category": "Category A",
+          "isDefault": true,
+          "usageCount": 114,
+          "status": "active"
+        },
+        {
+          "name": "Premium Name 2",
+          "modality": "Premium Modality 2",
+          "bodyPart": "Premium Body Part 2",
+          "templateText": "Industry-leading approach with proven results across multiple deployments.",
+          "sections": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "category": "Category B",
+          "isDefault": true,
+          "usageCount": 81,
+          "status": "pending"
+        },
+        {
+          "name": "Standard Name 3",
+          "modality": "Standard Modality 3",
+          "bodyPart": "Standard Body Part 3",
+          "templateText": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "sections": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "category": "Category C",
+          "isDefault": false,
+          "usageCount": 165,
+          "status": "in_progress"
+        },
+        {
+          "name": "Elite Name 4",
+          "modality": "Elite Modality 4",
+          "bodyPart": "Elite Body Part 4",
+          "templateText": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "sections": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "category": "Category D",
+          "isDefault": true,
+          "usageCount": 197,
+          "status": "completed"
+        },
+        {
+          "name": "Core Name 5",
+          "modality": "Core Modality 5",
+          "bodyPart": "Core Body Part 5",
+          "templateText": "Cost-effective strategy focused on sustainable long-term growth.",
+          "sections": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "category": "Category E",
+          "isDefault": false,
+          "usageCount": 70,
+          "status": "under_review"
+        },
+        {
+          "name": "Pro Name 6",
+          "modality": "Pro Modality 6",
+          "bodyPart": "Pro Body Part 6",
+          "templateText": "High-priority initiative aligned with organizational strategic objectives.",
+          "sections": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "category": "Premium Tier",
+          "isDefault": true,
+          "usageCount": 228,
+          "status": "approved"
+        },
+        {
+          "name": "Essential Name 7",
+          "modality": "Essential Modality 7",
+          "bodyPart": "Essential Body Part 7",
+          "templateText": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "sections": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "category": "Standard Tier",
+          "isDefault": true,
+          "usageCount": 211,
+          "status": "active"
+        },
+        {
+          "name": "Primary Name 8",
+          "modality": "Primary Modality 8",
+          "bodyPart": "Primary Body Part 8",
+          "templateText": "Innovative framework incorporating best practices and emerging technologies.",
+          "sections": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "category": "Basic Tier",
+          "isDefault": false,
+          "usageCount": 136,
+          "status": "active"
+        },
+        {
+          "name": "Global Name 9",
+          "modality": "Global Modality 9",
+          "bodyPart": "Global Body Part 9",
+          "templateText": "Scalable architecture built to accommodate rapid expansion and change.",
+          "sections": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "category": "Enterprise",
+          "isDefault": true,
+          "usageCount": 80,
+          "status": "active"
+        },
+        {
+          "name": "Regional Name 10",
+          "modality": "Regional Modality 10",
+          "bodyPart": "Regional Body Part 10",
+          "templateText": "Enterprise-grade solution with robust security and compliance features.",
+          "sections": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "category": "Starter",
+          "isDefault": true,
+          "usageCount": 96,
+          "status": "pending"
+        },
+        {
+          "name": "Custom Name 11",
+          "modality": "Custom Modality 11",
+          "bodyPart": "Custom Body Part 11",
+          "templateText": "Integrated platform connecting multiple systems for seamless operations.",
+          "sections": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "category": "Growth",
+          "isDefault": false,
+          "usageCount": 260,
+          "status": "completed"
+        },
+        {
+          "name": "Smart Name 12",
+          "modality": "Smart Modality 12",
+          "bodyPart": "Smart Body Part 12",
+          "templateText": "Automated workflow reducing manual intervention and human error.",
+          "sections": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "category": "Scale",
+          "isDefault": true,
+          "usageCount": 213,
+          "status": "active"
+        },
+        {
+          "name": "Rapid Name 13",
+          "modality": "Rapid Modality 13",
+          "bodyPart": "Rapid Body Part 13",
+          "templateText": "Real-time monitoring system with intelligent alerting capabilities.",
+          "sections": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "category": "Foundation",
+          "isDefault": false,
+          "usageCount": 108,
+          "status": "in_progress"
+        },
+        {
+          "name": "Secure Name 14",
+          "modality": "Secure Modality 14",
+          "bodyPart": "Secure Body Part 14",
+          "templateText": "Customizable module adaptable to diverse operational requirements.",
+          "sections": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "category": "Advanced",
+          "isDefault": true,
+          "usageCount": 289,
+          "status": "active"
+        },
+        {
+          "name": "Modern Name 15",
+          "modality": "Modern Modality 15",
+          "bodyPart": "Modern Body Part 15",
+          "templateText": "Performance-optimized design achieving superior throughput and reliability.",
+          "sections": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "category": "Professional",
+          "isDefault": true,
+          "usageCount": 288,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Report",
+      "routeKey": "reports",
+      "label": "Report",
+      "icon": "heart",
+      "aiFunction": "analyzeReport",
+      "aiPrompt": "You are an AI analyst for A I Radiology Report Generator. Analyze the provided Report data. The data includes: Study Id, Radiologist Id, Template Id, Content, Impression, Findings, Recommendations, Critical Finding, Ai Generated, Ai Confidence, Status, Signed At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "studyId",
+          "label": "Study Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "radiologistId",
+          "label": "Radiologist Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "templateId",
+          "label": "Template Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "impression",
+          "label": "Impression",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "findings",
+          "label": "Findings",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "recommendations",
+          "label": "Recommendations",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "criticalFinding",
+          "label": "Critical Finding",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "aiGenerated",
+          "label": "Ai Generated",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "aiConfidence",
+          "label": "Ai Confidence",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "signedAt",
+          "label": "Signed At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "studyId": 10,
+          "radiologistId": 10,
+          "templateId": 10,
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "impression": "Comprehensive solution designed for optimal performance and efficiency.",
+          "findings": "Comprehensive solution designed for optimal performance and efficiency.",
+          "recommendations": "Comprehensive solution designed for optimal performance and efficiency.",
+          "criticalFinding": true,
+          "aiGenerated": true,
+          "aiConfidence": 10,
+          "status": "active",
+          "signedAt": "2024-01-01"
+        },
+        {
+          "studyId": 58,
+          "radiologistId": 58,
+          "templateId": 58,
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "impression": "Industry-leading approach with proven results across multiple deployments.",
+          "findings": "Industry-leading approach with proven results across multiple deployments.",
+          "recommendations": "Industry-leading approach with proven results across multiple deployments.",
+          "criticalFinding": true,
+          "aiGenerated": true,
+          "aiConfidence": 71.7,
+          "status": "pending",
+          "signedAt": "2024-02-03"
+        },
+        {
+          "studyId": 106,
+          "radiologistId": 106,
+          "templateId": 106,
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "impression": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "findings": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "recommendations": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "criticalFinding": false,
+          "aiGenerated": false,
+          "aiConfidence": 33.4,
+          "status": "in_progress",
+          "signedAt": "2024-03-05"
+        },
+        {
+          "studyId": 154,
+          "radiologistId": 154,
+          "templateId": 154,
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "impression": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "findings": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "recommendations": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "criticalFinding": true,
+          "aiGenerated": true,
+          "aiConfidence": 95.1,
+          "status": "completed",
+          "signedAt": "2024-04-07"
+        },
+        {
+          "studyId": 102,
+          "radiologistId": 102,
+          "templateId": 102,
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "impression": "Cost-effective strategy focused on sustainable long-term growth.",
+          "findings": "Cost-effective strategy focused on sustainable long-term growth.",
+          "recommendations": "Cost-effective strategy focused on sustainable long-term growth.",
+          "criticalFinding": false,
+          "aiGenerated": false,
+          "aiConfidence": 56.8,
+          "status": "under_review",
+          "signedAt": "2024-05-09"
+        },
+        {
+          "studyId": 150,
+          "radiologistId": 150,
+          "templateId": 150,
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "impression": "High-priority initiative aligned with organizational strategic objectives.",
+          "findings": "High-priority initiative aligned with organizational strategic objectives.",
+          "recommendations": "High-priority initiative aligned with organizational strategic objectives.",
+          "criticalFinding": true,
+          "aiGenerated": true,
+          "aiConfidence": 118.5,
+          "status": "approved",
+          "signedAt": "2024-06-11"
+        },
+        {
+          "studyId": 198,
+          "radiologistId": 198,
+          "templateId": 198,
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "impression": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "findings": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "recommendations": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "criticalFinding": true,
+          "aiGenerated": true,
+          "aiConfidence": 80.2,
+          "status": "active",
+          "signedAt": "2024-07-13"
+        },
+        {
+          "studyId": 146,
+          "radiologistId": 146,
+          "templateId": 146,
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "impression": "Innovative framework incorporating best practices and emerging technologies.",
+          "findings": "Innovative framework incorporating best practices and emerging technologies.",
+          "recommendations": "Innovative framework incorporating best practices and emerging technologies.",
+          "criticalFinding": false,
+          "aiGenerated": false,
+          "aiConfidence": 141.9,
+          "status": "active",
+          "signedAt": "2024-08-15"
+        },
+        {
+          "studyId": 194,
+          "radiologistId": 194,
+          "templateId": 194,
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "impression": "Scalable architecture built to accommodate rapid expansion and change.",
+          "findings": "Scalable architecture built to accommodate rapid expansion and change.",
+          "recommendations": "Scalable architecture built to accommodate rapid expansion and change.",
+          "criticalFinding": true,
+          "aiGenerated": true,
+          "aiConfidence": 103.6,
+          "status": "active",
+          "signedAt": "2024-09-17"
+        },
+        {
+          "studyId": 242,
+          "radiologistId": 242,
+          "templateId": 242,
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "impression": "Enterprise-grade solution with robust security and compliance features.",
+          "findings": "Enterprise-grade solution with robust security and compliance features.",
+          "recommendations": "Enterprise-grade solution with robust security and compliance features.",
+          "criticalFinding": true,
+          "aiGenerated": true,
+          "aiConfidence": 165.3,
+          "status": "pending",
+          "signedAt": "2024-10-19"
+        },
+        {
+          "studyId": 190,
+          "radiologistId": 190,
+          "templateId": 190,
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "impression": "Integrated platform connecting multiple systems for seamless operations.",
+          "findings": "Integrated platform connecting multiple systems for seamless operations.",
+          "recommendations": "Integrated platform connecting multiple systems for seamless operations.",
+          "criticalFinding": false,
+          "aiGenerated": false,
+          "aiConfidence": 127,
+          "status": "completed",
+          "signedAt": "2024-11-21"
+        },
+        {
+          "studyId": 238,
+          "radiologistId": 238,
+          "templateId": 238,
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "impression": "Automated workflow reducing manual intervention and human error.",
+          "findings": "Automated workflow reducing manual intervention and human error.",
+          "recommendations": "Automated workflow reducing manual intervention and human error.",
+          "criticalFinding": true,
+          "aiGenerated": true,
+          "aiConfidence": 188.7,
+          "status": "active",
+          "signedAt": "2024-12-23"
+        },
+        {
+          "studyId": 286,
+          "radiologistId": 286,
+          "templateId": 286,
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "impression": "Real-time monitoring system with intelligent alerting capabilities.",
+          "findings": "Real-time monitoring system with intelligent alerting capabilities.",
+          "recommendations": "Real-time monitoring system with intelligent alerting capabilities.",
+          "criticalFinding": false,
+          "aiGenerated": false,
+          "aiConfidence": 150.4,
+          "status": "in_progress",
+          "signedAt": "2024-01-25"
+        },
+        {
+          "studyId": 234,
+          "radiologistId": 234,
+          "templateId": 234,
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "impression": "Customizable module adaptable to diverse operational requirements.",
+          "findings": "Customizable module adaptable to diverse operational requirements.",
+          "recommendations": "Customizable module adaptable to diverse operational requirements.",
+          "criticalFinding": true,
+          "aiGenerated": true,
+          "aiConfidence": 212.1,
+          "status": "active",
+          "signedAt": "2024-02-27"
+        },
+        {
+          "studyId": 282,
+          "radiologistId": 282,
+          "templateId": 282,
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "impression": "Performance-optimized design achieving superior throughput and reliability.",
+          "findings": "Performance-optimized design achieving superior throughput and reliability.",
+          "recommendations": "Performance-optimized design achieving superior throughput and reliability.",
+          "criticalFinding": true,
+          "aiGenerated": true,
+          "aiConfidence": 173.8,
+          "status": "approved",
+          "signedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "BillingCode",
+      "routeKey": "billing-codes",
+      "label": "Billing Code",
+      "icon": "layers",
+      "aiFunction": "analyzeBillingCode",
+      "aiPrompt": "You are an AI analyst for A I Radiology Report Generator. Analyze the provided Billing Code data. The data includes: Cpt Code, Description, Modality, Body Part, Base Price, Rvu, Category, Requires Contrast, Professional Component, Technical Component, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "cptCode",
+          "label": "Cpt Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "modality",
+          "label": "Modality",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "bodyPart",
+          "label": "Body Part",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "basePrice",
+          "label": "Base Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "rvu",
+          "label": "Rvu",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "requiresContrast",
+          "label": "Requires Contrast",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "professionalComponent",
+          "label": "Professional Component",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "technicalComponent",
+          "label": "Technical Component",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "cptCode": "Advanced Cpt Code 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "modality": "Advanced Modality 1",
+          "bodyPart": "Advanced Body Part 1",
+          "basePrice": 500,
+          "rvu": 10,
+          "category": "Category A",
+          "requiresContrast": true,
+          "professionalComponent": 10,
+          "technicalComponent": 10,
+          "status": "active"
+        },
+        {
+          "cptCode": "Premium Cpt Code 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "modality": "Premium Modality 2",
+          "bodyPart": "Premium Body Part 2",
+          "basePrice": 2481,
+          "rvu": 71.7,
+          "category": "Category B",
+          "requiresContrast": true,
+          "professionalComponent": 71.7,
+          "technicalComponent": 71.7,
+          "status": "pending"
+        },
+        {
+          "cptCode": "Standard Cpt Code 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "modality": "Standard Modality 3",
+          "bodyPart": "Standard Body Part 3",
+          "basePrice": 4462,
+          "rvu": 33.4,
+          "category": "Category C",
+          "requiresContrast": false,
+          "professionalComponent": 33.4,
+          "technicalComponent": 33.4,
+          "status": "in_progress"
+        },
+        {
+          "cptCode": "Elite Cpt Code 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "modality": "Elite Modality 4",
+          "bodyPart": "Elite Body Part 4",
+          "basePrice": 6443,
+          "rvu": 95.1,
+          "category": "Category D",
+          "requiresContrast": true,
+          "professionalComponent": 95.1,
+          "technicalComponent": 95.1,
+          "status": "completed"
+        },
+        {
+          "cptCode": "Core Cpt Code 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "modality": "Core Modality 5",
+          "bodyPart": "Core Body Part 5",
+          "basePrice": 8424,
+          "rvu": 56.8,
+          "category": "Category E",
+          "requiresContrast": false,
+          "professionalComponent": 56.8,
+          "technicalComponent": 56.8,
+          "status": "under_review"
+        },
+        {
+          "cptCode": "Pro Cpt Code 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "modality": "Pro Modality 6",
+          "bodyPart": "Pro Body Part 6",
+          "basePrice": 10405,
+          "rvu": 118.5,
+          "category": "Premium Tier",
+          "requiresContrast": true,
+          "professionalComponent": 118.5,
+          "technicalComponent": 118.5,
+          "status": "approved"
+        },
+        {
+          "cptCode": "Essential Cpt Code 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "modality": "Essential Modality 7",
+          "bodyPart": "Essential Body Part 7",
+          "basePrice": 12386,
+          "rvu": 80.2,
+          "category": "Standard Tier",
+          "requiresContrast": true,
+          "professionalComponent": 80.2,
+          "technicalComponent": 80.2,
+          "status": "active"
+        },
+        {
+          "cptCode": "Primary Cpt Code 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "modality": "Primary Modality 8",
+          "bodyPart": "Primary Body Part 8",
+          "basePrice": 9367,
+          "rvu": 141.9,
+          "category": "Basic Tier",
+          "requiresContrast": false,
+          "professionalComponent": 141.9,
+          "technicalComponent": 141.9,
+          "status": "active"
+        },
+        {
+          "cptCode": "Global Cpt Code 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "modality": "Global Modality 9",
+          "bodyPart": "Global Body Part 9",
+          "basePrice": 11348,
+          "rvu": 103.6,
+          "category": "Enterprise",
+          "requiresContrast": true,
+          "professionalComponent": 103.6,
+          "technicalComponent": 103.6,
+          "status": "active"
+        },
+        {
+          "cptCode": "Regional Cpt Code 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "modality": "Regional Modality 10",
+          "bodyPart": "Regional Body Part 10",
+          "basePrice": 13329,
+          "rvu": 165.3,
+          "category": "Starter",
+          "requiresContrast": true,
+          "professionalComponent": 165.3,
+          "technicalComponent": 165.3,
+          "status": "pending"
+        },
+        {
+          "cptCode": "Custom Cpt Code 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "modality": "Custom Modality 11",
+          "bodyPart": "Custom Body Part 11",
+          "basePrice": 15310,
+          "rvu": 127,
+          "category": "Growth",
+          "requiresContrast": false,
+          "professionalComponent": 127,
+          "technicalComponent": 127,
+          "status": "completed"
+        },
+        {
+          "cptCode": "Smart Cpt Code 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "modality": "Smart Modality 12",
+          "bodyPart": "Smart Body Part 12",
+          "basePrice": 17291,
+          "rvu": 188.7,
+          "category": "Scale",
+          "requiresContrast": true,
+          "professionalComponent": 188.7,
+          "technicalComponent": 188.7,
+          "status": "active"
+        },
+        {
+          "cptCode": "Rapid Cpt Code 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "modality": "Rapid Modality 13",
+          "bodyPart": "Rapid Body Part 13",
+          "basePrice": 19272,
+          "rvu": 150.4,
+          "category": "Foundation",
+          "requiresContrast": false,
+          "professionalComponent": 150.4,
+          "technicalComponent": 150.4,
+          "status": "in_progress"
+        },
+        {
+          "cptCode": "Secure Cpt Code 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "modality": "Secure Modality 14",
+          "bodyPart": "Secure Body Part 14",
+          "basePrice": 21253,
+          "rvu": 212.1,
+          "category": "Advanced",
+          "requiresContrast": true,
+          "professionalComponent": 212.1,
+          "technicalComponent": 212.1,
+          "status": "active"
+        },
+        {
+          "cptCode": "Modern Cpt Code 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "modality": "Modern Modality 15",
+          "bodyPart": "Modern Body Part 15",
+          "basePrice": 18234,
+          "rvu": 173.8,
+          "category": "Professional",
+          "requiresContrast": true,
+          "professionalComponent": 173.8,
+          "technicalComponent": 173.8,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "AuditLog",
+      "routeKey": "audit-logs",
+      "label": "Audit Log",
+      "icon": "map-pin",
+      "aiFunction": "analyzeAuditLog",
+      "aiPrompt": "You are an AI analyst for A I Radiology Report Generator. Analyze the provided Audit Log data. The data includes: User Id, Action, Entity Type, Entity Id, Details, Ip Address. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "details",
+          "label": "Details",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "ipAddress",
+          "label": "Ip Address",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "action": "Advanced Action 1",
+          "entityType": "Category A",
+          "entityId": 10,
+          "details": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "ipAddress": "New York"
+        },
+        {
+          "userId": 58,
+          "action": "Premium Action 2",
+          "entityType": "Category B",
+          "entityId": 58,
+          "details": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "ipAddress": "Los Angeles"
+        },
+        {
+          "userId": 106,
+          "action": "Standard Action 3",
+          "entityType": "Category C",
+          "entityId": 106,
+          "details": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "ipAddress": "Chicago"
+        },
+        {
+          "userId": 154,
+          "action": "Elite Action 4",
+          "entityType": "Category D",
+          "entityId": 154,
+          "details": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "ipAddress": "Houston"
+        },
+        {
+          "userId": 102,
+          "action": "Core Action 5",
+          "entityType": "Category E",
+          "entityId": 102,
+          "details": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "ipAddress": "Phoenix"
+        },
+        {
+          "userId": 150,
+          "action": "Pro Action 6",
+          "entityType": "Premium Tier",
+          "entityId": 150,
+          "details": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "ipAddress": "San Francisco"
+        },
+        {
+          "userId": 198,
+          "action": "Essential Action 7",
+          "entityType": "Standard Tier",
+          "entityId": 198,
+          "details": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "ipAddress": "Seattle"
+        },
+        {
+          "userId": 146,
+          "action": "Primary Action 8",
+          "entityType": "Basic Tier",
+          "entityId": 146,
+          "details": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "ipAddress": "Boston"
+        },
+        {
+          "userId": 194,
+          "action": "Global Action 9",
+          "entityType": "Enterprise",
+          "entityId": 194,
+          "details": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "ipAddress": "Denver"
+        },
+        {
+          "userId": 242,
+          "action": "Regional Action 10",
+          "entityType": "Starter",
+          "entityId": 242,
+          "details": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "ipAddress": "Miami"
+        },
+        {
+          "userId": 190,
+          "action": "Custom Action 11",
+          "entityType": "Growth",
+          "entityId": 190,
+          "details": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "ipAddress": "Austin"
+        },
+        {
+          "userId": 238,
+          "action": "Smart Action 12",
+          "entityType": "Scale",
+          "entityId": 238,
+          "details": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "ipAddress": "Portland"
+        },
+        {
+          "userId": 286,
+          "action": "Rapid Action 13",
+          "entityType": "Foundation",
+          "entityId": 286,
+          "details": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "ipAddress": "Dallas"
+        },
+        {
+          "userId": 234,
+          "action": "Secure Action 14",
+          "entityType": "Advanced",
+          "entityId": 234,
+          "details": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "ipAddress": "Atlanta"
+        },
+        {
+          "userId": 282,
+          "action": "Modern Action 15",
+          "entityType": "Professional",
+          "entityId": 282,
+          "details": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "ipAddress": "Nashville"
+        }
+      ]
+    }
+  ]
+}

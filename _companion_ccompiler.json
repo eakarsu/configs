@@ -1,0 +1,910 @@
+{
+  "appName": "AI Compiler Tools",
+  "dbName": "ai_compiler_tools",
+  "folderName": "generated/ccompiler",
+  "features": [
+    {
+      "modelName": "CompilationJob",
+      "label": "Compilation Jobs",
+      "icon": "cpu",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Job Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sourceFile",
+          "label": "Source File",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "targetArch",
+          "label": "Target Arch",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "optimizationLevel",
+          "label": "Opt Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "errorCount",
+          "label": "Errors",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "warningCount",
+          "label": "Warnings",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "compiledDate",
+          "label": "Compiled Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "output",
+          "label": "Output",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "routeKey": "compilationJobs",
+      "aiFunction": "analyzeCompilationJob",
+      "aiPrompt": "You are an AI analyst for AI Compiler Tools. Analyze the provided Compilation Jobs data. The data includes: Job Name, Source File, Target Arch, Opt Level, Status, Errors, Warnings, Compiled Date, Output. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "name": "Alpha Job Name",
+          "sourceFile": "Alpha Source File",
+          "targetArch": "Alpha Target Arch",
+          "optimizationLevel": "Alpha Opt Level",
+          "status": "Active",
+          "errorCount": 896,
+          "warningCount": 736,
+          "compiledDate": "2026-07-20",
+          "output": "Alpha output — detailed content for enterprise use case."
+        },
+        {
+          "name": "Beta Job Name",
+          "sourceFile": "Beta Source File",
+          "targetArch": "Beta Target Arch",
+          "optimizationLevel": "Beta Opt Level",
+          "status": "Pending",
+          "errorCount": 148,
+          "warningCount": 866,
+          "compiledDate": "2026-05-01",
+          "output": "Beta output — detailed content for startup use case."
+        },
+        {
+          "name": "Gamma Job Name",
+          "sourceFile": "Gamma Source File",
+          "targetArch": "Gamma Target Arch",
+          "optimizationLevel": "Gamma Opt Level",
+          "status": "Review",
+          "errorCount": 570,
+          "warningCount": 507,
+          "compiledDate": "2026-06-07",
+          "output": "Gamma output — detailed content for smb use case."
+        },
+        {
+          "name": "Delta Job Name",
+          "sourceFile": "Delta Source File",
+          "targetArch": "Delta Target Arch",
+          "optimizationLevel": "Delta Opt Level",
+          "status": "Approved",
+          "errorCount": 758,
+          "warningCount": 72,
+          "compiledDate": "2026-05-12",
+          "output": "Delta output — detailed content for agency use case."
+        },
+        {
+          "name": "Epsilon Job Name",
+          "sourceFile": "Epsilon Source File",
+          "targetArch": "Epsilon Target Arch",
+          "optimizationLevel": "Epsilon Opt Level",
+          "status": "Draft",
+          "errorCount": 370,
+          "warningCount": 811,
+          "compiledDate": "2026-10-18",
+          "output": "Epsilon output — detailed content for freelancer use case."
+        },
+        {
+          "name": "Zeta Job Name",
+          "sourceFile": "Zeta Source File",
+          "targetArch": "Zeta Target Arch",
+          "optimizationLevel": "Zeta Opt Level",
+          "status": "Live",
+          "errorCount": 451,
+          "warningCount": 211,
+          "compiledDate": "2026-06-13",
+          "output": "Zeta output — detailed content for government use case."
+        },
+        {
+          "name": "Eta Job Name",
+          "sourceFile": "Eta Source File",
+          "targetArch": "Eta Target Arch",
+          "optimizationLevel": "Eta Opt Level",
+          "status": "Paused",
+          "errorCount": 602,
+          "warningCount": 992,
+          "compiledDate": "2026-01-21",
+          "output": "Eta output — detailed content for nonprofit use case."
+        },
+        {
+          "name": "Theta Job Name",
+          "sourceFile": "Theta Source File",
+          "targetArch": "Theta Target Arch",
+          "optimizationLevel": "Theta Opt Level",
+          "status": "Archived",
+          "errorCount": 333,
+          "warningCount": 368,
+          "compiledDate": "2026-01-28",
+          "output": "Theta output — detailed content for healthcare use case."
+        },
+        {
+          "name": "Iota Job Name",
+          "sourceFile": "Iota Source File",
+          "targetArch": "Iota Target Arch",
+          "optimizationLevel": "Iota Opt Level",
+          "status": "Beta",
+          "errorCount": 612,
+          "warningCount": 86,
+          "compiledDate": "2026-09-04",
+          "output": "Iota output — detailed content for finance use case."
+        },
+        {
+          "name": "Kappa Job Name",
+          "sourceFile": "Kappa Source File",
+          "targetArch": "Kappa Target Arch",
+          "optimizationLevel": "Kappa Opt Level",
+          "status": "GA",
+          "errorCount": 465,
+          "warningCount": 298,
+          "compiledDate": "2026-09-04",
+          "output": "Kappa output — detailed content for education use case."
+        },
+        {
+          "name": "Lambda Job Name",
+          "sourceFile": "Lambda Source File",
+          "targetArch": "Lambda Target Arch",
+          "optimizationLevel": "Lambda Opt Level",
+          "status": "Completed",
+          "errorCount": 172,
+          "warningCount": 333,
+          "compiledDate": "2026-09-06",
+          "output": "Lambda output — detailed content for retail use case."
+        },
+        {
+          "name": "Mu Job Name",
+          "sourceFile": "Mu Source File",
+          "targetArch": "Mu Target Arch",
+          "optimizationLevel": "Mu Opt Level",
+          "status": "In Progress",
+          "errorCount": 769,
+          "warningCount": 422,
+          "compiledDate": "2026-09-20",
+          "output": "Mu output — detailed content for tech use case."
+        },
+        {
+          "name": "Nu Job Name",
+          "sourceFile": "Nu Source File",
+          "targetArch": "Nu Target Arch",
+          "optimizationLevel": "Nu Opt Level",
+          "status": "Scheduled",
+          "errorCount": 130,
+          "warningCount": 595,
+          "compiledDate": "2026-09-15",
+          "output": "Nu output — detailed content for legal use case."
+        },
+        {
+          "name": "Xi Job Name",
+          "sourceFile": "Xi Source File",
+          "targetArch": "Xi Target Arch",
+          "optimizationLevel": "Xi Opt Level",
+          "status": "Failed",
+          "errorCount": 179,
+          "warningCount": 955,
+          "compiledDate": "2026-02-09",
+          "output": "Xi output — detailed content for real estate use case."
+        },
+        {
+          "name": "Omicron Job Name",
+          "sourceFile": "Omicron Source File",
+          "targetArch": "Omicron Target Arch",
+          "optimizationLevel": "Omicron Opt Level",
+          "status": "Cancelled",
+          "errorCount": 53,
+          "warningCount": 815,
+          "compiledDate": "2026-07-14",
+          "output": "Omicron output — detailed content for manufacturing use case."
+        }
+      ]
+    },
+    {
+      "modelName": "OptimizationPass",
+      "label": "Optimization Passes",
+      "icon": "zap",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Pass Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "executionTimeMs",
+          "label": "Exec Time (ms)",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "improvementPercent",
+          "label": "Improvement %",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "isEnabled",
+          "label": "Enabled",
+          "type": "BOOLEAN",
+          "formType": "checkbox"
+        }
+      ],
+      "routeKey": "optimizationPasss",
+      "aiFunction": "analyzeOptimizationPass",
+      "aiPrompt": "You are an AI analyst for AI Compiler Tools. Analyze the provided Optimization Passes data. The data includes: Pass Name, Type, Description, Exec Time (ms), Improvement %, Enabled. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "name": "Alpha Pass Name",
+          "type": "Alpha Type",
+          "description": "Alpha description — detailed content for enterprise use case.",
+          "executionTimeMs": 101,
+          "improvementPercent": 331.91,
+          "isEnabled": true
+        },
+        {
+          "name": "Beta Pass Name",
+          "type": "Beta Type",
+          "description": "Beta description — detailed content for startup use case.",
+          "executionTimeMs": 819,
+          "improvementPercent": 508.36,
+          "isEnabled": false
+        },
+        {
+          "name": "Gamma Pass Name",
+          "type": "Gamma Type",
+          "description": "Gamma description — detailed content for smb use case.",
+          "executionTimeMs": 747,
+          "improvementPercent": 392.23,
+          "isEnabled": true
+        },
+        {
+          "name": "Delta Pass Name",
+          "type": "Delta Type",
+          "description": "Delta description — detailed content for agency use case.",
+          "executionTimeMs": 605,
+          "improvementPercent": 365.7,
+          "isEnabled": false
+        },
+        {
+          "name": "Epsilon Pass Name",
+          "type": "Epsilon Type",
+          "description": "Epsilon description — detailed content for freelancer use case.",
+          "executionTimeMs": 605,
+          "improvementPercent": 2.44,
+          "isEnabled": true
+        },
+        {
+          "name": "Zeta Pass Name",
+          "type": "Zeta Type",
+          "description": "Zeta description — detailed content for government use case.",
+          "executionTimeMs": 659,
+          "improvementPercent": 148.59,
+          "isEnabled": false
+        },
+        {
+          "name": "Eta Pass Name",
+          "type": "Eta Type",
+          "description": "Eta description — detailed content for nonprofit use case.",
+          "executionTimeMs": 198,
+          "improvementPercent": 903.73,
+          "isEnabled": true
+        },
+        {
+          "name": "Theta Pass Name",
+          "type": "Theta Type",
+          "description": "Theta description — detailed content for healthcare use case.",
+          "executionTimeMs": 621,
+          "improvementPercent": 893.19,
+          "isEnabled": false
+        },
+        {
+          "name": "Iota Pass Name",
+          "type": "Iota Type",
+          "description": "Iota description — detailed content for finance use case.",
+          "executionTimeMs": 301,
+          "improvementPercent": 923.84,
+          "isEnabled": true
+        },
+        {
+          "name": "Kappa Pass Name",
+          "type": "Kappa Type",
+          "description": "Kappa description — detailed content for education use case.",
+          "executionTimeMs": 630,
+          "improvementPercent": 864.04,
+          "isEnabled": false
+        },
+        {
+          "name": "Lambda Pass Name",
+          "type": "Lambda Type",
+          "description": "Lambda description — detailed content for retail use case.",
+          "executionTimeMs": 76,
+          "improvementPercent": 520.89,
+          "isEnabled": true
+        },
+        {
+          "name": "Mu Pass Name",
+          "type": "Mu Type",
+          "description": "Mu description — detailed content for tech use case.",
+          "executionTimeMs": 600,
+          "improvementPercent": 297.92,
+          "isEnabled": false
+        },
+        {
+          "name": "Nu Pass Name",
+          "type": "Nu Type",
+          "description": "Nu description — detailed content for legal use case.",
+          "executionTimeMs": 23,
+          "improvementPercent": 300.98,
+          "isEnabled": true
+        },
+        {
+          "name": "Xi Pass Name",
+          "type": "Xi Type",
+          "description": "Xi description — detailed content for real estate use case.",
+          "executionTimeMs": 864,
+          "improvementPercent": 920.77,
+          "isEnabled": false
+        },
+        {
+          "name": "Omicron Pass Name",
+          "type": "Omicron Type",
+          "description": "Omicron description — detailed content for manufacturing use case.",
+          "executionTimeMs": 177,
+          "improvementPercent": 962.48,
+          "isEnabled": true
+        }
+      ]
+    },
+    {
+      "modelName": "SourceAnalysis",
+      "label": "Source Analysis",
+      "icon": "search",
+      "fields": [
+        {
+          "key": "fileName",
+          "label": "File Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "language",
+          "label": "Language",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lineCount",
+          "label": "Lines",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "functionCount",
+          "label": "Functions",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "complexity",
+          "label": "Complexity",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "issues",
+          "label": "Issues",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "analyzedDate",
+          "label": "Analyzed Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "sourceAnalysiss",
+      "aiFunction": "analyzeSourceAnalysis",
+      "aiPrompt": "You are an AI analyst for AI Compiler Tools. Analyze the provided Source Analysis data. The data includes: File Name, Language, Lines, Functions, Complexity, Issues, Analyzed Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "fileName": "Alpha File Name",
+          "language": "Alpha Language",
+          "lineCount": 65,
+          "functionCount": 595,
+          "complexity": 977.84,
+          "issues": "Alpha issues — detailed content for enterprise use case.",
+          "analyzedDate": "2026-08-22"
+        },
+        {
+          "fileName": "Beta File Name",
+          "language": "Beta Language",
+          "lineCount": 625,
+          "functionCount": 985,
+          "complexity": 536.13,
+          "issues": "Beta issues — detailed content for startup use case.",
+          "analyzedDate": "2026-03-10"
+        },
+        {
+          "fileName": "Gamma File Name",
+          "language": "Gamma Language",
+          "lineCount": 410,
+          "functionCount": 678,
+          "complexity": 533.64,
+          "issues": "Gamma issues — detailed content for smb use case.",
+          "analyzedDate": "2026-11-03"
+        },
+        {
+          "fileName": "Delta File Name",
+          "language": "Delta Language",
+          "lineCount": 611,
+          "functionCount": 831,
+          "complexity": 224.67,
+          "issues": "Delta issues — detailed content for agency use case.",
+          "analyzedDate": "2026-12-24"
+        },
+        {
+          "fileName": "Epsilon File Name",
+          "language": "Epsilon Language",
+          "lineCount": 691,
+          "functionCount": 477,
+          "complexity": 987.49,
+          "issues": "Epsilon issues — detailed content for freelancer use case.",
+          "analyzedDate": "2026-12-24"
+        },
+        {
+          "fileName": "Zeta File Name",
+          "language": "Zeta Language",
+          "lineCount": 977,
+          "functionCount": 732,
+          "complexity": 296.87,
+          "issues": "Zeta issues — detailed content for government use case.",
+          "analyzedDate": "2026-03-11"
+        },
+        {
+          "fileName": "Eta File Name",
+          "language": "Eta Language",
+          "lineCount": 197,
+          "functionCount": 574,
+          "complexity": 350.29,
+          "issues": "Eta issues — detailed content for nonprofit use case.",
+          "analyzedDate": "2026-11-26"
+        },
+        {
+          "fileName": "Theta File Name",
+          "language": "Theta Language",
+          "lineCount": 585,
+          "functionCount": 632,
+          "complexity": 659.82,
+          "issues": "Theta issues — detailed content for healthcare use case.",
+          "analyzedDate": "2026-11-18"
+        },
+        {
+          "fileName": "Iota File Name",
+          "language": "Iota Language",
+          "lineCount": 499,
+          "functionCount": 271,
+          "complexity": 351.09,
+          "issues": "Iota issues — detailed content for finance use case.",
+          "analyzedDate": "2026-05-08"
+        },
+        {
+          "fileName": "Kappa File Name",
+          "language": "Kappa Language",
+          "lineCount": 799,
+          "functionCount": 651,
+          "complexity": 47.32,
+          "issues": "Kappa issues — detailed content for education use case.",
+          "analyzedDate": "2026-12-04"
+        },
+        {
+          "fileName": "Lambda File Name",
+          "language": "Lambda Language",
+          "lineCount": 630,
+          "functionCount": 888,
+          "complexity": 408.41,
+          "issues": "Lambda issues — detailed content for retail use case.",
+          "analyzedDate": "2026-09-14"
+        },
+        {
+          "fileName": "Mu File Name",
+          "language": "Mu Language",
+          "lineCount": 887,
+          "functionCount": 113,
+          "complexity": 444.54,
+          "issues": "Mu issues — detailed content for tech use case.",
+          "analyzedDate": "2026-07-10"
+        },
+        {
+          "fileName": "Nu File Name",
+          "language": "Nu Language",
+          "lineCount": 676,
+          "functionCount": 812,
+          "complexity": 518.88,
+          "issues": "Nu issues — detailed content for legal use case.",
+          "analyzedDate": "2026-11-01"
+        },
+        {
+          "fileName": "Xi File Name",
+          "language": "Xi Language",
+          "lineCount": 356,
+          "functionCount": 666,
+          "complexity": 311.04,
+          "issues": "Xi issues — detailed content for real estate use case.",
+          "analyzedDate": "2026-09-24"
+        },
+        {
+          "fileName": "Omicron File Name",
+          "language": "Omicron Language",
+          "lineCount": 777,
+          "functionCount": 339,
+          "complexity": 801.31,
+          "issues": "Omicron issues — detailed content for manufacturing use case.",
+          "analyzedDate": "2026-12-28"
+        }
+      ]
+    },
+    {
+      "modelName": "BuildTarget",
+      "label": "Build Targets",
+      "icon": "package",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "architecture",
+          "label": "Architecture",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "outputFormat",
+          "label": "Output Format",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "flags",
+          "label": "Flags",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isDefault",
+          "label": "Default",
+          "type": "BOOLEAN",
+          "formType": "checkbox"
+        }
+      ],
+      "routeKey": "buildTargets",
+      "aiFunction": "analyzeBuildTarget",
+      "aiPrompt": "You are an AI analyst for AI Compiler Tools. Analyze the provided Build Targets data. The data includes: Name, Architecture, Output Format, Flags, Default. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "architecture": "Alpha Architecture",
+          "outputFormat": "Alpha Output Format",
+          "flags": "Alpha Flags",
+          "isDefault": true
+        },
+        {
+          "name": "Beta Name",
+          "architecture": "Beta Architecture",
+          "outputFormat": "Beta Output Format",
+          "flags": "Beta Flags",
+          "isDefault": false
+        },
+        {
+          "name": "Gamma Name",
+          "architecture": "Gamma Architecture",
+          "outputFormat": "Gamma Output Format",
+          "flags": "Gamma Flags",
+          "isDefault": true
+        },
+        {
+          "name": "Delta Name",
+          "architecture": "Delta Architecture",
+          "outputFormat": "Delta Output Format",
+          "flags": "Delta Flags",
+          "isDefault": false
+        },
+        {
+          "name": "Epsilon Name",
+          "architecture": "Epsilon Architecture",
+          "outputFormat": "Epsilon Output Format",
+          "flags": "Epsilon Flags",
+          "isDefault": true
+        },
+        {
+          "name": "Zeta Name",
+          "architecture": "Zeta Architecture",
+          "outputFormat": "Zeta Output Format",
+          "flags": "Zeta Flags",
+          "isDefault": false
+        },
+        {
+          "name": "Eta Name",
+          "architecture": "Eta Architecture",
+          "outputFormat": "Eta Output Format",
+          "flags": "Eta Flags",
+          "isDefault": true
+        },
+        {
+          "name": "Theta Name",
+          "architecture": "Theta Architecture",
+          "outputFormat": "Theta Output Format",
+          "flags": "Theta Flags",
+          "isDefault": false
+        },
+        {
+          "name": "Iota Name",
+          "architecture": "Iota Architecture",
+          "outputFormat": "Iota Output Format",
+          "flags": "Iota Flags",
+          "isDefault": true
+        },
+        {
+          "name": "Kappa Name",
+          "architecture": "Kappa Architecture",
+          "outputFormat": "Kappa Output Format",
+          "flags": "Kappa Flags",
+          "isDefault": false
+        },
+        {
+          "name": "Lambda Name",
+          "architecture": "Lambda Architecture",
+          "outputFormat": "Lambda Output Format",
+          "flags": "Lambda Flags",
+          "isDefault": true
+        },
+        {
+          "name": "Mu Name",
+          "architecture": "Mu Architecture",
+          "outputFormat": "Mu Output Format",
+          "flags": "Mu Flags",
+          "isDefault": false
+        },
+        {
+          "name": "Nu Name",
+          "architecture": "Nu Architecture",
+          "outputFormat": "Nu Output Format",
+          "flags": "Nu Flags",
+          "isDefault": true
+        },
+        {
+          "name": "Xi Name",
+          "architecture": "Xi Architecture",
+          "outputFormat": "Xi Output Format",
+          "flags": "Xi Flags",
+          "isDefault": false
+        },
+        {
+          "name": "Omicron Name",
+          "architecture": "Omicron Architecture",
+          "outputFormat": "Omicron Output Format",
+          "flags": "Omicron Flags",
+          "isDefault": true
+        }
+      ]
+    },
+    {
+      "modelName": "ErrorLog",
+      "label": "Error Logs",
+      "icon": "alert-circle",
+      "fields": [
+        {
+          "key": "file",
+          "label": "File",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "line",
+          "label": "Line",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "code",
+          "label": "Error Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "timestamp",
+          "label": "Timestamp",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "errorLogs",
+      "aiFunction": "analyzeErrorLog",
+      "aiPrompt": "You are an AI analyst for AI Compiler Tools. Analyze the provided Error Logs data. The data includes: File, Line, Severity, Error Code, Message, Timestamp. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "file": "Alpha File",
+          "line": 41,
+          "severity": "Alpha Severity",
+          "code": "Alpha Error Code",
+          "message": "Alpha message — detailed content for enterprise use case.",
+          "timestamp": "2026-10-22"
+        },
+        {
+          "file": "Beta File",
+          "line": 378,
+          "severity": "Beta Severity",
+          "code": "Beta Error Code",
+          "message": "Beta message — detailed content for startup use case.",
+          "timestamp": "2026-10-15"
+        },
+        {
+          "file": "Gamma File",
+          "line": 602,
+          "severity": "Gamma Severity",
+          "code": "Gamma Error Code",
+          "message": "Gamma message — detailed content for smb use case.",
+          "timestamp": "2026-12-10"
+        },
+        {
+          "file": "Delta File",
+          "line": 893,
+          "severity": "Delta Severity",
+          "code": "Delta Error Code",
+          "message": "Delta message — detailed content for agency use case.",
+          "timestamp": "2026-09-21"
+        },
+        {
+          "file": "Epsilon File",
+          "line": 823,
+          "severity": "Epsilon Severity",
+          "code": "Epsilon Error Code",
+          "message": "Epsilon message — detailed content for freelancer use case.",
+          "timestamp": "2026-04-25"
+        },
+        {
+          "file": "Zeta File",
+          "line": 256,
+          "severity": "Zeta Severity",
+          "code": "Zeta Error Code",
+          "message": "Zeta message — detailed content for government use case.",
+          "timestamp": "2026-09-03"
+        },
+        {
+          "file": "Eta File",
+          "line": 886,
+          "severity": "Eta Severity",
+          "code": "Eta Error Code",
+          "message": "Eta message — detailed content for nonprofit use case.",
+          "timestamp": "2026-08-06"
+        },
+        {
+          "file": "Theta File",
+          "line": 801,
+          "severity": "Theta Severity",
+          "code": "Theta Error Code",
+          "message": "Theta message — detailed content for healthcare use case.",
+          "timestamp": "2026-06-13"
+        },
+        {
+          "file": "Iota File",
+          "line": 264,
+          "severity": "Iota Severity",
+          "code": "Iota Error Code",
+          "message": "Iota message — detailed content for finance use case.",
+          "timestamp": "2026-08-08"
+        },
+        {
+          "file": "Kappa File",
+          "line": 204,
+          "severity": "Kappa Severity",
+          "code": "Kappa Error Code",
+          "message": "Kappa message — detailed content for education use case.",
+          "timestamp": "2026-05-15"
+        },
+        {
+          "file": "Lambda File",
+          "line": 11,
+          "severity": "Lambda Severity",
+          "code": "Lambda Error Code",
+          "message": "Lambda message — detailed content for retail use case.",
+          "timestamp": "2026-04-18"
+        },
+        {
+          "file": "Mu File",
+          "line": 946,
+          "severity": "Mu Severity",
+          "code": "Mu Error Code",
+          "message": "Mu message — detailed content for tech use case.",
+          "timestamp": "2026-08-20"
+        },
+        {
+          "file": "Nu File",
+          "line": 155,
+          "severity": "Nu Severity",
+          "code": "Nu Error Code",
+          "message": "Nu message — detailed content for legal use case.",
+          "timestamp": "2026-07-22"
+        },
+        {
+          "file": "Xi File",
+          "line": 204,
+          "severity": "Xi Severity",
+          "code": "Xi Error Code",
+          "message": "Xi message — detailed content for real estate use case.",
+          "timestamp": "2026-01-09"
+        },
+        {
+          "file": "Omicron File",
+          "line": 117,
+          "severity": "Omicron Severity",
+          "code": "Omicron Error Code",
+          "message": "Omicron message — detailed content for manufacturing use case.",
+          "timestamp": "2026-02-11"
+        }
+      ]
+    }
+  ]
+}

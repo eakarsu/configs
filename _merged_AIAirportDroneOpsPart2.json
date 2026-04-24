@@ -1,0 +1,2828 @@
+{
+  "appName": "AI Airport & Drone Ops (Part 2)",
+  "dbName": "a_i_airport_drone_ops_part2",
+  "folderName": "generated/AIAirportDroneOpsPart2",
+  "features": [
+    {
+      "modelName": "Compliance",
+      "routeKey": "compliances",
+      "label": "Compliance",
+      "icon": "truck",
+      "aiFunction": "analyzeCompliance",
+      "aiPrompt": "You are an AI analyst for A I Autonomous Drone Operations. Analyze the provided Compliance data. The data includes: Regulation, Category, Status, Description, Expiration Date, Document Url, Last Audit Date, Next Audit Date, Responsible Person, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "regulation",
+          "label": "Regulation",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "FAA",
+            "local",
+            "state",
+            "international",
+            "privacy",
+            "safety",
+            "environmental"
+          ]
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "FAA",
+            "local",
+            "state",
+            "international",
+            "privacy",
+            "safety",
+            "environmental"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "compliant",
+            "non-compliant",
+            "pending-review",
+            "expired",
+            "waiver"
+          ]
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "expirationDate",
+          "label": "Expiration Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "documentUrl",
+          "label": "Document Url",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastAuditDate",
+          "label": "Last Audit Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "nextAuditDate",
+          "label": "Next Audit Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "responsiblePerson",
+          "label": "Responsible Person",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "regulation": "FAA",
+          "category": "FAA",
+          "status": "compliant",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "expirationDate": "2024-01-01",
+          "documentUrl": "https://example.com/documentUrl/1",
+          "lastAuditDate": "2024-01-01",
+          "nextAuditDate": "2024-01-01",
+          "responsiblePerson": "Advanced Responsible Person 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "regulation": "local",
+          "category": "local",
+          "status": "non-compliant",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "expirationDate": "2024-02-03",
+          "documentUrl": "https://example.com/documentUrl/2",
+          "lastAuditDate": "2024-02-03",
+          "nextAuditDate": "2024-02-03",
+          "responsiblePerson": "Premium Responsible Person 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "regulation": "state",
+          "category": "state",
+          "status": "pending-review",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "expirationDate": "2024-03-05",
+          "documentUrl": "https://example.com/documentUrl/3",
+          "lastAuditDate": "2024-03-05",
+          "nextAuditDate": "2024-03-05",
+          "responsiblePerson": "Standard Responsible Person 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "regulation": "international",
+          "category": "international",
+          "status": "expired",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "expirationDate": "2024-04-07",
+          "documentUrl": "https://example.com/documentUrl/4",
+          "lastAuditDate": "2024-04-07",
+          "nextAuditDate": "2024-04-07",
+          "responsiblePerson": "Elite Responsible Person 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "regulation": "privacy",
+          "category": "privacy",
+          "status": "waiver",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "expirationDate": "2024-05-09",
+          "documentUrl": "https://example.com/documentUrl/5",
+          "lastAuditDate": "2024-05-09",
+          "nextAuditDate": "2024-05-09",
+          "responsiblePerson": "Core Responsible Person 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "regulation": "safety",
+          "category": "safety",
+          "status": "compliant",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "expirationDate": "2024-06-11",
+          "documentUrl": "https://example.com/documentUrl/6",
+          "lastAuditDate": "2024-06-11",
+          "nextAuditDate": "2024-06-11",
+          "responsiblePerson": "Pro Responsible Person 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "regulation": "environmental",
+          "category": "environmental",
+          "status": "non-compliant",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "expirationDate": "2024-07-13",
+          "documentUrl": "https://example.com/documentUrl/7",
+          "lastAuditDate": "2024-07-13",
+          "nextAuditDate": "2024-07-13",
+          "responsiblePerson": "Essential Responsible Person 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "regulation": "FAA",
+          "category": "FAA",
+          "status": "pending-review",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "expirationDate": "2024-08-15",
+          "documentUrl": "https://example.com/documentUrl/8",
+          "lastAuditDate": "2024-08-15",
+          "nextAuditDate": "2024-08-15",
+          "responsiblePerson": "Primary Responsible Person 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "regulation": "local",
+          "category": "local",
+          "status": "expired",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "expirationDate": "2024-09-17",
+          "documentUrl": "https://example.com/documentUrl/9",
+          "lastAuditDate": "2024-09-17",
+          "nextAuditDate": "2024-09-17",
+          "responsiblePerson": "Global Responsible Person 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "regulation": "state",
+          "category": "state",
+          "status": "waiver",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "expirationDate": "2024-10-19",
+          "documentUrl": "https://example.com/documentUrl/10",
+          "lastAuditDate": "2024-10-19",
+          "nextAuditDate": "2024-10-19",
+          "responsiblePerson": "Regional Responsible Person 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "regulation": "international",
+          "category": "international",
+          "status": "compliant",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "expirationDate": "2024-11-21",
+          "documentUrl": "https://example.com/documentUrl/11",
+          "lastAuditDate": "2024-11-21",
+          "nextAuditDate": "2024-11-21",
+          "responsiblePerson": "Custom Responsible Person 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "regulation": "privacy",
+          "category": "privacy",
+          "status": "non-compliant",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "expirationDate": "2024-12-23",
+          "documentUrl": "https://example.com/documentUrl/12",
+          "lastAuditDate": "2024-12-23",
+          "nextAuditDate": "2024-12-23",
+          "responsiblePerson": "Smart Responsible Person 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "regulation": "safety",
+          "category": "safety",
+          "status": "pending-review",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "expirationDate": "2024-01-25",
+          "documentUrl": "https://example.com/documentUrl/13",
+          "lastAuditDate": "2024-01-25",
+          "nextAuditDate": "2024-01-25",
+          "responsiblePerson": "Rapid Responsible Person 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "regulation": "environmental",
+          "category": "environmental",
+          "status": "expired",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "expirationDate": "2024-02-27",
+          "documentUrl": "https://example.com/documentUrl/14",
+          "lastAuditDate": "2024-02-27",
+          "nextAuditDate": "2024-02-27",
+          "responsiblePerson": "Secure Responsible Person 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "regulation": "FAA",
+          "category": "FAA",
+          "status": "waiver",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "expirationDate": "2024-03-01",
+          "documentUrl": "https://example.com/documentUrl/15",
+          "lastAuditDate": "2024-03-01",
+          "nextAuditDate": "2024-03-01",
+          "responsiblePerson": "Modern Responsible Person 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "AuditLog",
+      "routeKey": "audit-logs",
+      "label": "Audit Log",
+      "icon": "heart",
+      "aiFunction": "analyzeAuditLog",
+      "aiPrompt": "You are an AI analyst for A I Autonomous Drone Operations. Analyze the provided Audit Log data. The data includes: Action, Entity Type, Entity Id, User Id, User Name, Old Values, New Values, Ip Address, User Agent, Description. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "create",
+            "update",
+            "delete",
+            "login",
+            "logout",
+            "export",
+            "import",
+            "approve",
+            "reject"
+          ]
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "userName",
+          "label": "User Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "oldValues",
+          "label": "Old Values",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "newValues",
+          "label": "New Values",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "ipAddress",
+          "label": "Ip Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userAgent",
+          "label": "User Agent",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "action": "create",
+          "entityType": "Category A",
+          "entityId": 10,
+          "userId": 10,
+          "userName": "Advanced User 1",
+          "oldValues": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "newValues": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "ipAddress": "New York",
+          "userAgent": "Advanced User Agent 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "action": "update",
+          "entityType": "Category B",
+          "entityId": 58,
+          "userId": 58,
+          "userName": "Premium User 2",
+          "oldValues": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "newValues": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "ipAddress": "Los Angeles",
+          "userAgent": "Premium User Agent 2",
+          "description": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "action": "delete",
+          "entityType": "Category C",
+          "entityId": 106,
+          "userId": 106,
+          "userName": "Standard User 3",
+          "oldValues": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "newValues": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "ipAddress": "Chicago",
+          "userAgent": "Standard User Agent 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "action": "login",
+          "entityType": "Category D",
+          "entityId": 154,
+          "userId": 154,
+          "userName": "Elite User 4",
+          "oldValues": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "newValues": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "ipAddress": "Houston",
+          "userAgent": "Elite User Agent 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "action": "logout",
+          "entityType": "Category E",
+          "entityId": 102,
+          "userId": 102,
+          "userName": "Core User 5",
+          "oldValues": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "newValues": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "ipAddress": "Phoenix",
+          "userAgent": "Core User Agent 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "action": "export",
+          "entityType": "Premium Tier",
+          "entityId": 150,
+          "userId": 150,
+          "userName": "Pro User 6",
+          "oldValues": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "newValues": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "ipAddress": "San Francisco",
+          "userAgent": "Pro User Agent 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "action": "import",
+          "entityType": "Standard Tier",
+          "entityId": 198,
+          "userId": 198,
+          "userName": "Essential User 7",
+          "oldValues": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "newValues": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "ipAddress": "Seattle",
+          "userAgent": "Essential User Agent 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "action": "approve",
+          "entityType": "Basic Tier",
+          "entityId": 146,
+          "userId": 146,
+          "userName": "Primary User 8",
+          "oldValues": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "newValues": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "ipAddress": "Boston",
+          "userAgent": "Primary User Agent 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "action": "reject",
+          "entityType": "Enterprise",
+          "entityId": 194,
+          "userId": 194,
+          "userName": "Global User 9",
+          "oldValues": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "newValues": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "ipAddress": "Denver",
+          "userAgent": "Global User Agent 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "action": "create",
+          "entityType": "Starter",
+          "entityId": 242,
+          "userId": 242,
+          "userName": "Regional User 10",
+          "oldValues": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "newValues": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "ipAddress": "Miami",
+          "userAgent": "Regional User Agent 10",
+          "description": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "action": "update",
+          "entityType": "Growth",
+          "entityId": 190,
+          "userId": 190,
+          "userName": "Custom User 11",
+          "oldValues": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "newValues": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "ipAddress": "Austin",
+          "userAgent": "Custom User Agent 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "action": "delete",
+          "entityType": "Scale",
+          "entityId": 238,
+          "userId": 238,
+          "userName": "Smart User 12",
+          "oldValues": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "newValues": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "ipAddress": "Portland",
+          "userAgent": "Smart User Agent 12",
+          "description": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "action": "login",
+          "entityType": "Foundation",
+          "entityId": 286,
+          "userId": 286,
+          "userName": "Rapid User 13",
+          "oldValues": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "newValues": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "ipAddress": "Dallas",
+          "userAgent": "Rapid User Agent 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "action": "logout",
+          "entityType": "Advanced",
+          "entityId": 234,
+          "userId": 234,
+          "userName": "Secure User 14",
+          "oldValues": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "newValues": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "ipAddress": "Atlanta",
+          "userAgent": "Secure User Agent 14",
+          "description": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "action": "export",
+          "entityType": "Professional",
+          "entityId": 282,
+          "userId": 282,
+          "userName": "Modern User 15",
+          "oldValues": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "newValues": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "ipAddress": "Nashville",
+          "userAgent": "Modern User Agent 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Inventory",
+      "routeKey": "inventorys",
+      "label": "Inventory",
+      "icon": "check-circle",
+      "aiFunction": "analyzeInventory",
+      "aiPrompt": "You are an AI analyst for A I Autonomous Drone Operations. Analyze the provided Inventory data. The data includes: Part Name, Part Number, Category, Quantity, Minimum Stock, Unit Price, Supplier, Location, Compatible Drones, Last Restocked, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "partName",
+          "label": "Part Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "propeller",
+            "motor",
+            "battery",
+            "camera",
+            "sensor",
+            "frame",
+            "controller",
+            "gps",
+            "antenna",
+            "cable",
+            "other"
+          ]
+        },
+        {
+          "key": "partNumber",
+          "label": "Part Number",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "propeller",
+            "motor",
+            "battery",
+            "camera",
+            "sensor",
+            "frame",
+            "controller",
+            "gps",
+            "antenna",
+            "cable",
+            "other"
+          ]
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "propeller",
+            "motor",
+            "battery",
+            "camera",
+            "sensor",
+            "frame",
+            "controller",
+            "gps",
+            "antenna",
+            "cable",
+            "other"
+          ]
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "minimumStock",
+          "label": "Minimum Stock",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "unitPrice",
+          "label": "Unit Price",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "supplier",
+          "label": "Supplier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "compatibleDrones",
+          "label": "Compatible Drones",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "lastRestocked",
+          "label": "Last Restocked",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "partName": "Advanced Part 1",
+          "partNumber": "propeller",
+          "category": "propeller",
+          "quantity": 86,
+          "minimumStock": 10,
+          "unitPrice": 500,
+          "supplier": "Advanced Supplier 1",
+          "location": "New York",
+          "compatibleDrones": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "lastRestocked": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "partName": "Premium Part 2",
+          "partNumber": "motor",
+          "category": "motor",
+          "quantity": 210,
+          "minimumStock": 58,
+          "unitPrice": 2481,
+          "supplier": "Premium Supplier 2",
+          "location": "Los Angeles",
+          "compatibleDrones": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "lastRestocked": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "partName": "Standard Part 3",
+          "partNumber": "battery",
+          "category": "battery",
+          "quantity": 77,
+          "minimumStock": 106,
+          "unitPrice": 4462,
+          "supplier": "Standard Supplier 3",
+          "location": "Chicago",
+          "compatibleDrones": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "lastRestocked": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "partName": "Elite Part 4",
+          "partNumber": "camera",
+          "category": "camera",
+          "quantity": 68,
+          "minimumStock": 154,
+          "unitPrice": 6443,
+          "supplier": "Elite Supplier 4",
+          "location": "Houston",
+          "compatibleDrones": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "lastRestocked": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "partName": "Core Part 5",
+          "partNumber": "sensor",
+          "category": "sensor",
+          "quantity": 197,
+          "minimumStock": 102,
+          "unitPrice": 8424,
+          "supplier": "Core Supplier 5",
+          "location": "Phoenix",
+          "compatibleDrones": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "lastRestocked": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "partName": "Pro Part 6",
+          "partNumber": "frame",
+          "category": "frame",
+          "quantity": 141,
+          "minimumStock": 150,
+          "unitPrice": 10405,
+          "supplier": "Pro Supplier 6",
+          "location": "San Francisco",
+          "compatibleDrones": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "lastRestocked": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "partName": "Essential Part 7",
+          "partNumber": "controller",
+          "category": "controller",
+          "quantity": 198,
+          "minimumStock": 198,
+          "unitPrice": 12386,
+          "supplier": "Essential Supplier 7",
+          "location": "Seattle",
+          "compatibleDrones": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "lastRestocked": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "partName": "Primary Part 8",
+          "partNumber": "gps",
+          "category": "gps",
+          "quantity": 123,
+          "minimumStock": 146,
+          "unitPrice": 9367,
+          "supplier": "Primary Supplier 8",
+          "location": "Boston",
+          "compatibleDrones": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "lastRestocked": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "partName": "Global Part 9",
+          "partNumber": "antenna",
+          "category": "antenna",
+          "quantity": 234,
+          "minimumStock": 194,
+          "unitPrice": 11348,
+          "supplier": "Global Supplier 9",
+          "location": "Denver",
+          "compatibleDrones": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "lastRestocked": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "partName": "Regional Part 10",
+          "partNumber": "cable",
+          "category": "cable",
+          "quantity": 200,
+          "minimumStock": 242,
+          "unitPrice": 13329,
+          "supplier": "Regional Supplier 10",
+          "location": "Miami",
+          "compatibleDrones": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "lastRestocked": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "partName": "Custom Part 11",
+          "partNumber": "other",
+          "category": "other",
+          "quantity": 269,
+          "minimumStock": 190,
+          "unitPrice": 15310,
+          "supplier": "Custom Supplier 11",
+          "location": "Austin",
+          "compatibleDrones": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "lastRestocked": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "partName": "Smart Part 12",
+          "partNumber": "propeller",
+          "category": "propeller",
+          "quantity": 220,
+          "minimumStock": 238,
+          "unitPrice": 17291,
+          "supplier": "Smart Supplier 12",
+          "location": "Portland",
+          "compatibleDrones": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "lastRestocked": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "partName": "Rapid Part 13",
+          "partNumber": "motor",
+          "category": "motor",
+          "quantity": 281,
+          "minimumStock": 286,
+          "unitPrice": 19272,
+          "supplier": "Rapid Supplier 13",
+          "location": "Dallas",
+          "compatibleDrones": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "lastRestocked": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "partName": "Secure Part 14",
+          "partNumber": "battery",
+          "category": "battery",
+          "quantity": 249,
+          "minimumStock": 234,
+          "unitPrice": 21253,
+          "supplier": "Secure Supplier 14",
+          "location": "Atlanta",
+          "compatibleDrones": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "lastRestocked": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "partName": "Modern Part 15",
+          "partNumber": "camera",
+          "category": "camera",
+          "quantity": 245,
+          "minimumStock": 282,
+          "unitPrice": 18234,
+          "supplier": "Modern Supplier 15",
+          "location": "Nashville",
+          "compatibleDrones": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "lastRestocked": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Checklist",
+      "routeKey": "checklists",
+      "label": "Checklist",
+      "icon": "activity",
+      "aiFunction": "analyzeChecklist",
+      "aiPrompt": "You are an AI analyst for A I Autonomous Drone Operations. Analyze the provided Checklist data. The data includes: Name, Type, Drone Id, Pilot Id, Mission Id, Status, Items, Completed At, Completed By, Pass Rate, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pre-flight",
+            "post-flight",
+            "maintenance",
+            "safety",
+            "emergency"
+          ]
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pre-flight",
+            "post-flight",
+            "maintenance",
+            "safety",
+            "emergency"
+          ]
+        },
+        {
+          "key": "droneId",
+          "label": "Drone Id",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "pending",
+            "in-progress",
+            "completed",
+            "failed"
+          ]
+        },
+        {
+          "key": "pilotId",
+          "label": "Pilot Id",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "pending",
+            "in-progress",
+            "completed",
+            "failed"
+          ]
+        },
+        {
+          "key": "missionId",
+          "label": "Mission Id",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "pending",
+            "in-progress",
+            "completed",
+            "failed"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pending",
+            "in-progress",
+            "completed",
+            "failed"
+          ]
+        },
+        {
+          "key": "items",
+          "label": "Items",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "completedAt",
+          "label": "Completed At",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "completedBy",
+          "label": "Completed By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "passRate",
+          "label": "Pass Rate",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "pre-flight",
+          "droneId": 10,
+          "pilotId": 10,
+          "missionId": 10,
+          "status": "pending",
+          "items": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "completedAt": "2024-01-01",
+          "completedBy": "Advanced Completed By 1",
+          "passRate": 1.5,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "post-flight",
+          "droneId": 58,
+          "pilotId": 58,
+          "missionId": 58,
+          "status": "in-progress",
+          "items": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "completedAt": "2024-02-03",
+          "completedBy": "Premium Completed By 2",
+          "passRate": 2.1,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "maintenance",
+          "droneId": 106,
+          "pilotId": 106,
+          "missionId": 106,
+          "status": "completed",
+          "items": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "completedAt": "2024-03-05",
+          "completedBy": "Standard Completed By 3",
+          "passRate": 2.7,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "safety",
+          "droneId": 154,
+          "pilotId": 154,
+          "missionId": 154,
+          "status": "failed",
+          "items": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "completedAt": "2024-04-07",
+          "completedBy": "Elite Completed By 4",
+          "passRate": 3.3,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "type": "emergency",
+          "droneId": 102,
+          "pilotId": 102,
+          "missionId": 102,
+          "status": "pending",
+          "items": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "completedAt": "2024-05-09",
+          "completedBy": "Core Completed By 5",
+          "passRate": 3.9,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "pre-flight",
+          "droneId": 150,
+          "pilotId": 150,
+          "missionId": 150,
+          "status": "in-progress",
+          "items": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "completedAt": "2024-06-11",
+          "completedBy": "Pro Completed By 6",
+          "passRate": 4.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "post-flight",
+          "droneId": 198,
+          "pilotId": 198,
+          "missionId": 198,
+          "status": "completed",
+          "items": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "completedAt": "2024-07-13",
+          "completedBy": "Essential Completed By 7",
+          "passRate": 5.1,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "maintenance",
+          "droneId": 146,
+          "pilotId": 146,
+          "missionId": 146,
+          "status": "failed",
+          "items": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "completedAt": "2024-08-15",
+          "completedBy": "Primary Completed By 8",
+          "passRate": 5.7,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "type": "safety",
+          "droneId": 194,
+          "pilotId": 194,
+          "missionId": 194,
+          "status": "pending",
+          "items": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "completedAt": "2024-09-17",
+          "completedBy": "Global Completed By 9",
+          "passRate": 6.3,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "emergency",
+          "droneId": 242,
+          "pilotId": 242,
+          "missionId": 242,
+          "status": "in-progress",
+          "items": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "completedAt": "2024-10-19",
+          "completedBy": "Regional Completed By 10",
+          "passRate": 1.9,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "pre-flight",
+          "droneId": 190,
+          "pilotId": 190,
+          "missionId": 190,
+          "status": "completed",
+          "items": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "completedAt": "2024-11-21",
+          "completedBy": "Custom Completed By 11",
+          "passRate": 2.5,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "post-flight",
+          "droneId": 238,
+          "pilotId": 238,
+          "missionId": 238,
+          "status": "failed",
+          "items": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "completedAt": "2024-12-23",
+          "completedBy": "Smart Completed By 12",
+          "passRate": 3.1,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "maintenance",
+          "droneId": 286,
+          "pilotId": 286,
+          "missionId": 286,
+          "status": "pending",
+          "items": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "completedAt": "2024-01-25",
+          "completedBy": "Rapid Completed By 13",
+          "passRate": 3.7,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "safety",
+          "droneId": 234,
+          "pilotId": 234,
+          "missionId": 234,
+          "status": "in-progress",
+          "items": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "completedAt": "2024-02-27",
+          "completedBy": "Secure Completed By 14",
+          "passRate": 4.3,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "emergency",
+          "droneId": 282,
+          "pilotId": 282,
+          "missionId": 282,
+          "status": "completed",
+          "items": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "completedAt": "2024-03-01",
+          "completedBy": "Modern Completed By 15",
+          "passRate": 4.9,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Notification",
+      "routeKey": "notifications",
+      "label": "Notification",
+      "icon": "layers",
+      "aiFunction": "analyzeNotification",
+      "aiPrompt": "You are an AI analyst for A I Autonomous Drone Operations. Analyze the provided Notification data. The data includes: Title, Message, Type, Category, Priority, Recipient Id, Read, Read At, Action Url, Expires At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "info",
+            "warning",
+            "error",
+            "success",
+            "alert"
+          ]
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "select",
+          "options": [
+            "info",
+            "warning",
+            "error",
+            "success",
+            "alert"
+          ]
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "info",
+            "warning",
+            "error",
+            "success",
+            "alert"
+          ]
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "system",
+            "maintenance",
+            "flight",
+            "weather",
+            "compliance",
+            "safety",
+            "billing"
+          ]
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ]
+        },
+        {
+          "key": "recipientId",
+          "label": "Recipient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "read",
+          "label": "Read",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "readAt",
+          "label": "Read At",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "actionUrl",
+          "label": "Action Url",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "expiresAt",
+          "label": "Expires At",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "info",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "type": "info",
+          "category": "system",
+          "priority": "low",
+          "recipientId": 10,
+          "read": true,
+          "readAt": "2024-01-01",
+          "actionUrl": "https://example.com/actionUrl/1",
+          "expiresAt": "2024-01-01"
+        },
+        {
+          "title": "warning",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "type": "warning",
+          "category": "maintenance",
+          "priority": "medium",
+          "recipientId": 58,
+          "read": true,
+          "readAt": "2024-02-03",
+          "actionUrl": "https://example.com/actionUrl/2",
+          "expiresAt": "2024-02-03"
+        },
+        {
+          "title": "error",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "type": "error",
+          "category": "flight",
+          "priority": "high",
+          "recipientId": 106,
+          "read": false,
+          "readAt": "2024-03-05",
+          "actionUrl": "https://example.com/actionUrl/3",
+          "expiresAt": "2024-03-05"
+        },
+        {
+          "title": "success",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "type": "success",
+          "category": "weather",
+          "priority": "urgent",
+          "recipientId": 154,
+          "read": true,
+          "readAt": "2024-04-07",
+          "actionUrl": "https://example.com/actionUrl/4",
+          "expiresAt": "2024-04-07"
+        },
+        {
+          "title": "alert",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "type": "alert",
+          "category": "compliance",
+          "priority": "low",
+          "recipientId": 102,
+          "read": false,
+          "readAt": "2024-05-09",
+          "actionUrl": "https://example.com/actionUrl/5",
+          "expiresAt": "2024-05-09"
+        },
+        {
+          "title": "info",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "type": "info",
+          "category": "safety",
+          "priority": "medium",
+          "recipientId": 150,
+          "read": true,
+          "readAt": "2024-06-11",
+          "actionUrl": "https://example.com/actionUrl/6",
+          "expiresAt": "2024-06-11"
+        },
+        {
+          "title": "warning",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "type": "warning",
+          "category": "billing",
+          "priority": "high",
+          "recipientId": 198,
+          "read": true,
+          "readAt": "2024-07-13",
+          "actionUrl": "https://example.com/actionUrl/7",
+          "expiresAt": "2024-07-13"
+        },
+        {
+          "title": "error",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "type": "error",
+          "category": "system",
+          "priority": "urgent",
+          "recipientId": 146,
+          "read": false,
+          "readAt": "2024-08-15",
+          "actionUrl": "https://example.com/actionUrl/8",
+          "expiresAt": "2024-08-15"
+        },
+        {
+          "title": "success",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "type": "success",
+          "category": "maintenance",
+          "priority": "low",
+          "recipientId": 194,
+          "read": true,
+          "readAt": "2024-09-17",
+          "actionUrl": "https://example.com/actionUrl/9",
+          "expiresAt": "2024-09-17"
+        },
+        {
+          "title": "alert",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "type": "alert",
+          "category": "flight",
+          "priority": "medium",
+          "recipientId": 242,
+          "read": true,
+          "readAt": "2024-10-19",
+          "actionUrl": "https://example.com/actionUrl/10",
+          "expiresAt": "2024-10-19"
+        },
+        {
+          "title": "info",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "type": "info",
+          "category": "weather",
+          "priority": "high",
+          "recipientId": 190,
+          "read": false,
+          "readAt": "2024-11-21",
+          "actionUrl": "https://example.com/actionUrl/11",
+          "expiresAt": "2024-11-21"
+        },
+        {
+          "title": "warning",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "type": "warning",
+          "category": "compliance",
+          "priority": "urgent",
+          "recipientId": 238,
+          "read": true,
+          "readAt": "2024-12-23",
+          "actionUrl": "https://example.com/actionUrl/12",
+          "expiresAt": "2024-12-23"
+        },
+        {
+          "title": "error",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "type": "error",
+          "category": "safety",
+          "priority": "low",
+          "recipientId": 286,
+          "read": false,
+          "readAt": "2024-01-25",
+          "actionUrl": "https://example.com/actionUrl/13",
+          "expiresAt": "2024-01-25"
+        },
+        {
+          "title": "success",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "type": "success",
+          "category": "billing",
+          "priority": "medium",
+          "recipientId": 234,
+          "read": true,
+          "readAt": "2024-02-27",
+          "actionUrl": "https://example.com/actionUrl/14",
+          "expiresAt": "2024-02-27"
+        },
+        {
+          "title": "alert",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "type": "alert",
+          "category": "system",
+          "priority": "high",
+          "recipientId": 282,
+          "read": true,
+          "readAt": "2024-03-01",
+          "actionUrl": "https://example.com/actionUrl/15",
+          "expiresAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "CommunicationLog",
+      "routeKey": "communication-logs",
+      "label": "Communication Log",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeCommunicationLog",
+      "aiPrompt": "You are an AI analyst for A I Autonomous Drone Operations. Analyze the provided Communication Log data. The data includes: Type, Direction, From, To, Subject, Message, Mission Id, Priority, Timestamp, Duration, Recording Url, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "radio",
+            "phone",
+            "email",
+            "app",
+            "atc",
+            "emergency",
+            "internal"
+          ]
+        },
+        {
+          "key": "direction",
+          "label": "Direction",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "inbound",
+            "outbound",
+            "internal"
+          ]
+        },
+        {
+          "key": "from",
+          "label": "From",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "routine",
+            "priority",
+            "urgent",
+            "emergency"
+          ]
+        },
+        {
+          "key": "to",
+          "label": "To",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "routine",
+            "priority",
+            "urgent",
+            "emergency"
+          ]
+        },
+        {
+          "key": "subject",
+          "label": "Subject",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "routine",
+            "priority",
+            "urgent",
+            "emergency"
+          ]
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "select",
+          "options": [
+            "routine",
+            "priority",
+            "urgent",
+            "emergency"
+          ]
+        },
+        {
+          "key": "missionId",
+          "label": "Mission Id",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "routine",
+            "priority",
+            "urgent",
+            "emergency"
+          ]
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "routine",
+            "priority",
+            "urgent",
+            "emergency"
+          ]
+        },
+        {
+          "key": "timestamp",
+          "label": "Timestamp",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "duration",
+          "label": "Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "recordingUrl",
+          "label": "Recording Url",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "type": "radio",
+          "direction": "inbound",
+          "from": "routine",
+          "to": "routine",
+          "subject": "routine",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "missionId": 10,
+          "priority": "routine",
+          "timestamp": "2024-01-01",
+          "duration": 10,
+          "recordingUrl": "https://example.com/recordingUrl/1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "type": "phone",
+          "direction": "outbound",
+          "from": "priority",
+          "to": "priority",
+          "subject": "priority",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "missionId": 58,
+          "priority": "priority",
+          "timestamp": "2024-02-03",
+          "duration": 58,
+          "recordingUrl": "https://example.com/recordingUrl/2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "type": "email",
+          "direction": "internal",
+          "from": "urgent",
+          "to": "urgent",
+          "subject": "urgent",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "missionId": 106,
+          "priority": "urgent",
+          "timestamp": "2024-03-05",
+          "duration": 106,
+          "recordingUrl": "https://example.com/recordingUrl/3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "type": "app",
+          "direction": "inbound",
+          "from": "emergency",
+          "to": "emergency",
+          "subject": "emergency",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "missionId": 154,
+          "priority": "emergency",
+          "timestamp": "2024-04-07",
+          "duration": 154,
+          "recordingUrl": "https://example.com/recordingUrl/4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "type": "atc",
+          "direction": "outbound",
+          "from": "routine",
+          "to": "routine",
+          "subject": "routine",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "missionId": 102,
+          "priority": "routine",
+          "timestamp": "2024-05-09",
+          "duration": 102,
+          "recordingUrl": "https://example.com/recordingUrl/5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "type": "emergency",
+          "direction": "internal",
+          "from": "priority",
+          "to": "priority",
+          "subject": "priority",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "missionId": 150,
+          "priority": "priority",
+          "timestamp": "2024-06-11",
+          "duration": 150,
+          "recordingUrl": "https://example.com/recordingUrl/6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "type": "internal",
+          "direction": "inbound",
+          "from": "urgent",
+          "to": "urgent",
+          "subject": "urgent",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "missionId": 198,
+          "priority": "urgent",
+          "timestamp": "2024-07-13",
+          "duration": 198,
+          "recordingUrl": "https://example.com/recordingUrl/7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "type": "radio",
+          "direction": "outbound",
+          "from": "emergency",
+          "to": "emergency",
+          "subject": "emergency",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "missionId": 146,
+          "priority": "emergency",
+          "timestamp": "2024-08-15",
+          "duration": 146,
+          "recordingUrl": "https://example.com/recordingUrl/8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "type": "phone",
+          "direction": "internal",
+          "from": "routine",
+          "to": "routine",
+          "subject": "routine",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "missionId": 194,
+          "priority": "routine",
+          "timestamp": "2024-09-17",
+          "duration": 194,
+          "recordingUrl": "https://example.com/recordingUrl/9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "type": "email",
+          "direction": "inbound",
+          "from": "priority",
+          "to": "priority",
+          "subject": "priority",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "missionId": 242,
+          "priority": "priority",
+          "timestamp": "2024-10-19",
+          "duration": 242,
+          "recordingUrl": "https://example.com/recordingUrl/10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "type": "app",
+          "direction": "outbound",
+          "from": "urgent",
+          "to": "urgent",
+          "subject": "urgent",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "missionId": 190,
+          "priority": "urgent",
+          "timestamp": "2024-11-21",
+          "duration": 190,
+          "recordingUrl": "https://example.com/recordingUrl/11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "type": "atc",
+          "direction": "internal",
+          "from": "emergency",
+          "to": "emergency",
+          "subject": "emergency",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "missionId": 238,
+          "priority": "emergency",
+          "timestamp": "2024-12-23",
+          "duration": 238,
+          "recordingUrl": "https://example.com/recordingUrl/12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "type": "emergency",
+          "direction": "inbound",
+          "from": "routine",
+          "to": "routine",
+          "subject": "routine",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "missionId": 286,
+          "priority": "routine",
+          "timestamp": "2024-01-25",
+          "duration": 286,
+          "recordingUrl": "https://example.com/recordingUrl/13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "type": "internal",
+          "direction": "outbound",
+          "from": "priority",
+          "to": "priority",
+          "subject": "priority",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "missionId": 234,
+          "priority": "priority",
+          "timestamp": "2024-02-27",
+          "duration": 234,
+          "recordingUrl": "https://example.com/recordingUrl/14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "type": "radio",
+          "direction": "internal",
+          "from": "urgent",
+          "to": "urgent",
+          "subject": "urgent",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "missionId": 282,
+          "priority": "urgent",
+          "timestamp": "2024-03-01",
+          "duration": 282,
+          "recordingUrl": "https://example.com/recordingUrl/15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "FlightAnalysis",
+      "routeKey": "flight-analysis",
+      "label": "Flight Analysis",
+      "icon": "bell",
+      "aiFunction": "analyzeFlightAnalysis",
+      "aiPrompt": "You are an AI analyst for A I Autonomous Drone Operations. Analyze the provided Flight Analysis data. The data includes: Flight Plan Id, Drone Id, Analysis Type, Ai Model, Input, Result, Summary, Score, Recommendations, Analyzed At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "flightPlanId",
+          "label": "Flight Plan Id",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "performance",
+            "safety",
+            "efficiency",
+            "risk",
+            "optimization",
+            "predictive"
+          ]
+        },
+        {
+          "key": "droneId",
+          "label": "Drone Id",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "performance",
+            "safety",
+            "efficiency",
+            "risk",
+            "optimization",
+            "predictive"
+          ]
+        },
+        {
+          "key": "analysisType",
+          "label": "Analysis Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "performance",
+            "safety",
+            "efficiency",
+            "risk",
+            "optimization",
+            "predictive"
+          ]
+        },
+        {
+          "key": "aiModel",
+          "label": "Ai Model",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "input",
+          "label": "Input",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "result",
+          "label": "Result",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "summary",
+          "label": "Summary",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "score",
+          "label": "Score",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "recommendations",
+          "label": "Recommendations",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "analyzedAt",
+          "label": "Analyzed At",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "flightPlanId": 10,
+          "droneId": 10,
+          "analysisType": "performance",
+          "aiModel": "Advanced Ai Model 1",
+          "input": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "result": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "summary": "Comprehensive solution designed for optimal performance and efficiency.",
+          "score": 1.5,
+          "recommendations": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "analyzedAt": "2024-01-01"
+        },
+        {
+          "flightPlanId": 58,
+          "droneId": 58,
+          "analysisType": "safety",
+          "aiModel": "Premium Ai Model 2",
+          "input": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "result": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "summary": "Industry-leading approach with proven results across multiple deployments.",
+          "score": 2.1,
+          "recommendations": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "analyzedAt": "2024-02-03"
+        },
+        {
+          "flightPlanId": 106,
+          "droneId": 106,
+          "analysisType": "efficiency",
+          "aiModel": "Standard Ai Model 3",
+          "input": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "result": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "summary": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "score": 2.7,
+          "recommendations": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "analyzedAt": "2024-03-05"
+        },
+        {
+          "flightPlanId": 154,
+          "droneId": 154,
+          "analysisType": "risk",
+          "aiModel": "Elite Ai Model 4",
+          "input": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "result": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "summary": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "score": 3.3,
+          "recommendations": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "analyzedAt": "2024-04-07"
+        },
+        {
+          "flightPlanId": 102,
+          "droneId": 102,
+          "analysisType": "optimization",
+          "aiModel": "Core Ai Model 5",
+          "input": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "result": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "summary": "Cost-effective strategy focused on sustainable long-term growth.",
+          "score": 3.9,
+          "recommendations": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "analyzedAt": "2024-05-09"
+        },
+        {
+          "flightPlanId": 150,
+          "droneId": 150,
+          "analysisType": "predictive",
+          "aiModel": "Pro Ai Model 6",
+          "input": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "result": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "summary": "High-priority initiative aligned with organizational strategic objectives.",
+          "score": 4.5,
+          "recommendations": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "analyzedAt": "2024-06-11"
+        },
+        {
+          "flightPlanId": 198,
+          "droneId": 198,
+          "analysisType": "performance",
+          "aiModel": "Essential Ai Model 7",
+          "input": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "result": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "summary": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "score": 5.1,
+          "recommendations": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "analyzedAt": "2024-07-13"
+        },
+        {
+          "flightPlanId": 146,
+          "droneId": 146,
+          "analysisType": "safety",
+          "aiModel": "Primary Ai Model 8",
+          "input": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "result": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "summary": "Innovative framework incorporating best practices and emerging technologies.",
+          "score": 5.7,
+          "recommendations": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "analyzedAt": "2024-08-15"
+        },
+        {
+          "flightPlanId": 194,
+          "droneId": 194,
+          "analysisType": "efficiency",
+          "aiModel": "Global Ai Model 9",
+          "input": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "result": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "summary": "Scalable architecture built to accommodate rapid expansion and change.",
+          "score": 6.3,
+          "recommendations": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "analyzedAt": "2024-09-17"
+        },
+        {
+          "flightPlanId": 242,
+          "droneId": 242,
+          "analysisType": "risk",
+          "aiModel": "Regional Ai Model 10",
+          "input": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "result": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "summary": "Enterprise-grade solution with robust security and compliance features.",
+          "score": 1.9,
+          "recommendations": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "analyzedAt": "2024-10-19"
+        },
+        {
+          "flightPlanId": 190,
+          "droneId": 190,
+          "analysisType": "optimization",
+          "aiModel": "Custom Ai Model 11",
+          "input": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "result": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "summary": "Integrated platform connecting multiple systems for seamless operations.",
+          "score": 2.5,
+          "recommendations": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "analyzedAt": "2024-11-21"
+        },
+        {
+          "flightPlanId": 238,
+          "droneId": 238,
+          "analysisType": "predictive",
+          "aiModel": "Smart Ai Model 12",
+          "input": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "result": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "summary": "Automated workflow reducing manual intervention and human error.",
+          "score": 3.1,
+          "recommendations": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "analyzedAt": "2024-12-23"
+        },
+        {
+          "flightPlanId": 286,
+          "droneId": 286,
+          "analysisType": "performance",
+          "aiModel": "Rapid Ai Model 13",
+          "input": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "result": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "summary": "Real-time monitoring system with intelligent alerting capabilities.",
+          "score": 3.7,
+          "recommendations": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "analyzedAt": "2024-01-25"
+        },
+        {
+          "flightPlanId": 234,
+          "droneId": 234,
+          "analysisType": "safety",
+          "aiModel": "Secure Ai Model 14",
+          "input": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "result": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "summary": "Customizable module adaptable to diverse operational requirements.",
+          "score": 4.3,
+          "recommendations": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "analyzedAt": "2024-02-27"
+        },
+        {
+          "flightPlanId": 282,
+          "droneId": 282,
+          "analysisType": "efficiency",
+          "aiModel": "Modern Ai Model 15",
+          "input": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "result": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "summary": "Performance-optimized design achieving superior throughput and reliability.",
+          "score": 4.9,
+          "recommendations": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "analyzedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Document",
+      "routeKey": "documents",
+      "label": "Document",
+      "icon": "briefcase",
+      "aiFunction": "analyzeDocument",
+      "aiPrompt": "You are an AI analyst for A I Autonomous Drone Operations. Analyze the provided Document data. The data includes: Title, Type, Category, File Url, File Name, File Size, Issue Date, Expiry Date, Issued By, Status, Related Entity Type, Related Entity Id, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "license",
+            "certificate",
+            "insurance",
+            "manual",
+            "sop",
+            "permit",
+            "waiver",
+            "report",
+            "contract",
+            "other"
+          ]
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "license",
+            "certificate",
+            "insurance",
+            "manual",
+            "sop",
+            "permit",
+            "waiver",
+            "report",
+            "contract",
+            "other"
+          ]
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pilot",
+            "drone",
+            "company",
+            "client",
+            "regulatory",
+            "training"
+          ]
+        },
+        {
+          "key": "fileUrl",
+          "label": "File Url",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "pending",
+            "revoked"
+          ]
+        },
+        {
+          "key": "fileName",
+          "label": "File Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "pending",
+            "revoked"
+          ]
+        },
+        {
+          "key": "fileSize",
+          "label": "File Size",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "pending",
+            "revoked"
+          ]
+        },
+        {
+          "key": "issueDate",
+          "label": "Issue Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "pending",
+            "revoked"
+          ]
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "pending",
+            "revoked"
+          ]
+        },
+        {
+          "key": "issuedBy",
+          "label": "Issued By",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "pending",
+            "revoked"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "pending",
+            "revoked"
+          ]
+        },
+        {
+          "key": "relatedEntityType",
+          "label": "Related Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "relatedEntityId",
+          "label": "Related Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "license",
+          "type": "license",
+          "category": "pilot",
+          "fileUrl": "https://example.com/fileUrl/1",
+          "fileName": "Advanced File 1",
+          "fileSize": 10,
+          "issueDate": "2024-01-01",
+          "expiryDate": "2024-01-01",
+          "issuedBy": "active",
+          "status": "active",
+          "relatedEntityType": "Category A",
+          "relatedEntityId": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "title": "certificate",
+          "type": "certificate",
+          "category": "drone",
+          "fileUrl": "https://example.com/fileUrl/2",
+          "fileName": "Premium File 2",
+          "fileSize": 58,
+          "issueDate": "2024-02-03",
+          "expiryDate": "2024-02-03",
+          "issuedBy": "expired",
+          "status": "expired",
+          "relatedEntityType": "Category B",
+          "relatedEntityId": 58,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "title": "insurance",
+          "type": "insurance",
+          "category": "company",
+          "fileUrl": "https://example.com/fileUrl/3",
+          "fileName": "Standard File 3",
+          "fileSize": 106,
+          "issueDate": "2024-03-05",
+          "expiryDate": "2024-03-05",
+          "issuedBy": "pending",
+          "status": "pending",
+          "relatedEntityType": "Category C",
+          "relatedEntityId": 106,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "title": "manual",
+          "type": "manual",
+          "category": "client",
+          "fileUrl": "https://example.com/fileUrl/4",
+          "fileName": "Elite File 4",
+          "fileSize": 154,
+          "issueDate": "2024-04-07",
+          "expiryDate": "2024-04-07",
+          "issuedBy": "revoked",
+          "status": "revoked",
+          "relatedEntityType": "Category D",
+          "relatedEntityId": 154,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "title": "sop",
+          "type": "sop",
+          "category": "regulatory",
+          "fileUrl": "https://example.com/fileUrl/5",
+          "fileName": "Core File 5",
+          "fileSize": 102,
+          "issueDate": "2024-05-09",
+          "expiryDate": "2024-05-09",
+          "issuedBy": "active",
+          "status": "active",
+          "relatedEntityType": "Category E",
+          "relatedEntityId": 102,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "title": "permit",
+          "type": "permit",
+          "category": "training",
+          "fileUrl": "https://example.com/fileUrl/6",
+          "fileName": "Pro File 6",
+          "fileSize": 150,
+          "issueDate": "2024-06-11",
+          "expiryDate": "2024-06-11",
+          "issuedBy": "expired",
+          "status": "expired",
+          "relatedEntityType": "Premium Tier",
+          "relatedEntityId": 150,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "title": "waiver",
+          "type": "waiver",
+          "category": "pilot",
+          "fileUrl": "https://example.com/fileUrl/7",
+          "fileName": "Essential File 7",
+          "fileSize": 198,
+          "issueDate": "2024-07-13",
+          "expiryDate": "2024-07-13",
+          "issuedBy": "pending",
+          "status": "pending",
+          "relatedEntityType": "Standard Tier",
+          "relatedEntityId": 198,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "title": "report",
+          "type": "report",
+          "category": "drone",
+          "fileUrl": "https://example.com/fileUrl/8",
+          "fileName": "Primary File 8",
+          "fileSize": 146,
+          "issueDate": "2024-08-15",
+          "expiryDate": "2024-08-15",
+          "issuedBy": "revoked",
+          "status": "revoked",
+          "relatedEntityType": "Basic Tier",
+          "relatedEntityId": 146,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "title": "contract",
+          "type": "contract",
+          "category": "company",
+          "fileUrl": "https://example.com/fileUrl/9",
+          "fileName": "Global File 9",
+          "fileSize": 194,
+          "issueDate": "2024-09-17",
+          "expiryDate": "2024-09-17",
+          "issuedBy": "active",
+          "status": "active",
+          "relatedEntityType": "Enterprise",
+          "relatedEntityId": 194,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "title": "other",
+          "type": "other",
+          "category": "client",
+          "fileUrl": "https://example.com/fileUrl/10",
+          "fileName": "Regional File 10",
+          "fileSize": 242,
+          "issueDate": "2024-10-19",
+          "expiryDate": "2024-10-19",
+          "issuedBy": "expired",
+          "status": "expired",
+          "relatedEntityType": "Starter",
+          "relatedEntityId": 242,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "title": "license",
+          "type": "license",
+          "category": "regulatory",
+          "fileUrl": "https://example.com/fileUrl/11",
+          "fileName": "Custom File 11",
+          "fileSize": 190,
+          "issueDate": "2024-11-21",
+          "expiryDate": "2024-11-21",
+          "issuedBy": "pending",
+          "status": "pending",
+          "relatedEntityType": "Growth",
+          "relatedEntityId": 190,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "title": "certificate",
+          "type": "certificate",
+          "category": "training",
+          "fileUrl": "https://example.com/fileUrl/12",
+          "fileName": "Smart File 12",
+          "fileSize": 238,
+          "issueDate": "2024-12-23",
+          "expiryDate": "2024-12-23",
+          "issuedBy": "revoked",
+          "status": "revoked",
+          "relatedEntityType": "Scale",
+          "relatedEntityId": 238,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "title": "insurance",
+          "type": "insurance",
+          "category": "pilot",
+          "fileUrl": "https://example.com/fileUrl/13",
+          "fileName": "Rapid File 13",
+          "fileSize": 286,
+          "issueDate": "2024-01-25",
+          "expiryDate": "2024-01-25",
+          "issuedBy": "active",
+          "status": "active",
+          "relatedEntityType": "Foundation",
+          "relatedEntityId": 286,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "title": "manual",
+          "type": "manual",
+          "category": "drone",
+          "fileUrl": "https://example.com/fileUrl/14",
+          "fileName": "Secure File 14",
+          "fileSize": 234,
+          "issueDate": "2024-02-27",
+          "expiryDate": "2024-02-27",
+          "issuedBy": "expired",
+          "status": "expired",
+          "relatedEntityType": "Advanced",
+          "relatedEntityId": 234,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "title": "sop",
+          "type": "sop",
+          "category": "company",
+          "fileUrl": "https://example.com/fileUrl/15",
+          "fileName": "Modern File 15",
+          "fileSize": 282,
+          "issueDate": "2024-03-01",
+          "expiryDate": "2024-03-01",
+          "issuedBy": "pending",
+          "status": "pending",
+          "relatedEntityType": "Professional",
+          "relatedEntityId": 282,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Geofence",
+      "routeKey": "geofences",
+      "label": "Geofence",
+      "icon": "clipboard",
+      "aiFunction": "analyzeGeofence",
+      "aiPrompt": "You are an AI analyst for A I Autonomous Drone Operations. Analyze the provided Geofence data. The data includes: Name, Type, Shape, Coordinates, Radius, Min Altitude, Max Altitude, Status, Start Date, End Date, Reason, Authority, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "no-fly",
+            "restricted",
+            "operational",
+            "emergency",
+            "temporary",
+            "permanent"
+          ]
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "no-fly",
+            "restricted",
+            "operational",
+            "emergency",
+            "temporary",
+            "permanent"
+          ]
+        },
+        {
+          "key": "shape",
+          "label": "Shape",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "circle",
+            "polygon",
+            "corridor"
+          ]
+        },
+        {
+          "key": "coordinates",
+          "label": "Coordinates",
+          "type": "JSON",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive",
+            "scheduled"
+          ]
+        },
+        {
+          "key": "radius",
+          "label": "Radius",
+          "type": "FLOAT",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive",
+            "scheduled"
+          ]
+        },
+        {
+          "key": "minAltitude",
+          "label": "Min Altitude",
+          "type": "FLOAT",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive",
+            "scheduled"
+          ]
+        },
+        {
+          "key": "maxAltitude",
+          "label": "Max Altitude",
+          "type": "FLOAT",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive",
+            "scheduled"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive",
+            "scheduled"
+          ]
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "reason",
+          "label": "Reason",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "authority",
+          "label": "Authority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "no-fly",
+          "shape": "circle",
+          "coordinates": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "radius": 10,
+          "minAltitude": 10,
+          "maxAltitude": 10,
+          "status": "active",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "reason": "Comprehensive solution designed for optimal performance and efficiency.",
+          "authority": "Advanced Authority 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "restricted",
+          "shape": "polygon",
+          "coordinates": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "radius": 71.7,
+          "minAltitude": 71.7,
+          "maxAltitude": 71.7,
+          "status": "inactive",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "reason": "Industry-leading approach with proven results across multiple deployments.",
+          "authority": "Premium Authority 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "operational",
+          "shape": "corridor",
+          "coordinates": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "radius": 33.4,
+          "minAltitude": 33.4,
+          "maxAltitude": 33.4,
+          "status": "scheduled",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "reason": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "authority": "Standard Authority 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "emergency",
+          "shape": "circle",
+          "coordinates": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "radius": 95.1,
+          "minAltitude": 95.1,
+          "maxAltitude": 95.1,
+          "status": "active",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "reason": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "authority": "Elite Authority 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "type": "temporary",
+          "shape": "polygon",
+          "coordinates": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "radius": 56.8,
+          "minAltitude": 56.8,
+          "maxAltitude": 56.8,
+          "status": "inactive",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "reason": "Cost-effective strategy focused on sustainable long-term growth.",
+          "authority": "Core Authority 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "permanent",
+          "shape": "corridor",
+          "coordinates": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "radius": 118.5,
+          "minAltitude": 118.5,
+          "maxAltitude": 118.5,
+          "status": "scheduled",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "reason": "High-priority initiative aligned with organizational strategic objectives.",
+          "authority": "Pro Authority 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "no-fly",
+          "shape": "circle",
+          "coordinates": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "radius": 80.2,
+          "minAltitude": 80.2,
+          "maxAltitude": 80.2,
+          "status": "active",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "reason": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "authority": "Essential Authority 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "restricted",
+          "shape": "polygon",
+          "coordinates": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "radius": 141.9,
+          "minAltitude": 141.9,
+          "maxAltitude": 141.9,
+          "status": "inactive",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "reason": "Innovative framework incorporating best practices and emerging technologies.",
+          "authority": "Primary Authority 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "type": "operational",
+          "shape": "corridor",
+          "coordinates": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "radius": 103.6,
+          "minAltitude": 103.6,
+          "maxAltitude": 103.6,
+          "status": "scheduled",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "reason": "Scalable architecture built to accommodate rapid expansion and change.",
+          "authority": "Global Authority 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "emergency",
+          "shape": "circle",
+          "coordinates": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "radius": 165.3,
+          "minAltitude": 165.3,
+          "maxAltitude": 165.3,
+          "status": "active",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "reason": "Enterprise-grade solution with robust security and compliance features.",
+          "authority": "Regional Authority 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "temporary",
+          "shape": "polygon",
+          "coordinates": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "radius": 127,
+          "minAltitude": 127,
+          "maxAltitude": 127,
+          "status": "inactive",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "reason": "Integrated platform connecting multiple systems for seamless operations.",
+          "authority": "Custom Authority 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "permanent",
+          "shape": "corridor",
+          "coordinates": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "radius": 188.7,
+          "minAltitude": 188.7,
+          "maxAltitude": 188.7,
+          "status": "scheduled",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "reason": "Automated workflow reducing manual intervention and human error.",
+          "authority": "Smart Authority 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "no-fly",
+          "shape": "circle",
+          "coordinates": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "radius": 150.4,
+          "minAltitude": 150.4,
+          "maxAltitude": 150.4,
+          "status": "active",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "reason": "Real-time monitoring system with intelligent alerting capabilities.",
+          "authority": "Rapid Authority 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "restricted",
+          "shape": "polygon",
+          "coordinates": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "radius": 212.1,
+          "minAltitude": 212.1,
+          "maxAltitude": 212.1,
+          "status": "inactive",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "reason": "Customizable module adaptable to diverse operational requirements.",
+          "authority": "Secure Authority 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "operational",
+          "shape": "corridor",
+          "coordinates": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "radius": 173.8,
+          "minAltitude": 173.8,
+          "maxAltitude": 173.8,
+          "status": "scheduled",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "reason": "Performance-optimized design achieving superior throughput and reliability.",
+          "authority": "Modern Authority 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

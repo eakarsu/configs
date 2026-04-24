@@ -1,0 +1,847 @@
+{
+  "appName": "AI Marketplace & Auction (Part 2)",
+  "dbName": "a_i_marketplace_auction_part2",
+  "folderName": "generated/AIMarketplaceAuctionPart2",
+  "features": [
+    {
+      "modelName": "Order",
+      "routeKey": "orders",
+      "label": "Order",
+      "icon": "database",
+      "aiFunction": "analyzeOrder",
+      "aiPrompt": "You are an AI analyst for A I Subscription Box Curator. Analyze the provided Order data. The data includes: Customer Id, Box Id, Status, Total, Order Date, Shipping Address. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "boxId",
+          "label": "Box Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "total",
+          "label": "Total",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "orderDate",
+          "label": "Order Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "shippingAddress",
+          "label": "Shipping Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": 10,
+          "boxId": 10,
+          "status": "active",
+          "total": 10,
+          "orderDate": "2024-01-01",
+          "shippingAddress": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "customerId": 58,
+          "boxId": 58,
+          "status": "pending",
+          "total": 71.7,
+          "orderDate": "2024-02-03",
+          "shippingAddress": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "customerId": 106,
+          "boxId": 106,
+          "status": "in_progress",
+          "total": 33.4,
+          "orderDate": "2024-03-05",
+          "shippingAddress": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "customerId": 154,
+          "boxId": 154,
+          "status": "completed",
+          "total": 95.1,
+          "orderDate": "2024-04-07",
+          "shippingAddress": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "customerId": 102,
+          "boxId": 102,
+          "status": "under_review",
+          "total": 56.8,
+          "orderDate": "2024-05-09",
+          "shippingAddress": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "customerId": 150,
+          "boxId": 150,
+          "status": "approved",
+          "total": 118.5,
+          "orderDate": "2024-06-11",
+          "shippingAddress": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "customerId": 198,
+          "boxId": 198,
+          "status": "active",
+          "total": 80.2,
+          "orderDate": "2024-07-13",
+          "shippingAddress": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "customerId": 146,
+          "boxId": 146,
+          "status": "active",
+          "total": 141.9,
+          "orderDate": "2024-08-15",
+          "shippingAddress": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "customerId": 194,
+          "boxId": 194,
+          "status": "active",
+          "total": 103.6,
+          "orderDate": "2024-09-17",
+          "shippingAddress": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "customerId": 242,
+          "boxId": 242,
+          "status": "pending",
+          "total": 165.3,
+          "orderDate": "2024-10-19",
+          "shippingAddress": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "customerId": 190,
+          "boxId": 190,
+          "status": "completed",
+          "total": 127,
+          "orderDate": "2024-11-21",
+          "shippingAddress": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "customerId": 238,
+          "boxId": 238,
+          "status": "active",
+          "total": 188.7,
+          "orderDate": "2024-12-23",
+          "shippingAddress": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "customerId": 286,
+          "boxId": 286,
+          "status": "in_progress",
+          "total": 150.4,
+          "orderDate": "2024-01-25",
+          "shippingAddress": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "customerId": 234,
+          "boxId": 234,
+          "status": "active",
+          "total": 212.1,
+          "orderDate": "2024-02-27",
+          "shippingAddress": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "customerId": 282,
+          "boxId": 282,
+          "status": "approved",
+          "total": 173.8,
+          "orderDate": "2024-03-01",
+          "shippingAddress": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Shipping",
+      "routeKey": "shippings",
+      "label": "Shipping",
+      "icon": "layers",
+      "aiFunction": "analyzeShipping",
+      "aiPrompt": "You are an AI analyst for A I Auction House Platform. Analyze the provided Shipping data. The data includes: Invoice Id, Item Id, Bidder Id, Carrier, Tracking Number, Shipping Method, Shipping Cost, Insurance Value, Status, Pickup Date, Delivery Date, Destination Address, Special Instructions. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "invoiceId",
+          "label": "Invoice Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "itemId",
+          "label": "Item Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bidderId",
+          "label": "Bidder Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "carrier",
+          "label": "Carrier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "trackingNumber",
+          "label": "Tracking Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "shippingMethod",
+          "label": "Shipping Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "shippingCost",
+          "label": "Shipping Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "insuranceValue",
+          "label": "Insurance Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "pickupDate",
+          "label": "Pickup Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "deliveryDate",
+          "label": "Delivery Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "destinationAddress",
+          "label": "Destination Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "specialInstructions",
+          "label": "Special Instructions",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "invoiceId": 10,
+          "itemId": 10,
+          "bidderId": 10,
+          "carrier": "Advanced Carrier 1",
+          "trackingNumber": "Advanced Tracking Number 1",
+          "shippingMethod": "Advanced Shipping Method 1",
+          "shippingCost": 500,
+          "insuranceValue": 10,
+          "status": "active",
+          "pickupDate": "2024-01-01",
+          "deliveryDate": "2024-01-01",
+          "destinationAddress": "Comprehensive solution designed for optimal performance and efficiency.",
+          "specialInstructions": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "invoiceId": 58,
+          "itemId": 58,
+          "bidderId": 58,
+          "carrier": "Premium Carrier 2",
+          "trackingNumber": "Premium Tracking Number 2",
+          "shippingMethod": "Premium Shipping Method 2",
+          "shippingCost": 2481,
+          "insuranceValue": 71.7,
+          "status": "pending",
+          "pickupDate": "2024-02-03",
+          "deliveryDate": "2024-02-03",
+          "destinationAddress": "Industry-leading approach with proven results across multiple deployments.",
+          "specialInstructions": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "invoiceId": 106,
+          "itemId": 106,
+          "bidderId": 106,
+          "carrier": "Standard Carrier 3",
+          "trackingNumber": "Standard Tracking Number 3",
+          "shippingMethod": "Standard Shipping Method 3",
+          "shippingCost": 4462,
+          "insuranceValue": 33.4,
+          "status": "in_progress",
+          "pickupDate": "2024-03-05",
+          "deliveryDate": "2024-03-05",
+          "destinationAddress": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "specialInstructions": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "invoiceId": 154,
+          "itemId": 154,
+          "bidderId": 154,
+          "carrier": "Elite Carrier 4",
+          "trackingNumber": "Elite Tracking Number 4",
+          "shippingMethod": "Elite Shipping Method 4",
+          "shippingCost": 6443,
+          "insuranceValue": 95.1,
+          "status": "completed",
+          "pickupDate": "2024-04-07",
+          "deliveryDate": "2024-04-07",
+          "destinationAddress": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "specialInstructions": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "invoiceId": 102,
+          "itemId": 102,
+          "bidderId": 102,
+          "carrier": "Core Carrier 5",
+          "trackingNumber": "Core Tracking Number 5",
+          "shippingMethod": "Core Shipping Method 5",
+          "shippingCost": 8424,
+          "insuranceValue": 56.8,
+          "status": "under_review",
+          "pickupDate": "2024-05-09",
+          "deliveryDate": "2024-05-09",
+          "destinationAddress": "Cost-effective strategy focused on sustainable long-term growth.",
+          "specialInstructions": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "invoiceId": 150,
+          "itemId": 150,
+          "bidderId": 150,
+          "carrier": "Pro Carrier 6",
+          "trackingNumber": "Pro Tracking Number 6",
+          "shippingMethod": "Pro Shipping Method 6",
+          "shippingCost": 10405,
+          "insuranceValue": 118.5,
+          "status": "approved",
+          "pickupDate": "2024-06-11",
+          "deliveryDate": "2024-06-11",
+          "destinationAddress": "High-priority initiative aligned with organizational strategic objectives.",
+          "specialInstructions": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "invoiceId": 198,
+          "itemId": 198,
+          "bidderId": 198,
+          "carrier": "Essential Carrier 7",
+          "trackingNumber": "Essential Tracking Number 7",
+          "shippingMethod": "Essential Shipping Method 7",
+          "shippingCost": 12386,
+          "insuranceValue": 80.2,
+          "status": "active",
+          "pickupDate": "2024-07-13",
+          "deliveryDate": "2024-07-13",
+          "destinationAddress": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "specialInstructions": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "invoiceId": 146,
+          "itemId": 146,
+          "bidderId": 146,
+          "carrier": "Primary Carrier 8",
+          "trackingNumber": "Primary Tracking Number 8",
+          "shippingMethod": "Primary Shipping Method 8",
+          "shippingCost": 9367,
+          "insuranceValue": 141.9,
+          "status": "active",
+          "pickupDate": "2024-08-15",
+          "deliveryDate": "2024-08-15",
+          "destinationAddress": "Innovative framework incorporating best practices and emerging technologies.",
+          "specialInstructions": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "invoiceId": 194,
+          "itemId": 194,
+          "bidderId": 194,
+          "carrier": "Global Carrier 9",
+          "trackingNumber": "Global Tracking Number 9",
+          "shippingMethod": "Global Shipping Method 9",
+          "shippingCost": 11348,
+          "insuranceValue": 103.6,
+          "status": "active",
+          "pickupDate": "2024-09-17",
+          "deliveryDate": "2024-09-17",
+          "destinationAddress": "Scalable architecture built to accommodate rapid expansion and change.",
+          "specialInstructions": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "invoiceId": 242,
+          "itemId": 242,
+          "bidderId": 242,
+          "carrier": "Regional Carrier 10",
+          "trackingNumber": "Regional Tracking Number 10",
+          "shippingMethod": "Regional Shipping Method 10",
+          "shippingCost": 13329,
+          "insuranceValue": 165.3,
+          "status": "pending",
+          "pickupDate": "2024-10-19",
+          "deliveryDate": "2024-10-19",
+          "destinationAddress": "Enterprise-grade solution with robust security and compliance features.",
+          "specialInstructions": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "invoiceId": 190,
+          "itemId": 190,
+          "bidderId": 190,
+          "carrier": "Custom Carrier 11",
+          "trackingNumber": "Custom Tracking Number 11",
+          "shippingMethod": "Custom Shipping Method 11",
+          "shippingCost": 15310,
+          "insuranceValue": 127,
+          "status": "completed",
+          "pickupDate": "2024-11-21",
+          "deliveryDate": "2024-11-21",
+          "destinationAddress": "Integrated platform connecting multiple systems for seamless operations.",
+          "specialInstructions": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "invoiceId": 238,
+          "itemId": 238,
+          "bidderId": 238,
+          "carrier": "Smart Carrier 12",
+          "trackingNumber": "Smart Tracking Number 12",
+          "shippingMethod": "Smart Shipping Method 12",
+          "shippingCost": 17291,
+          "insuranceValue": 188.7,
+          "status": "active",
+          "pickupDate": "2024-12-23",
+          "deliveryDate": "2024-12-23",
+          "destinationAddress": "Automated workflow reducing manual intervention and human error.",
+          "specialInstructions": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "invoiceId": 286,
+          "itemId": 286,
+          "bidderId": 286,
+          "carrier": "Rapid Carrier 13",
+          "trackingNumber": "Rapid Tracking Number 13",
+          "shippingMethod": "Rapid Shipping Method 13",
+          "shippingCost": 19272,
+          "insuranceValue": 150.4,
+          "status": "in_progress",
+          "pickupDate": "2024-01-25",
+          "deliveryDate": "2024-01-25",
+          "destinationAddress": "Real-time monitoring system with intelligent alerting capabilities.",
+          "specialInstructions": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "invoiceId": 234,
+          "itemId": 234,
+          "bidderId": 234,
+          "carrier": "Secure Carrier 14",
+          "trackingNumber": "Secure Tracking Number 14",
+          "shippingMethod": "Secure Shipping Method 14",
+          "shippingCost": 21253,
+          "insuranceValue": 212.1,
+          "status": "active",
+          "pickupDate": "2024-02-27",
+          "deliveryDate": "2024-02-27",
+          "destinationAddress": "Customizable module adaptable to diverse operational requirements.",
+          "specialInstructions": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "invoiceId": 282,
+          "itemId": 282,
+          "bidderId": 282,
+          "carrier": "Modern Carrier 15",
+          "trackingNumber": "Modern Tracking Number 15",
+          "shippingMethod": "Modern Shipping Method 15",
+          "shippingCost": 18234,
+          "insuranceValue": 173.8,
+          "status": "approved",
+          "pickupDate": "2024-03-01",
+          "deliveryDate": "2024-03-01",
+          "destinationAddress": "Performance-optimized design achieving superior throughput and reliability.",
+          "specialInstructions": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "ImagePrompt",
+      "routeKey": "image-prompts",
+      "label": "Image Prompt",
+      "icon": "database",
+      "aiFunction": "analyzeImagePrompt",
+      "aiPrompt": "You are an AI analyst for A I Marketplace Builder Platform. Analyze the provided Image Prompt data. The data includes: Title, Style, Subject, Mood, Generated Prompt, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "style",
+          "label": "Style",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "subject",
+          "label": "Subject",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mood",
+          "label": "Mood",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "generatedPrompt",
+          "label": "Generated Prompt",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "style": "Advanced Style 1",
+          "subject": "Advanced Subject 1",
+          "mood": "Advanced Mood 1",
+          "generatedPrompt": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "title": "Premium Title 2",
+          "style": "Premium Style 2",
+          "subject": "Premium Subject 2",
+          "mood": "Premium Mood 2",
+          "generatedPrompt": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "title": "Standard Title 3",
+          "style": "Standard Style 3",
+          "subject": "Standard Subject 3",
+          "mood": "Standard Mood 3",
+          "generatedPrompt": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "title": "Elite Title 4",
+          "style": "Elite Style 4",
+          "subject": "Elite Subject 4",
+          "mood": "Elite Mood 4",
+          "generatedPrompt": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "title": "Core Title 5",
+          "style": "Core Style 5",
+          "subject": "Core Subject 5",
+          "mood": "Core Mood 5",
+          "generatedPrompt": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "title": "Pro Title 6",
+          "style": "Pro Style 6",
+          "subject": "Pro Subject 6",
+          "mood": "Pro Mood 6",
+          "generatedPrompt": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "title": "Essential Title 7",
+          "style": "Essential Style 7",
+          "subject": "Essential Subject 7",
+          "mood": "Essential Mood 7",
+          "generatedPrompt": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "title": "Primary Title 8",
+          "style": "Primary Style 8",
+          "subject": "Primary Subject 8",
+          "mood": "Primary Mood 8",
+          "generatedPrompt": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "title": "Global Title 9",
+          "style": "Global Style 9",
+          "subject": "Global Subject 9",
+          "mood": "Global Mood 9",
+          "generatedPrompt": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "title": "Regional Title 10",
+          "style": "Regional Style 10",
+          "subject": "Regional Subject 10",
+          "mood": "Regional Mood 10",
+          "generatedPrompt": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "title": "Custom Title 11",
+          "style": "Custom Style 11",
+          "subject": "Custom Subject 11",
+          "mood": "Custom Mood 11",
+          "generatedPrompt": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "title": "Smart Title 12",
+          "style": "Smart Style 12",
+          "subject": "Smart Subject 12",
+          "mood": "Smart Mood 12",
+          "generatedPrompt": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "title": "Rapid Title 13",
+          "style": "Rapid Style 13",
+          "subject": "Rapid Subject 13",
+          "mood": "Rapid Mood 13",
+          "generatedPrompt": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "title": "Secure Title 14",
+          "style": "Secure Style 14",
+          "subject": "Secure Subject 14",
+          "mood": "Secure Mood 14",
+          "generatedPrompt": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "title": "Modern Title 15",
+          "style": "Modern Style 15",
+          "subject": "Modern Subject 15",
+          "mood": "Modern Mood 15",
+          "generatedPrompt": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Customer",
+      "routeKey": "customers",
+      "label": "Customer",
+      "icon": "clipboard",
+      "aiFunction": "analyzeCustomer",
+      "aiPrompt": "You are an AI analyst for A I Subscription Box Curator. Analyze the provided Customer data. The data includes: Name, Email, Preferences, Subscription Tier, Status, Lifetime Value, Joined Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "preferences",
+          "label": "Preferences",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "subscriptionTier",
+          "label": "Subscription Tier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lifetimeValue",
+          "label": "Lifetime Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "joinedDate",
+          "label": "Joined Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "preferences": "Comprehensive solution designed for optimal performance and efficiency.",
+          "subscriptionTier": "Advanced Subscription Tier 1",
+          "status": "active",
+          "lifetimeValue": 10,
+          "joinedDate": "2024-01-01"
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "preferences": "Industry-leading approach with proven results across multiple deployments.",
+          "subscriptionTier": "Premium Subscription Tier 2",
+          "status": "pending",
+          "lifetimeValue": 71.7,
+          "joinedDate": "2024-02-03"
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "preferences": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "subscriptionTier": "Standard Subscription Tier 3",
+          "status": "in_progress",
+          "lifetimeValue": 33.4,
+          "joinedDate": "2024-03-05"
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "preferences": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "subscriptionTier": "Elite Subscription Tier 4",
+          "status": "completed",
+          "lifetimeValue": 95.1,
+          "joinedDate": "2024-04-07"
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "preferences": "Cost-effective strategy focused on sustainable long-term growth.",
+          "subscriptionTier": "Core Subscription Tier 5",
+          "status": "under_review",
+          "lifetimeValue": 56.8,
+          "joinedDate": "2024-05-09"
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "preferences": "High-priority initiative aligned with organizational strategic objectives.",
+          "subscriptionTier": "Pro Subscription Tier 6",
+          "status": "approved",
+          "lifetimeValue": 118.5,
+          "joinedDate": "2024-06-11"
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "preferences": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "subscriptionTier": "Essential Subscription Tier 7",
+          "status": "active",
+          "lifetimeValue": 80.2,
+          "joinedDate": "2024-07-13"
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "preferences": "Innovative framework incorporating best practices and emerging technologies.",
+          "subscriptionTier": "Primary Subscription Tier 8",
+          "status": "active",
+          "lifetimeValue": 141.9,
+          "joinedDate": "2024-08-15"
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "preferences": "Scalable architecture built to accommodate rapid expansion and change.",
+          "subscriptionTier": "Global Subscription Tier 9",
+          "status": "active",
+          "lifetimeValue": 103.6,
+          "joinedDate": "2024-09-17"
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "preferences": "Enterprise-grade solution with robust security and compliance features.",
+          "subscriptionTier": "Regional Subscription Tier 10",
+          "status": "pending",
+          "lifetimeValue": 165.3,
+          "joinedDate": "2024-10-19"
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "preferences": "Integrated platform connecting multiple systems for seamless operations.",
+          "subscriptionTier": "Custom Subscription Tier 11",
+          "status": "completed",
+          "lifetimeValue": 127,
+          "joinedDate": "2024-11-21"
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "preferences": "Automated workflow reducing manual intervention and human error.",
+          "subscriptionTier": "Smart Subscription Tier 12",
+          "status": "active",
+          "lifetimeValue": 188.7,
+          "joinedDate": "2024-12-23"
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "preferences": "Real-time monitoring system with intelligent alerting capabilities.",
+          "subscriptionTier": "Rapid Subscription Tier 13",
+          "status": "in_progress",
+          "lifetimeValue": 150.4,
+          "joinedDate": "2024-01-25"
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "preferences": "Customizable module adaptable to diverse operational requirements.",
+          "subscriptionTier": "Secure Subscription Tier 14",
+          "status": "active",
+          "lifetimeValue": 212.1,
+          "joinedDate": "2024-02-27"
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "preferences": "Performance-optimized design achieving superior throughput and reliability.",
+          "subscriptionTier": "Modern Subscription Tier 15",
+          "status": "approved",
+          "lifetimeValue": 173.8,
+          "joinedDate": "2024-03-01"
+        }
+      ]
+    }
+  ]
+}

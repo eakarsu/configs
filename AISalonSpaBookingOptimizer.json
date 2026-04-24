@@ -1,0 +1,4522 @@
+{
+  "appName": "A I Salon Spa Booking Optimizer",
+  "dbName": "a_i_salon_spa_booking_optimizer",
+  "folderName": "generated/AISalonSpaBookingOptimizer",
+  "features": [
+    {
+      "modelName": "Stylist",
+      "routeKey": "stylists",
+      "label": "Stylist",
+      "icon": "activity",
+      "aiFunction": "analyzeStylist",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Stylist data. The data includes: Name, Email, Phone, Specialties, Experience Years, Rating, Bio, Availability, Hourly Rate. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "specialties",
+          "label": "Specialties",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "experienceYears",
+          "label": "Experience Years",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "bio",
+          "label": "Bio",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "availability",
+          "label": "Availability",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "hourlyRate",
+          "label": "Hourly Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "specialties": "Comprehensive solution designed for optimal performance and efficiency.",
+          "experienceYears": 2020,
+          "rating": 1.5,
+          "bio": "Comprehensive solution designed for optimal performance and efficiency.",
+          "availability": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "hourlyRate": 1.5
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "specialties": "Industry-leading approach with proven results across multiple deployments.",
+          "experienceYears": 2021,
+          "rating": 2.1,
+          "bio": "Industry-leading approach with proven results across multiple deployments.",
+          "availability": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "hourlyRate": 2.1
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "specialties": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "experienceYears": 2022,
+          "rating": 2.7,
+          "bio": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "availability": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "hourlyRate": 2.7
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "specialties": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "experienceYears": 2023,
+          "rating": 3.3,
+          "bio": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "availability": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "hourlyRate": 3.3
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "specialties": "Cost-effective strategy focused on sustainable long-term growth.",
+          "experienceYears": 2024,
+          "rating": 3.9,
+          "bio": "Cost-effective strategy focused on sustainable long-term growth.",
+          "availability": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "hourlyRate": 3.9
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "specialties": "High-priority initiative aligned with organizational strategic objectives.",
+          "experienceYears": 2025,
+          "rating": 4.5,
+          "bio": "High-priority initiative aligned with organizational strategic objectives.",
+          "availability": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "hourlyRate": 4.5
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "specialties": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "experienceYears": 2020,
+          "rating": 5.1,
+          "bio": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "availability": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "hourlyRate": 5.1
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "specialties": "Innovative framework incorporating best practices and emerging technologies.",
+          "experienceYears": 2021,
+          "rating": 5.7,
+          "bio": "Innovative framework incorporating best practices and emerging technologies.",
+          "availability": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "hourlyRate": 5.7
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "specialties": "Scalable architecture built to accommodate rapid expansion and change.",
+          "experienceYears": 2022,
+          "rating": 6.3,
+          "bio": "Scalable architecture built to accommodate rapid expansion and change.",
+          "availability": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "hourlyRate": 6.3
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "specialties": "Enterprise-grade solution with robust security and compliance features.",
+          "experienceYears": 2023,
+          "rating": 1.9,
+          "bio": "Enterprise-grade solution with robust security and compliance features.",
+          "availability": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "hourlyRate": 1.9
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "specialties": "Integrated platform connecting multiple systems for seamless operations.",
+          "experienceYears": 2024,
+          "rating": 2.5,
+          "bio": "Integrated platform connecting multiple systems for seamless operations.",
+          "availability": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "hourlyRate": 2.5
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "specialties": "Automated workflow reducing manual intervention and human error.",
+          "experienceYears": 2025,
+          "rating": 3.1,
+          "bio": "Automated workflow reducing manual intervention and human error.",
+          "availability": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "hourlyRate": 3.1
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "specialties": "Real-time monitoring system with intelligent alerting capabilities.",
+          "experienceYears": 2020,
+          "rating": 3.7,
+          "bio": "Real-time monitoring system with intelligent alerting capabilities.",
+          "availability": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "hourlyRate": 3.7
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "specialties": "Customizable module adaptable to diverse operational requirements.",
+          "experienceYears": 2021,
+          "rating": 4.3,
+          "bio": "Customizable module adaptable to diverse operational requirements.",
+          "availability": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "hourlyRate": 4.3
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "specialties": "Performance-optimized design achieving superior throughput and reliability.",
+          "experienceYears": 2022,
+          "rating": 4.9,
+          "bio": "Performance-optimized design achieving superior throughput and reliability.",
+          "availability": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "hourlyRate": 4.9
+        }
+      ]
+    },
+    {
+      "modelName": "Client",
+      "routeKey": "clients",
+      "label": "Client",
+      "icon": "briefcase",
+      "aiFunction": "analyzeClient",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Client data. The data includes: Name, Email, Phone, Preferences, Hair Type, Skin Type, Allergies, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "preferences",
+          "label": "Preferences",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "hairType",
+          "label": "Hair Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "skinType",
+          "label": "Skin Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "allergies",
+          "label": "Allergies",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "preferences": "Comprehensive solution designed for optimal performance and efficiency.",
+          "hairType": "Category A",
+          "skinType": "Category A",
+          "allergies": "Comprehensive solution designed for optimal performance and efficiency.",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "preferences": "Industry-leading approach with proven results across multiple deployments.",
+          "hairType": "Category B",
+          "skinType": "Category B",
+          "allergies": "Industry-leading approach with proven results across multiple deployments.",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "preferences": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "hairType": "Category C",
+          "skinType": "Category C",
+          "allergies": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "preferences": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "hairType": "Category D",
+          "skinType": "Category D",
+          "allergies": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "preferences": "Cost-effective strategy focused on sustainable long-term growth.",
+          "hairType": "Category E",
+          "skinType": "Category E",
+          "allergies": "Cost-effective strategy focused on sustainable long-term growth.",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "preferences": "High-priority initiative aligned with organizational strategic objectives.",
+          "hairType": "Premium Tier",
+          "skinType": "Premium Tier",
+          "allergies": "High-priority initiative aligned with organizational strategic objectives.",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "preferences": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "hairType": "Standard Tier",
+          "skinType": "Standard Tier",
+          "allergies": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "preferences": "Innovative framework incorporating best practices and emerging technologies.",
+          "hairType": "Basic Tier",
+          "skinType": "Basic Tier",
+          "allergies": "Innovative framework incorporating best practices and emerging technologies.",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "preferences": "Scalable architecture built to accommodate rapid expansion and change.",
+          "hairType": "Enterprise",
+          "skinType": "Enterprise",
+          "allergies": "Scalable architecture built to accommodate rapid expansion and change.",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "preferences": "Enterprise-grade solution with robust security and compliance features.",
+          "hairType": "Starter",
+          "skinType": "Starter",
+          "allergies": "Enterprise-grade solution with robust security and compliance features.",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "preferences": "Integrated platform connecting multiple systems for seamless operations.",
+          "hairType": "Growth",
+          "skinType": "Growth",
+          "allergies": "Integrated platform connecting multiple systems for seamless operations.",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "preferences": "Automated workflow reducing manual intervention and human error.",
+          "hairType": "Scale",
+          "skinType": "Scale",
+          "allergies": "Automated workflow reducing manual intervention and human error.",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "preferences": "Real-time monitoring system with intelligent alerting capabilities.",
+          "hairType": "Foundation",
+          "skinType": "Foundation",
+          "allergies": "Real-time monitoring system with intelligent alerting capabilities.",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "preferences": "Customizable module adaptable to diverse operational requirements.",
+          "hairType": "Advanced",
+          "skinType": "Advanced",
+          "allergies": "Customizable module adaptable to diverse operational requirements.",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "preferences": "Performance-optimized design achieving superior throughput and reliability.",
+          "hairType": "Professional",
+          "skinType": "Professional",
+          "allergies": "Performance-optimized design achieving superior throughput and reliability.",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Service",
+      "routeKey": "services",
+      "label": "Service",
+      "icon": "clipboard",
+      "aiFunction": "analyzeService",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Service data. The data includes: Name, Category, Description, Base Duration Min, Price, Difficulty Level. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "baseDurationMin",
+          "label": "Base Duration Min",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "price",
+          "label": "Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "difficultyLevel",
+          "label": "Difficulty Level",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "baseDurationMin": 10,
+          "price": 500,
+          "difficultyLevel": "low"
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "baseDurationMin": 58,
+          "price": 2481,
+          "difficultyLevel": "medium"
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "baseDurationMin": 106,
+          "price": 4462,
+          "difficultyLevel": "high"
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "baseDurationMin": 154,
+          "price": 6443,
+          "difficultyLevel": "critical"
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "baseDurationMin": 102,
+          "price": 8424,
+          "difficultyLevel": "medium"
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "baseDurationMin": 150,
+          "price": 10405,
+          "difficultyLevel": "low"
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "baseDurationMin": 198,
+          "price": 12386,
+          "difficultyLevel": "medium"
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "baseDurationMin": 146,
+          "price": 9367,
+          "difficultyLevel": "high"
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "baseDurationMin": 194,
+          "price": 11348,
+          "difficultyLevel": "critical"
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "baseDurationMin": 242,
+          "price": 13329,
+          "difficultyLevel": "medium"
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "baseDurationMin": 190,
+          "price": 15310,
+          "difficultyLevel": "low"
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "baseDurationMin": 238,
+          "price": 17291,
+          "difficultyLevel": "medium"
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "baseDurationMin": 286,
+          "price": 19272,
+          "difficultyLevel": "high"
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "baseDurationMin": 234,
+          "price": 21253,
+          "difficultyLevel": "critical"
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "baseDurationMin": 282,
+          "price": 18234,
+          "difficultyLevel": "medium"
+        }
+      ]
+    },
+    {
+      "modelName": "Product",
+      "routeKey": "products",
+      "label": "Product",
+      "icon": "database",
+      "aiFunction": "analyzeProduct",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Product data. The data includes: Name, Brand, Category, Description, Price, Stock Quantity, Suitable For. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "brand",
+          "label": "Brand",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "price",
+          "label": "Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "stockQuantity",
+          "label": "Stock Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "suitableFor",
+          "label": "Suitable For",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "brand": "Advanced Brand 1",
+          "category": "Category A",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "price": 500,
+          "stockQuantity": 178,
+          "suitableFor": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "brand": "Premium Brand 2",
+          "category": "Category B",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "price": 2481,
+          "stockQuantity": 69,
+          "suitableFor": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "brand": "Standard Brand 3",
+          "category": "Category C",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "price": 4462,
+          "stockQuantity": 43,
+          "suitableFor": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "brand": "Elite Brand 4",
+          "category": "Category D",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "price": 6443,
+          "stockQuantity": 95,
+          "suitableFor": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "brand": "Core Brand 5",
+          "category": "Category E",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "price": 8424,
+          "stockQuantity": 99,
+          "suitableFor": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "brand": "Pro Brand 6",
+          "category": "Premium Tier",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "price": 10405,
+          "stockQuantity": 223,
+          "suitableFor": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "brand": "Essential Brand 7",
+          "category": "Standard Tier",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "price": 12386,
+          "stockQuantity": 210,
+          "suitableFor": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "brand": "Primary Brand 8",
+          "category": "Basic Tier",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "price": 9367,
+          "stockQuantity": 124,
+          "suitableFor": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "brand": "Global Brand 9",
+          "category": "Enterprise",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "price": 11348,
+          "stockQuantity": 195,
+          "suitableFor": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "brand": "Regional Brand 10",
+          "category": "Starter",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "price": 13329,
+          "stockQuantity": 250,
+          "suitableFor": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "brand": "Custom Brand 11",
+          "category": "Growth",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "price": 15310,
+          "stockQuantity": 91,
+          "suitableFor": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "brand": "Smart Brand 12",
+          "category": "Scale",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "price": 17291,
+          "stockQuantity": 159,
+          "suitableFor": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "brand": "Rapid Brand 13",
+          "category": "Foundation",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "price": 19272,
+          "stockQuantity": 240,
+          "suitableFor": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "brand": "Secure Brand 14",
+          "category": "Advanced",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "price": 21253,
+          "stockQuantity": 283,
+          "suitableFor": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "brand": "Modern Brand 15",
+          "category": "Professional",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "price": 18234,
+          "stockQuantity": 132,
+          "suitableFor": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Booking",
+      "routeKey": "bookings",
+      "label": "Booking",
+      "icon": "file-text",
+      "aiFunction": "analyzeBooking",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Booking data. The data includes: Client Id, Stylist Id, Service Id, Booking Date, Start Time, End Time, Status, Notes, Total Price. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "clientId",
+          "label": "Client Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "stylistId",
+          "label": "Stylist Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "serviceId",
+          "label": "Service Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bookingDate",
+          "label": "Booking Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "totalPrice",
+          "label": "Total Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "clientId": 10,
+          "stylistId": 10,
+          "serviceId": 10,
+          "bookingDate": "2024-01-01",
+          "startTime": "Advanced Start Time 1",
+          "endTime": "Advanced End Time 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "totalPrice": 500
+        },
+        {
+          "clientId": 58,
+          "stylistId": 58,
+          "serviceId": 58,
+          "bookingDate": "2024-02-03",
+          "startTime": "Premium Start Time 2",
+          "endTime": "Premium End Time 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "totalPrice": 2481
+        },
+        {
+          "clientId": 106,
+          "stylistId": 106,
+          "serviceId": 106,
+          "bookingDate": "2024-03-05",
+          "startTime": "Standard Start Time 3",
+          "endTime": "Standard End Time 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "totalPrice": 4462
+        },
+        {
+          "clientId": 154,
+          "stylistId": 154,
+          "serviceId": 154,
+          "bookingDate": "2024-04-07",
+          "startTime": "Elite Start Time 4",
+          "endTime": "Elite End Time 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "totalPrice": 6443
+        },
+        {
+          "clientId": 102,
+          "stylistId": 102,
+          "serviceId": 102,
+          "bookingDate": "2024-05-09",
+          "startTime": "Core Start Time 5",
+          "endTime": "Core End Time 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "totalPrice": 8424
+        },
+        {
+          "clientId": 150,
+          "stylistId": 150,
+          "serviceId": 150,
+          "bookingDate": "2024-06-11",
+          "startTime": "Pro Start Time 6",
+          "endTime": "Pro End Time 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "totalPrice": 10405
+        },
+        {
+          "clientId": 198,
+          "stylistId": 198,
+          "serviceId": 198,
+          "bookingDate": "2024-07-13",
+          "startTime": "Essential Start Time 7",
+          "endTime": "Essential End Time 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "totalPrice": 12386
+        },
+        {
+          "clientId": 146,
+          "stylistId": 146,
+          "serviceId": 146,
+          "bookingDate": "2024-08-15",
+          "startTime": "Primary Start Time 8",
+          "endTime": "Primary End Time 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "totalPrice": 9367
+        },
+        {
+          "clientId": 194,
+          "stylistId": 194,
+          "serviceId": 194,
+          "bookingDate": "2024-09-17",
+          "startTime": "Global Start Time 9",
+          "endTime": "Global End Time 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "totalPrice": 11348
+        },
+        {
+          "clientId": 242,
+          "stylistId": 242,
+          "serviceId": 242,
+          "bookingDate": "2024-10-19",
+          "startTime": "Regional Start Time 10",
+          "endTime": "Regional End Time 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "totalPrice": 13329
+        },
+        {
+          "clientId": 190,
+          "stylistId": 190,
+          "serviceId": 190,
+          "bookingDate": "2024-11-21",
+          "startTime": "Custom Start Time 11",
+          "endTime": "Custom End Time 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "totalPrice": 15310
+        },
+        {
+          "clientId": 238,
+          "stylistId": 238,
+          "serviceId": 238,
+          "bookingDate": "2024-12-23",
+          "startTime": "Smart Start Time 12",
+          "endTime": "Smart End Time 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "totalPrice": 17291
+        },
+        {
+          "clientId": 286,
+          "stylistId": 286,
+          "serviceId": 286,
+          "bookingDate": "2024-01-25",
+          "startTime": "Rapid Start Time 13",
+          "endTime": "Rapid End Time 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "totalPrice": 19272
+        },
+        {
+          "clientId": 234,
+          "stylistId": 234,
+          "serviceId": 234,
+          "bookingDate": "2024-02-27",
+          "startTime": "Secure Start Time 14",
+          "endTime": "Secure End Time 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "totalPrice": 21253
+        },
+        {
+          "clientId": 282,
+          "stylistId": 282,
+          "serviceId": 282,
+          "bookingDate": "2024-03-01",
+          "startTime": "Modern Start Time 15",
+          "endTime": "Modern End Time 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "totalPrice": 18234
+        }
+      ]
+    },
+    {
+      "modelName": "Waitlist",
+      "routeKey": "waitlists",
+      "label": "Waitlist",
+      "icon": "heart",
+      "aiFunction": "analyzeWaitlist",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Waitlist data. The data includes: Client Id, Service Id, Preferred Stylist Id, Preferred Date, Preferred Time, Priority, Notes, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "clientId",
+          "label": "Client Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "serviceId",
+          "label": "Service Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "preferredStylistId",
+          "label": "Preferred Stylist Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "preferredDate",
+          "label": "Preferred Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "preferredTime",
+          "label": "Preferred Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "clientId": 10,
+          "serviceId": 10,
+          "preferredStylistId": 10,
+          "preferredDate": "2024-01-01",
+          "preferredTime": "Advanced Preferred Time 1",
+          "priority": "low",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "clientId": 58,
+          "serviceId": 58,
+          "preferredStylistId": 58,
+          "preferredDate": "2024-02-03",
+          "preferredTime": "Premium Preferred Time 2",
+          "priority": "medium",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "clientId": 106,
+          "serviceId": 106,
+          "preferredStylistId": 106,
+          "preferredDate": "2024-03-05",
+          "preferredTime": "Standard Preferred Time 3",
+          "priority": "high",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "clientId": 154,
+          "serviceId": 154,
+          "preferredStylistId": 154,
+          "preferredDate": "2024-04-07",
+          "preferredTime": "Elite Preferred Time 4",
+          "priority": "critical",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "clientId": 102,
+          "serviceId": 102,
+          "preferredStylistId": 102,
+          "preferredDate": "2024-05-09",
+          "preferredTime": "Core Preferred Time 5",
+          "priority": "medium",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "clientId": 150,
+          "serviceId": 150,
+          "preferredStylistId": 150,
+          "preferredDate": "2024-06-11",
+          "preferredTime": "Pro Preferred Time 6",
+          "priority": "low",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "clientId": 198,
+          "serviceId": 198,
+          "preferredStylistId": 198,
+          "preferredDate": "2024-07-13",
+          "preferredTime": "Essential Preferred Time 7",
+          "priority": "medium",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "clientId": 146,
+          "serviceId": 146,
+          "preferredStylistId": 146,
+          "preferredDate": "2024-08-15",
+          "preferredTime": "Primary Preferred Time 8",
+          "priority": "high",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "clientId": 194,
+          "serviceId": 194,
+          "preferredStylistId": 194,
+          "preferredDate": "2024-09-17",
+          "preferredTime": "Global Preferred Time 9",
+          "priority": "critical",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "clientId": 242,
+          "serviceId": 242,
+          "preferredStylistId": 242,
+          "preferredDate": "2024-10-19",
+          "preferredTime": "Regional Preferred Time 10",
+          "priority": "medium",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "clientId": 190,
+          "serviceId": 190,
+          "preferredStylistId": 190,
+          "preferredDate": "2024-11-21",
+          "preferredTime": "Custom Preferred Time 11",
+          "priority": "low",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "clientId": 238,
+          "serviceId": 238,
+          "preferredStylistId": 238,
+          "preferredDate": "2024-12-23",
+          "preferredTime": "Smart Preferred Time 12",
+          "priority": "medium",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "clientId": 286,
+          "serviceId": 286,
+          "preferredStylistId": 286,
+          "preferredDate": "2024-01-25",
+          "preferredTime": "Rapid Preferred Time 13",
+          "priority": "high",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "clientId": 234,
+          "serviceId": 234,
+          "preferredStylistId": 234,
+          "preferredDate": "2024-02-27",
+          "preferredTime": "Secure Preferred Time 14",
+          "priority": "critical",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "clientId": 282,
+          "serviceId": 282,
+          "preferredStylistId": 282,
+          "preferredDate": "2024-03-01",
+          "preferredTime": "Modern Preferred Time 15",
+          "priority": "medium",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Review",
+      "routeKey": "reviews",
+      "label": "Review",
+      "icon": "layers",
+      "aiFunction": "analyzeReview",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Review data. The data includes: Client Id, Stylist Id, Service Id, Rating, Comment, Visit Date, Would Recommend. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "clientId",
+          "label": "Client Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "stylistId",
+          "label": "Stylist Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "serviceId",
+          "label": "Service Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "comment",
+          "label": "Comment",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "visitDate",
+          "label": "Visit Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "wouldRecommend",
+          "label": "Would Recommend",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "clientId": 10,
+          "stylistId": 10,
+          "serviceId": 10,
+          "rating": 10,
+          "comment": "Comprehensive solution designed for optimal performance and efficiency.",
+          "visitDate": "2024-01-01",
+          "wouldRecommend": true
+        },
+        {
+          "clientId": 58,
+          "stylistId": 58,
+          "serviceId": 58,
+          "rating": 58,
+          "comment": "Industry-leading approach with proven results across multiple deployments.",
+          "visitDate": "2024-02-03",
+          "wouldRecommend": true
+        },
+        {
+          "clientId": 106,
+          "stylistId": 106,
+          "serviceId": 106,
+          "rating": 106,
+          "comment": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "visitDate": "2024-03-05",
+          "wouldRecommend": false
+        },
+        {
+          "clientId": 154,
+          "stylistId": 154,
+          "serviceId": 154,
+          "rating": 154,
+          "comment": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "visitDate": "2024-04-07",
+          "wouldRecommend": true
+        },
+        {
+          "clientId": 102,
+          "stylistId": 102,
+          "serviceId": 102,
+          "rating": 102,
+          "comment": "Cost-effective strategy focused on sustainable long-term growth.",
+          "visitDate": "2024-05-09",
+          "wouldRecommend": false
+        },
+        {
+          "clientId": 150,
+          "stylistId": 150,
+          "serviceId": 150,
+          "rating": 150,
+          "comment": "High-priority initiative aligned with organizational strategic objectives.",
+          "visitDate": "2024-06-11",
+          "wouldRecommend": true
+        },
+        {
+          "clientId": 198,
+          "stylistId": 198,
+          "serviceId": 198,
+          "rating": 198,
+          "comment": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "visitDate": "2024-07-13",
+          "wouldRecommend": true
+        },
+        {
+          "clientId": 146,
+          "stylistId": 146,
+          "serviceId": 146,
+          "rating": 146,
+          "comment": "Innovative framework incorporating best practices and emerging technologies.",
+          "visitDate": "2024-08-15",
+          "wouldRecommend": false
+        },
+        {
+          "clientId": 194,
+          "stylistId": 194,
+          "serviceId": 194,
+          "rating": 194,
+          "comment": "Scalable architecture built to accommodate rapid expansion and change.",
+          "visitDate": "2024-09-17",
+          "wouldRecommend": true
+        },
+        {
+          "clientId": 242,
+          "stylistId": 242,
+          "serviceId": 242,
+          "rating": 242,
+          "comment": "Enterprise-grade solution with robust security and compliance features.",
+          "visitDate": "2024-10-19",
+          "wouldRecommend": true
+        },
+        {
+          "clientId": 190,
+          "stylistId": 190,
+          "serviceId": 190,
+          "rating": 190,
+          "comment": "Integrated platform connecting multiple systems for seamless operations.",
+          "visitDate": "2024-11-21",
+          "wouldRecommend": false
+        },
+        {
+          "clientId": 238,
+          "stylistId": 238,
+          "serviceId": 238,
+          "rating": 238,
+          "comment": "Automated workflow reducing manual intervention and human error.",
+          "visitDate": "2024-12-23",
+          "wouldRecommend": true
+        },
+        {
+          "clientId": 286,
+          "stylistId": 286,
+          "serviceId": 286,
+          "rating": 286,
+          "comment": "Real-time monitoring system with intelligent alerting capabilities.",
+          "visitDate": "2024-01-25",
+          "wouldRecommend": false
+        },
+        {
+          "clientId": 234,
+          "stylistId": 234,
+          "serviceId": 234,
+          "rating": 234,
+          "comment": "Customizable module adaptable to diverse operational requirements.",
+          "visitDate": "2024-02-27",
+          "wouldRecommend": true
+        },
+        {
+          "clientId": 282,
+          "stylistId": 282,
+          "serviceId": 282,
+          "rating": 282,
+          "comment": "Performance-optimized design achieving superior throughput and reliability.",
+          "visitDate": "2024-03-01",
+          "wouldRecommend": true
+        }
+      ]
+    },
+    {
+      "modelName": "Promotion",
+      "routeKey": "promotions",
+      "label": "Promotion",
+      "icon": "map-pin",
+      "aiFunction": "analyzePromotion",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Promotion data. The data includes: Name, Description, Discount Type, Discount Value, Applicable Services, Start Date, End Date, Min Purchase, Max Uses, Current Uses, Status, Promo Code. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "discountType",
+          "label": "Discount Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "discountValue",
+          "label": "Discount Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "applicableServices",
+          "label": "Applicable Services",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "minPurchase",
+          "label": "Min Purchase",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "maxUses",
+          "label": "Max Uses",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "currentUses",
+          "label": "Current Uses",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "promoCode",
+          "label": "Promo Code",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "discountType": "Category A",
+          "discountValue": 10,
+          "applicableServices": "Comprehensive solution designed for optimal performance and efficiency.",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "minPurchase": 10,
+          "maxUses": 10,
+          "currentUses": 10,
+          "status": "active",
+          "promoCode": "Advanced Promo Code 1"
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "discountType": "Category B",
+          "discountValue": 71.7,
+          "applicableServices": "Industry-leading approach with proven results across multiple deployments.",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "minPurchase": 71.7,
+          "maxUses": 58,
+          "currentUses": 58,
+          "status": "pending",
+          "promoCode": "Premium Promo Code 2"
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "discountType": "Category C",
+          "discountValue": 33.4,
+          "applicableServices": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "minPurchase": 33.4,
+          "maxUses": 106,
+          "currentUses": 106,
+          "status": "in_progress",
+          "promoCode": "Standard Promo Code 3"
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "discountType": "Category D",
+          "discountValue": 95.1,
+          "applicableServices": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "minPurchase": 95.1,
+          "maxUses": 154,
+          "currentUses": 154,
+          "status": "completed",
+          "promoCode": "Elite Promo Code 4"
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "discountType": "Category E",
+          "discountValue": 56.8,
+          "applicableServices": "Cost-effective strategy focused on sustainable long-term growth.",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "minPurchase": 56.8,
+          "maxUses": 102,
+          "currentUses": 102,
+          "status": "under_review",
+          "promoCode": "Core Promo Code 5"
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "discountType": "Premium Tier",
+          "discountValue": 118.5,
+          "applicableServices": "High-priority initiative aligned with organizational strategic objectives.",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "minPurchase": 118.5,
+          "maxUses": 150,
+          "currentUses": 150,
+          "status": "approved",
+          "promoCode": "Pro Promo Code 6"
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "discountType": "Standard Tier",
+          "discountValue": 80.2,
+          "applicableServices": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "minPurchase": 80.2,
+          "maxUses": 198,
+          "currentUses": 198,
+          "status": "active",
+          "promoCode": "Essential Promo Code 7"
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "discountType": "Basic Tier",
+          "discountValue": 141.9,
+          "applicableServices": "Innovative framework incorporating best practices and emerging technologies.",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "minPurchase": 141.9,
+          "maxUses": 146,
+          "currentUses": 146,
+          "status": "active",
+          "promoCode": "Primary Promo Code 8"
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "discountType": "Enterprise",
+          "discountValue": 103.6,
+          "applicableServices": "Scalable architecture built to accommodate rapid expansion and change.",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "minPurchase": 103.6,
+          "maxUses": 194,
+          "currentUses": 194,
+          "status": "active",
+          "promoCode": "Global Promo Code 9"
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "discountType": "Starter",
+          "discountValue": 165.3,
+          "applicableServices": "Enterprise-grade solution with robust security and compliance features.",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "minPurchase": 165.3,
+          "maxUses": 242,
+          "currentUses": 242,
+          "status": "pending",
+          "promoCode": "Regional Promo Code 10"
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "discountType": "Growth",
+          "discountValue": 127,
+          "applicableServices": "Integrated platform connecting multiple systems for seamless operations.",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "minPurchase": 127,
+          "maxUses": 190,
+          "currentUses": 190,
+          "status": "completed",
+          "promoCode": "Custom Promo Code 11"
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "discountType": "Scale",
+          "discountValue": 188.7,
+          "applicableServices": "Automated workflow reducing manual intervention and human error.",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "minPurchase": 188.7,
+          "maxUses": 238,
+          "currentUses": 238,
+          "status": "active",
+          "promoCode": "Smart Promo Code 12"
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "discountType": "Foundation",
+          "discountValue": 150.4,
+          "applicableServices": "Real-time monitoring system with intelligent alerting capabilities.",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "minPurchase": 150.4,
+          "maxUses": 286,
+          "currentUses": 286,
+          "status": "in_progress",
+          "promoCode": "Rapid Promo Code 13"
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "discountType": "Advanced",
+          "discountValue": 212.1,
+          "applicableServices": "Customizable module adaptable to diverse operational requirements.",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "minPurchase": 212.1,
+          "maxUses": 234,
+          "currentUses": 234,
+          "status": "active",
+          "promoCode": "Secure Promo Code 14"
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "discountType": "Professional",
+          "discountValue": 173.8,
+          "applicableServices": "Performance-optimized design achieving superior throughput and reliability.",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "minPurchase": 173.8,
+          "maxUses": 282,
+          "currentUses": 282,
+          "status": "approved",
+          "promoCode": "Modern Promo Code 15"
+        }
+      ]
+    },
+    {
+      "modelName": "InventoryLog",
+      "routeKey": "inventory-logs",
+      "label": "Inventory Log",
+      "icon": "package",
+      "aiFunction": "analyzeInventoryLog",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Inventory Log data. The data includes: Product Id, Transaction Type, Quantity, Unit Cost, Total Cost, Supplier, Reference Number, Notes, Transaction Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "productId",
+          "label": "Product Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "transactionType",
+          "label": "Transaction Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "unitCost",
+          "label": "Unit Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalCost",
+          "label": "Total Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "supplier",
+          "label": "Supplier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "referenceNumber",
+          "label": "Reference Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "transactionDate",
+          "label": "Transaction Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "productId": 10,
+          "transactionType": "Category A",
+          "quantity": 182,
+          "unitCost": 500,
+          "totalCost": 500,
+          "supplier": "Advanced Supplier 1",
+          "referenceNumber": "Advanced Reference Number 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "transactionDate": "2024-01-01"
+        },
+        {
+          "productId": 58,
+          "transactionType": "Category B",
+          "quantity": 163,
+          "unitCost": 2481,
+          "totalCost": 2481,
+          "supplier": "Premium Supplier 2",
+          "referenceNumber": "Premium Reference Number 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "transactionDate": "2024-02-03"
+        },
+        {
+          "productId": 106,
+          "transactionType": "Category C",
+          "quantity": 154,
+          "unitCost": 4462,
+          "totalCost": 4462,
+          "supplier": "Standard Supplier 3",
+          "referenceNumber": "Standard Reference Number 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "transactionDate": "2024-03-05"
+        },
+        {
+          "productId": 154,
+          "transactionType": "Category D",
+          "quantity": 118,
+          "unitCost": 6443,
+          "totalCost": 6443,
+          "supplier": "Elite Supplier 4",
+          "referenceNumber": "Elite Reference Number 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "transactionDate": "2024-04-07"
+        },
+        {
+          "productId": 102,
+          "transactionType": "Category E",
+          "quantity": 225,
+          "unitCost": 8424,
+          "totalCost": 8424,
+          "supplier": "Core Supplier 5",
+          "referenceNumber": "Core Reference Number 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "transactionDate": "2024-05-09"
+        },
+        {
+          "productId": 150,
+          "transactionType": "Premium Tier",
+          "quantity": 83,
+          "unitCost": 10405,
+          "totalCost": 10405,
+          "supplier": "Pro Supplier 6",
+          "referenceNumber": "Pro Reference Number 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "transactionDate": "2024-06-11"
+        },
+        {
+          "productId": 198,
+          "transactionType": "Standard Tier",
+          "quantity": 62,
+          "unitCost": 12386,
+          "totalCost": 12386,
+          "supplier": "Essential Supplier 7",
+          "referenceNumber": "Essential Reference Number 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "transactionDate": "2024-07-13"
+        },
+        {
+          "productId": 146,
+          "transactionType": "Basic Tier",
+          "quantity": 124,
+          "unitCost": 9367,
+          "totalCost": 9367,
+          "supplier": "Primary Supplier 8",
+          "referenceNumber": "Primary Reference Number 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "transactionDate": "2024-08-15"
+        },
+        {
+          "productId": 194,
+          "transactionType": "Enterprise",
+          "quantity": 71,
+          "unitCost": 11348,
+          "totalCost": 11348,
+          "supplier": "Global Supplier 9",
+          "referenceNumber": "Global Reference Number 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "transactionDate": "2024-09-17"
+        },
+        {
+          "productId": 242,
+          "transactionType": "Starter",
+          "quantity": 174,
+          "unitCost": 13329,
+          "totalCost": 13329,
+          "supplier": "Regional Supplier 10",
+          "referenceNumber": "Regional Reference Number 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "transactionDate": "2024-10-19"
+        },
+        {
+          "productId": 190,
+          "transactionType": "Growth",
+          "quantity": 259,
+          "unitCost": 15310,
+          "totalCost": 15310,
+          "supplier": "Custom Supplier 11",
+          "referenceNumber": "Custom Reference Number 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "transactionDate": "2024-11-21"
+        },
+        {
+          "productId": 238,
+          "transactionType": "Scale",
+          "quantity": 181,
+          "unitCost": 17291,
+          "totalCost": 17291,
+          "supplier": "Smart Supplier 12",
+          "referenceNumber": "Smart Reference Number 12",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "transactionDate": "2024-12-23"
+        },
+        {
+          "productId": 286,
+          "transactionType": "Foundation",
+          "quantity": 239,
+          "unitCost": 19272,
+          "totalCost": 19272,
+          "supplier": "Rapid Supplier 13",
+          "referenceNumber": "Rapid Reference Number 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "transactionDate": "2024-01-25"
+        },
+        {
+          "productId": 234,
+          "transactionType": "Advanced",
+          "quantity": 242,
+          "unitCost": 21253,
+          "totalCost": 21253,
+          "supplier": "Secure Supplier 14",
+          "referenceNumber": "Secure Reference Number 14",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "transactionDate": "2024-02-27"
+        },
+        {
+          "productId": 282,
+          "transactionType": "Professional",
+          "quantity": 104,
+          "unitCost": 18234,
+          "totalCost": 18234,
+          "supplier": "Modern Supplier 15",
+          "referenceNumber": "Modern Reference Number 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "transactionDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "LoyaltyPoint",
+      "routeKey": "loyalty-points",
+      "label": "Loyalty Point",
+      "icon": "shield",
+      "aiFunction": "analyzeLoyaltyPoint",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Loyalty Point data. The data includes: Client Id, Points Earned, Points Redeemed, Balance, Source, Reference Id, Description, Transaction Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "clientId",
+          "label": "Client Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "pointsEarned",
+          "label": "Points Earned",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "pointsRedeemed",
+          "label": "Points Redeemed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "balance",
+          "label": "Balance",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "referenceId",
+          "label": "Reference Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "transactionDate",
+          "label": "Transaction Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "clientId": 10,
+          "pointsEarned": 10,
+          "pointsRedeemed": 10,
+          "balance": 10,
+          "source": "Advanced Source 1",
+          "referenceId": 10,
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "transactionDate": "2024-01-01"
+        },
+        {
+          "clientId": 58,
+          "pointsEarned": 58,
+          "pointsRedeemed": 58,
+          "balance": 58,
+          "source": "Premium Source 2",
+          "referenceId": 58,
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "transactionDate": "2024-02-03"
+        },
+        {
+          "clientId": 106,
+          "pointsEarned": 106,
+          "pointsRedeemed": 106,
+          "balance": 106,
+          "source": "Standard Source 3",
+          "referenceId": 106,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "transactionDate": "2024-03-05"
+        },
+        {
+          "clientId": 154,
+          "pointsEarned": 154,
+          "pointsRedeemed": 154,
+          "balance": 154,
+          "source": "Elite Source 4",
+          "referenceId": 154,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "transactionDate": "2024-04-07"
+        },
+        {
+          "clientId": 102,
+          "pointsEarned": 102,
+          "pointsRedeemed": 102,
+          "balance": 102,
+          "source": "Core Source 5",
+          "referenceId": 102,
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "transactionDate": "2024-05-09"
+        },
+        {
+          "clientId": 150,
+          "pointsEarned": 150,
+          "pointsRedeemed": 150,
+          "balance": 150,
+          "source": "Pro Source 6",
+          "referenceId": 150,
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "transactionDate": "2024-06-11"
+        },
+        {
+          "clientId": 198,
+          "pointsEarned": 198,
+          "pointsRedeemed": 198,
+          "balance": 198,
+          "source": "Essential Source 7",
+          "referenceId": 198,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "transactionDate": "2024-07-13"
+        },
+        {
+          "clientId": 146,
+          "pointsEarned": 146,
+          "pointsRedeemed": 146,
+          "balance": 146,
+          "source": "Primary Source 8",
+          "referenceId": 146,
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "transactionDate": "2024-08-15"
+        },
+        {
+          "clientId": 194,
+          "pointsEarned": 194,
+          "pointsRedeemed": 194,
+          "balance": 194,
+          "source": "Global Source 9",
+          "referenceId": 194,
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "transactionDate": "2024-09-17"
+        },
+        {
+          "clientId": 242,
+          "pointsEarned": 242,
+          "pointsRedeemed": 242,
+          "balance": 242,
+          "source": "Regional Source 10",
+          "referenceId": 242,
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "transactionDate": "2024-10-19"
+        },
+        {
+          "clientId": 190,
+          "pointsEarned": 190,
+          "pointsRedeemed": 190,
+          "balance": 190,
+          "source": "Custom Source 11",
+          "referenceId": 190,
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "transactionDate": "2024-11-21"
+        },
+        {
+          "clientId": 238,
+          "pointsEarned": 238,
+          "pointsRedeemed": 238,
+          "balance": 238,
+          "source": "Smart Source 12",
+          "referenceId": 238,
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "transactionDate": "2024-12-23"
+        },
+        {
+          "clientId": 286,
+          "pointsEarned": 286,
+          "pointsRedeemed": 286,
+          "balance": 286,
+          "source": "Rapid Source 13",
+          "referenceId": 286,
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "transactionDate": "2024-01-25"
+        },
+        {
+          "clientId": 234,
+          "pointsEarned": 234,
+          "pointsRedeemed": 234,
+          "balance": 234,
+          "source": "Secure Source 14",
+          "referenceId": 234,
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "transactionDate": "2024-02-27"
+        },
+        {
+          "clientId": 282,
+          "pointsEarned": 282,
+          "pointsRedeemed": 282,
+          "balance": 282,
+          "source": "Modern Source 15",
+          "referenceId": 282,
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "transactionDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "GiftCard",
+      "routeKey": "gift-cards",
+      "label": "Gift Card",
+      "icon": "star",
+      "aiFunction": "analyzeGiftCard",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Gift Card data. The data includes: Code, Purchaser Name, Purchaser Email, Recipient Name, Recipient Email, Original Amount, Remaining Balance, Status, Expiry Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "code",
+          "label": "Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "purchaserName",
+          "label": "Purchaser Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "purchaserEmail",
+          "label": "Purchaser Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recipientName",
+          "label": "Recipient Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recipientEmail",
+          "label": "Recipient Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "originalAmount",
+          "label": "Original Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "remainingBalance",
+          "label": "Remaining Balance",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "code": "Advanced Code 1",
+          "purchaserName": "Advanced Purchaser 1",
+          "purchaserEmail": "james.wilson@example.com",
+          "recipientName": "Advanced Recipient 1",
+          "recipientEmail": "james.wilson@example.com",
+          "originalAmount": 500,
+          "remainingBalance": 10,
+          "status": "active",
+          "expiryDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "code": "Premium Code 2",
+          "purchaserName": "Premium Purchaser 2",
+          "purchaserEmail": "sarah.chen@example.com",
+          "recipientName": "Premium Recipient 2",
+          "recipientEmail": "sarah.chen@example.com",
+          "originalAmount": 2481,
+          "remainingBalance": 71.7,
+          "status": "pending",
+          "expiryDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "code": "Standard Code 3",
+          "purchaserName": "Standard Purchaser 3",
+          "purchaserEmail": "michael.brown@example.com",
+          "recipientName": "Standard Recipient 3",
+          "recipientEmail": "michael.brown@example.com",
+          "originalAmount": 4462,
+          "remainingBalance": 33.4,
+          "status": "in_progress",
+          "expiryDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "code": "Elite Code 4",
+          "purchaserName": "Elite Purchaser 4",
+          "purchaserEmail": "emily.davis@example.com",
+          "recipientName": "Elite Recipient 4",
+          "recipientEmail": "emily.davis@example.com",
+          "originalAmount": 6443,
+          "remainingBalance": 95.1,
+          "status": "completed",
+          "expiryDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "code": "Core Code 5",
+          "purchaserName": "Core Purchaser 5",
+          "purchaserEmail": "robert.garcia@example.com",
+          "recipientName": "Core Recipient 5",
+          "recipientEmail": "robert.garcia@example.com",
+          "originalAmount": 8424,
+          "remainingBalance": 56.8,
+          "status": "under_review",
+          "expiryDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "code": "Pro Code 6",
+          "purchaserName": "Pro Purchaser 6",
+          "purchaserEmail": "lisa.anderson@example.com",
+          "recipientName": "Pro Recipient 6",
+          "recipientEmail": "lisa.anderson@example.com",
+          "originalAmount": 10405,
+          "remainingBalance": 118.5,
+          "status": "approved",
+          "expiryDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "code": "Essential Code 7",
+          "purchaserName": "Essential Purchaser 7",
+          "purchaserEmail": "david.martinez@example.com",
+          "recipientName": "Essential Recipient 7",
+          "recipientEmail": "david.martinez@example.com",
+          "originalAmount": 12386,
+          "remainingBalance": 80.2,
+          "status": "active",
+          "expiryDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "code": "Primary Code 8",
+          "purchaserName": "Primary Purchaser 8",
+          "purchaserEmail": "jennifer.taylor@example.com",
+          "recipientName": "Primary Recipient 8",
+          "recipientEmail": "jennifer.taylor@example.com",
+          "originalAmount": 9367,
+          "remainingBalance": 141.9,
+          "status": "active",
+          "expiryDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "code": "Global Code 9",
+          "purchaserName": "Global Purchaser 9",
+          "purchaserEmail": "william.johnson@example.com",
+          "recipientName": "Global Recipient 9",
+          "recipientEmail": "william.johnson@example.com",
+          "originalAmount": 11348,
+          "remainingBalance": 103.6,
+          "status": "active",
+          "expiryDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "code": "Regional Code 10",
+          "purchaserName": "Regional Purchaser 10",
+          "purchaserEmail": "maria.rodriguez@example.com",
+          "recipientName": "Regional Recipient 10",
+          "recipientEmail": "maria.rodriguez@example.com",
+          "originalAmount": 13329,
+          "remainingBalance": 165.3,
+          "status": "pending",
+          "expiryDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "code": "Custom Code 11",
+          "purchaserName": "Custom Purchaser 11",
+          "purchaserEmail": "thomas.lee@example.com",
+          "recipientName": "Custom Recipient 11",
+          "recipientEmail": "thomas.lee@example.com",
+          "originalAmount": 15310,
+          "remainingBalance": 127,
+          "status": "completed",
+          "expiryDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "code": "Smart Code 12",
+          "purchaserName": "Smart Purchaser 12",
+          "purchaserEmail": "patricia.white@example.com",
+          "recipientName": "Smart Recipient 12",
+          "recipientEmail": "patricia.white@example.com",
+          "originalAmount": 17291,
+          "remainingBalance": 188.7,
+          "status": "active",
+          "expiryDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "code": "Rapid Code 13",
+          "purchaserName": "Rapid Purchaser 13",
+          "purchaserEmail": "christopher.hall@example.com",
+          "recipientName": "Rapid Recipient 13",
+          "recipientEmail": "christopher.hall@example.com",
+          "originalAmount": 19272,
+          "remainingBalance": 150.4,
+          "status": "in_progress",
+          "expiryDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "code": "Secure Code 14",
+          "purchaserName": "Secure Purchaser 14",
+          "purchaserEmail": "amanda.clark@example.com",
+          "recipientName": "Secure Recipient 14",
+          "recipientEmail": "amanda.clark@example.com",
+          "originalAmount": 21253,
+          "remainingBalance": 212.1,
+          "status": "active",
+          "expiryDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "code": "Modern Code 15",
+          "purchaserName": "Modern Purchaser 15",
+          "purchaserEmail": "daniel.wright@example.com",
+          "recipientName": "Modern Recipient 15",
+          "recipientEmail": "daniel.wright@example.com",
+          "originalAmount": 18234,
+          "remainingBalance": 173.8,
+          "status": "approved",
+          "expiryDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Expense",
+      "routeKey": "expenses",
+      "label": "Expense",
+      "icon": "truck",
+      "aiFunction": "analyzeExpense",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Expense data. The data includes: Category, Description, Amount, Vendor, Payment Method, Receipt Number, Expense Date, Is Recurring, Recurrence Interval, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "vendor",
+          "label": "Vendor",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "receiptNumber",
+          "label": "Receipt Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "expenseDate",
+          "label": "Expense Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "isRecurring",
+          "label": "Is Recurring",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "recurrenceInterval",
+          "label": "Recurrence Interval",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "category": "Category A",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "amount": 500,
+          "vendor": "Advanced Vendor 1",
+          "paymentMethod": "Advanced Payment Method 1",
+          "receiptNumber": "Advanced Receipt Number 1",
+          "expenseDate": "2024-01-01",
+          "isRecurring": true,
+          "recurrenceInterval": "Advanced Recurrence Interval 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "category": "Category B",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "amount": 2481,
+          "vendor": "Premium Vendor 2",
+          "paymentMethod": "Premium Payment Method 2",
+          "receiptNumber": "Premium Receipt Number 2",
+          "expenseDate": "2024-02-03",
+          "isRecurring": true,
+          "recurrenceInterval": "Premium Recurrence Interval 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "category": "Category C",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "amount": 4462,
+          "vendor": "Standard Vendor 3",
+          "paymentMethod": "Standard Payment Method 3",
+          "receiptNumber": "Standard Receipt Number 3",
+          "expenseDate": "2024-03-05",
+          "isRecurring": false,
+          "recurrenceInterval": "Standard Recurrence Interval 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "category": "Category D",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "amount": 6443,
+          "vendor": "Elite Vendor 4",
+          "paymentMethod": "Elite Payment Method 4",
+          "receiptNumber": "Elite Receipt Number 4",
+          "expenseDate": "2024-04-07",
+          "isRecurring": true,
+          "recurrenceInterval": "Elite Recurrence Interval 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "category": "Category E",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "amount": 8424,
+          "vendor": "Core Vendor 5",
+          "paymentMethod": "Core Payment Method 5",
+          "receiptNumber": "Core Receipt Number 5",
+          "expenseDate": "2024-05-09",
+          "isRecurring": false,
+          "recurrenceInterval": "Core Recurrence Interval 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "category": "Premium Tier",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "amount": 10405,
+          "vendor": "Pro Vendor 6",
+          "paymentMethod": "Pro Payment Method 6",
+          "receiptNumber": "Pro Receipt Number 6",
+          "expenseDate": "2024-06-11",
+          "isRecurring": true,
+          "recurrenceInterval": "Pro Recurrence Interval 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "category": "Standard Tier",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "amount": 12386,
+          "vendor": "Essential Vendor 7",
+          "paymentMethod": "Essential Payment Method 7",
+          "receiptNumber": "Essential Receipt Number 7",
+          "expenseDate": "2024-07-13",
+          "isRecurring": true,
+          "recurrenceInterval": "Essential Recurrence Interval 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "category": "Basic Tier",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "amount": 9367,
+          "vendor": "Primary Vendor 8",
+          "paymentMethod": "Primary Payment Method 8",
+          "receiptNumber": "Primary Receipt Number 8",
+          "expenseDate": "2024-08-15",
+          "isRecurring": false,
+          "recurrenceInterval": "Primary Recurrence Interval 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "category": "Enterprise",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "amount": 11348,
+          "vendor": "Global Vendor 9",
+          "paymentMethod": "Global Payment Method 9",
+          "receiptNumber": "Global Receipt Number 9",
+          "expenseDate": "2024-09-17",
+          "isRecurring": true,
+          "recurrenceInterval": "Global Recurrence Interval 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "category": "Starter",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "amount": 13329,
+          "vendor": "Regional Vendor 10",
+          "paymentMethod": "Regional Payment Method 10",
+          "receiptNumber": "Regional Receipt Number 10",
+          "expenseDate": "2024-10-19",
+          "isRecurring": true,
+          "recurrenceInterval": "Regional Recurrence Interval 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "category": "Growth",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "amount": 15310,
+          "vendor": "Custom Vendor 11",
+          "paymentMethod": "Custom Payment Method 11",
+          "receiptNumber": "Custom Receipt Number 11",
+          "expenseDate": "2024-11-21",
+          "isRecurring": false,
+          "recurrenceInterval": "Custom Recurrence Interval 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "category": "Scale",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "amount": 17291,
+          "vendor": "Smart Vendor 12",
+          "paymentMethod": "Smart Payment Method 12",
+          "receiptNumber": "Smart Receipt Number 12",
+          "expenseDate": "2024-12-23",
+          "isRecurring": true,
+          "recurrenceInterval": "Smart Recurrence Interval 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "category": "Foundation",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "amount": 19272,
+          "vendor": "Rapid Vendor 13",
+          "paymentMethod": "Rapid Payment Method 13",
+          "receiptNumber": "Rapid Receipt Number 13",
+          "expenseDate": "2024-01-25",
+          "isRecurring": false,
+          "recurrenceInterval": "Rapid Recurrence Interval 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "category": "Advanced",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "amount": 21253,
+          "vendor": "Secure Vendor 14",
+          "paymentMethod": "Secure Payment Method 14",
+          "receiptNumber": "Secure Receipt Number 14",
+          "expenseDate": "2024-02-27",
+          "isRecurring": true,
+          "recurrenceInterval": "Secure Recurrence Interval 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "category": "Professional",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "amount": 18234,
+          "vendor": "Modern Vendor 15",
+          "paymentMethod": "Modern Payment Method 15",
+          "receiptNumber": "Modern Receipt Number 15",
+          "expenseDate": "2024-03-01",
+          "isRecurring": true,
+          "recurrenceInterval": "Modern Recurrence Interval 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Communication",
+      "routeKey": "communications",
+      "label": "Communication",
+      "icon": "users",
+      "aiFunction": "analyzeCommunication",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Communication data. The data includes: Client Id, Type, Subject, Message, Status, Sent At, Campaign Name. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "clientId",
+          "label": "Client Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "subject",
+          "label": "Subject",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sentAt",
+          "label": "Sent At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "campaignName",
+          "label": "Campaign Name",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "clientId": 10,
+          "type": "Category A",
+          "subject": "Advanced Subject 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "sentAt": "2024-01-01",
+          "campaignName": "Advanced Campaign 1"
+        },
+        {
+          "clientId": 58,
+          "type": "Category B",
+          "subject": "Premium Subject 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "sentAt": "2024-02-03",
+          "campaignName": "Premium Campaign 2"
+        },
+        {
+          "clientId": 106,
+          "type": "Category C",
+          "subject": "Standard Subject 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "sentAt": "2024-03-05",
+          "campaignName": "Standard Campaign 3"
+        },
+        {
+          "clientId": 154,
+          "type": "Category D",
+          "subject": "Elite Subject 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "sentAt": "2024-04-07",
+          "campaignName": "Elite Campaign 4"
+        },
+        {
+          "clientId": 102,
+          "type": "Category E",
+          "subject": "Core Subject 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "sentAt": "2024-05-09",
+          "campaignName": "Core Campaign 5"
+        },
+        {
+          "clientId": 150,
+          "type": "Premium Tier",
+          "subject": "Pro Subject 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "sentAt": "2024-06-11",
+          "campaignName": "Pro Campaign 6"
+        },
+        {
+          "clientId": 198,
+          "type": "Standard Tier",
+          "subject": "Essential Subject 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "sentAt": "2024-07-13",
+          "campaignName": "Essential Campaign 7"
+        },
+        {
+          "clientId": 146,
+          "type": "Basic Tier",
+          "subject": "Primary Subject 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "sentAt": "2024-08-15",
+          "campaignName": "Primary Campaign 8"
+        },
+        {
+          "clientId": 194,
+          "type": "Enterprise",
+          "subject": "Global Subject 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "sentAt": "2024-09-17",
+          "campaignName": "Global Campaign 9"
+        },
+        {
+          "clientId": 242,
+          "type": "Starter",
+          "subject": "Regional Subject 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "sentAt": "2024-10-19",
+          "campaignName": "Regional Campaign 10"
+        },
+        {
+          "clientId": 190,
+          "type": "Growth",
+          "subject": "Custom Subject 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "sentAt": "2024-11-21",
+          "campaignName": "Custom Campaign 11"
+        },
+        {
+          "clientId": 238,
+          "type": "Scale",
+          "subject": "Smart Subject 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "sentAt": "2024-12-23",
+          "campaignName": "Smart Campaign 12"
+        },
+        {
+          "clientId": 286,
+          "type": "Foundation",
+          "subject": "Rapid Subject 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "sentAt": "2024-01-25",
+          "campaignName": "Rapid Campaign 13"
+        },
+        {
+          "clientId": 234,
+          "type": "Advanced",
+          "subject": "Secure Subject 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "sentAt": "2024-02-27",
+          "campaignName": "Secure Campaign 14"
+        },
+        {
+          "clientId": 282,
+          "type": "Professional",
+          "subject": "Modern Subject 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "sentAt": "2024-03-01",
+          "campaignName": "Modern Campaign 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Schedule",
+      "routeKey": "schedules",
+      "label": "Schedule",
+      "icon": "zap",
+      "aiFunction": "analyzeSchedule",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Schedule data. The data includes: Stylist Id, Day Of Week, Start Time, End Time, Break Start, Break End, Is Available, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "stylistId",
+          "label": "Stylist Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "dayOfWeek",
+          "label": "Day Of Week",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "breakStart",
+          "label": "Break Start",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "breakEnd",
+          "label": "Break End",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isAvailable",
+          "label": "Is Available",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "stylistId": 10,
+          "dayOfWeek": "Advanced Day Of Week 1",
+          "startTime": "Advanced Start Time 1",
+          "endTime": "Advanced End Time 1",
+          "breakStart": "Advanced Break Start 1",
+          "breakEnd": "Advanced Break End 1",
+          "isAvailable": true,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "stylistId": 58,
+          "dayOfWeek": "Premium Day Of Week 2",
+          "startTime": "Premium Start Time 2",
+          "endTime": "Premium End Time 2",
+          "breakStart": "Premium Break Start 2",
+          "breakEnd": "Premium Break End 2",
+          "isAvailable": true,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "stylistId": 106,
+          "dayOfWeek": "Standard Day Of Week 3",
+          "startTime": "Standard Start Time 3",
+          "endTime": "Standard End Time 3",
+          "breakStart": "Standard Break Start 3",
+          "breakEnd": "Standard Break End 3",
+          "isAvailable": false,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "stylistId": 154,
+          "dayOfWeek": "Elite Day Of Week 4",
+          "startTime": "Elite Start Time 4",
+          "endTime": "Elite End Time 4",
+          "breakStart": "Elite Break Start 4",
+          "breakEnd": "Elite Break End 4",
+          "isAvailable": true,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "stylistId": 102,
+          "dayOfWeek": "Core Day Of Week 5",
+          "startTime": "Core Start Time 5",
+          "endTime": "Core End Time 5",
+          "breakStart": "Core Break Start 5",
+          "breakEnd": "Core Break End 5",
+          "isAvailable": false,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "stylistId": 150,
+          "dayOfWeek": "Pro Day Of Week 6",
+          "startTime": "Pro Start Time 6",
+          "endTime": "Pro End Time 6",
+          "breakStart": "Pro Break Start 6",
+          "breakEnd": "Pro Break End 6",
+          "isAvailable": true,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "stylistId": 198,
+          "dayOfWeek": "Essential Day Of Week 7",
+          "startTime": "Essential Start Time 7",
+          "endTime": "Essential End Time 7",
+          "breakStart": "Essential Break Start 7",
+          "breakEnd": "Essential Break End 7",
+          "isAvailable": true,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "stylistId": 146,
+          "dayOfWeek": "Primary Day Of Week 8",
+          "startTime": "Primary Start Time 8",
+          "endTime": "Primary End Time 8",
+          "breakStart": "Primary Break Start 8",
+          "breakEnd": "Primary Break End 8",
+          "isAvailable": false,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "stylistId": 194,
+          "dayOfWeek": "Global Day Of Week 9",
+          "startTime": "Global Start Time 9",
+          "endTime": "Global End Time 9",
+          "breakStart": "Global Break Start 9",
+          "breakEnd": "Global Break End 9",
+          "isAvailable": true,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "stylistId": 242,
+          "dayOfWeek": "Regional Day Of Week 10",
+          "startTime": "Regional Start Time 10",
+          "endTime": "Regional End Time 10",
+          "breakStart": "Regional Break Start 10",
+          "breakEnd": "Regional Break End 10",
+          "isAvailable": true,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "stylistId": 190,
+          "dayOfWeek": "Custom Day Of Week 11",
+          "startTime": "Custom Start Time 11",
+          "endTime": "Custom End Time 11",
+          "breakStart": "Custom Break Start 11",
+          "breakEnd": "Custom Break End 11",
+          "isAvailable": false,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "stylistId": 238,
+          "dayOfWeek": "Smart Day Of Week 12",
+          "startTime": "Smart Start Time 12",
+          "endTime": "Smart End Time 12",
+          "breakStart": "Smart Break Start 12",
+          "breakEnd": "Smart Break End 12",
+          "isAvailable": true,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "stylistId": 286,
+          "dayOfWeek": "Rapid Day Of Week 13",
+          "startTime": "Rapid Start Time 13",
+          "endTime": "Rapid End Time 13",
+          "breakStart": "Rapid Break Start 13",
+          "breakEnd": "Rapid Break End 13",
+          "isAvailable": false,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "stylistId": 234,
+          "dayOfWeek": "Secure Day Of Week 14",
+          "startTime": "Secure Start Time 14",
+          "endTime": "Secure End Time 14",
+          "breakStart": "Secure Break Start 14",
+          "breakEnd": "Secure Break End 14",
+          "isAvailable": true,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "stylistId": 282,
+          "dayOfWeek": "Modern Day Of Week 15",
+          "startTime": "Modern Start Time 15",
+          "endTime": "Modern End Time 15",
+          "breakStart": "Modern Break Start 15",
+          "breakEnd": "Modern Break End 15",
+          "isAvailable": true,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Tip",
+      "routeKey": "tips",
+      "label": "Tip",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeTip",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Tip data. The data includes: Stylist Id, Client Id, Service Id, Booking Id, Amount, Payment Method, Tip Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "stylistId",
+          "label": "Stylist Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "clientId",
+          "label": "Client Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "serviceId",
+          "label": "Service Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bookingId",
+          "label": "Booking Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tipDate",
+          "label": "Tip Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "stylistId": 10,
+          "clientId": 10,
+          "serviceId": 10,
+          "bookingId": 10,
+          "amount": 500,
+          "paymentMethod": "Advanced Payment Method 1",
+          "tipDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "stylistId": 58,
+          "clientId": 58,
+          "serviceId": 58,
+          "bookingId": 58,
+          "amount": 2481,
+          "paymentMethod": "Premium Payment Method 2",
+          "tipDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "stylistId": 106,
+          "clientId": 106,
+          "serviceId": 106,
+          "bookingId": 106,
+          "amount": 4462,
+          "paymentMethod": "Standard Payment Method 3",
+          "tipDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "stylistId": 154,
+          "clientId": 154,
+          "serviceId": 154,
+          "bookingId": 154,
+          "amount": 6443,
+          "paymentMethod": "Elite Payment Method 4",
+          "tipDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "stylistId": 102,
+          "clientId": 102,
+          "serviceId": 102,
+          "bookingId": 102,
+          "amount": 8424,
+          "paymentMethod": "Core Payment Method 5",
+          "tipDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "stylistId": 150,
+          "clientId": 150,
+          "serviceId": 150,
+          "bookingId": 150,
+          "amount": 10405,
+          "paymentMethod": "Pro Payment Method 6",
+          "tipDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "stylistId": 198,
+          "clientId": 198,
+          "serviceId": 198,
+          "bookingId": 198,
+          "amount": 12386,
+          "paymentMethod": "Essential Payment Method 7",
+          "tipDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "stylistId": 146,
+          "clientId": 146,
+          "serviceId": 146,
+          "bookingId": 146,
+          "amount": 9367,
+          "paymentMethod": "Primary Payment Method 8",
+          "tipDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "stylistId": 194,
+          "clientId": 194,
+          "serviceId": 194,
+          "bookingId": 194,
+          "amount": 11348,
+          "paymentMethod": "Global Payment Method 9",
+          "tipDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "stylistId": 242,
+          "clientId": 242,
+          "serviceId": 242,
+          "bookingId": 242,
+          "amount": 13329,
+          "paymentMethod": "Regional Payment Method 10",
+          "tipDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "stylistId": 190,
+          "clientId": 190,
+          "serviceId": 190,
+          "bookingId": 190,
+          "amount": 15310,
+          "paymentMethod": "Custom Payment Method 11",
+          "tipDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "stylistId": 238,
+          "clientId": 238,
+          "serviceId": 238,
+          "bookingId": 238,
+          "amount": 17291,
+          "paymentMethod": "Smart Payment Method 12",
+          "tipDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "stylistId": 286,
+          "clientId": 286,
+          "serviceId": 286,
+          "bookingId": 286,
+          "amount": 19272,
+          "paymentMethod": "Rapid Payment Method 13",
+          "tipDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "stylistId": 234,
+          "clientId": 234,
+          "serviceId": 234,
+          "bookingId": 234,
+          "amount": 21253,
+          "paymentMethod": "Secure Payment Method 14",
+          "tipDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "stylistId": 282,
+          "clientId": 282,
+          "serviceId": 282,
+          "bookingId": 282,
+          "amount": 18234,
+          "paymentMethod": "Modern Payment Method 15",
+          "tipDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Checkin",
+      "routeKey": "checkins",
+      "label": "Checkin",
+      "icon": "bell",
+      "aiFunction": "analyzeCheckin",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Checkin data. The data includes: Booking Id, Status, Service Started At, Completed At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "bookingId",
+          "label": "Booking Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serviceStartedAt",
+          "label": "Service Started At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "completedAt",
+          "label": "Completed At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "bookingId": 10,
+          "status": "active",
+          "serviceStartedAt": "2024-01-01",
+          "completedAt": "2024-01-01"
+        },
+        {
+          "bookingId": 58,
+          "status": "pending",
+          "serviceStartedAt": "2024-02-03",
+          "completedAt": "2024-02-03"
+        },
+        {
+          "bookingId": 106,
+          "status": "in_progress",
+          "serviceStartedAt": "2024-03-05",
+          "completedAt": "2024-03-05"
+        },
+        {
+          "bookingId": 154,
+          "status": "completed",
+          "serviceStartedAt": "2024-04-07",
+          "completedAt": "2024-04-07"
+        },
+        {
+          "bookingId": 102,
+          "status": "under_review",
+          "serviceStartedAt": "2024-05-09",
+          "completedAt": "2024-05-09"
+        },
+        {
+          "bookingId": 150,
+          "status": "approved",
+          "serviceStartedAt": "2024-06-11",
+          "completedAt": "2024-06-11"
+        },
+        {
+          "bookingId": 198,
+          "status": "active",
+          "serviceStartedAt": "2024-07-13",
+          "completedAt": "2024-07-13"
+        },
+        {
+          "bookingId": 146,
+          "status": "active",
+          "serviceStartedAt": "2024-08-15",
+          "completedAt": "2024-08-15"
+        },
+        {
+          "bookingId": 194,
+          "status": "active",
+          "serviceStartedAt": "2024-09-17",
+          "completedAt": "2024-09-17"
+        },
+        {
+          "bookingId": 242,
+          "status": "pending",
+          "serviceStartedAt": "2024-10-19",
+          "completedAt": "2024-10-19"
+        },
+        {
+          "bookingId": 190,
+          "status": "completed",
+          "serviceStartedAt": "2024-11-21",
+          "completedAt": "2024-11-21"
+        },
+        {
+          "bookingId": 238,
+          "status": "active",
+          "serviceStartedAt": "2024-12-23",
+          "completedAt": "2024-12-23"
+        },
+        {
+          "bookingId": 286,
+          "status": "in_progress",
+          "serviceStartedAt": "2024-01-25",
+          "completedAt": "2024-01-25"
+        },
+        {
+          "bookingId": 234,
+          "status": "active",
+          "serviceStartedAt": "2024-02-27",
+          "completedAt": "2024-02-27"
+        },
+        {
+          "bookingId": 282,
+          "status": "approved",
+          "serviceStartedAt": "2024-03-01",
+          "completedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "MembershipPlan",
+      "routeKey": "membership-plans",
+      "label": "Membership Plan",
+      "icon": "book",
+      "aiFunction": "analyzeMembershipPlan",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Membership Plan data. The data includes: Name, Description, Price, Billing Cycle, Included Services, Max Bookings Per Month, Discount Percent. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "price",
+          "label": "Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "billingCycle",
+          "label": "Billing Cycle",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "includedServices",
+          "label": "Included Services",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "maxBookingsPerMonth",
+          "label": "Max Bookings Per Month",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "discountPercent",
+          "label": "Discount Percent",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "price": 500,
+          "billingCycle": "Advanced Billing Cycle 1",
+          "includedServices": "Comprehensive solution designed for optimal performance and efficiency.",
+          "maxBookingsPerMonth": 10,
+          "discountPercent": 131
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "price": 2481,
+          "billingCycle": "Premium Billing Cycle 2",
+          "includedServices": "Industry-leading approach with proven results across multiple deployments.",
+          "maxBookingsPerMonth": 58,
+          "discountPercent": 23
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "price": 4462,
+          "billingCycle": "Standard Billing Cycle 3",
+          "includedServices": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "maxBookingsPerMonth": 106,
+          "discountPercent": 212
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "price": 6443,
+          "billingCycle": "Elite Billing Cycle 4",
+          "includedServices": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "maxBookingsPerMonth": 154,
+          "discountPercent": 36
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "price": 8424,
+          "billingCycle": "Core Billing Cycle 5",
+          "includedServices": "Cost-effective strategy focused on sustainable long-term growth.",
+          "maxBookingsPerMonth": 102,
+          "discountPercent": 110
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "price": 10405,
+          "billingCycle": "Pro Billing Cycle 6",
+          "includedServices": "High-priority initiative aligned with organizational strategic objectives.",
+          "maxBookingsPerMonth": 150,
+          "discountPercent": 126
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "price": 12386,
+          "billingCycle": "Essential Billing Cycle 7",
+          "includedServices": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "maxBookingsPerMonth": 198,
+          "discountPercent": 91
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "price": 9367,
+          "billingCycle": "Primary Billing Cycle 8",
+          "includedServices": "Innovative framework incorporating best practices and emerging technologies.",
+          "maxBookingsPerMonth": 146,
+          "discountPercent": 117
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "price": 11348,
+          "billingCycle": "Global Billing Cycle 9",
+          "includedServices": "Scalable architecture built to accommodate rapid expansion and change.",
+          "maxBookingsPerMonth": 194,
+          "discountPercent": 173
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "price": 13329,
+          "billingCycle": "Regional Billing Cycle 10",
+          "includedServices": "Enterprise-grade solution with robust security and compliance features.",
+          "maxBookingsPerMonth": 242,
+          "discountPercent": 68
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "price": 15310,
+          "billingCycle": "Custom Billing Cycle 11",
+          "includedServices": "Integrated platform connecting multiple systems for seamless operations.",
+          "maxBookingsPerMonth": 190,
+          "discountPercent": 128
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "price": 17291,
+          "billingCycle": "Smart Billing Cycle 12",
+          "includedServices": "Automated workflow reducing manual intervention and human error.",
+          "maxBookingsPerMonth": 238,
+          "discountPercent": 159
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "price": 19272,
+          "billingCycle": "Rapid Billing Cycle 13",
+          "includedServices": "Real-time monitoring system with intelligent alerting capabilities.",
+          "maxBookingsPerMonth": 286,
+          "discountPercent": 127
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "price": 21253,
+          "billingCycle": "Secure Billing Cycle 14",
+          "includedServices": "Customizable module adaptable to diverse operational requirements.",
+          "maxBookingsPerMonth": 234,
+          "discountPercent": 211
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "price": 18234,
+          "billingCycle": "Modern Billing Cycle 15",
+          "includedServices": "Performance-optimized design achieving superior throughput and reliability.",
+          "maxBookingsPerMonth": 282,
+          "discountPercent": 177
+        }
+      ]
+    },
+    {
+      "modelName": "Membership",
+      "routeKey": "memberships",
+      "label": "Membership",
+      "icon": "calendar",
+      "aiFunction": "analyzeMembership",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Membership data. The data includes: Client Id, Plan Id, Plan Name, Start Date, End Date, Price, Status, Payment Method, Bookings Used. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "clientId",
+          "label": "Client Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "planId",
+          "label": "Plan Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "planName",
+          "label": "Plan Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "price",
+          "label": "Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "bookingsUsed",
+          "label": "Bookings Used",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "clientId": 10,
+          "planId": 10,
+          "planName": "Advanced Plan 1",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "price": 500,
+          "status": "active",
+          "paymentMethod": "Advanced Payment Method 1",
+          "bookingsUsed": 10
+        },
+        {
+          "clientId": 58,
+          "planId": 58,
+          "planName": "Premium Plan 2",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "price": 2481,
+          "status": "pending",
+          "paymentMethod": "Premium Payment Method 2",
+          "bookingsUsed": 58
+        },
+        {
+          "clientId": 106,
+          "planId": 106,
+          "planName": "Standard Plan 3",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "price": 4462,
+          "status": "in_progress",
+          "paymentMethod": "Standard Payment Method 3",
+          "bookingsUsed": 106
+        },
+        {
+          "clientId": 154,
+          "planId": 154,
+          "planName": "Elite Plan 4",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "price": 6443,
+          "status": "completed",
+          "paymentMethod": "Elite Payment Method 4",
+          "bookingsUsed": 154
+        },
+        {
+          "clientId": 102,
+          "planId": 102,
+          "planName": "Core Plan 5",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "price": 8424,
+          "status": "under_review",
+          "paymentMethod": "Core Payment Method 5",
+          "bookingsUsed": 102
+        },
+        {
+          "clientId": 150,
+          "planId": 150,
+          "planName": "Pro Plan 6",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "price": 10405,
+          "status": "approved",
+          "paymentMethod": "Pro Payment Method 6",
+          "bookingsUsed": 150
+        },
+        {
+          "clientId": 198,
+          "planId": 198,
+          "planName": "Essential Plan 7",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "price": 12386,
+          "status": "active",
+          "paymentMethod": "Essential Payment Method 7",
+          "bookingsUsed": 198
+        },
+        {
+          "clientId": 146,
+          "planId": 146,
+          "planName": "Primary Plan 8",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "price": 9367,
+          "status": "active",
+          "paymentMethod": "Primary Payment Method 8",
+          "bookingsUsed": 146
+        },
+        {
+          "clientId": 194,
+          "planId": 194,
+          "planName": "Global Plan 9",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "price": 11348,
+          "status": "active",
+          "paymentMethod": "Global Payment Method 9",
+          "bookingsUsed": 194
+        },
+        {
+          "clientId": 242,
+          "planId": 242,
+          "planName": "Regional Plan 10",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "price": 13329,
+          "status": "pending",
+          "paymentMethod": "Regional Payment Method 10",
+          "bookingsUsed": 242
+        },
+        {
+          "clientId": 190,
+          "planId": 190,
+          "planName": "Custom Plan 11",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "price": 15310,
+          "status": "completed",
+          "paymentMethod": "Custom Payment Method 11",
+          "bookingsUsed": 190
+        },
+        {
+          "clientId": 238,
+          "planId": 238,
+          "planName": "Smart Plan 12",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "price": 17291,
+          "status": "active",
+          "paymentMethod": "Smart Payment Method 12",
+          "bookingsUsed": 238
+        },
+        {
+          "clientId": 286,
+          "planId": 286,
+          "planName": "Rapid Plan 13",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "price": 19272,
+          "status": "in_progress",
+          "paymentMethod": "Rapid Payment Method 13",
+          "bookingsUsed": 286
+        },
+        {
+          "clientId": 234,
+          "planId": 234,
+          "planName": "Secure Plan 14",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "price": 21253,
+          "status": "active",
+          "paymentMethod": "Secure Payment Method 14",
+          "bookingsUsed": 234
+        },
+        {
+          "clientId": 282,
+          "planId": 282,
+          "planName": "Modern Plan 15",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "price": 18234,
+          "status": "approved",
+          "paymentMethod": "Modern Payment Method 15",
+          "bookingsUsed": 282
+        }
+      ]
+    },
+    {
+      "modelName": "Supplier",
+      "routeKey": "suppliers",
+      "label": "Supplier",
+      "icon": "check-circle",
+      "aiFunction": "analyzeSupplier",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Supplier data. The data includes: Name, Contact Person, Email, Phone, Address, Product Categories, Payment Terms, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactPerson",
+          "label": "Contact Person",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "productCategories",
+          "label": "Product Categories",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "paymentTerms",
+          "label": "Payment Terms",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "contactPerson": "Advanced Contact Person 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "productCategories": "Comprehensive solution designed for optimal performance and efficiency.",
+          "paymentTerms": "Advanced Payment Terms 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "contactPerson": "Premium Contact Person 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "productCategories": "Industry-leading approach with proven results across multiple deployments.",
+          "paymentTerms": "Premium Payment Terms 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "contactPerson": "Standard Contact Person 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "productCategories": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "paymentTerms": "Standard Payment Terms 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "contactPerson": "Elite Contact Person 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "productCategories": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "paymentTerms": "Elite Payment Terms 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "contactPerson": "Core Contact Person 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "productCategories": "Cost-effective strategy focused on sustainable long-term growth.",
+          "paymentTerms": "Core Payment Terms 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "contactPerson": "Pro Contact Person 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "productCategories": "High-priority initiative aligned with organizational strategic objectives.",
+          "paymentTerms": "Pro Payment Terms 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "contactPerson": "Essential Contact Person 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "productCategories": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "paymentTerms": "Essential Payment Terms 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "contactPerson": "Primary Contact Person 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "productCategories": "Innovative framework incorporating best practices and emerging technologies.",
+          "paymentTerms": "Primary Payment Terms 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "contactPerson": "Global Contact Person 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "productCategories": "Scalable architecture built to accommodate rapid expansion and change.",
+          "paymentTerms": "Global Payment Terms 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "contactPerson": "Regional Contact Person 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "productCategories": "Enterprise-grade solution with robust security and compliance features.",
+          "paymentTerms": "Regional Payment Terms 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "contactPerson": "Custom Contact Person 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "productCategories": "Integrated platform connecting multiple systems for seamless operations.",
+          "paymentTerms": "Custom Payment Terms 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "contactPerson": "Smart Contact Person 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "productCategories": "Automated workflow reducing manual intervention and human error.",
+          "paymentTerms": "Smart Payment Terms 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "contactPerson": "Rapid Contact Person 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "productCategories": "Real-time monitoring system with intelligent alerting capabilities.",
+          "paymentTerms": "Rapid Payment Terms 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "contactPerson": "Secure Contact Person 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "productCategories": "Customizable module adaptable to diverse operational requirements.",
+          "paymentTerms": "Secure Payment Terms 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "contactPerson": "Modern Contact Person 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "productCategories": "Performance-optimized design achieving superior throughput and reliability.",
+          "paymentTerms": "Modern Payment Terms 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "SupplierOrder",
+      "routeKey": "supplier-orders",
+      "label": "Supplier Order",
+      "icon": "dollar-sign",
+      "aiFunction": "analyzeSupplierOrder",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Supplier Order data. The data includes: Supplier Id, Items, Total Amount, Order Date, Expected Delivery, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "supplierId",
+          "label": "Supplier Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "items",
+          "label": "Items",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "totalAmount",
+          "label": "Total Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "orderDate",
+          "label": "Order Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "expectedDelivery",
+          "label": "Expected Delivery",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "supplierId": 10,
+          "items": "Comprehensive solution designed for optimal performance and efficiency.",
+          "totalAmount": 500,
+          "orderDate": "2024-01-01",
+          "expectedDelivery": "2024-01-01",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "supplierId": 58,
+          "items": "Industry-leading approach with proven results across multiple deployments.",
+          "totalAmount": 2481,
+          "orderDate": "2024-02-03",
+          "expectedDelivery": "2024-02-03",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "supplierId": 106,
+          "items": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "totalAmount": 4462,
+          "orderDate": "2024-03-05",
+          "expectedDelivery": "2024-03-05",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "supplierId": 154,
+          "items": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "totalAmount": 6443,
+          "orderDate": "2024-04-07",
+          "expectedDelivery": "2024-04-07",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "supplierId": 102,
+          "items": "Cost-effective strategy focused on sustainable long-term growth.",
+          "totalAmount": 8424,
+          "orderDate": "2024-05-09",
+          "expectedDelivery": "2024-05-09",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "supplierId": 150,
+          "items": "High-priority initiative aligned with organizational strategic objectives.",
+          "totalAmount": 10405,
+          "orderDate": "2024-06-11",
+          "expectedDelivery": "2024-06-11",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "supplierId": 198,
+          "items": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "totalAmount": 12386,
+          "orderDate": "2024-07-13",
+          "expectedDelivery": "2024-07-13",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "supplierId": 146,
+          "items": "Innovative framework incorporating best practices and emerging technologies.",
+          "totalAmount": 9367,
+          "orderDate": "2024-08-15",
+          "expectedDelivery": "2024-08-15",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "supplierId": 194,
+          "items": "Scalable architecture built to accommodate rapid expansion and change.",
+          "totalAmount": 11348,
+          "orderDate": "2024-09-17",
+          "expectedDelivery": "2024-09-17",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "supplierId": 242,
+          "items": "Enterprise-grade solution with robust security and compliance features.",
+          "totalAmount": 13329,
+          "orderDate": "2024-10-19",
+          "expectedDelivery": "2024-10-19",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "supplierId": 190,
+          "items": "Integrated platform connecting multiple systems for seamless operations.",
+          "totalAmount": 15310,
+          "orderDate": "2024-11-21",
+          "expectedDelivery": "2024-11-21",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "supplierId": 238,
+          "items": "Automated workflow reducing manual intervention and human error.",
+          "totalAmount": 17291,
+          "orderDate": "2024-12-23",
+          "expectedDelivery": "2024-12-23",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "supplierId": 286,
+          "items": "Real-time monitoring system with intelligent alerting capabilities.",
+          "totalAmount": 19272,
+          "orderDate": "2024-01-25",
+          "expectedDelivery": "2024-01-25",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "supplierId": 234,
+          "items": "Customizable module adaptable to diverse operational requirements.",
+          "totalAmount": 21253,
+          "orderDate": "2024-02-27",
+          "expectedDelivery": "2024-02-27",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "supplierId": 282,
+          "items": "Performance-optimized design achieving superior throughput and reliability.",
+          "totalAmount": 18234,
+          "orderDate": "2024-03-01",
+          "expectedDelivery": "2024-03-01",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Payroll",
+      "routeKey": "payrolls",
+      "label": "Payroll",
+      "icon": "activity",
+      "aiFunction": "analyzePayroll",
+      "aiPrompt": "You are an AI analyst for A I Salon Spa Booking Optimizer. Analyze the provided Payroll data. The data includes: Stylist Id, Pay Period Start, Pay Period End, Base Pay, Commission Amount, Tips Amount, Deductions, Bonus, Total Pay, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "stylistId",
+          "label": "Stylist Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "payPeriodStart",
+          "label": "Pay Period Start",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "payPeriodEnd",
+          "label": "Pay Period End",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "basePay",
+          "label": "Base Pay",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "commissionAmount",
+          "label": "Commission Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "tipsAmount",
+          "label": "Tips Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "deductions",
+          "label": "Deductions",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "bonus",
+          "label": "Bonus",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalPay",
+          "label": "Total Pay",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "stylistId": 10,
+          "payPeriodStart": "2024-01-01",
+          "payPeriodEnd": "2024-01-01",
+          "basePay": 10,
+          "commissionAmount": 500,
+          "tipsAmount": 500,
+          "deductions": 10,
+          "bonus": 10,
+          "totalPay": 10,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "stylistId": 58,
+          "payPeriodStart": "2024-02-03",
+          "payPeriodEnd": "2024-02-03",
+          "basePay": 71.7,
+          "commissionAmount": 2481,
+          "tipsAmount": 2481,
+          "deductions": 71.7,
+          "bonus": 71.7,
+          "totalPay": 71.7,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "stylistId": 106,
+          "payPeriodStart": "2024-03-05",
+          "payPeriodEnd": "2024-03-05",
+          "basePay": 33.4,
+          "commissionAmount": 4462,
+          "tipsAmount": 4462,
+          "deductions": 33.4,
+          "bonus": 33.4,
+          "totalPay": 33.4,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "stylistId": 154,
+          "payPeriodStart": "2024-04-07",
+          "payPeriodEnd": "2024-04-07",
+          "basePay": 95.1,
+          "commissionAmount": 6443,
+          "tipsAmount": 6443,
+          "deductions": 95.1,
+          "bonus": 95.1,
+          "totalPay": 95.1,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "stylistId": 102,
+          "payPeriodStart": "2024-05-09",
+          "payPeriodEnd": "2024-05-09",
+          "basePay": 56.8,
+          "commissionAmount": 8424,
+          "tipsAmount": 8424,
+          "deductions": 56.8,
+          "bonus": 56.8,
+          "totalPay": 56.8,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "stylistId": 150,
+          "payPeriodStart": "2024-06-11",
+          "payPeriodEnd": "2024-06-11",
+          "basePay": 118.5,
+          "commissionAmount": 10405,
+          "tipsAmount": 10405,
+          "deductions": 118.5,
+          "bonus": 118.5,
+          "totalPay": 118.5,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "stylistId": 198,
+          "payPeriodStart": "2024-07-13",
+          "payPeriodEnd": "2024-07-13",
+          "basePay": 80.2,
+          "commissionAmount": 12386,
+          "tipsAmount": 12386,
+          "deductions": 80.2,
+          "bonus": 80.2,
+          "totalPay": 80.2,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "stylistId": 146,
+          "payPeriodStart": "2024-08-15",
+          "payPeriodEnd": "2024-08-15",
+          "basePay": 141.9,
+          "commissionAmount": 9367,
+          "tipsAmount": 9367,
+          "deductions": 141.9,
+          "bonus": 141.9,
+          "totalPay": 141.9,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "stylistId": 194,
+          "payPeriodStart": "2024-09-17",
+          "payPeriodEnd": "2024-09-17",
+          "basePay": 103.6,
+          "commissionAmount": 11348,
+          "tipsAmount": 11348,
+          "deductions": 103.6,
+          "bonus": 103.6,
+          "totalPay": 103.6,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "stylistId": 242,
+          "payPeriodStart": "2024-10-19",
+          "payPeriodEnd": "2024-10-19",
+          "basePay": 165.3,
+          "commissionAmount": 13329,
+          "tipsAmount": 13329,
+          "deductions": 165.3,
+          "bonus": 165.3,
+          "totalPay": 165.3,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "stylistId": 190,
+          "payPeriodStart": "2024-11-21",
+          "payPeriodEnd": "2024-11-21",
+          "basePay": 127,
+          "commissionAmount": 15310,
+          "tipsAmount": 15310,
+          "deductions": 127,
+          "bonus": 127,
+          "totalPay": 127,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "stylistId": 238,
+          "payPeriodStart": "2024-12-23",
+          "payPeriodEnd": "2024-12-23",
+          "basePay": 188.7,
+          "commissionAmount": 17291,
+          "tipsAmount": 17291,
+          "deductions": 188.7,
+          "bonus": 188.7,
+          "totalPay": 188.7,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "stylistId": 286,
+          "payPeriodStart": "2024-01-25",
+          "payPeriodEnd": "2024-01-25",
+          "basePay": 150.4,
+          "commissionAmount": 19272,
+          "tipsAmount": 19272,
+          "deductions": 150.4,
+          "bonus": 150.4,
+          "totalPay": 150.4,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "stylistId": 234,
+          "payPeriodStart": "2024-02-27",
+          "payPeriodEnd": "2024-02-27",
+          "basePay": 212.1,
+          "commissionAmount": 21253,
+          "tipsAmount": 21253,
+          "deductions": 212.1,
+          "bonus": 212.1,
+          "totalPay": 212.1,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "stylistId": 282,
+          "payPeriodStart": "2024-03-01",
+          "payPeriodEnd": "2024-03-01",
+          "basePay": 173.8,
+          "commissionAmount": 18234,
+          "tipsAmount": 18234,
+          "deductions": 173.8,
+          "bonus": 173.8,
+          "totalPay": 173.8,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

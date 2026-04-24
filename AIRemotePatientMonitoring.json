@@ -1,0 +1,2989 @@
+{
+  "appName": "A I Remote Patient Monitoring",
+  "dbName": "a_i_remote_patient_monitoring",
+  "folderName": "generated/AIRemotePatientMonitoring",
+  "features": [
+    {
+      "modelName": "Patient",
+      "routeKey": "patients",
+      "label": "Patient",
+      "icon": "activity",
+      "aiFunction": "analyzePatient",
+      "aiPrompt": "You are an AI analyst for A I Remote Patient Monitoring. Analyze the provided Patient data. The data includes: First Name, Last Name, Email, Phone, Date Of Birth, Gender, Address, Emergency Contact, Insurance Provider, Insurance Id, Medical History, Status, Assigned Doctor. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dateOfBirth",
+          "label": "Date Of Birth",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "gender",
+          "label": "Gender",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "emergencyContact",
+          "label": "Emergency Contact",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "insuranceProvider",
+          "label": "Insurance Provider",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "insuranceId",
+          "label": "Insurance Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "medicalHistory",
+          "label": "Medical History",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assignedDoctor",
+          "label": "Assigned Doctor",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "dateOfBirth": "2024-01-01",
+          "gender": "Advanced Gender 1",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "emergencyContact": "Advanced Emergency Contact 1",
+          "insuranceProvider": "Advanced Insurance Provider 1",
+          "insuranceId": "Advanced Insurance Id 1",
+          "medicalHistory": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "assignedDoctor": "Advanced Assigned Doctor 1"
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "dateOfBirth": "2024-02-03",
+          "gender": "Premium Gender 2",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "emergencyContact": "Premium Emergency Contact 2",
+          "insuranceProvider": "Premium Insurance Provider 2",
+          "insuranceId": "Premium Insurance Id 2",
+          "medicalHistory": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "assignedDoctor": "Premium Assigned Doctor 2"
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "dateOfBirth": "2024-03-05",
+          "gender": "Standard Gender 3",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "emergencyContact": "Standard Emergency Contact 3",
+          "insuranceProvider": "Standard Insurance Provider 3",
+          "insuranceId": "Standard Insurance Id 3",
+          "medicalHistory": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "assignedDoctor": "Standard Assigned Doctor 3"
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "dateOfBirth": "2024-04-07",
+          "gender": "Elite Gender 4",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "emergencyContact": "Elite Emergency Contact 4",
+          "insuranceProvider": "Elite Insurance Provider 4",
+          "insuranceId": "Elite Insurance Id 4",
+          "medicalHistory": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "assignedDoctor": "Elite Assigned Doctor 4"
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "dateOfBirth": "2024-05-09",
+          "gender": "Core Gender 5",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "emergencyContact": "Core Emergency Contact 5",
+          "insuranceProvider": "Core Insurance Provider 5",
+          "insuranceId": "Core Insurance Id 5",
+          "medicalHistory": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "assignedDoctor": "Core Assigned Doctor 5"
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "dateOfBirth": "2024-06-11",
+          "gender": "Pro Gender 6",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "emergencyContact": "Pro Emergency Contact 6",
+          "insuranceProvider": "Pro Insurance Provider 6",
+          "insuranceId": "Pro Insurance Id 6",
+          "medicalHistory": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "assignedDoctor": "Pro Assigned Doctor 6"
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "dateOfBirth": "2024-07-13",
+          "gender": "Essential Gender 7",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "emergencyContact": "Essential Emergency Contact 7",
+          "insuranceProvider": "Essential Insurance Provider 7",
+          "insuranceId": "Essential Insurance Id 7",
+          "medicalHistory": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "assignedDoctor": "Essential Assigned Doctor 7"
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "dateOfBirth": "2024-08-15",
+          "gender": "Primary Gender 8",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "emergencyContact": "Primary Emergency Contact 8",
+          "insuranceProvider": "Primary Insurance Provider 8",
+          "insuranceId": "Primary Insurance Id 8",
+          "medicalHistory": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "assignedDoctor": "Primary Assigned Doctor 8"
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "dateOfBirth": "2024-09-17",
+          "gender": "Global Gender 9",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "emergencyContact": "Global Emergency Contact 9",
+          "insuranceProvider": "Global Insurance Provider 9",
+          "insuranceId": "Global Insurance Id 9",
+          "medicalHistory": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "assignedDoctor": "Global Assigned Doctor 9"
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "dateOfBirth": "2024-10-19",
+          "gender": "Regional Gender 10",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "emergencyContact": "Regional Emergency Contact 10",
+          "insuranceProvider": "Regional Insurance Provider 10",
+          "insuranceId": "Regional Insurance Id 10",
+          "medicalHistory": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "assignedDoctor": "Regional Assigned Doctor 10"
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "dateOfBirth": "2024-11-21",
+          "gender": "Custom Gender 11",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "emergencyContact": "Custom Emergency Contact 11",
+          "insuranceProvider": "Custom Insurance Provider 11",
+          "insuranceId": "Custom Insurance Id 11",
+          "medicalHistory": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "assignedDoctor": "Custom Assigned Doctor 11"
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "dateOfBirth": "2024-12-23",
+          "gender": "Smart Gender 12",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "emergencyContact": "Smart Emergency Contact 12",
+          "insuranceProvider": "Smart Insurance Provider 12",
+          "insuranceId": "Smart Insurance Id 12",
+          "medicalHistory": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "assignedDoctor": "Smart Assigned Doctor 12"
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "dateOfBirth": "2024-01-25",
+          "gender": "Rapid Gender 13",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "emergencyContact": "Rapid Emergency Contact 13",
+          "insuranceProvider": "Rapid Insurance Provider 13",
+          "insuranceId": "Rapid Insurance Id 13",
+          "medicalHistory": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "assignedDoctor": "Rapid Assigned Doctor 13"
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "dateOfBirth": "2024-02-27",
+          "gender": "Secure Gender 14",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "emergencyContact": "Secure Emergency Contact 14",
+          "insuranceProvider": "Secure Insurance Provider 14",
+          "insuranceId": "Secure Insurance Id 14",
+          "medicalHistory": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "assignedDoctor": "Secure Assigned Doctor 14"
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "dateOfBirth": "2024-03-01",
+          "gender": "Modern Gender 15",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "emergencyContact": "Modern Emergency Contact 15",
+          "insuranceProvider": "Modern Insurance Provider 15",
+          "insuranceId": "Modern Insurance Id 15",
+          "medicalHistory": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "assignedDoctor": "Modern Assigned Doctor 15"
+        }
+      ]
+    },
+    {
+      "modelName": "VitalSign",
+      "routeKey": "vital-signs",
+      "label": "Vital Sign",
+      "icon": "briefcase",
+      "aiFunction": "analyzeVitalSign",
+      "aiPrompt": "You are an AI analyst for A I Remote Patient Monitoring. Analyze the provided Vital Sign data. The data includes: Patient Id, Heart Rate, Blood Pressure Systolic, Blood Pressure Diastolic, Temperature, Oxygen Saturation, Respiratory Rate, Blood Glucose, Weight, Notes, Recorded At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "patientId",
+          "label": "Patient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "heartRate",
+          "label": "Heart Rate",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bloodPressureSystolic",
+          "label": "Blood Pressure Systolic",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bloodPressureDiastolic",
+          "label": "Blood Pressure Diastolic",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "temperature",
+          "label": "Temperature",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "oxygenSaturation",
+          "label": "Oxygen Saturation",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "respiratoryRate",
+          "label": "Respiratory Rate",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bloodGlucose",
+          "label": "Blood Glucose",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "recordedAt",
+          "label": "Recorded At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "patientId": 10,
+          "heartRate": 10,
+          "bloodPressureSystolic": 10,
+          "bloodPressureDiastolic": 10,
+          "temperature": 10,
+          "oxygenSaturation": 1.5,
+          "respiratoryRate": 10,
+          "bloodGlucose": 10,
+          "weight": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "recordedAt": "2024-01-01"
+        },
+        {
+          "patientId": 58,
+          "heartRate": 58,
+          "bloodPressureSystolic": 58,
+          "bloodPressureDiastolic": 58,
+          "temperature": 71.7,
+          "oxygenSaturation": 2.1,
+          "respiratoryRate": 58,
+          "bloodGlucose": 71.7,
+          "weight": 71.7,
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "recordedAt": "2024-02-03"
+        },
+        {
+          "patientId": 106,
+          "heartRate": 106,
+          "bloodPressureSystolic": 106,
+          "bloodPressureDiastolic": 106,
+          "temperature": 33.4,
+          "oxygenSaturation": 2.7,
+          "respiratoryRate": 106,
+          "bloodGlucose": 33.4,
+          "weight": 33.4,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "recordedAt": "2024-03-05"
+        },
+        {
+          "patientId": 154,
+          "heartRate": 154,
+          "bloodPressureSystolic": 154,
+          "bloodPressureDiastolic": 154,
+          "temperature": 95.1,
+          "oxygenSaturation": 3.3,
+          "respiratoryRate": 154,
+          "bloodGlucose": 95.1,
+          "weight": 95.1,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "recordedAt": "2024-04-07"
+        },
+        {
+          "patientId": 102,
+          "heartRate": 102,
+          "bloodPressureSystolic": 102,
+          "bloodPressureDiastolic": 102,
+          "temperature": 56.8,
+          "oxygenSaturation": 3.9,
+          "respiratoryRate": 102,
+          "bloodGlucose": 56.8,
+          "weight": 56.8,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "recordedAt": "2024-05-09"
+        },
+        {
+          "patientId": 150,
+          "heartRate": 150,
+          "bloodPressureSystolic": 150,
+          "bloodPressureDiastolic": 150,
+          "temperature": 118.5,
+          "oxygenSaturation": 4.5,
+          "respiratoryRate": 150,
+          "bloodGlucose": 118.5,
+          "weight": 118.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "recordedAt": "2024-06-11"
+        },
+        {
+          "patientId": 198,
+          "heartRate": 198,
+          "bloodPressureSystolic": 198,
+          "bloodPressureDiastolic": 198,
+          "temperature": 80.2,
+          "oxygenSaturation": 5.1,
+          "respiratoryRate": 198,
+          "bloodGlucose": 80.2,
+          "weight": 80.2,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "recordedAt": "2024-07-13"
+        },
+        {
+          "patientId": 146,
+          "heartRate": 146,
+          "bloodPressureSystolic": 146,
+          "bloodPressureDiastolic": 146,
+          "temperature": 141.9,
+          "oxygenSaturation": 5.7,
+          "respiratoryRate": 146,
+          "bloodGlucose": 141.9,
+          "weight": 141.9,
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "recordedAt": "2024-08-15"
+        },
+        {
+          "patientId": 194,
+          "heartRate": 194,
+          "bloodPressureSystolic": 194,
+          "bloodPressureDiastolic": 194,
+          "temperature": 103.6,
+          "oxygenSaturation": 6.3,
+          "respiratoryRate": 194,
+          "bloodGlucose": 103.6,
+          "weight": 103.6,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "recordedAt": "2024-09-17"
+        },
+        {
+          "patientId": 242,
+          "heartRate": 242,
+          "bloodPressureSystolic": 242,
+          "bloodPressureDiastolic": 242,
+          "temperature": 165.3,
+          "oxygenSaturation": 1.9,
+          "respiratoryRate": 242,
+          "bloodGlucose": 165.3,
+          "weight": 165.3,
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "recordedAt": "2024-10-19"
+        },
+        {
+          "patientId": 190,
+          "heartRate": 190,
+          "bloodPressureSystolic": 190,
+          "bloodPressureDiastolic": 190,
+          "temperature": 127,
+          "oxygenSaturation": 2.5,
+          "respiratoryRate": 190,
+          "bloodGlucose": 127,
+          "weight": 127,
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "recordedAt": "2024-11-21"
+        },
+        {
+          "patientId": 238,
+          "heartRate": 238,
+          "bloodPressureSystolic": 238,
+          "bloodPressureDiastolic": 238,
+          "temperature": 188.7,
+          "oxygenSaturation": 3.1,
+          "respiratoryRate": 238,
+          "bloodGlucose": 188.7,
+          "weight": 188.7,
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "recordedAt": "2024-12-23"
+        },
+        {
+          "patientId": 286,
+          "heartRate": 286,
+          "bloodPressureSystolic": 286,
+          "bloodPressureDiastolic": 286,
+          "temperature": 150.4,
+          "oxygenSaturation": 3.7,
+          "respiratoryRate": 286,
+          "bloodGlucose": 150.4,
+          "weight": 150.4,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "recordedAt": "2024-01-25"
+        },
+        {
+          "patientId": 234,
+          "heartRate": 234,
+          "bloodPressureSystolic": 234,
+          "bloodPressureDiastolic": 234,
+          "temperature": 212.1,
+          "oxygenSaturation": 4.3,
+          "respiratoryRate": 234,
+          "bloodGlucose": 212.1,
+          "weight": 212.1,
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "recordedAt": "2024-02-27"
+        },
+        {
+          "patientId": 282,
+          "heartRate": 282,
+          "bloodPressureSystolic": 282,
+          "bloodPressureDiastolic": 282,
+          "temperature": 173.8,
+          "oxygenSaturation": 4.9,
+          "respiratoryRate": 282,
+          "bloodGlucose": 173.8,
+          "weight": 173.8,
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "recordedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Medication",
+      "routeKey": "medications",
+      "label": "Medication",
+      "icon": "clipboard",
+      "aiFunction": "analyzeMedication",
+      "aiPrompt": "You are an AI analyst for A I Remote Patient Monitoring. Analyze the provided Medication data. The data includes: Patient Id, Name, Dosage, Frequency, Route, Start Date, End Date, Prescribing Doctor, Status, Side Effects, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "patientId",
+          "label": "Patient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dosage",
+          "label": "Dosage",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "frequency",
+          "label": "Frequency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "route",
+          "label": "Route",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "prescribingDoctor",
+          "label": "Prescribing Doctor",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sideEffects",
+          "label": "Side Effects",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "patientId": 10,
+          "name": "Advanced Name 1",
+          "dosage": "Advanced Dosage 1",
+          "frequency": "Advanced Frequency 1",
+          "route": "Advanced Route 1",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "prescribingDoctor": "Advanced Prescribing Doctor 1",
+          "status": "active",
+          "sideEffects": "Comprehensive solution designed for optimal performance and efficiency.",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "patientId": 58,
+          "name": "Premium Name 2",
+          "dosage": "Premium Dosage 2",
+          "frequency": "Premium Frequency 2",
+          "route": "Premium Route 2",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "prescribingDoctor": "Premium Prescribing Doctor 2",
+          "status": "pending",
+          "sideEffects": "Industry-leading approach with proven results across multiple deployments.",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "patientId": 106,
+          "name": "Standard Name 3",
+          "dosage": "Standard Dosage 3",
+          "frequency": "Standard Frequency 3",
+          "route": "Standard Route 3",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "prescribingDoctor": "Standard Prescribing Doctor 3",
+          "status": "in_progress",
+          "sideEffects": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "patientId": 154,
+          "name": "Elite Name 4",
+          "dosage": "Elite Dosage 4",
+          "frequency": "Elite Frequency 4",
+          "route": "Elite Route 4",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "prescribingDoctor": "Elite Prescribing Doctor 4",
+          "status": "completed",
+          "sideEffects": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "patientId": 102,
+          "name": "Core Name 5",
+          "dosage": "Core Dosage 5",
+          "frequency": "Core Frequency 5",
+          "route": "Core Route 5",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "prescribingDoctor": "Core Prescribing Doctor 5",
+          "status": "under_review",
+          "sideEffects": "Cost-effective strategy focused on sustainable long-term growth.",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "patientId": 150,
+          "name": "Pro Name 6",
+          "dosage": "Pro Dosage 6",
+          "frequency": "Pro Frequency 6",
+          "route": "Pro Route 6",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "prescribingDoctor": "Pro Prescribing Doctor 6",
+          "status": "approved",
+          "sideEffects": "High-priority initiative aligned with organizational strategic objectives.",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "patientId": 198,
+          "name": "Essential Name 7",
+          "dosage": "Essential Dosage 7",
+          "frequency": "Essential Frequency 7",
+          "route": "Essential Route 7",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "prescribingDoctor": "Essential Prescribing Doctor 7",
+          "status": "active",
+          "sideEffects": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "patientId": 146,
+          "name": "Primary Name 8",
+          "dosage": "Primary Dosage 8",
+          "frequency": "Primary Frequency 8",
+          "route": "Primary Route 8",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "prescribingDoctor": "Primary Prescribing Doctor 8",
+          "status": "active",
+          "sideEffects": "Innovative framework incorporating best practices and emerging technologies.",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "patientId": 194,
+          "name": "Global Name 9",
+          "dosage": "Global Dosage 9",
+          "frequency": "Global Frequency 9",
+          "route": "Global Route 9",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "prescribingDoctor": "Global Prescribing Doctor 9",
+          "status": "active",
+          "sideEffects": "Scalable architecture built to accommodate rapid expansion and change.",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "patientId": 242,
+          "name": "Regional Name 10",
+          "dosage": "Regional Dosage 10",
+          "frequency": "Regional Frequency 10",
+          "route": "Regional Route 10",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "prescribingDoctor": "Regional Prescribing Doctor 10",
+          "status": "pending",
+          "sideEffects": "Enterprise-grade solution with robust security and compliance features.",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "patientId": 190,
+          "name": "Custom Name 11",
+          "dosage": "Custom Dosage 11",
+          "frequency": "Custom Frequency 11",
+          "route": "Custom Route 11",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "prescribingDoctor": "Custom Prescribing Doctor 11",
+          "status": "completed",
+          "sideEffects": "Integrated platform connecting multiple systems for seamless operations.",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "patientId": 238,
+          "name": "Smart Name 12",
+          "dosage": "Smart Dosage 12",
+          "frequency": "Smart Frequency 12",
+          "route": "Smart Route 12",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "prescribingDoctor": "Smart Prescribing Doctor 12",
+          "status": "active",
+          "sideEffects": "Automated workflow reducing manual intervention and human error.",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "patientId": 286,
+          "name": "Rapid Name 13",
+          "dosage": "Rapid Dosage 13",
+          "frequency": "Rapid Frequency 13",
+          "route": "Rapid Route 13",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "prescribingDoctor": "Rapid Prescribing Doctor 13",
+          "status": "in_progress",
+          "sideEffects": "Real-time monitoring system with intelligent alerting capabilities.",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "patientId": 234,
+          "name": "Secure Name 14",
+          "dosage": "Secure Dosage 14",
+          "frequency": "Secure Frequency 14",
+          "route": "Secure Route 14",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "prescribingDoctor": "Secure Prescribing Doctor 14",
+          "status": "active",
+          "sideEffects": "Customizable module adaptable to diverse operational requirements.",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "patientId": 282,
+          "name": "Modern Name 15",
+          "dosage": "Modern Dosage 15",
+          "frequency": "Modern Frequency 15",
+          "route": "Modern Route 15",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "prescribingDoctor": "Modern Prescribing Doctor 15",
+          "status": "approved",
+          "sideEffects": "Performance-optimized design achieving superior throughput and reliability.",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Appointment",
+      "routeKey": "appointments",
+      "label": "Appointment",
+      "icon": "database",
+      "aiFunction": "analyzeAppointment",
+      "aiPrompt": "You are an AI analyst for A I Remote Patient Monitoring. Analyze the provided Appointment data. The data includes: Patient Id, Doctor Name, Appointment Type, Scheduled Date, Duration Minutes, Status, Location, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "patientId",
+          "label": "Patient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "doctorName",
+          "label": "Doctor Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "appointmentType",
+          "label": "Appointment Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "durationMinutes",
+          "label": "Duration Minutes",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "patientId": 10,
+          "doctorName": "Advanced Doctor 1",
+          "appointmentType": "Category A",
+          "scheduledDate": "2024-01-01",
+          "durationMinutes": 10,
+          "status": "active",
+          "location": "New York",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "patientId": 58,
+          "doctorName": "Premium Doctor 2",
+          "appointmentType": "Category B",
+          "scheduledDate": "2024-02-03",
+          "durationMinutes": 58,
+          "status": "pending",
+          "location": "Los Angeles",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "patientId": 106,
+          "doctorName": "Standard Doctor 3",
+          "appointmentType": "Category C",
+          "scheduledDate": "2024-03-05",
+          "durationMinutes": 106,
+          "status": "in_progress",
+          "location": "Chicago",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "patientId": 154,
+          "doctorName": "Elite Doctor 4",
+          "appointmentType": "Category D",
+          "scheduledDate": "2024-04-07",
+          "durationMinutes": 154,
+          "status": "completed",
+          "location": "Houston",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "patientId": 102,
+          "doctorName": "Core Doctor 5",
+          "appointmentType": "Category E",
+          "scheduledDate": "2024-05-09",
+          "durationMinutes": 102,
+          "status": "under_review",
+          "location": "Phoenix",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "patientId": 150,
+          "doctorName": "Pro Doctor 6",
+          "appointmentType": "Premium Tier",
+          "scheduledDate": "2024-06-11",
+          "durationMinutes": 150,
+          "status": "approved",
+          "location": "San Francisco",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "patientId": 198,
+          "doctorName": "Essential Doctor 7",
+          "appointmentType": "Standard Tier",
+          "scheduledDate": "2024-07-13",
+          "durationMinutes": 198,
+          "status": "active",
+          "location": "Seattle",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "patientId": 146,
+          "doctorName": "Primary Doctor 8",
+          "appointmentType": "Basic Tier",
+          "scheduledDate": "2024-08-15",
+          "durationMinutes": 146,
+          "status": "active",
+          "location": "Boston",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "patientId": 194,
+          "doctorName": "Global Doctor 9",
+          "appointmentType": "Enterprise",
+          "scheduledDate": "2024-09-17",
+          "durationMinutes": 194,
+          "status": "active",
+          "location": "Denver",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "patientId": 242,
+          "doctorName": "Regional Doctor 10",
+          "appointmentType": "Starter",
+          "scheduledDate": "2024-10-19",
+          "durationMinutes": 242,
+          "status": "pending",
+          "location": "Miami",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "patientId": 190,
+          "doctorName": "Custom Doctor 11",
+          "appointmentType": "Growth",
+          "scheduledDate": "2024-11-21",
+          "durationMinutes": 190,
+          "status": "completed",
+          "location": "Austin",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "patientId": 238,
+          "doctorName": "Smart Doctor 12",
+          "appointmentType": "Scale",
+          "scheduledDate": "2024-12-23",
+          "durationMinutes": 238,
+          "status": "active",
+          "location": "Portland",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "patientId": 286,
+          "doctorName": "Rapid Doctor 13",
+          "appointmentType": "Foundation",
+          "scheduledDate": "2024-01-25",
+          "durationMinutes": 286,
+          "status": "in_progress",
+          "location": "Dallas",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "patientId": 234,
+          "doctorName": "Secure Doctor 14",
+          "appointmentType": "Advanced",
+          "scheduledDate": "2024-02-27",
+          "durationMinutes": 234,
+          "status": "active",
+          "location": "Atlanta",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "patientId": 282,
+          "doctorName": "Modern Doctor 15",
+          "appointmentType": "Professional",
+          "scheduledDate": "2024-03-01",
+          "durationMinutes": 282,
+          "status": "approved",
+          "location": "Nashville",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Alert",
+      "routeKey": "alerts",
+      "label": "Alert",
+      "icon": "file-text",
+      "aiFunction": "analyzeAlert",
+      "aiPrompt": "You are an AI analyst for A I Remote Patient Monitoring. Analyze the provided Alert data. The data includes: Patient Id, Alert Type, Severity, Message, Vital Sign Id, Status, Acknowledged By, Acknowledged At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "patientId",
+          "label": "Patient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "alertType",
+          "label": "Alert Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "vitalSignId",
+          "label": "Vital Sign Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "acknowledgedBy",
+          "label": "Acknowledged By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "acknowledgedAt",
+          "label": "Acknowledged At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "patientId": 10,
+          "alertType": "Category A",
+          "severity": "low",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "vitalSignId": 10,
+          "status": "active",
+          "acknowledgedBy": "Advanced Acknowledged By 1",
+          "acknowledgedAt": "2024-01-01"
+        },
+        {
+          "patientId": 58,
+          "alertType": "Category B",
+          "severity": "medium",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "vitalSignId": 58,
+          "status": "pending",
+          "acknowledgedBy": "Premium Acknowledged By 2",
+          "acknowledgedAt": "2024-02-03"
+        },
+        {
+          "patientId": 106,
+          "alertType": "Category C",
+          "severity": "high",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "vitalSignId": 106,
+          "status": "in_progress",
+          "acknowledgedBy": "Standard Acknowledged By 3",
+          "acknowledgedAt": "2024-03-05"
+        },
+        {
+          "patientId": 154,
+          "alertType": "Category D",
+          "severity": "critical",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "vitalSignId": 154,
+          "status": "completed",
+          "acknowledgedBy": "Elite Acknowledged By 4",
+          "acknowledgedAt": "2024-04-07"
+        },
+        {
+          "patientId": 102,
+          "alertType": "Category E",
+          "severity": "medium",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "vitalSignId": 102,
+          "status": "under_review",
+          "acknowledgedBy": "Core Acknowledged By 5",
+          "acknowledgedAt": "2024-05-09"
+        },
+        {
+          "patientId": 150,
+          "alertType": "Premium Tier",
+          "severity": "low",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "vitalSignId": 150,
+          "status": "approved",
+          "acknowledgedBy": "Pro Acknowledged By 6",
+          "acknowledgedAt": "2024-06-11"
+        },
+        {
+          "patientId": 198,
+          "alertType": "Standard Tier",
+          "severity": "medium",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "vitalSignId": 198,
+          "status": "active",
+          "acknowledgedBy": "Essential Acknowledged By 7",
+          "acknowledgedAt": "2024-07-13"
+        },
+        {
+          "patientId": 146,
+          "alertType": "Basic Tier",
+          "severity": "high",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "vitalSignId": 146,
+          "status": "active",
+          "acknowledgedBy": "Primary Acknowledged By 8",
+          "acknowledgedAt": "2024-08-15"
+        },
+        {
+          "patientId": 194,
+          "alertType": "Enterprise",
+          "severity": "critical",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "vitalSignId": 194,
+          "status": "active",
+          "acknowledgedBy": "Global Acknowledged By 9",
+          "acknowledgedAt": "2024-09-17"
+        },
+        {
+          "patientId": 242,
+          "alertType": "Starter",
+          "severity": "medium",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "vitalSignId": 242,
+          "status": "pending",
+          "acknowledgedBy": "Regional Acknowledged By 10",
+          "acknowledgedAt": "2024-10-19"
+        },
+        {
+          "patientId": 190,
+          "alertType": "Growth",
+          "severity": "low",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "vitalSignId": 190,
+          "status": "completed",
+          "acknowledgedBy": "Custom Acknowledged By 11",
+          "acknowledgedAt": "2024-11-21"
+        },
+        {
+          "patientId": 238,
+          "alertType": "Scale",
+          "severity": "medium",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "vitalSignId": 238,
+          "status": "active",
+          "acknowledgedBy": "Smart Acknowledged By 12",
+          "acknowledgedAt": "2024-12-23"
+        },
+        {
+          "patientId": 286,
+          "alertType": "Foundation",
+          "severity": "high",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "vitalSignId": 286,
+          "status": "in_progress",
+          "acknowledgedBy": "Rapid Acknowledged By 13",
+          "acknowledgedAt": "2024-01-25"
+        },
+        {
+          "patientId": 234,
+          "alertType": "Advanced",
+          "severity": "critical",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "vitalSignId": 234,
+          "status": "active",
+          "acknowledgedBy": "Secure Acknowledged By 14",
+          "acknowledgedAt": "2024-02-27"
+        },
+        {
+          "patientId": 282,
+          "alertType": "Professional",
+          "severity": "medium",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "vitalSignId": 282,
+          "status": "approved",
+          "acknowledgedBy": "Modern Acknowledged By 15",
+          "acknowledgedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "CarePlan",
+      "routeKey": "care-plans",
+      "label": "Care Plan",
+      "icon": "heart",
+      "aiFunction": "analyzeCarePlan",
+      "aiPrompt": "You are an AI analyst for A I Remote Patient Monitoring. Analyze the provided Care Plan data. The data includes: Patient Id, Title, Description, Goals, Interventions, Start Date, End Date, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "patientId",
+          "label": "Patient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "goals",
+          "label": "Goals",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "interventions",
+          "label": "Interventions",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "patientId": 10,
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "goals": "Comprehensive solution designed for optimal performance and efficiency.",
+          "interventions": "Comprehensive solution designed for optimal performance and efficiency.",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "status": "active"
+        },
+        {
+          "patientId": 58,
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "goals": "Industry-leading approach with proven results across multiple deployments.",
+          "interventions": "Industry-leading approach with proven results across multiple deployments.",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "status": "pending"
+        },
+        {
+          "patientId": 106,
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "goals": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "interventions": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "status": "in_progress"
+        },
+        {
+          "patientId": 154,
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "goals": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "interventions": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "status": "completed"
+        },
+        {
+          "patientId": 102,
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "goals": "Cost-effective strategy focused on sustainable long-term growth.",
+          "interventions": "Cost-effective strategy focused on sustainable long-term growth.",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "status": "under_review"
+        },
+        {
+          "patientId": 150,
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "goals": "High-priority initiative aligned with organizational strategic objectives.",
+          "interventions": "High-priority initiative aligned with organizational strategic objectives.",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "status": "approved"
+        },
+        {
+          "patientId": 198,
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "goals": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "interventions": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "status": "active"
+        },
+        {
+          "patientId": 146,
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "goals": "Innovative framework incorporating best practices and emerging technologies.",
+          "interventions": "Innovative framework incorporating best practices and emerging technologies.",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "status": "active"
+        },
+        {
+          "patientId": 194,
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "goals": "Scalable architecture built to accommodate rapid expansion and change.",
+          "interventions": "Scalable architecture built to accommodate rapid expansion and change.",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "status": "active"
+        },
+        {
+          "patientId": 242,
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "goals": "Enterprise-grade solution with robust security and compliance features.",
+          "interventions": "Enterprise-grade solution with robust security and compliance features.",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "status": "pending"
+        },
+        {
+          "patientId": 190,
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "goals": "Integrated platform connecting multiple systems for seamless operations.",
+          "interventions": "Integrated platform connecting multiple systems for seamless operations.",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "status": "completed"
+        },
+        {
+          "patientId": 238,
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "goals": "Automated workflow reducing manual intervention and human error.",
+          "interventions": "Automated workflow reducing manual intervention and human error.",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "status": "active"
+        },
+        {
+          "patientId": 286,
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "goals": "Real-time monitoring system with intelligent alerting capabilities.",
+          "interventions": "Real-time monitoring system with intelligent alerting capabilities.",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "status": "in_progress"
+        },
+        {
+          "patientId": 234,
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "goals": "Customizable module adaptable to diverse operational requirements.",
+          "interventions": "Customizable module adaptable to diverse operational requirements.",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "status": "active"
+        },
+        {
+          "patientId": 282,
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "goals": "Performance-optimized design achieving superior throughput and reliability.",
+          "interventions": "Performance-optimized design achieving superior throughput and reliability.",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "MedicalDevice",
+      "routeKey": "medical-devices",
+      "label": "Medical Device",
+      "icon": "layers",
+      "aiFunction": "analyzeMedicalDevice",
+      "aiPrompt": "You are an AI analyst for A I Remote Patient Monitoring. Analyze the provided Medical Device data. The data includes: Patient Id, Device Name, Device Type, Serial Number, Manufacturer, Model, Status, Last Reading, Battery Level, Firmware Version, Assigned Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "patientId",
+          "label": "Patient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "deviceName",
+          "label": "Device Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "deviceType",
+          "label": "Device Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serialNumber",
+          "label": "Serial Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "manufacturer",
+          "label": "Manufacturer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "model",
+          "label": "Model",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastReading",
+          "label": "Last Reading",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "batteryLevel",
+          "label": "Battery Level",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "firmwareVersion",
+          "label": "Firmware Version",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assignedDate",
+          "label": "Assigned Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "patientId": 10,
+          "deviceName": "Advanced Device 1",
+          "deviceType": "Category A",
+          "serialNumber": "Advanced Serial Number 1",
+          "manufacturer": "Advanced Manufacturer 1",
+          "model": "Advanced Model 1",
+          "status": "active",
+          "lastReading": "2024-01-01",
+          "batteryLevel": 10,
+          "firmwareVersion": "Advanced Firmware Version 1",
+          "assignedDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "patientId": 58,
+          "deviceName": "Premium Device 2",
+          "deviceType": "Category B",
+          "serialNumber": "Premium Serial Number 2",
+          "manufacturer": "Premium Manufacturer 2",
+          "model": "Premium Model 2",
+          "status": "pending",
+          "lastReading": "2024-02-03",
+          "batteryLevel": 58,
+          "firmwareVersion": "Premium Firmware Version 2",
+          "assignedDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "patientId": 106,
+          "deviceName": "Standard Device 3",
+          "deviceType": "Category C",
+          "serialNumber": "Standard Serial Number 3",
+          "manufacturer": "Standard Manufacturer 3",
+          "model": "Standard Model 3",
+          "status": "in_progress",
+          "lastReading": "2024-03-05",
+          "batteryLevel": 106,
+          "firmwareVersion": "Standard Firmware Version 3",
+          "assignedDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "patientId": 154,
+          "deviceName": "Elite Device 4",
+          "deviceType": "Category D",
+          "serialNumber": "Elite Serial Number 4",
+          "manufacturer": "Elite Manufacturer 4",
+          "model": "Elite Model 4",
+          "status": "completed",
+          "lastReading": "2024-04-07",
+          "batteryLevel": 154,
+          "firmwareVersion": "Elite Firmware Version 4",
+          "assignedDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "patientId": 102,
+          "deviceName": "Core Device 5",
+          "deviceType": "Category E",
+          "serialNumber": "Core Serial Number 5",
+          "manufacturer": "Core Manufacturer 5",
+          "model": "Core Model 5",
+          "status": "under_review",
+          "lastReading": "2024-05-09",
+          "batteryLevel": 102,
+          "firmwareVersion": "Core Firmware Version 5",
+          "assignedDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "patientId": 150,
+          "deviceName": "Pro Device 6",
+          "deviceType": "Premium Tier",
+          "serialNumber": "Pro Serial Number 6",
+          "manufacturer": "Pro Manufacturer 6",
+          "model": "Pro Model 6",
+          "status": "approved",
+          "lastReading": "2024-06-11",
+          "batteryLevel": 150,
+          "firmwareVersion": "Pro Firmware Version 6",
+          "assignedDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "patientId": 198,
+          "deviceName": "Essential Device 7",
+          "deviceType": "Standard Tier",
+          "serialNumber": "Essential Serial Number 7",
+          "manufacturer": "Essential Manufacturer 7",
+          "model": "Essential Model 7",
+          "status": "active",
+          "lastReading": "2024-07-13",
+          "batteryLevel": 198,
+          "firmwareVersion": "Essential Firmware Version 7",
+          "assignedDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "patientId": 146,
+          "deviceName": "Primary Device 8",
+          "deviceType": "Basic Tier",
+          "serialNumber": "Primary Serial Number 8",
+          "manufacturer": "Primary Manufacturer 8",
+          "model": "Primary Model 8",
+          "status": "active",
+          "lastReading": "2024-08-15",
+          "batteryLevel": 146,
+          "firmwareVersion": "Primary Firmware Version 8",
+          "assignedDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "patientId": 194,
+          "deviceName": "Global Device 9",
+          "deviceType": "Enterprise",
+          "serialNumber": "Global Serial Number 9",
+          "manufacturer": "Global Manufacturer 9",
+          "model": "Global Model 9",
+          "status": "active",
+          "lastReading": "2024-09-17",
+          "batteryLevel": 194,
+          "firmwareVersion": "Global Firmware Version 9",
+          "assignedDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "patientId": 242,
+          "deviceName": "Regional Device 10",
+          "deviceType": "Starter",
+          "serialNumber": "Regional Serial Number 10",
+          "manufacturer": "Regional Manufacturer 10",
+          "model": "Regional Model 10",
+          "status": "pending",
+          "lastReading": "2024-10-19",
+          "batteryLevel": 242,
+          "firmwareVersion": "Regional Firmware Version 10",
+          "assignedDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "patientId": 190,
+          "deviceName": "Custom Device 11",
+          "deviceType": "Growth",
+          "serialNumber": "Custom Serial Number 11",
+          "manufacturer": "Custom Manufacturer 11",
+          "model": "Custom Model 11",
+          "status": "completed",
+          "lastReading": "2024-11-21",
+          "batteryLevel": 190,
+          "firmwareVersion": "Custom Firmware Version 11",
+          "assignedDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "patientId": 238,
+          "deviceName": "Smart Device 12",
+          "deviceType": "Scale",
+          "serialNumber": "Smart Serial Number 12",
+          "manufacturer": "Smart Manufacturer 12",
+          "model": "Smart Model 12",
+          "status": "active",
+          "lastReading": "2024-12-23",
+          "batteryLevel": 238,
+          "firmwareVersion": "Smart Firmware Version 12",
+          "assignedDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "patientId": 286,
+          "deviceName": "Rapid Device 13",
+          "deviceType": "Foundation",
+          "serialNumber": "Rapid Serial Number 13",
+          "manufacturer": "Rapid Manufacturer 13",
+          "model": "Rapid Model 13",
+          "status": "in_progress",
+          "lastReading": "2024-01-25",
+          "batteryLevel": 286,
+          "firmwareVersion": "Rapid Firmware Version 13",
+          "assignedDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "patientId": 234,
+          "deviceName": "Secure Device 14",
+          "deviceType": "Advanced",
+          "serialNumber": "Secure Serial Number 14",
+          "manufacturer": "Secure Manufacturer 14",
+          "model": "Secure Model 14",
+          "status": "active",
+          "lastReading": "2024-02-27",
+          "batteryLevel": 234,
+          "firmwareVersion": "Secure Firmware Version 14",
+          "assignedDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "patientId": 282,
+          "deviceName": "Modern Device 15",
+          "deviceType": "Professional",
+          "serialNumber": "Modern Serial Number 15",
+          "manufacturer": "Modern Manufacturer 15",
+          "model": "Modern Model 15",
+          "status": "approved",
+          "lastReading": "2024-03-01",
+          "batteryLevel": 282,
+          "firmwareVersion": "Modern Firmware Version 15",
+          "assignedDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Consultation",
+      "routeKey": "consultations",
+      "label": "Consultation",
+      "icon": "map-pin",
+      "aiFunction": "analyzeConsultation",
+      "aiPrompt": "You are an AI analyst for A I Remote Patient Monitoring. Analyze the provided Consultation data. The data includes: Patient Id, Doctor Name, Consultation Type, Scheduled Date, Duration Minutes, Status, Diagnosis, Treatment Plan, Follow Up Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "patientId",
+          "label": "Patient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "doctorName",
+          "label": "Doctor Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "consultationType",
+          "label": "Consultation Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "durationMinutes",
+          "label": "Duration Minutes",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "diagnosis",
+          "label": "Diagnosis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "treatmentPlan",
+          "label": "Treatment Plan",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "followUpDate",
+          "label": "Follow Up Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "patientId": 10,
+          "doctorName": "Advanced Doctor 1",
+          "consultationType": "Category A",
+          "scheduledDate": "2024-01-01",
+          "durationMinutes": 10,
+          "status": "active",
+          "diagnosis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "treatmentPlan": "Comprehensive solution designed for optimal performance and efficiency.",
+          "followUpDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "patientId": 58,
+          "doctorName": "Premium Doctor 2",
+          "consultationType": "Category B",
+          "scheduledDate": "2024-02-03",
+          "durationMinutes": 58,
+          "status": "pending",
+          "diagnosis": "Industry-leading approach with proven results across multiple deployments.",
+          "treatmentPlan": "Industry-leading approach with proven results across multiple deployments.",
+          "followUpDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "patientId": 106,
+          "doctorName": "Standard Doctor 3",
+          "consultationType": "Category C",
+          "scheduledDate": "2024-03-05",
+          "durationMinutes": 106,
+          "status": "in_progress",
+          "diagnosis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "treatmentPlan": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "followUpDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "patientId": 154,
+          "doctorName": "Elite Doctor 4",
+          "consultationType": "Category D",
+          "scheduledDate": "2024-04-07",
+          "durationMinutes": 154,
+          "status": "completed",
+          "diagnosis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "treatmentPlan": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "followUpDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "patientId": 102,
+          "doctorName": "Core Doctor 5",
+          "consultationType": "Category E",
+          "scheduledDate": "2024-05-09",
+          "durationMinutes": 102,
+          "status": "under_review",
+          "diagnosis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "treatmentPlan": "Cost-effective strategy focused on sustainable long-term growth.",
+          "followUpDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "patientId": 150,
+          "doctorName": "Pro Doctor 6",
+          "consultationType": "Premium Tier",
+          "scheduledDate": "2024-06-11",
+          "durationMinutes": 150,
+          "status": "approved",
+          "diagnosis": "High-priority initiative aligned with organizational strategic objectives.",
+          "treatmentPlan": "High-priority initiative aligned with organizational strategic objectives.",
+          "followUpDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "patientId": 198,
+          "doctorName": "Essential Doctor 7",
+          "consultationType": "Standard Tier",
+          "scheduledDate": "2024-07-13",
+          "durationMinutes": 198,
+          "status": "active",
+          "diagnosis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "treatmentPlan": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "followUpDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "patientId": 146,
+          "doctorName": "Primary Doctor 8",
+          "consultationType": "Basic Tier",
+          "scheduledDate": "2024-08-15",
+          "durationMinutes": 146,
+          "status": "active",
+          "diagnosis": "Innovative framework incorporating best practices and emerging technologies.",
+          "treatmentPlan": "Innovative framework incorporating best practices and emerging technologies.",
+          "followUpDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "patientId": 194,
+          "doctorName": "Global Doctor 9",
+          "consultationType": "Enterprise",
+          "scheduledDate": "2024-09-17",
+          "durationMinutes": 194,
+          "status": "active",
+          "diagnosis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "treatmentPlan": "Scalable architecture built to accommodate rapid expansion and change.",
+          "followUpDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "patientId": 242,
+          "doctorName": "Regional Doctor 10",
+          "consultationType": "Starter",
+          "scheduledDate": "2024-10-19",
+          "durationMinutes": 242,
+          "status": "pending",
+          "diagnosis": "Enterprise-grade solution with robust security and compliance features.",
+          "treatmentPlan": "Enterprise-grade solution with robust security and compliance features.",
+          "followUpDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "patientId": 190,
+          "doctorName": "Custom Doctor 11",
+          "consultationType": "Growth",
+          "scheduledDate": "2024-11-21",
+          "durationMinutes": 190,
+          "status": "completed",
+          "diagnosis": "Integrated platform connecting multiple systems for seamless operations.",
+          "treatmentPlan": "Integrated platform connecting multiple systems for seamless operations.",
+          "followUpDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "patientId": 238,
+          "doctorName": "Smart Doctor 12",
+          "consultationType": "Scale",
+          "scheduledDate": "2024-12-23",
+          "durationMinutes": 238,
+          "status": "active",
+          "diagnosis": "Automated workflow reducing manual intervention and human error.",
+          "treatmentPlan": "Automated workflow reducing manual intervention and human error.",
+          "followUpDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "patientId": 286,
+          "doctorName": "Rapid Doctor 13",
+          "consultationType": "Foundation",
+          "scheduledDate": "2024-01-25",
+          "durationMinutes": 286,
+          "status": "in_progress",
+          "diagnosis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "treatmentPlan": "Real-time monitoring system with intelligent alerting capabilities.",
+          "followUpDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "patientId": 234,
+          "doctorName": "Secure Doctor 14",
+          "consultationType": "Advanced",
+          "scheduledDate": "2024-02-27",
+          "durationMinutes": 234,
+          "status": "active",
+          "diagnosis": "Customizable module adaptable to diverse operational requirements.",
+          "treatmentPlan": "Customizable module adaptable to diverse operational requirements.",
+          "followUpDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "patientId": 282,
+          "doctorName": "Modern Doctor 15",
+          "consultationType": "Professional",
+          "scheduledDate": "2024-03-01",
+          "durationMinutes": 282,
+          "status": "approved",
+          "diagnosis": "Performance-optimized design achieving superior throughput and reliability.",
+          "treatmentPlan": "Performance-optimized design achieving superior throughput and reliability.",
+          "followUpDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PatientReport",
+      "routeKey": "patient-reports",
+      "label": "Patient Report",
+      "icon": "package",
+      "aiFunction": "analyzePatientReport",
+      "aiPrompt": "You are an AI analyst for A I Remote Patient Monitoring. Analyze the provided Patient Report data. The data includes: Patient Id, Report Type, Title, Content, Generated By, Date Range Start, Date Range End, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "patientId",
+          "label": "Patient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "reportType",
+          "label": "Report Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "generatedBy",
+          "label": "Generated By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dateRangeStart",
+          "label": "Date Range Start",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "dateRangeEnd",
+          "label": "Date Range End",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "patientId": 10,
+          "reportType": "Category A",
+          "title": "Advanced Title 1",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "generatedBy": "Advanced Generated By 1",
+          "dateRangeStart": "2024-01-01",
+          "dateRangeEnd": "2024-01-01",
+          "status": "active"
+        },
+        {
+          "patientId": 58,
+          "reportType": "Category B",
+          "title": "Premium Title 2",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "generatedBy": "Premium Generated By 2",
+          "dateRangeStart": "2024-02-03",
+          "dateRangeEnd": "2024-02-03",
+          "status": "pending"
+        },
+        {
+          "patientId": 106,
+          "reportType": "Category C",
+          "title": "Standard Title 3",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "generatedBy": "Standard Generated By 3",
+          "dateRangeStart": "2024-03-05",
+          "dateRangeEnd": "2024-03-05",
+          "status": "in_progress"
+        },
+        {
+          "patientId": 154,
+          "reportType": "Category D",
+          "title": "Elite Title 4",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "generatedBy": "Elite Generated By 4",
+          "dateRangeStart": "2024-04-07",
+          "dateRangeEnd": "2024-04-07",
+          "status": "completed"
+        },
+        {
+          "patientId": 102,
+          "reportType": "Category E",
+          "title": "Core Title 5",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "generatedBy": "Core Generated By 5",
+          "dateRangeStart": "2024-05-09",
+          "dateRangeEnd": "2024-05-09",
+          "status": "under_review"
+        },
+        {
+          "patientId": 150,
+          "reportType": "Premium Tier",
+          "title": "Pro Title 6",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "generatedBy": "Pro Generated By 6",
+          "dateRangeStart": "2024-06-11",
+          "dateRangeEnd": "2024-06-11",
+          "status": "approved"
+        },
+        {
+          "patientId": 198,
+          "reportType": "Standard Tier",
+          "title": "Essential Title 7",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "generatedBy": "Essential Generated By 7",
+          "dateRangeStart": "2024-07-13",
+          "dateRangeEnd": "2024-07-13",
+          "status": "active"
+        },
+        {
+          "patientId": 146,
+          "reportType": "Basic Tier",
+          "title": "Primary Title 8",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "generatedBy": "Primary Generated By 8",
+          "dateRangeStart": "2024-08-15",
+          "dateRangeEnd": "2024-08-15",
+          "status": "active"
+        },
+        {
+          "patientId": 194,
+          "reportType": "Enterprise",
+          "title": "Global Title 9",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "generatedBy": "Global Generated By 9",
+          "dateRangeStart": "2024-09-17",
+          "dateRangeEnd": "2024-09-17",
+          "status": "active"
+        },
+        {
+          "patientId": 242,
+          "reportType": "Starter",
+          "title": "Regional Title 10",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "generatedBy": "Regional Generated By 10",
+          "dateRangeStart": "2024-10-19",
+          "dateRangeEnd": "2024-10-19",
+          "status": "pending"
+        },
+        {
+          "patientId": 190,
+          "reportType": "Growth",
+          "title": "Custom Title 11",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "generatedBy": "Custom Generated By 11",
+          "dateRangeStart": "2024-11-21",
+          "dateRangeEnd": "2024-11-21",
+          "status": "completed"
+        },
+        {
+          "patientId": 238,
+          "reportType": "Scale",
+          "title": "Smart Title 12",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "generatedBy": "Smart Generated By 12",
+          "dateRangeStart": "2024-12-23",
+          "dateRangeEnd": "2024-12-23",
+          "status": "active"
+        },
+        {
+          "patientId": 286,
+          "reportType": "Foundation",
+          "title": "Rapid Title 13",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "generatedBy": "Rapid Generated By 13",
+          "dateRangeStart": "2024-01-25",
+          "dateRangeEnd": "2024-01-25",
+          "status": "in_progress"
+        },
+        {
+          "patientId": 234,
+          "reportType": "Advanced",
+          "title": "Secure Title 14",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "generatedBy": "Secure Generated By 14",
+          "dateRangeStart": "2024-02-27",
+          "dateRangeEnd": "2024-02-27",
+          "status": "active"
+        },
+        {
+          "patientId": 282,
+          "reportType": "Professional",
+          "title": "Modern Title 15",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "generatedBy": "Modern Generated By 15",
+          "dateRangeStart": "2024-03-01",
+          "dateRangeEnd": "2024-03-01",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Billing",
+      "routeKey": "billings",
+      "label": "Billing",
+      "icon": "shield",
+      "aiFunction": "analyzeBilling",
+      "aiPrompt": "You are an AI analyst for A I Remote Patient Monitoring. Analyze the provided Billing data. The data includes: Patient Id, Service Type, Amount, Insurance Covered, Patient Responsibility, Billing Date, Due Date, Status, Insurance Claim Id, Cpt Code, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "patientId",
+          "label": "Patient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "serviceType",
+          "label": "Service Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "insuranceCovered",
+          "label": "Insurance Covered",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "patientResponsibility",
+          "label": "Patient Responsibility",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "billingDate",
+          "label": "Billing Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "insuranceClaimId",
+          "label": "Insurance Claim Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cptCode",
+          "label": "Cpt Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "patientId": 10,
+          "serviceType": "Category A",
+          "amount": 500,
+          "insuranceCovered": 10,
+          "patientResponsibility": 10,
+          "billingDate": "2024-01-01",
+          "dueDate": "2024-01-01",
+          "status": "active",
+          "insuranceClaimId": "Advanced Insurance Claim Id 1",
+          "cptCode": "Advanced Cpt Code 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "patientId": 58,
+          "serviceType": "Category B",
+          "amount": 2481,
+          "insuranceCovered": 71.7,
+          "patientResponsibility": 71.7,
+          "billingDate": "2024-02-03",
+          "dueDate": "2024-02-03",
+          "status": "pending",
+          "insuranceClaimId": "Premium Insurance Claim Id 2",
+          "cptCode": "Premium Cpt Code 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "patientId": 106,
+          "serviceType": "Category C",
+          "amount": 4462,
+          "insuranceCovered": 33.4,
+          "patientResponsibility": 33.4,
+          "billingDate": "2024-03-05",
+          "dueDate": "2024-03-05",
+          "status": "in_progress",
+          "insuranceClaimId": "Standard Insurance Claim Id 3",
+          "cptCode": "Standard Cpt Code 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "patientId": 154,
+          "serviceType": "Category D",
+          "amount": 6443,
+          "insuranceCovered": 95.1,
+          "patientResponsibility": 95.1,
+          "billingDate": "2024-04-07",
+          "dueDate": "2024-04-07",
+          "status": "completed",
+          "insuranceClaimId": "Elite Insurance Claim Id 4",
+          "cptCode": "Elite Cpt Code 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "patientId": 102,
+          "serviceType": "Category E",
+          "amount": 8424,
+          "insuranceCovered": 56.8,
+          "patientResponsibility": 56.8,
+          "billingDate": "2024-05-09",
+          "dueDate": "2024-05-09",
+          "status": "under_review",
+          "insuranceClaimId": "Core Insurance Claim Id 5",
+          "cptCode": "Core Cpt Code 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "patientId": 150,
+          "serviceType": "Premium Tier",
+          "amount": 10405,
+          "insuranceCovered": 118.5,
+          "patientResponsibility": 118.5,
+          "billingDate": "2024-06-11",
+          "dueDate": "2024-06-11",
+          "status": "approved",
+          "insuranceClaimId": "Pro Insurance Claim Id 6",
+          "cptCode": "Pro Cpt Code 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "patientId": 198,
+          "serviceType": "Standard Tier",
+          "amount": 12386,
+          "insuranceCovered": 80.2,
+          "patientResponsibility": 80.2,
+          "billingDate": "2024-07-13",
+          "dueDate": "2024-07-13",
+          "status": "active",
+          "insuranceClaimId": "Essential Insurance Claim Id 7",
+          "cptCode": "Essential Cpt Code 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "patientId": 146,
+          "serviceType": "Basic Tier",
+          "amount": 9367,
+          "insuranceCovered": 141.9,
+          "patientResponsibility": 141.9,
+          "billingDate": "2024-08-15",
+          "dueDate": "2024-08-15",
+          "status": "active",
+          "insuranceClaimId": "Primary Insurance Claim Id 8",
+          "cptCode": "Primary Cpt Code 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "patientId": 194,
+          "serviceType": "Enterprise",
+          "amount": 11348,
+          "insuranceCovered": 103.6,
+          "patientResponsibility": 103.6,
+          "billingDate": "2024-09-17",
+          "dueDate": "2024-09-17",
+          "status": "active",
+          "insuranceClaimId": "Global Insurance Claim Id 9",
+          "cptCode": "Global Cpt Code 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "patientId": 242,
+          "serviceType": "Starter",
+          "amount": 13329,
+          "insuranceCovered": 165.3,
+          "patientResponsibility": 165.3,
+          "billingDate": "2024-10-19",
+          "dueDate": "2024-10-19",
+          "status": "pending",
+          "insuranceClaimId": "Regional Insurance Claim Id 10",
+          "cptCode": "Regional Cpt Code 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "patientId": 190,
+          "serviceType": "Growth",
+          "amount": 15310,
+          "insuranceCovered": 127,
+          "patientResponsibility": 127,
+          "billingDate": "2024-11-21",
+          "dueDate": "2024-11-21",
+          "status": "completed",
+          "insuranceClaimId": "Custom Insurance Claim Id 11",
+          "cptCode": "Custom Cpt Code 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "patientId": 238,
+          "serviceType": "Scale",
+          "amount": 17291,
+          "insuranceCovered": 188.7,
+          "patientResponsibility": 188.7,
+          "billingDate": "2024-12-23",
+          "dueDate": "2024-12-23",
+          "status": "active",
+          "insuranceClaimId": "Smart Insurance Claim Id 12",
+          "cptCode": "Smart Cpt Code 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "patientId": 286,
+          "serviceType": "Foundation",
+          "amount": 19272,
+          "insuranceCovered": 150.4,
+          "patientResponsibility": 150.4,
+          "billingDate": "2024-01-25",
+          "dueDate": "2024-01-25",
+          "status": "in_progress",
+          "insuranceClaimId": "Rapid Insurance Claim Id 13",
+          "cptCode": "Rapid Cpt Code 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "patientId": 234,
+          "serviceType": "Advanced",
+          "amount": 21253,
+          "insuranceCovered": 212.1,
+          "patientResponsibility": 212.1,
+          "billingDate": "2024-02-27",
+          "dueDate": "2024-02-27",
+          "status": "active",
+          "insuranceClaimId": "Secure Insurance Claim Id 14",
+          "cptCode": "Secure Cpt Code 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "patientId": 282,
+          "serviceType": "Professional",
+          "amount": 18234,
+          "insuranceCovered": 173.8,
+          "patientResponsibility": 173.8,
+          "billingDate": "2024-03-01",
+          "dueDate": "2024-03-01",
+          "status": "approved",
+          "insuranceClaimId": "Modern Insurance Claim Id 15",
+          "cptCode": "Modern Cpt Code 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "EmergencyProtocol",
+      "routeKey": "emergency-protocols",
+      "label": "Emergency Protocol",
+      "icon": "star",
+      "aiFunction": "analyzeEmergencyProtocol",
+      "aiPrompt": "You are an AI analyst for A I Remote Patient Monitoring. Analyze the provided Emergency Protocol data. The data includes: Patient Id, Protocol Name, Trigger Condition, Severity, Steps, Emergency Contacts, Medications To Administer, Hospital Preference, Status, Last Activated, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "patientId",
+          "label": "Patient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "protocolName",
+          "label": "Protocol Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "triggerCondition",
+          "label": "Trigger Condition",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "steps",
+          "label": "Steps",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "emergencyContacts",
+          "label": "Emergency Contacts",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "medicationsToAdminister",
+          "label": "Medications To Administer",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "hospitalPreference",
+          "label": "Hospital Preference",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastActivated",
+          "label": "Last Activated",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "patientId": 10,
+          "protocolName": "Advanced Protocol 1",
+          "triggerCondition": "Comprehensive solution designed for optimal performance and efficiency.",
+          "severity": "low",
+          "steps": "Comprehensive solution designed for optimal performance and efficiency.",
+          "emergencyContacts": "Comprehensive solution designed for optimal performance and efficiency.",
+          "medicationsToAdminister": "Comprehensive solution designed for optimal performance and efficiency.",
+          "hospitalPreference": "Advanced Hospital Preference 1",
+          "status": "active",
+          "lastActivated": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "patientId": 58,
+          "protocolName": "Premium Protocol 2",
+          "triggerCondition": "Industry-leading approach with proven results across multiple deployments.",
+          "severity": "medium",
+          "steps": "Industry-leading approach with proven results across multiple deployments.",
+          "emergencyContacts": "Industry-leading approach with proven results across multiple deployments.",
+          "medicationsToAdminister": "Industry-leading approach with proven results across multiple deployments.",
+          "hospitalPreference": "Premium Hospital Preference 2",
+          "status": "pending",
+          "lastActivated": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "patientId": 106,
+          "protocolName": "Standard Protocol 3",
+          "triggerCondition": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "severity": "high",
+          "steps": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "emergencyContacts": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "medicationsToAdminister": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "hospitalPreference": "Standard Hospital Preference 3",
+          "status": "in_progress",
+          "lastActivated": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "patientId": 154,
+          "protocolName": "Elite Protocol 4",
+          "triggerCondition": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "severity": "critical",
+          "steps": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "emergencyContacts": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "medicationsToAdminister": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "hospitalPreference": "Elite Hospital Preference 4",
+          "status": "completed",
+          "lastActivated": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "patientId": 102,
+          "protocolName": "Core Protocol 5",
+          "triggerCondition": "Cost-effective strategy focused on sustainable long-term growth.",
+          "severity": "medium",
+          "steps": "Cost-effective strategy focused on sustainable long-term growth.",
+          "emergencyContacts": "Cost-effective strategy focused on sustainable long-term growth.",
+          "medicationsToAdminister": "Cost-effective strategy focused on sustainable long-term growth.",
+          "hospitalPreference": "Core Hospital Preference 5",
+          "status": "under_review",
+          "lastActivated": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "patientId": 150,
+          "protocolName": "Pro Protocol 6",
+          "triggerCondition": "High-priority initiative aligned with organizational strategic objectives.",
+          "severity": "low",
+          "steps": "High-priority initiative aligned with organizational strategic objectives.",
+          "emergencyContacts": "High-priority initiative aligned with organizational strategic objectives.",
+          "medicationsToAdminister": "High-priority initiative aligned with organizational strategic objectives.",
+          "hospitalPreference": "Pro Hospital Preference 6",
+          "status": "approved",
+          "lastActivated": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "patientId": 198,
+          "protocolName": "Essential Protocol 7",
+          "triggerCondition": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "severity": "medium",
+          "steps": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "emergencyContacts": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "medicationsToAdminister": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "hospitalPreference": "Essential Hospital Preference 7",
+          "status": "active",
+          "lastActivated": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "patientId": 146,
+          "protocolName": "Primary Protocol 8",
+          "triggerCondition": "Innovative framework incorporating best practices and emerging technologies.",
+          "severity": "high",
+          "steps": "Innovative framework incorporating best practices and emerging technologies.",
+          "emergencyContacts": "Innovative framework incorporating best practices and emerging technologies.",
+          "medicationsToAdminister": "Innovative framework incorporating best practices and emerging technologies.",
+          "hospitalPreference": "Primary Hospital Preference 8",
+          "status": "active",
+          "lastActivated": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "patientId": 194,
+          "protocolName": "Global Protocol 9",
+          "triggerCondition": "Scalable architecture built to accommodate rapid expansion and change.",
+          "severity": "critical",
+          "steps": "Scalable architecture built to accommodate rapid expansion and change.",
+          "emergencyContacts": "Scalable architecture built to accommodate rapid expansion and change.",
+          "medicationsToAdminister": "Scalable architecture built to accommodate rapid expansion and change.",
+          "hospitalPreference": "Global Hospital Preference 9",
+          "status": "active",
+          "lastActivated": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "patientId": 242,
+          "protocolName": "Regional Protocol 10",
+          "triggerCondition": "Enterprise-grade solution with robust security and compliance features.",
+          "severity": "medium",
+          "steps": "Enterprise-grade solution with robust security and compliance features.",
+          "emergencyContacts": "Enterprise-grade solution with robust security and compliance features.",
+          "medicationsToAdminister": "Enterprise-grade solution with robust security and compliance features.",
+          "hospitalPreference": "Regional Hospital Preference 10",
+          "status": "pending",
+          "lastActivated": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "patientId": 190,
+          "protocolName": "Custom Protocol 11",
+          "triggerCondition": "Integrated platform connecting multiple systems for seamless operations.",
+          "severity": "low",
+          "steps": "Integrated platform connecting multiple systems for seamless operations.",
+          "emergencyContacts": "Integrated platform connecting multiple systems for seamless operations.",
+          "medicationsToAdminister": "Integrated platform connecting multiple systems for seamless operations.",
+          "hospitalPreference": "Custom Hospital Preference 11",
+          "status": "completed",
+          "lastActivated": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "patientId": 238,
+          "protocolName": "Smart Protocol 12",
+          "triggerCondition": "Automated workflow reducing manual intervention and human error.",
+          "severity": "medium",
+          "steps": "Automated workflow reducing manual intervention and human error.",
+          "emergencyContacts": "Automated workflow reducing manual intervention and human error.",
+          "medicationsToAdminister": "Automated workflow reducing manual intervention and human error.",
+          "hospitalPreference": "Smart Hospital Preference 12",
+          "status": "active",
+          "lastActivated": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "patientId": 286,
+          "protocolName": "Rapid Protocol 13",
+          "triggerCondition": "Real-time monitoring system with intelligent alerting capabilities.",
+          "severity": "high",
+          "steps": "Real-time monitoring system with intelligent alerting capabilities.",
+          "emergencyContacts": "Real-time monitoring system with intelligent alerting capabilities.",
+          "medicationsToAdminister": "Real-time monitoring system with intelligent alerting capabilities.",
+          "hospitalPreference": "Rapid Hospital Preference 13",
+          "status": "in_progress",
+          "lastActivated": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "patientId": 234,
+          "protocolName": "Secure Protocol 14",
+          "triggerCondition": "Customizable module adaptable to diverse operational requirements.",
+          "severity": "critical",
+          "steps": "Customizable module adaptable to diverse operational requirements.",
+          "emergencyContacts": "Customizable module adaptable to diverse operational requirements.",
+          "medicationsToAdminister": "Customizable module adaptable to diverse operational requirements.",
+          "hospitalPreference": "Secure Hospital Preference 14",
+          "status": "active",
+          "lastActivated": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "patientId": 282,
+          "protocolName": "Modern Protocol 15",
+          "triggerCondition": "Performance-optimized design achieving superior throughput and reliability.",
+          "severity": "medium",
+          "steps": "Performance-optimized design achieving superior throughput and reliability.",
+          "emergencyContacts": "Performance-optimized design achieving superior throughput and reliability.",
+          "medicationsToAdminister": "Performance-optimized design achieving superior throughput and reliability.",
+          "hospitalPreference": "Modern Hospital Preference 15",
+          "status": "approved",
+          "lastActivated": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "AiAnalyse",
+      "routeKey": "ai-analyses",
+      "label": "Ai Analyse",
+      "icon": "truck",
+      "aiFunction": "analyzeAiAnalyse",
+      "aiPrompt": "You are an AI analyst for A I Remote Patient Monitoring. Analyze the provided Ai Analyse data. The data includes: Patient Id, Analysis Type, Input Data, Result, Recommendations, Confidence Score, Model Used. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "patientId",
+          "label": "Patient Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "analysisType",
+          "label": "Analysis Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "inputData",
+          "label": "Input Data",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "result",
+          "label": "Result",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "recommendations",
+          "label": "Recommendations",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "confidenceScore",
+          "label": "Confidence Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "modelUsed",
+          "label": "Model Used",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "patientId": 10,
+          "analysisType": "Category A",
+          "inputData": "Comprehensive solution designed for optimal performance and efficiency.",
+          "result": "Comprehensive solution designed for optimal performance and efficiency.",
+          "recommendations": "Comprehensive solution designed for optimal performance and efficiency.",
+          "confidenceScore": 1.5,
+          "modelUsed": "Advanced Model Used 1"
+        },
+        {
+          "patientId": 58,
+          "analysisType": "Category B",
+          "inputData": "Industry-leading approach with proven results across multiple deployments.",
+          "result": "Industry-leading approach with proven results across multiple deployments.",
+          "recommendations": "Industry-leading approach with proven results across multiple deployments.",
+          "confidenceScore": 2.1,
+          "modelUsed": "Premium Model Used 2"
+        },
+        {
+          "patientId": 106,
+          "analysisType": "Category C",
+          "inputData": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "result": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "recommendations": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "confidenceScore": 2.7,
+          "modelUsed": "Standard Model Used 3"
+        },
+        {
+          "patientId": 154,
+          "analysisType": "Category D",
+          "inputData": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "result": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "recommendations": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "confidenceScore": 3.3,
+          "modelUsed": "Elite Model Used 4"
+        },
+        {
+          "patientId": 102,
+          "analysisType": "Category E",
+          "inputData": "Cost-effective strategy focused on sustainable long-term growth.",
+          "result": "Cost-effective strategy focused on sustainable long-term growth.",
+          "recommendations": "Cost-effective strategy focused on sustainable long-term growth.",
+          "confidenceScore": 3.9,
+          "modelUsed": "Core Model Used 5"
+        },
+        {
+          "patientId": 150,
+          "analysisType": "Premium Tier",
+          "inputData": "High-priority initiative aligned with organizational strategic objectives.",
+          "result": "High-priority initiative aligned with organizational strategic objectives.",
+          "recommendations": "High-priority initiative aligned with organizational strategic objectives.",
+          "confidenceScore": 4.5,
+          "modelUsed": "Pro Model Used 6"
+        },
+        {
+          "patientId": 198,
+          "analysisType": "Standard Tier",
+          "inputData": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "result": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "recommendations": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "confidenceScore": 5.1,
+          "modelUsed": "Essential Model Used 7"
+        },
+        {
+          "patientId": 146,
+          "analysisType": "Basic Tier",
+          "inputData": "Innovative framework incorporating best practices and emerging technologies.",
+          "result": "Innovative framework incorporating best practices and emerging technologies.",
+          "recommendations": "Innovative framework incorporating best practices and emerging technologies.",
+          "confidenceScore": 5.7,
+          "modelUsed": "Primary Model Used 8"
+        },
+        {
+          "patientId": 194,
+          "analysisType": "Enterprise",
+          "inputData": "Scalable architecture built to accommodate rapid expansion and change.",
+          "result": "Scalable architecture built to accommodate rapid expansion and change.",
+          "recommendations": "Scalable architecture built to accommodate rapid expansion and change.",
+          "confidenceScore": 6.3,
+          "modelUsed": "Global Model Used 9"
+        },
+        {
+          "patientId": 242,
+          "analysisType": "Starter",
+          "inputData": "Enterprise-grade solution with robust security and compliance features.",
+          "result": "Enterprise-grade solution with robust security and compliance features.",
+          "recommendations": "Enterprise-grade solution with robust security and compliance features.",
+          "confidenceScore": 1.9,
+          "modelUsed": "Regional Model Used 10"
+        },
+        {
+          "patientId": 190,
+          "analysisType": "Growth",
+          "inputData": "Integrated platform connecting multiple systems for seamless operations.",
+          "result": "Integrated platform connecting multiple systems for seamless operations.",
+          "recommendations": "Integrated platform connecting multiple systems for seamless operations.",
+          "confidenceScore": 2.5,
+          "modelUsed": "Custom Model Used 11"
+        },
+        {
+          "patientId": 238,
+          "analysisType": "Scale",
+          "inputData": "Automated workflow reducing manual intervention and human error.",
+          "result": "Automated workflow reducing manual intervention and human error.",
+          "recommendations": "Automated workflow reducing manual intervention and human error.",
+          "confidenceScore": 3.1,
+          "modelUsed": "Smart Model Used 12"
+        },
+        {
+          "patientId": 286,
+          "analysisType": "Foundation",
+          "inputData": "Real-time monitoring system with intelligent alerting capabilities.",
+          "result": "Real-time monitoring system with intelligent alerting capabilities.",
+          "recommendations": "Real-time monitoring system with intelligent alerting capabilities.",
+          "confidenceScore": 3.7,
+          "modelUsed": "Rapid Model Used 13"
+        },
+        {
+          "patientId": 234,
+          "analysisType": "Advanced",
+          "inputData": "Customizable module adaptable to diverse operational requirements.",
+          "result": "Customizable module adaptable to diverse operational requirements.",
+          "recommendations": "Customizable module adaptable to diverse operational requirements.",
+          "confidenceScore": 4.3,
+          "modelUsed": "Secure Model Used 14"
+        },
+        {
+          "patientId": 282,
+          "analysisType": "Professional",
+          "inputData": "Performance-optimized design achieving superior throughput and reliability.",
+          "result": "Performance-optimized design achieving superior throughput and reliability.",
+          "recommendations": "Performance-optimized design achieving superior throughput and reliability.",
+          "confidenceScore": 4.9,
+          "modelUsed": "Modern Model Used 15"
+        }
+      ]
+    }
+  ]
+}

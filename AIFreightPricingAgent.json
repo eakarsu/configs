@@ -1,0 +1,2632 @@
+{
+  "appName": "A I Freight Pricing Agent",
+  "dbName": "a_i_freight_pricing_agent",
+  "folderName": "generated/AIFreightPricingAgent",
+  "features": [
+    {
+      "modelName": "Carrier",
+      "routeKey": "carriers",
+      "label": "Carrier",
+      "icon": "activity",
+      "aiFunction": "analyzeCarrier",
+      "aiPrompt": "You are an AI analyst for A I Freight Pricing Agent. Analyze the provided Carrier data. The data includes: Name, Code, Mode, Contact Email, Contact Phone, Rating, On Time Pct, Base Country, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "code",
+          "label": "Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactEmail",
+          "label": "Contact Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactPhone",
+          "label": "Contact Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "onTimePct",
+          "label": "On Time Pct",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "baseCountry",
+          "label": "Base Country",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "code": "Advanced Code 1",
+          "mode": "Advanced Mode 1",
+          "contactEmail": "james.wilson@example.com",
+          "contactPhone": "(555) 100-1000",
+          "rating": 1.5,
+          "onTimePct": 10,
+          "baseCountry": "Advanced Base Country 1",
+          "status": "active"
+        },
+        {
+          "name": "Premium Name 2",
+          "code": "Premium Code 2",
+          "mode": "Premium Mode 2",
+          "contactEmail": "sarah.chen@example.com",
+          "contactPhone": "(556) 137-1113",
+          "rating": 2.1,
+          "onTimePct": 71.7,
+          "baseCountry": "Premium Base Country 2",
+          "status": "pending"
+        },
+        {
+          "name": "Standard Name 3",
+          "code": "Standard Code 3",
+          "mode": "Standard Mode 3",
+          "contactEmail": "michael.brown@example.com",
+          "contactPhone": "(557) 174-1226",
+          "rating": 2.7,
+          "onTimePct": 33.4,
+          "baseCountry": "Standard Base Country 3",
+          "status": "in_progress"
+        },
+        {
+          "name": "Elite Name 4",
+          "code": "Elite Code 4",
+          "mode": "Elite Mode 4",
+          "contactEmail": "emily.davis@example.com",
+          "contactPhone": "(558) 211-1339",
+          "rating": 3.3,
+          "onTimePct": 95.1,
+          "baseCountry": "Elite Base Country 4",
+          "status": "completed"
+        },
+        {
+          "name": "Core Name 5",
+          "code": "Core Code 5",
+          "mode": "Core Mode 5",
+          "contactEmail": "robert.garcia@example.com",
+          "contactPhone": "(555) 248-1452",
+          "rating": 3.9,
+          "onTimePct": 56.8,
+          "baseCountry": "Core Base Country 5",
+          "status": "under_review"
+        },
+        {
+          "name": "Pro Name 6",
+          "code": "Pro Code 6",
+          "mode": "Pro Mode 6",
+          "contactEmail": "lisa.anderson@example.com",
+          "contactPhone": "(556) 285-1565",
+          "rating": 4.5,
+          "onTimePct": 118.5,
+          "baseCountry": "Pro Base Country 6",
+          "status": "approved"
+        },
+        {
+          "name": "Essential Name 7",
+          "code": "Essential Code 7",
+          "mode": "Essential Mode 7",
+          "contactEmail": "david.martinez@example.com",
+          "contactPhone": "(557) 322-1678",
+          "rating": 5.1,
+          "onTimePct": 80.2,
+          "baseCountry": "Essential Base Country 7",
+          "status": "active"
+        },
+        {
+          "name": "Primary Name 8",
+          "code": "Primary Code 8",
+          "mode": "Primary Mode 8",
+          "contactEmail": "jennifer.taylor@example.com",
+          "contactPhone": "(558) 359-1791",
+          "rating": 5.7,
+          "onTimePct": 141.9,
+          "baseCountry": "Primary Base Country 8",
+          "status": "active"
+        },
+        {
+          "name": "Global Name 9",
+          "code": "Global Code 9",
+          "mode": "Global Mode 9",
+          "contactEmail": "william.johnson@example.com",
+          "contactPhone": "(555) 396-1904",
+          "rating": 6.3,
+          "onTimePct": 103.6,
+          "baseCountry": "Global Base Country 9",
+          "status": "active"
+        },
+        {
+          "name": "Regional Name 10",
+          "code": "Regional Code 10",
+          "mode": "Regional Mode 10",
+          "contactEmail": "maria.rodriguez@example.com",
+          "contactPhone": "(556) 433-2017",
+          "rating": 1.9,
+          "onTimePct": 165.3,
+          "baseCountry": "Regional Base Country 10",
+          "status": "pending"
+        },
+        {
+          "name": "Custom Name 11",
+          "code": "Custom Code 11",
+          "mode": "Custom Mode 11",
+          "contactEmail": "thomas.lee@example.com",
+          "contactPhone": "(557) 470-2130",
+          "rating": 2.5,
+          "onTimePct": 127,
+          "baseCountry": "Custom Base Country 11",
+          "status": "completed"
+        },
+        {
+          "name": "Smart Name 12",
+          "code": "Smart Code 12",
+          "mode": "Smart Mode 12",
+          "contactEmail": "patricia.white@example.com",
+          "contactPhone": "(558) 507-2243",
+          "rating": 3.1,
+          "onTimePct": 188.7,
+          "baseCountry": "Smart Base Country 12",
+          "status": "active"
+        },
+        {
+          "name": "Rapid Name 13",
+          "code": "Rapid Code 13",
+          "mode": "Rapid Mode 13",
+          "contactEmail": "christopher.hall@example.com",
+          "contactPhone": "(555) 544-2356",
+          "rating": 3.7,
+          "onTimePct": 150.4,
+          "baseCountry": "Rapid Base Country 13",
+          "status": "in_progress"
+        },
+        {
+          "name": "Secure Name 14",
+          "code": "Secure Code 14",
+          "mode": "Secure Mode 14",
+          "contactEmail": "amanda.clark@example.com",
+          "contactPhone": "(556) 581-2469",
+          "rating": 4.3,
+          "onTimePct": 212.1,
+          "baseCountry": "Secure Base Country 14",
+          "status": "active"
+        },
+        {
+          "name": "Modern Name 15",
+          "code": "Modern Code 15",
+          "mode": "Modern Mode 15",
+          "contactEmail": "daniel.wright@example.com",
+          "contactPhone": "(557) 618-2582",
+          "rating": 4.9,
+          "onTimePct": 173.8,
+          "baseCountry": "Modern Base Country 15",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Customer",
+      "routeKey": "customers",
+      "label": "Customer",
+      "icon": "briefcase",
+      "aiFunction": "analyzeCustomer",
+      "aiPrompt": "You are an AI analyst for A I Freight Pricing Agent. Analyze the provided Customer data. The data includes: Company Name, Contact Name, Email, Phone, Industry, Tier, Annual Volume, Country, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "companyName",
+          "label": "Company Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contactName",
+          "label": "Contact Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "industry",
+          "label": "Industry",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tier",
+          "label": "Tier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "annualVolume",
+          "label": "Annual Volume",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "country",
+          "label": "Country",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "companyName": "Advanced Company 1",
+          "contactName": "James Wilson",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "industry": "Advanced Industry 1",
+          "tier": "Advanced Tier 1",
+          "annualVolume": 10,
+          "country": "Advanced Country 1",
+          "status": "active"
+        },
+        {
+          "companyName": "Premium Company 2",
+          "contactName": "Sarah Chen",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "industry": "Premium Industry 2",
+          "tier": "Premium Tier 2",
+          "annualVolume": 71.7,
+          "country": "Premium Country 2",
+          "status": "pending"
+        },
+        {
+          "companyName": "Standard Company 3",
+          "contactName": "Michael Brown",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "industry": "Standard Industry 3",
+          "tier": "Standard Tier 3",
+          "annualVolume": 33.4,
+          "country": "Standard Country 3",
+          "status": "in_progress"
+        },
+        {
+          "companyName": "Elite Company 4",
+          "contactName": "Emily Davis",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "industry": "Elite Industry 4",
+          "tier": "Elite Tier 4",
+          "annualVolume": 95.1,
+          "country": "Elite Country 4",
+          "status": "completed"
+        },
+        {
+          "companyName": "Core Company 5",
+          "contactName": "Robert Garcia",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "industry": "Core Industry 5",
+          "tier": "Core Tier 5",
+          "annualVolume": 56.8,
+          "country": "Core Country 5",
+          "status": "under_review"
+        },
+        {
+          "companyName": "Pro Company 6",
+          "contactName": "Lisa Anderson",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "industry": "Pro Industry 6",
+          "tier": "Pro Tier 6",
+          "annualVolume": 118.5,
+          "country": "Pro Country 6",
+          "status": "approved"
+        },
+        {
+          "companyName": "Essential Company 7",
+          "contactName": "David Martinez",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "industry": "Essential Industry 7",
+          "tier": "Essential Tier 7",
+          "annualVolume": 80.2,
+          "country": "Essential Country 7",
+          "status": "active"
+        },
+        {
+          "companyName": "Primary Company 8",
+          "contactName": "Jennifer Taylor",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "industry": "Primary Industry 8",
+          "tier": "Primary Tier 8",
+          "annualVolume": 141.9,
+          "country": "Primary Country 8",
+          "status": "active"
+        },
+        {
+          "companyName": "Global Company 9",
+          "contactName": "William Johnson",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "industry": "Global Industry 9",
+          "tier": "Global Tier 9",
+          "annualVolume": 103.6,
+          "country": "Global Country 9",
+          "status": "active"
+        },
+        {
+          "companyName": "Regional Company 10",
+          "contactName": "Maria Rodriguez",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "industry": "Regional Industry 10",
+          "tier": "Regional Tier 10",
+          "annualVolume": 165.3,
+          "country": "Regional Country 10",
+          "status": "pending"
+        },
+        {
+          "companyName": "Custom Company 11",
+          "contactName": "Thomas Lee",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "industry": "Custom Industry 11",
+          "tier": "Custom Tier 11",
+          "annualVolume": 127,
+          "country": "Custom Country 11",
+          "status": "completed"
+        },
+        {
+          "companyName": "Smart Company 12",
+          "contactName": "Patricia White",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "industry": "Smart Industry 12",
+          "tier": "Smart Tier 12",
+          "annualVolume": 188.7,
+          "country": "Smart Country 12",
+          "status": "active"
+        },
+        {
+          "companyName": "Rapid Company 13",
+          "contactName": "Christopher Hall",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "industry": "Rapid Industry 13",
+          "tier": "Rapid Tier 13",
+          "annualVolume": 150.4,
+          "country": "Rapid Country 13",
+          "status": "in_progress"
+        },
+        {
+          "companyName": "Secure Company 14",
+          "contactName": "Amanda Clark",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "industry": "Secure Industry 14",
+          "tier": "Secure Tier 14",
+          "annualVolume": 212.1,
+          "country": "Secure Country 14",
+          "status": "active"
+        },
+        {
+          "companyName": "Modern Company 15",
+          "contactName": "Daniel Wright",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "industry": "Modern Industry 15",
+          "tier": "Modern Tier 15",
+          "annualVolume": 173.8,
+          "country": "Modern Country 15",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Route",
+      "routeKey": "routes",
+      "label": "Route",
+      "icon": "clipboard",
+      "aiFunction": "analyzeRoute",
+      "aiPrompt": "You are an AI analyst for A I Freight Pricing Agent. Analyze the provided Route data. The data includes: Origin City, Origin Country, Destination City, Destination Country, Mode, Distance Km, Transit Days Avg, Avg Rate Per Kg, Volume Last 30d, Congestion Level, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "originCity",
+          "label": "Origin City",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "originCountry",
+          "label": "Origin Country",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "destinationCity",
+          "label": "Destination City",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "destinationCountry",
+          "label": "Destination Country",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "distanceKm",
+          "label": "Distance Km",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "transitDaysAvg",
+          "label": "Transit Days Avg",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "avgRatePerKg",
+          "label": "Avg Rate Per Kg",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "volumeLast_30d",
+          "label": "Volume Last 30d",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "congestionLevel",
+          "label": "Congestion Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "originCity": "New York",
+          "originCountry": "Advanced Origin Country 1",
+          "destinationCity": "New York",
+          "destinationCountry": "Advanced Destination Country 1",
+          "mode": "Advanced Mode 1",
+          "distanceKm": 10,
+          "transitDaysAvg": 10,
+          "avgRatePerKg": 1.5,
+          "volumeLast_30d": 10,
+          "congestionLevel": "low",
+          "status": "active"
+        },
+        {
+          "originCity": "Los Angeles",
+          "originCountry": "Premium Origin Country 2",
+          "destinationCity": "Los Angeles",
+          "destinationCountry": "Premium Destination Country 2",
+          "mode": "Premium Mode 2",
+          "distanceKm": 58,
+          "transitDaysAvg": 71.7,
+          "avgRatePerKg": 2.1,
+          "volumeLast_30d": 58,
+          "congestionLevel": "medium",
+          "status": "pending"
+        },
+        {
+          "originCity": "Chicago",
+          "originCountry": "Standard Origin Country 3",
+          "destinationCity": "Chicago",
+          "destinationCountry": "Standard Destination Country 3",
+          "mode": "Standard Mode 3",
+          "distanceKm": 106,
+          "transitDaysAvg": 33.4,
+          "avgRatePerKg": 2.7,
+          "volumeLast_30d": 106,
+          "congestionLevel": "high",
+          "status": "in_progress"
+        },
+        {
+          "originCity": "Houston",
+          "originCountry": "Elite Origin Country 4",
+          "destinationCity": "Houston",
+          "destinationCountry": "Elite Destination Country 4",
+          "mode": "Elite Mode 4",
+          "distanceKm": 154,
+          "transitDaysAvg": 95.1,
+          "avgRatePerKg": 3.3,
+          "volumeLast_30d": 154,
+          "congestionLevel": "critical",
+          "status": "completed"
+        },
+        {
+          "originCity": "Phoenix",
+          "originCountry": "Core Origin Country 5",
+          "destinationCity": "Phoenix",
+          "destinationCountry": "Core Destination Country 5",
+          "mode": "Core Mode 5",
+          "distanceKm": 102,
+          "transitDaysAvg": 56.8,
+          "avgRatePerKg": 3.9,
+          "volumeLast_30d": 102,
+          "congestionLevel": "medium",
+          "status": "under_review"
+        },
+        {
+          "originCity": "San Francisco",
+          "originCountry": "Pro Origin Country 6",
+          "destinationCity": "San Francisco",
+          "destinationCountry": "Pro Destination Country 6",
+          "mode": "Pro Mode 6",
+          "distanceKm": 150,
+          "transitDaysAvg": 118.5,
+          "avgRatePerKg": 4.5,
+          "volumeLast_30d": 150,
+          "congestionLevel": "low",
+          "status": "approved"
+        },
+        {
+          "originCity": "Seattle",
+          "originCountry": "Essential Origin Country 7",
+          "destinationCity": "Seattle",
+          "destinationCountry": "Essential Destination Country 7",
+          "mode": "Essential Mode 7",
+          "distanceKm": 198,
+          "transitDaysAvg": 80.2,
+          "avgRatePerKg": 5.1,
+          "volumeLast_30d": 198,
+          "congestionLevel": "medium",
+          "status": "active"
+        },
+        {
+          "originCity": "Boston",
+          "originCountry": "Primary Origin Country 8",
+          "destinationCity": "Boston",
+          "destinationCountry": "Primary Destination Country 8",
+          "mode": "Primary Mode 8",
+          "distanceKm": 146,
+          "transitDaysAvg": 141.9,
+          "avgRatePerKg": 5.7,
+          "volumeLast_30d": 146,
+          "congestionLevel": "high",
+          "status": "active"
+        },
+        {
+          "originCity": "Denver",
+          "originCountry": "Global Origin Country 9",
+          "destinationCity": "Denver",
+          "destinationCountry": "Global Destination Country 9",
+          "mode": "Global Mode 9",
+          "distanceKm": 194,
+          "transitDaysAvg": 103.6,
+          "avgRatePerKg": 6.3,
+          "volumeLast_30d": 194,
+          "congestionLevel": "critical",
+          "status": "active"
+        },
+        {
+          "originCity": "Miami",
+          "originCountry": "Regional Origin Country 10",
+          "destinationCity": "Miami",
+          "destinationCountry": "Regional Destination Country 10",
+          "mode": "Regional Mode 10",
+          "distanceKm": 242,
+          "transitDaysAvg": 165.3,
+          "avgRatePerKg": 1.9,
+          "volumeLast_30d": 242,
+          "congestionLevel": "medium",
+          "status": "pending"
+        },
+        {
+          "originCity": "Austin",
+          "originCountry": "Custom Origin Country 11",
+          "destinationCity": "Austin",
+          "destinationCountry": "Custom Destination Country 11",
+          "mode": "Custom Mode 11",
+          "distanceKm": 190,
+          "transitDaysAvg": 127,
+          "avgRatePerKg": 2.5,
+          "volumeLast_30d": 190,
+          "congestionLevel": "low",
+          "status": "completed"
+        },
+        {
+          "originCity": "Portland",
+          "originCountry": "Smart Origin Country 12",
+          "destinationCity": "Portland",
+          "destinationCountry": "Smart Destination Country 12",
+          "mode": "Smart Mode 12",
+          "distanceKm": 238,
+          "transitDaysAvg": 188.7,
+          "avgRatePerKg": 3.1,
+          "volumeLast_30d": 238,
+          "congestionLevel": "medium",
+          "status": "active"
+        },
+        {
+          "originCity": "Dallas",
+          "originCountry": "Rapid Origin Country 13",
+          "destinationCity": "Dallas",
+          "destinationCountry": "Rapid Destination Country 13",
+          "mode": "Rapid Mode 13",
+          "distanceKm": 286,
+          "transitDaysAvg": 150.4,
+          "avgRatePerKg": 3.7,
+          "volumeLast_30d": 286,
+          "congestionLevel": "high",
+          "status": "in_progress"
+        },
+        {
+          "originCity": "Atlanta",
+          "originCountry": "Secure Origin Country 14",
+          "destinationCity": "Atlanta",
+          "destinationCountry": "Secure Destination Country 14",
+          "mode": "Secure Mode 14",
+          "distanceKm": 234,
+          "transitDaysAvg": 212.1,
+          "avgRatePerKg": 4.3,
+          "volumeLast_30d": 234,
+          "congestionLevel": "critical",
+          "status": "active"
+        },
+        {
+          "originCity": "Nashville",
+          "originCountry": "Modern Origin Country 15",
+          "destinationCity": "Nashville",
+          "destinationCountry": "Modern Destination Country 15",
+          "mode": "Modern Mode 15",
+          "distanceKm": 282,
+          "transitDaysAvg": 173.8,
+          "avgRatePerKg": 4.9,
+          "volumeLast_30d": 282,
+          "congestionLevel": "medium",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Shipment",
+      "routeKey": "shipments",
+      "label": "Shipment",
+      "icon": "database",
+      "aiFunction": "analyzeShipment",
+      "aiPrompt": "You are an AI analyst for A I Freight Pricing Agent. Analyze the provided Shipment data. The data includes: Tracking Number, Customer Id, Carrier Id, Route Id, Origin, Destination, Mode, Weight Kg, Volume Cbm, Status, Quoted Price, Actual Cost, Pickup Date, Delivery Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "trackingNumber",
+          "label": "Tracking Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "carrierId",
+          "label": "Carrier Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "routeId",
+          "label": "Route Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "origin",
+          "label": "Origin",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "destination",
+          "label": "Destination",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "weightKg",
+          "label": "Weight Kg",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "volumeCbm",
+          "label": "Volume Cbm",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quotedPrice",
+          "label": "Quoted Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "actualCost",
+          "label": "Actual Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "pickupDate",
+          "label": "Pickup Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "deliveryDate",
+          "label": "Delivery Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "trackingNumber": "Advanced Tracking Number 1",
+          "customerId": 10,
+          "carrierId": 10,
+          "routeId": 10,
+          "origin": "Advanced Origin 1",
+          "destination": "Advanced Destination 1",
+          "mode": "Advanced Mode 1",
+          "weightKg": 10,
+          "volumeCbm": 10,
+          "status": "active",
+          "quotedPrice": 500,
+          "actualCost": 500,
+          "pickupDate": "2024-01-01",
+          "deliveryDate": "2024-01-01"
+        },
+        {
+          "trackingNumber": "Premium Tracking Number 2",
+          "customerId": 58,
+          "carrierId": 58,
+          "routeId": 58,
+          "origin": "Premium Origin 2",
+          "destination": "Premium Destination 2",
+          "mode": "Premium Mode 2",
+          "weightKg": 71.7,
+          "volumeCbm": 71.7,
+          "status": "pending",
+          "quotedPrice": 2481,
+          "actualCost": 2481,
+          "pickupDate": "2024-02-03",
+          "deliveryDate": "2024-02-03"
+        },
+        {
+          "trackingNumber": "Standard Tracking Number 3",
+          "customerId": 106,
+          "carrierId": 106,
+          "routeId": 106,
+          "origin": "Standard Origin 3",
+          "destination": "Standard Destination 3",
+          "mode": "Standard Mode 3",
+          "weightKg": 33.4,
+          "volumeCbm": 33.4,
+          "status": "in_progress",
+          "quotedPrice": 4462,
+          "actualCost": 4462,
+          "pickupDate": "2024-03-05",
+          "deliveryDate": "2024-03-05"
+        },
+        {
+          "trackingNumber": "Elite Tracking Number 4",
+          "customerId": 154,
+          "carrierId": 154,
+          "routeId": 154,
+          "origin": "Elite Origin 4",
+          "destination": "Elite Destination 4",
+          "mode": "Elite Mode 4",
+          "weightKg": 95.1,
+          "volumeCbm": 95.1,
+          "status": "completed",
+          "quotedPrice": 6443,
+          "actualCost": 6443,
+          "pickupDate": "2024-04-07",
+          "deliveryDate": "2024-04-07"
+        },
+        {
+          "trackingNumber": "Core Tracking Number 5",
+          "customerId": 102,
+          "carrierId": 102,
+          "routeId": 102,
+          "origin": "Core Origin 5",
+          "destination": "Core Destination 5",
+          "mode": "Core Mode 5",
+          "weightKg": 56.8,
+          "volumeCbm": 56.8,
+          "status": "under_review",
+          "quotedPrice": 8424,
+          "actualCost": 8424,
+          "pickupDate": "2024-05-09",
+          "deliveryDate": "2024-05-09"
+        },
+        {
+          "trackingNumber": "Pro Tracking Number 6",
+          "customerId": 150,
+          "carrierId": 150,
+          "routeId": 150,
+          "origin": "Pro Origin 6",
+          "destination": "Pro Destination 6",
+          "mode": "Pro Mode 6",
+          "weightKg": 118.5,
+          "volumeCbm": 118.5,
+          "status": "approved",
+          "quotedPrice": 10405,
+          "actualCost": 10405,
+          "pickupDate": "2024-06-11",
+          "deliveryDate": "2024-06-11"
+        },
+        {
+          "trackingNumber": "Essential Tracking Number 7",
+          "customerId": 198,
+          "carrierId": 198,
+          "routeId": 198,
+          "origin": "Essential Origin 7",
+          "destination": "Essential Destination 7",
+          "mode": "Essential Mode 7",
+          "weightKg": 80.2,
+          "volumeCbm": 80.2,
+          "status": "active",
+          "quotedPrice": 12386,
+          "actualCost": 12386,
+          "pickupDate": "2024-07-13",
+          "deliveryDate": "2024-07-13"
+        },
+        {
+          "trackingNumber": "Primary Tracking Number 8",
+          "customerId": 146,
+          "carrierId": 146,
+          "routeId": 146,
+          "origin": "Primary Origin 8",
+          "destination": "Primary Destination 8",
+          "mode": "Primary Mode 8",
+          "weightKg": 141.9,
+          "volumeCbm": 141.9,
+          "status": "active",
+          "quotedPrice": 9367,
+          "actualCost": 9367,
+          "pickupDate": "2024-08-15",
+          "deliveryDate": "2024-08-15"
+        },
+        {
+          "trackingNumber": "Global Tracking Number 9",
+          "customerId": 194,
+          "carrierId": 194,
+          "routeId": 194,
+          "origin": "Global Origin 9",
+          "destination": "Global Destination 9",
+          "mode": "Global Mode 9",
+          "weightKg": 103.6,
+          "volumeCbm": 103.6,
+          "status": "active",
+          "quotedPrice": 11348,
+          "actualCost": 11348,
+          "pickupDate": "2024-09-17",
+          "deliveryDate": "2024-09-17"
+        },
+        {
+          "trackingNumber": "Regional Tracking Number 10",
+          "customerId": 242,
+          "carrierId": 242,
+          "routeId": 242,
+          "origin": "Regional Origin 10",
+          "destination": "Regional Destination 10",
+          "mode": "Regional Mode 10",
+          "weightKg": 165.3,
+          "volumeCbm": 165.3,
+          "status": "pending",
+          "quotedPrice": 13329,
+          "actualCost": 13329,
+          "pickupDate": "2024-10-19",
+          "deliveryDate": "2024-10-19"
+        },
+        {
+          "trackingNumber": "Custom Tracking Number 11",
+          "customerId": 190,
+          "carrierId": 190,
+          "routeId": 190,
+          "origin": "Custom Origin 11",
+          "destination": "Custom Destination 11",
+          "mode": "Custom Mode 11",
+          "weightKg": 127,
+          "volumeCbm": 127,
+          "status": "completed",
+          "quotedPrice": 15310,
+          "actualCost": 15310,
+          "pickupDate": "2024-11-21",
+          "deliveryDate": "2024-11-21"
+        },
+        {
+          "trackingNumber": "Smart Tracking Number 12",
+          "customerId": 238,
+          "carrierId": 238,
+          "routeId": 238,
+          "origin": "Smart Origin 12",
+          "destination": "Smart Destination 12",
+          "mode": "Smart Mode 12",
+          "weightKg": 188.7,
+          "volumeCbm": 188.7,
+          "status": "active",
+          "quotedPrice": 17291,
+          "actualCost": 17291,
+          "pickupDate": "2024-12-23",
+          "deliveryDate": "2024-12-23"
+        },
+        {
+          "trackingNumber": "Rapid Tracking Number 13",
+          "customerId": 286,
+          "carrierId": 286,
+          "routeId": 286,
+          "origin": "Rapid Origin 13",
+          "destination": "Rapid Destination 13",
+          "mode": "Rapid Mode 13",
+          "weightKg": 150.4,
+          "volumeCbm": 150.4,
+          "status": "in_progress",
+          "quotedPrice": 19272,
+          "actualCost": 19272,
+          "pickupDate": "2024-01-25",
+          "deliveryDate": "2024-01-25"
+        },
+        {
+          "trackingNumber": "Secure Tracking Number 14",
+          "customerId": 234,
+          "carrierId": 234,
+          "routeId": 234,
+          "origin": "Secure Origin 14",
+          "destination": "Secure Destination 14",
+          "mode": "Secure Mode 14",
+          "weightKg": 212.1,
+          "volumeCbm": 212.1,
+          "status": "active",
+          "quotedPrice": 21253,
+          "actualCost": 21253,
+          "pickupDate": "2024-02-27",
+          "deliveryDate": "2024-02-27"
+        },
+        {
+          "trackingNumber": "Modern Tracking Number 15",
+          "customerId": 282,
+          "carrierId": 282,
+          "routeId": 282,
+          "origin": "Modern Origin 15",
+          "destination": "Modern Destination 15",
+          "mode": "Modern Mode 15",
+          "weightKg": 173.8,
+          "volumeCbm": 173.8,
+          "status": "approved",
+          "quotedPrice": 18234,
+          "actualCost": 18234,
+          "pickupDate": "2024-03-01",
+          "deliveryDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "RateQuote",
+      "routeKey": "rate-quotes",
+      "label": "Rate Quote",
+      "icon": "file-text",
+      "aiFunction": "analyzeRateQuote",
+      "aiPrompt": "You are an AI analyst for A I Freight Pricing Agent. Analyze the provided Rate Quote data. The data includes: Quote Number, Customer Id, Origin, Destination, Mode, Weight Kg, Volume Cbm, Base Rate, Ai Suggested Rate, Final Rate, Margin Pct, Status, Valid Until, Ai Reasoning. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "quoteNumber",
+          "label": "Quote Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "origin",
+          "label": "Origin",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "destination",
+          "label": "Destination",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "weightKg",
+          "label": "Weight Kg",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "volumeCbm",
+          "label": "Volume Cbm",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "baseRate",
+          "label": "Base Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "aiSuggestedRate",
+          "label": "Ai Suggested Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "finalRate",
+          "label": "Final Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "marginPct",
+          "label": "Margin Pct",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "validUntil",
+          "label": "Valid Until",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "aiReasoning",
+          "label": "Ai Reasoning",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "quoteNumber": "Advanced Quote Number 1",
+          "customerId": 10,
+          "origin": "Advanced Origin 1",
+          "destination": "Advanced Destination 1",
+          "mode": "Advanced Mode 1",
+          "weightKg": 10,
+          "volumeCbm": 10,
+          "baseRate": 1.5,
+          "aiSuggestedRate": 1.5,
+          "finalRate": 1.5,
+          "marginPct": 10,
+          "status": "active",
+          "validUntil": "2024-01-01",
+          "aiReasoning": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "quoteNumber": "Premium Quote Number 2",
+          "customerId": 58,
+          "origin": "Premium Origin 2",
+          "destination": "Premium Destination 2",
+          "mode": "Premium Mode 2",
+          "weightKg": 71.7,
+          "volumeCbm": 71.7,
+          "baseRate": 2.1,
+          "aiSuggestedRate": 2.1,
+          "finalRate": 2.1,
+          "marginPct": 71.7,
+          "status": "pending",
+          "validUntil": "2024-02-03",
+          "aiReasoning": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "quoteNumber": "Standard Quote Number 3",
+          "customerId": 106,
+          "origin": "Standard Origin 3",
+          "destination": "Standard Destination 3",
+          "mode": "Standard Mode 3",
+          "weightKg": 33.4,
+          "volumeCbm": 33.4,
+          "baseRate": 2.7,
+          "aiSuggestedRate": 2.7,
+          "finalRate": 2.7,
+          "marginPct": 33.4,
+          "status": "in_progress",
+          "validUntil": "2024-03-05",
+          "aiReasoning": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "quoteNumber": "Elite Quote Number 4",
+          "customerId": 154,
+          "origin": "Elite Origin 4",
+          "destination": "Elite Destination 4",
+          "mode": "Elite Mode 4",
+          "weightKg": 95.1,
+          "volumeCbm": 95.1,
+          "baseRate": 3.3,
+          "aiSuggestedRate": 3.3,
+          "finalRate": 3.3,
+          "marginPct": 95.1,
+          "status": "completed",
+          "validUntil": "2024-04-07",
+          "aiReasoning": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "quoteNumber": "Core Quote Number 5",
+          "customerId": 102,
+          "origin": "Core Origin 5",
+          "destination": "Core Destination 5",
+          "mode": "Core Mode 5",
+          "weightKg": 56.8,
+          "volumeCbm": 56.8,
+          "baseRate": 3.9,
+          "aiSuggestedRate": 3.9,
+          "finalRate": 3.9,
+          "marginPct": 56.8,
+          "status": "under_review",
+          "validUntil": "2024-05-09",
+          "aiReasoning": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "quoteNumber": "Pro Quote Number 6",
+          "customerId": 150,
+          "origin": "Pro Origin 6",
+          "destination": "Pro Destination 6",
+          "mode": "Pro Mode 6",
+          "weightKg": 118.5,
+          "volumeCbm": 118.5,
+          "baseRate": 4.5,
+          "aiSuggestedRate": 4.5,
+          "finalRate": 4.5,
+          "marginPct": 118.5,
+          "status": "approved",
+          "validUntil": "2024-06-11",
+          "aiReasoning": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "quoteNumber": "Essential Quote Number 7",
+          "customerId": 198,
+          "origin": "Essential Origin 7",
+          "destination": "Essential Destination 7",
+          "mode": "Essential Mode 7",
+          "weightKg": 80.2,
+          "volumeCbm": 80.2,
+          "baseRate": 5.1,
+          "aiSuggestedRate": 5.1,
+          "finalRate": 5.1,
+          "marginPct": 80.2,
+          "status": "active",
+          "validUntil": "2024-07-13",
+          "aiReasoning": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "quoteNumber": "Primary Quote Number 8",
+          "customerId": 146,
+          "origin": "Primary Origin 8",
+          "destination": "Primary Destination 8",
+          "mode": "Primary Mode 8",
+          "weightKg": 141.9,
+          "volumeCbm": 141.9,
+          "baseRate": 5.7,
+          "aiSuggestedRate": 5.7,
+          "finalRate": 5.7,
+          "marginPct": 141.9,
+          "status": "active",
+          "validUntil": "2024-08-15",
+          "aiReasoning": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "quoteNumber": "Global Quote Number 9",
+          "customerId": 194,
+          "origin": "Global Origin 9",
+          "destination": "Global Destination 9",
+          "mode": "Global Mode 9",
+          "weightKg": 103.6,
+          "volumeCbm": 103.6,
+          "baseRate": 6.3,
+          "aiSuggestedRate": 6.3,
+          "finalRate": 6.3,
+          "marginPct": 103.6,
+          "status": "active",
+          "validUntil": "2024-09-17",
+          "aiReasoning": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "quoteNumber": "Regional Quote Number 10",
+          "customerId": 242,
+          "origin": "Regional Origin 10",
+          "destination": "Regional Destination 10",
+          "mode": "Regional Mode 10",
+          "weightKg": 165.3,
+          "volumeCbm": 165.3,
+          "baseRate": 1.9,
+          "aiSuggestedRate": 1.9,
+          "finalRate": 1.9,
+          "marginPct": 165.3,
+          "status": "pending",
+          "validUntil": "2024-10-19",
+          "aiReasoning": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "quoteNumber": "Custom Quote Number 11",
+          "customerId": 190,
+          "origin": "Custom Origin 11",
+          "destination": "Custom Destination 11",
+          "mode": "Custom Mode 11",
+          "weightKg": 127,
+          "volumeCbm": 127,
+          "baseRate": 2.5,
+          "aiSuggestedRate": 2.5,
+          "finalRate": 2.5,
+          "marginPct": 127,
+          "status": "completed",
+          "validUntil": "2024-11-21",
+          "aiReasoning": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "quoteNumber": "Smart Quote Number 12",
+          "customerId": 238,
+          "origin": "Smart Origin 12",
+          "destination": "Smart Destination 12",
+          "mode": "Smart Mode 12",
+          "weightKg": 188.7,
+          "volumeCbm": 188.7,
+          "baseRate": 3.1,
+          "aiSuggestedRate": 3.1,
+          "finalRate": 3.1,
+          "marginPct": 188.7,
+          "status": "active",
+          "validUntil": "2024-12-23",
+          "aiReasoning": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "quoteNumber": "Rapid Quote Number 13",
+          "customerId": 286,
+          "origin": "Rapid Origin 13",
+          "destination": "Rapid Destination 13",
+          "mode": "Rapid Mode 13",
+          "weightKg": 150.4,
+          "volumeCbm": 150.4,
+          "baseRate": 3.7,
+          "aiSuggestedRate": 3.7,
+          "finalRate": 3.7,
+          "marginPct": 150.4,
+          "status": "in_progress",
+          "validUntil": "2024-01-25",
+          "aiReasoning": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "quoteNumber": "Secure Quote Number 14",
+          "customerId": 234,
+          "origin": "Secure Origin 14",
+          "destination": "Secure Destination 14",
+          "mode": "Secure Mode 14",
+          "weightKg": 212.1,
+          "volumeCbm": 212.1,
+          "baseRate": 4.3,
+          "aiSuggestedRate": 4.3,
+          "finalRate": 4.3,
+          "marginPct": 212.1,
+          "status": "active",
+          "validUntil": "2024-02-27",
+          "aiReasoning": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "quoteNumber": "Modern Quote Number 15",
+          "customerId": 282,
+          "origin": "Modern Origin 15",
+          "destination": "Modern Destination 15",
+          "mode": "Modern Mode 15",
+          "weightKg": 173.8,
+          "volumeCbm": 173.8,
+          "baseRate": 4.9,
+          "aiSuggestedRate": 4.9,
+          "finalRate": 4.9,
+          "marginPct": 173.8,
+          "status": "approved",
+          "validUntil": "2024-03-01",
+          "aiReasoning": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Contract",
+      "routeKey": "contracts",
+      "label": "Contract",
+      "icon": "heart",
+      "aiFunction": "analyzeContract",
+      "aiPrompt": "You are an AI analyst for A I Freight Pricing Agent. Analyze the provided Contract data. The data includes: Contract Number, Customer Id, Carrier Id, Start Date, End Date, Mode, Min Volume, Committed Rate, Currency, Status, Terms. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "contractNumber",
+          "label": "Contract Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "carrierId",
+          "label": "Carrier Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "minVolume",
+          "label": "Min Volume",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "committedRate",
+          "label": "Committed Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "currency",
+          "label": "Currency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "terms",
+          "label": "Terms",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "contractNumber": "Advanced Contract Number 1",
+          "customerId": 10,
+          "carrierId": 10,
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "mode": "Advanced Mode 1",
+          "minVolume": 10,
+          "committedRate": 1.5,
+          "currency": "Advanced Currency 1",
+          "status": "active",
+          "terms": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "contractNumber": "Premium Contract Number 2",
+          "customerId": 58,
+          "carrierId": 58,
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "mode": "Premium Mode 2",
+          "minVolume": 58,
+          "committedRate": 2.1,
+          "currency": "Premium Currency 2",
+          "status": "pending",
+          "terms": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "contractNumber": "Standard Contract Number 3",
+          "customerId": 106,
+          "carrierId": 106,
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "mode": "Standard Mode 3",
+          "minVolume": 106,
+          "committedRate": 2.7,
+          "currency": "Standard Currency 3",
+          "status": "in_progress",
+          "terms": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "contractNumber": "Elite Contract Number 4",
+          "customerId": 154,
+          "carrierId": 154,
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "mode": "Elite Mode 4",
+          "minVolume": 154,
+          "committedRate": 3.3,
+          "currency": "Elite Currency 4",
+          "status": "completed",
+          "terms": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "contractNumber": "Core Contract Number 5",
+          "customerId": 102,
+          "carrierId": 102,
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "mode": "Core Mode 5",
+          "minVolume": 102,
+          "committedRate": 3.9,
+          "currency": "Core Currency 5",
+          "status": "under_review",
+          "terms": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "contractNumber": "Pro Contract Number 6",
+          "customerId": 150,
+          "carrierId": 150,
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "mode": "Pro Mode 6",
+          "minVolume": 150,
+          "committedRate": 4.5,
+          "currency": "Pro Currency 6",
+          "status": "approved",
+          "terms": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "contractNumber": "Essential Contract Number 7",
+          "customerId": 198,
+          "carrierId": 198,
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "mode": "Essential Mode 7",
+          "minVolume": 198,
+          "committedRate": 5.1,
+          "currency": "Essential Currency 7",
+          "status": "active",
+          "terms": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "contractNumber": "Primary Contract Number 8",
+          "customerId": 146,
+          "carrierId": 146,
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "mode": "Primary Mode 8",
+          "minVolume": 146,
+          "committedRate": 5.7,
+          "currency": "Primary Currency 8",
+          "status": "active",
+          "terms": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "contractNumber": "Global Contract Number 9",
+          "customerId": 194,
+          "carrierId": 194,
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "mode": "Global Mode 9",
+          "minVolume": 194,
+          "committedRate": 6.3,
+          "currency": "Global Currency 9",
+          "status": "active",
+          "terms": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "contractNumber": "Regional Contract Number 10",
+          "customerId": 242,
+          "carrierId": 242,
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "mode": "Regional Mode 10",
+          "minVolume": 242,
+          "committedRate": 1.9,
+          "currency": "Regional Currency 10",
+          "status": "pending",
+          "terms": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "contractNumber": "Custom Contract Number 11",
+          "customerId": 190,
+          "carrierId": 190,
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "mode": "Custom Mode 11",
+          "minVolume": 190,
+          "committedRate": 2.5,
+          "currency": "Custom Currency 11",
+          "status": "completed",
+          "terms": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "contractNumber": "Smart Contract Number 12",
+          "customerId": 238,
+          "carrierId": 238,
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "mode": "Smart Mode 12",
+          "minVolume": 238,
+          "committedRate": 3.1,
+          "currency": "Smart Currency 12",
+          "status": "active",
+          "terms": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "contractNumber": "Rapid Contract Number 13",
+          "customerId": 286,
+          "carrierId": 286,
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "mode": "Rapid Mode 13",
+          "minVolume": 286,
+          "committedRate": 3.7,
+          "currency": "Rapid Currency 13",
+          "status": "in_progress",
+          "terms": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "contractNumber": "Secure Contract Number 14",
+          "customerId": 234,
+          "carrierId": 234,
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "mode": "Secure Mode 14",
+          "minVolume": 234,
+          "committedRate": 4.3,
+          "currency": "Secure Currency 14",
+          "status": "active",
+          "terms": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "contractNumber": "Modern Contract Number 15",
+          "customerId": 282,
+          "carrierId": 282,
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "mode": "Modern Mode 15",
+          "minVolume": 282,
+          "committedRate": 4.9,
+          "currency": "Modern Currency 15",
+          "status": "approved",
+          "terms": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PricingRule",
+      "routeKey": "pricing-rules",
+      "label": "Pricing Rule",
+      "icon": "layers",
+      "aiFunction": "analyzePricingRule",
+      "aiPrompt": "You are an AI analyst for A I Freight Pricing Agent. Analyze the provided Pricing Rule data. The data includes: Name, Rule Type, Mode, Condition Field, Condition Operator, Condition Value, Adjustment Type, Adjustment Value, Priority, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ruleType",
+          "label": "Rule Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "conditionField",
+          "label": "Condition Field",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "conditionOperator",
+          "label": "Condition Operator",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "conditionValue",
+          "label": "Condition Value",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "adjustmentType",
+          "label": "Adjustment Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "adjustmentValue",
+          "label": "Adjustment Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "ruleType": "Category A",
+          "mode": "Advanced Mode 1",
+          "conditionField": "Advanced Condition Field 1",
+          "conditionOperator": "Advanced Condition Operator 1",
+          "conditionValue": "Advanced Condition Value 1",
+          "adjustmentType": "Category A",
+          "adjustmentValue": 10,
+          "priority": 10,
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "ruleType": "Category B",
+          "mode": "Premium Mode 2",
+          "conditionField": "Premium Condition Field 2",
+          "conditionOperator": "Premium Condition Operator 2",
+          "conditionValue": "Premium Condition Value 2",
+          "adjustmentType": "Category B",
+          "adjustmentValue": 71.7,
+          "priority": 58,
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "ruleType": "Category C",
+          "mode": "Standard Mode 3",
+          "conditionField": "Standard Condition Field 3",
+          "conditionOperator": "Standard Condition Operator 3",
+          "conditionValue": "Standard Condition Value 3",
+          "adjustmentType": "Category C",
+          "adjustmentValue": 33.4,
+          "priority": 106,
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "ruleType": "Category D",
+          "mode": "Elite Mode 4",
+          "conditionField": "Elite Condition Field 4",
+          "conditionOperator": "Elite Condition Operator 4",
+          "conditionValue": "Elite Condition Value 4",
+          "adjustmentType": "Category D",
+          "adjustmentValue": 95.1,
+          "priority": 154,
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "ruleType": "Category E",
+          "mode": "Core Mode 5",
+          "conditionField": "Core Condition Field 5",
+          "conditionOperator": "Core Condition Operator 5",
+          "conditionValue": "Core Condition Value 5",
+          "adjustmentType": "Category E",
+          "adjustmentValue": 56.8,
+          "priority": 102,
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "ruleType": "Premium Tier",
+          "mode": "Pro Mode 6",
+          "conditionField": "Pro Condition Field 6",
+          "conditionOperator": "Pro Condition Operator 6",
+          "conditionValue": "Pro Condition Value 6",
+          "adjustmentType": "Premium Tier",
+          "adjustmentValue": 118.5,
+          "priority": 150,
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "ruleType": "Standard Tier",
+          "mode": "Essential Mode 7",
+          "conditionField": "Essential Condition Field 7",
+          "conditionOperator": "Essential Condition Operator 7",
+          "conditionValue": "Essential Condition Value 7",
+          "adjustmentType": "Standard Tier",
+          "adjustmentValue": 80.2,
+          "priority": 198,
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "ruleType": "Basic Tier",
+          "mode": "Primary Mode 8",
+          "conditionField": "Primary Condition Field 8",
+          "conditionOperator": "Primary Condition Operator 8",
+          "conditionValue": "Primary Condition Value 8",
+          "adjustmentType": "Basic Tier",
+          "adjustmentValue": 141.9,
+          "priority": 146,
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "ruleType": "Enterprise",
+          "mode": "Global Mode 9",
+          "conditionField": "Global Condition Field 9",
+          "conditionOperator": "Global Condition Operator 9",
+          "conditionValue": "Global Condition Value 9",
+          "adjustmentType": "Enterprise",
+          "adjustmentValue": 103.6,
+          "priority": 194,
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "ruleType": "Starter",
+          "mode": "Regional Mode 10",
+          "conditionField": "Regional Condition Field 10",
+          "conditionOperator": "Regional Condition Operator 10",
+          "conditionValue": "Regional Condition Value 10",
+          "adjustmentType": "Starter",
+          "adjustmentValue": 165.3,
+          "priority": 242,
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "ruleType": "Growth",
+          "mode": "Custom Mode 11",
+          "conditionField": "Custom Condition Field 11",
+          "conditionOperator": "Custom Condition Operator 11",
+          "conditionValue": "Custom Condition Value 11",
+          "adjustmentType": "Growth",
+          "adjustmentValue": 127,
+          "priority": 190,
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "ruleType": "Scale",
+          "mode": "Smart Mode 12",
+          "conditionField": "Smart Condition Field 12",
+          "conditionOperator": "Smart Condition Operator 12",
+          "conditionValue": "Smart Condition Value 12",
+          "adjustmentType": "Scale",
+          "adjustmentValue": 188.7,
+          "priority": 238,
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "ruleType": "Foundation",
+          "mode": "Rapid Mode 13",
+          "conditionField": "Rapid Condition Field 13",
+          "conditionOperator": "Rapid Condition Operator 13",
+          "conditionValue": "Rapid Condition Value 13",
+          "adjustmentType": "Foundation",
+          "adjustmentValue": 150.4,
+          "priority": 286,
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "ruleType": "Advanced",
+          "mode": "Secure Mode 14",
+          "conditionField": "Secure Condition Field 14",
+          "conditionOperator": "Secure Condition Operator 14",
+          "conditionValue": "Secure Condition Value 14",
+          "adjustmentType": "Advanced",
+          "adjustmentValue": 212.1,
+          "priority": 234,
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "ruleType": "Professional",
+          "mode": "Modern Mode 15",
+          "conditionField": "Modern Condition Field 15",
+          "conditionOperator": "Modern Condition Operator 15",
+          "conditionValue": "Modern Condition Value 15",
+          "adjustmentType": "Professional",
+          "adjustmentValue": 173.8,
+          "priority": 282,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "MarketIntelligence",
+      "routeKey": "market-intelligences",
+      "label": "Market Intelligence",
+      "icon": "map-pin",
+      "aiFunction": "analyzeMarketIntelligence",
+      "aiPrompt": "You are an AI analyst for A I Freight Pricing Agent. Analyze the provided Market Intelligence data. The data includes: Title, Region, Mode, Report Type, Summary, Ai Analysis, Data Points, Severity, Report Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "region",
+          "label": "Region",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reportType",
+          "label": "Report Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "summary",
+          "label": "Summary",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "dataPoints",
+          "label": "Data Points",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reportDate",
+          "label": "Report Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "region": "Advanced Region 1",
+          "mode": "Advanced Mode 1",
+          "reportType": "Category A",
+          "summary": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "dataPoints": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "severity": "low",
+          "reportDate": "2024-01-01"
+        },
+        {
+          "title": "Premium Title 2",
+          "region": "Premium Region 2",
+          "mode": "Premium Mode 2",
+          "reportType": "Category B",
+          "summary": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments.",
+          "dataPoints": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "severity": "medium",
+          "reportDate": "2024-02-03"
+        },
+        {
+          "title": "Standard Title 3",
+          "region": "Standard Region 3",
+          "mode": "Standard Mode 3",
+          "reportType": "Category C",
+          "summary": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "dataPoints": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "severity": "high",
+          "reportDate": "2024-03-05"
+        },
+        {
+          "title": "Elite Title 4",
+          "region": "Elite Region 4",
+          "mode": "Elite Mode 4",
+          "reportType": "Category D",
+          "summary": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "dataPoints": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "severity": "critical",
+          "reportDate": "2024-04-07"
+        },
+        {
+          "title": "Core Title 5",
+          "region": "Core Region 5",
+          "mode": "Core Mode 5",
+          "reportType": "Category E",
+          "summary": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "dataPoints": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "severity": "medium",
+          "reportDate": "2024-05-09"
+        },
+        {
+          "title": "Pro Title 6",
+          "region": "Pro Region 6",
+          "mode": "Pro Mode 6",
+          "reportType": "Premium Tier",
+          "summary": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives.",
+          "dataPoints": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "severity": "low",
+          "reportDate": "2024-06-11"
+        },
+        {
+          "title": "Essential Title 7",
+          "region": "Essential Region 7",
+          "mode": "Essential Mode 7",
+          "reportType": "Standard Tier",
+          "summary": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "dataPoints": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "severity": "medium",
+          "reportDate": "2024-07-13"
+        },
+        {
+          "title": "Primary Title 8",
+          "region": "Primary Region 8",
+          "mode": "Primary Mode 8",
+          "reportType": "Basic Tier",
+          "summary": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies.",
+          "dataPoints": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "severity": "high",
+          "reportDate": "2024-08-15"
+        },
+        {
+          "title": "Global Title 9",
+          "region": "Global Region 9",
+          "mode": "Global Mode 9",
+          "reportType": "Enterprise",
+          "summary": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "dataPoints": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "severity": "critical",
+          "reportDate": "2024-09-17"
+        },
+        {
+          "title": "Regional Title 10",
+          "region": "Regional Region 10",
+          "mode": "Regional Mode 10",
+          "reportType": "Starter",
+          "summary": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features.",
+          "dataPoints": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "severity": "medium",
+          "reportDate": "2024-10-19"
+        },
+        {
+          "title": "Custom Title 11",
+          "region": "Custom Region 11",
+          "mode": "Custom Mode 11",
+          "reportType": "Growth",
+          "summary": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations.",
+          "dataPoints": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "severity": "low",
+          "reportDate": "2024-11-21"
+        },
+        {
+          "title": "Smart Title 12",
+          "region": "Smart Region 12",
+          "mode": "Smart Mode 12",
+          "reportType": "Scale",
+          "summary": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error.",
+          "dataPoints": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "severity": "medium",
+          "reportDate": "2024-12-23"
+        },
+        {
+          "title": "Rapid Title 13",
+          "region": "Rapid Region 13",
+          "mode": "Rapid Mode 13",
+          "reportType": "Foundation",
+          "summary": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "dataPoints": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "severity": "high",
+          "reportDate": "2024-01-25"
+        },
+        {
+          "title": "Secure Title 14",
+          "region": "Secure Region 14",
+          "mode": "Secure Mode 14",
+          "reportType": "Advanced",
+          "summary": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements.",
+          "dataPoints": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "severity": "critical",
+          "reportDate": "2024-02-27"
+        },
+        {
+          "title": "Modern Title 15",
+          "region": "Modern Region 15",
+          "mode": "Modern Mode 15",
+          "reportType": "Professional",
+          "summary": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability.",
+          "dataPoints": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "severity": "medium",
+          "reportDate": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "CostOptimization",
+      "routeKey": "cost-optimizations",
+      "label": "Cost Optimization",
+      "icon": "package",
+      "aiFunction": "analyzeCostOptimization",
+      "aiPrompt": "You are an AI analyst for A I Freight Pricing Agent. Analyze the provided Cost Optimization data. The data includes: Title, Category, Current Cost, Projected Savings, Savings Pct, Status, Ai Recommendation, Priority, Affected Routes, Implementation Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "currentCost",
+          "label": "Current Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "projectedSavings",
+          "label": "Projected Savings",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "savingsPct",
+          "label": "Savings Pct",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiRecommendation",
+          "label": "Ai Recommendation",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "affectedRoutes",
+          "label": "Affected Routes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "implementationNotes",
+          "label": "Implementation Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "category": "Category A",
+          "currentCost": 500,
+          "projectedSavings": 10,
+          "savingsPct": 10,
+          "status": "active",
+          "aiRecommendation": "Comprehensive solution designed for optimal performance and efficiency.",
+          "priority": "low",
+          "affectedRoutes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "implementationNotes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "title": "Premium Title 2",
+          "category": "Category B",
+          "currentCost": 2481,
+          "projectedSavings": 71.7,
+          "savingsPct": 71.7,
+          "status": "pending",
+          "aiRecommendation": "Industry-leading approach with proven results across multiple deployments.",
+          "priority": "medium",
+          "affectedRoutes": "Industry-leading approach with proven results across multiple deployments.",
+          "implementationNotes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "title": "Standard Title 3",
+          "category": "Category C",
+          "currentCost": 4462,
+          "projectedSavings": 33.4,
+          "savingsPct": 33.4,
+          "status": "in_progress",
+          "aiRecommendation": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "priority": "high",
+          "affectedRoutes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "implementationNotes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "title": "Elite Title 4",
+          "category": "Category D",
+          "currentCost": 6443,
+          "projectedSavings": 95.1,
+          "savingsPct": 95.1,
+          "status": "completed",
+          "aiRecommendation": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "priority": "critical",
+          "affectedRoutes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "implementationNotes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "title": "Core Title 5",
+          "category": "Category E",
+          "currentCost": 8424,
+          "projectedSavings": 56.8,
+          "savingsPct": 56.8,
+          "status": "under_review",
+          "aiRecommendation": "Cost-effective strategy focused on sustainable long-term growth.",
+          "priority": "medium",
+          "affectedRoutes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "implementationNotes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "title": "Pro Title 6",
+          "category": "Premium Tier",
+          "currentCost": 10405,
+          "projectedSavings": 118.5,
+          "savingsPct": 118.5,
+          "status": "approved",
+          "aiRecommendation": "High-priority initiative aligned with organizational strategic objectives.",
+          "priority": "low",
+          "affectedRoutes": "High-priority initiative aligned with organizational strategic objectives.",
+          "implementationNotes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "title": "Essential Title 7",
+          "category": "Standard Tier",
+          "currentCost": 12386,
+          "projectedSavings": 80.2,
+          "savingsPct": 80.2,
+          "status": "active",
+          "aiRecommendation": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "priority": "medium",
+          "affectedRoutes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "implementationNotes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "title": "Primary Title 8",
+          "category": "Basic Tier",
+          "currentCost": 9367,
+          "projectedSavings": 141.9,
+          "savingsPct": 141.9,
+          "status": "active",
+          "aiRecommendation": "Innovative framework incorporating best practices and emerging technologies.",
+          "priority": "high",
+          "affectedRoutes": "Innovative framework incorporating best practices and emerging technologies.",
+          "implementationNotes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "title": "Global Title 9",
+          "category": "Enterprise",
+          "currentCost": 11348,
+          "projectedSavings": 103.6,
+          "savingsPct": 103.6,
+          "status": "active",
+          "aiRecommendation": "Scalable architecture built to accommodate rapid expansion and change.",
+          "priority": "critical",
+          "affectedRoutes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "implementationNotes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "title": "Regional Title 10",
+          "category": "Starter",
+          "currentCost": 13329,
+          "projectedSavings": 165.3,
+          "savingsPct": 165.3,
+          "status": "pending",
+          "aiRecommendation": "Enterprise-grade solution with robust security and compliance features.",
+          "priority": "medium",
+          "affectedRoutes": "Enterprise-grade solution with robust security and compliance features.",
+          "implementationNotes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "title": "Custom Title 11",
+          "category": "Growth",
+          "currentCost": 15310,
+          "projectedSavings": 127,
+          "savingsPct": 127,
+          "status": "completed",
+          "aiRecommendation": "Integrated platform connecting multiple systems for seamless operations.",
+          "priority": "low",
+          "affectedRoutes": "Integrated platform connecting multiple systems for seamless operations.",
+          "implementationNotes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "title": "Smart Title 12",
+          "category": "Scale",
+          "currentCost": 17291,
+          "projectedSavings": 188.7,
+          "savingsPct": 188.7,
+          "status": "active",
+          "aiRecommendation": "Automated workflow reducing manual intervention and human error.",
+          "priority": "medium",
+          "affectedRoutes": "Automated workflow reducing manual intervention and human error.",
+          "implementationNotes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "title": "Rapid Title 13",
+          "category": "Foundation",
+          "currentCost": 19272,
+          "projectedSavings": 150.4,
+          "savingsPct": 150.4,
+          "status": "in_progress",
+          "aiRecommendation": "Real-time monitoring system with intelligent alerting capabilities.",
+          "priority": "high",
+          "affectedRoutes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "implementationNotes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "title": "Secure Title 14",
+          "category": "Advanced",
+          "currentCost": 21253,
+          "projectedSavings": 212.1,
+          "savingsPct": 212.1,
+          "status": "active",
+          "aiRecommendation": "Customizable module adaptable to diverse operational requirements.",
+          "priority": "critical",
+          "affectedRoutes": "Customizable module adaptable to diverse operational requirements.",
+          "implementationNotes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "title": "Modern Title 15",
+          "category": "Professional",
+          "currentCost": 18234,
+          "projectedSavings": 173.8,
+          "savingsPct": 173.8,
+          "status": "approved",
+          "aiRecommendation": "Performance-optimized design achieving superior throughput and reliability.",
+          "priority": "medium",
+          "affectedRoutes": "Performance-optimized design achieving superior throughput and reliability.",
+          "implementationNotes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "AuditTrail",
+      "routeKey": "audit-trails",
+      "label": "Audit Trail",
+      "icon": "shield",
+      "aiFunction": "analyzeAuditTrail",
+      "aiPrompt": "You are an AI analyst for A I Freight Pricing Agent. Analyze the provided Audit Trail data. The data includes: Entity Type, Entity Id, Action, Field Changed, Old Value, New Value, User Name, Ip Address. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fieldChanged",
+          "label": "Field Changed",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "oldValue",
+          "label": "Old Value",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "newValue",
+          "label": "New Value",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "userName",
+          "label": "User Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ipAddress",
+          "label": "Ip Address",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "entityType": "Category A",
+          "entityId": 10,
+          "action": "Advanced Action 1",
+          "fieldChanged": "Advanced Field Changed 1",
+          "oldValue": "Comprehensive solution designed for optimal performance and efficiency.",
+          "newValue": "Comprehensive solution designed for optimal performance and efficiency.",
+          "userName": "Advanced User 1",
+          "ipAddress": "New York"
+        },
+        {
+          "entityType": "Category B",
+          "entityId": 58,
+          "action": "Premium Action 2",
+          "fieldChanged": "Premium Field Changed 2",
+          "oldValue": "Industry-leading approach with proven results across multiple deployments.",
+          "newValue": "Industry-leading approach with proven results across multiple deployments.",
+          "userName": "Premium User 2",
+          "ipAddress": "Los Angeles"
+        },
+        {
+          "entityType": "Category C",
+          "entityId": 106,
+          "action": "Standard Action 3",
+          "fieldChanged": "Standard Field Changed 3",
+          "oldValue": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "newValue": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "userName": "Standard User 3",
+          "ipAddress": "Chicago"
+        },
+        {
+          "entityType": "Category D",
+          "entityId": 154,
+          "action": "Elite Action 4",
+          "fieldChanged": "Elite Field Changed 4",
+          "oldValue": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "newValue": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "userName": "Elite User 4",
+          "ipAddress": "Houston"
+        },
+        {
+          "entityType": "Category E",
+          "entityId": 102,
+          "action": "Core Action 5",
+          "fieldChanged": "Core Field Changed 5",
+          "oldValue": "Cost-effective strategy focused on sustainable long-term growth.",
+          "newValue": "Cost-effective strategy focused on sustainable long-term growth.",
+          "userName": "Core User 5",
+          "ipAddress": "Phoenix"
+        },
+        {
+          "entityType": "Premium Tier",
+          "entityId": 150,
+          "action": "Pro Action 6",
+          "fieldChanged": "Pro Field Changed 6",
+          "oldValue": "High-priority initiative aligned with organizational strategic objectives.",
+          "newValue": "High-priority initiative aligned with organizational strategic objectives.",
+          "userName": "Pro User 6",
+          "ipAddress": "San Francisco"
+        },
+        {
+          "entityType": "Standard Tier",
+          "entityId": 198,
+          "action": "Essential Action 7",
+          "fieldChanged": "Essential Field Changed 7",
+          "oldValue": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "newValue": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "userName": "Essential User 7",
+          "ipAddress": "Seattle"
+        },
+        {
+          "entityType": "Basic Tier",
+          "entityId": 146,
+          "action": "Primary Action 8",
+          "fieldChanged": "Primary Field Changed 8",
+          "oldValue": "Innovative framework incorporating best practices and emerging technologies.",
+          "newValue": "Innovative framework incorporating best practices and emerging technologies.",
+          "userName": "Primary User 8",
+          "ipAddress": "Boston"
+        },
+        {
+          "entityType": "Enterprise",
+          "entityId": 194,
+          "action": "Global Action 9",
+          "fieldChanged": "Global Field Changed 9",
+          "oldValue": "Scalable architecture built to accommodate rapid expansion and change.",
+          "newValue": "Scalable architecture built to accommodate rapid expansion and change.",
+          "userName": "Global User 9",
+          "ipAddress": "Denver"
+        },
+        {
+          "entityType": "Starter",
+          "entityId": 242,
+          "action": "Regional Action 10",
+          "fieldChanged": "Regional Field Changed 10",
+          "oldValue": "Enterprise-grade solution with robust security and compliance features.",
+          "newValue": "Enterprise-grade solution with robust security and compliance features.",
+          "userName": "Regional User 10",
+          "ipAddress": "Miami"
+        },
+        {
+          "entityType": "Growth",
+          "entityId": 190,
+          "action": "Custom Action 11",
+          "fieldChanged": "Custom Field Changed 11",
+          "oldValue": "Integrated platform connecting multiple systems for seamless operations.",
+          "newValue": "Integrated platform connecting multiple systems for seamless operations.",
+          "userName": "Custom User 11",
+          "ipAddress": "Austin"
+        },
+        {
+          "entityType": "Scale",
+          "entityId": 238,
+          "action": "Smart Action 12",
+          "fieldChanged": "Smart Field Changed 12",
+          "oldValue": "Automated workflow reducing manual intervention and human error.",
+          "newValue": "Automated workflow reducing manual intervention and human error.",
+          "userName": "Smart User 12",
+          "ipAddress": "Portland"
+        },
+        {
+          "entityType": "Foundation",
+          "entityId": 286,
+          "action": "Rapid Action 13",
+          "fieldChanged": "Rapid Field Changed 13",
+          "oldValue": "Real-time monitoring system with intelligent alerting capabilities.",
+          "newValue": "Real-time monitoring system with intelligent alerting capabilities.",
+          "userName": "Rapid User 13",
+          "ipAddress": "Dallas"
+        },
+        {
+          "entityType": "Advanced",
+          "entityId": 234,
+          "action": "Secure Action 14",
+          "fieldChanged": "Secure Field Changed 14",
+          "oldValue": "Customizable module adaptable to diverse operational requirements.",
+          "newValue": "Customizable module adaptable to diverse operational requirements.",
+          "userName": "Secure User 14",
+          "ipAddress": "Atlanta"
+        },
+        {
+          "entityType": "Professional",
+          "entityId": 282,
+          "action": "Modern Action 15",
+          "fieldChanged": "Modern Field Changed 15",
+          "oldValue": "Performance-optimized design achieving superior throughput and reliability.",
+          "newValue": "Performance-optimized design achieving superior throughput and reliability.",
+          "userName": "Modern User 15",
+          "ipAddress": "Nashville"
+        }
+      ]
+    }
+  ]
+}

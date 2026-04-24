@@ -1,0 +1,931 @@
+{
+  "appName": "AI Store Intelligence RAG",
+  "dbName": "ai_store_intelligence",
+  "folderName": "generated/hackathon",
+  "features": [
+    {
+      "modelName": "StoreOperation",
+      "label": "Store Operations",
+      "icon": "shopping-bag",
+      "fields": [
+        {
+          "key": "storeName",
+          "label": "Store Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "region",
+          "label": "Region",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dailyRevenue",
+          "label": "Daily Revenue",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "customerCount",
+          "label": "Customers",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "employeeCount",
+          "label": "Employees",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "operationDate",
+          "label": "Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "storeOperations",
+      "aiFunction": "analyzeStoreOperation",
+      "aiPrompt": "You are an AI analyst for AI Store Intelligence RAG. Analyze the provided Store Operations data. The data includes: Store Name, Region, Daily Revenue, Customers, Employees, Status, Notes, Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "storeName": "Alpha Store Name",
+          "region": "Alpha Region",
+          "dailyRevenue": 489.15,
+          "customerCount": 620,
+          "employeeCount": 797,
+          "status": "Active",
+          "notes": "Alpha notes — detailed content for enterprise use case.",
+          "operationDate": "2026-11-10"
+        },
+        {
+          "storeName": "Beta Store Name",
+          "region": "Beta Region",
+          "dailyRevenue": 507.4,
+          "customerCount": 241,
+          "employeeCount": 819,
+          "status": "Pending",
+          "notes": "Beta notes — detailed content for startup use case.",
+          "operationDate": "2026-01-18"
+        },
+        {
+          "storeName": "Gamma Store Name",
+          "region": "Gamma Region",
+          "dailyRevenue": 599.56,
+          "customerCount": 515,
+          "employeeCount": 323,
+          "status": "Review",
+          "notes": "Gamma notes — detailed content for smb use case.",
+          "operationDate": "2026-02-11"
+        },
+        {
+          "storeName": "Delta Store Name",
+          "region": "Delta Region",
+          "dailyRevenue": 580.76,
+          "customerCount": 301,
+          "employeeCount": 608,
+          "status": "Approved",
+          "notes": "Delta notes — detailed content for agency use case.",
+          "operationDate": "2026-06-16"
+        },
+        {
+          "storeName": "Epsilon Store Name",
+          "region": "Epsilon Region",
+          "dailyRevenue": 164.78,
+          "customerCount": 388,
+          "employeeCount": 865,
+          "status": "Draft",
+          "notes": "Epsilon notes — detailed content for freelancer use case.",
+          "operationDate": "2026-08-28"
+        },
+        {
+          "storeName": "Zeta Store Name",
+          "region": "Zeta Region",
+          "dailyRevenue": 267.09,
+          "customerCount": 136,
+          "employeeCount": 575,
+          "status": "Live",
+          "notes": "Zeta notes — detailed content for government use case.",
+          "operationDate": "2026-11-28"
+        },
+        {
+          "storeName": "Eta Store Name",
+          "region": "Eta Region",
+          "dailyRevenue": 920.29,
+          "customerCount": 358,
+          "employeeCount": 499,
+          "status": "Paused",
+          "notes": "Eta notes — detailed content for nonprofit use case.",
+          "operationDate": "2026-05-07"
+        },
+        {
+          "storeName": "Theta Store Name",
+          "region": "Theta Region",
+          "dailyRevenue": 53.21,
+          "customerCount": 468,
+          "employeeCount": 836,
+          "status": "Archived",
+          "notes": "Theta notes — detailed content for healthcare use case.",
+          "operationDate": "2026-10-22"
+        },
+        {
+          "storeName": "Iota Store Name",
+          "region": "Iota Region",
+          "dailyRevenue": 134.44,
+          "customerCount": 621,
+          "employeeCount": 409,
+          "status": "Beta",
+          "notes": "Iota notes — detailed content for finance use case.",
+          "operationDate": "2026-04-06"
+        },
+        {
+          "storeName": "Kappa Store Name",
+          "region": "Kappa Region",
+          "dailyRevenue": 71.76,
+          "customerCount": 579,
+          "employeeCount": 770,
+          "status": "GA",
+          "notes": "Kappa notes — detailed content for education use case.",
+          "operationDate": "2026-09-04"
+        },
+        {
+          "storeName": "Lambda Store Name",
+          "region": "Lambda Region",
+          "dailyRevenue": 601.17,
+          "customerCount": 644,
+          "employeeCount": 265,
+          "status": "Completed",
+          "notes": "Lambda notes — detailed content for retail use case.",
+          "operationDate": "2026-03-18"
+        },
+        {
+          "storeName": "Mu Store Name",
+          "region": "Mu Region",
+          "dailyRevenue": 510.13,
+          "customerCount": 205,
+          "employeeCount": 367,
+          "status": "In Progress",
+          "notes": "Mu notes — detailed content for tech use case.",
+          "operationDate": "2026-04-01"
+        },
+        {
+          "storeName": "Nu Store Name",
+          "region": "Nu Region",
+          "dailyRevenue": 395.12,
+          "customerCount": 616,
+          "employeeCount": 592,
+          "status": "Scheduled",
+          "notes": "Nu notes — detailed content for legal use case.",
+          "operationDate": "2026-06-06"
+        },
+        {
+          "storeName": "Xi Store Name",
+          "region": "Xi Region",
+          "dailyRevenue": 865.42,
+          "customerCount": 771,
+          "employeeCount": 993,
+          "status": "Failed",
+          "notes": "Xi notes — detailed content for real estate use case.",
+          "operationDate": "2026-06-25"
+        },
+        {
+          "storeName": "Omicron Store Name",
+          "region": "Omicron Region",
+          "dailyRevenue": 247.47,
+          "customerCount": 299,
+          "employeeCount": 748,
+          "status": "Cancelled",
+          "notes": "Omicron notes — detailed content for manufacturing use case.",
+          "operationDate": "2026-12-17"
+        }
+      ]
+    },
+    {
+      "modelName": "LeadIntelligence",
+      "label": "Lead Intelligence",
+      "icon": "target",
+      "fields": [
+        {
+          "key": "leadName",
+          "label": "Lead Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "company",
+          "label": "Company",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "score",
+          "label": "Score",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "insights",
+          "label": "AI Insights",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "contactDate",
+          "label": "Contact Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "leadIntelligences",
+      "aiFunction": "analyzeLeadIntelligence",
+      "aiPrompt": "You are an AI analyst for AI Store Intelligence RAG. Analyze the provided Lead Intelligence data. The data includes: Lead Name, Company, Source, Score, Status, AI Insights, Contact Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "leadName": "Alpha Lead Name",
+          "company": "Alpha Company",
+          "source": "Alpha Source",
+          "score": 592,
+          "status": "Active",
+          "insights": "Alpha ai insights — detailed content for enterprise use case.",
+          "contactDate": "2026-11-10"
+        },
+        {
+          "leadName": "Beta Lead Name",
+          "company": "Beta Company",
+          "source": "Beta Source",
+          "score": 80.44,
+          "status": "Pending",
+          "insights": "Beta ai insights — detailed content for startup use case.",
+          "contactDate": "2026-07-17"
+        },
+        {
+          "leadName": "Gamma Lead Name",
+          "company": "Gamma Company",
+          "source": "Gamma Source",
+          "score": 398.32,
+          "status": "Review",
+          "insights": "Gamma ai insights — detailed content for smb use case.",
+          "contactDate": "2026-12-14"
+        },
+        {
+          "leadName": "Delta Lead Name",
+          "company": "Delta Company",
+          "source": "Delta Source",
+          "score": 540.09,
+          "status": "Approved",
+          "insights": "Delta ai insights — detailed content for agency use case.",
+          "contactDate": "2026-04-24"
+        },
+        {
+          "leadName": "Epsilon Lead Name",
+          "company": "Epsilon Company",
+          "source": "Epsilon Source",
+          "score": 92.51,
+          "status": "Draft",
+          "insights": "Epsilon ai insights — detailed content for freelancer use case.",
+          "contactDate": "2026-08-05"
+        },
+        {
+          "leadName": "Zeta Lead Name",
+          "company": "Zeta Company",
+          "source": "Zeta Source",
+          "score": 822.09,
+          "status": "Live",
+          "insights": "Zeta ai insights — detailed content for government use case.",
+          "contactDate": "2026-10-01"
+        },
+        {
+          "leadName": "Eta Lead Name",
+          "company": "Eta Company",
+          "source": "Eta Source",
+          "score": 326.37,
+          "status": "Paused",
+          "insights": "Eta ai insights — detailed content for nonprofit use case.",
+          "contactDate": "2026-10-27"
+        },
+        {
+          "leadName": "Theta Lead Name",
+          "company": "Theta Company",
+          "source": "Theta Source",
+          "score": 859.69,
+          "status": "Archived",
+          "insights": "Theta ai insights — detailed content for healthcare use case.",
+          "contactDate": "2026-05-12"
+        },
+        {
+          "leadName": "Iota Lead Name",
+          "company": "Iota Company",
+          "source": "Iota Source",
+          "score": 282.88,
+          "status": "Beta",
+          "insights": "Iota ai insights — detailed content for finance use case.",
+          "contactDate": "2026-12-16"
+        },
+        {
+          "leadName": "Kappa Lead Name",
+          "company": "Kappa Company",
+          "source": "Kappa Source",
+          "score": 237.09,
+          "status": "GA",
+          "insights": "Kappa ai insights — detailed content for education use case.",
+          "contactDate": "2026-10-09"
+        },
+        {
+          "leadName": "Lambda Lead Name",
+          "company": "Lambda Company",
+          "source": "Lambda Source",
+          "score": 317.15,
+          "status": "Completed",
+          "insights": "Lambda ai insights — detailed content for retail use case.",
+          "contactDate": "2026-12-02"
+        },
+        {
+          "leadName": "Mu Lead Name",
+          "company": "Mu Company",
+          "source": "Mu Source",
+          "score": 607.15,
+          "status": "In Progress",
+          "insights": "Mu ai insights — detailed content for tech use case.",
+          "contactDate": "2026-11-27"
+        },
+        {
+          "leadName": "Nu Lead Name",
+          "company": "Nu Company",
+          "source": "Nu Source",
+          "score": 638.04,
+          "status": "Scheduled",
+          "insights": "Nu ai insights — detailed content for legal use case.",
+          "contactDate": "2026-11-12"
+        },
+        {
+          "leadName": "Xi Lead Name",
+          "company": "Xi Company",
+          "source": "Xi Source",
+          "score": 804.45,
+          "status": "Failed",
+          "insights": "Xi ai insights — detailed content for real estate use case.",
+          "contactDate": "2026-04-14"
+        },
+        {
+          "leadName": "Omicron Lead Name",
+          "company": "Omicron Company",
+          "source": "Omicron Source",
+          "score": 363.76,
+          "status": "Cancelled",
+          "insights": "Omicron ai insights — detailed content for manufacturing use case.",
+          "contactDate": "2026-03-24"
+        }
+      ]
+    },
+    {
+      "modelName": "VectorDocument",
+      "label": "Knowledge Base Documents",
+      "icon": "book",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "embeddingStatus",
+          "label": "Embedding Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "chunkCount",
+          "label": "Chunks",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "indexedDate",
+          "label": "Indexed Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "vectorDocuments",
+      "aiFunction": "analyzeVectorDocument",
+      "aiPrompt": "You are an AI analyst for AI Store Intelligence RAG. Analyze the provided Knowledge Base Documents data. The data includes: Title, Category, Content, Source, Embedding Status, Chunks, Indexed Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "title": "Alpha Title",
+          "category": "Alpha Category",
+          "content": "Alpha content — detailed content for enterprise use case.",
+          "source": "Alpha Source",
+          "embeddingStatus": "Active",
+          "chunkCount": 190,
+          "indexedDate": "2026-06-04"
+        },
+        {
+          "title": "Beta Title",
+          "category": "Beta Category",
+          "content": "Beta content — detailed content for startup use case.",
+          "source": "Beta Source",
+          "embeddingStatus": "Pending",
+          "chunkCount": 500,
+          "indexedDate": "2026-11-11"
+        },
+        {
+          "title": "Gamma Title",
+          "category": "Gamma Category",
+          "content": "Gamma content — detailed content for smb use case.",
+          "source": "Gamma Source",
+          "embeddingStatus": "Review",
+          "chunkCount": 505,
+          "indexedDate": "2026-09-13"
+        },
+        {
+          "title": "Delta Title",
+          "category": "Delta Category",
+          "content": "Delta content — detailed content for agency use case.",
+          "source": "Delta Source",
+          "embeddingStatus": "Approved",
+          "chunkCount": 412,
+          "indexedDate": "2026-07-04"
+        },
+        {
+          "title": "Epsilon Title",
+          "category": "Epsilon Category",
+          "content": "Epsilon content — detailed content for freelancer use case.",
+          "source": "Epsilon Source",
+          "embeddingStatus": "Draft",
+          "chunkCount": 662,
+          "indexedDate": "2026-02-13"
+        },
+        {
+          "title": "Zeta Title",
+          "category": "Zeta Category",
+          "content": "Zeta content — detailed content for government use case.",
+          "source": "Zeta Source",
+          "embeddingStatus": "Live",
+          "chunkCount": 408,
+          "indexedDate": "2026-09-05"
+        },
+        {
+          "title": "Eta Title",
+          "category": "Eta Category",
+          "content": "Eta content — detailed content for nonprofit use case.",
+          "source": "Eta Source",
+          "embeddingStatus": "Paused",
+          "chunkCount": 278,
+          "indexedDate": "2026-02-12"
+        },
+        {
+          "title": "Theta Title",
+          "category": "Theta Category",
+          "content": "Theta content — detailed content for healthcare use case.",
+          "source": "Theta Source",
+          "embeddingStatus": "Archived",
+          "chunkCount": 3,
+          "indexedDate": "2026-09-07"
+        },
+        {
+          "title": "Iota Title",
+          "category": "Iota Category",
+          "content": "Iota content — detailed content for finance use case.",
+          "source": "Iota Source",
+          "embeddingStatus": "Beta",
+          "chunkCount": 217,
+          "indexedDate": "2026-02-04"
+        },
+        {
+          "title": "Kappa Title",
+          "category": "Kappa Category",
+          "content": "Kappa content — detailed content for education use case.",
+          "source": "Kappa Source",
+          "embeddingStatus": "GA",
+          "chunkCount": 613,
+          "indexedDate": "2026-12-12"
+        },
+        {
+          "title": "Lambda Title",
+          "category": "Lambda Category",
+          "content": "Lambda content — detailed content for retail use case.",
+          "source": "Lambda Source",
+          "embeddingStatus": "Completed",
+          "chunkCount": 721,
+          "indexedDate": "2026-05-21"
+        },
+        {
+          "title": "Mu Title",
+          "category": "Mu Category",
+          "content": "Mu content — detailed content for tech use case.",
+          "source": "Mu Source",
+          "embeddingStatus": "In Progress",
+          "chunkCount": 297,
+          "indexedDate": "2026-08-24"
+        },
+        {
+          "title": "Nu Title",
+          "category": "Nu Category",
+          "content": "Nu content — detailed content for legal use case.",
+          "source": "Nu Source",
+          "embeddingStatus": "Scheduled",
+          "chunkCount": 554,
+          "indexedDate": "2026-09-18"
+        },
+        {
+          "title": "Xi Title",
+          "category": "Xi Category",
+          "content": "Xi content — detailed content for real estate use case.",
+          "source": "Xi Source",
+          "embeddingStatus": "Failed",
+          "chunkCount": 987,
+          "indexedDate": "2026-10-22"
+        },
+        {
+          "title": "Omicron Title",
+          "category": "Omicron Category",
+          "content": "Omicron content — detailed content for manufacturing use case.",
+          "source": "Omicron Source",
+          "embeddingStatus": "Cancelled",
+          "chunkCount": 599,
+          "indexedDate": "2026-11-09"
+        }
+      ]
+    },
+    {
+      "modelName": "ChatSession",
+      "label": "Chat Sessions",
+      "icon": "message-circle",
+      "fields": [
+        {
+          "key": "sessionId",
+          "label": "Session ID",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "query",
+          "label": "Query",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "response",
+          "label": "Response",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "relevanceScore",
+          "label": "Relevance",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "sourceDocs",
+          "label": "Source Docs",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "timestamp",
+          "label": "Timestamp",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "chatSessions",
+      "aiFunction": "analyzeChatSession",
+      "aiPrompt": "You are an AI analyst for AI Store Intelligence RAG. Analyze the provided Chat Sessions data. The data includes: Session ID, Query, Response, Relevance, Source Docs, Timestamp. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "sessionId": "Alpha Session ID",
+          "query": "Alpha query — detailed content for enterprise use case.",
+          "response": "Alpha response — detailed content for enterprise use case.",
+          "relevanceScore": 841.59,
+          "sourceDocs": "Alpha Source Docs",
+          "timestamp": "2026-09-13"
+        },
+        {
+          "sessionId": "Beta Session ID",
+          "query": "Beta query — detailed content for startup use case.",
+          "response": "Beta response — detailed content for startup use case.",
+          "relevanceScore": 868.09,
+          "sourceDocs": "Beta Source Docs",
+          "timestamp": "2026-03-13"
+        },
+        {
+          "sessionId": "Gamma Session ID",
+          "query": "Gamma query — detailed content for smb use case.",
+          "response": "Gamma response — detailed content for smb use case.",
+          "relevanceScore": 824.1,
+          "sourceDocs": "Gamma Source Docs",
+          "timestamp": "2026-03-16"
+        },
+        {
+          "sessionId": "Delta Session ID",
+          "query": "Delta query — detailed content for agency use case.",
+          "response": "Delta response — detailed content for agency use case.",
+          "relevanceScore": 96.53,
+          "sourceDocs": "Delta Source Docs",
+          "timestamp": "2026-02-07"
+        },
+        {
+          "sessionId": "Epsilon Session ID",
+          "query": "Epsilon query — detailed content for freelancer use case.",
+          "response": "Epsilon response — detailed content for freelancer use case.",
+          "relevanceScore": 939.58,
+          "sourceDocs": "Epsilon Source Docs",
+          "timestamp": "2026-03-19"
+        },
+        {
+          "sessionId": "Zeta Session ID",
+          "query": "Zeta query — detailed content for government use case.",
+          "response": "Zeta response — detailed content for government use case.",
+          "relevanceScore": 167.12,
+          "sourceDocs": "Zeta Source Docs",
+          "timestamp": "2026-04-22"
+        },
+        {
+          "sessionId": "Eta Session ID",
+          "query": "Eta query — detailed content for nonprofit use case.",
+          "response": "Eta response — detailed content for nonprofit use case.",
+          "relevanceScore": 615.42,
+          "sourceDocs": "Eta Source Docs",
+          "timestamp": "2026-07-26"
+        },
+        {
+          "sessionId": "Theta Session ID",
+          "query": "Theta query — detailed content for healthcare use case.",
+          "response": "Theta response — detailed content for healthcare use case.",
+          "relevanceScore": 140.69,
+          "sourceDocs": "Theta Source Docs",
+          "timestamp": "2026-12-21"
+        },
+        {
+          "sessionId": "Iota Session ID",
+          "query": "Iota query — detailed content for finance use case.",
+          "response": "Iota response — detailed content for finance use case.",
+          "relevanceScore": 434.21,
+          "sourceDocs": "Iota Source Docs",
+          "timestamp": "2026-05-26"
+        },
+        {
+          "sessionId": "Kappa Session ID",
+          "query": "Kappa query — detailed content for education use case.",
+          "response": "Kappa response — detailed content for education use case.",
+          "relevanceScore": 738.11,
+          "sourceDocs": "Kappa Source Docs",
+          "timestamp": "2026-05-20"
+        },
+        {
+          "sessionId": "Lambda Session ID",
+          "query": "Lambda query — detailed content for retail use case.",
+          "response": "Lambda response — detailed content for retail use case.",
+          "relevanceScore": 804.63,
+          "sourceDocs": "Lambda Source Docs",
+          "timestamp": "2026-07-22"
+        },
+        {
+          "sessionId": "Mu Session ID",
+          "query": "Mu query — detailed content for tech use case.",
+          "response": "Mu response — detailed content for tech use case.",
+          "relevanceScore": 8.46,
+          "sourceDocs": "Mu Source Docs",
+          "timestamp": "2026-09-08"
+        },
+        {
+          "sessionId": "Nu Session ID",
+          "query": "Nu query — detailed content for legal use case.",
+          "response": "Nu response — detailed content for legal use case.",
+          "relevanceScore": 671.86,
+          "sourceDocs": "Nu Source Docs",
+          "timestamp": "2026-12-07"
+        },
+        {
+          "sessionId": "Xi Session ID",
+          "query": "Xi query — detailed content for real estate use case.",
+          "response": "Xi response — detailed content for real estate use case.",
+          "relevanceScore": 490.16,
+          "sourceDocs": "Xi Source Docs",
+          "timestamp": "2026-08-04"
+        },
+        {
+          "sessionId": "Omicron Session ID",
+          "query": "Omicron query — detailed content for manufacturing use case.",
+          "response": "Omicron response — detailed content for manufacturing use case.",
+          "relevanceScore": 507.8,
+          "sourceDocs": "Omicron Source Docs",
+          "timestamp": "2026-06-24"
+        }
+      ]
+    },
+    {
+      "modelName": "AnalyticsReport",
+      "label": "Analytics Reports",
+      "icon": "bar-chart-2",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "period",
+          "label": "Period",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "metrics",
+          "label": "Metrics",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "insights",
+          "label": "Insights",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "generatedDate",
+          "label": "Generated Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "analyticsReports",
+      "aiFunction": "analyzeAnalyticsReport",
+      "aiPrompt": "You are an AI analyst for AI Store Intelligence RAG. Analyze the provided Analytics Reports data. The data includes: Title, Type, Period, Metrics, Insights, Generated Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "title": "Alpha Title",
+          "type": "Alpha Type",
+          "period": "Alpha Period",
+          "metrics": "Alpha metrics — detailed content for enterprise use case.",
+          "insights": "Alpha insights — detailed content for enterprise use case.",
+          "generatedDate": "2026-06-18"
+        },
+        {
+          "title": "Beta Title",
+          "type": "Beta Type",
+          "period": "Beta Period",
+          "metrics": "Beta metrics — detailed content for startup use case.",
+          "insights": "Beta insights — detailed content for startup use case.",
+          "generatedDate": "2026-08-22"
+        },
+        {
+          "title": "Gamma Title",
+          "type": "Gamma Type",
+          "period": "Gamma Period",
+          "metrics": "Gamma metrics — detailed content for smb use case.",
+          "insights": "Gamma insights — detailed content for smb use case.",
+          "generatedDate": "2026-09-23"
+        },
+        {
+          "title": "Delta Title",
+          "type": "Delta Type",
+          "period": "Delta Period",
+          "metrics": "Delta metrics — detailed content for agency use case.",
+          "insights": "Delta insights — detailed content for agency use case.",
+          "generatedDate": "2026-01-12"
+        },
+        {
+          "title": "Epsilon Title",
+          "type": "Epsilon Type",
+          "period": "Epsilon Period",
+          "metrics": "Epsilon metrics — detailed content for freelancer use case.",
+          "insights": "Epsilon insights — detailed content for freelancer use case.",
+          "generatedDate": "2026-05-02"
+        },
+        {
+          "title": "Zeta Title",
+          "type": "Zeta Type",
+          "period": "Zeta Period",
+          "metrics": "Zeta metrics — detailed content for government use case.",
+          "insights": "Zeta insights — detailed content for government use case.",
+          "generatedDate": "2026-04-10"
+        },
+        {
+          "title": "Eta Title",
+          "type": "Eta Type",
+          "period": "Eta Period",
+          "metrics": "Eta metrics — detailed content for nonprofit use case.",
+          "insights": "Eta insights — detailed content for nonprofit use case.",
+          "generatedDate": "2026-06-13"
+        },
+        {
+          "title": "Theta Title",
+          "type": "Theta Type",
+          "period": "Theta Period",
+          "metrics": "Theta metrics — detailed content for healthcare use case.",
+          "insights": "Theta insights — detailed content for healthcare use case.",
+          "generatedDate": "2026-04-04"
+        },
+        {
+          "title": "Iota Title",
+          "type": "Iota Type",
+          "period": "Iota Period",
+          "metrics": "Iota metrics — detailed content for finance use case.",
+          "insights": "Iota insights — detailed content for finance use case.",
+          "generatedDate": "2026-04-08"
+        },
+        {
+          "title": "Kappa Title",
+          "type": "Kappa Type",
+          "period": "Kappa Period",
+          "metrics": "Kappa metrics — detailed content for education use case.",
+          "insights": "Kappa insights — detailed content for education use case.",
+          "generatedDate": "2026-12-12"
+        },
+        {
+          "title": "Lambda Title",
+          "type": "Lambda Type",
+          "period": "Lambda Period",
+          "metrics": "Lambda metrics — detailed content for retail use case.",
+          "insights": "Lambda insights — detailed content for retail use case.",
+          "generatedDate": "2026-06-12"
+        },
+        {
+          "title": "Mu Title",
+          "type": "Mu Type",
+          "period": "Mu Period",
+          "metrics": "Mu metrics — detailed content for tech use case.",
+          "insights": "Mu insights — detailed content for tech use case.",
+          "generatedDate": "2026-03-20"
+        },
+        {
+          "title": "Nu Title",
+          "type": "Nu Type",
+          "period": "Nu Period",
+          "metrics": "Nu metrics — detailed content for legal use case.",
+          "insights": "Nu insights — detailed content for legal use case.",
+          "generatedDate": "2026-04-13"
+        },
+        {
+          "title": "Xi Title",
+          "type": "Xi Type",
+          "period": "Xi Period",
+          "metrics": "Xi metrics — detailed content for real estate use case.",
+          "insights": "Xi insights — detailed content for real estate use case.",
+          "generatedDate": "2026-03-18"
+        },
+        {
+          "title": "Omicron Title",
+          "type": "Omicron Type",
+          "period": "Omicron Period",
+          "metrics": "Omicron metrics — detailed content for manufacturing use case.",
+          "insights": "Omicron insights — detailed content for manufacturing use case.",
+          "generatedDate": "2026-10-05"
+        }
+      ]
+    }
+  ]
+}

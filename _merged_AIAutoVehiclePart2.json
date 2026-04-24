@@ -1,0 +1,715 @@
+{
+  "appName": "AI Auto & Vehicle Services (Part 2)",
+  "dbName": "a_i_auto_vehicle_part2",
+  "folderName": "generated/AIAutoVehiclePart2",
+  "features": [
+    {
+      "modelName": "Inspection",
+      "routeKey": "inspections",
+      "label": "Inspection",
+      "icon": "activity",
+      "aiFunction": "analyzeInspection",
+      "aiPrompt": "You are an AI analyst for A I Vehicle Inspection Certification. Analyze the provided Inspection data. The data includes: Vehicle Make, Vehicle Model, Vehicle Year, Vin, Mileage, Color, Inspection Date, Inspector Name, Overall Status, Notes, Image Url, Ai Report. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "vehicleMake",
+          "label": "Vehicle Make",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pass",
+            "fail",
+            "conditional"
+          ]
+        },
+        {
+          "key": "vehicleModel",
+          "label": "Vehicle Model",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pass",
+            "fail",
+            "conditional"
+          ]
+        },
+        {
+          "key": "vehicleYear",
+          "label": "Vehicle Year",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "pass",
+            "fail",
+            "conditional"
+          ]
+        },
+        {
+          "key": "vin",
+          "label": "Vin",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pass",
+            "fail",
+            "conditional"
+          ]
+        },
+        {
+          "key": "mileage",
+          "label": "Mileage",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "pass",
+            "fail",
+            "conditional"
+          ]
+        },
+        {
+          "key": "color",
+          "label": "Color",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pass",
+            "fail",
+            "conditional"
+          ]
+        },
+        {
+          "key": "inspectionDate",
+          "label": "Inspection Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "pass",
+            "fail",
+            "conditional"
+          ]
+        },
+        {
+          "key": "inspectorName",
+          "label": "Inspector Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pass",
+            "fail",
+            "conditional"
+          ]
+        },
+        {
+          "key": "overallStatus",
+          "label": "Overall Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pass",
+            "fail",
+            "conditional"
+          ]
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "imageUrl",
+          "label": "Image Url",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiReport",
+          "label": "Ai Report",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "vehicleMake": "pass",
+          "vehicleModel": "pass",
+          "vehicleYear": 2020,
+          "vin": "pass",
+          "mileage": 18,
+          "color": "pass",
+          "inspectionDate": "2024-01-01",
+          "inspectorName": "Advanced Inspector 1",
+          "overallStatus": "pass",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "imageUrl": "https://example.com/imageUrl/1",
+          "aiReport": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "vehicleMake": "fail",
+          "vehicleModel": "fail",
+          "vehicleYear": 2021,
+          "vin": "fail",
+          "mileage": 21,
+          "color": "fail",
+          "inspectionDate": "2024-02-03",
+          "inspectorName": "Premium Inspector 2",
+          "overallStatus": "fail",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "imageUrl": "https://example.com/imageUrl/2",
+          "aiReport": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "vehicleMake": "conditional",
+          "vehicleModel": "conditional",
+          "vehicleYear": 2022,
+          "vin": "conditional",
+          "mileage": 24,
+          "color": "conditional",
+          "inspectionDate": "2024-03-05",
+          "inspectorName": "Standard Inspector 3",
+          "overallStatus": "conditional",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "imageUrl": "https://example.com/imageUrl/3",
+          "aiReport": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "vehicleMake": "pass",
+          "vehicleModel": "pass",
+          "vehicleYear": 2023,
+          "vin": "pass",
+          "mileage": 27,
+          "color": "pass",
+          "inspectionDate": "2024-04-07",
+          "inspectorName": "Elite Inspector 4",
+          "overallStatus": "pass",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "imageUrl": "https://example.com/imageUrl/4",
+          "aiReport": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "vehicleMake": "fail",
+          "vehicleModel": "fail",
+          "vehicleYear": 2024,
+          "vin": "fail",
+          "mileage": 30,
+          "color": "fail",
+          "inspectionDate": "2024-05-09",
+          "inspectorName": "Core Inspector 5",
+          "overallStatus": "fail",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "imageUrl": "https://example.com/imageUrl/5",
+          "aiReport": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "vehicleMake": "conditional",
+          "vehicleModel": "conditional",
+          "vehicleYear": 2025,
+          "vin": "conditional",
+          "mileage": 33,
+          "color": "conditional",
+          "inspectionDate": "2024-06-11",
+          "inspectorName": "Pro Inspector 6",
+          "overallStatus": "conditional",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "imageUrl": "https://example.com/imageUrl/6",
+          "aiReport": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "vehicleMake": "pass",
+          "vehicleModel": "pass",
+          "vehicleYear": 2020,
+          "vin": "pass",
+          "mileage": 36,
+          "color": "pass",
+          "inspectionDate": "2024-07-13",
+          "inspectorName": "Essential Inspector 7",
+          "overallStatus": "pass",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "imageUrl": "https://example.com/imageUrl/7",
+          "aiReport": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "vehicleMake": "fail",
+          "vehicleModel": "fail",
+          "vehicleYear": 2021,
+          "vin": "fail",
+          "mileage": 39,
+          "color": "fail",
+          "inspectionDate": "2024-08-15",
+          "inspectorName": "Primary Inspector 8",
+          "overallStatus": "fail",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "imageUrl": "https://example.com/imageUrl/8",
+          "aiReport": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "vehicleMake": "conditional",
+          "vehicleModel": "conditional",
+          "vehicleYear": 2022,
+          "vin": "conditional",
+          "mileage": 42,
+          "color": "conditional",
+          "inspectionDate": "2024-09-17",
+          "inspectorName": "Global Inspector 9",
+          "overallStatus": "conditional",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "imageUrl": "https://example.com/imageUrl/9",
+          "aiReport": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "vehicleMake": "pass",
+          "vehicleModel": "pass",
+          "vehicleYear": 2023,
+          "vin": "pass",
+          "mileage": 45,
+          "color": "pass",
+          "inspectionDate": "2024-10-19",
+          "inspectorName": "Regional Inspector 10",
+          "overallStatus": "pass",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "imageUrl": "https://example.com/imageUrl/10",
+          "aiReport": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "vehicleMake": "fail",
+          "vehicleModel": "fail",
+          "vehicleYear": 2024,
+          "vin": "fail",
+          "mileage": 48,
+          "color": "fail",
+          "inspectionDate": "2024-11-21",
+          "inspectorName": "Custom Inspector 11",
+          "overallStatus": "fail",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "imageUrl": "https://example.com/imageUrl/11",
+          "aiReport": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "vehicleMake": "conditional",
+          "vehicleModel": "conditional",
+          "vehicleYear": 2025,
+          "vin": "conditional",
+          "mileage": 51,
+          "color": "conditional",
+          "inspectionDate": "2024-12-23",
+          "inspectorName": "Smart Inspector 12",
+          "overallStatus": "conditional",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "imageUrl": "https://example.com/imageUrl/12",
+          "aiReport": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "vehicleMake": "pass",
+          "vehicleModel": "pass",
+          "vehicleYear": 2020,
+          "vin": "pass",
+          "mileage": 54,
+          "color": "pass",
+          "inspectionDate": "2024-01-25",
+          "inspectorName": "Rapid Inspector 13",
+          "overallStatus": "pass",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "imageUrl": "https://example.com/imageUrl/13",
+          "aiReport": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "vehicleMake": "fail",
+          "vehicleModel": "fail",
+          "vehicleYear": 2021,
+          "vin": "fail",
+          "mileage": 57,
+          "color": "fail",
+          "inspectionDate": "2024-02-27",
+          "inspectorName": "Secure Inspector 14",
+          "overallStatus": "fail",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "imageUrl": "https://example.com/imageUrl/14",
+          "aiReport": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "vehicleMake": "conditional",
+          "vehicleModel": "conditional",
+          "vehicleYear": 2022,
+          "vin": "conditional",
+          "mileage": 60,
+          "color": "conditional",
+          "inspectionDate": "2024-03-01",
+          "inspectorName": "Modern Inspector 15",
+          "overallStatus": "conditional",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "imageUrl": "https://example.com/imageUrl/15",
+          "aiReport": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "RecallAlert",
+      "routeKey": "recall-alerts",
+      "label": "Recall Alert",
+      "icon": "layers",
+      "aiFunction": "analyzeRecallAlert",
+      "aiPrompt": "You are an AI analyst for A I Vehicle Inspection Certification. Analyze the provided Recall Alert data. The data includes: Vehicle Make, Vehicle Model, Vehicle Year, Vin, Recall Number, Component, Summary, Risk Level, Status, Recall Date, Remedy, Affected Units, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "vehicleMake",
+          "label": "Vehicle Make",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "moderate",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "vehicleModel",
+          "label": "Vehicle Model",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "moderate",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "vehicleYear",
+          "label": "Vehicle Year",
+          "type": "INTEGER",
+          "formType": "select",
+          "options": [
+            "low",
+            "moderate",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "vin",
+          "label": "Vin",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "moderate",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "recallNumber",
+          "label": "Recall Number",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "moderate",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "component",
+          "label": "Component",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "moderate",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "summary",
+          "label": "Summary",
+          "type": "TEXT",
+          "formType": "select",
+          "options": [
+            "low",
+            "moderate",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "moderate",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "open",
+            "completed",
+            "pending_parts",
+            "scheduled"
+          ]
+        },
+        {
+          "key": "recallDate",
+          "label": "Recall Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "remedy",
+          "label": "Remedy",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "affectedUnits",
+          "label": "Affected Units",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "vehicleMake": "low",
+          "vehicleModel": "low",
+          "vehicleYear": 2020,
+          "vin": "low",
+          "recallNumber": "low",
+          "component": "low",
+          "summary": "Comprehensive solution designed for optimal performance and efficiency.",
+          "riskLevel": "low",
+          "status": "open",
+          "recallDate": "2024-01-01",
+          "remedy": "Comprehensive solution designed for optimal performance and efficiency.",
+          "affectedUnits": 10,
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "vehicleMake": "moderate",
+          "vehicleModel": "moderate",
+          "vehicleYear": 2021,
+          "vin": "moderate",
+          "recallNumber": "moderate",
+          "component": "moderate",
+          "summary": "Industry-leading approach with proven results across multiple deployments.",
+          "riskLevel": "moderate",
+          "status": "completed",
+          "recallDate": "2024-02-03",
+          "remedy": "Industry-leading approach with proven results across multiple deployments.",
+          "affectedUnits": 58,
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "vehicleMake": "high",
+          "vehicleModel": "high",
+          "vehicleYear": 2022,
+          "vin": "high",
+          "recallNumber": "high",
+          "component": "high",
+          "summary": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "riskLevel": "high",
+          "status": "pending_parts",
+          "recallDate": "2024-03-05",
+          "remedy": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "affectedUnits": 106,
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "vehicleMake": "critical",
+          "vehicleModel": "critical",
+          "vehicleYear": 2023,
+          "vin": "critical",
+          "recallNumber": "critical",
+          "component": "critical",
+          "summary": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "riskLevel": "critical",
+          "status": "scheduled",
+          "recallDate": "2024-04-07",
+          "remedy": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "affectedUnits": 154,
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "vehicleMake": "low",
+          "vehicleModel": "low",
+          "vehicleYear": 2024,
+          "vin": "low",
+          "recallNumber": "low",
+          "component": "low",
+          "summary": "Cost-effective strategy focused on sustainable long-term growth.",
+          "riskLevel": "low",
+          "status": "open",
+          "recallDate": "2024-05-09",
+          "remedy": "Cost-effective strategy focused on sustainable long-term growth.",
+          "affectedUnits": 102,
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "vehicleMake": "moderate",
+          "vehicleModel": "moderate",
+          "vehicleYear": 2025,
+          "vin": "moderate",
+          "recallNumber": "moderate",
+          "component": "moderate",
+          "summary": "High-priority initiative aligned with organizational strategic objectives.",
+          "riskLevel": "moderate",
+          "status": "completed",
+          "recallDate": "2024-06-11",
+          "remedy": "High-priority initiative aligned with organizational strategic objectives.",
+          "affectedUnits": 150,
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "vehicleMake": "high",
+          "vehicleModel": "high",
+          "vehicleYear": 2020,
+          "vin": "high",
+          "recallNumber": "high",
+          "component": "high",
+          "summary": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "riskLevel": "high",
+          "status": "pending_parts",
+          "recallDate": "2024-07-13",
+          "remedy": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "affectedUnits": 198,
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "vehicleMake": "critical",
+          "vehicleModel": "critical",
+          "vehicleYear": 2021,
+          "vin": "critical",
+          "recallNumber": "critical",
+          "component": "critical",
+          "summary": "Innovative framework incorporating best practices and emerging technologies.",
+          "riskLevel": "critical",
+          "status": "scheduled",
+          "recallDate": "2024-08-15",
+          "remedy": "Innovative framework incorporating best practices and emerging technologies.",
+          "affectedUnits": 146,
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "vehicleMake": "low",
+          "vehicleModel": "low",
+          "vehicleYear": 2022,
+          "vin": "low",
+          "recallNumber": "low",
+          "component": "low",
+          "summary": "Scalable architecture built to accommodate rapid expansion and change.",
+          "riskLevel": "low",
+          "status": "open",
+          "recallDate": "2024-09-17",
+          "remedy": "Scalable architecture built to accommodate rapid expansion and change.",
+          "affectedUnits": 194,
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "vehicleMake": "moderate",
+          "vehicleModel": "moderate",
+          "vehicleYear": 2023,
+          "vin": "moderate",
+          "recallNumber": "moderate",
+          "component": "moderate",
+          "summary": "Enterprise-grade solution with robust security and compliance features.",
+          "riskLevel": "moderate",
+          "status": "completed",
+          "recallDate": "2024-10-19",
+          "remedy": "Enterprise-grade solution with robust security and compliance features.",
+          "affectedUnits": 242,
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "vehicleMake": "high",
+          "vehicleModel": "high",
+          "vehicleYear": 2024,
+          "vin": "high",
+          "recallNumber": "high",
+          "component": "high",
+          "summary": "Integrated platform connecting multiple systems for seamless operations.",
+          "riskLevel": "high",
+          "status": "pending_parts",
+          "recallDate": "2024-11-21",
+          "remedy": "Integrated platform connecting multiple systems for seamless operations.",
+          "affectedUnits": 190,
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "vehicleMake": "critical",
+          "vehicleModel": "critical",
+          "vehicleYear": 2025,
+          "vin": "critical",
+          "recallNumber": "critical",
+          "component": "critical",
+          "summary": "Automated workflow reducing manual intervention and human error.",
+          "riskLevel": "critical",
+          "status": "scheduled",
+          "recallDate": "2024-12-23",
+          "remedy": "Automated workflow reducing manual intervention and human error.",
+          "affectedUnits": 238,
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "vehicleMake": "low",
+          "vehicleModel": "low",
+          "vehicleYear": 2020,
+          "vin": "low",
+          "recallNumber": "low",
+          "component": "low",
+          "summary": "Real-time monitoring system with intelligent alerting capabilities.",
+          "riskLevel": "low",
+          "status": "open",
+          "recallDate": "2024-01-25",
+          "remedy": "Real-time monitoring system with intelligent alerting capabilities.",
+          "affectedUnits": 286,
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "vehicleMake": "moderate",
+          "vehicleModel": "moderate",
+          "vehicleYear": 2021,
+          "vin": "moderate",
+          "recallNumber": "moderate",
+          "component": "moderate",
+          "summary": "Customizable module adaptable to diverse operational requirements.",
+          "riskLevel": "moderate",
+          "status": "completed",
+          "recallDate": "2024-02-27",
+          "remedy": "Customizable module adaptable to diverse operational requirements.",
+          "affectedUnits": 234,
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "vehicleMake": "high",
+          "vehicleModel": "high",
+          "vehicleYear": 2022,
+          "vin": "high",
+          "recallNumber": "high",
+          "component": "high",
+          "summary": "Performance-optimized design achieving superior throughput and reliability.",
+          "riskLevel": "high",
+          "status": "pending_parts",
+          "recallDate": "2024-03-01",
+          "remedy": "Performance-optimized design achieving superior throughput and reliability.",
+          "affectedUnits": 282,
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    }
+  ]
+}

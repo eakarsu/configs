@@ -1,0 +1,2275 @@
+{
+  "appName": "AI Meeting Agent",
+  "dbName": "a_i_meeting_agent",
+  "folderName": "generated/AIMeetingAgent",
+  "features": [
+    {
+      "modelName": "Meeting",
+      "routeKey": "meetings",
+      "label": "Meeting",
+      "icon": "activity",
+      "aiFunction": "analyzeMeeting",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Meeting data. The data includes: Title, Description, Start Time, End Time, Status, Meeting Link, Recording Url, User Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "meetingLink",
+          "label": "Meeting Link",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recordingUrl",
+          "label": "Recording Url",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Advanced Description 1",
+          "startTime": "2024-01-01",
+          "endTime": "2024-01-01",
+          "status": "active",
+          "meetingLink": "https://example.com/meetingLink/1",
+          "recordingUrl": "https://example.com/recordingUrl/1",
+          "userId": "Advanced User Id 1"
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Premium Description 2",
+          "startTime": "2024-02-03",
+          "endTime": "2024-02-03",
+          "status": "pending",
+          "meetingLink": "https://example.com/meetingLink/2",
+          "recordingUrl": "https://example.com/recordingUrl/2",
+          "userId": "Premium User Id 2"
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Standard Description 3",
+          "startTime": "2024-03-05",
+          "endTime": "2024-03-05",
+          "status": "in_progress",
+          "meetingLink": "https://example.com/meetingLink/3",
+          "recordingUrl": "https://example.com/recordingUrl/3",
+          "userId": "Standard User Id 3"
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Elite Description 4",
+          "startTime": "2024-04-07",
+          "endTime": "2024-04-07",
+          "status": "completed",
+          "meetingLink": "https://example.com/meetingLink/4",
+          "recordingUrl": "https://example.com/recordingUrl/4",
+          "userId": "Elite User Id 4"
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Core Description 5",
+          "startTime": "2024-05-09",
+          "endTime": "2024-05-09",
+          "status": "under_review",
+          "meetingLink": "https://example.com/meetingLink/5",
+          "recordingUrl": "https://example.com/recordingUrl/5",
+          "userId": "Core User Id 5"
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "Pro Description 6",
+          "startTime": "2024-06-11",
+          "endTime": "2024-06-11",
+          "status": "approved",
+          "meetingLink": "https://example.com/meetingLink/6",
+          "recordingUrl": "https://example.com/recordingUrl/6",
+          "userId": "Pro User Id 6"
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Essential Description 7",
+          "startTime": "2024-07-13",
+          "endTime": "2024-07-13",
+          "status": "active",
+          "meetingLink": "https://example.com/meetingLink/7",
+          "recordingUrl": "https://example.com/recordingUrl/7",
+          "userId": "Essential User Id 7"
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Primary Description 8",
+          "startTime": "2024-08-15",
+          "endTime": "2024-08-15",
+          "status": "active",
+          "meetingLink": "https://example.com/meetingLink/8",
+          "recordingUrl": "https://example.com/recordingUrl/8",
+          "userId": "Primary User Id 8"
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Global Description 9",
+          "startTime": "2024-09-17",
+          "endTime": "2024-09-17",
+          "status": "active",
+          "meetingLink": "https://example.com/meetingLink/9",
+          "recordingUrl": "https://example.com/recordingUrl/9",
+          "userId": "Global User Id 9"
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Regional Description 10",
+          "startTime": "2024-10-19",
+          "endTime": "2024-10-19",
+          "status": "pending",
+          "meetingLink": "https://example.com/meetingLink/10",
+          "recordingUrl": "https://example.com/recordingUrl/10",
+          "userId": "Regional User Id 10"
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Custom Description 11",
+          "startTime": "2024-11-21",
+          "endTime": "2024-11-21",
+          "status": "completed",
+          "meetingLink": "https://example.com/meetingLink/11",
+          "recordingUrl": "https://example.com/recordingUrl/11",
+          "userId": "Custom User Id 11"
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Smart Description 12",
+          "startTime": "2024-12-23",
+          "endTime": "2024-12-23",
+          "status": "active",
+          "meetingLink": "https://example.com/meetingLink/12",
+          "recordingUrl": "https://example.com/recordingUrl/12",
+          "userId": "Smart User Id 12"
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Rapid Description 13",
+          "startTime": "2024-01-25",
+          "endTime": "2024-01-25",
+          "status": "in_progress",
+          "meetingLink": "https://example.com/meetingLink/13",
+          "recordingUrl": "https://example.com/recordingUrl/13",
+          "userId": "Rapid User Id 13"
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Secure Description 14",
+          "startTime": "2024-02-27",
+          "endTime": "2024-02-27",
+          "status": "active",
+          "meetingLink": "https://example.com/meetingLink/14",
+          "recordingUrl": "https://example.com/recordingUrl/14",
+          "userId": "Secure User Id 14"
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Modern Description 15",
+          "startTime": "2024-03-01",
+          "endTime": "2024-03-01",
+          "status": "approved",
+          "meetingLink": "https://example.com/meetingLink/15",
+          "recordingUrl": "https://example.com/recordingUrl/15",
+          "userId": "Modern User Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Participant",
+      "routeKey": "participants",
+      "label": "Participant",
+      "icon": "briefcase",
+      "aiFunction": "analyzeParticipant",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Participant data. The data includes: Name, Email, Role, Status, Meeting Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "meetingId",
+          "label": "Meeting Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "role": "Advanced Role 1",
+          "status": "active",
+          "meetingId": "Advanced Meeting Id 1"
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "role": "Premium Role 2",
+          "status": "pending",
+          "meetingId": "Premium Meeting Id 2"
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "role": "Standard Role 3",
+          "status": "in_progress",
+          "meetingId": "Standard Meeting Id 3"
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "role": "Elite Role 4",
+          "status": "completed",
+          "meetingId": "Elite Meeting Id 4"
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "role": "Core Role 5",
+          "status": "under_review",
+          "meetingId": "Core Meeting Id 5"
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "role": "Pro Role 6",
+          "status": "approved",
+          "meetingId": "Pro Meeting Id 6"
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "role": "Essential Role 7",
+          "status": "active",
+          "meetingId": "Essential Meeting Id 7"
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "role": "Primary Role 8",
+          "status": "active",
+          "meetingId": "Primary Meeting Id 8"
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "role": "Global Role 9",
+          "status": "active",
+          "meetingId": "Global Meeting Id 9"
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "role": "Regional Role 10",
+          "status": "pending",
+          "meetingId": "Regional Meeting Id 10"
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "role": "Custom Role 11",
+          "status": "completed",
+          "meetingId": "Custom Meeting Id 11"
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "role": "Smart Role 12",
+          "status": "active",
+          "meetingId": "Smart Meeting Id 12"
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "role": "Rapid Role 13",
+          "status": "in_progress",
+          "meetingId": "Rapid Meeting Id 13"
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "role": "Secure Role 14",
+          "status": "active",
+          "meetingId": "Secure Meeting Id 14"
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "role": "Modern Role 15",
+          "status": "approved",
+          "meetingId": "Modern Meeting Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "ActionItem",
+      "routeKey": "action-items",
+      "label": "Action Item",
+      "icon": "clipboard",
+      "aiFunction": "analyzeActionItem",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Action Item data. The data includes: Title, Description, Status, Priority, Due Date, Meeting Id, Assignee Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "meetingId",
+          "label": "Meeting Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assigneeId",
+          "label": "Assignee Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Advanced Description 1",
+          "status": "active",
+          "priority": "low",
+          "dueDate": "2024-01-01",
+          "meetingId": "Advanced Meeting Id 1",
+          "assigneeId": "Advanced Assignee Id 1"
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Premium Description 2",
+          "status": "pending",
+          "priority": "medium",
+          "dueDate": "2024-02-03",
+          "meetingId": "Premium Meeting Id 2",
+          "assigneeId": "Premium Assignee Id 2"
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Standard Description 3",
+          "status": "in_progress",
+          "priority": "high",
+          "dueDate": "2024-03-05",
+          "meetingId": "Standard Meeting Id 3",
+          "assigneeId": "Standard Assignee Id 3"
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Elite Description 4",
+          "status": "completed",
+          "priority": "critical",
+          "dueDate": "2024-04-07",
+          "meetingId": "Elite Meeting Id 4",
+          "assigneeId": "Elite Assignee Id 4"
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Core Description 5",
+          "status": "under_review",
+          "priority": "medium",
+          "dueDate": "2024-05-09",
+          "meetingId": "Core Meeting Id 5",
+          "assigneeId": "Core Assignee Id 5"
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "Pro Description 6",
+          "status": "approved",
+          "priority": "low",
+          "dueDate": "2024-06-11",
+          "meetingId": "Pro Meeting Id 6",
+          "assigneeId": "Pro Assignee Id 6"
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Essential Description 7",
+          "status": "active",
+          "priority": "medium",
+          "dueDate": "2024-07-13",
+          "meetingId": "Essential Meeting Id 7",
+          "assigneeId": "Essential Assignee Id 7"
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Primary Description 8",
+          "status": "active",
+          "priority": "high",
+          "dueDate": "2024-08-15",
+          "meetingId": "Primary Meeting Id 8",
+          "assigneeId": "Primary Assignee Id 8"
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Global Description 9",
+          "status": "active",
+          "priority": "critical",
+          "dueDate": "2024-09-17",
+          "meetingId": "Global Meeting Id 9",
+          "assigneeId": "Global Assignee Id 9"
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Regional Description 10",
+          "status": "pending",
+          "priority": "medium",
+          "dueDate": "2024-10-19",
+          "meetingId": "Regional Meeting Id 10",
+          "assigneeId": "Regional Assignee Id 10"
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Custom Description 11",
+          "status": "completed",
+          "priority": "low",
+          "dueDate": "2024-11-21",
+          "meetingId": "Custom Meeting Id 11",
+          "assigneeId": "Custom Assignee Id 11"
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Smart Description 12",
+          "status": "active",
+          "priority": "medium",
+          "dueDate": "2024-12-23",
+          "meetingId": "Smart Meeting Id 12",
+          "assigneeId": "Smart Assignee Id 12"
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Rapid Description 13",
+          "status": "in_progress",
+          "priority": "high",
+          "dueDate": "2024-01-25",
+          "meetingId": "Rapid Meeting Id 13",
+          "assigneeId": "Rapid Assignee Id 13"
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Secure Description 14",
+          "status": "active",
+          "priority": "critical",
+          "dueDate": "2024-02-27",
+          "meetingId": "Secure Meeting Id 14",
+          "assigneeId": "Secure Assignee Id 14"
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Modern Description 15",
+          "status": "approved",
+          "priority": "medium",
+          "dueDate": "2024-03-01",
+          "meetingId": "Modern Meeting Id 15",
+          "assigneeId": "Modern Assignee Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "MeetingNote",
+      "routeKey": "meeting-notes",
+      "label": "Meeting Note",
+      "icon": "database",
+      "aiFunction": "analyzeMeetingNote",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Meeting Note data. The data includes: Content, Type, Meeting Id, Author Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "meetingId",
+          "label": "Meeting Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "authorId",
+          "label": "Author Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "content": "Advanced Content 1",
+          "type": "Category A",
+          "meetingId": "Advanced Meeting Id 1",
+          "authorId": "Advanced Author Id 1"
+        },
+        {
+          "content": "Premium Content 2",
+          "type": "Category B",
+          "meetingId": "Premium Meeting Id 2",
+          "authorId": "Premium Author Id 2"
+        },
+        {
+          "content": "Standard Content 3",
+          "type": "Category C",
+          "meetingId": "Standard Meeting Id 3",
+          "authorId": "Standard Author Id 3"
+        },
+        {
+          "content": "Elite Content 4",
+          "type": "Category D",
+          "meetingId": "Elite Meeting Id 4",
+          "authorId": "Elite Author Id 4"
+        },
+        {
+          "content": "Core Content 5",
+          "type": "Category E",
+          "meetingId": "Core Meeting Id 5",
+          "authorId": "Core Author Id 5"
+        },
+        {
+          "content": "Pro Content 6",
+          "type": "Premium Tier",
+          "meetingId": "Pro Meeting Id 6",
+          "authorId": "Pro Author Id 6"
+        },
+        {
+          "content": "Essential Content 7",
+          "type": "Standard Tier",
+          "meetingId": "Essential Meeting Id 7",
+          "authorId": "Essential Author Id 7"
+        },
+        {
+          "content": "Primary Content 8",
+          "type": "Basic Tier",
+          "meetingId": "Primary Meeting Id 8",
+          "authorId": "Primary Author Id 8"
+        },
+        {
+          "content": "Global Content 9",
+          "type": "Enterprise",
+          "meetingId": "Global Meeting Id 9",
+          "authorId": "Global Author Id 9"
+        },
+        {
+          "content": "Regional Content 10",
+          "type": "Starter",
+          "meetingId": "Regional Meeting Id 10",
+          "authorId": "Regional Author Id 10"
+        },
+        {
+          "content": "Custom Content 11",
+          "type": "Growth",
+          "meetingId": "Custom Meeting Id 11",
+          "authorId": "Custom Author Id 11"
+        },
+        {
+          "content": "Smart Content 12",
+          "type": "Scale",
+          "meetingId": "Smart Meeting Id 12",
+          "authorId": "Smart Author Id 12"
+        },
+        {
+          "content": "Rapid Content 13",
+          "type": "Foundation",
+          "meetingId": "Rapid Meeting Id 13",
+          "authorId": "Rapid Author Id 13"
+        },
+        {
+          "content": "Secure Content 14",
+          "type": "Advanced",
+          "meetingId": "Secure Meeting Id 14",
+          "authorId": "Secure Author Id 14"
+        },
+        {
+          "content": "Modern Content 15",
+          "type": "Professional",
+          "meetingId": "Modern Meeting Id 15",
+          "authorId": "Modern Author Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Transcript",
+      "routeKey": "transcripts",
+      "label": "Transcript",
+      "icon": "file-text",
+      "aiFunction": "analyzeTranscript",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Transcript data. The data includes: Content, Language, Duration, Meeting Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "language",
+          "label": "Language",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "duration",
+          "label": "Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "meetingId",
+          "label": "Meeting Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "content": "Advanced Content 1",
+          "language": "Advanced Language 1",
+          "duration": 10,
+          "meetingId": "Advanced Meeting Id 1"
+        },
+        {
+          "content": "Premium Content 2",
+          "language": "Premium Language 2",
+          "duration": 58,
+          "meetingId": "Premium Meeting Id 2"
+        },
+        {
+          "content": "Standard Content 3",
+          "language": "Standard Language 3",
+          "duration": 106,
+          "meetingId": "Standard Meeting Id 3"
+        },
+        {
+          "content": "Elite Content 4",
+          "language": "Elite Language 4",
+          "duration": 154,
+          "meetingId": "Elite Meeting Id 4"
+        },
+        {
+          "content": "Core Content 5",
+          "language": "Core Language 5",
+          "duration": 102,
+          "meetingId": "Core Meeting Id 5"
+        },
+        {
+          "content": "Pro Content 6",
+          "language": "Pro Language 6",
+          "duration": 150,
+          "meetingId": "Pro Meeting Id 6"
+        },
+        {
+          "content": "Essential Content 7",
+          "language": "Essential Language 7",
+          "duration": 198,
+          "meetingId": "Essential Meeting Id 7"
+        },
+        {
+          "content": "Primary Content 8",
+          "language": "Primary Language 8",
+          "duration": 146,
+          "meetingId": "Primary Meeting Id 8"
+        },
+        {
+          "content": "Global Content 9",
+          "language": "Global Language 9",
+          "duration": 194,
+          "meetingId": "Global Meeting Id 9"
+        },
+        {
+          "content": "Regional Content 10",
+          "language": "Regional Language 10",
+          "duration": 242,
+          "meetingId": "Regional Meeting Id 10"
+        },
+        {
+          "content": "Custom Content 11",
+          "language": "Custom Language 11",
+          "duration": 190,
+          "meetingId": "Custom Meeting Id 11"
+        },
+        {
+          "content": "Smart Content 12",
+          "language": "Smart Language 12",
+          "duration": 238,
+          "meetingId": "Smart Meeting Id 12"
+        },
+        {
+          "content": "Rapid Content 13",
+          "language": "Rapid Language 13",
+          "duration": 286,
+          "meetingId": "Rapid Meeting Id 13"
+        },
+        {
+          "content": "Secure Content 14",
+          "language": "Secure Language 14",
+          "duration": 234,
+          "meetingId": "Secure Meeting Id 14"
+        },
+        {
+          "content": "Modern Content 15",
+          "language": "Modern Language 15",
+          "duration": 282,
+          "meetingId": "Modern Meeting Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "AgendaItem",
+      "routeKey": "agenda-items",
+      "label": "Agenda Item",
+      "icon": "heart",
+      "aiFunction": "analyzeAgendaItem",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Agenda Item data. The data includes: Title, Description, Duration, Order, Status, Meeting Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "duration",
+          "label": "Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "order",
+          "label": "Order",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "meetingId",
+          "label": "Meeting Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Advanced Description 1",
+          "duration": 10,
+          "order": 10,
+          "status": "active",
+          "meetingId": "Advanced Meeting Id 1"
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Premium Description 2",
+          "duration": 58,
+          "order": 58,
+          "status": "pending",
+          "meetingId": "Premium Meeting Id 2"
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Standard Description 3",
+          "duration": 106,
+          "order": 106,
+          "status": "in_progress",
+          "meetingId": "Standard Meeting Id 3"
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Elite Description 4",
+          "duration": 154,
+          "order": 154,
+          "status": "completed",
+          "meetingId": "Elite Meeting Id 4"
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Core Description 5",
+          "duration": 102,
+          "order": 102,
+          "status": "under_review",
+          "meetingId": "Core Meeting Id 5"
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "Pro Description 6",
+          "duration": 150,
+          "order": 150,
+          "status": "approved",
+          "meetingId": "Pro Meeting Id 6"
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Essential Description 7",
+          "duration": 198,
+          "order": 198,
+          "status": "active",
+          "meetingId": "Essential Meeting Id 7"
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Primary Description 8",
+          "duration": 146,
+          "order": 146,
+          "status": "active",
+          "meetingId": "Primary Meeting Id 8"
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Global Description 9",
+          "duration": 194,
+          "order": 194,
+          "status": "active",
+          "meetingId": "Global Meeting Id 9"
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Regional Description 10",
+          "duration": 242,
+          "order": 242,
+          "status": "pending",
+          "meetingId": "Regional Meeting Id 10"
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Custom Description 11",
+          "duration": 190,
+          "order": 190,
+          "status": "completed",
+          "meetingId": "Custom Meeting Id 11"
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Smart Description 12",
+          "duration": 238,
+          "order": 238,
+          "status": "active",
+          "meetingId": "Smart Meeting Id 12"
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Rapid Description 13",
+          "duration": 286,
+          "order": 286,
+          "status": "in_progress",
+          "meetingId": "Rapid Meeting Id 13"
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Secure Description 14",
+          "duration": 234,
+          "order": 234,
+          "status": "active",
+          "meetingId": "Secure Meeting Id 14"
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Modern Description 15",
+          "duration": 282,
+          "order": 282,
+          "status": "approved",
+          "meetingId": "Modern Meeting Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Decision",
+      "routeKey": "decisions",
+      "label": "Decision",
+      "icon": "layers",
+      "aiFunction": "analyzeDecision",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Decision data. The data includes: Title, Description, Status, Made By, Meeting Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "madeBy",
+          "label": "Made By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "meetingId",
+          "label": "Meeting Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Advanced Description 1",
+          "status": "active",
+          "madeBy": "Advanced Made By 1",
+          "meetingId": "Advanced Meeting Id 1"
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Premium Description 2",
+          "status": "pending",
+          "madeBy": "Premium Made By 2",
+          "meetingId": "Premium Meeting Id 2"
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Standard Description 3",
+          "status": "in_progress",
+          "madeBy": "Standard Made By 3",
+          "meetingId": "Standard Meeting Id 3"
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Elite Description 4",
+          "status": "completed",
+          "madeBy": "Elite Made By 4",
+          "meetingId": "Elite Meeting Id 4"
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Core Description 5",
+          "status": "under_review",
+          "madeBy": "Core Made By 5",
+          "meetingId": "Core Meeting Id 5"
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "Pro Description 6",
+          "status": "approved",
+          "madeBy": "Pro Made By 6",
+          "meetingId": "Pro Meeting Id 6"
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Essential Description 7",
+          "status": "active",
+          "madeBy": "Essential Made By 7",
+          "meetingId": "Essential Meeting Id 7"
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Primary Description 8",
+          "status": "active",
+          "madeBy": "Primary Made By 8",
+          "meetingId": "Primary Meeting Id 8"
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Global Description 9",
+          "status": "active",
+          "madeBy": "Global Made By 9",
+          "meetingId": "Global Meeting Id 9"
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Regional Description 10",
+          "status": "pending",
+          "madeBy": "Regional Made By 10",
+          "meetingId": "Regional Meeting Id 10"
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Custom Description 11",
+          "status": "completed",
+          "madeBy": "Custom Made By 11",
+          "meetingId": "Custom Meeting Id 11"
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Smart Description 12",
+          "status": "active",
+          "madeBy": "Smart Made By 12",
+          "meetingId": "Smart Meeting Id 12"
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Rapid Description 13",
+          "status": "in_progress",
+          "madeBy": "Rapid Made By 13",
+          "meetingId": "Rapid Meeting Id 13"
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Secure Description 14",
+          "status": "active",
+          "madeBy": "Secure Made By 14",
+          "meetingId": "Secure Meeting Id 14"
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Modern Description 15",
+          "status": "approved",
+          "madeBy": "Modern Made By 15",
+          "meetingId": "Modern Meeting Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "FollowUp",
+      "routeKey": "follow-ups",
+      "label": "Follow Up",
+      "icon": "map-pin",
+      "aiFunction": "analyzeFollowUp",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Follow Up data. The data includes: Title, Description, Due Date, Assignee, Status, Meeting Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "assignee",
+          "label": "Assignee",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "meetingId",
+          "label": "Meeting Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Advanced Description 1",
+          "dueDate": "2024-01-01",
+          "assignee": "Advanced Assignee 1",
+          "status": "active",
+          "meetingId": "Advanced Meeting Id 1"
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Premium Description 2",
+          "dueDate": "2024-02-03",
+          "assignee": "Premium Assignee 2",
+          "status": "pending",
+          "meetingId": "Premium Meeting Id 2"
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Standard Description 3",
+          "dueDate": "2024-03-05",
+          "assignee": "Standard Assignee 3",
+          "status": "in_progress",
+          "meetingId": "Standard Meeting Id 3"
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Elite Description 4",
+          "dueDate": "2024-04-07",
+          "assignee": "Elite Assignee 4",
+          "status": "completed",
+          "meetingId": "Elite Meeting Id 4"
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Core Description 5",
+          "dueDate": "2024-05-09",
+          "assignee": "Core Assignee 5",
+          "status": "under_review",
+          "meetingId": "Core Meeting Id 5"
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "Pro Description 6",
+          "dueDate": "2024-06-11",
+          "assignee": "Pro Assignee 6",
+          "status": "approved",
+          "meetingId": "Pro Meeting Id 6"
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Essential Description 7",
+          "dueDate": "2024-07-13",
+          "assignee": "Essential Assignee 7",
+          "status": "active",
+          "meetingId": "Essential Meeting Id 7"
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Primary Description 8",
+          "dueDate": "2024-08-15",
+          "assignee": "Primary Assignee 8",
+          "status": "active",
+          "meetingId": "Primary Meeting Id 8"
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Global Description 9",
+          "dueDate": "2024-09-17",
+          "assignee": "Global Assignee 9",
+          "status": "active",
+          "meetingId": "Global Meeting Id 9"
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Regional Description 10",
+          "dueDate": "2024-10-19",
+          "assignee": "Regional Assignee 10",
+          "status": "pending",
+          "meetingId": "Regional Meeting Id 10"
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Custom Description 11",
+          "dueDate": "2024-11-21",
+          "assignee": "Custom Assignee 11",
+          "status": "completed",
+          "meetingId": "Custom Meeting Id 11"
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Smart Description 12",
+          "dueDate": "2024-12-23",
+          "assignee": "Smart Assignee 12",
+          "status": "active",
+          "meetingId": "Smart Meeting Id 12"
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Rapid Description 13",
+          "dueDate": "2024-01-25",
+          "assignee": "Rapid Assignee 13",
+          "status": "in_progress",
+          "meetingId": "Rapid Meeting Id 13"
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Secure Description 14",
+          "dueDate": "2024-02-27",
+          "assignee": "Secure Assignee 14",
+          "status": "active",
+          "meetingId": "Secure Meeting Id 14"
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Modern Description 15",
+          "dueDate": "2024-03-01",
+          "assignee": "Modern Assignee 15",
+          "status": "approved",
+          "meetingId": "Modern Meeting Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "AIInsight",
+      "routeKey": "a-i-insights",
+      "label": "A I Insight",
+      "icon": "package",
+      "aiFunction": "analyzeAIInsight",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided A I Insight data. The data includes: Type, Content, Confidence, Meeting Id, User Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "confidence",
+          "label": "Confidence",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "meetingId",
+          "label": "Meeting Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "type": "Category A",
+          "content": "Advanced Content 1",
+          "confidence": 10,
+          "meetingId": "Advanced Meeting Id 1",
+          "userId": "Advanced User Id 1"
+        },
+        {
+          "type": "Category B",
+          "content": "Premium Content 2",
+          "confidence": 71.7,
+          "meetingId": "Premium Meeting Id 2",
+          "userId": "Premium User Id 2"
+        },
+        {
+          "type": "Category C",
+          "content": "Standard Content 3",
+          "confidence": 33.4,
+          "meetingId": "Standard Meeting Id 3",
+          "userId": "Standard User Id 3"
+        },
+        {
+          "type": "Category D",
+          "content": "Elite Content 4",
+          "confidence": 95.1,
+          "meetingId": "Elite Meeting Id 4",
+          "userId": "Elite User Id 4"
+        },
+        {
+          "type": "Category E",
+          "content": "Core Content 5",
+          "confidence": 56.8,
+          "meetingId": "Core Meeting Id 5",
+          "userId": "Core User Id 5"
+        },
+        {
+          "type": "Premium Tier",
+          "content": "Pro Content 6",
+          "confidence": 118.5,
+          "meetingId": "Pro Meeting Id 6",
+          "userId": "Pro User Id 6"
+        },
+        {
+          "type": "Standard Tier",
+          "content": "Essential Content 7",
+          "confidence": 80.2,
+          "meetingId": "Essential Meeting Id 7",
+          "userId": "Essential User Id 7"
+        },
+        {
+          "type": "Basic Tier",
+          "content": "Primary Content 8",
+          "confidence": 141.9,
+          "meetingId": "Primary Meeting Id 8",
+          "userId": "Primary User Id 8"
+        },
+        {
+          "type": "Enterprise",
+          "content": "Global Content 9",
+          "confidence": 103.6,
+          "meetingId": "Global Meeting Id 9",
+          "userId": "Global User Id 9"
+        },
+        {
+          "type": "Starter",
+          "content": "Regional Content 10",
+          "confidence": 165.3,
+          "meetingId": "Regional Meeting Id 10",
+          "userId": "Regional User Id 10"
+        },
+        {
+          "type": "Growth",
+          "content": "Custom Content 11",
+          "confidence": 127,
+          "meetingId": "Custom Meeting Id 11",
+          "userId": "Custom User Id 11"
+        },
+        {
+          "type": "Scale",
+          "content": "Smart Content 12",
+          "confidence": 188.7,
+          "meetingId": "Smart Meeting Id 12",
+          "userId": "Smart User Id 12"
+        },
+        {
+          "type": "Foundation",
+          "content": "Rapid Content 13",
+          "confidence": 150.4,
+          "meetingId": "Rapid Meeting Id 13",
+          "userId": "Rapid User Id 13"
+        },
+        {
+          "type": "Advanced",
+          "content": "Secure Content 14",
+          "confidence": 212.1,
+          "meetingId": "Secure Meeting Id 14",
+          "userId": "Secure User Id 14"
+        },
+        {
+          "type": "Professional",
+          "content": "Modern Content 15",
+          "confidence": 173.8,
+          "meetingId": "Modern Meeting Id 15",
+          "userId": "Modern User Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "MeetingTemplate",
+      "routeKey": "meeting-templates",
+      "label": "Meeting Template",
+      "icon": "shield",
+      "aiFunction": "analyzeMeetingTemplate",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Meeting Template data. The data includes: Name, Description, Duration, Agenda Items, Is Public. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "duration",
+          "label": "Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "agendaItems",
+          "label": "Agenda Items",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "isPublic",
+          "label": "Is Public",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Advanced Description 1",
+          "duration": 10,
+          "agendaItems": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "isPublic": true
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Premium Description 2",
+          "duration": 58,
+          "agendaItems": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "isPublic": true
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Standard Description 3",
+          "duration": 106,
+          "agendaItems": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "isPublic": false
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Elite Description 4",
+          "duration": 154,
+          "agendaItems": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "isPublic": true
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Core Description 5",
+          "duration": 102,
+          "agendaItems": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "isPublic": false
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "Pro Description 6",
+          "duration": 150,
+          "agendaItems": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "isPublic": true
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Essential Description 7",
+          "duration": 198,
+          "agendaItems": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "isPublic": true
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Primary Description 8",
+          "duration": 146,
+          "agendaItems": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "isPublic": false
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Global Description 9",
+          "duration": 194,
+          "agendaItems": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "isPublic": true
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Regional Description 10",
+          "duration": 242,
+          "agendaItems": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "isPublic": true
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Custom Description 11",
+          "duration": 190,
+          "agendaItems": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "isPublic": false
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Smart Description 12",
+          "duration": 238,
+          "agendaItems": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "isPublic": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Rapid Description 13",
+          "duration": 286,
+          "agendaItems": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "isPublic": false
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Secure Description 14",
+          "duration": 234,
+          "agendaItems": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "isPublic": true
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Modern Description 15",
+          "duration": 282,
+          "agendaItems": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "isPublic": true
+        }
+      ]
+    },
+    {
+      "modelName": "Integration",
+      "routeKey": "integrations",
+      "label": "Integration",
+      "icon": "star",
+      "aiFunction": "analyzeIntegration",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Integration data. The data includes: Name, Type, Status, Config. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "config",
+          "label": "Config",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "status": "active",
+          "config": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "status": "pending",
+          "config": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "status": "in_progress",
+          "config": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "status": "completed",
+          "config": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "status": "under_review",
+          "config": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "status": "approved",
+          "config": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "status": "active",
+          "config": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "status": "active",
+          "config": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "status": "active",
+          "config": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "status": "pending",
+          "config": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "status": "completed",
+          "config": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "status": "active",
+          "config": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "status": "in_progress",
+          "config": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "status": "active",
+          "config": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "status": "approved",
+          "config": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "Notification",
+      "routeKey": "notifications",
+      "label": "Notification",
+      "icon": "truck",
+      "aiFunction": "analyzeNotification",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Notification data. The data includes: Title, Message, Type, Status, User Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "message": "Advanced Message 1",
+          "type": "Category A",
+          "status": "active",
+          "userId": "Advanced User Id 1"
+        },
+        {
+          "title": "Premium Title 2",
+          "message": "Premium Message 2",
+          "type": "Category B",
+          "status": "pending",
+          "userId": "Premium User Id 2"
+        },
+        {
+          "title": "Standard Title 3",
+          "message": "Standard Message 3",
+          "type": "Category C",
+          "status": "in_progress",
+          "userId": "Standard User Id 3"
+        },
+        {
+          "title": "Elite Title 4",
+          "message": "Elite Message 4",
+          "type": "Category D",
+          "status": "completed",
+          "userId": "Elite User Id 4"
+        },
+        {
+          "title": "Core Title 5",
+          "message": "Core Message 5",
+          "type": "Category E",
+          "status": "under_review",
+          "userId": "Core User Id 5"
+        },
+        {
+          "title": "Pro Title 6",
+          "message": "Pro Message 6",
+          "type": "Premium Tier",
+          "status": "approved",
+          "userId": "Pro User Id 6"
+        },
+        {
+          "title": "Essential Title 7",
+          "message": "Essential Message 7",
+          "type": "Standard Tier",
+          "status": "active",
+          "userId": "Essential User Id 7"
+        },
+        {
+          "title": "Primary Title 8",
+          "message": "Primary Message 8",
+          "type": "Basic Tier",
+          "status": "active",
+          "userId": "Primary User Id 8"
+        },
+        {
+          "title": "Global Title 9",
+          "message": "Global Message 9",
+          "type": "Enterprise",
+          "status": "active",
+          "userId": "Global User Id 9"
+        },
+        {
+          "title": "Regional Title 10",
+          "message": "Regional Message 10",
+          "type": "Starter",
+          "status": "pending",
+          "userId": "Regional User Id 10"
+        },
+        {
+          "title": "Custom Title 11",
+          "message": "Custom Message 11",
+          "type": "Growth",
+          "status": "completed",
+          "userId": "Custom User Id 11"
+        },
+        {
+          "title": "Smart Title 12",
+          "message": "Smart Message 12",
+          "type": "Scale",
+          "status": "active",
+          "userId": "Smart User Id 12"
+        },
+        {
+          "title": "Rapid Title 13",
+          "message": "Rapid Message 13",
+          "type": "Foundation",
+          "status": "in_progress",
+          "userId": "Rapid User Id 13"
+        },
+        {
+          "title": "Secure Title 14",
+          "message": "Secure Message 14",
+          "type": "Advanced",
+          "status": "active",
+          "userId": "Secure User Id 14"
+        },
+        {
+          "title": "Modern Title 15",
+          "message": "Modern Message 15",
+          "type": "Professional",
+          "status": "approved",
+          "userId": "Modern User Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Analytics",
+      "routeKey": "analytics",
+      "label": "Analytics",
+      "icon": "users",
+      "aiFunction": "analyzeAnalytics",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Analytics data. The data includes: Period, Meetings Count, Avg Duration, Action Items Rate, Attendance Rate, Data. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "period",
+          "label": "Period",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "meetingsCount",
+          "label": "Meetings Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "avgDuration",
+          "label": "Avg Duration",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "actionItemsRate",
+          "label": "Action Items Rate",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "attendanceRate",
+          "label": "Attendance Rate",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "data",
+          "label": "Data",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "period": "Advanced Period 1",
+          "meetingsCount": 11,
+          "avgDuration": 1.5,
+          "actionItemsRate": 1.5,
+          "attendanceRate": 1.5,
+          "data": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "period": "Premium Period 2",
+          "meetingsCount": 124,
+          "avgDuration": 2.1,
+          "actionItemsRate": 2.1,
+          "attendanceRate": 2.1,
+          "data": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "period": "Standard Period 3",
+          "meetingsCount": 37,
+          "avgDuration": 2.7,
+          "actionItemsRate": 2.7,
+          "attendanceRate": 2.7,
+          "data": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "period": "Elite Period 4",
+          "meetingsCount": 40,
+          "avgDuration": 3.3,
+          "actionItemsRate": 3.3,
+          "attendanceRate": 3.3,
+          "data": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "period": "Core Period 5",
+          "meetingsCount": 174,
+          "avgDuration": 3.9,
+          "actionItemsRate": 3.9,
+          "attendanceRate": 3.9,
+          "data": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "period": "Pro Period 6",
+          "meetingsCount": 144,
+          "avgDuration": 4.5,
+          "actionItemsRate": 4.5,
+          "attendanceRate": 4.5,
+          "data": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "period": "Essential Period 7",
+          "meetingsCount": 135,
+          "avgDuration": 5.1,
+          "actionItemsRate": 5.1,
+          "attendanceRate": 5.1,
+          "data": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "period": "Primary Period 8",
+          "meetingsCount": 117,
+          "avgDuration": 5.7,
+          "actionItemsRate": 5.7,
+          "attendanceRate": 5.7,
+          "data": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "period": "Global Period 9",
+          "meetingsCount": 199,
+          "avgDuration": 6.3,
+          "actionItemsRate": 6.3,
+          "attendanceRate": 6.3,
+          "data": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "period": "Regional Period 10",
+          "meetingsCount": 233,
+          "avgDuration": 1.9,
+          "actionItemsRate": 1.9,
+          "attendanceRate": 1.9,
+          "data": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "period": "Custom Period 11",
+          "meetingsCount": 201,
+          "avgDuration": 2.5,
+          "actionItemsRate": 2.5,
+          "attendanceRate": 2.5,
+          "data": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "period": "Smart Period 12",
+          "meetingsCount": 187,
+          "avgDuration": 3.1,
+          "actionItemsRate": 3.1,
+          "attendanceRate": 3.1,
+          "data": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "period": "Rapid Period 13",
+          "meetingsCount": 145,
+          "avgDuration": 3.7,
+          "actionItemsRate": 3.7,
+          "attendanceRate": 3.7,
+          "data": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "period": "Secure Period 14",
+          "meetingsCount": 229,
+          "avgDuration": 4.3,
+          "actionItemsRate": 4.3,
+          "attendanceRate": 4.3,
+          "data": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "period": "Modern Period 15",
+          "meetingsCount": 254,
+          "avgDuration": 4.9,
+          "actionItemsRate": 4.9,
+          "attendanceRate": 4.9,
+          "data": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "CalendarEvent",
+      "routeKey": "calendar-events",
+      "label": "Calendar Event",
+      "icon": "zap",
+      "aiFunction": "analyzeCalendarEvent",
+      "aiPrompt": "You are an AI analyst for Ai Meeting Agent. Analyze the provided Calendar Event data. The data includes: Title, Description, Start Time, End Time, Location, Is All Day, Recurrence, Reminders, External Id, Source. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isAllDay",
+          "label": "Is All Day",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "recurrence",
+          "label": "Recurrence",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reminders",
+          "label": "Reminders",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "externalId",
+          "label": "External Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Advanced Description 1",
+          "startTime": "2024-01-01",
+          "endTime": "2024-01-01",
+          "location": "New York",
+          "isAllDay": true,
+          "recurrence": "Advanced Recurrence 1",
+          "reminders": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "externalId": "Advanced External Id 1",
+          "source": "Advanced Source 1"
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Premium Description 2",
+          "startTime": "2024-02-03",
+          "endTime": "2024-02-03",
+          "location": "Los Angeles",
+          "isAllDay": true,
+          "recurrence": "Premium Recurrence 2",
+          "reminders": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "externalId": "Premium External Id 2",
+          "source": "Premium Source 2"
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Standard Description 3",
+          "startTime": "2024-03-05",
+          "endTime": "2024-03-05",
+          "location": "Chicago",
+          "isAllDay": false,
+          "recurrence": "Standard Recurrence 3",
+          "reminders": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "externalId": "Standard External Id 3",
+          "source": "Standard Source 3"
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Elite Description 4",
+          "startTime": "2024-04-07",
+          "endTime": "2024-04-07",
+          "location": "Houston",
+          "isAllDay": true,
+          "recurrence": "Elite Recurrence 4",
+          "reminders": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "externalId": "Elite External Id 4",
+          "source": "Elite Source 4"
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Core Description 5",
+          "startTime": "2024-05-09",
+          "endTime": "2024-05-09",
+          "location": "Phoenix",
+          "isAllDay": false,
+          "recurrence": "Core Recurrence 5",
+          "reminders": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "externalId": "Core External Id 5",
+          "source": "Core Source 5"
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "Pro Description 6",
+          "startTime": "2024-06-11",
+          "endTime": "2024-06-11",
+          "location": "San Francisco",
+          "isAllDay": true,
+          "recurrence": "Pro Recurrence 6",
+          "reminders": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "externalId": "Pro External Id 6",
+          "source": "Pro Source 6"
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Essential Description 7",
+          "startTime": "2024-07-13",
+          "endTime": "2024-07-13",
+          "location": "Seattle",
+          "isAllDay": true,
+          "recurrence": "Essential Recurrence 7",
+          "reminders": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "externalId": "Essential External Id 7",
+          "source": "Essential Source 7"
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Primary Description 8",
+          "startTime": "2024-08-15",
+          "endTime": "2024-08-15",
+          "location": "Boston",
+          "isAllDay": false,
+          "recurrence": "Primary Recurrence 8",
+          "reminders": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "externalId": "Primary External Id 8",
+          "source": "Primary Source 8"
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Global Description 9",
+          "startTime": "2024-09-17",
+          "endTime": "2024-09-17",
+          "location": "Denver",
+          "isAllDay": true,
+          "recurrence": "Global Recurrence 9",
+          "reminders": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "externalId": "Global External Id 9",
+          "source": "Global Source 9"
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Regional Description 10",
+          "startTime": "2024-10-19",
+          "endTime": "2024-10-19",
+          "location": "Miami",
+          "isAllDay": true,
+          "recurrence": "Regional Recurrence 10",
+          "reminders": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "externalId": "Regional External Id 10",
+          "source": "Regional Source 10"
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Custom Description 11",
+          "startTime": "2024-11-21",
+          "endTime": "2024-11-21",
+          "location": "Austin",
+          "isAllDay": false,
+          "recurrence": "Custom Recurrence 11",
+          "reminders": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "externalId": "Custom External Id 11",
+          "source": "Custom Source 11"
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Smart Description 12",
+          "startTime": "2024-12-23",
+          "endTime": "2024-12-23",
+          "location": "Portland",
+          "isAllDay": true,
+          "recurrence": "Smart Recurrence 12",
+          "reminders": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "externalId": "Smart External Id 12",
+          "source": "Smart Source 12"
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Rapid Description 13",
+          "startTime": "2024-01-25",
+          "endTime": "2024-01-25",
+          "location": "Dallas",
+          "isAllDay": false,
+          "recurrence": "Rapid Recurrence 13",
+          "reminders": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "externalId": "Rapid External Id 13",
+          "source": "Rapid Source 13"
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Secure Description 14",
+          "startTime": "2024-02-27",
+          "endTime": "2024-02-27",
+          "location": "Atlanta",
+          "isAllDay": true,
+          "recurrence": "Secure Recurrence 14",
+          "reminders": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "externalId": "Secure External Id 14",
+          "source": "Secure Source 14"
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Modern Description 15",
+          "startTime": "2024-03-01",
+          "endTime": "2024-03-01",
+          "location": "Nashville",
+          "isAllDay": true,
+          "recurrence": "Modern Recurrence 15",
+          "reminders": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "externalId": "Modern External Id 15",
+          "source": "Modern Source 15"
+        }
+      ]
+    }
+  ]
+}

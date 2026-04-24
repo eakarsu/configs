@@ -1,0 +1,889 @@
+{
+  "appName": "Non Profit Shield",
+  "dbName": "non_profit_shield",
+  "folderName": "generated/NonProfitShield",
+  "features": [
+    {
+      "modelName": "Policie",
+      "routeKey": "policies",
+      "label": "Policie",
+      "icon": "activity",
+      "aiFunction": "analyzePolicie",
+      "aiPrompt": "You are an AI analyst for Non Profit Shield. Analyze the provided Policie data. The data includes: User Id, Type, Status, Coverage Amount, Monthly Premium, Deductible, Start Date, End Date, Vehicle Info, Property Info. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "coverageAmount",
+          "label": "Coverage Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "monthlyPremium",
+          "label": "Monthly Premium",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "deductible",
+          "label": "Deductible",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "vehicleInfo",
+          "label": "Vehicle Info",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "propertyInfo",
+          "label": "Property Info",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": "Advanced User Id 1",
+          "type": "Category A",
+          "status": "active",
+          "coverageAmount": 500,
+          "monthlyPremium": 10,
+          "deductible": 10,
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "vehicleInfo": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "propertyInfo": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "userId": "Premium User Id 2",
+          "type": "Category B",
+          "status": "pending",
+          "coverageAmount": 2481,
+          "monthlyPremium": 71.7,
+          "deductible": 71.7,
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "vehicleInfo": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "propertyInfo": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "userId": "Standard User Id 3",
+          "type": "Category C",
+          "status": "in_progress",
+          "coverageAmount": 4462,
+          "monthlyPremium": 33.4,
+          "deductible": 33.4,
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "vehicleInfo": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "propertyInfo": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "userId": "Elite User Id 4",
+          "type": "Category D",
+          "status": "completed",
+          "coverageAmount": 6443,
+          "monthlyPremium": 95.1,
+          "deductible": 95.1,
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "vehicleInfo": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "propertyInfo": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "userId": "Core User Id 5",
+          "type": "Category E",
+          "status": "under_review",
+          "coverageAmount": 8424,
+          "monthlyPremium": 56.8,
+          "deductible": 56.8,
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "vehicleInfo": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "propertyInfo": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "userId": "Pro User Id 6",
+          "type": "Premium Tier",
+          "status": "approved",
+          "coverageAmount": 10405,
+          "monthlyPremium": 118.5,
+          "deductible": 118.5,
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "vehicleInfo": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "propertyInfo": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "userId": "Essential User Id 7",
+          "type": "Standard Tier",
+          "status": "active",
+          "coverageAmount": 12386,
+          "monthlyPremium": 80.2,
+          "deductible": 80.2,
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "vehicleInfo": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "propertyInfo": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "userId": "Primary User Id 8",
+          "type": "Basic Tier",
+          "status": "active",
+          "coverageAmount": 9367,
+          "monthlyPremium": 141.9,
+          "deductible": 141.9,
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "vehicleInfo": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "propertyInfo": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "userId": "Global User Id 9",
+          "type": "Enterprise",
+          "status": "active",
+          "coverageAmount": 11348,
+          "monthlyPremium": 103.6,
+          "deductible": 103.6,
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "vehicleInfo": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "propertyInfo": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "userId": "Regional User Id 10",
+          "type": "Starter",
+          "status": "pending",
+          "coverageAmount": 13329,
+          "monthlyPremium": 165.3,
+          "deductible": 165.3,
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "vehicleInfo": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "propertyInfo": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "userId": "Custom User Id 11",
+          "type": "Growth",
+          "status": "completed",
+          "coverageAmount": 15310,
+          "monthlyPremium": 127,
+          "deductible": 127,
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "vehicleInfo": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "propertyInfo": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "userId": "Smart User Id 12",
+          "type": "Scale",
+          "status": "active",
+          "coverageAmount": 17291,
+          "monthlyPremium": 188.7,
+          "deductible": 188.7,
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "vehicleInfo": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "propertyInfo": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "userId": "Rapid User Id 13",
+          "type": "Foundation",
+          "status": "in_progress",
+          "coverageAmount": 19272,
+          "monthlyPremium": 150.4,
+          "deductible": 150.4,
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "vehicleInfo": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "propertyInfo": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "userId": "Secure User Id 14",
+          "type": "Advanced",
+          "status": "active",
+          "coverageAmount": 21253,
+          "monthlyPremium": 212.1,
+          "deductible": 212.1,
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "vehicleInfo": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "propertyInfo": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "userId": "Modern User Id 15",
+          "type": "Professional",
+          "status": "approved",
+          "coverageAmount": 18234,
+          "monthlyPremium": 173.8,
+          "deductible": 173.8,
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "vehicleInfo": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "propertyInfo": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "Claim",
+      "routeKey": "claims",
+      "label": "Claim",
+      "icon": "briefcase",
+      "aiFunction": "analyzeClaim",
+      "aiPrompt": "You are an AI analyst for Non Profit Shield. Analyze the provided Claim data. The data includes: User Id, Policy Id, Title, Description, Status, Estimated Amount, Approved Amount, Paid Amount, Images, Ai Assessment, Incident Date, Submitted At, Processed At, Paid At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "policyId",
+          "label": "Policy Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "estimatedAmount",
+          "label": "Estimated Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "approvedAmount",
+          "label": "Approved Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "paidAmount",
+          "label": "Paid Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "images",
+          "label": "Images",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAssessment",
+          "label": "Ai Assessment",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "incidentDate",
+          "label": "Incident Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "submittedAt",
+          "label": "Submitted At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "processedAt",
+          "label": "Processed At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "paidAt",
+          "label": "Paid At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": "Advanced User Id 1",
+          "policyId": 10,
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "estimatedAmount": 500,
+          "approvedAmount": 500,
+          "paidAmount": 500,
+          "images": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "aiAssessment": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "incidentDate": "2024-01-01",
+          "submittedAt": "2024-01-01",
+          "processedAt": "2024-01-01",
+          "paidAt": "2024-01-01"
+        },
+        {
+          "userId": "Premium User Id 2",
+          "policyId": 58,
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "estimatedAmount": 2481,
+          "approvedAmount": 2481,
+          "paidAmount": 2481,
+          "images": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "aiAssessment": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "incidentDate": "2024-02-03",
+          "submittedAt": "2024-02-03",
+          "processedAt": "2024-02-03",
+          "paidAt": "2024-02-03"
+        },
+        {
+          "userId": "Standard User Id 3",
+          "policyId": 106,
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "estimatedAmount": 4462,
+          "approvedAmount": 4462,
+          "paidAmount": 4462,
+          "images": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "aiAssessment": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "incidentDate": "2024-03-05",
+          "submittedAt": "2024-03-05",
+          "processedAt": "2024-03-05",
+          "paidAt": "2024-03-05"
+        },
+        {
+          "userId": "Elite User Id 4",
+          "policyId": 154,
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "estimatedAmount": 6443,
+          "approvedAmount": 6443,
+          "paidAmount": 6443,
+          "images": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "aiAssessment": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "incidentDate": "2024-04-07",
+          "submittedAt": "2024-04-07",
+          "processedAt": "2024-04-07",
+          "paidAt": "2024-04-07"
+        },
+        {
+          "userId": "Core User Id 5",
+          "policyId": 102,
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "estimatedAmount": 8424,
+          "approvedAmount": 8424,
+          "paidAmount": 8424,
+          "images": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "aiAssessment": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "incidentDate": "2024-05-09",
+          "submittedAt": "2024-05-09",
+          "processedAt": "2024-05-09",
+          "paidAt": "2024-05-09"
+        },
+        {
+          "userId": "Pro User Id 6",
+          "policyId": 150,
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "estimatedAmount": 10405,
+          "approvedAmount": 10405,
+          "paidAmount": 10405,
+          "images": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "aiAssessment": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "incidentDate": "2024-06-11",
+          "submittedAt": "2024-06-11",
+          "processedAt": "2024-06-11",
+          "paidAt": "2024-06-11"
+        },
+        {
+          "userId": "Essential User Id 7",
+          "policyId": 198,
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "estimatedAmount": 12386,
+          "approvedAmount": 12386,
+          "paidAmount": 12386,
+          "images": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "aiAssessment": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "incidentDate": "2024-07-13",
+          "submittedAt": "2024-07-13",
+          "processedAt": "2024-07-13",
+          "paidAt": "2024-07-13"
+        },
+        {
+          "userId": "Primary User Id 8",
+          "policyId": 146,
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "estimatedAmount": 9367,
+          "approvedAmount": 9367,
+          "paidAmount": 9367,
+          "images": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "aiAssessment": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "incidentDate": "2024-08-15",
+          "submittedAt": "2024-08-15",
+          "processedAt": "2024-08-15",
+          "paidAt": "2024-08-15"
+        },
+        {
+          "userId": "Global User Id 9",
+          "policyId": 194,
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "estimatedAmount": 11348,
+          "approvedAmount": 11348,
+          "paidAmount": 11348,
+          "images": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "aiAssessment": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "incidentDate": "2024-09-17",
+          "submittedAt": "2024-09-17",
+          "processedAt": "2024-09-17",
+          "paidAt": "2024-09-17"
+        },
+        {
+          "userId": "Regional User Id 10",
+          "policyId": 242,
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "estimatedAmount": 13329,
+          "approvedAmount": 13329,
+          "paidAmount": 13329,
+          "images": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "aiAssessment": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "incidentDate": "2024-10-19",
+          "submittedAt": "2024-10-19",
+          "processedAt": "2024-10-19",
+          "paidAt": "2024-10-19"
+        },
+        {
+          "userId": "Custom User Id 11",
+          "policyId": 190,
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "estimatedAmount": 15310,
+          "approvedAmount": 15310,
+          "paidAmount": 15310,
+          "images": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "aiAssessment": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "incidentDate": "2024-11-21",
+          "submittedAt": "2024-11-21",
+          "processedAt": "2024-11-21",
+          "paidAt": "2024-11-21"
+        },
+        {
+          "userId": "Smart User Id 12",
+          "policyId": 238,
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "estimatedAmount": 17291,
+          "approvedAmount": 17291,
+          "paidAmount": 17291,
+          "images": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "aiAssessment": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "incidentDate": "2024-12-23",
+          "submittedAt": "2024-12-23",
+          "processedAt": "2024-12-23",
+          "paidAt": "2024-12-23"
+        },
+        {
+          "userId": "Rapid User Id 13",
+          "policyId": 286,
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "estimatedAmount": 19272,
+          "approvedAmount": 19272,
+          "paidAmount": 19272,
+          "images": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "aiAssessment": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "incidentDate": "2024-01-25",
+          "submittedAt": "2024-01-25",
+          "processedAt": "2024-01-25",
+          "paidAt": "2024-01-25"
+        },
+        {
+          "userId": "Secure User Id 14",
+          "policyId": 234,
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "estimatedAmount": 21253,
+          "approvedAmount": 21253,
+          "paidAmount": 21253,
+          "images": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "aiAssessment": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "incidentDate": "2024-02-27",
+          "submittedAt": "2024-02-27",
+          "processedAt": "2024-02-27",
+          "paidAt": "2024-02-27"
+        },
+        {
+          "userId": "Modern User Id 15",
+          "policyId": 282,
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "estimatedAmount": 18234,
+          "approvedAmount": 18234,
+          "paidAmount": 18234,
+          "images": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "aiAssessment": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "incidentDate": "2024-03-01",
+          "submittedAt": "2024-03-01",
+          "processedAt": "2024-03-01",
+          "paidAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Payment",
+      "routeKey": "payments",
+      "label": "Payment",
+      "icon": "clipboard",
+      "aiFunction": "analyzePayment",
+      "aiPrompt": "You are an AI analyst for Non Profit Shield. Analyze the provided Payment data. The data includes: User Id, Policy Id, Claim Id, Type, Amount, Currency, Payment Method, Bitcoin Address, Bitcoin Tx Id, Bitcoin Amount, Status, Confirmed At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "policyId",
+          "label": "Policy Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "claimId",
+          "label": "Claim Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "currency",
+          "label": "Currency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "bitcoinAddress",
+          "label": "Bitcoin Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "bitcoinTxId",
+          "label": "Bitcoin Tx Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "bitcoinAmount",
+          "label": "Bitcoin Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "confirmedAt",
+          "label": "Confirmed At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": "Advanced User Id 1",
+          "policyId": 10,
+          "claimId": 10,
+          "type": "Category A",
+          "amount": 500,
+          "currency": "Advanced Currency 1",
+          "paymentMethod": "Advanced Payment Method 1",
+          "bitcoinAddress": "New York",
+          "bitcoinTxId": "Advanced Bitcoin Tx Id 1",
+          "bitcoinAmount": 500,
+          "status": "active",
+          "confirmedAt": "2024-01-01"
+        },
+        {
+          "userId": "Premium User Id 2",
+          "policyId": 58,
+          "claimId": 58,
+          "type": "Category B",
+          "amount": 2481,
+          "currency": "Premium Currency 2",
+          "paymentMethod": "Premium Payment Method 2",
+          "bitcoinAddress": "Los Angeles",
+          "bitcoinTxId": "Premium Bitcoin Tx Id 2",
+          "bitcoinAmount": 2481,
+          "status": "pending",
+          "confirmedAt": "2024-02-03"
+        },
+        {
+          "userId": "Standard User Id 3",
+          "policyId": 106,
+          "claimId": 106,
+          "type": "Category C",
+          "amount": 4462,
+          "currency": "Standard Currency 3",
+          "paymentMethod": "Standard Payment Method 3",
+          "bitcoinAddress": "Chicago",
+          "bitcoinTxId": "Standard Bitcoin Tx Id 3",
+          "bitcoinAmount": 4462,
+          "status": "in_progress",
+          "confirmedAt": "2024-03-05"
+        },
+        {
+          "userId": "Elite User Id 4",
+          "policyId": 154,
+          "claimId": 154,
+          "type": "Category D",
+          "amount": 6443,
+          "currency": "Elite Currency 4",
+          "paymentMethod": "Elite Payment Method 4",
+          "bitcoinAddress": "Houston",
+          "bitcoinTxId": "Elite Bitcoin Tx Id 4",
+          "bitcoinAmount": 6443,
+          "status": "completed",
+          "confirmedAt": "2024-04-07"
+        },
+        {
+          "userId": "Core User Id 5",
+          "policyId": 102,
+          "claimId": 102,
+          "type": "Category E",
+          "amount": 8424,
+          "currency": "Core Currency 5",
+          "paymentMethod": "Core Payment Method 5",
+          "bitcoinAddress": "Phoenix",
+          "bitcoinTxId": "Core Bitcoin Tx Id 5",
+          "bitcoinAmount": 8424,
+          "status": "under_review",
+          "confirmedAt": "2024-05-09"
+        },
+        {
+          "userId": "Pro User Id 6",
+          "policyId": 150,
+          "claimId": 150,
+          "type": "Premium Tier",
+          "amount": 10405,
+          "currency": "Pro Currency 6",
+          "paymentMethod": "Pro Payment Method 6",
+          "bitcoinAddress": "San Francisco",
+          "bitcoinTxId": "Pro Bitcoin Tx Id 6",
+          "bitcoinAmount": 10405,
+          "status": "approved",
+          "confirmedAt": "2024-06-11"
+        },
+        {
+          "userId": "Essential User Id 7",
+          "policyId": 198,
+          "claimId": 198,
+          "type": "Standard Tier",
+          "amount": 12386,
+          "currency": "Essential Currency 7",
+          "paymentMethod": "Essential Payment Method 7",
+          "bitcoinAddress": "Seattle",
+          "bitcoinTxId": "Essential Bitcoin Tx Id 7",
+          "bitcoinAmount": 12386,
+          "status": "active",
+          "confirmedAt": "2024-07-13"
+        },
+        {
+          "userId": "Primary User Id 8",
+          "policyId": 146,
+          "claimId": 146,
+          "type": "Basic Tier",
+          "amount": 9367,
+          "currency": "Primary Currency 8",
+          "paymentMethod": "Primary Payment Method 8",
+          "bitcoinAddress": "Boston",
+          "bitcoinTxId": "Primary Bitcoin Tx Id 8",
+          "bitcoinAmount": 9367,
+          "status": "active",
+          "confirmedAt": "2024-08-15"
+        },
+        {
+          "userId": "Global User Id 9",
+          "policyId": 194,
+          "claimId": 194,
+          "type": "Enterprise",
+          "amount": 11348,
+          "currency": "Global Currency 9",
+          "paymentMethod": "Global Payment Method 9",
+          "bitcoinAddress": "Denver",
+          "bitcoinTxId": "Global Bitcoin Tx Id 9",
+          "bitcoinAmount": 11348,
+          "status": "active",
+          "confirmedAt": "2024-09-17"
+        },
+        {
+          "userId": "Regional User Id 10",
+          "policyId": 242,
+          "claimId": 242,
+          "type": "Starter",
+          "amount": 13329,
+          "currency": "Regional Currency 10",
+          "paymentMethod": "Regional Payment Method 10",
+          "bitcoinAddress": "Miami",
+          "bitcoinTxId": "Regional Bitcoin Tx Id 10",
+          "bitcoinAmount": 13329,
+          "status": "pending",
+          "confirmedAt": "2024-10-19"
+        },
+        {
+          "userId": "Custom User Id 11",
+          "policyId": 190,
+          "claimId": 190,
+          "type": "Growth",
+          "amount": 15310,
+          "currency": "Custom Currency 11",
+          "paymentMethod": "Custom Payment Method 11",
+          "bitcoinAddress": "Austin",
+          "bitcoinTxId": "Custom Bitcoin Tx Id 11",
+          "bitcoinAmount": 15310,
+          "status": "completed",
+          "confirmedAt": "2024-11-21"
+        },
+        {
+          "userId": "Smart User Id 12",
+          "policyId": 238,
+          "claimId": 238,
+          "type": "Scale",
+          "amount": 17291,
+          "currency": "Smart Currency 12",
+          "paymentMethod": "Smart Payment Method 12",
+          "bitcoinAddress": "Portland",
+          "bitcoinTxId": "Smart Bitcoin Tx Id 12",
+          "bitcoinAmount": 17291,
+          "status": "active",
+          "confirmedAt": "2024-12-23"
+        },
+        {
+          "userId": "Rapid User Id 13",
+          "policyId": 286,
+          "claimId": 286,
+          "type": "Foundation",
+          "amount": 19272,
+          "currency": "Rapid Currency 13",
+          "paymentMethod": "Rapid Payment Method 13",
+          "bitcoinAddress": "Dallas",
+          "bitcoinTxId": "Rapid Bitcoin Tx Id 13",
+          "bitcoinAmount": 19272,
+          "status": "in_progress",
+          "confirmedAt": "2024-01-25"
+        },
+        {
+          "userId": "Secure User Id 14",
+          "policyId": 234,
+          "claimId": 234,
+          "type": "Advanced",
+          "amount": 21253,
+          "currency": "Secure Currency 14",
+          "paymentMethod": "Secure Payment Method 14",
+          "bitcoinAddress": "Atlanta",
+          "bitcoinTxId": "Secure Bitcoin Tx Id 14",
+          "bitcoinAmount": 21253,
+          "status": "active",
+          "confirmedAt": "2024-02-27"
+        },
+        {
+          "userId": "Modern User Id 15",
+          "policyId": 282,
+          "claimId": 282,
+          "type": "Professional",
+          "amount": 18234,
+          "currency": "Modern Currency 15",
+          "paymentMethod": "Modern Payment Method 15",
+          "bitcoinAddress": "Nashville",
+          "bitcoinTxId": "Modern Bitcoin Tx Id 15",
+          "bitcoinAmount": 18234,
+          "status": "approved",
+          "confirmedAt": "2024-03-01"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,889 @@
+{
+  "appName": "AI Personalized Tutor (Part 2)",
+  "dbName": "a_i_personalized_tutor_part2",
+  "folderName": "generated/AIPersonalizedTutorPart2",
+  "features": [
+    {
+      "modelName": "LearningStyleAssessment",
+      "routeKey": "learning-style-assessments",
+      "label": "Learning Style Assessment",
+      "icon": "package",
+      "aiFunction": "analyzeLearningStyleAssessment",
+      "aiPrompt": "You are an AI analyst for Ai Personalized Tutor. Analyze the provided Learning Style Assessment data. The data includes: User Id, Visual Score, Auditory Score, Reading Writing Score, Kinesthetic Score, Dominant Style, Ai Analysis, Recommendations, Assessed At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "visualScore",
+          "label": "Visual Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "auditoryScore",
+          "label": "Auditory Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "readingWritingScore",
+          "label": "Reading Writing Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "kinestheticScore",
+          "label": "Kinesthetic Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "dominantStyle",
+          "label": "Dominant Style",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "recommendations",
+          "label": "Recommendations",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "assessedAt",
+          "label": "Assessed At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": "Advanced User Id 1",
+          "visualScore": 10,
+          "auditoryScore": 10,
+          "readingWritingScore": 10,
+          "kinestheticScore": 10,
+          "dominantStyle": "Advanced Dominant Style 1",
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "recommendations": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "assessedAt": "2024-01-01"
+        },
+        {
+          "userId": "Premium User Id 2",
+          "visualScore": 58,
+          "auditoryScore": 58,
+          "readingWritingScore": 58,
+          "kinestheticScore": 58,
+          "dominantStyle": "Premium Dominant Style 2",
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments.",
+          "recommendations": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "assessedAt": "2024-02-03"
+        },
+        {
+          "userId": "Standard User Id 3",
+          "visualScore": 106,
+          "auditoryScore": 106,
+          "readingWritingScore": 106,
+          "kinestheticScore": 106,
+          "dominantStyle": "Standard Dominant Style 3",
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "recommendations": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "assessedAt": "2024-03-05"
+        },
+        {
+          "userId": "Elite User Id 4",
+          "visualScore": 154,
+          "auditoryScore": 154,
+          "readingWritingScore": 154,
+          "kinestheticScore": 154,
+          "dominantStyle": "Elite Dominant Style 4",
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "recommendations": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "assessedAt": "2024-04-07"
+        },
+        {
+          "userId": "Core User Id 5",
+          "visualScore": 102,
+          "auditoryScore": 102,
+          "readingWritingScore": 102,
+          "kinestheticScore": 102,
+          "dominantStyle": "Core Dominant Style 5",
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "recommendations": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "assessedAt": "2024-05-09"
+        },
+        {
+          "userId": "Pro User Id 6",
+          "visualScore": 150,
+          "auditoryScore": 150,
+          "readingWritingScore": 150,
+          "kinestheticScore": 150,
+          "dominantStyle": "Pro Dominant Style 6",
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives.",
+          "recommendations": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "assessedAt": "2024-06-11"
+        },
+        {
+          "userId": "Essential User Id 7",
+          "visualScore": 198,
+          "auditoryScore": 198,
+          "readingWritingScore": 198,
+          "kinestheticScore": 198,
+          "dominantStyle": "Essential Dominant Style 7",
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "recommendations": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "assessedAt": "2024-07-13"
+        },
+        {
+          "userId": "Primary User Id 8",
+          "visualScore": 146,
+          "auditoryScore": 146,
+          "readingWritingScore": 146,
+          "kinestheticScore": 146,
+          "dominantStyle": "Primary Dominant Style 8",
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies.",
+          "recommendations": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "assessedAt": "2024-08-15"
+        },
+        {
+          "userId": "Global User Id 9",
+          "visualScore": 194,
+          "auditoryScore": 194,
+          "readingWritingScore": 194,
+          "kinestheticScore": 194,
+          "dominantStyle": "Global Dominant Style 9",
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "recommendations": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "assessedAt": "2024-09-17"
+        },
+        {
+          "userId": "Regional User Id 10",
+          "visualScore": 242,
+          "auditoryScore": 242,
+          "readingWritingScore": 242,
+          "kinestheticScore": 242,
+          "dominantStyle": "Regional Dominant Style 10",
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features.",
+          "recommendations": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "assessedAt": "2024-10-19"
+        },
+        {
+          "userId": "Custom User Id 11",
+          "visualScore": 190,
+          "auditoryScore": 190,
+          "readingWritingScore": 190,
+          "kinestheticScore": 190,
+          "dominantStyle": "Custom Dominant Style 11",
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations.",
+          "recommendations": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "assessedAt": "2024-11-21"
+        },
+        {
+          "userId": "Smart User Id 12",
+          "visualScore": 238,
+          "auditoryScore": 238,
+          "readingWritingScore": 238,
+          "kinestheticScore": 238,
+          "dominantStyle": "Smart Dominant Style 12",
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error.",
+          "recommendations": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "assessedAt": "2024-12-23"
+        },
+        {
+          "userId": "Rapid User Id 13",
+          "visualScore": 286,
+          "auditoryScore": 286,
+          "readingWritingScore": 286,
+          "kinestheticScore": 286,
+          "dominantStyle": "Rapid Dominant Style 13",
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "recommendations": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "assessedAt": "2024-01-25"
+        },
+        {
+          "userId": "Secure User Id 14",
+          "visualScore": 234,
+          "auditoryScore": 234,
+          "readingWritingScore": 234,
+          "kinestheticScore": 234,
+          "dominantStyle": "Secure Dominant Style 14",
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements.",
+          "recommendations": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "assessedAt": "2024-02-27"
+        },
+        {
+          "userId": "Modern User Id 15",
+          "visualScore": 282,
+          "auditoryScore": 282,
+          "readingWritingScore": 282,
+          "kinestheticScore": 282,
+          "dominantStyle": "Modern Dominant Style 15",
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability.",
+          "recommendations": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "assessedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "ScienceExperiment",
+      "routeKey": "science-experiments",
+      "label": "Science Experiment",
+      "icon": "calendar",
+      "aiFunction": "analyzeScienceExperiment",
+      "aiPrompt": "You are an AI analyst for Ai Personalized Tutor. Analyze the provided Science Experiment data. The data includes: Title, Description, Subject, Topic, Difficulty Level, Materials, Procedure, Expected Results, Safety Notes, Virtual Simulation Data. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "subject",
+          "label": "Subject",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "topic",
+          "label": "Topic",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "difficultyLevel",
+          "label": "Difficulty Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "materials",
+          "label": "Materials",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "procedure",
+          "label": "Procedure",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "expectedResults",
+          "label": "Expected Results",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "safetyNotes",
+          "label": "Safety Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "virtualSimulationData",
+          "label": "Virtual Simulation Data",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "subject": "Advanced Subject 1",
+          "topic": "Advanced Topic 1",
+          "difficultyLevel": "low",
+          "materials": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "procedure": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "expectedResults": "Comprehensive solution designed for optimal performance and efficiency.",
+          "safetyNotes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "virtualSimulationData": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "subject": "Premium Subject 2",
+          "topic": "Premium Topic 2",
+          "difficultyLevel": "medium",
+          "materials": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "procedure": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "expectedResults": "Industry-leading approach with proven results across multiple deployments.",
+          "safetyNotes": "Industry-leading approach with proven results across multiple deployments.",
+          "virtualSimulationData": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "subject": "Standard Subject 3",
+          "topic": "Standard Topic 3",
+          "difficultyLevel": "high",
+          "materials": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "procedure": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "expectedResults": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "safetyNotes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "virtualSimulationData": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "subject": "Elite Subject 4",
+          "topic": "Elite Topic 4",
+          "difficultyLevel": "critical",
+          "materials": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "procedure": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "expectedResults": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "safetyNotes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "virtualSimulationData": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "subject": "Core Subject 5",
+          "topic": "Core Topic 5",
+          "difficultyLevel": "medium",
+          "materials": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "procedure": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "expectedResults": "Cost-effective strategy focused on sustainable long-term growth.",
+          "safetyNotes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "virtualSimulationData": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "subject": "Pro Subject 6",
+          "topic": "Pro Topic 6",
+          "difficultyLevel": "low",
+          "materials": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "procedure": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "expectedResults": "High-priority initiative aligned with organizational strategic objectives.",
+          "safetyNotes": "High-priority initiative aligned with organizational strategic objectives.",
+          "virtualSimulationData": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "subject": "Essential Subject 7",
+          "topic": "Essential Topic 7",
+          "difficultyLevel": "medium",
+          "materials": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "procedure": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "expectedResults": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "safetyNotes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "virtualSimulationData": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "subject": "Primary Subject 8",
+          "topic": "Primary Topic 8",
+          "difficultyLevel": "high",
+          "materials": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "procedure": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "expectedResults": "Innovative framework incorporating best practices and emerging technologies.",
+          "safetyNotes": "Innovative framework incorporating best practices and emerging technologies.",
+          "virtualSimulationData": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "subject": "Global Subject 9",
+          "topic": "Global Topic 9",
+          "difficultyLevel": "critical",
+          "materials": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "procedure": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "expectedResults": "Scalable architecture built to accommodate rapid expansion and change.",
+          "safetyNotes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "virtualSimulationData": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "subject": "Regional Subject 10",
+          "topic": "Regional Topic 10",
+          "difficultyLevel": "medium",
+          "materials": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "procedure": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "expectedResults": "Enterprise-grade solution with robust security and compliance features.",
+          "safetyNotes": "Enterprise-grade solution with robust security and compliance features.",
+          "virtualSimulationData": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "subject": "Custom Subject 11",
+          "topic": "Custom Topic 11",
+          "difficultyLevel": "low",
+          "materials": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "procedure": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "expectedResults": "Integrated platform connecting multiple systems for seamless operations.",
+          "safetyNotes": "Integrated platform connecting multiple systems for seamless operations.",
+          "virtualSimulationData": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "subject": "Smart Subject 12",
+          "topic": "Smart Topic 12",
+          "difficultyLevel": "medium",
+          "materials": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "procedure": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "expectedResults": "Automated workflow reducing manual intervention and human error.",
+          "safetyNotes": "Automated workflow reducing manual intervention and human error.",
+          "virtualSimulationData": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "subject": "Rapid Subject 13",
+          "topic": "Rapid Topic 13",
+          "difficultyLevel": "high",
+          "materials": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "procedure": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "expectedResults": "Real-time monitoring system with intelligent alerting capabilities.",
+          "safetyNotes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "virtualSimulationData": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "subject": "Secure Subject 14",
+          "topic": "Secure Topic 14",
+          "difficultyLevel": "critical",
+          "materials": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "procedure": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "expectedResults": "Customizable module adaptable to diverse operational requirements.",
+          "safetyNotes": "Customizable module adaptable to diverse operational requirements.",
+          "virtualSimulationData": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "subject": "Modern Subject 15",
+          "topic": "Modern Topic 15",
+          "difficultyLevel": "medium",
+          "materials": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "procedure": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "expectedResults": "Performance-optimized design achieving superior throughput and reliability.",
+          "safetyNotes": "Performance-optimized design achieving superior throughput and reliability.",
+          "virtualSimulationData": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "QuizQuestion",
+      "routeKey": "quiz-questions",
+      "label": "Quiz Question",
+      "icon": "map-pin",
+      "aiFunction": "analyzeQuizQuestion",
+      "aiPrompt": "You are an AI analyst for Ai Personalized Tutor. Analyze the provided Quiz Question data. The data includes: Quiz Id, Question Text, Question Type, Options, Correct Answer, Explanation, Points, Difficulty Level. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "quizId",
+          "label": "Quiz Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "questionText",
+          "label": "Question Text",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "questionType",
+          "label": "Question Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "options",
+          "label": "Options",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "correctAnswer",
+          "label": "Correct Answer",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "explanation",
+          "label": "Explanation",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "points",
+          "label": "Points",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "difficultyLevel",
+          "label": "Difficulty Level",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "quizId": "Advanced Quiz Id 1",
+          "questionText": "Comprehensive solution designed for optimal performance and efficiency.",
+          "questionType": "Category A",
+          "options": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "correctAnswer": "Comprehensive solution designed for optimal performance and efficiency.",
+          "explanation": "Comprehensive solution designed for optimal performance and efficiency.",
+          "points": 10,
+          "difficultyLevel": "low"
+        },
+        {
+          "quizId": "Premium Quiz Id 2",
+          "questionText": "Industry-leading approach with proven results across multiple deployments.",
+          "questionType": "Category B",
+          "options": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "correctAnswer": "Industry-leading approach with proven results across multiple deployments.",
+          "explanation": "Industry-leading approach with proven results across multiple deployments.",
+          "points": 58,
+          "difficultyLevel": "medium"
+        },
+        {
+          "quizId": "Standard Quiz Id 3",
+          "questionText": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "questionType": "Category C",
+          "options": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "correctAnswer": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "explanation": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "points": 106,
+          "difficultyLevel": "high"
+        },
+        {
+          "quizId": "Elite Quiz Id 4",
+          "questionText": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "questionType": "Category D",
+          "options": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "correctAnswer": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "explanation": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "points": 154,
+          "difficultyLevel": "critical"
+        },
+        {
+          "quizId": "Core Quiz Id 5",
+          "questionText": "Cost-effective strategy focused on sustainable long-term growth.",
+          "questionType": "Category E",
+          "options": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "correctAnswer": "Cost-effective strategy focused on sustainable long-term growth.",
+          "explanation": "Cost-effective strategy focused on sustainable long-term growth.",
+          "points": 102,
+          "difficultyLevel": "medium"
+        },
+        {
+          "quizId": "Pro Quiz Id 6",
+          "questionText": "High-priority initiative aligned with organizational strategic objectives.",
+          "questionType": "Premium Tier",
+          "options": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "correctAnswer": "High-priority initiative aligned with organizational strategic objectives.",
+          "explanation": "High-priority initiative aligned with organizational strategic objectives.",
+          "points": 150,
+          "difficultyLevel": "low"
+        },
+        {
+          "quizId": "Essential Quiz Id 7",
+          "questionText": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "questionType": "Standard Tier",
+          "options": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "correctAnswer": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "explanation": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "points": 198,
+          "difficultyLevel": "medium"
+        },
+        {
+          "quizId": "Primary Quiz Id 8",
+          "questionText": "Innovative framework incorporating best practices and emerging technologies.",
+          "questionType": "Basic Tier",
+          "options": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "correctAnswer": "Innovative framework incorporating best practices and emerging technologies.",
+          "explanation": "Innovative framework incorporating best practices and emerging technologies.",
+          "points": 146,
+          "difficultyLevel": "high"
+        },
+        {
+          "quizId": "Global Quiz Id 9",
+          "questionText": "Scalable architecture built to accommodate rapid expansion and change.",
+          "questionType": "Enterprise",
+          "options": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "correctAnswer": "Scalable architecture built to accommodate rapid expansion and change.",
+          "explanation": "Scalable architecture built to accommodate rapid expansion and change.",
+          "points": 194,
+          "difficultyLevel": "critical"
+        },
+        {
+          "quizId": "Regional Quiz Id 10",
+          "questionText": "Enterprise-grade solution with robust security and compliance features.",
+          "questionType": "Starter",
+          "options": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "correctAnswer": "Enterprise-grade solution with robust security and compliance features.",
+          "explanation": "Enterprise-grade solution with robust security and compliance features.",
+          "points": 242,
+          "difficultyLevel": "medium"
+        },
+        {
+          "quizId": "Custom Quiz Id 11",
+          "questionText": "Integrated platform connecting multiple systems for seamless operations.",
+          "questionType": "Growth",
+          "options": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "correctAnswer": "Integrated platform connecting multiple systems for seamless operations.",
+          "explanation": "Integrated platform connecting multiple systems for seamless operations.",
+          "points": 190,
+          "difficultyLevel": "low"
+        },
+        {
+          "quizId": "Smart Quiz Id 12",
+          "questionText": "Automated workflow reducing manual intervention and human error.",
+          "questionType": "Scale",
+          "options": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "correctAnswer": "Automated workflow reducing manual intervention and human error.",
+          "explanation": "Automated workflow reducing manual intervention and human error.",
+          "points": 238,
+          "difficultyLevel": "medium"
+        },
+        {
+          "quizId": "Rapid Quiz Id 13",
+          "questionText": "Real-time monitoring system with intelligent alerting capabilities.",
+          "questionType": "Foundation",
+          "options": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "correctAnswer": "Real-time monitoring system with intelligent alerting capabilities.",
+          "explanation": "Real-time monitoring system with intelligent alerting capabilities.",
+          "points": 286,
+          "difficultyLevel": "high"
+        },
+        {
+          "quizId": "Secure Quiz Id 14",
+          "questionText": "Customizable module adaptable to diverse operational requirements.",
+          "questionType": "Advanced",
+          "options": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "correctAnswer": "Customizable module adaptable to diverse operational requirements.",
+          "explanation": "Customizable module adaptable to diverse operational requirements.",
+          "points": 234,
+          "difficultyLevel": "critical"
+        },
+        {
+          "quizId": "Modern Quiz Id 15",
+          "questionText": "Performance-optimized design achieving superior throughput and reliability.",
+          "questionType": "Professional",
+          "options": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "correctAnswer": "Performance-optimized design achieving superior throughput and reliability.",
+          "explanation": "Performance-optimized design achieving superior throughput and reliability.",
+          "points": 282,
+          "difficultyLevel": "medium"
+        }
+      ]
+    },
+    {
+      "modelName": "StudySchedule",
+      "routeKey": "study-schedules",
+      "label": "Study Schedule",
+      "icon": "star",
+      "aiFunction": "analyzeStudySchedule",
+      "aiPrompt": "You are an AI analyst for Ai Personalized Tutor. Analyze the provided Study Schedule data. The data includes: User Id, Title, Schedule Data, Ai Optimized, Optimization Notes, Start Date, End Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduleData",
+          "label": "Schedule Data",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiOptimized",
+          "label": "Ai Optimized",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "optimizationNotes",
+          "label": "Optimization Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": "Advanced User Id 1",
+          "title": "Advanced Title 1",
+          "scheduleData": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "aiOptimized": true,
+          "optimizationNotes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01"
+        },
+        {
+          "userId": "Premium User Id 2",
+          "title": "Premium Title 2",
+          "scheduleData": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "aiOptimized": true,
+          "optimizationNotes": "Industry-leading approach with proven results across multiple deployments.",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03"
+        },
+        {
+          "userId": "Standard User Id 3",
+          "title": "Standard Title 3",
+          "scheduleData": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "aiOptimized": false,
+          "optimizationNotes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05"
+        },
+        {
+          "userId": "Elite User Id 4",
+          "title": "Elite Title 4",
+          "scheduleData": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "aiOptimized": true,
+          "optimizationNotes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07"
+        },
+        {
+          "userId": "Core User Id 5",
+          "title": "Core Title 5",
+          "scheduleData": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "aiOptimized": false,
+          "optimizationNotes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09"
+        },
+        {
+          "userId": "Pro User Id 6",
+          "title": "Pro Title 6",
+          "scheduleData": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "aiOptimized": true,
+          "optimizationNotes": "High-priority initiative aligned with organizational strategic objectives.",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11"
+        },
+        {
+          "userId": "Essential User Id 7",
+          "title": "Essential Title 7",
+          "scheduleData": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "aiOptimized": true,
+          "optimizationNotes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13"
+        },
+        {
+          "userId": "Primary User Id 8",
+          "title": "Primary Title 8",
+          "scheduleData": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "aiOptimized": false,
+          "optimizationNotes": "Innovative framework incorporating best practices and emerging technologies.",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15"
+        },
+        {
+          "userId": "Global User Id 9",
+          "title": "Global Title 9",
+          "scheduleData": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "aiOptimized": true,
+          "optimizationNotes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17"
+        },
+        {
+          "userId": "Regional User Id 10",
+          "title": "Regional Title 10",
+          "scheduleData": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "aiOptimized": true,
+          "optimizationNotes": "Enterprise-grade solution with robust security and compliance features.",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19"
+        },
+        {
+          "userId": "Custom User Id 11",
+          "title": "Custom Title 11",
+          "scheduleData": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "aiOptimized": false,
+          "optimizationNotes": "Integrated platform connecting multiple systems for seamless operations.",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21"
+        },
+        {
+          "userId": "Smart User Id 12",
+          "title": "Smart Title 12",
+          "scheduleData": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "aiOptimized": true,
+          "optimizationNotes": "Automated workflow reducing manual intervention and human error.",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23"
+        },
+        {
+          "userId": "Rapid User Id 13",
+          "title": "Rapid Title 13",
+          "scheduleData": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "aiOptimized": false,
+          "optimizationNotes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25"
+        },
+        {
+          "userId": "Secure User Id 14",
+          "title": "Secure Title 14",
+          "scheduleData": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "aiOptimized": true,
+          "optimizationNotes": "Customizable module adaptable to diverse operational requirements.",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27"
+        },
+        {
+          "userId": "Modern User Id 15",
+          "title": "Modern Title 15",
+          "scheduleData": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "aiOptimized": true,
+          "optimizationNotes": "Performance-optimized design achieving superior throughput and reliability.",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01"
+        }
+      ]
+    }
+  ]
+}

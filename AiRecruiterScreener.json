@@ -1,0 +1,5236 @@
+{
+  "appName": "Ai Recruiter Screener",
+  "dbName": "ai_recruiter_screener",
+  "folderName": "generated/AiRecruiterScreener",
+  "features": [
+    {
+      "modelName": "JobPosting",
+      "routeKey": "job-postings",
+      "label": "Job Posting",
+      "icon": "activity",
+      "aiFunction": "analyzeJobPosting",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Job Posting data. The data includes: Title, Department, Location, Type, Salary Min, Salary Max, Description, Requirements, Benefits, Status, Ai Generated, Created By Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "salaryMin",
+          "label": "Salary Min",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "salaryMax",
+          "label": "Salary Max",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "requirements",
+          "label": "Requirements",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "benefits",
+          "label": "Benefits",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiGenerated",
+          "label": "Ai Generated",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "createdById",
+          "label": "Created By Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "department": "Category A",
+          "location": "New York",
+          "type": "Category A",
+          "salaryMin": 10,
+          "salaryMax": 10,
+          "description": "Advanced Description 1",
+          "requirements": "Advanced Requirements 1",
+          "benefits": "Advanced Benefits 1",
+          "status": "active",
+          "aiGenerated": true,
+          "createdById": "Advanced Created By Id 1"
+        },
+        {
+          "title": "Premium Title 2",
+          "department": "Category B",
+          "location": "Los Angeles",
+          "type": "Category B",
+          "salaryMin": 58,
+          "salaryMax": 58,
+          "description": "Premium Description 2",
+          "requirements": "Premium Requirements 2",
+          "benefits": "Premium Benefits 2",
+          "status": "pending",
+          "aiGenerated": true,
+          "createdById": "Premium Created By Id 2"
+        },
+        {
+          "title": "Standard Title 3",
+          "department": "Category C",
+          "location": "Chicago",
+          "type": "Category C",
+          "salaryMin": 106,
+          "salaryMax": 106,
+          "description": "Standard Description 3",
+          "requirements": "Standard Requirements 3",
+          "benefits": "Standard Benefits 3",
+          "status": "in_progress",
+          "aiGenerated": false,
+          "createdById": "Standard Created By Id 3"
+        },
+        {
+          "title": "Elite Title 4",
+          "department": "Category D",
+          "location": "Houston",
+          "type": "Category D",
+          "salaryMin": 154,
+          "salaryMax": 154,
+          "description": "Elite Description 4",
+          "requirements": "Elite Requirements 4",
+          "benefits": "Elite Benefits 4",
+          "status": "completed",
+          "aiGenerated": true,
+          "createdById": "Elite Created By Id 4"
+        },
+        {
+          "title": "Core Title 5",
+          "department": "Category E",
+          "location": "Phoenix",
+          "type": "Category E",
+          "salaryMin": 102,
+          "salaryMax": 102,
+          "description": "Core Description 5",
+          "requirements": "Core Requirements 5",
+          "benefits": "Core Benefits 5",
+          "status": "under_review",
+          "aiGenerated": false,
+          "createdById": "Core Created By Id 5"
+        },
+        {
+          "title": "Pro Title 6",
+          "department": "Premium Tier",
+          "location": "San Francisco",
+          "type": "Premium Tier",
+          "salaryMin": 150,
+          "salaryMax": 150,
+          "description": "Pro Description 6",
+          "requirements": "Pro Requirements 6",
+          "benefits": "Pro Benefits 6",
+          "status": "approved",
+          "aiGenerated": true,
+          "createdById": "Pro Created By Id 6"
+        },
+        {
+          "title": "Essential Title 7",
+          "department": "Standard Tier",
+          "location": "Seattle",
+          "type": "Standard Tier",
+          "salaryMin": 198,
+          "salaryMax": 198,
+          "description": "Essential Description 7",
+          "requirements": "Essential Requirements 7",
+          "benefits": "Essential Benefits 7",
+          "status": "active",
+          "aiGenerated": true,
+          "createdById": "Essential Created By Id 7"
+        },
+        {
+          "title": "Primary Title 8",
+          "department": "Basic Tier",
+          "location": "Boston",
+          "type": "Basic Tier",
+          "salaryMin": 146,
+          "salaryMax": 146,
+          "description": "Primary Description 8",
+          "requirements": "Primary Requirements 8",
+          "benefits": "Primary Benefits 8",
+          "status": "active",
+          "aiGenerated": false,
+          "createdById": "Primary Created By Id 8"
+        },
+        {
+          "title": "Global Title 9",
+          "department": "Enterprise",
+          "location": "Denver",
+          "type": "Enterprise",
+          "salaryMin": 194,
+          "salaryMax": 194,
+          "description": "Global Description 9",
+          "requirements": "Global Requirements 9",
+          "benefits": "Global Benefits 9",
+          "status": "active",
+          "aiGenerated": true,
+          "createdById": "Global Created By Id 9"
+        },
+        {
+          "title": "Regional Title 10",
+          "department": "Starter",
+          "location": "Miami",
+          "type": "Starter",
+          "salaryMin": 242,
+          "salaryMax": 242,
+          "description": "Regional Description 10",
+          "requirements": "Regional Requirements 10",
+          "benefits": "Regional Benefits 10",
+          "status": "pending",
+          "aiGenerated": true,
+          "createdById": "Regional Created By Id 10"
+        },
+        {
+          "title": "Custom Title 11",
+          "department": "Growth",
+          "location": "Austin",
+          "type": "Growth",
+          "salaryMin": 190,
+          "salaryMax": 190,
+          "description": "Custom Description 11",
+          "requirements": "Custom Requirements 11",
+          "benefits": "Custom Benefits 11",
+          "status": "completed",
+          "aiGenerated": false,
+          "createdById": "Custom Created By Id 11"
+        },
+        {
+          "title": "Smart Title 12",
+          "department": "Scale",
+          "location": "Portland",
+          "type": "Scale",
+          "salaryMin": 238,
+          "salaryMax": 238,
+          "description": "Smart Description 12",
+          "requirements": "Smart Requirements 12",
+          "benefits": "Smart Benefits 12",
+          "status": "active",
+          "aiGenerated": true,
+          "createdById": "Smart Created By Id 12"
+        },
+        {
+          "title": "Rapid Title 13",
+          "department": "Foundation",
+          "location": "Dallas",
+          "type": "Foundation",
+          "salaryMin": 286,
+          "salaryMax": 286,
+          "description": "Rapid Description 13",
+          "requirements": "Rapid Requirements 13",
+          "benefits": "Rapid Benefits 13",
+          "status": "in_progress",
+          "aiGenerated": false,
+          "createdById": "Rapid Created By Id 13"
+        },
+        {
+          "title": "Secure Title 14",
+          "department": "Advanced",
+          "location": "Atlanta",
+          "type": "Advanced",
+          "salaryMin": 234,
+          "salaryMax": 234,
+          "description": "Secure Description 14",
+          "requirements": "Secure Requirements 14",
+          "benefits": "Secure Benefits 14",
+          "status": "active",
+          "aiGenerated": true,
+          "createdById": "Secure Created By Id 14"
+        },
+        {
+          "title": "Modern Title 15",
+          "department": "Professional",
+          "location": "Nashville",
+          "type": "Professional",
+          "salaryMin": 282,
+          "salaryMax": 282,
+          "description": "Modern Description 15",
+          "requirements": "Modern Requirements 15",
+          "benefits": "Modern Benefits 15",
+          "status": "approved",
+          "aiGenerated": true,
+          "createdById": "Modern Created By Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Candidate",
+      "routeKey": "candidates",
+      "label": "Candidate",
+      "icon": "briefcase",
+      "aiFunction": "analyzeCandidate",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Candidate data. The data includes: First Name, Last Name, Email, Phone, Linked In, Portfolio, Resume Url, Resume Text, Cover Letter, Status, Source, Ai Score, Ai Summary, Ai Strengths, Ai Weaknesses, Ai Recommendation, Years Experience, Current Title, Current Company, Skills, Education, Expected Salary, Available Date, Job Posting Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "linkedIn",
+          "label": "Linked In",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "portfolio",
+          "label": "Portfolio",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "resumeUrl",
+          "label": "Resume Url",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "resumeText",
+          "label": "Resume Text",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "coverLetter",
+          "label": "Cover Letter",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiScore",
+          "label": "Ai Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "aiSummary",
+          "label": "Ai Summary",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiStrengths",
+          "label": "Ai Strengths",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiWeaknesses",
+          "label": "Ai Weaknesses",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiRecommendation",
+          "label": "Ai Recommendation",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "yearsExperience",
+          "label": "Years Experience",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "currentTitle",
+          "label": "Current Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "currentCompany",
+          "label": "Current Company",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "skills",
+          "label": "Skills",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "education",
+          "label": "Education",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "expectedSalary",
+          "label": "Expected Salary",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "availableDate",
+          "label": "Available Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "jobPostingId",
+          "label": "Job Posting Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "linkedIn": "https://example.com/linkedIn/1",
+          "portfolio": "Advanced Portfolio 1",
+          "resumeUrl": "https://example.com/resumeUrl/1",
+          "resumeText": "Advanced Resume Text 1",
+          "coverLetter": "Advanced Cover Letter 1",
+          "status": "active",
+          "source": "Advanced Source 1",
+          "aiScore": 10,
+          "aiSummary": "Advanced Ai Summary 1",
+          "aiStrengths": "Advanced Ai Strengths 1",
+          "aiWeaknesses": "Advanced Ai Weaknesses 1",
+          "aiRecommendation": "Advanced Ai Recommendation 1",
+          "yearsExperience": 2020,
+          "currentTitle": "Advanced Current Title 1",
+          "currentCompany": "Advanced Current Company 1",
+          "skills": "Advanced Skills 1",
+          "education": "Advanced Education 1",
+          "expectedSalary": 10,
+          "availableDate": "2024-01-01",
+          "jobPostingId": "Advanced Job Posting Id 1"
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "linkedIn": "https://example.com/linkedIn/2",
+          "portfolio": "Premium Portfolio 2",
+          "resumeUrl": "https://example.com/resumeUrl/2",
+          "resumeText": "Premium Resume Text 2",
+          "coverLetter": "Premium Cover Letter 2",
+          "status": "pending",
+          "source": "Premium Source 2",
+          "aiScore": 58,
+          "aiSummary": "Premium Ai Summary 2",
+          "aiStrengths": "Premium Ai Strengths 2",
+          "aiWeaknesses": "Premium Ai Weaknesses 2",
+          "aiRecommendation": "Premium Ai Recommendation 2",
+          "yearsExperience": 2021,
+          "currentTitle": "Premium Current Title 2",
+          "currentCompany": "Premium Current Company 2",
+          "skills": "Premium Skills 2",
+          "education": "Premium Education 2",
+          "expectedSalary": 58,
+          "availableDate": "2024-02-03",
+          "jobPostingId": "Premium Job Posting Id 2"
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "linkedIn": "https://example.com/linkedIn/3",
+          "portfolio": "Standard Portfolio 3",
+          "resumeUrl": "https://example.com/resumeUrl/3",
+          "resumeText": "Standard Resume Text 3",
+          "coverLetter": "Standard Cover Letter 3",
+          "status": "in_progress",
+          "source": "Standard Source 3",
+          "aiScore": 106,
+          "aiSummary": "Standard Ai Summary 3",
+          "aiStrengths": "Standard Ai Strengths 3",
+          "aiWeaknesses": "Standard Ai Weaknesses 3",
+          "aiRecommendation": "Standard Ai Recommendation 3",
+          "yearsExperience": 2022,
+          "currentTitle": "Standard Current Title 3",
+          "currentCompany": "Standard Current Company 3",
+          "skills": "Standard Skills 3",
+          "education": "Standard Education 3",
+          "expectedSalary": 106,
+          "availableDate": "2024-03-05",
+          "jobPostingId": "Standard Job Posting Id 3"
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "linkedIn": "https://example.com/linkedIn/4",
+          "portfolio": "Elite Portfolio 4",
+          "resumeUrl": "https://example.com/resumeUrl/4",
+          "resumeText": "Elite Resume Text 4",
+          "coverLetter": "Elite Cover Letter 4",
+          "status": "completed",
+          "source": "Elite Source 4",
+          "aiScore": 154,
+          "aiSummary": "Elite Ai Summary 4",
+          "aiStrengths": "Elite Ai Strengths 4",
+          "aiWeaknesses": "Elite Ai Weaknesses 4",
+          "aiRecommendation": "Elite Ai Recommendation 4",
+          "yearsExperience": 2023,
+          "currentTitle": "Elite Current Title 4",
+          "currentCompany": "Elite Current Company 4",
+          "skills": "Elite Skills 4",
+          "education": "Elite Education 4",
+          "expectedSalary": 154,
+          "availableDate": "2024-04-07",
+          "jobPostingId": "Elite Job Posting Id 4"
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "linkedIn": "https://example.com/linkedIn/5",
+          "portfolio": "Core Portfolio 5",
+          "resumeUrl": "https://example.com/resumeUrl/5",
+          "resumeText": "Core Resume Text 5",
+          "coverLetter": "Core Cover Letter 5",
+          "status": "under_review",
+          "source": "Core Source 5",
+          "aiScore": 102,
+          "aiSummary": "Core Ai Summary 5",
+          "aiStrengths": "Core Ai Strengths 5",
+          "aiWeaknesses": "Core Ai Weaknesses 5",
+          "aiRecommendation": "Core Ai Recommendation 5",
+          "yearsExperience": 2024,
+          "currentTitle": "Core Current Title 5",
+          "currentCompany": "Core Current Company 5",
+          "skills": "Core Skills 5",
+          "education": "Core Education 5",
+          "expectedSalary": 102,
+          "availableDate": "2024-05-09",
+          "jobPostingId": "Core Job Posting Id 5"
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "linkedIn": "https://example.com/linkedIn/6",
+          "portfolio": "Pro Portfolio 6",
+          "resumeUrl": "https://example.com/resumeUrl/6",
+          "resumeText": "Pro Resume Text 6",
+          "coverLetter": "Pro Cover Letter 6",
+          "status": "approved",
+          "source": "Pro Source 6",
+          "aiScore": 150,
+          "aiSummary": "Pro Ai Summary 6",
+          "aiStrengths": "Pro Ai Strengths 6",
+          "aiWeaknesses": "Pro Ai Weaknesses 6",
+          "aiRecommendation": "Pro Ai Recommendation 6",
+          "yearsExperience": 2025,
+          "currentTitle": "Pro Current Title 6",
+          "currentCompany": "Pro Current Company 6",
+          "skills": "Pro Skills 6",
+          "education": "Pro Education 6",
+          "expectedSalary": 150,
+          "availableDate": "2024-06-11",
+          "jobPostingId": "Pro Job Posting Id 6"
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "linkedIn": "https://example.com/linkedIn/7",
+          "portfolio": "Essential Portfolio 7",
+          "resumeUrl": "https://example.com/resumeUrl/7",
+          "resumeText": "Essential Resume Text 7",
+          "coverLetter": "Essential Cover Letter 7",
+          "status": "active",
+          "source": "Essential Source 7",
+          "aiScore": 198,
+          "aiSummary": "Essential Ai Summary 7",
+          "aiStrengths": "Essential Ai Strengths 7",
+          "aiWeaknesses": "Essential Ai Weaknesses 7",
+          "aiRecommendation": "Essential Ai Recommendation 7",
+          "yearsExperience": 2020,
+          "currentTitle": "Essential Current Title 7",
+          "currentCompany": "Essential Current Company 7",
+          "skills": "Essential Skills 7",
+          "education": "Essential Education 7",
+          "expectedSalary": 198,
+          "availableDate": "2024-07-13",
+          "jobPostingId": "Essential Job Posting Id 7"
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "linkedIn": "https://example.com/linkedIn/8",
+          "portfolio": "Primary Portfolio 8",
+          "resumeUrl": "https://example.com/resumeUrl/8",
+          "resumeText": "Primary Resume Text 8",
+          "coverLetter": "Primary Cover Letter 8",
+          "status": "active",
+          "source": "Primary Source 8",
+          "aiScore": 146,
+          "aiSummary": "Primary Ai Summary 8",
+          "aiStrengths": "Primary Ai Strengths 8",
+          "aiWeaknesses": "Primary Ai Weaknesses 8",
+          "aiRecommendation": "Primary Ai Recommendation 8",
+          "yearsExperience": 2021,
+          "currentTitle": "Primary Current Title 8",
+          "currentCompany": "Primary Current Company 8",
+          "skills": "Primary Skills 8",
+          "education": "Primary Education 8",
+          "expectedSalary": 146,
+          "availableDate": "2024-08-15",
+          "jobPostingId": "Primary Job Posting Id 8"
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "linkedIn": "https://example.com/linkedIn/9",
+          "portfolio": "Global Portfolio 9",
+          "resumeUrl": "https://example.com/resumeUrl/9",
+          "resumeText": "Global Resume Text 9",
+          "coverLetter": "Global Cover Letter 9",
+          "status": "active",
+          "source": "Global Source 9",
+          "aiScore": 194,
+          "aiSummary": "Global Ai Summary 9",
+          "aiStrengths": "Global Ai Strengths 9",
+          "aiWeaknesses": "Global Ai Weaknesses 9",
+          "aiRecommendation": "Global Ai Recommendation 9",
+          "yearsExperience": 2022,
+          "currentTitle": "Global Current Title 9",
+          "currentCompany": "Global Current Company 9",
+          "skills": "Global Skills 9",
+          "education": "Global Education 9",
+          "expectedSalary": 194,
+          "availableDate": "2024-09-17",
+          "jobPostingId": "Global Job Posting Id 9"
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "linkedIn": "https://example.com/linkedIn/10",
+          "portfolio": "Regional Portfolio 10",
+          "resumeUrl": "https://example.com/resumeUrl/10",
+          "resumeText": "Regional Resume Text 10",
+          "coverLetter": "Regional Cover Letter 10",
+          "status": "pending",
+          "source": "Regional Source 10",
+          "aiScore": 242,
+          "aiSummary": "Regional Ai Summary 10",
+          "aiStrengths": "Regional Ai Strengths 10",
+          "aiWeaknesses": "Regional Ai Weaknesses 10",
+          "aiRecommendation": "Regional Ai Recommendation 10",
+          "yearsExperience": 2023,
+          "currentTitle": "Regional Current Title 10",
+          "currentCompany": "Regional Current Company 10",
+          "skills": "Regional Skills 10",
+          "education": "Regional Education 10",
+          "expectedSalary": 242,
+          "availableDate": "2024-10-19",
+          "jobPostingId": "Regional Job Posting Id 10"
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "linkedIn": "https://example.com/linkedIn/11",
+          "portfolio": "Custom Portfolio 11",
+          "resumeUrl": "https://example.com/resumeUrl/11",
+          "resumeText": "Custom Resume Text 11",
+          "coverLetter": "Custom Cover Letter 11",
+          "status": "completed",
+          "source": "Custom Source 11",
+          "aiScore": 190,
+          "aiSummary": "Custom Ai Summary 11",
+          "aiStrengths": "Custom Ai Strengths 11",
+          "aiWeaknesses": "Custom Ai Weaknesses 11",
+          "aiRecommendation": "Custom Ai Recommendation 11",
+          "yearsExperience": 2024,
+          "currentTitle": "Custom Current Title 11",
+          "currentCompany": "Custom Current Company 11",
+          "skills": "Custom Skills 11",
+          "education": "Custom Education 11",
+          "expectedSalary": 190,
+          "availableDate": "2024-11-21",
+          "jobPostingId": "Custom Job Posting Id 11"
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "linkedIn": "https://example.com/linkedIn/12",
+          "portfolio": "Smart Portfolio 12",
+          "resumeUrl": "https://example.com/resumeUrl/12",
+          "resumeText": "Smart Resume Text 12",
+          "coverLetter": "Smart Cover Letter 12",
+          "status": "active",
+          "source": "Smart Source 12",
+          "aiScore": 238,
+          "aiSummary": "Smart Ai Summary 12",
+          "aiStrengths": "Smart Ai Strengths 12",
+          "aiWeaknesses": "Smart Ai Weaknesses 12",
+          "aiRecommendation": "Smart Ai Recommendation 12",
+          "yearsExperience": 2025,
+          "currentTitle": "Smart Current Title 12",
+          "currentCompany": "Smart Current Company 12",
+          "skills": "Smart Skills 12",
+          "education": "Smart Education 12",
+          "expectedSalary": 238,
+          "availableDate": "2024-12-23",
+          "jobPostingId": "Smart Job Posting Id 12"
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "linkedIn": "https://example.com/linkedIn/13",
+          "portfolio": "Rapid Portfolio 13",
+          "resumeUrl": "https://example.com/resumeUrl/13",
+          "resumeText": "Rapid Resume Text 13",
+          "coverLetter": "Rapid Cover Letter 13",
+          "status": "in_progress",
+          "source": "Rapid Source 13",
+          "aiScore": 286,
+          "aiSummary": "Rapid Ai Summary 13",
+          "aiStrengths": "Rapid Ai Strengths 13",
+          "aiWeaknesses": "Rapid Ai Weaknesses 13",
+          "aiRecommendation": "Rapid Ai Recommendation 13",
+          "yearsExperience": 2020,
+          "currentTitle": "Rapid Current Title 13",
+          "currentCompany": "Rapid Current Company 13",
+          "skills": "Rapid Skills 13",
+          "education": "Rapid Education 13",
+          "expectedSalary": 286,
+          "availableDate": "2024-01-25",
+          "jobPostingId": "Rapid Job Posting Id 13"
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "linkedIn": "https://example.com/linkedIn/14",
+          "portfolio": "Secure Portfolio 14",
+          "resumeUrl": "https://example.com/resumeUrl/14",
+          "resumeText": "Secure Resume Text 14",
+          "coverLetter": "Secure Cover Letter 14",
+          "status": "active",
+          "source": "Secure Source 14",
+          "aiScore": 234,
+          "aiSummary": "Secure Ai Summary 14",
+          "aiStrengths": "Secure Ai Strengths 14",
+          "aiWeaknesses": "Secure Ai Weaknesses 14",
+          "aiRecommendation": "Secure Ai Recommendation 14",
+          "yearsExperience": 2021,
+          "currentTitle": "Secure Current Title 14",
+          "currentCompany": "Secure Current Company 14",
+          "skills": "Secure Skills 14",
+          "education": "Secure Education 14",
+          "expectedSalary": 234,
+          "availableDate": "2024-02-27",
+          "jobPostingId": "Secure Job Posting Id 14"
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "linkedIn": "https://example.com/linkedIn/15",
+          "portfolio": "Modern Portfolio 15",
+          "resumeUrl": "https://example.com/resumeUrl/15",
+          "resumeText": "Modern Resume Text 15",
+          "coverLetter": "Modern Cover Letter 15",
+          "status": "approved",
+          "source": "Modern Source 15",
+          "aiScore": 282,
+          "aiSummary": "Modern Ai Summary 15",
+          "aiStrengths": "Modern Ai Strengths 15",
+          "aiWeaknesses": "Modern Ai Weaknesses 15",
+          "aiRecommendation": "Modern Ai Recommendation 15",
+          "yearsExperience": 2022,
+          "currentTitle": "Modern Current Title 15",
+          "currentCompany": "Modern Current Company 15",
+          "skills": "Modern Skills 15",
+          "education": "Modern Education 15",
+          "expectedSalary": 282,
+          "availableDate": "2024-03-01",
+          "jobPostingId": "Modern Job Posting Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "ScreeningQuestion",
+      "routeKey": "screening-questions",
+      "label": "Screening Question",
+      "icon": "clipboard",
+      "aiFunction": "analyzeScreeningQuestion",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Screening Question data. The data includes: Question, Type, Options, Required, Ai Generated, Weight, Order, Job Posting Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "question",
+          "label": "Question",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "options",
+          "label": "Options",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "required",
+          "label": "Required",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "aiGenerated",
+          "label": "Ai Generated",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "order",
+          "label": "Order",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "jobPostingId",
+          "label": "Job Posting Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "question": "Advanced Question 1",
+          "type": "Category A",
+          "options": "Advanced Options 1",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 10,
+          "order": 10,
+          "jobPostingId": "Advanced Job Posting Id 1"
+        },
+        {
+          "question": "Premium Question 2",
+          "type": "Category B",
+          "options": "Premium Options 2",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 58,
+          "order": 58,
+          "jobPostingId": "Premium Job Posting Id 2"
+        },
+        {
+          "question": "Standard Question 3",
+          "type": "Category C",
+          "options": "Standard Options 3",
+          "required": false,
+          "aiGenerated": false,
+          "weight": 106,
+          "order": 106,
+          "jobPostingId": "Standard Job Posting Id 3"
+        },
+        {
+          "question": "Elite Question 4",
+          "type": "Category D",
+          "options": "Elite Options 4",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 154,
+          "order": 154,
+          "jobPostingId": "Elite Job Posting Id 4"
+        },
+        {
+          "question": "Core Question 5",
+          "type": "Category E",
+          "options": "Core Options 5",
+          "required": false,
+          "aiGenerated": false,
+          "weight": 102,
+          "order": 102,
+          "jobPostingId": "Core Job Posting Id 5"
+        },
+        {
+          "question": "Pro Question 6",
+          "type": "Premium Tier",
+          "options": "Pro Options 6",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 150,
+          "order": 150,
+          "jobPostingId": "Pro Job Posting Id 6"
+        },
+        {
+          "question": "Essential Question 7",
+          "type": "Standard Tier",
+          "options": "Essential Options 7",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 198,
+          "order": 198,
+          "jobPostingId": "Essential Job Posting Id 7"
+        },
+        {
+          "question": "Primary Question 8",
+          "type": "Basic Tier",
+          "options": "Primary Options 8",
+          "required": false,
+          "aiGenerated": false,
+          "weight": 146,
+          "order": 146,
+          "jobPostingId": "Primary Job Posting Id 8"
+        },
+        {
+          "question": "Global Question 9",
+          "type": "Enterprise",
+          "options": "Global Options 9",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 194,
+          "order": 194,
+          "jobPostingId": "Global Job Posting Id 9"
+        },
+        {
+          "question": "Regional Question 10",
+          "type": "Starter",
+          "options": "Regional Options 10",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 242,
+          "order": 242,
+          "jobPostingId": "Regional Job Posting Id 10"
+        },
+        {
+          "question": "Custom Question 11",
+          "type": "Growth",
+          "options": "Custom Options 11",
+          "required": false,
+          "aiGenerated": false,
+          "weight": 190,
+          "order": 190,
+          "jobPostingId": "Custom Job Posting Id 11"
+        },
+        {
+          "question": "Smart Question 12",
+          "type": "Scale",
+          "options": "Smart Options 12",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 238,
+          "order": 238,
+          "jobPostingId": "Smart Job Posting Id 12"
+        },
+        {
+          "question": "Rapid Question 13",
+          "type": "Foundation",
+          "options": "Rapid Options 13",
+          "required": false,
+          "aiGenerated": false,
+          "weight": 286,
+          "order": 286,
+          "jobPostingId": "Rapid Job Posting Id 13"
+        },
+        {
+          "question": "Secure Question 14",
+          "type": "Advanced",
+          "options": "Secure Options 14",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 234,
+          "order": 234,
+          "jobPostingId": "Secure Job Posting Id 14"
+        },
+        {
+          "question": "Modern Question 15",
+          "type": "Professional",
+          "options": "Modern Options 15",
+          "required": true,
+          "aiGenerated": true,
+          "weight": 282,
+          "order": 282,
+          "jobPostingId": "Modern Job Posting Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "ScreeningAnswer",
+      "routeKey": "screening-answers",
+      "label": "Screening Answer",
+      "icon": "database",
+      "aiFunction": "analyzeScreeningAnswer",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Screening Answer data. The data includes: Answer, Ai Score, Ai Feedback, Candidate Id, Question Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "answer",
+          "label": "Answer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiScore",
+          "label": "Ai Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "aiFeedback",
+          "label": "Ai Feedback",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "candidateId",
+          "label": "Candidate Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "questionId",
+          "label": "Question Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "answer": "Advanced Answer 1",
+          "aiScore": 10,
+          "aiFeedback": "Advanced Ai Feedback 1",
+          "candidateId": "Advanced Candidate Id 1",
+          "questionId": "Advanced Question Id 1"
+        },
+        {
+          "answer": "Premium Answer 2",
+          "aiScore": 58,
+          "aiFeedback": "Premium Ai Feedback 2",
+          "candidateId": "Premium Candidate Id 2",
+          "questionId": "Premium Question Id 2"
+        },
+        {
+          "answer": "Standard Answer 3",
+          "aiScore": 106,
+          "aiFeedback": "Standard Ai Feedback 3",
+          "candidateId": "Standard Candidate Id 3",
+          "questionId": "Standard Question Id 3"
+        },
+        {
+          "answer": "Elite Answer 4",
+          "aiScore": 154,
+          "aiFeedback": "Elite Ai Feedback 4",
+          "candidateId": "Elite Candidate Id 4",
+          "questionId": "Elite Question Id 4"
+        },
+        {
+          "answer": "Core Answer 5",
+          "aiScore": 102,
+          "aiFeedback": "Core Ai Feedback 5",
+          "candidateId": "Core Candidate Id 5",
+          "questionId": "Core Question Id 5"
+        },
+        {
+          "answer": "Pro Answer 6",
+          "aiScore": 150,
+          "aiFeedback": "Pro Ai Feedback 6",
+          "candidateId": "Pro Candidate Id 6",
+          "questionId": "Pro Question Id 6"
+        },
+        {
+          "answer": "Essential Answer 7",
+          "aiScore": 198,
+          "aiFeedback": "Essential Ai Feedback 7",
+          "candidateId": "Essential Candidate Id 7",
+          "questionId": "Essential Question Id 7"
+        },
+        {
+          "answer": "Primary Answer 8",
+          "aiScore": 146,
+          "aiFeedback": "Primary Ai Feedback 8",
+          "candidateId": "Primary Candidate Id 8",
+          "questionId": "Primary Question Id 8"
+        },
+        {
+          "answer": "Global Answer 9",
+          "aiScore": 194,
+          "aiFeedback": "Global Ai Feedback 9",
+          "candidateId": "Global Candidate Id 9",
+          "questionId": "Global Question Id 9"
+        },
+        {
+          "answer": "Regional Answer 10",
+          "aiScore": 242,
+          "aiFeedback": "Regional Ai Feedback 10",
+          "candidateId": "Regional Candidate Id 10",
+          "questionId": "Regional Question Id 10"
+        },
+        {
+          "answer": "Custom Answer 11",
+          "aiScore": 190,
+          "aiFeedback": "Custom Ai Feedback 11",
+          "candidateId": "Custom Candidate Id 11",
+          "questionId": "Custom Question Id 11"
+        },
+        {
+          "answer": "Smart Answer 12",
+          "aiScore": 238,
+          "aiFeedback": "Smart Ai Feedback 12",
+          "candidateId": "Smart Candidate Id 12",
+          "questionId": "Smart Question Id 12"
+        },
+        {
+          "answer": "Rapid Answer 13",
+          "aiScore": 286,
+          "aiFeedback": "Rapid Ai Feedback 13",
+          "candidateId": "Rapid Candidate Id 13",
+          "questionId": "Rapid Question Id 13"
+        },
+        {
+          "answer": "Secure Answer 14",
+          "aiScore": 234,
+          "aiFeedback": "Secure Ai Feedback 14",
+          "candidateId": "Secure Candidate Id 14",
+          "questionId": "Secure Question Id 14"
+        },
+        {
+          "answer": "Modern Answer 15",
+          "aiScore": 282,
+          "aiFeedback": "Modern Ai Feedback 15",
+          "candidateId": "Modern Candidate Id 15",
+          "questionId": "Modern Question Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Interview",
+      "routeKey": "interviews",
+      "label": "Interview",
+      "icon": "file-text",
+      "aiFunction": "analyzeInterview",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Interview data. The data includes: Scheduled At, Duration, Type, Status, Location, Meeting Link, Notes, Overall Rating, Technical Score, Cultural Score, Ai Summary, Ai Questions, Feedback, Candidate Id, Interviewer Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "scheduledAt",
+          "label": "Scheduled At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "duration",
+          "label": "Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "meetingLink",
+          "label": "Meeting Link",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "overallRating",
+          "label": "Overall Rating",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "technicalScore",
+          "label": "Technical Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "culturalScore",
+          "label": "Cultural Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "aiSummary",
+          "label": "Ai Summary",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiQuestions",
+          "label": "Ai Questions",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "feedback",
+          "label": "Feedback",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "candidateId",
+          "label": "Candidate Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "interviewerId",
+          "label": "Interviewer Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "scheduledAt": "2024-01-01",
+          "duration": 10,
+          "type": "Category A",
+          "status": "active",
+          "location": "New York",
+          "meetingLink": "https://example.com/meetingLink/1",
+          "notes": "Advanced Notes 1",
+          "overallRating": 10,
+          "technicalScore": 10,
+          "culturalScore": 10,
+          "aiSummary": "Advanced Ai Summary 1",
+          "aiQuestions": "Advanced Ai Questions 1",
+          "feedback": "Advanced Feedback 1",
+          "candidateId": "Advanced Candidate Id 1",
+          "interviewerId": "Advanced Interviewer Id 1"
+        },
+        {
+          "scheduledAt": "2024-02-03",
+          "duration": 58,
+          "type": "Category B",
+          "status": "pending",
+          "location": "Los Angeles",
+          "meetingLink": "https://example.com/meetingLink/2",
+          "notes": "Premium Notes 2",
+          "overallRating": 58,
+          "technicalScore": 58,
+          "culturalScore": 58,
+          "aiSummary": "Premium Ai Summary 2",
+          "aiQuestions": "Premium Ai Questions 2",
+          "feedback": "Premium Feedback 2",
+          "candidateId": "Premium Candidate Id 2",
+          "interviewerId": "Premium Interviewer Id 2"
+        },
+        {
+          "scheduledAt": "2024-03-05",
+          "duration": 106,
+          "type": "Category C",
+          "status": "in_progress",
+          "location": "Chicago",
+          "meetingLink": "https://example.com/meetingLink/3",
+          "notes": "Standard Notes 3",
+          "overallRating": 106,
+          "technicalScore": 106,
+          "culturalScore": 106,
+          "aiSummary": "Standard Ai Summary 3",
+          "aiQuestions": "Standard Ai Questions 3",
+          "feedback": "Standard Feedback 3",
+          "candidateId": "Standard Candidate Id 3",
+          "interviewerId": "Standard Interviewer Id 3"
+        },
+        {
+          "scheduledAt": "2024-04-07",
+          "duration": 154,
+          "type": "Category D",
+          "status": "completed",
+          "location": "Houston",
+          "meetingLink": "https://example.com/meetingLink/4",
+          "notes": "Elite Notes 4",
+          "overallRating": 154,
+          "technicalScore": 154,
+          "culturalScore": 154,
+          "aiSummary": "Elite Ai Summary 4",
+          "aiQuestions": "Elite Ai Questions 4",
+          "feedback": "Elite Feedback 4",
+          "candidateId": "Elite Candidate Id 4",
+          "interviewerId": "Elite Interviewer Id 4"
+        },
+        {
+          "scheduledAt": "2024-05-09",
+          "duration": 102,
+          "type": "Category E",
+          "status": "under_review",
+          "location": "Phoenix",
+          "meetingLink": "https://example.com/meetingLink/5",
+          "notes": "Core Notes 5",
+          "overallRating": 102,
+          "technicalScore": 102,
+          "culturalScore": 102,
+          "aiSummary": "Core Ai Summary 5",
+          "aiQuestions": "Core Ai Questions 5",
+          "feedback": "Core Feedback 5",
+          "candidateId": "Core Candidate Id 5",
+          "interviewerId": "Core Interviewer Id 5"
+        },
+        {
+          "scheduledAt": "2024-06-11",
+          "duration": 150,
+          "type": "Premium Tier",
+          "status": "approved",
+          "location": "San Francisco",
+          "meetingLink": "https://example.com/meetingLink/6",
+          "notes": "Pro Notes 6",
+          "overallRating": 150,
+          "technicalScore": 150,
+          "culturalScore": 150,
+          "aiSummary": "Pro Ai Summary 6",
+          "aiQuestions": "Pro Ai Questions 6",
+          "feedback": "Pro Feedback 6",
+          "candidateId": "Pro Candidate Id 6",
+          "interviewerId": "Pro Interviewer Id 6"
+        },
+        {
+          "scheduledAt": "2024-07-13",
+          "duration": 198,
+          "type": "Standard Tier",
+          "status": "active",
+          "location": "Seattle",
+          "meetingLink": "https://example.com/meetingLink/7",
+          "notes": "Essential Notes 7",
+          "overallRating": 198,
+          "technicalScore": 198,
+          "culturalScore": 198,
+          "aiSummary": "Essential Ai Summary 7",
+          "aiQuestions": "Essential Ai Questions 7",
+          "feedback": "Essential Feedback 7",
+          "candidateId": "Essential Candidate Id 7",
+          "interviewerId": "Essential Interviewer Id 7"
+        },
+        {
+          "scheduledAt": "2024-08-15",
+          "duration": 146,
+          "type": "Basic Tier",
+          "status": "active",
+          "location": "Boston",
+          "meetingLink": "https://example.com/meetingLink/8",
+          "notes": "Primary Notes 8",
+          "overallRating": 146,
+          "technicalScore": 146,
+          "culturalScore": 146,
+          "aiSummary": "Primary Ai Summary 8",
+          "aiQuestions": "Primary Ai Questions 8",
+          "feedback": "Primary Feedback 8",
+          "candidateId": "Primary Candidate Id 8",
+          "interviewerId": "Primary Interviewer Id 8"
+        },
+        {
+          "scheduledAt": "2024-09-17",
+          "duration": 194,
+          "type": "Enterprise",
+          "status": "active",
+          "location": "Denver",
+          "meetingLink": "https://example.com/meetingLink/9",
+          "notes": "Global Notes 9",
+          "overallRating": 194,
+          "technicalScore": 194,
+          "culturalScore": 194,
+          "aiSummary": "Global Ai Summary 9",
+          "aiQuestions": "Global Ai Questions 9",
+          "feedback": "Global Feedback 9",
+          "candidateId": "Global Candidate Id 9",
+          "interviewerId": "Global Interviewer Id 9"
+        },
+        {
+          "scheduledAt": "2024-10-19",
+          "duration": 242,
+          "type": "Starter",
+          "status": "pending",
+          "location": "Miami",
+          "meetingLink": "https://example.com/meetingLink/10",
+          "notes": "Regional Notes 10",
+          "overallRating": 242,
+          "technicalScore": 242,
+          "culturalScore": 242,
+          "aiSummary": "Regional Ai Summary 10",
+          "aiQuestions": "Regional Ai Questions 10",
+          "feedback": "Regional Feedback 10",
+          "candidateId": "Regional Candidate Id 10",
+          "interviewerId": "Regional Interviewer Id 10"
+        },
+        {
+          "scheduledAt": "2024-11-21",
+          "duration": 190,
+          "type": "Growth",
+          "status": "completed",
+          "location": "Austin",
+          "meetingLink": "https://example.com/meetingLink/11",
+          "notes": "Custom Notes 11",
+          "overallRating": 190,
+          "technicalScore": 190,
+          "culturalScore": 190,
+          "aiSummary": "Custom Ai Summary 11",
+          "aiQuestions": "Custom Ai Questions 11",
+          "feedback": "Custom Feedback 11",
+          "candidateId": "Custom Candidate Id 11",
+          "interviewerId": "Custom Interviewer Id 11"
+        },
+        {
+          "scheduledAt": "2024-12-23",
+          "duration": 238,
+          "type": "Scale",
+          "status": "active",
+          "location": "Portland",
+          "meetingLink": "https://example.com/meetingLink/12",
+          "notes": "Smart Notes 12",
+          "overallRating": 238,
+          "technicalScore": 238,
+          "culturalScore": 238,
+          "aiSummary": "Smart Ai Summary 12",
+          "aiQuestions": "Smart Ai Questions 12",
+          "feedback": "Smart Feedback 12",
+          "candidateId": "Smart Candidate Id 12",
+          "interviewerId": "Smart Interviewer Id 12"
+        },
+        {
+          "scheduledAt": "2024-01-25",
+          "duration": 286,
+          "type": "Foundation",
+          "status": "in_progress",
+          "location": "Dallas",
+          "meetingLink": "https://example.com/meetingLink/13",
+          "notes": "Rapid Notes 13",
+          "overallRating": 286,
+          "technicalScore": 286,
+          "culturalScore": 286,
+          "aiSummary": "Rapid Ai Summary 13",
+          "aiQuestions": "Rapid Ai Questions 13",
+          "feedback": "Rapid Feedback 13",
+          "candidateId": "Rapid Candidate Id 13",
+          "interviewerId": "Rapid Interviewer Id 13"
+        },
+        {
+          "scheduledAt": "2024-02-27",
+          "duration": 234,
+          "type": "Advanced",
+          "status": "active",
+          "location": "Atlanta",
+          "meetingLink": "https://example.com/meetingLink/14",
+          "notes": "Secure Notes 14",
+          "overallRating": 234,
+          "technicalScore": 234,
+          "culturalScore": 234,
+          "aiSummary": "Secure Ai Summary 14",
+          "aiQuestions": "Secure Ai Questions 14",
+          "feedback": "Secure Feedback 14",
+          "candidateId": "Secure Candidate Id 14",
+          "interviewerId": "Secure Interviewer Id 14"
+        },
+        {
+          "scheduledAt": "2024-03-01",
+          "duration": 282,
+          "type": "Professional",
+          "status": "approved",
+          "location": "Nashville",
+          "meetingLink": "https://example.com/meetingLink/15",
+          "notes": "Modern Notes 15",
+          "overallRating": 282,
+          "technicalScore": 282,
+          "culturalScore": 282,
+          "aiSummary": "Modern Ai Summary 15",
+          "aiQuestions": "Modern Ai Questions 15",
+          "feedback": "Modern Feedback 15",
+          "candidateId": "Modern Candidate Id 15",
+          "interviewerId": "Modern Interviewer Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Note",
+      "routeKey": "notes",
+      "label": "Note",
+      "icon": "heart",
+      "aiFunction": "analyzeNote",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Note data. The data includes: Content, Type, Is Private, Candidate Id, Author Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isPrivate",
+          "label": "Is Private",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "candidateId",
+          "label": "Candidate Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "authorId",
+          "label": "Author Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "content": "Advanced Content 1",
+          "type": "Category A",
+          "isPrivate": true,
+          "candidateId": "Advanced Candidate Id 1",
+          "authorId": "Advanced Author Id 1"
+        },
+        {
+          "content": "Premium Content 2",
+          "type": "Category B",
+          "isPrivate": true,
+          "candidateId": "Premium Candidate Id 2",
+          "authorId": "Premium Author Id 2"
+        },
+        {
+          "content": "Standard Content 3",
+          "type": "Category C",
+          "isPrivate": false,
+          "candidateId": "Standard Candidate Id 3",
+          "authorId": "Standard Author Id 3"
+        },
+        {
+          "content": "Elite Content 4",
+          "type": "Category D",
+          "isPrivate": true,
+          "candidateId": "Elite Candidate Id 4",
+          "authorId": "Elite Author Id 4"
+        },
+        {
+          "content": "Core Content 5",
+          "type": "Category E",
+          "isPrivate": false,
+          "candidateId": "Core Candidate Id 5",
+          "authorId": "Core Author Id 5"
+        },
+        {
+          "content": "Pro Content 6",
+          "type": "Premium Tier",
+          "isPrivate": true,
+          "candidateId": "Pro Candidate Id 6",
+          "authorId": "Pro Author Id 6"
+        },
+        {
+          "content": "Essential Content 7",
+          "type": "Standard Tier",
+          "isPrivate": true,
+          "candidateId": "Essential Candidate Id 7",
+          "authorId": "Essential Author Id 7"
+        },
+        {
+          "content": "Primary Content 8",
+          "type": "Basic Tier",
+          "isPrivate": false,
+          "candidateId": "Primary Candidate Id 8",
+          "authorId": "Primary Author Id 8"
+        },
+        {
+          "content": "Global Content 9",
+          "type": "Enterprise",
+          "isPrivate": true,
+          "candidateId": "Global Candidate Id 9",
+          "authorId": "Global Author Id 9"
+        },
+        {
+          "content": "Regional Content 10",
+          "type": "Starter",
+          "isPrivate": true,
+          "candidateId": "Regional Candidate Id 10",
+          "authorId": "Regional Author Id 10"
+        },
+        {
+          "content": "Custom Content 11",
+          "type": "Growth",
+          "isPrivate": false,
+          "candidateId": "Custom Candidate Id 11",
+          "authorId": "Custom Author Id 11"
+        },
+        {
+          "content": "Smart Content 12",
+          "type": "Scale",
+          "isPrivate": true,
+          "candidateId": "Smart Candidate Id 12",
+          "authorId": "Smart Author Id 12"
+        },
+        {
+          "content": "Rapid Content 13",
+          "type": "Foundation",
+          "isPrivate": false,
+          "candidateId": "Rapid Candidate Id 13",
+          "authorId": "Rapid Author Id 13"
+        },
+        {
+          "content": "Secure Content 14",
+          "type": "Advanced",
+          "isPrivate": true,
+          "candidateId": "Secure Candidate Id 14",
+          "authorId": "Secure Author Id 14"
+        },
+        {
+          "content": "Modern Content 15",
+          "type": "Professional",
+          "isPrivate": true,
+          "candidateId": "Modern Candidate Id 15",
+          "authorId": "Modern Author Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Communication",
+      "routeKey": "communications",
+      "label": "Communication",
+      "icon": "layers",
+      "aiFunction": "analyzeCommunication",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Communication data. The data includes: Type, Direction, Subject, Content, Status, Ai Generated, Sent At, Candidate Id, User Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "direction",
+          "label": "Direction",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "subject",
+          "label": "Subject",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiGenerated",
+          "label": "Ai Generated",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "sentAt",
+          "label": "Sent At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "candidateId",
+          "label": "Candidate Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "type": "Category A",
+          "direction": "Advanced Direction 1",
+          "subject": "Advanced Subject 1",
+          "content": "Advanced Content 1",
+          "status": "active",
+          "aiGenerated": true,
+          "sentAt": "2024-01-01",
+          "candidateId": "Advanced Candidate Id 1",
+          "userId": "Advanced User Id 1"
+        },
+        {
+          "type": "Category B",
+          "direction": "Premium Direction 2",
+          "subject": "Premium Subject 2",
+          "content": "Premium Content 2",
+          "status": "pending",
+          "aiGenerated": true,
+          "sentAt": "2024-02-03",
+          "candidateId": "Premium Candidate Id 2",
+          "userId": "Premium User Id 2"
+        },
+        {
+          "type": "Category C",
+          "direction": "Standard Direction 3",
+          "subject": "Standard Subject 3",
+          "content": "Standard Content 3",
+          "status": "in_progress",
+          "aiGenerated": false,
+          "sentAt": "2024-03-05",
+          "candidateId": "Standard Candidate Id 3",
+          "userId": "Standard User Id 3"
+        },
+        {
+          "type": "Category D",
+          "direction": "Elite Direction 4",
+          "subject": "Elite Subject 4",
+          "content": "Elite Content 4",
+          "status": "completed",
+          "aiGenerated": true,
+          "sentAt": "2024-04-07",
+          "candidateId": "Elite Candidate Id 4",
+          "userId": "Elite User Id 4"
+        },
+        {
+          "type": "Category E",
+          "direction": "Core Direction 5",
+          "subject": "Core Subject 5",
+          "content": "Core Content 5",
+          "status": "under_review",
+          "aiGenerated": false,
+          "sentAt": "2024-05-09",
+          "candidateId": "Core Candidate Id 5",
+          "userId": "Core User Id 5"
+        },
+        {
+          "type": "Premium Tier",
+          "direction": "Pro Direction 6",
+          "subject": "Pro Subject 6",
+          "content": "Pro Content 6",
+          "status": "approved",
+          "aiGenerated": true,
+          "sentAt": "2024-06-11",
+          "candidateId": "Pro Candidate Id 6",
+          "userId": "Pro User Id 6"
+        },
+        {
+          "type": "Standard Tier",
+          "direction": "Essential Direction 7",
+          "subject": "Essential Subject 7",
+          "content": "Essential Content 7",
+          "status": "active",
+          "aiGenerated": true,
+          "sentAt": "2024-07-13",
+          "candidateId": "Essential Candidate Id 7",
+          "userId": "Essential User Id 7"
+        },
+        {
+          "type": "Basic Tier",
+          "direction": "Primary Direction 8",
+          "subject": "Primary Subject 8",
+          "content": "Primary Content 8",
+          "status": "active",
+          "aiGenerated": false,
+          "sentAt": "2024-08-15",
+          "candidateId": "Primary Candidate Id 8",
+          "userId": "Primary User Id 8"
+        },
+        {
+          "type": "Enterprise",
+          "direction": "Global Direction 9",
+          "subject": "Global Subject 9",
+          "content": "Global Content 9",
+          "status": "active",
+          "aiGenerated": true,
+          "sentAt": "2024-09-17",
+          "candidateId": "Global Candidate Id 9",
+          "userId": "Global User Id 9"
+        },
+        {
+          "type": "Starter",
+          "direction": "Regional Direction 10",
+          "subject": "Regional Subject 10",
+          "content": "Regional Content 10",
+          "status": "pending",
+          "aiGenerated": true,
+          "sentAt": "2024-10-19",
+          "candidateId": "Regional Candidate Id 10",
+          "userId": "Regional User Id 10"
+        },
+        {
+          "type": "Growth",
+          "direction": "Custom Direction 11",
+          "subject": "Custom Subject 11",
+          "content": "Custom Content 11",
+          "status": "completed",
+          "aiGenerated": false,
+          "sentAt": "2024-11-21",
+          "candidateId": "Custom Candidate Id 11",
+          "userId": "Custom User Id 11"
+        },
+        {
+          "type": "Scale",
+          "direction": "Smart Direction 12",
+          "subject": "Smart Subject 12",
+          "content": "Smart Content 12",
+          "status": "active",
+          "aiGenerated": true,
+          "sentAt": "2024-12-23",
+          "candidateId": "Smart Candidate Id 12",
+          "userId": "Smart User Id 12"
+        },
+        {
+          "type": "Foundation",
+          "direction": "Rapid Direction 13",
+          "subject": "Rapid Subject 13",
+          "content": "Rapid Content 13",
+          "status": "in_progress",
+          "aiGenerated": false,
+          "sentAt": "2024-01-25",
+          "candidateId": "Rapid Candidate Id 13",
+          "userId": "Rapid User Id 13"
+        },
+        {
+          "type": "Advanced",
+          "direction": "Secure Direction 14",
+          "subject": "Secure Subject 14",
+          "content": "Secure Content 14",
+          "status": "active",
+          "aiGenerated": true,
+          "sentAt": "2024-02-27",
+          "candidateId": "Secure Candidate Id 14",
+          "userId": "Secure User Id 14"
+        },
+        {
+          "type": "Professional",
+          "direction": "Modern Direction 15",
+          "subject": "Modern Subject 15",
+          "content": "Modern Content 15",
+          "status": "approved",
+          "aiGenerated": true,
+          "sentAt": "2024-03-01",
+          "candidateId": "Modern Candidate Id 15",
+          "userId": "Modern User Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Assessment",
+      "routeKey": "assessments",
+      "label": "Assessment",
+      "icon": "map-pin",
+      "aiFunction": "analyzeAssessment",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Assessment data. The data includes: Name, Type, Status, Score, Max Score, Duration, Time Limit, Questions, Answers, Ai Analysis, Started At, Completed At, Candidate Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "score",
+          "label": "Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "maxScore",
+          "label": "Max Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "duration",
+          "label": "Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "timeLimit",
+          "label": "Time Limit",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "questions",
+          "label": "Questions",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "answers",
+          "label": "Answers",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startedAt",
+          "label": "Started At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "completedAt",
+          "label": "Completed At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "candidateId",
+          "label": "Candidate Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "status": "active",
+          "score": 10,
+          "maxScore": 10,
+          "duration": 10,
+          "timeLimit": 10,
+          "questions": "Advanced Questions 1",
+          "answers": "Advanced Answers 1",
+          "aiAnalysis": "Advanced Ai Analysis 1",
+          "startedAt": "2024-01-01",
+          "completedAt": "2024-01-01",
+          "candidateId": "Advanced Candidate Id 1"
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "status": "pending",
+          "score": 58,
+          "maxScore": 58,
+          "duration": 58,
+          "timeLimit": 58,
+          "questions": "Premium Questions 2",
+          "answers": "Premium Answers 2",
+          "aiAnalysis": "Premium Ai Analysis 2",
+          "startedAt": "2024-02-03",
+          "completedAt": "2024-02-03",
+          "candidateId": "Premium Candidate Id 2"
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "status": "in_progress",
+          "score": 106,
+          "maxScore": 106,
+          "duration": 106,
+          "timeLimit": 106,
+          "questions": "Standard Questions 3",
+          "answers": "Standard Answers 3",
+          "aiAnalysis": "Standard Ai Analysis 3",
+          "startedAt": "2024-03-05",
+          "completedAt": "2024-03-05",
+          "candidateId": "Standard Candidate Id 3"
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "status": "completed",
+          "score": 154,
+          "maxScore": 154,
+          "duration": 154,
+          "timeLimit": 154,
+          "questions": "Elite Questions 4",
+          "answers": "Elite Answers 4",
+          "aiAnalysis": "Elite Ai Analysis 4",
+          "startedAt": "2024-04-07",
+          "completedAt": "2024-04-07",
+          "candidateId": "Elite Candidate Id 4"
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "status": "under_review",
+          "score": 102,
+          "maxScore": 102,
+          "duration": 102,
+          "timeLimit": 102,
+          "questions": "Core Questions 5",
+          "answers": "Core Answers 5",
+          "aiAnalysis": "Core Ai Analysis 5",
+          "startedAt": "2024-05-09",
+          "completedAt": "2024-05-09",
+          "candidateId": "Core Candidate Id 5"
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "status": "approved",
+          "score": 150,
+          "maxScore": 150,
+          "duration": 150,
+          "timeLimit": 150,
+          "questions": "Pro Questions 6",
+          "answers": "Pro Answers 6",
+          "aiAnalysis": "Pro Ai Analysis 6",
+          "startedAt": "2024-06-11",
+          "completedAt": "2024-06-11",
+          "candidateId": "Pro Candidate Id 6"
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "status": "active",
+          "score": 198,
+          "maxScore": 198,
+          "duration": 198,
+          "timeLimit": 198,
+          "questions": "Essential Questions 7",
+          "answers": "Essential Answers 7",
+          "aiAnalysis": "Essential Ai Analysis 7",
+          "startedAt": "2024-07-13",
+          "completedAt": "2024-07-13",
+          "candidateId": "Essential Candidate Id 7"
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "status": "active",
+          "score": 146,
+          "maxScore": 146,
+          "duration": 146,
+          "timeLimit": 146,
+          "questions": "Primary Questions 8",
+          "answers": "Primary Answers 8",
+          "aiAnalysis": "Primary Ai Analysis 8",
+          "startedAt": "2024-08-15",
+          "completedAt": "2024-08-15",
+          "candidateId": "Primary Candidate Id 8"
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "status": "active",
+          "score": 194,
+          "maxScore": 194,
+          "duration": 194,
+          "timeLimit": 194,
+          "questions": "Global Questions 9",
+          "answers": "Global Answers 9",
+          "aiAnalysis": "Global Ai Analysis 9",
+          "startedAt": "2024-09-17",
+          "completedAt": "2024-09-17",
+          "candidateId": "Global Candidate Id 9"
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "status": "pending",
+          "score": 242,
+          "maxScore": 242,
+          "duration": 242,
+          "timeLimit": 242,
+          "questions": "Regional Questions 10",
+          "answers": "Regional Answers 10",
+          "aiAnalysis": "Regional Ai Analysis 10",
+          "startedAt": "2024-10-19",
+          "completedAt": "2024-10-19",
+          "candidateId": "Regional Candidate Id 10"
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "status": "completed",
+          "score": 190,
+          "maxScore": 190,
+          "duration": 190,
+          "timeLimit": 190,
+          "questions": "Custom Questions 11",
+          "answers": "Custom Answers 11",
+          "aiAnalysis": "Custom Ai Analysis 11",
+          "startedAt": "2024-11-21",
+          "completedAt": "2024-11-21",
+          "candidateId": "Custom Candidate Id 11"
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "status": "active",
+          "score": 238,
+          "maxScore": 238,
+          "duration": 238,
+          "timeLimit": 238,
+          "questions": "Smart Questions 12",
+          "answers": "Smart Answers 12",
+          "aiAnalysis": "Smart Ai Analysis 12",
+          "startedAt": "2024-12-23",
+          "completedAt": "2024-12-23",
+          "candidateId": "Smart Candidate Id 12"
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "status": "in_progress",
+          "score": 286,
+          "maxScore": 286,
+          "duration": 286,
+          "timeLimit": 286,
+          "questions": "Rapid Questions 13",
+          "answers": "Rapid Answers 13",
+          "aiAnalysis": "Rapid Ai Analysis 13",
+          "startedAt": "2024-01-25",
+          "completedAt": "2024-01-25",
+          "candidateId": "Rapid Candidate Id 13"
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "status": "active",
+          "score": 234,
+          "maxScore": 234,
+          "duration": 234,
+          "timeLimit": 234,
+          "questions": "Secure Questions 14",
+          "answers": "Secure Answers 14",
+          "aiAnalysis": "Secure Ai Analysis 14",
+          "startedAt": "2024-02-27",
+          "completedAt": "2024-02-27",
+          "candidateId": "Secure Candidate Id 14"
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "status": "approved",
+          "score": 282,
+          "maxScore": 282,
+          "duration": 282,
+          "timeLimit": 282,
+          "questions": "Modern Questions 15",
+          "answers": "Modern Answers 15",
+          "aiAnalysis": "Modern Ai Analysis 15",
+          "startedAt": "2024-03-01",
+          "completedAt": "2024-03-01",
+          "candidateId": "Modern Candidate Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "EmailTemplate",
+      "routeKey": "email-templates",
+      "label": "Email Template",
+      "icon": "package",
+      "aiFunction": "analyzeEmailTemplate",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Email Template data. The data includes: Name, Subject, Body, Type, Variables, Ai Generated, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "subject",
+          "label": "Subject",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "body",
+          "label": "Body",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "variables",
+          "label": "Variables",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiGenerated",
+          "label": "Ai Generated",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "subject": "Advanced Subject 1",
+          "body": "Advanced Body 1",
+          "type": "Category A",
+          "variables": "Advanced Variables 1",
+          "aiGenerated": true,
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "subject": "Premium Subject 2",
+          "body": "Premium Body 2",
+          "type": "Category B",
+          "variables": "Premium Variables 2",
+          "aiGenerated": true,
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "subject": "Standard Subject 3",
+          "body": "Standard Body 3",
+          "type": "Category C",
+          "variables": "Standard Variables 3",
+          "aiGenerated": false,
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "subject": "Elite Subject 4",
+          "body": "Elite Body 4",
+          "type": "Category D",
+          "variables": "Elite Variables 4",
+          "aiGenerated": true,
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "subject": "Core Subject 5",
+          "body": "Core Body 5",
+          "type": "Category E",
+          "variables": "Core Variables 5",
+          "aiGenerated": false,
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "subject": "Pro Subject 6",
+          "body": "Pro Body 6",
+          "type": "Premium Tier",
+          "variables": "Pro Variables 6",
+          "aiGenerated": true,
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "subject": "Essential Subject 7",
+          "body": "Essential Body 7",
+          "type": "Standard Tier",
+          "variables": "Essential Variables 7",
+          "aiGenerated": true,
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "subject": "Primary Subject 8",
+          "body": "Primary Body 8",
+          "type": "Basic Tier",
+          "variables": "Primary Variables 8",
+          "aiGenerated": false,
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "subject": "Global Subject 9",
+          "body": "Global Body 9",
+          "type": "Enterprise",
+          "variables": "Global Variables 9",
+          "aiGenerated": true,
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "subject": "Regional Subject 10",
+          "body": "Regional Body 10",
+          "type": "Starter",
+          "variables": "Regional Variables 10",
+          "aiGenerated": true,
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "subject": "Custom Subject 11",
+          "body": "Custom Body 11",
+          "type": "Growth",
+          "variables": "Custom Variables 11",
+          "aiGenerated": false,
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "subject": "Smart Subject 12",
+          "body": "Smart Body 12",
+          "type": "Scale",
+          "variables": "Smart Variables 12",
+          "aiGenerated": true,
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "subject": "Rapid Subject 13",
+          "body": "Rapid Body 13",
+          "type": "Foundation",
+          "variables": "Rapid Variables 13",
+          "aiGenerated": false,
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "subject": "Secure Subject 14",
+          "body": "Secure Body 14",
+          "type": "Advanced",
+          "variables": "Secure Variables 14",
+          "aiGenerated": true,
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "subject": "Modern Subject 15",
+          "body": "Modern Body 15",
+          "type": "Professional",
+          "variables": "Modern Variables 15",
+          "aiGenerated": true,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "PipelineStage",
+      "routeKey": "pipeline-stages",
+      "label": "Pipeline Stage",
+      "icon": "shield",
+      "aiFunction": "analyzePipelineStage",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Pipeline Stage data. The data includes: Name, Description, Color, Order, Is Default. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "color",
+          "label": "Color",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "order",
+          "label": "Order",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "isDefault",
+          "label": "Is Default",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Advanced Description 1",
+          "color": "Advanced Color 1",
+          "order": 10,
+          "isDefault": true
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Premium Description 2",
+          "color": "Premium Color 2",
+          "order": 58,
+          "isDefault": true
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Standard Description 3",
+          "color": "Standard Color 3",
+          "order": 106,
+          "isDefault": false
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Elite Description 4",
+          "color": "Elite Color 4",
+          "order": 154,
+          "isDefault": true
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Core Description 5",
+          "color": "Core Color 5",
+          "order": 102,
+          "isDefault": false
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "Pro Description 6",
+          "color": "Pro Color 6",
+          "order": 150,
+          "isDefault": true
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Essential Description 7",
+          "color": "Essential Color 7",
+          "order": 198,
+          "isDefault": true
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Primary Description 8",
+          "color": "Primary Color 8",
+          "order": 146,
+          "isDefault": false
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Global Description 9",
+          "color": "Global Color 9",
+          "order": 194,
+          "isDefault": true
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Regional Description 10",
+          "color": "Regional Color 10",
+          "order": 242,
+          "isDefault": true
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Custom Description 11",
+          "color": "Custom Color 11",
+          "order": 190,
+          "isDefault": false
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Smart Description 12",
+          "color": "Smart Color 12",
+          "order": 238,
+          "isDefault": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Rapid Description 13",
+          "color": "Rapid Color 13",
+          "order": 286,
+          "isDefault": false
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Secure Description 14",
+          "color": "Secure Color 14",
+          "order": 234,
+          "isDefault": true
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Modern Description 15",
+          "color": "Modern Color 15",
+          "order": 282,
+          "isDefault": true
+        }
+      ]
+    },
+    {
+      "modelName": "AnalyticsEvent",
+      "routeKey": "analytics-events",
+      "label": "Analytics Event",
+      "icon": "star",
+      "aiFunction": "analyzeAnalyticsEvent",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Analytics Event data. The data includes: Event Type, Entity Type, Entity Id, Metadata. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "eventType",
+          "label": "Event Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "metadata",
+          "label": "Metadata",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "eventType": "Category A",
+          "entityType": "Category A",
+          "entityId": "Advanced Entity Id 1",
+          "metadata": "Advanced Metadata 1"
+        },
+        {
+          "eventType": "Category B",
+          "entityType": "Category B",
+          "entityId": "Premium Entity Id 2",
+          "metadata": "Premium Metadata 2"
+        },
+        {
+          "eventType": "Category C",
+          "entityType": "Category C",
+          "entityId": "Standard Entity Id 3",
+          "metadata": "Standard Metadata 3"
+        },
+        {
+          "eventType": "Category D",
+          "entityType": "Category D",
+          "entityId": "Elite Entity Id 4",
+          "metadata": "Elite Metadata 4"
+        },
+        {
+          "eventType": "Category E",
+          "entityType": "Category E",
+          "entityId": "Core Entity Id 5",
+          "metadata": "Core Metadata 5"
+        },
+        {
+          "eventType": "Premium Tier",
+          "entityType": "Premium Tier",
+          "entityId": "Pro Entity Id 6",
+          "metadata": "Pro Metadata 6"
+        },
+        {
+          "eventType": "Standard Tier",
+          "entityType": "Standard Tier",
+          "entityId": "Essential Entity Id 7",
+          "metadata": "Essential Metadata 7"
+        },
+        {
+          "eventType": "Basic Tier",
+          "entityType": "Basic Tier",
+          "entityId": "Primary Entity Id 8",
+          "metadata": "Primary Metadata 8"
+        },
+        {
+          "eventType": "Enterprise",
+          "entityType": "Enterprise",
+          "entityId": "Global Entity Id 9",
+          "metadata": "Global Metadata 9"
+        },
+        {
+          "eventType": "Starter",
+          "entityType": "Starter",
+          "entityId": "Regional Entity Id 10",
+          "metadata": "Regional Metadata 10"
+        },
+        {
+          "eventType": "Growth",
+          "entityType": "Growth",
+          "entityId": "Custom Entity Id 11",
+          "metadata": "Custom Metadata 11"
+        },
+        {
+          "eventType": "Scale",
+          "entityType": "Scale",
+          "entityId": "Smart Entity Id 12",
+          "metadata": "Smart Metadata 12"
+        },
+        {
+          "eventType": "Foundation",
+          "entityType": "Foundation",
+          "entityId": "Rapid Entity Id 13",
+          "metadata": "Rapid Metadata 13"
+        },
+        {
+          "eventType": "Advanced",
+          "entityType": "Advanced",
+          "entityId": "Secure Entity Id 14",
+          "metadata": "Secure Metadata 14"
+        },
+        {
+          "eventType": "Professional",
+          "entityType": "Professional",
+          "entityId": "Modern Entity Id 15",
+          "metadata": "Modern Metadata 15"
+        }
+      ]
+    },
+    {
+      "modelName": "AIPrompt",
+      "routeKey": "a-i-prompts",
+      "label": "A I Prompt",
+      "icon": "truck",
+      "aiFunction": "analyzeAIPrompt",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided A I Prompt data. The data includes: Name, Description, Prompt, Type, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "prompt",
+          "label": "Prompt",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Advanced Description 1",
+          "prompt": "Advanced Prompt 1",
+          "type": "Category A",
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Premium Description 2",
+          "prompt": "Premium Prompt 2",
+          "type": "Category B",
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Standard Description 3",
+          "prompt": "Standard Prompt 3",
+          "type": "Category C",
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Elite Description 4",
+          "prompt": "Elite Prompt 4",
+          "type": "Category D",
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Core Description 5",
+          "prompt": "Core Prompt 5",
+          "type": "Category E",
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "Pro Description 6",
+          "prompt": "Pro Prompt 6",
+          "type": "Premium Tier",
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Essential Description 7",
+          "prompt": "Essential Prompt 7",
+          "type": "Standard Tier",
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Primary Description 8",
+          "prompt": "Primary Prompt 8",
+          "type": "Basic Tier",
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Global Description 9",
+          "prompt": "Global Prompt 9",
+          "type": "Enterprise",
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Regional Description 10",
+          "prompt": "Regional Prompt 10",
+          "type": "Starter",
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Custom Description 11",
+          "prompt": "Custom Prompt 11",
+          "type": "Growth",
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Smart Description 12",
+          "prompt": "Smart Prompt 12",
+          "type": "Scale",
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Rapid Description 13",
+          "prompt": "Rapid Prompt 13",
+          "type": "Foundation",
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Secure Description 14",
+          "prompt": "Secure Prompt 14",
+          "type": "Advanced",
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Modern Description 15",
+          "prompt": "Modern Prompt 15",
+          "type": "Professional",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "Employee",
+      "routeKey": "employees",
+      "label": "Employee",
+      "icon": "users",
+      "aiFunction": "analyzeEmployee",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Employee data. The data includes: First Name, Last Name, Email, Phone, Department, Title, Manager Id, Hire Date, Salary, Status, Location, Skills. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "managerId",
+          "label": "Manager Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "hireDate",
+          "label": "Hire Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "salary",
+          "label": "Salary",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "skills",
+          "label": "Skills",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "department": "Category A",
+          "title": "Advanced Title 1",
+          "managerId": "Advanced Manager Id 1",
+          "hireDate": "2024-01-01",
+          "salary": 10,
+          "status": "active",
+          "location": "New York",
+          "skills": "Advanced Skills 1"
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "department": "Category B",
+          "title": "Premium Title 2",
+          "managerId": "Premium Manager Id 2",
+          "hireDate": "2024-02-03",
+          "salary": 58,
+          "status": "pending",
+          "location": "Los Angeles",
+          "skills": "Premium Skills 2"
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "department": "Category C",
+          "title": "Standard Title 3",
+          "managerId": "Standard Manager Id 3",
+          "hireDate": "2024-03-05",
+          "salary": 106,
+          "status": "in_progress",
+          "location": "Chicago",
+          "skills": "Standard Skills 3"
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "department": "Category D",
+          "title": "Elite Title 4",
+          "managerId": "Elite Manager Id 4",
+          "hireDate": "2024-04-07",
+          "salary": 154,
+          "status": "completed",
+          "location": "Houston",
+          "skills": "Elite Skills 4"
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "department": "Category E",
+          "title": "Core Title 5",
+          "managerId": "Core Manager Id 5",
+          "hireDate": "2024-05-09",
+          "salary": 102,
+          "status": "under_review",
+          "location": "Phoenix",
+          "skills": "Core Skills 5"
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "department": "Premium Tier",
+          "title": "Pro Title 6",
+          "managerId": "Pro Manager Id 6",
+          "hireDate": "2024-06-11",
+          "salary": 150,
+          "status": "approved",
+          "location": "San Francisco",
+          "skills": "Pro Skills 6"
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "department": "Standard Tier",
+          "title": "Essential Title 7",
+          "managerId": "Essential Manager Id 7",
+          "hireDate": "2024-07-13",
+          "salary": 198,
+          "status": "active",
+          "location": "Seattle",
+          "skills": "Essential Skills 7"
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "department": "Basic Tier",
+          "title": "Primary Title 8",
+          "managerId": "Primary Manager Id 8",
+          "hireDate": "2024-08-15",
+          "salary": 146,
+          "status": "active",
+          "location": "Boston",
+          "skills": "Primary Skills 8"
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "department": "Enterprise",
+          "title": "Global Title 9",
+          "managerId": "Global Manager Id 9",
+          "hireDate": "2024-09-17",
+          "salary": 194,
+          "status": "active",
+          "location": "Denver",
+          "skills": "Global Skills 9"
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "department": "Starter",
+          "title": "Regional Title 10",
+          "managerId": "Regional Manager Id 10",
+          "hireDate": "2024-10-19",
+          "salary": 242,
+          "status": "pending",
+          "location": "Miami",
+          "skills": "Regional Skills 10"
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "department": "Growth",
+          "title": "Custom Title 11",
+          "managerId": "Custom Manager Id 11",
+          "hireDate": "2024-11-21",
+          "salary": 190,
+          "status": "completed",
+          "location": "Austin",
+          "skills": "Custom Skills 11"
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "department": "Scale",
+          "title": "Smart Title 12",
+          "managerId": "Smart Manager Id 12",
+          "hireDate": "2024-12-23",
+          "salary": 238,
+          "status": "active",
+          "location": "Portland",
+          "skills": "Smart Skills 12"
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "department": "Foundation",
+          "title": "Rapid Title 13",
+          "managerId": "Rapid Manager Id 13",
+          "hireDate": "2024-01-25",
+          "salary": 286,
+          "status": "in_progress",
+          "location": "Dallas",
+          "skills": "Rapid Skills 13"
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "department": "Advanced",
+          "title": "Secure Title 14",
+          "managerId": "Secure Manager Id 14",
+          "hireDate": "2024-02-27",
+          "salary": 234,
+          "status": "active",
+          "location": "Atlanta",
+          "skills": "Secure Skills 14"
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "department": "Professional",
+          "title": "Modern Title 15",
+          "managerId": "Modern Manager Id 15",
+          "hireDate": "2024-03-01",
+          "salary": 282,
+          "status": "approved",
+          "location": "Nashville",
+          "skills": "Modern Skills 15"
+        }
+      ]
+    },
+    {
+      "modelName": "BiasReport",
+      "routeKey": "bias-reports",
+      "label": "Bias Report",
+      "icon": "zap",
+      "aiFunction": "analyzeBiasReport",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Bias Report data. The data includes: Target Type, Target Id, Content, Bias Score, Bias Types, Suggestions, Ai Analysis, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "targetType",
+          "label": "Target Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "targetId",
+          "label": "Target Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "biasScore",
+          "label": "Bias Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "biasTypes",
+          "label": "Bias Types",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "suggestions",
+          "label": "Suggestions",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "targetType": "Category A",
+          "targetId": "Advanced Target Id 1",
+          "content": "Advanced Content 1",
+          "biasScore": 10,
+          "biasTypes": "Category A",
+          "suggestions": "Advanced Suggestions 1",
+          "aiAnalysis": "Advanced Ai Analysis 1",
+          "status": "active"
+        },
+        {
+          "targetType": "Category B",
+          "targetId": "Premium Target Id 2",
+          "content": "Premium Content 2",
+          "biasScore": 58,
+          "biasTypes": "Category B",
+          "suggestions": "Premium Suggestions 2",
+          "aiAnalysis": "Premium Ai Analysis 2",
+          "status": "pending"
+        },
+        {
+          "targetType": "Category C",
+          "targetId": "Standard Target Id 3",
+          "content": "Standard Content 3",
+          "biasScore": 106,
+          "biasTypes": "Category C",
+          "suggestions": "Standard Suggestions 3",
+          "aiAnalysis": "Standard Ai Analysis 3",
+          "status": "in_progress"
+        },
+        {
+          "targetType": "Category D",
+          "targetId": "Elite Target Id 4",
+          "content": "Elite Content 4",
+          "biasScore": 154,
+          "biasTypes": "Category D",
+          "suggestions": "Elite Suggestions 4",
+          "aiAnalysis": "Elite Ai Analysis 4",
+          "status": "completed"
+        },
+        {
+          "targetType": "Category E",
+          "targetId": "Core Target Id 5",
+          "content": "Core Content 5",
+          "biasScore": 102,
+          "biasTypes": "Category E",
+          "suggestions": "Core Suggestions 5",
+          "aiAnalysis": "Core Ai Analysis 5",
+          "status": "under_review"
+        },
+        {
+          "targetType": "Premium Tier",
+          "targetId": "Pro Target Id 6",
+          "content": "Pro Content 6",
+          "biasScore": 150,
+          "biasTypes": "Premium Tier",
+          "suggestions": "Pro Suggestions 6",
+          "aiAnalysis": "Pro Ai Analysis 6",
+          "status": "approved"
+        },
+        {
+          "targetType": "Standard Tier",
+          "targetId": "Essential Target Id 7",
+          "content": "Essential Content 7",
+          "biasScore": 198,
+          "biasTypes": "Standard Tier",
+          "suggestions": "Essential Suggestions 7",
+          "aiAnalysis": "Essential Ai Analysis 7",
+          "status": "active"
+        },
+        {
+          "targetType": "Basic Tier",
+          "targetId": "Primary Target Id 8",
+          "content": "Primary Content 8",
+          "biasScore": 146,
+          "biasTypes": "Basic Tier",
+          "suggestions": "Primary Suggestions 8",
+          "aiAnalysis": "Primary Ai Analysis 8",
+          "status": "active"
+        },
+        {
+          "targetType": "Enterprise",
+          "targetId": "Global Target Id 9",
+          "content": "Global Content 9",
+          "biasScore": 194,
+          "biasTypes": "Enterprise",
+          "suggestions": "Global Suggestions 9",
+          "aiAnalysis": "Global Ai Analysis 9",
+          "status": "active"
+        },
+        {
+          "targetType": "Starter",
+          "targetId": "Regional Target Id 10",
+          "content": "Regional Content 10",
+          "biasScore": 242,
+          "biasTypes": "Starter",
+          "suggestions": "Regional Suggestions 10",
+          "aiAnalysis": "Regional Ai Analysis 10",
+          "status": "pending"
+        },
+        {
+          "targetType": "Growth",
+          "targetId": "Custom Target Id 11",
+          "content": "Custom Content 11",
+          "biasScore": 190,
+          "biasTypes": "Growth",
+          "suggestions": "Custom Suggestions 11",
+          "aiAnalysis": "Custom Ai Analysis 11",
+          "status": "completed"
+        },
+        {
+          "targetType": "Scale",
+          "targetId": "Smart Target Id 12",
+          "content": "Smart Content 12",
+          "biasScore": 238,
+          "biasTypes": "Scale",
+          "suggestions": "Smart Suggestions 12",
+          "aiAnalysis": "Smart Ai Analysis 12",
+          "status": "active"
+        },
+        {
+          "targetType": "Foundation",
+          "targetId": "Rapid Target Id 13",
+          "content": "Rapid Content 13",
+          "biasScore": 286,
+          "biasTypes": "Foundation",
+          "suggestions": "Rapid Suggestions 13",
+          "aiAnalysis": "Rapid Ai Analysis 13",
+          "status": "in_progress"
+        },
+        {
+          "targetType": "Advanced",
+          "targetId": "Secure Target Id 14",
+          "content": "Secure Content 14",
+          "biasScore": 234,
+          "biasTypes": "Advanced",
+          "suggestions": "Secure Suggestions 14",
+          "aiAnalysis": "Secure Ai Analysis 14",
+          "status": "active"
+        },
+        {
+          "targetType": "Professional",
+          "targetId": "Modern Target Id 15",
+          "content": "Modern Content 15",
+          "biasScore": 282,
+          "biasTypes": "Professional",
+          "suggestions": "Modern Suggestions 15",
+          "aiAnalysis": "Modern Ai Analysis 15",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "SentimentAnalysis",
+      "routeKey": "sentiment-analysis",
+      "label": "Sentiment Analysis",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeSentimentAnalysis",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Sentiment Analysis data. The data includes: Employee Id, Source, Content, Sentiment Score, Emotions, Themes, Ai Analysis, Action Items. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "employeeId",
+          "label": "Employee Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sentimentScore",
+          "label": "Sentiment Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "emotions",
+          "label": "Emotions",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "themes",
+          "label": "Themes",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "actionItems",
+          "label": "Action Items",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "employeeId": "Advanced Employee Id 1",
+          "source": "Advanced Source 1",
+          "content": "Advanced Content 1",
+          "sentimentScore": 10,
+          "emotions": "Advanced Emotions 1",
+          "themes": "Advanced Themes 1",
+          "aiAnalysis": "Advanced Ai Analysis 1",
+          "actionItems": "Advanced Action Items 1"
+        },
+        {
+          "employeeId": "Premium Employee Id 2",
+          "source": "Premium Source 2",
+          "content": "Premium Content 2",
+          "sentimentScore": 58,
+          "emotions": "Premium Emotions 2",
+          "themes": "Premium Themes 2",
+          "aiAnalysis": "Premium Ai Analysis 2",
+          "actionItems": "Premium Action Items 2"
+        },
+        {
+          "employeeId": "Standard Employee Id 3",
+          "source": "Standard Source 3",
+          "content": "Standard Content 3",
+          "sentimentScore": 106,
+          "emotions": "Standard Emotions 3",
+          "themes": "Standard Themes 3",
+          "aiAnalysis": "Standard Ai Analysis 3",
+          "actionItems": "Standard Action Items 3"
+        },
+        {
+          "employeeId": "Elite Employee Id 4",
+          "source": "Elite Source 4",
+          "content": "Elite Content 4",
+          "sentimentScore": 154,
+          "emotions": "Elite Emotions 4",
+          "themes": "Elite Themes 4",
+          "aiAnalysis": "Elite Ai Analysis 4",
+          "actionItems": "Elite Action Items 4"
+        },
+        {
+          "employeeId": "Core Employee Id 5",
+          "source": "Core Source 5",
+          "content": "Core Content 5",
+          "sentimentScore": 102,
+          "emotions": "Core Emotions 5",
+          "themes": "Core Themes 5",
+          "aiAnalysis": "Core Ai Analysis 5",
+          "actionItems": "Core Action Items 5"
+        },
+        {
+          "employeeId": "Pro Employee Id 6",
+          "source": "Pro Source 6",
+          "content": "Pro Content 6",
+          "sentimentScore": 150,
+          "emotions": "Pro Emotions 6",
+          "themes": "Pro Themes 6",
+          "aiAnalysis": "Pro Ai Analysis 6",
+          "actionItems": "Pro Action Items 6"
+        },
+        {
+          "employeeId": "Essential Employee Id 7",
+          "source": "Essential Source 7",
+          "content": "Essential Content 7",
+          "sentimentScore": 198,
+          "emotions": "Essential Emotions 7",
+          "themes": "Essential Themes 7",
+          "aiAnalysis": "Essential Ai Analysis 7",
+          "actionItems": "Essential Action Items 7"
+        },
+        {
+          "employeeId": "Primary Employee Id 8",
+          "source": "Primary Source 8",
+          "content": "Primary Content 8",
+          "sentimentScore": 146,
+          "emotions": "Primary Emotions 8",
+          "themes": "Primary Themes 8",
+          "aiAnalysis": "Primary Ai Analysis 8",
+          "actionItems": "Primary Action Items 8"
+        },
+        {
+          "employeeId": "Global Employee Id 9",
+          "source": "Global Source 9",
+          "content": "Global Content 9",
+          "sentimentScore": 194,
+          "emotions": "Global Emotions 9",
+          "themes": "Global Themes 9",
+          "aiAnalysis": "Global Ai Analysis 9",
+          "actionItems": "Global Action Items 9"
+        },
+        {
+          "employeeId": "Regional Employee Id 10",
+          "source": "Regional Source 10",
+          "content": "Regional Content 10",
+          "sentimentScore": 242,
+          "emotions": "Regional Emotions 10",
+          "themes": "Regional Themes 10",
+          "aiAnalysis": "Regional Ai Analysis 10",
+          "actionItems": "Regional Action Items 10"
+        },
+        {
+          "employeeId": "Custom Employee Id 11",
+          "source": "Custom Source 11",
+          "content": "Custom Content 11",
+          "sentimentScore": 190,
+          "emotions": "Custom Emotions 11",
+          "themes": "Custom Themes 11",
+          "aiAnalysis": "Custom Ai Analysis 11",
+          "actionItems": "Custom Action Items 11"
+        },
+        {
+          "employeeId": "Smart Employee Id 12",
+          "source": "Smart Source 12",
+          "content": "Smart Content 12",
+          "sentimentScore": 238,
+          "emotions": "Smart Emotions 12",
+          "themes": "Smart Themes 12",
+          "aiAnalysis": "Smart Ai Analysis 12",
+          "actionItems": "Smart Action Items 12"
+        },
+        {
+          "employeeId": "Rapid Employee Id 13",
+          "source": "Rapid Source 13",
+          "content": "Rapid Content 13",
+          "sentimentScore": 286,
+          "emotions": "Rapid Emotions 13",
+          "themes": "Rapid Themes 13",
+          "aiAnalysis": "Rapid Ai Analysis 13",
+          "actionItems": "Rapid Action Items 13"
+        },
+        {
+          "employeeId": "Secure Employee Id 14",
+          "source": "Secure Source 14",
+          "content": "Secure Content 14",
+          "sentimentScore": 234,
+          "emotions": "Secure Emotions 14",
+          "themes": "Secure Themes 14",
+          "aiAnalysis": "Secure Ai Analysis 14",
+          "actionItems": "Secure Action Items 14"
+        },
+        {
+          "employeeId": "Modern Employee Id 15",
+          "source": "Modern Source 15",
+          "content": "Modern Content 15",
+          "sentimentScore": 282,
+          "emotions": "Modern Emotions 15",
+          "themes": "Modern Themes 15",
+          "aiAnalysis": "Modern Ai Analysis 15",
+          "actionItems": "Modern Action Items 15"
+        }
+      ]
+    },
+    {
+      "modelName": "CultureFitScore",
+      "routeKey": "culture-fit-scores",
+      "label": "Culture Fit Score",
+      "icon": "bell",
+      "aiFunction": "analyzeCultureFitScore",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Culture Fit Score data. The data includes: Candidate Id, Employee Id, Overall Score, Dimensions, Strengths, Concerns, Ai Analysis, Recommendation. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "candidateId",
+          "label": "Candidate Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "employeeId",
+          "label": "Employee Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "overallScore",
+          "label": "Overall Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "dimensions",
+          "label": "Dimensions",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "strengths",
+          "label": "Strengths",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "concerns",
+          "label": "Concerns",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recommendation",
+          "label": "Recommendation",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "candidateId": "Advanced Candidate Id 1",
+          "employeeId": "Advanced Employee Id 1",
+          "overallScore": 10,
+          "dimensions": "Advanced Dimensions 1",
+          "strengths": "Advanced Strengths 1",
+          "concerns": "Advanced Concerns 1",
+          "aiAnalysis": "Advanced Ai Analysis 1",
+          "recommendation": "Advanced Recommendation 1"
+        },
+        {
+          "candidateId": "Premium Candidate Id 2",
+          "employeeId": "Premium Employee Id 2",
+          "overallScore": 58,
+          "dimensions": "Premium Dimensions 2",
+          "strengths": "Premium Strengths 2",
+          "concerns": "Premium Concerns 2",
+          "aiAnalysis": "Premium Ai Analysis 2",
+          "recommendation": "Premium Recommendation 2"
+        },
+        {
+          "candidateId": "Standard Candidate Id 3",
+          "employeeId": "Standard Employee Id 3",
+          "overallScore": 106,
+          "dimensions": "Standard Dimensions 3",
+          "strengths": "Standard Strengths 3",
+          "concerns": "Standard Concerns 3",
+          "aiAnalysis": "Standard Ai Analysis 3",
+          "recommendation": "Standard Recommendation 3"
+        },
+        {
+          "candidateId": "Elite Candidate Id 4",
+          "employeeId": "Elite Employee Id 4",
+          "overallScore": 154,
+          "dimensions": "Elite Dimensions 4",
+          "strengths": "Elite Strengths 4",
+          "concerns": "Elite Concerns 4",
+          "aiAnalysis": "Elite Ai Analysis 4",
+          "recommendation": "Elite Recommendation 4"
+        },
+        {
+          "candidateId": "Core Candidate Id 5",
+          "employeeId": "Core Employee Id 5",
+          "overallScore": 102,
+          "dimensions": "Core Dimensions 5",
+          "strengths": "Core Strengths 5",
+          "concerns": "Core Concerns 5",
+          "aiAnalysis": "Core Ai Analysis 5",
+          "recommendation": "Core Recommendation 5"
+        },
+        {
+          "candidateId": "Pro Candidate Id 6",
+          "employeeId": "Pro Employee Id 6",
+          "overallScore": 150,
+          "dimensions": "Pro Dimensions 6",
+          "strengths": "Pro Strengths 6",
+          "concerns": "Pro Concerns 6",
+          "aiAnalysis": "Pro Ai Analysis 6",
+          "recommendation": "Pro Recommendation 6"
+        },
+        {
+          "candidateId": "Essential Candidate Id 7",
+          "employeeId": "Essential Employee Id 7",
+          "overallScore": 198,
+          "dimensions": "Essential Dimensions 7",
+          "strengths": "Essential Strengths 7",
+          "concerns": "Essential Concerns 7",
+          "aiAnalysis": "Essential Ai Analysis 7",
+          "recommendation": "Essential Recommendation 7"
+        },
+        {
+          "candidateId": "Primary Candidate Id 8",
+          "employeeId": "Primary Employee Id 8",
+          "overallScore": 146,
+          "dimensions": "Primary Dimensions 8",
+          "strengths": "Primary Strengths 8",
+          "concerns": "Primary Concerns 8",
+          "aiAnalysis": "Primary Ai Analysis 8",
+          "recommendation": "Primary Recommendation 8"
+        },
+        {
+          "candidateId": "Global Candidate Id 9",
+          "employeeId": "Global Employee Id 9",
+          "overallScore": 194,
+          "dimensions": "Global Dimensions 9",
+          "strengths": "Global Strengths 9",
+          "concerns": "Global Concerns 9",
+          "aiAnalysis": "Global Ai Analysis 9",
+          "recommendation": "Global Recommendation 9"
+        },
+        {
+          "candidateId": "Regional Candidate Id 10",
+          "employeeId": "Regional Employee Id 10",
+          "overallScore": 242,
+          "dimensions": "Regional Dimensions 10",
+          "strengths": "Regional Strengths 10",
+          "concerns": "Regional Concerns 10",
+          "aiAnalysis": "Regional Ai Analysis 10",
+          "recommendation": "Regional Recommendation 10"
+        },
+        {
+          "candidateId": "Custom Candidate Id 11",
+          "employeeId": "Custom Employee Id 11",
+          "overallScore": 190,
+          "dimensions": "Custom Dimensions 11",
+          "strengths": "Custom Strengths 11",
+          "concerns": "Custom Concerns 11",
+          "aiAnalysis": "Custom Ai Analysis 11",
+          "recommendation": "Custom Recommendation 11"
+        },
+        {
+          "candidateId": "Smart Candidate Id 12",
+          "employeeId": "Smart Employee Id 12",
+          "overallScore": 238,
+          "dimensions": "Smart Dimensions 12",
+          "strengths": "Smart Strengths 12",
+          "concerns": "Smart Concerns 12",
+          "aiAnalysis": "Smart Ai Analysis 12",
+          "recommendation": "Smart Recommendation 12"
+        },
+        {
+          "candidateId": "Rapid Candidate Id 13",
+          "employeeId": "Rapid Employee Id 13",
+          "overallScore": 286,
+          "dimensions": "Rapid Dimensions 13",
+          "strengths": "Rapid Strengths 13",
+          "concerns": "Rapid Concerns 13",
+          "aiAnalysis": "Rapid Ai Analysis 13",
+          "recommendation": "Rapid Recommendation 13"
+        },
+        {
+          "candidateId": "Secure Candidate Id 14",
+          "employeeId": "Secure Employee Id 14",
+          "overallScore": 234,
+          "dimensions": "Secure Dimensions 14",
+          "strengths": "Secure Strengths 14",
+          "concerns": "Secure Concerns 14",
+          "aiAnalysis": "Secure Ai Analysis 14",
+          "recommendation": "Secure Recommendation 14"
+        },
+        {
+          "candidateId": "Modern Candidate Id 15",
+          "employeeId": "Modern Employee Id 15",
+          "overallScore": 282,
+          "dimensions": "Modern Dimensions 15",
+          "strengths": "Modern Strengths 15",
+          "concerns": "Modern Concerns 15",
+          "aiAnalysis": "Modern Ai Analysis 15",
+          "recommendation": "Modern Recommendation 15"
+        }
+      ]
+    },
+    {
+      "modelName": "PerformanceReview",
+      "routeKey": "performance-reviews",
+      "label": "Performance Review",
+      "icon": "book",
+      "aiFunction": "analyzePerformanceReview",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Performance Review data. The data includes: Employee Id, Review Period, Review Type, Overall Rating, Goals, Achievements, Areas For Improvement, Competency Scores, Manager Comments, Employee Comments, Ai Generated, Ai Summary, Ai Recommendations, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "employeeId",
+          "label": "Employee Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reviewPeriod",
+          "label": "Review Period",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reviewType",
+          "label": "Review Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "overallRating",
+          "label": "Overall Rating",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "goals",
+          "label": "Goals",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "achievements",
+          "label": "Achievements",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "areasForImprovement",
+          "label": "Areas For Improvement",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "competencyScores",
+          "label": "Competency Scores",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "managerComments",
+          "label": "Manager Comments",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "employeeComments",
+          "label": "Employee Comments",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiGenerated",
+          "label": "Ai Generated",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "aiSummary",
+          "label": "Ai Summary",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiRecommendations",
+          "label": "Ai Recommendations",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "employeeId": "Advanced Employee Id 1",
+          "reviewPeriod": "Advanced Review Period 1",
+          "reviewType": "Category A",
+          "overallRating": 10,
+          "goals": "Advanced Goals 1",
+          "achievements": "Advanced Achievements 1",
+          "areasForImprovement": "Advanced Areas For Improvement 1",
+          "competencyScores": "Advanced Competency Scores 1",
+          "managerComments": "Advanced Manager Comments 1",
+          "employeeComments": "Advanced Employee Comments 1",
+          "aiGenerated": true,
+          "aiSummary": "Advanced Ai Summary 1",
+          "aiRecommendations": "Advanced Ai Recommendations 1",
+          "status": "active"
+        },
+        {
+          "employeeId": "Premium Employee Id 2",
+          "reviewPeriod": "Premium Review Period 2",
+          "reviewType": "Category B",
+          "overallRating": 58,
+          "goals": "Premium Goals 2",
+          "achievements": "Premium Achievements 2",
+          "areasForImprovement": "Premium Areas For Improvement 2",
+          "competencyScores": "Premium Competency Scores 2",
+          "managerComments": "Premium Manager Comments 2",
+          "employeeComments": "Premium Employee Comments 2",
+          "aiGenerated": true,
+          "aiSummary": "Premium Ai Summary 2",
+          "aiRecommendations": "Premium Ai Recommendations 2",
+          "status": "pending"
+        },
+        {
+          "employeeId": "Standard Employee Id 3",
+          "reviewPeriod": "Standard Review Period 3",
+          "reviewType": "Category C",
+          "overallRating": 106,
+          "goals": "Standard Goals 3",
+          "achievements": "Standard Achievements 3",
+          "areasForImprovement": "Standard Areas For Improvement 3",
+          "competencyScores": "Standard Competency Scores 3",
+          "managerComments": "Standard Manager Comments 3",
+          "employeeComments": "Standard Employee Comments 3",
+          "aiGenerated": false,
+          "aiSummary": "Standard Ai Summary 3",
+          "aiRecommendations": "Standard Ai Recommendations 3",
+          "status": "in_progress"
+        },
+        {
+          "employeeId": "Elite Employee Id 4",
+          "reviewPeriod": "Elite Review Period 4",
+          "reviewType": "Category D",
+          "overallRating": 154,
+          "goals": "Elite Goals 4",
+          "achievements": "Elite Achievements 4",
+          "areasForImprovement": "Elite Areas For Improvement 4",
+          "competencyScores": "Elite Competency Scores 4",
+          "managerComments": "Elite Manager Comments 4",
+          "employeeComments": "Elite Employee Comments 4",
+          "aiGenerated": true,
+          "aiSummary": "Elite Ai Summary 4",
+          "aiRecommendations": "Elite Ai Recommendations 4",
+          "status": "completed"
+        },
+        {
+          "employeeId": "Core Employee Id 5",
+          "reviewPeriod": "Core Review Period 5",
+          "reviewType": "Category E",
+          "overallRating": 102,
+          "goals": "Core Goals 5",
+          "achievements": "Core Achievements 5",
+          "areasForImprovement": "Core Areas For Improvement 5",
+          "competencyScores": "Core Competency Scores 5",
+          "managerComments": "Core Manager Comments 5",
+          "employeeComments": "Core Employee Comments 5",
+          "aiGenerated": false,
+          "aiSummary": "Core Ai Summary 5",
+          "aiRecommendations": "Core Ai Recommendations 5",
+          "status": "under_review"
+        },
+        {
+          "employeeId": "Pro Employee Id 6",
+          "reviewPeriod": "Pro Review Period 6",
+          "reviewType": "Premium Tier",
+          "overallRating": 150,
+          "goals": "Pro Goals 6",
+          "achievements": "Pro Achievements 6",
+          "areasForImprovement": "Pro Areas For Improvement 6",
+          "competencyScores": "Pro Competency Scores 6",
+          "managerComments": "Pro Manager Comments 6",
+          "employeeComments": "Pro Employee Comments 6",
+          "aiGenerated": true,
+          "aiSummary": "Pro Ai Summary 6",
+          "aiRecommendations": "Pro Ai Recommendations 6",
+          "status": "approved"
+        },
+        {
+          "employeeId": "Essential Employee Id 7",
+          "reviewPeriod": "Essential Review Period 7",
+          "reviewType": "Standard Tier",
+          "overallRating": 198,
+          "goals": "Essential Goals 7",
+          "achievements": "Essential Achievements 7",
+          "areasForImprovement": "Essential Areas For Improvement 7",
+          "competencyScores": "Essential Competency Scores 7",
+          "managerComments": "Essential Manager Comments 7",
+          "employeeComments": "Essential Employee Comments 7",
+          "aiGenerated": true,
+          "aiSummary": "Essential Ai Summary 7",
+          "aiRecommendations": "Essential Ai Recommendations 7",
+          "status": "active"
+        },
+        {
+          "employeeId": "Primary Employee Id 8",
+          "reviewPeriod": "Primary Review Period 8",
+          "reviewType": "Basic Tier",
+          "overallRating": 146,
+          "goals": "Primary Goals 8",
+          "achievements": "Primary Achievements 8",
+          "areasForImprovement": "Primary Areas For Improvement 8",
+          "competencyScores": "Primary Competency Scores 8",
+          "managerComments": "Primary Manager Comments 8",
+          "employeeComments": "Primary Employee Comments 8",
+          "aiGenerated": false,
+          "aiSummary": "Primary Ai Summary 8",
+          "aiRecommendations": "Primary Ai Recommendations 8",
+          "status": "active"
+        },
+        {
+          "employeeId": "Global Employee Id 9",
+          "reviewPeriod": "Global Review Period 9",
+          "reviewType": "Enterprise",
+          "overallRating": 194,
+          "goals": "Global Goals 9",
+          "achievements": "Global Achievements 9",
+          "areasForImprovement": "Global Areas For Improvement 9",
+          "competencyScores": "Global Competency Scores 9",
+          "managerComments": "Global Manager Comments 9",
+          "employeeComments": "Global Employee Comments 9",
+          "aiGenerated": true,
+          "aiSummary": "Global Ai Summary 9",
+          "aiRecommendations": "Global Ai Recommendations 9",
+          "status": "active"
+        },
+        {
+          "employeeId": "Regional Employee Id 10",
+          "reviewPeriod": "Regional Review Period 10",
+          "reviewType": "Starter",
+          "overallRating": 242,
+          "goals": "Regional Goals 10",
+          "achievements": "Regional Achievements 10",
+          "areasForImprovement": "Regional Areas For Improvement 10",
+          "competencyScores": "Regional Competency Scores 10",
+          "managerComments": "Regional Manager Comments 10",
+          "employeeComments": "Regional Employee Comments 10",
+          "aiGenerated": true,
+          "aiSummary": "Regional Ai Summary 10",
+          "aiRecommendations": "Regional Ai Recommendations 10",
+          "status": "pending"
+        },
+        {
+          "employeeId": "Custom Employee Id 11",
+          "reviewPeriod": "Custom Review Period 11",
+          "reviewType": "Growth",
+          "overallRating": 190,
+          "goals": "Custom Goals 11",
+          "achievements": "Custom Achievements 11",
+          "areasForImprovement": "Custom Areas For Improvement 11",
+          "competencyScores": "Custom Competency Scores 11",
+          "managerComments": "Custom Manager Comments 11",
+          "employeeComments": "Custom Employee Comments 11",
+          "aiGenerated": false,
+          "aiSummary": "Custom Ai Summary 11",
+          "aiRecommendations": "Custom Ai Recommendations 11",
+          "status": "completed"
+        },
+        {
+          "employeeId": "Smart Employee Id 12",
+          "reviewPeriod": "Smart Review Period 12",
+          "reviewType": "Scale",
+          "overallRating": 238,
+          "goals": "Smart Goals 12",
+          "achievements": "Smart Achievements 12",
+          "areasForImprovement": "Smart Areas For Improvement 12",
+          "competencyScores": "Smart Competency Scores 12",
+          "managerComments": "Smart Manager Comments 12",
+          "employeeComments": "Smart Employee Comments 12",
+          "aiGenerated": true,
+          "aiSummary": "Smart Ai Summary 12",
+          "aiRecommendations": "Smart Ai Recommendations 12",
+          "status": "active"
+        },
+        {
+          "employeeId": "Rapid Employee Id 13",
+          "reviewPeriod": "Rapid Review Period 13",
+          "reviewType": "Foundation",
+          "overallRating": 286,
+          "goals": "Rapid Goals 13",
+          "achievements": "Rapid Achievements 13",
+          "areasForImprovement": "Rapid Areas For Improvement 13",
+          "competencyScores": "Rapid Competency Scores 13",
+          "managerComments": "Rapid Manager Comments 13",
+          "employeeComments": "Rapid Employee Comments 13",
+          "aiGenerated": false,
+          "aiSummary": "Rapid Ai Summary 13",
+          "aiRecommendations": "Rapid Ai Recommendations 13",
+          "status": "in_progress"
+        },
+        {
+          "employeeId": "Secure Employee Id 14",
+          "reviewPeriod": "Secure Review Period 14",
+          "reviewType": "Advanced",
+          "overallRating": 234,
+          "goals": "Secure Goals 14",
+          "achievements": "Secure Achievements 14",
+          "areasForImprovement": "Secure Areas For Improvement 14",
+          "competencyScores": "Secure Competency Scores 14",
+          "managerComments": "Secure Manager Comments 14",
+          "employeeComments": "Secure Employee Comments 14",
+          "aiGenerated": true,
+          "aiSummary": "Secure Ai Summary 14",
+          "aiRecommendations": "Secure Ai Recommendations 14",
+          "status": "active"
+        },
+        {
+          "employeeId": "Modern Employee Id 15",
+          "reviewPeriod": "Modern Review Period 15",
+          "reviewType": "Professional",
+          "overallRating": 282,
+          "goals": "Modern Goals 15",
+          "achievements": "Modern Achievements 15",
+          "areasForImprovement": "Modern Areas For Improvement 15",
+          "competencyScores": "Modern Competency Scores 15",
+          "managerComments": "Modern Manager Comments 15",
+          "employeeComments": "Modern Employee Comments 15",
+          "aiGenerated": true,
+          "aiSummary": "Modern Ai Summary 15",
+          "aiRecommendations": "Modern Ai Recommendations 15",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "SalaryBenchmark",
+      "routeKey": "salary-benchmarks",
+      "label": "Salary Benchmark",
+      "icon": "calendar",
+      "aiFunction": "analyzeSalaryBenchmark",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Salary Benchmark data. The data includes: Title, Department, Location, Years Experience, Employee Id, Current Salary, Market Min, Market Median, Market Max, Percentile, Competitiveness, Ai Analysis, Recommendations, Data Source. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "department",
+          "label": "Department",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "yearsExperience",
+          "label": "Years Experience",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "employeeId",
+          "label": "Employee Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "currentSalary",
+          "label": "Current Salary",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "marketMin",
+          "label": "Market Min",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "marketMedian",
+          "label": "Market Median",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "marketMax",
+          "label": "Market Max",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "percentile",
+          "label": "Percentile",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "competitiveness",
+          "label": "Competitiveness",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recommendations",
+          "label": "Recommendations",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dataSource",
+          "label": "Data Source",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "department": "Category A",
+          "location": "New York",
+          "yearsExperience": 2020,
+          "employeeId": "Advanced Employee Id 1",
+          "currentSalary": 10,
+          "marketMin": 10,
+          "marketMedian": 10,
+          "marketMax": 10,
+          "percentile": 10,
+          "competitiveness": "Advanced Competitiveness 1",
+          "aiAnalysis": "Advanced Ai Analysis 1",
+          "recommendations": "Advanced Recommendations 1",
+          "dataSource": "Advanced Data Source 1"
+        },
+        {
+          "title": "Premium Title 2",
+          "department": "Category B",
+          "location": "Los Angeles",
+          "yearsExperience": 2021,
+          "employeeId": "Premium Employee Id 2",
+          "currentSalary": 58,
+          "marketMin": 58,
+          "marketMedian": 58,
+          "marketMax": 58,
+          "percentile": 58,
+          "competitiveness": "Premium Competitiveness 2",
+          "aiAnalysis": "Premium Ai Analysis 2",
+          "recommendations": "Premium Recommendations 2",
+          "dataSource": "Premium Data Source 2"
+        },
+        {
+          "title": "Standard Title 3",
+          "department": "Category C",
+          "location": "Chicago",
+          "yearsExperience": 2022,
+          "employeeId": "Standard Employee Id 3",
+          "currentSalary": 106,
+          "marketMin": 106,
+          "marketMedian": 106,
+          "marketMax": 106,
+          "percentile": 106,
+          "competitiveness": "Standard Competitiveness 3",
+          "aiAnalysis": "Standard Ai Analysis 3",
+          "recommendations": "Standard Recommendations 3",
+          "dataSource": "Standard Data Source 3"
+        },
+        {
+          "title": "Elite Title 4",
+          "department": "Category D",
+          "location": "Houston",
+          "yearsExperience": 2023,
+          "employeeId": "Elite Employee Id 4",
+          "currentSalary": 154,
+          "marketMin": 154,
+          "marketMedian": 154,
+          "marketMax": 154,
+          "percentile": 154,
+          "competitiveness": "Elite Competitiveness 4",
+          "aiAnalysis": "Elite Ai Analysis 4",
+          "recommendations": "Elite Recommendations 4",
+          "dataSource": "Elite Data Source 4"
+        },
+        {
+          "title": "Core Title 5",
+          "department": "Category E",
+          "location": "Phoenix",
+          "yearsExperience": 2024,
+          "employeeId": "Core Employee Id 5",
+          "currentSalary": 102,
+          "marketMin": 102,
+          "marketMedian": 102,
+          "marketMax": 102,
+          "percentile": 102,
+          "competitiveness": "Core Competitiveness 5",
+          "aiAnalysis": "Core Ai Analysis 5",
+          "recommendations": "Core Recommendations 5",
+          "dataSource": "Core Data Source 5"
+        },
+        {
+          "title": "Pro Title 6",
+          "department": "Premium Tier",
+          "location": "San Francisco",
+          "yearsExperience": 2025,
+          "employeeId": "Pro Employee Id 6",
+          "currentSalary": 150,
+          "marketMin": 150,
+          "marketMedian": 150,
+          "marketMax": 150,
+          "percentile": 150,
+          "competitiveness": "Pro Competitiveness 6",
+          "aiAnalysis": "Pro Ai Analysis 6",
+          "recommendations": "Pro Recommendations 6",
+          "dataSource": "Pro Data Source 6"
+        },
+        {
+          "title": "Essential Title 7",
+          "department": "Standard Tier",
+          "location": "Seattle",
+          "yearsExperience": 2020,
+          "employeeId": "Essential Employee Id 7",
+          "currentSalary": 198,
+          "marketMin": 198,
+          "marketMedian": 198,
+          "marketMax": 198,
+          "percentile": 198,
+          "competitiveness": "Essential Competitiveness 7",
+          "aiAnalysis": "Essential Ai Analysis 7",
+          "recommendations": "Essential Recommendations 7",
+          "dataSource": "Essential Data Source 7"
+        },
+        {
+          "title": "Primary Title 8",
+          "department": "Basic Tier",
+          "location": "Boston",
+          "yearsExperience": 2021,
+          "employeeId": "Primary Employee Id 8",
+          "currentSalary": 146,
+          "marketMin": 146,
+          "marketMedian": 146,
+          "marketMax": 146,
+          "percentile": 146,
+          "competitiveness": "Primary Competitiveness 8",
+          "aiAnalysis": "Primary Ai Analysis 8",
+          "recommendations": "Primary Recommendations 8",
+          "dataSource": "Primary Data Source 8"
+        },
+        {
+          "title": "Global Title 9",
+          "department": "Enterprise",
+          "location": "Denver",
+          "yearsExperience": 2022,
+          "employeeId": "Global Employee Id 9",
+          "currentSalary": 194,
+          "marketMin": 194,
+          "marketMedian": 194,
+          "marketMax": 194,
+          "percentile": 194,
+          "competitiveness": "Global Competitiveness 9",
+          "aiAnalysis": "Global Ai Analysis 9",
+          "recommendations": "Global Recommendations 9",
+          "dataSource": "Global Data Source 9"
+        },
+        {
+          "title": "Regional Title 10",
+          "department": "Starter",
+          "location": "Miami",
+          "yearsExperience": 2023,
+          "employeeId": "Regional Employee Id 10",
+          "currentSalary": 242,
+          "marketMin": 242,
+          "marketMedian": 242,
+          "marketMax": 242,
+          "percentile": 242,
+          "competitiveness": "Regional Competitiveness 10",
+          "aiAnalysis": "Regional Ai Analysis 10",
+          "recommendations": "Regional Recommendations 10",
+          "dataSource": "Regional Data Source 10"
+        },
+        {
+          "title": "Custom Title 11",
+          "department": "Growth",
+          "location": "Austin",
+          "yearsExperience": 2024,
+          "employeeId": "Custom Employee Id 11",
+          "currentSalary": 190,
+          "marketMin": 190,
+          "marketMedian": 190,
+          "marketMax": 190,
+          "percentile": 190,
+          "competitiveness": "Custom Competitiveness 11",
+          "aiAnalysis": "Custom Ai Analysis 11",
+          "recommendations": "Custom Recommendations 11",
+          "dataSource": "Custom Data Source 11"
+        },
+        {
+          "title": "Smart Title 12",
+          "department": "Scale",
+          "location": "Portland",
+          "yearsExperience": 2025,
+          "employeeId": "Smart Employee Id 12",
+          "currentSalary": 238,
+          "marketMin": 238,
+          "marketMedian": 238,
+          "marketMax": 238,
+          "percentile": 238,
+          "competitiveness": "Smart Competitiveness 12",
+          "aiAnalysis": "Smart Ai Analysis 12",
+          "recommendations": "Smart Recommendations 12",
+          "dataSource": "Smart Data Source 12"
+        },
+        {
+          "title": "Rapid Title 13",
+          "department": "Foundation",
+          "location": "Dallas",
+          "yearsExperience": 2020,
+          "employeeId": "Rapid Employee Id 13",
+          "currentSalary": 286,
+          "marketMin": 286,
+          "marketMedian": 286,
+          "marketMax": 286,
+          "percentile": 286,
+          "competitiveness": "Rapid Competitiveness 13",
+          "aiAnalysis": "Rapid Ai Analysis 13",
+          "recommendations": "Rapid Recommendations 13",
+          "dataSource": "Rapid Data Source 13"
+        },
+        {
+          "title": "Secure Title 14",
+          "department": "Advanced",
+          "location": "Atlanta",
+          "yearsExperience": 2021,
+          "employeeId": "Secure Employee Id 14",
+          "currentSalary": 234,
+          "marketMin": 234,
+          "marketMedian": 234,
+          "marketMax": 234,
+          "percentile": 234,
+          "competitiveness": "Secure Competitiveness 14",
+          "aiAnalysis": "Secure Ai Analysis 14",
+          "recommendations": "Secure Recommendations 14",
+          "dataSource": "Secure Data Source 14"
+        },
+        {
+          "title": "Modern Title 15",
+          "department": "Professional",
+          "location": "Nashville",
+          "yearsExperience": 2022,
+          "employeeId": "Modern Employee Id 15",
+          "currentSalary": 282,
+          "marketMin": 282,
+          "marketMedian": 282,
+          "marketMax": 282,
+          "percentile": 282,
+          "competitiveness": "Modern Competitiveness 15",
+          "aiAnalysis": "Modern Ai Analysis 15",
+          "recommendations": "Modern Recommendations 15",
+          "dataSource": "Modern Data Source 15"
+        }
+      ]
+    },
+    {
+      "modelName": "ExitInterview",
+      "routeKey": "exit-interviews",
+      "label": "Exit Interview",
+      "icon": "check-circle",
+      "aiFunction": "analyzeExitInterview",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Exit Interview data. The data includes: Employee Id, Exit Date, Reason, Feedback, Questions Answers, Satisfaction Score, Would Recommend, Ai Summary, Key Themes, Sentiment Score, Actionable Insights, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "employeeId",
+          "label": "Employee Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "exitDate",
+          "label": "Exit Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "reason",
+          "label": "Reason",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "feedback",
+          "label": "Feedback",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "questionsAnswers",
+          "label": "Questions Answers",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "satisfactionScore",
+          "label": "Satisfaction Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "wouldRecommend",
+          "label": "Would Recommend",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "aiSummary",
+          "label": "Ai Summary",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "keyThemes",
+          "label": "Key Themes",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sentimentScore",
+          "label": "Sentiment Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "actionableInsights",
+          "label": "Actionable Insights",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "employeeId": "Advanced Employee Id 1",
+          "exitDate": "2024-01-01",
+          "reason": "Advanced Reason 1",
+          "feedback": "Advanced Feedback 1",
+          "questionsAnswers": "Advanced Questions Answers 1",
+          "satisfactionScore": 10,
+          "wouldRecommend": true,
+          "aiSummary": "Advanced Ai Summary 1",
+          "keyThemes": "Advanced Key Themes 1",
+          "sentimentScore": 10,
+          "actionableInsights": "Advanced Actionable Insights 1",
+          "status": "active"
+        },
+        {
+          "employeeId": "Premium Employee Id 2",
+          "exitDate": "2024-02-03",
+          "reason": "Premium Reason 2",
+          "feedback": "Premium Feedback 2",
+          "questionsAnswers": "Premium Questions Answers 2",
+          "satisfactionScore": 58,
+          "wouldRecommend": true,
+          "aiSummary": "Premium Ai Summary 2",
+          "keyThemes": "Premium Key Themes 2",
+          "sentimentScore": 58,
+          "actionableInsights": "Premium Actionable Insights 2",
+          "status": "pending"
+        },
+        {
+          "employeeId": "Standard Employee Id 3",
+          "exitDate": "2024-03-05",
+          "reason": "Standard Reason 3",
+          "feedback": "Standard Feedback 3",
+          "questionsAnswers": "Standard Questions Answers 3",
+          "satisfactionScore": 106,
+          "wouldRecommend": false,
+          "aiSummary": "Standard Ai Summary 3",
+          "keyThemes": "Standard Key Themes 3",
+          "sentimentScore": 106,
+          "actionableInsights": "Standard Actionable Insights 3",
+          "status": "in_progress"
+        },
+        {
+          "employeeId": "Elite Employee Id 4",
+          "exitDate": "2024-04-07",
+          "reason": "Elite Reason 4",
+          "feedback": "Elite Feedback 4",
+          "questionsAnswers": "Elite Questions Answers 4",
+          "satisfactionScore": 154,
+          "wouldRecommend": true,
+          "aiSummary": "Elite Ai Summary 4",
+          "keyThemes": "Elite Key Themes 4",
+          "sentimentScore": 154,
+          "actionableInsights": "Elite Actionable Insights 4",
+          "status": "completed"
+        },
+        {
+          "employeeId": "Core Employee Id 5",
+          "exitDate": "2024-05-09",
+          "reason": "Core Reason 5",
+          "feedback": "Core Feedback 5",
+          "questionsAnswers": "Core Questions Answers 5",
+          "satisfactionScore": 102,
+          "wouldRecommend": false,
+          "aiSummary": "Core Ai Summary 5",
+          "keyThemes": "Core Key Themes 5",
+          "sentimentScore": 102,
+          "actionableInsights": "Core Actionable Insights 5",
+          "status": "under_review"
+        },
+        {
+          "employeeId": "Pro Employee Id 6",
+          "exitDate": "2024-06-11",
+          "reason": "Pro Reason 6",
+          "feedback": "Pro Feedback 6",
+          "questionsAnswers": "Pro Questions Answers 6",
+          "satisfactionScore": 150,
+          "wouldRecommend": true,
+          "aiSummary": "Pro Ai Summary 6",
+          "keyThemes": "Pro Key Themes 6",
+          "sentimentScore": 150,
+          "actionableInsights": "Pro Actionable Insights 6",
+          "status": "approved"
+        },
+        {
+          "employeeId": "Essential Employee Id 7",
+          "exitDate": "2024-07-13",
+          "reason": "Essential Reason 7",
+          "feedback": "Essential Feedback 7",
+          "questionsAnswers": "Essential Questions Answers 7",
+          "satisfactionScore": 198,
+          "wouldRecommend": true,
+          "aiSummary": "Essential Ai Summary 7",
+          "keyThemes": "Essential Key Themes 7",
+          "sentimentScore": 198,
+          "actionableInsights": "Essential Actionable Insights 7",
+          "status": "active"
+        },
+        {
+          "employeeId": "Primary Employee Id 8",
+          "exitDate": "2024-08-15",
+          "reason": "Primary Reason 8",
+          "feedback": "Primary Feedback 8",
+          "questionsAnswers": "Primary Questions Answers 8",
+          "satisfactionScore": 146,
+          "wouldRecommend": false,
+          "aiSummary": "Primary Ai Summary 8",
+          "keyThemes": "Primary Key Themes 8",
+          "sentimentScore": 146,
+          "actionableInsights": "Primary Actionable Insights 8",
+          "status": "active"
+        },
+        {
+          "employeeId": "Global Employee Id 9",
+          "exitDate": "2024-09-17",
+          "reason": "Global Reason 9",
+          "feedback": "Global Feedback 9",
+          "questionsAnswers": "Global Questions Answers 9",
+          "satisfactionScore": 194,
+          "wouldRecommend": true,
+          "aiSummary": "Global Ai Summary 9",
+          "keyThemes": "Global Key Themes 9",
+          "sentimentScore": 194,
+          "actionableInsights": "Global Actionable Insights 9",
+          "status": "active"
+        },
+        {
+          "employeeId": "Regional Employee Id 10",
+          "exitDate": "2024-10-19",
+          "reason": "Regional Reason 10",
+          "feedback": "Regional Feedback 10",
+          "questionsAnswers": "Regional Questions Answers 10",
+          "satisfactionScore": 242,
+          "wouldRecommend": true,
+          "aiSummary": "Regional Ai Summary 10",
+          "keyThemes": "Regional Key Themes 10",
+          "sentimentScore": 242,
+          "actionableInsights": "Regional Actionable Insights 10",
+          "status": "pending"
+        },
+        {
+          "employeeId": "Custom Employee Id 11",
+          "exitDate": "2024-11-21",
+          "reason": "Custom Reason 11",
+          "feedback": "Custom Feedback 11",
+          "questionsAnswers": "Custom Questions Answers 11",
+          "satisfactionScore": 190,
+          "wouldRecommend": false,
+          "aiSummary": "Custom Ai Summary 11",
+          "keyThemes": "Custom Key Themes 11",
+          "sentimentScore": 190,
+          "actionableInsights": "Custom Actionable Insights 11",
+          "status": "completed"
+        },
+        {
+          "employeeId": "Smart Employee Id 12",
+          "exitDate": "2024-12-23",
+          "reason": "Smart Reason 12",
+          "feedback": "Smart Feedback 12",
+          "questionsAnswers": "Smart Questions Answers 12",
+          "satisfactionScore": 238,
+          "wouldRecommend": true,
+          "aiSummary": "Smart Ai Summary 12",
+          "keyThemes": "Smart Key Themes 12",
+          "sentimentScore": 238,
+          "actionableInsights": "Smart Actionable Insights 12",
+          "status": "active"
+        },
+        {
+          "employeeId": "Rapid Employee Id 13",
+          "exitDate": "2024-01-25",
+          "reason": "Rapid Reason 13",
+          "feedback": "Rapid Feedback 13",
+          "questionsAnswers": "Rapid Questions Answers 13",
+          "satisfactionScore": 286,
+          "wouldRecommend": false,
+          "aiSummary": "Rapid Ai Summary 13",
+          "keyThemes": "Rapid Key Themes 13",
+          "sentimentScore": 286,
+          "actionableInsights": "Rapid Actionable Insights 13",
+          "status": "in_progress"
+        },
+        {
+          "employeeId": "Secure Employee Id 14",
+          "exitDate": "2024-02-27",
+          "reason": "Secure Reason 14",
+          "feedback": "Secure Feedback 14",
+          "questionsAnswers": "Secure Questions Answers 14",
+          "satisfactionScore": 234,
+          "wouldRecommend": true,
+          "aiSummary": "Secure Ai Summary 14",
+          "keyThemes": "Secure Key Themes 14",
+          "sentimentScore": 234,
+          "actionableInsights": "Secure Actionable Insights 14",
+          "status": "active"
+        },
+        {
+          "employeeId": "Modern Employee Id 15",
+          "exitDate": "2024-03-01",
+          "reason": "Modern Reason 15",
+          "feedback": "Modern Feedback 15",
+          "questionsAnswers": "Modern Questions Answers 15",
+          "satisfactionScore": 282,
+          "wouldRecommend": true,
+          "aiSummary": "Modern Ai Summary 15",
+          "keyThemes": "Modern Key Themes 15",
+          "sentimentScore": 282,
+          "actionableInsights": "Modern Actionable Insights 15",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "OrgChart",
+      "routeKey": "org-charts",
+      "label": "Org Chart",
+      "icon": "dollar-sign",
+      "aiFunction": "analyzeOrgChart",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Org Chart data. The data includes: Name, Description, Structure, Ai Optimizations, Metrics, Span Of Control, Layer Count, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "structure",
+          "label": "Structure",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiOptimizations",
+          "label": "Ai Optimizations",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "metrics",
+          "label": "Metrics",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "spanOfControl",
+          "label": "Span Of Control",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "layerCount",
+          "label": "Layer Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Advanced Description 1",
+          "structure": "Advanced Structure 1",
+          "aiOptimizations": "Advanced Ai Optimizations 1",
+          "metrics": "Advanced Metrics 1",
+          "spanOfControl": 10,
+          "layerCount": 12,
+          "status": "active"
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Premium Description 2",
+          "structure": "Premium Structure 2",
+          "aiOptimizations": "Premium Ai Optimizations 2",
+          "metrics": "Premium Metrics 2",
+          "spanOfControl": 71.7,
+          "layerCount": 49,
+          "status": "pending"
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Standard Description 3",
+          "structure": "Standard Structure 3",
+          "aiOptimizations": "Standard Ai Optimizations 3",
+          "metrics": "Standard Metrics 3",
+          "spanOfControl": 33.4,
+          "layerCount": 121,
+          "status": "in_progress"
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Elite Description 4",
+          "structure": "Elite Structure 4",
+          "aiOptimizations": "Elite Ai Optimizations 4",
+          "metrics": "Elite Metrics 4",
+          "spanOfControl": 95.1,
+          "layerCount": 84,
+          "status": "completed"
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Core Description 5",
+          "structure": "Core Structure 5",
+          "aiOptimizations": "Core Ai Optimizations 5",
+          "metrics": "Core Metrics 5",
+          "spanOfControl": 56.8,
+          "layerCount": 73,
+          "status": "under_review"
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "Pro Description 6",
+          "structure": "Pro Structure 6",
+          "aiOptimizations": "Pro Ai Optimizations 6",
+          "metrics": "Pro Metrics 6",
+          "spanOfControl": 118.5,
+          "layerCount": 57,
+          "status": "approved"
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Essential Description 7",
+          "structure": "Essential Structure 7",
+          "aiOptimizations": "Essential Ai Optimizations 7",
+          "metrics": "Essential Metrics 7",
+          "spanOfControl": 80.2,
+          "layerCount": 143,
+          "status": "active"
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Primary Description 8",
+          "structure": "Primary Structure 8",
+          "aiOptimizations": "Primary Ai Optimizations 8",
+          "metrics": "Primary Metrics 8",
+          "spanOfControl": 141.9,
+          "layerCount": 251,
+          "status": "active"
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Global Description 9",
+          "structure": "Global Structure 9",
+          "aiOptimizations": "Global Ai Optimizations 9",
+          "metrics": "Global Metrics 9",
+          "spanOfControl": 103.6,
+          "layerCount": 166,
+          "status": "active"
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Regional Description 10",
+          "structure": "Regional Structure 10",
+          "aiOptimizations": "Regional Ai Optimizations 10",
+          "metrics": "Regional Metrics 10",
+          "spanOfControl": 165.3,
+          "layerCount": 83,
+          "status": "pending"
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Custom Description 11",
+          "structure": "Custom Structure 11",
+          "aiOptimizations": "Custom Ai Optimizations 11",
+          "metrics": "Custom Metrics 11",
+          "spanOfControl": 127,
+          "layerCount": 260,
+          "status": "completed"
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Smart Description 12",
+          "structure": "Smart Structure 12",
+          "aiOptimizations": "Smart Ai Optimizations 12",
+          "metrics": "Smart Metrics 12",
+          "spanOfControl": 188.7,
+          "layerCount": 88,
+          "status": "active"
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Rapid Description 13",
+          "structure": "Rapid Structure 13",
+          "aiOptimizations": "Rapid Ai Optimizations 13",
+          "metrics": "Rapid Metrics 13",
+          "spanOfControl": 150.4,
+          "layerCount": 220,
+          "status": "in_progress"
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Secure Description 14",
+          "structure": "Secure Structure 14",
+          "aiOptimizations": "Secure Ai Optimizations 14",
+          "metrics": "Secure Metrics 14",
+          "spanOfControl": 212.1,
+          "layerCount": 144,
+          "status": "active"
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Modern Description 15",
+          "structure": "Modern Structure 15",
+          "aiOptimizations": "Modern Ai Optimizations 15",
+          "metrics": "Modern Metrics 15",
+          "spanOfControl": 173.8,
+          "layerCount": 258,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "InterviewSchedule",
+      "routeKey": "interview-schedules",
+      "label": "Interview Schedule",
+      "icon": "activity",
+      "aiFunction": "analyzeInterviewSchedule",
+      "aiPrompt": "You are an AI analyst for Ai Recruiter Screener. Analyze the provided Interview Schedule data. The data includes: Candidate Id, Interviewers, Proposed Slots, Selected Slot, Duration, Type, Location, Meeting Link, Ai Suggestions, Conflict Analysis, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "candidateId",
+          "label": "Candidate Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "interviewers",
+          "label": "Interviewers",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "proposedSlots",
+          "label": "Proposed Slots",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "selectedSlot",
+          "label": "Selected Slot",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "duration",
+          "label": "Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "meetingLink",
+          "label": "Meeting Link",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiSuggestions",
+          "label": "Ai Suggestions",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "conflictAnalysis",
+          "label": "Conflict Analysis",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "candidateId": "Advanced Candidate Id 1",
+          "interviewers": "Advanced Interviewers 1",
+          "proposedSlots": "Advanced Proposed Slots 1",
+          "selectedSlot": "2024-01-01",
+          "duration": 10,
+          "type": "Category A",
+          "location": "New York",
+          "meetingLink": "https://example.com/meetingLink/1",
+          "aiSuggestions": "Advanced Ai Suggestions 1",
+          "conflictAnalysis": "Advanced Conflict Analysis 1",
+          "status": "active"
+        },
+        {
+          "candidateId": "Premium Candidate Id 2",
+          "interviewers": "Premium Interviewers 2",
+          "proposedSlots": "Premium Proposed Slots 2",
+          "selectedSlot": "2024-02-03",
+          "duration": 58,
+          "type": "Category B",
+          "location": "Los Angeles",
+          "meetingLink": "https://example.com/meetingLink/2",
+          "aiSuggestions": "Premium Ai Suggestions 2",
+          "conflictAnalysis": "Premium Conflict Analysis 2",
+          "status": "pending"
+        },
+        {
+          "candidateId": "Standard Candidate Id 3",
+          "interviewers": "Standard Interviewers 3",
+          "proposedSlots": "Standard Proposed Slots 3",
+          "selectedSlot": "2024-03-05",
+          "duration": 106,
+          "type": "Category C",
+          "location": "Chicago",
+          "meetingLink": "https://example.com/meetingLink/3",
+          "aiSuggestions": "Standard Ai Suggestions 3",
+          "conflictAnalysis": "Standard Conflict Analysis 3",
+          "status": "in_progress"
+        },
+        {
+          "candidateId": "Elite Candidate Id 4",
+          "interviewers": "Elite Interviewers 4",
+          "proposedSlots": "Elite Proposed Slots 4",
+          "selectedSlot": "2024-04-07",
+          "duration": 154,
+          "type": "Category D",
+          "location": "Houston",
+          "meetingLink": "https://example.com/meetingLink/4",
+          "aiSuggestions": "Elite Ai Suggestions 4",
+          "conflictAnalysis": "Elite Conflict Analysis 4",
+          "status": "completed"
+        },
+        {
+          "candidateId": "Core Candidate Id 5",
+          "interviewers": "Core Interviewers 5",
+          "proposedSlots": "Core Proposed Slots 5",
+          "selectedSlot": "2024-05-09",
+          "duration": 102,
+          "type": "Category E",
+          "location": "Phoenix",
+          "meetingLink": "https://example.com/meetingLink/5",
+          "aiSuggestions": "Core Ai Suggestions 5",
+          "conflictAnalysis": "Core Conflict Analysis 5",
+          "status": "under_review"
+        },
+        {
+          "candidateId": "Pro Candidate Id 6",
+          "interviewers": "Pro Interviewers 6",
+          "proposedSlots": "Pro Proposed Slots 6",
+          "selectedSlot": "2024-06-11",
+          "duration": 150,
+          "type": "Premium Tier",
+          "location": "San Francisco",
+          "meetingLink": "https://example.com/meetingLink/6",
+          "aiSuggestions": "Pro Ai Suggestions 6",
+          "conflictAnalysis": "Pro Conflict Analysis 6",
+          "status": "approved"
+        },
+        {
+          "candidateId": "Essential Candidate Id 7",
+          "interviewers": "Essential Interviewers 7",
+          "proposedSlots": "Essential Proposed Slots 7",
+          "selectedSlot": "2024-07-13",
+          "duration": 198,
+          "type": "Standard Tier",
+          "location": "Seattle",
+          "meetingLink": "https://example.com/meetingLink/7",
+          "aiSuggestions": "Essential Ai Suggestions 7",
+          "conflictAnalysis": "Essential Conflict Analysis 7",
+          "status": "active"
+        },
+        {
+          "candidateId": "Primary Candidate Id 8",
+          "interviewers": "Primary Interviewers 8",
+          "proposedSlots": "Primary Proposed Slots 8",
+          "selectedSlot": "2024-08-15",
+          "duration": 146,
+          "type": "Basic Tier",
+          "location": "Boston",
+          "meetingLink": "https://example.com/meetingLink/8",
+          "aiSuggestions": "Primary Ai Suggestions 8",
+          "conflictAnalysis": "Primary Conflict Analysis 8",
+          "status": "active"
+        },
+        {
+          "candidateId": "Global Candidate Id 9",
+          "interviewers": "Global Interviewers 9",
+          "proposedSlots": "Global Proposed Slots 9",
+          "selectedSlot": "2024-09-17",
+          "duration": 194,
+          "type": "Enterprise",
+          "location": "Denver",
+          "meetingLink": "https://example.com/meetingLink/9",
+          "aiSuggestions": "Global Ai Suggestions 9",
+          "conflictAnalysis": "Global Conflict Analysis 9",
+          "status": "active"
+        },
+        {
+          "candidateId": "Regional Candidate Id 10",
+          "interviewers": "Regional Interviewers 10",
+          "proposedSlots": "Regional Proposed Slots 10",
+          "selectedSlot": "2024-10-19",
+          "duration": 242,
+          "type": "Starter",
+          "location": "Miami",
+          "meetingLink": "https://example.com/meetingLink/10",
+          "aiSuggestions": "Regional Ai Suggestions 10",
+          "conflictAnalysis": "Regional Conflict Analysis 10",
+          "status": "pending"
+        },
+        {
+          "candidateId": "Custom Candidate Id 11",
+          "interviewers": "Custom Interviewers 11",
+          "proposedSlots": "Custom Proposed Slots 11",
+          "selectedSlot": "2024-11-21",
+          "duration": 190,
+          "type": "Growth",
+          "location": "Austin",
+          "meetingLink": "https://example.com/meetingLink/11",
+          "aiSuggestions": "Custom Ai Suggestions 11",
+          "conflictAnalysis": "Custom Conflict Analysis 11",
+          "status": "completed"
+        },
+        {
+          "candidateId": "Smart Candidate Id 12",
+          "interviewers": "Smart Interviewers 12",
+          "proposedSlots": "Smart Proposed Slots 12",
+          "selectedSlot": "2024-12-23",
+          "duration": 238,
+          "type": "Scale",
+          "location": "Portland",
+          "meetingLink": "https://example.com/meetingLink/12",
+          "aiSuggestions": "Smart Ai Suggestions 12",
+          "conflictAnalysis": "Smart Conflict Analysis 12",
+          "status": "active"
+        },
+        {
+          "candidateId": "Rapid Candidate Id 13",
+          "interviewers": "Rapid Interviewers 13",
+          "proposedSlots": "Rapid Proposed Slots 13",
+          "selectedSlot": "2024-01-25",
+          "duration": 286,
+          "type": "Foundation",
+          "location": "Dallas",
+          "meetingLink": "https://example.com/meetingLink/13",
+          "aiSuggestions": "Rapid Ai Suggestions 13",
+          "conflictAnalysis": "Rapid Conflict Analysis 13",
+          "status": "in_progress"
+        },
+        {
+          "candidateId": "Secure Candidate Id 14",
+          "interviewers": "Secure Interviewers 14",
+          "proposedSlots": "Secure Proposed Slots 14",
+          "selectedSlot": "2024-02-27",
+          "duration": 234,
+          "type": "Advanced",
+          "location": "Atlanta",
+          "meetingLink": "https://example.com/meetingLink/14",
+          "aiSuggestions": "Secure Ai Suggestions 14",
+          "conflictAnalysis": "Secure Conflict Analysis 14",
+          "status": "active"
+        },
+        {
+          "candidateId": "Modern Candidate Id 15",
+          "interviewers": "Modern Interviewers 15",
+          "proposedSlots": "Modern Proposed Slots 15",
+          "selectedSlot": "2024-03-01",
+          "duration": 282,
+          "type": "Professional",
+          "location": "Nashville",
+          "meetingLink": "https://example.com/meetingLink/15",
+          "aiSuggestions": "Modern Ai Suggestions 15",
+          "conflictAnalysis": "Modern Conflict Analysis 15",
+          "status": "approved"
+        }
+      ]
+    }
+  ]
+}

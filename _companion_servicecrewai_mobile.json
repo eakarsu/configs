@@ -1,0 +1,973 @@
+{
+  "appName": "AI Service Crew Mobile",
+  "dbName": "ai_service_crew_mobile",
+  "folderName": "generated/servicecrewai_mobile",
+  "features": [
+    {
+      "modelName": "WorkOrder",
+      "label": "Work Orders",
+      "icon": "clipboard",
+      "fields": [
+        {
+          "key": "orderNumber",
+          "label": "Order #",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serviceType",
+          "label": "Service Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "technicianName",
+          "label": "Technician",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledDate",
+          "label": "Scheduled Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "estimatedCost",
+          "label": "Estimated Cost",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "routeKey": "workOrders",
+      "aiFunction": "analyzeWorkOrder",
+      "aiPrompt": "You are an AI analyst for AI Service Crew Mobile. Analyze the provided Work Orders data. The data includes: Order #, Customer, Service Type, Address, Technician, Status, Priority, Scheduled Date, Estimated Cost. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "orderNumber": "Alpha Order #",
+          "customerName": "Alpha Customer",
+          "serviceType": "Alpha Service Type",
+          "address": "Alpha Address",
+          "technicianName": "Alpha Technician",
+          "status": "Active",
+          "priority": "Alpha Priority",
+          "scheduledDate": "2026-09-04",
+          "estimatedCost": 111.18
+        },
+        {
+          "orderNumber": "Beta Order #",
+          "customerName": "Beta Customer",
+          "serviceType": "Beta Service Type",
+          "address": "Beta Address",
+          "technicianName": "Beta Technician",
+          "status": "Pending",
+          "priority": "Beta Priority",
+          "scheduledDate": "2026-08-16",
+          "estimatedCost": 750.34
+        },
+        {
+          "orderNumber": "Gamma Order #",
+          "customerName": "Gamma Customer",
+          "serviceType": "Gamma Service Type",
+          "address": "Gamma Address",
+          "technicianName": "Gamma Technician",
+          "status": "Review",
+          "priority": "Gamma Priority",
+          "scheduledDate": "2026-06-06",
+          "estimatedCost": 655.46
+        },
+        {
+          "orderNumber": "Delta Order #",
+          "customerName": "Delta Customer",
+          "serviceType": "Delta Service Type",
+          "address": "Delta Address",
+          "technicianName": "Delta Technician",
+          "status": "Approved",
+          "priority": "Delta Priority",
+          "scheduledDate": "2026-12-22",
+          "estimatedCost": 924.85
+        },
+        {
+          "orderNumber": "Epsilon Order #",
+          "customerName": "Epsilon Customer",
+          "serviceType": "Epsilon Service Type",
+          "address": "Epsilon Address",
+          "technicianName": "Epsilon Technician",
+          "status": "Draft",
+          "priority": "Epsilon Priority",
+          "scheduledDate": "2026-08-01",
+          "estimatedCost": 331.03
+        },
+        {
+          "orderNumber": "Zeta Order #",
+          "customerName": "Zeta Customer",
+          "serviceType": "Zeta Service Type",
+          "address": "Zeta Address",
+          "technicianName": "Zeta Technician",
+          "status": "Live",
+          "priority": "Zeta Priority",
+          "scheduledDate": "2026-05-06",
+          "estimatedCost": 184.12
+        },
+        {
+          "orderNumber": "Eta Order #",
+          "customerName": "Eta Customer",
+          "serviceType": "Eta Service Type",
+          "address": "Eta Address",
+          "technicianName": "Eta Technician",
+          "status": "Paused",
+          "priority": "Eta Priority",
+          "scheduledDate": "2026-03-22",
+          "estimatedCost": 14.2
+        },
+        {
+          "orderNumber": "Theta Order #",
+          "customerName": "Theta Customer",
+          "serviceType": "Theta Service Type",
+          "address": "Theta Address",
+          "technicianName": "Theta Technician",
+          "status": "Archived",
+          "priority": "Theta Priority",
+          "scheduledDate": "2026-01-09",
+          "estimatedCost": 318.97
+        },
+        {
+          "orderNumber": "Iota Order #",
+          "customerName": "Iota Customer",
+          "serviceType": "Iota Service Type",
+          "address": "Iota Address",
+          "technicianName": "Iota Technician",
+          "status": "Beta",
+          "priority": "Iota Priority",
+          "scheduledDate": "2026-08-23",
+          "estimatedCost": 300.92
+        },
+        {
+          "orderNumber": "Kappa Order #",
+          "customerName": "Kappa Customer",
+          "serviceType": "Kappa Service Type",
+          "address": "Kappa Address",
+          "technicianName": "Kappa Technician",
+          "status": "GA",
+          "priority": "Kappa Priority",
+          "scheduledDate": "2026-06-23",
+          "estimatedCost": 731.88
+        },
+        {
+          "orderNumber": "Lambda Order #",
+          "customerName": "Lambda Customer",
+          "serviceType": "Lambda Service Type",
+          "address": "Lambda Address",
+          "technicianName": "Lambda Technician",
+          "status": "Completed",
+          "priority": "Lambda Priority",
+          "scheduledDate": "2026-09-17",
+          "estimatedCost": 497.24
+        },
+        {
+          "orderNumber": "Mu Order #",
+          "customerName": "Mu Customer",
+          "serviceType": "Mu Service Type",
+          "address": "Mu Address",
+          "technicianName": "Mu Technician",
+          "status": "In Progress",
+          "priority": "Mu Priority",
+          "scheduledDate": "2026-04-03",
+          "estimatedCost": 736.17
+        },
+        {
+          "orderNumber": "Nu Order #",
+          "customerName": "Nu Customer",
+          "serviceType": "Nu Service Type",
+          "address": "Nu Address",
+          "technicianName": "Nu Technician",
+          "status": "Scheduled",
+          "priority": "Nu Priority",
+          "scheduledDate": "2026-12-23",
+          "estimatedCost": 9.87
+        },
+        {
+          "orderNumber": "Xi Order #",
+          "customerName": "Xi Customer",
+          "serviceType": "Xi Service Type",
+          "address": "Xi Address",
+          "technicianName": "Xi Technician",
+          "status": "Failed",
+          "priority": "Xi Priority",
+          "scheduledDate": "2026-02-22",
+          "estimatedCost": 747.27
+        },
+        {
+          "orderNumber": "Omicron Order #",
+          "customerName": "Omicron Customer",
+          "serviceType": "Omicron Service Type",
+          "address": "Omicron Address",
+          "technicianName": "Omicron Technician",
+          "status": "Cancelled",
+          "priority": "Omicron Priority",
+          "scheduledDate": "2026-07-09",
+          "estimatedCost": 271.04
+        }
+      ]
+    },
+    {
+      "modelName": "Technician",
+      "label": "Technicians",
+      "icon": "user",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "specialty",
+          "label": "Specialty",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "jobsCompleted",
+          "label": "Jobs Completed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "isAvailable",
+          "label": "Available",
+          "type": "BOOLEAN",
+          "formType": "checkbox"
+        }
+      ],
+      "routeKey": "technicians",
+      "aiFunction": "analyzeTechnician",
+      "aiPrompt": "You are an AI analyst for AI Service Crew Mobile. Analyze the provided Technicians data. The data includes: Name, Specialty, Phone, Email, Rating, Jobs Completed, Available. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "specialty": "Alpha Specialty",
+          "phone": "555-100-1000",
+          "email": "alpha@example.com",
+          "rating": 306.22,
+          "jobsCompleted": 697,
+          "isAvailable": true
+        },
+        {
+          "name": "Beta Name",
+          "specialty": "Beta Specialty",
+          "phone": "555-101-1111",
+          "email": "beta@example.com",
+          "rating": 421.28,
+          "jobsCompleted": 751,
+          "isAvailable": false
+        },
+        {
+          "name": "Gamma Name",
+          "specialty": "Gamma Specialty",
+          "phone": "555-102-1222",
+          "email": "gamma@example.com",
+          "rating": 730.75,
+          "jobsCompleted": 136,
+          "isAvailable": true
+        },
+        {
+          "name": "Delta Name",
+          "specialty": "Delta Specialty",
+          "phone": "555-103-1333",
+          "email": "delta@example.com",
+          "rating": 336.52,
+          "jobsCompleted": 319,
+          "isAvailable": false
+        },
+        {
+          "name": "Epsilon Name",
+          "specialty": "Epsilon Specialty",
+          "phone": "555-104-1444",
+          "email": "epsilon@example.com",
+          "rating": 310.75,
+          "jobsCompleted": 132,
+          "isAvailable": true
+        },
+        {
+          "name": "Zeta Name",
+          "specialty": "Zeta Specialty",
+          "phone": "555-105-1555",
+          "email": "zeta@example.com",
+          "rating": 978.11,
+          "jobsCompleted": 252,
+          "isAvailable": false
+        },
+        {
+          "name": "Eta Name",
+          "specialty": "Eta Specialty",
+          "phone": "555-106-1666",
+          "email": "eta@example.com",
+          "rating": 400.01,
+          "jobsCompleted": 350,
+          "isAvailable": true
+        },
+        {
+          "name": "Theta Name",
+          "specialty": "Theta Specialty",
+          "phone": "555-107-1777",
+          "email": "theta@example.com",
+          "rating": 153.95,
+          "jobsCompleted": 18,
+          "isAvailable": false
+        },
+        {
+          "name": "Iota Name",
+          "specialty": "Iota Specialty",
+          "phone": "555-108-1888",
+          "email": "iota@example.com",
+          "rating": 277.32,
+          "jobsCompleted": 502,
+          "isAvailable": true
+        },
+        {
+          "name": "Kappa Name",
+          "specialty": "Kappa Specialty",
+          "phone": "555-109-1999",
+          "email": "kappa@example.com",
+          "rating": 671.07,
+          "jobsCompleted": 688,
+          "isAvailable": false
+        },
+        {
+          "name": "Lambda Name",
+          "specialty": "Lambda Specialty",
+          "phone": "555-110-2110",
+          "email": "lambda@example.com",
+          "rating": 490.23,
+          "jobsCompleted": 744,
+          "isAvailable": true
+        },
+        {
+          "name": "Mu Name",
+          "specialty": "Mu Specialty",
+          "phone": "555-111-2221",
+          "email": "mu@example.com",
+          "rating": 405.77,
+          "jobsCompleted": 750,
+          "isAvailable": false
+        },
+        {
+          "name": "Nu Name",
+          "specialty": "Nu Specialty",
+          "phone": "555-112-2332",
+          "email": "nu@example.com",
+          "rating": 341.65,
+          "jobsCompleted": 361,
+          "isAvailable": true
+        },
+        {
+          "name": "Xi Name",
+          "specialty": "Xi Specialty",
+          "phone": "555-113-2443",
+          "email": "xi@example.com",
+          "rating": 162.44,
+          "jobsCompleted": 75,
+          "isAvailable": false
+        },
+        {
+          "name": "Omicron Name",
+          "specialty": "Omicron Specialty",
+          "phone": "555-114-2554",
+          "email": "omicron@example.com",
+          "rating": 339.18,
+          "jobsCompleted": 922,
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "modelName": "ServiceCall",
+      "label": "Service Calls",
+      "icon": "phone-call",
+      "fields": [
+        {
+          "key": "customerName",
+          "label": "Customer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serviceType",
+          "label": "Service Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "technicianName",
+          "label": "Technician",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "completedDate",
+          "label": "Completed Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "routeKey": "serviceCalls",
+      "aiFunction": "analyzeServiceCall",
+      "aiPrompt": "You are an AI analyst for AI Service Crew Mobile. Analyze the provided Service Calls data. The data includes: Customer, Service Type, Description, Technician, Status, Completed Date, Cost. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "customerName": "Alpha Customer",
+          "serviceType": "Alpha Service Type",
+          "description": "Alpha description — detailed content for enterprise use case.",
+          "technicianName": "Alpha Technician",
+          "status": "Active",
+          "completedDate": "2026-10-02",
+          "cost": 307.7
+        },
+        {
+          "customerName": "Beta Customer",
+          "serviceType": "Beta Service Type",
+          "description": "Beta description — detailed content for startup use case.",
+          "technicianName": "Beta Technician",
+          "status": "Pending",
+          "completedDate": "2026-08-22",
+          "cost": 392.08
+        },
+        {
+          "customerName": "Gamma Customer",
+          "serviceType": "Gamma Service Type",
+          "description": "Gamma description — detailed content for smb use case.",
+          "technicianName": "Gamma Technician",
+          "status": "Review",
+          "completedDate": "2026-01-01",
+          "cost": 454.66
+        },
+        {
+          "customerName": "Delta Customer",
+          "serviceType": "Delta Service Type",
+          "description": "Delta description — detailed content for agency use case.",
+          "technicianName": "Delta Technician",
+          "status": "Approved",
+          "completedDate": "2026-06-18",
+          "cost": 513.69
+        },
+        {
+          "customerName": "Epsilon Customer",
+          "serviceType": "Epsilon Service Type",
+          "description": "Epsilon description — detailed content for freelancer use case.",
+          "technicianName": "Epsilon Technician",
+          "status": "Draft",
+          "completedDate": "2026-06-07",
+          "cost": 888.21
+        },
+        {
+          "customerName": "Zeta Customer",
+          "serviceType": "Zeta Service Type",
+          "description": "Zeta description — detailed content for government use case.",
+          "technicianName": "Zeta Technician",
+          "status": "Live",
+          "completedDate": "2026-01-22",
+          "cost": 323.95
+        },
+        {
+          "customerName": "Eta Customer",
+          "serviceType": "Eta Service Type",
+          "description": "Eta description — detailed content for nonprofit use case.",
+          "technicianName": "Eta Technician",
+          "status": "Paused",
+          "completedDate": "2026-06-23",
+          "cost": 493.29
+        },
+        {
+          "customerName": "Theta Customer",
+          "serviceType": "Theta Service Type",
+          "description": "Theta description — detailed content for healthcare use case.",
+          "technicianName": "Theta Technician",
+          "status": "Archived",
+          "completedDate": "2026-09-23",
+          "cost": 583.37
+        },
+        {
+          "customerName": "Iota Customer",
+          "serviceType": "Iota Service Type",
+          "description": "Iota description — detailed content for finance use case.",
+          "technicianName": "Iota Technician",
+          "status": "Beta",
+          "completedDate": "2026-12-08",
+          "cost": 514.3
+        },
+        {
+          "customerName": "Kappa Customer",
+          "serviceType": "Kappa Service Type",
+          "description": "Kappa description — detailed content for education use case.",
+          "technicianName": "Kappa Technician",
+          "status": "GA",
+          "completedDate": "2026-06-24",
+          "cost": 936.78
+        },
+        {
+          "customerName": "Lambda Customer",
+          "serviceType": "Lambda Service Type",
+          "description": "Lambda description — detailed content for retail use case.",
+          "technicianName": "Lambda Technician",
+          "status": "Completed",
+          "completedDate": "2026-05-26",
+          "cost": 40.77
+        },
+        {
+          "customerName": "Mu Customer",
+          "serviceType": "Mu Service Type",
+          "description": "Mu description — detailed content for tech use case.",
+          "technicianName": "Mu Technician",
+          "status": "In Progress",
+          "completedDate": "2026-04-28",
+          "cost": 561.93
+        },
+        {
+          "customerName": "Nu Customer",
+          "serviceType": "Nu Service Type",
+          "description": "Nu description — detailed content for legal use case.",
+          "technicianName": "Nu Technician",
+          "status": "Scheduled",
+          "completedDate": "2026-01-02",
+          "cost": 799.73
+        },
+        {
+          "customerName": "Xi Customer",
+          "serviceType": "Xi Service Type",
+          "description": "Xi description — detailed content for real estate use case.",
+          "technicianName": "Xi Technician",
+          "status": "Failed",
+          "completedDate": "2026-01-16",
+          "cost": 190.87
+        },
+        {
+          "customerName": "Omicron Customer",
+          "serviceType": "Omicron Service Type",
+          "description": "Omicron description — detailed content for manufacturing use case.",
+          "technicianName": "Omicron Technician",
+          "status": "Cancelled",
+          "completedDate": "2026-03-25",
+          "cost": 383.57
+        }
+      ]
+    },
+    {
+      "modelName": "Equipment",
+      "label": "Equipment",
+      "icon": "tool",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serialNumber",
+          "label": "Serial #",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "condition",
+          "label": "Condition",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastServiceDate",
+          "label": "Last Service",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "nextServiceDate",
+          "label": "Next Service",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "equipments",
+      "aiFunction": "analyzeEquipment",
+      "aiPrompt": "You are an AI analyst for AI Service Crew Mobile. Analyze the provided Equipment data. The data includes: Name, Type, Serial #, Location, Condition, Last Service, Next Service. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "type": "Alpha Type",
+          "serialNumber": "Alpha Serial #",
+          "location": "Alpha Location",
+          "condition": "Alpha Condition",
+          "lastServiceDate": "2026-02-26",
+          "nextServiceDate": "2026-12-23"
+        },
+        {
+          "name": "Beta Name",
+          "type": "Beta Type",
+          "serialNumber": "Beta Serial #",
+          "location": "Beta Location",
+          "condition": "Beta Condition",
+          "lastServiceDate": "2026-04-08",
+          "nextServiceDate": "2026-09-23"
+        },
+        {
+          "name": "Gamma Name",
+          "type": "Gamma Type",
+          "serialNumber": "Gamma Serial #",
+          "location": "Gamma Location",
+          "condition": "Gamma Condition",
+          "lastServiceDate": "2026-03-23",
+          "nextServiceDate": "2026-08-09"
+        },
+        {
+          "name": "Delta Name",
+          "type": "Delta Type",
+          "serialNumber": "Delta Serial #",
+          "location": "Delta Location",
+          "condition": "Delta Condition",
+          "lastServiceDate": "2026-08-27",
+          "nextServiceDate": "2026-11-02"
+        },
+        {
+          "name": "Epsilon Name",
+          "type": "Epsilon Type",
+          "serialNumber": "Epsilon Serial #",
+          "location": "Epsilon Location",
+          "condition": "Epsilon Condition",
+          "lastServiceDate": "2026-06-16",
+          "nextServiceDate": "2026-06-07"
+        },
+        {
+          "name": "Zeta Name",
+          "type": "Zeta Type",
+          "serialNumber": "Zeta Serial #",
+          "location": "Zeta Location",
+          "condition": "Zeta Condition",
+          "lastServiceDate": "2026-01-04",
+          "nextServiceDate": "2026-02-09"
+        },
+        {
+          "name": "Eta Name",
+          "type": "Eta Type",
+          "serialNumber": "Eta Serial #",
+          "location": "Eta Location",
+          "condition": "Eta Condition",
+          "lastServiceDate": "2026-11-04",
+          "nextServiceDate": "2026-03-07"
+        },
+        {
+          "name": "Theta Name",
+          "type": "Theta Type",
+          "serialNumber": "Theta Serial #",
+          "location": "Theta Location",
+          "condition": "Theta Condition",
+          "lastServiceDate": "2026-09-20",
+          "nextServiceDate": "2026-01-27"
+        },
+        {
+          "name": "Iota Name",
+          "type": "Iota Type",
+          "serialNumber": "Iota Serial #",
+          "location": "Iota Location",
+          "condition": "Iota Condition",
+          "lastServiceDate": "2026-03-01",
+          "nextServiceDate": "2026-12-07"
+        },
+        {
+          "name": "Kappa Name",
+          "type": "Kappa Type",
+          "serialNumber": "Kappa Serial #",
+          "location": "Kappa Location",
+          "condition": "Kappa Condition",
+          "lastServiceDate": "2026-03-23",
+          "nextServiceDate": "2026-03-09"
+        },
+        {
+          "name": "Lambda Name",
+          "type": "Lambda Type",
+          "serialNumber": "Lambda Serial #",
+          "location": "Lambda Location",
+          "condition": "Lambda Condition",
+          "lastServiceDate": "2026-11-14",
+          "nextServiceDate": "2026-08-01"
+        },
+        {
+          "name": "Mu Name",
+          "type": "Mu Type",
+          "serialNumber": "Mu Serial #",
+          "location": "Mu Location",
+          "condition": "Mu Condition",
+          "lastServiceDate": "2026-10-05",
+          "nextServiceDate": "2026-10-09"
+        },
+        {
+          "name": "Nu Name",
+          "type": "Nu Type",
+          "serialNumber": "Nu Serial #",
+          "location": "Nu Location",
+          "condition": "Nu Condition",
+          "lastServiceDate": "2026-09-18",
+          "nextServiceDate": "2026-03-15"
+        },
+        {
+          "name": "Xi Name",
+          "type": "Xi Type",
+          "serialNumber": "Xi Serial #",
+          "location": "Xi Location",
+          "condition": "Xi Condition",
+          "lastServiceDate": "2026-02-26",
+          "nextServiceDate": "2026-12-25"
+        },
+        {
+          "name": "Omicron Name",
+          "type": "Omicron Type",
+          "serialNumber": "Omicron Serial #",
+          "location": "Omicron Location",
+          "condition": "Omicron Condition",
+          "lastServiceDate": "2026-10-12",
+          "nextServiceDate": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "modelName": "CustomerFeedback",
+      "label": "Customer Feedback",
+      "icon": "star",
+      "fields": [
+        {
+          "key": "customerName",
+          "label": "Customer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "technicianName",
+          "label": "Technician",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "comment",
+          "label": "Comment",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "serviceType",
+          "label": "Service Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "feedbackDate",
+          "label": "Date",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "routeKey": "customerFeedbacks",
+      "aiFunction": "analyzeCustomerFeedback",
+      "aiPrompt": "You are an AI analyst for AI Service Crew Mobile. Analyze the provided Customer Feedback data. The data includes: Customer, Technician, Rating, Comment, Service Type, Date. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "customerName": "Alpha Customer",
+          "technicianName": "Alpha Technician",
+          "rating": 338,
+          "comment": "Alpha comment — detailed content for enterprise use case.",
+          "serviceType": "Alpha Service Type",
+          "feedbackDate": "2026-05-20"
+        },
+        {
+          "customerName": "Beta Customer",
+          "technicianName": "Beta Technician",
+          "rating": 642,
+          "comment": "Beta comment — detailed content for startup use case.",
+          "serviceType": "Beta Service Type",
+          "feedbackDate": "2026-09-07"
+        },
+        {
+          "customerName": "Gamma Customer",
+          "technicianName": "Gamma Technician",
+          "rating": 507,
+          "comment": "Gamma comment — detailed content for smb use case.",
+          "serviceType": "Gamma Service Type",
+          "feedbackDate": "2026-08-06"
+        },
+        {
+          "customerName": "Delta Customer",
+          "technicianName": "Delta Technician",
+          "rating": 681,
+          "comment": "Delta comment — detailed content for agency use case.",
+          "serviceType": "Delta Service Type",
+          "feedbackDate": "2026-10-05"
+        },
+        {
+          "customerName": "Epsilon Customer",
+          "technicianName": "Epsilon Technician",
+          "rating": 967,
+          "comment": "Epsilon comment — detailed content for freelancer use case.",
+          "serviceType": "Epsilon Service Type",
+          "feedbackDate": "2026-01-03"
+        },
+        {
+          "customerName": "Zeta Customer",
+          "technicianName": "Zeta Technician",
+          "rating": 282,
+          "comment": "Zeta comment — detailed content for government use case.",
+          "serviceType": "Zeta Service Type",
+          "feedbackDate": "2026-02-08"
+        },
+        {
+          "customerName": "Eta Customer",
+          "technicianName": "Eta Technician",
+          "rating": 369,
+          "comment": "Eta comment — detailed content for nonprofit use case.",
+          "serviceType": "Eta Service Type",
+          "feedbackDate": "2026-03-02"
+        },
+        {
+          "customerName": "Theta Customer",
+          "technicianName": "Theta Technician",
+          "rating": 569,
+          "comment": "Theta comment — detailed content for healthcare use case.",
+          "serviceType": "Theta Service Type",
+          "feedbackDate": "2026-06-16"
+        },
+        {
+          "customerName": "Iota Customer",
+          "technicianName": "Iota Technician",
+          "rating": 929,
+          "comment": "Iota comment — detailed content for finance use case.",
+          "serviceType": "Iota Service Type",
+          "feedbackDate": "2026-04-14"
+        },
+        {
+          "customerName": "Kappa Customer",
+          "technicianName": "Kappa Technician",
+          "rating": 129,
+          "comment": "Kappa comment — detailed content for education use case.",
+          "serviceType": "Kappa Service Type",
+          "feedbackDate": "2026-10-22"
+        },
+        {
+          "customerName": "Lambda Customer",
+          "technicianName": "Lambda Technician",
+          "rating": 211,
+          "comment": "Lambda comment — detailed content for retail use case.",
+          "serviceType": "Lambda Service Type",
+          "feedbackDate": "2026-10-11"
+        },
+        {
+          "customerName": "Mu Customer",
+          "technicianName": "Mu Technician",
+          "rating": 472,
+          "comment": "Mu comment — detailed content for tech use case.",
+          "serviceType": "Mu Service Type",
+          "feedbackDate": "2026-10-10"
+        },
+        {
+          "customerName": "Nu Customer",
+          "technicianName": "Nu Technician",
+          "rating": 1000,
+          "comment": "Nu comment — detailed content for legal use case.",
+          "serviceType": "Nu Service Type",
+          "feedbackDate": "2026-04-15"
+        },
+        {
+          "customerName": "Xi Customer",
+          "technicianName": "Xi Technician",
+          "rating": 430,
+          "comment": "Xi comment — detailed content for real estate use case.",
+          "serviceType": "Xi Service Type",
+          "feedbackDate": "2026-12-19"
+        },
+        {
+          "customerName": "Omicron Customer",
+          "technicianName": "Omicron Technician",
+          "rating": 523,
+          "comment": "Omicron comment — detailed content for manufacturing use case.",
+          "serviceType": "Omicron Service Type",
+          "feedbackDate": "2026-08-28"
+        }
+      ]
+    }
+  ]
+}

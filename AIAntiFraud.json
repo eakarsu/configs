@@ -1,0 +1,2170 @@
+{
+  "appName": "A I Anti Fraud",
+  "dbName": "a_i_anti_fraud",
+  "folderName": "generated/AIAntiFraud",
+  "features": [
+    {
+      "modelName": "Transaction",
+      "routeKey": "transactions",
+      "label": "Transaction",
+      "icon": "activity",
+      "aiFunction": "analyzeTransaction",
+      "aiPrompt": "You are an AI analyst for A I Anti Fraud. Analyze the provided Transaction data. The data includes: User Id, Amount, Currency, Merchant Name, Merchant Category, Card Number Last4, Ip Address, Location Country, Location City, Device Id, Is Online, Status, Risk Score, Fraud Confirmed. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "currency",
+          "label": "Currency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "merchantName",
+          "label": "Merchant Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "merchantCategory",
+          "label": "Merchant Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cardNumberLast4",
+          "label": "Card Number Last4",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ipAddress",
+          "label": "Ip Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "locationCountry",
+          "label": "Location Country",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "locationCity",
+          "label": "Location City",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "deviceId",
+          "label": "Device Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isOnline",
+          "label": "Is Online",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "riskScore",
+          "label": "Risk Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "fraudConfirmed",
+          "label": "Fraud Confirmed",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "amount": 500,
+          "currency": "Advanced Currency 1",
+          "merchantName": "Advanced Merchant 1",
+          "merchantCategory": "Category A",
+          "cardNumberLast4": "Advanced Card Number Last4 1",
+          "ipAddress": "New York",
+          "locationCountry": "New York",
+          "locationCity": "New York",
+          "deviceId": "Advanced Device Id 1",
+          "isOnline": true,
+          "status": "active",
+          "riskScore": 1.5,
+          "fraudConfirmed": true
+        },
+        {
+          "userId": 58,
+          "amount": 2481,
+          "currency": "Premium Currency 2",
+          "merchantName": "Premium Merchant 2",
+          "merchantCategory": "Category B",
+          "cardNumberLast4": "Premium Card Number Last4 2",
+          "ipAddress": "Los Angeles",
+          "locationCountry": "Los Angeles",
+          "locationCity": "Los Angeles",
+          "deviceId": "Premium Device Id 2",
+          "isOnline": true,
+          "status": "pending",
+          "riskScore": 2.1,
+          "fraudConfirmed": true
+        },
+        {
+          "userId": 106,
+          "amount": 4462,
+          "currency": "Standard Currency 3",
+          "merchantName": "Standard Merchant 3",
+          "merchantCategory": "Category C",
+          "cardNumberLast4": "Standard Card Number Last4 3",
+          "ipAddress": "Chicago",
+          "locationCountry": "Chicago",
+          "locationCity": "Chicago",
+          "deviceId": "Standard Device Id 3",
+          "isOnline": false,
+          "status": "in_progress",
+          "riskScore": 2.7,
+          "fraudConfirmed": false
+        },
+        {
+          "userId": 154,
+          "amount": 6443,
+          "currency": "Elite Currency 4",
+          "merchantName": "Elite Merchant 4",
+          "merchantCategory": "Category D",
+          "cardNumberLast4": "Elite Card Number Last4 4",
+          "ipAddress": "Houston",
+          "locationCountry": "Houston",
+          "locationCity": "Houston",
+          "deviceId": "Elite Device Id 4",
+          "isOnline": true,
+          "status": "completed",
+          "riskScore": 3.3,
+          "fraudConfirmed": true
+        },
+        {
+          "userId": 102,
+          "amount": 8424,
+          "currency": "Core Currency 5",
+          "merchantName": "Core Merchant 5",
+          "merchantCategory": "Category E",
+          "cardNumberLast4": "Core Card Number Last4 5",
+          "ipAddress": "Phoenix",
+          "locationCountry": "Phoenix",
+          "locationCity": "Phoenix",
+          "deviceId": "Core Device Id 5",
+          "isOnline": false,
+          "status": "under_review",
+          "riskScore": 3.9,
+          "fraudConfirmed": false
+        },
+        {
+          "userId": 150,
+          "amount": 10405,
+          "currency": "Pro Currency 6",
+          "merchantName": "Pro Merchant 6",
+          "merchantCategory": "Premium Tier",
+          "cardNumberLast4": "Pro Card Number Last4 6",
+          "ipAddress": "San Francisco",
+          "locationCountry": "San Francisco",
+          "locationCity": "San Francisco",
+          "deviceId": "Pro Device Id 6",
+          "isOnline": true,
+          "status": "approved",
+          "riskScore": 4.5,
+          "fraudConfirmed": true
+        },
+        {
+          "userId": 198,
+          "amount": 12386,
+          "currency": "Essential Currency 7",
+          "merchantName": "Essential Merchant 7",
+          "merchantCategory": "Standard Tier",
+          "cardNumberLast4": "Essential Card Number Last4 7",
+          "ipAddress": "Seattle",
+          "locationCountry": "Seattle",
+          "locationCity": "Seattle",
+          "deviceId": "Essential Device Id 7",
+          "isOnline": true,
+          "status": "active",
+          "riskScore": 5.1,
+          "fraudConfirmed": true
+        },
+        {
+          "userId": 146,
+          "amount": 9367,
+          "currency": "Primary Currency 8",
+          "merchantName": "Primary Merchant 8",
+          "merchantCategory": "Basic Tier",
+          "cardNumberLast4": "Primary Card Number Last4 8",
+          "ipAddress": "Boston",
+          "locationCountry": "Boston",
+          "locationCity": "Boston",
+          "deviceId": "Primary Device Id 8",
+          "isOnline": false,
+          "status": "active",
+          "riskScore": 5.7,
+          "fraudConfirmed": false
+        },
+        {
+          "userId": 194,
+          "amount": 11348,
+          "currency": "Global Currency 9",
+          "merchantName": "Global Merchant 9",
+          "merchantCategory": "Enterprise",
+          "cardNumberLast4": "Global Card Number Last4 9",
+          "ipAddress": "Denver",
+          "locationCountry": "Denver",
+          "locationCity": "Denver",
+          "deviceId": "Global Device Id 9",
+          "isOnline": true,
+          "status": "active",
+          "riskScore": 6.3,
+          "fraudConfirmed": true
+        },
+        {
+          "userId": 242,
+          "amount": 13329,
+          "currency": "Regional Currency 10",
+          "merchantName": "Regional Merchant 10",
+          "merchantCategory": "Starter",
+          "cardNumberLast4": "Regional Card Number Last4 10",
+          "ipAddress": "Miami",
+          "locationCountry": "Miami",
+          "locationCity": "Miami",
+          "deviceId": "Regional Device Id 10",
+          "isOnline": true,
+          "status": "pending",
+          "riskScore": 1.9,
+          "fraudConfirmed": true
+        },
+        {
+          "userId": 190,
+          "amount": 15310,
+          "currency": "Custom Currency 11",
+          "merchantName": "Custom Merchant 11",
+          "merchantCategory": "Growth",
+          "cardNumberLast4": "Custom Card Number Last4 11",
+          "ipAddress": "Austin",
+          "locationCountry": "Austin",
+          "locationCity": "Austin",
+          "deviceId": "Custom Device Id 11",
+          "isOnline": false,
+          "status": "completed",
+          "riskScore": 2.5,
+          "fraudConfirmed": false
+        },
+        {
+          "userId": 238,
+          "amount": 17291,
+          "currency": "Smart Currency 12",
+          "merchantName": "Smart Merchant 12",
+          "merchantCategory": "Scale",
+          "cardNumberLast4": "Smart Card Number Last4 12",
+          "ipAddress": "Portland",
+          "locationCountry": "Portland",
+          "locationCity": "Portland",
+          "deviceId": "Smart Device Id 12",
+          "isOnline": true,
+          "status": "active",
+          "riskScore": 3.1,
+          "fraudConfirmed": true
+        },
+        {
+          "userId": 286,
+          "amount": 19272,
+          "currency": "Rapid Currency 13",
+          "merchantName": "Rapid Merchant 13",
+          "merchantCategory": "Foundation",
+          "cardNumberLast4": "Rapid Card Number Last4 13",
+          "ipAddress": "Dallas",
+          "locationCountry": "Dallas",
+          "locationCity": "Dallas",
+          "deviceId": "Rapid Device Id 13",
+          "isOnline": false,
+          "status": "in_progress",
+          "riskScore": 3.7,
+          "fraudConfirmed": false
+        },
+        {
+          "userId": 234,
+          "amount": 21253,
+          "currency": "Secure Currency 14",
+          "merchantName": "Secure Merchant 14",
+          "merchantCategory": "Advanced",
+          "cardNumberLast4": "Secure Card Number Last4 14",
+          "ipAddress": "Atlanta",
+          "locationCountry": "Atlanta",
+          "locationCity": "Atlanta",
+          "deviceId": "Secure Device Id 14",
+          "isOnline": true,
+          "status": "active",
+          "riskScore": 4.3,
+          "fraudConfirmed": true
+        },
+        {
+          "userId": 282,
+          "amount": 18234,
+          "currency": "Modern Currency 15",
+          "merchantName": "Modern Merchant 15",
+          "merchantCategory": "Professional",
+          "cardNumberLast4": "Modern Card Number Last4 15",
+          "ipAddress": "Nashville",
+          "locationCountry": "Nashville",
+          "locationCity": "Nashville",
+          "deviceId": "Modern Device Id 15",
+          "isOnline": true,
+          "status": "approved",
+          "riskScore": 4.9,
+          "fraudConfirmed": true
+        }
+      ]
+    },
+    {
+      "modelName": "FraudRule",
+      "routeKey": "fraud-rules",
+      "label": "Fraud Rule",
+      "icon": "briefcase",
+      "aiFunction": "analyzeFraudRule",
+      "aiPrompt": "You are an AI analyst for A I Anti Fraud. Analyze the provided Fraud Rule data. The data includes: Name, Description, Rule Type, Condition Json, Action, Severity, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "ruleType",
+          "label": "Rule Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "conditionJson",
+          "label": "Condition Json",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "ruleType": "Category A",
+          "conditionJson": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "action": "Advanced Action 1",
+          "severity": "low",
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "ruleType": "Category B",
+          "conditionJson": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "action": "Premium Action 2",
+          "severity": "medium",
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "ruleType": "Category C",
+          "conditionJson": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "action": "Standard Action 3",
+          "severity": "high",
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "ruleType": "Category D",
+          "conditionJson": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "action": "Elite Action 4",
+          "severity": "critical",
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "ruleType": "Category E",
+          "conditionJson": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "action": "Core Action 5",
+          "severity": "medium",
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "ruleType": "Premium Tier",
+          "conditionJson": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "action": "Pro Action 6",
+          "severity": "low",
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "ruleType": "Standard Tier",
+          "conditionJson": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "action": "Essential Action 7",
+          "severity": "medium",
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "ruleType": "Basic Tier",
+          "conditionJson": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "action": "Primary Action 8",
+          "severity": "high",
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "ruleType": "Enterprise",
+          "conditionJson": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "action": "Global Action 9",
+          "severity": "critical",
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "ruleType": "Starter",
+          "conditionJson": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "action": "Regional Action 10",
+          "severity": "medium",
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "ruleType": "Growth",
+          "conditionJson": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "action": "Custom Action 11",
+          "severity": "low",
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "ruleType": "Scale",
+          "conditionJson": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "action": "Smart Action 12",
+          "severity": "medium",
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "ruleType": "Foundation",
+          "conditionJson": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "action": "Rapid Action 13",
+          "severity": "high",
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "ruleType": "Advanced",
+          "conditionJson": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "action": "Secure Action 14",
+          "severity": "critical",
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "ruleType": "Professional",
+          "conditionJson": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "action": "Modern Action 15",
+          "severity": "medium",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "FraudAlert",
+      "routeKey": "fraud-alerts",
+      "label": "Fraud Alert",
+      "icon": "clipboard",
+      "aiFunction": "analyzeFraudAlert",
+      "aiPrompt": "You are an AI analyst for A I Anti Fraud. Analyze the provided Fraud Alert data. The data includes: Transaction Id, Rule Id, Alert Type, Severity, Description, Status, Assigned To, Resolved At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "transactionId",
+          "label": "Transaction Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "ruleId",
+          "label": "Rule Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "alertType",
+          "label": "Alert Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "resolvedAt",
+          "label": "Resolved At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "transactionId": 10,
+          "ruleId": 10,
+          "alertType": "Category A",
+          "severity": "low",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "assignedTo": 10,
+          "resolvedAt": "2024-01-01"
+        },
+        {
+          "transactionId": 58,
+          "ruleId": 58,
+          "alertType": "Category B",
+          "severity": "medium",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "assignedTo": 58,
+          "resolvedAt": "2024-02-03"
+        },
+        {
+          "transactionId": 106,
+          "ruleId": 106,
+          "alertType": "Category C",
+          "severity": "high",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "assignedTo": 106,
+          "resolvedAt": "2024-03-05"
+        },
+        {
+          "transactionId": 154,
+          "ruleId": 154,
+          "alertType": "Category D",
+          "severity": "critical",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "assignedTo": 154,
+          "resolvedAt": "2024-04-07"
+        },
+        {
+          "transactionId": 102,
+          "ruleId": 102,
+          "alertType": "Category E",
+          "severity": "medium",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "assignedTo": 102,
+          "resolvedAt": "2024-05-09"
+        },
+        {
+          "transactionId": 150,
+          "ruleId": 150,
+          "alertType": "Premium Tier",
+          "severity": "low",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "assignedTo": 150,
+          "resolvedAt": "2024-06-11"
+        },
+        {
+          "transactionId": 198,
+          "ruleId": 198,
+          "alertType": "Standard Tier",
+          "severity": "medium",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "assignedTo": 198,
+          "resolvedAt": "2024-07-13"
+        },
+        {
+          "transactionId": 146,
+          "ruleId": 146,
+          "alertType": "Basic Tier",
+          "severity": "high",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "assignedTo": 146,
+          "resolvedAt": "2024-08-15"
+        },
+        {
+          "transactionId": 194,
+          "ruleId": 194,
+          "alertType": "Enterprise",
+          "severity": "critical",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "assignedTo": 194,
+          "resolvedAt": "2024-09-17"
+        },
+        {
+          "transactionId": 242,
+          "ruleId": 242,
+          "alertType": "Starter",
+          "severity": "medium",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "assignedTo": 242,
+          "resolvedAt": "2024-10-19"
+        },
+        {
+          "transactionId": 190,
+          "ruleId": 190,
+          "alertType": "Growth",
+          "severity": "low",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "assignedTo": 190,
+          "resolvedAt": "2024-11-21"
+        },
+        {
+          "transactionId": 238,
+          "ruleId": 238,
+          "alertType": "Scale",
+          "severity": "medium",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "assignedTo": 238,
+          "resolvedAt": "2024-12-23"
+        },
+        {
+          "transactionId": 286,
+          "ruleId": 286,
+          "alertType": "Foundation",
+          "severity": "high",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "assignedTo": 286,
+          "resolvedAt": "2024-01-25"
+        },
+        {
+          "transactionId": 234,
+          "ruleId": 234,
+          "alertType": "Advanced",
+          "severity": "critical",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "assignedTo": 234,
+          "resolvedAt": "2024-02-27"
+        },
+        {
+          "transactionId": 282,
+          "ruleId": 282,
+          "alertType": "Professional",
+          "severity": "medium",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "assignedTo": 282,
+          "resolvedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "CreditScore",
+      "routeKey": "credit-scores",
+      "label": "Credit Score",
+      "icon": "database",
+      "aiFunction": "analyzeCreditScore",
+      "aiPrompt": "You are an AI analyst for A I Anti Fraud. Analyze the provided Credit Score data. The data includes: Customer Name, Customer Email, Ssn Last4, Credit Score, Risk Level, Income, Debt To Income, Payment History Score, Credit Utilization, Account Age Months, Num Accounts, Num Late Payments, Loan Amount Requested, Loan Purpose, Ai Recommendation, Ai Risk Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerEmail",
+          "label": "Customer Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ssnLast4",
+          "label": "Ssn Last4",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "creditScore",
+          "label": "Credit Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "income",
+          "label": "Income",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "debtToIncome",
+          "label": "Debt To Income",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "paymentHistoryScore",
+          "label": "Payment History Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "creditUtilization",
+          "label": "Credit Utilization",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "accountAgeMonths",
+          "label": "Account Age Months",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "numAccounts",
+          "label": "Num Accounts",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "numLatePayments",
+          "label": "Num Late Payments",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "loanAmountRequested",
+          "label": "Loan Amount Requested",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "loanPurpose",
+          "label": "Loan Purpose",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiRecommendation",
+          "label": "Ai Recommendation",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiRiskAnalysis",
+          "label": "Ai Risk Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerName": "James Wilson",
+          "customerEmail": "james.wilson@example.com",
+          "ssnLast4": "Advanced Ssn Last4 1",
+          "creditScore": 10,
+          "riskLevel": "low",
+          "income": 10,
+          "debtToIncome": 10,
+          "paymentHistoryScore": 1.5,
+          "creditUtilization": 10,
+          "accountAgeMonths": 77,
+          "numAccounts": 66,
+          "numLatePayments": 10,
+          "loanAmountRequested": 500,
+          "loanPurpose": "Advanced Loan Purpose 1",
+          "aiRecommendation": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiRiskAnalysis": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "customerName": "Sarah Chen",
+          "customerEmail": "sarah.chen@example.com",
+          "ssnLast4": "Premium Ssn Last4 2",
+          "creditScore": 58,
+          "riskLevel": "medium",
+          "income": 71.7,
+          "debtToIncome": 71.7,
+          "paymentHistoryScore": 2.1,
+          "creditUtilization": 71.7,
+          "accountAgeMonths": 16,
+          "numAccounts": 40,
+          "numLatePayments": 58,
+          "loanAmountRequested": 2481,
+          "loanPurpose": "Premium Loan Purpose 2",
+          "aiRecommendation": "Industry-leading approach with proven results across multiple deployments.",
+          "aiRiskAnalysis": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "customerName": "Michael Brown",
+          "customerEmail": "michael.brown@example.com",
+          "ssnLast4": "Standard Ssn Last4 3",
+          "creditScore": 106,
+          "riskLevel": "high",
+          "income": 33.4,
+          "debtToIncome": 33.4,
+          "paymentHistoryScore": 2.7,
+          "creditUtilization": 33.4,
+          "accountAgeMonths": 119,
+          "numAccounts": 89,
+          "numLatePayments": 106,
+          "loanAmountRequested": 4462,
+          "loanPurpose": "Standard Loan Purpose 3",
+          "aiRecommendation": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiRiskAnalysis": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "customerName": "Emily Davis",
+          "customerEmail": "emily.davis@example.com",
+          "ssnLast4": "Elite Ssn Last4 4",
+          "creditScore": 154,
+          "riskLevel": "critical",
+          "income": 95.1,
+          "debtToIncome": 95.1,
+          "paymentHistoryScore": 3.3,
+          "creditUtilization": 95.1,
+          "accountAgeMonths": 74,
+          "numAccounts": 158,
+          "numLatePayments": 154,
+          "loanAmountRequested": 6443,
+          "loanPurpose": "Elite Loan Purpose 4",
+          "aiRecommendation": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiRiskAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "customerName": "Robert Garcia",
+          "customerEmail": "robert.garcia@example.com",
+          "ssnLast4": "Core Ssn Last4 5",
+          "creditScore": 102,
+          "riskLevel": "medium",
+          "income": 56.8,
+          "debtToIncome": 56.8,
+          "paymentHistoryScore": 3.9,
+          "creditUtilization": 56.8,
+          "accountAgeMonths": 136,
+          "numAccounts": 193,
+          "numLatePayments": 102,
+          "loanAmountRequested": 8424,
+          "loanPurpose": "Core Loan Purpose 5",
+          "aiRecommendation": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiRiskAnalysis": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "customerName": "Lisa Anderson",
+          "customerEmail": "lisa.anderson@example.com",
+          "ssnLast4": "Pro Ssn Last4 6",
+          "creditScore": 150,
+          "riskLevel": "low",
+          "income": 118.5,
+          "debtToIncome": 118.5,
+          "paymentHistoryScore": 4.5,
+          "creditUtilization": 118.5,
+          "accountAgeMonths": 195,
+          "numAccounts": 204,
+          "numLatePayments": 150,
+          "loanAmountRequested": 10405,
+          "loanPurpose": "Pro Loan Purpose 6",
+          "aiRecommendation": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiRiskAnalysis": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "customerName": "David Martinez",
+          "customerEmail": "david.martinez@example.com",
+          "ssnLast4": "Essential Ssn Last4 7",
+          "creditScore": 198,
+          "riskLevel": "medium",
+          "income": 80.2,
+          "debtToIncome": 80.2,
+          "paymentHistoryScore": 5.1,
+          "creditUtilization": 80.2,
+          "accountAgeMonths": 117,
+          "numAccounts": 88,
+          "numLatePayments": 198,
+          "loanAmountRequested": 12386,
+          "loanPurpose": "Essential Loan Purpose 7",
+          "aiRecommendation": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiRiskAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "customerName": "Jennifer Taylor",
+          "customerEmail": "jennifer.taylor@example.com",
+          "ssnLast4": "Primary Ssn Last4 8",
+          "creditScore": 146,
+          "riskLevel": "high",
+          "income": 141.9,
+          "debtToIncome": 141.9,
+          "paymentHistoryScore": 5.7,
+          "creditUtilization": 141.9,
+          "accountAgeMonths": 228,
+          "numAccounts": 237,
+          "numLatePayments": 146,
+          "loanAmountRequested": 9367,
+          "loanPurpose": "Primary Loan Purpose 8",
+          "aiRecommendation": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiRiskAnalysis": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "customerName": "William Johnson",
+          "customerEmail": "william.johnson@example.com",
+          "ssnLast4": "Global Ssn Last4 9",
+          "creditScore": 194,
+          "riskLevel": "critical",
+          "income": 103.6,
+          "debtToIncome": 103.6,
+          "paymentHistoryScore": 6.3,
+          "creditUtilization": 103.6,
+          "accountAgeMonths": 143,
+          "numAccounts": 149,
+          "numLatePayments": 194,
+          "loanAmountRequested": 11348,
+          "loanPurpose": "Global Loan Purpose 9",
+          "aiRecommendation": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiRiskAnalysis": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "customerName": "Maria Rodriguez",
+          "customerEmail": "maria.rodriguez@example.com",
+          "ssnLast4": "Regional Ssn Last4 10",
+          "creditScore": 242,
+          "riskLevel": "medium",
+          "income": 165.3,
+          "debtToIncome": 165.3,
+          "paymentHistoryScore": 1.9,
+          "creditUtilization": 165.3,
+          "accountAgeMonths": 210,
+          "numAccounts": 138,
+          "numLatePayments": 242,
+          "loanAmountRequested": 13329,
+          "loanPurpose": "Regional Loan Purpose 10",
+          "aiRecommendation": "Enterprise-grade solution with robust security and compliance features.",
+          "aiRiskAnalysis": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "customerName": "Thomas Lee",
+          "customerEmail": "thomas.lee@example.com",
+          "ssnLast4": "Custom Ssn Last4 11",
+          "creditScore": 190,
+          "riskLevel": "low",
+          "income": 127,
+          "debtToIncome": 127,
+          "paymentHistoryScore": 2.5,
+          "creditUtilization": 127,
+          "accountAgeMonths": 129,
+          "numAccounts": 243,
+          "numLatePayments": 190,
+          "loanAmountRequested": 15310,
+          "loanPurpose": "Custom Loan Purpose 11",
+          "aiRecommendation": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiRiskAnalysis": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "customerName": "Patricia White",
+          "customerEmail": "patricia.white@example.com",
+          "ssnLast4": "Smart Ssn Last4 12",
+          "creditScore": 238,
+          "riskLevel": "medium",
+          "income": 188.7,
+          "debtToIncome": 188.7,
+          "paymentHistoryScore": 3.1,
+          "creditUtilization": 188.7,
+          "accountAgeMonths": 170,
+          "numAccounts": 234,
+          "numLatePayments": 238,
+          "loanAmountRequested": 17291,
+          "loanPurpose": "Smart Loan Purpose 12",
+          "aiRecommendation": "Automated workflow reducing manual intervention and human error.",
+          "aiRiskAnalysis": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "customerName": "Christopher Hall",
+          "customerEmail": "christopher.hall@example.com",
+          "ssnLast4": "Rapid Ssn Last4 13",
+          "creditScore": 286,
+          "riskLevel": "high",
+          "income": 150.4,
+          "debtToIncome": 150.4,
+          "paymentHistoryScore": 3.7,
+          "creditUtilization": 150.4,
+          "accountAgeMonths": 227,
+          "numAccounts": 144,
+          "numLatePayments": 286,
+          "loanAmountRequested": 19272,
+          "loanPurpose": "Rapid Loan Purpose 13",
+          "aiRecommendation": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiRiskAnalysis": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "customerName": "Amanda Clark",
+          "customerEmail": "amanda.clark@example.com",
+          "ssnLast4": "Secure Ssn Last4 14",
+          "creditScore": 234,
+          "riskLevel": "critical",
+          "income": 212.1,
+          "debtToIncome": 212.1,
+          "paymentHistoryScore": 4.3,
+          "creditUtilization": 212.1,
+          "accountAgeMonths": 132,
+          "numAccounts": 133,
+          "numLatePayments": 234,
+          "loanAmountRequested": 21253,
+          "loanPurpose": "Secure Loan Purpose 14",
+          "aiRecommendation": "Customizable module adaptable to diverse operational requirements.",
+          "aiRiskAnalysis": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "customerName": "Daniel Wright",
+          "customerEmail": "daniel.wright@example.com",
+          "ssnLast4": "Modern Ssn Last4 15",
+          "creditScore": 282,
+          "riskLevel": "medium",
+          "income": 173.8,
+          "debtToIncome": 173.8,
+          "paymentHistoryScore": 4.9,
+          "creditUtilization": 173.8,
+          "accountAgeMonths": 108,
+          "numAccounts": 301,
+          "numLatePayments": 282,
+          "loanAmountRequested": 18234,
+          "loanPurpose": "Modern Loan Purpose 15",
+          "aiRecommendation": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiRiskAnalysis": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "RiskModel",
+      "routeKey": "risk-models",
+      "label": "Risk Model",
+      "icon": "file-text",
+      "aiFunction": "analyzeRiskModel",
+      "aiPrompt": "You are an AI analyst for A I Anti Fraud. Analyze the provided Risk Model data. The data includes: Name, Description, Model Type, Accuracy, Precision Score, Recall Score, F1 Score, Status, Last Trained At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "modelType",
+          "label": "Model Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "accuracy",
+          "label": "Accuracy",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "precisionScore",
+          "label": "Precision Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "recallScore",
+          "label": "Recall Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "f1Score",
+          "label": "F1 Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastTrainedAt",
+          "label": "Last Trained At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "modelType": "Category A",
+          "accuracy": 10,
+          "precisionScore": 1.5,
+          "recallScore": 1.5,
+          "f1Score": 1.5,
+          "status": "active",
+          "lastTrainedAt": "2024-01-01"
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "modelType": "Category B",
+          "accuracy": 71.7,
+          "precisionScore": 2.1,
+          "recallScore": 2.1,
+          "f1Score": 2.1,
+          "status": "pending",
+          "lastTrainedAt": "2024-02-03"
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "modelType": "Category C",
+          "accuracy": 33.4,
+          "precisionScore": 2.7,
+          "recallScore": 2.7,
+          "f1Score": 2.7,
+          "status": "in_progress",
+          "lastTrainedAt": "2024-03-05"
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "modelType": "Category D",
+          "accuracy": 95.1,
+          "precisionScore": 3.3,
+          "recallScore": 3.3,
+          "f1Score": 3.3,
+          "status": "completed",
+          "lastTrainedAt": "2024-04-07"
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "modelType": "Category E",
+          "accuracy": 56.8,
+          "precisionScore": 3.9,
+          "recallScore": 3.9,
+          "f1Score": 3.9,
+          "status": "under_review",
+          "lastTrainedAt": "2024-05-09"
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "modelType": "Premium Tier",
+          "accuracy": 118.5,
+          "precisionScore": 4.5,
+          "recallScore": 4.5,
+          "f1Score": 4.5,
+          "status": "approved",
+          "lastTrainedAt": "2024-06-11"
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "modelType": "Standard Tier",
+          "accuracy": 80.2,
+          "precisionScore": 5.1,
+          "recallScore": 5.1,
+          "f1Score": 5.1,
+          "status": "active",
+          "lastTrainedAt": "2024-07-13"
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "modelType": "Basic Tier",
+          "accuracy": 141.9,
+          "precisionScore": 5.7,
+          "recallScore": 5.7,
+          "f1Score": 5.7,
+          "status": "active",
+          "lastTrainedAt": "2024-08-15"
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "modelType": "Enterprise",
+          "accuracy": 103.6,
+          "precisionScore": 6.3,
+          "recallScore": 6.3,
+          "f1Score": 6.3,
+          "status": "active",
+          "lastTrainedAt": "2024-09-17"
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "modelType": "Starter",
+          "accuracy": 165.3,
+          "precisionScore": 1.9,
+          "recallScore": 1.9,
+          "f1Score": 1.9,
+          "status": "pending",
+          "lastTrainedAt": "2024-10-19"
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "modelType": "Growth",
+          "accuracy": 127,
+          "precisionScore": 2.5,
+          "recallScore": 2.5,
+          "f1Score": 2.5,
+          "status": "completed",
+          "lastTrainedAt": "2024-11-21"
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "modelType": "Scale",
+          "accuracy": 188.7,
+          "precisionScore": 3.1,
+          "recallScore": 3.1,
+          "f1Score": 3.1,
+          "status": "active",
+          "lastTrainedAt": "2024-12-23"
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "modelType": "Foundation",
+          "accuracy": 150.4,
+          "precisionScore": 3.7,
+          "recallScore": 3.7,
+          "f1Score": 3.7,
+          "status": "in_progress",
+          "lastTrainedAt": "2024-01-25"
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "modelType": "Advanced",
+          "accuracy": 212.1,
+          "precisionScore": 4.3,
+          "recallScore": 4.3,
+          "f1Score": 4.3,
+          "status": "active",
+          "lastTrainedAt": "2024-02-27"
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "modelType": "Professional",
+          "accuracy": 173.8,
+          "precisionScore": 4.9,
+          "recallScore": 4.9,
+          "f1Score": 4.9,
+          "status": "approved",
+          "lastTrainedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Watchlist",
+      "routeKey": "watchlists",
+      "label": "Watchlist",
+      "icon": "heart",
+      "aiFunction": "analyzeWatchlist",
+      "aiPrompt": "You are an AI analyst for A I Anti Fraud. Analyze the provided Watchlist data. The data includes: Entity Name, Entity Type, Identifier, Reason, Risk Level, Source, Is Active, Added By. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "entityName",
+          "label": "Entity Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "identifier",
+          "label": "Identifier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reason",
+          "label": "Reason",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "addedBy",
+          "label": "Added By",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "entityName": "Advanced Entity 1",
+          "entityType": "Category A",
+          "identifier": "Advanced Identifier 1",
+          "reason": "Comprehensive solution designed for optimal performance and efficiency.",
+          "riskLevel": "low",
+          "source": "Advanced Source 1",
+          "isActive": true,
+          "addedBy": 10
+        },
+        {
+          "entityName": "Premium Entity 2",
+          "entityType": "Category B",
+          "identifier": "Premium Identifier 2",
+          "reason": "Industry-leading approach with proven results across multiple deployments.",
+          "riskLevel": "medium",
+          "source": "Premium Source 2",
+          "isActive": true,
+          "addedBy": 58
+        },
+        {
+          "entityName": "Standard Entity 3",
+          "entityType": "Category C",
+          "identifier": "Standard Identifier 3",
+          "reason": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "riskLevel": "high",
+          "source": "Standard Source 3",
+          "isActive": false,
+          "addedBy": 106
+        },
+        {
+          "entityName": "Elite Entity 4",
+          "entityType": "Category D",
+          "identifier": "Elite Identifier 4",
+          "reason": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "riskLevel": "critical",
+          "source": "Elite Source 4",
+          "isActive": true,
+          "addedBy": 154
+        },
+        {
+          "entityName": "Core Entity 5",
+          "entityType": "Category E",
+          "identifier": "Core Identifier 5",
+          "reason": "Cost-effective strategy focused on sustainable long-term growth.",
+          "riskLevel": "medium",
+          "source": "Core Source 5",
+          "isActive": false,
+          "addedBy": 102
+        },
+        {
+          "entityName": "Pro Entity 6",
+          "entityType": "Premium Tier",
+          "identifier": "Pro Identifier 6",
+          "reason": "High-priority initiative aligned with organizational strategic objectives.",
+          "riskLevel": "low",
+          "source": "Pro Source 6",
+          "isActive": true,
+          "addedBy": 150
+        },
+        {
+          "entityName": "Essential Entity 7",
+          "entityType": "Standard Tier",
+          "identifier": "Essential Identifier 7",
+          "reason": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "riskLevel": "medium",
+          "source": "Essential Source 7",
+          "isActive": true,
+          "addedBy": 198
+        },
+        {
+          "entityName": "Primary Entity 8",
+          "entityType": "Basic Tier",
+          "identifier": "Primary Identifier 8",
+          "reason": "Innovative framework incorporating best practices and emerging technologies.",
+          "riskLevel": "high",
+          "source": "Primary Source 8",
+          "isActive": false,
+          "addedBy": 146
+        },
+        {
+          "entityName": "Global Entity 9",
+          "entityType": "Enterprise",
+          "identifier": "Global Identifier 9",
+          "reason": "Scalable architecture built to accommodate rapid expansion and change.",
+          "riskLevel": "critical",
+          "source": "Global Source 9",
+          "isActive": true,
+          "addedBy": 194
+        },
+        {
+          "entityName": "Regional Entity 10",
+          "entityType": "Starter",
+          "identifier": "Regional Identifier 10",
+          "reason": "Enterprise-grade solution with robust security and compliance features.",
+          "riskLevel": "medium",
+          "source": "Regional Source 10",
+          "isActive": true,
+          "addedBy": 242
+        },
+        {
+          "entityName": "Custom Entity 11",
+          "entityType": "Growth",
+          "identifier": "Custom Identifier 11",
+          "reason": "Integrated platform connecting multiple systems for seamless operations.",
+          "riskLevel": "low",
+          "source": "Custom Source 11",
+          "isActive": false,
+          "addedBy": 190
+        },
+        {
+          "entityName": "Smart Entity 12",
+          "entityType": "Scale",
+          "identifier": "Smart Identifier 12",
+          "reason": "Automated workflow reducing manual intervention and human error.",
+          "riskLevel": "medium",
+          "source": "Smart Source 12",
+          "isActive": true,
+          "addedBy": 238
+        },
+        {
+          "entityName": "Rapid Entity 13",
+          "entityType": "Foundation",
+          "identifier": "Rapid Identifier 13",
+          "reason": "Real-time monitoring system with intelligent alerting capabilities.",
+          "riskLevel": "high",
+          "source": "Rapid Source 13",
+          "isActive": false,
+          "addedBy": 286
+        },
+        {
+          "entityName": "Secure Entity 14",
+          "entityType": "Advanced",
+          "identifier": "Secure Identifier 14",
+          "reason": "Customizable module adaptable to diverse operational requirements.",
+          "riskLevel": "critical",
+          "source": "Secure Source 14",
+          "isActive": true,
+          "addedBy": 234
+        },
+        {
+          "entityName": "Modern Entity 15",
+          "entityType": "Professional",
+          "identifier": "Modern Identifier 15",
+          "reason": "Performance-optimized design achieving superior throughput and reliability.",
+          "riskLevel": "medium",
+          "source": "Modern Source 15",
+          "isActive": true,
+          "addedBy": 282
+        }
+      ]
+    },
+    {
+      "modelName": "AuditLog",
+      "routeKey": "audit-logs",
+      "label": "Audit Log",
+      "icon": "layers",
+      "aiFunction": "analyzeAuditLog",
+      "aiPrompt": "You are an AI analyst for A I Anti Fraud. Analyze the provided Audit Log data. The data includes: User Id, Action, Entity Type, Entity Id, Details Json, Ip Address. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "detailsJson",
+          "label": "Details Json",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "ipAddress",
+          "label": "Ip Address",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "action": "Advanced Action 1",
+          "entityType": "Category A",
+          "entityId": 10,
+          "detailsJson": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "ipAddress": "New York"
+        },
+        {
+          "userId": 58,
+          "action": "Premium Action 2",
+          "entityType": "Category B",
+          "entityId": 58,
+          "detailsJson": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "ipAddress": "Los Angeles"
+        },
+        {
+          "userId": 106,
+          "action": "Standard Action 3",
+          "entityType": "Category C",
+          "entityId": 106,
+          "detailsJson": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "ipAddress": "Chicago"
+        },
+        {
+          "userId": 154,
+          "action": "Elite Action 4",
+          "entityType": "Category D",
+          "entityId": 154,
+          "detailsJson": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "ipAddress": "Houston"
+        },
+        {
+          "userId": 102,
+          "action": "Core Action 5",
+          "entityType": "Category E",
+          "entityId": 102,
+          "detailsJson": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "ipAddress": "Phoenix"
+        },
+        {
+          "userId": 150,
+          "action": "Pro Action 6",
+          "entityType": "Premium Tier",
+          "entityId": 150,
+          "detailsJson": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "ipAddress": "San Francisco"
+        },
+        {
+          "userId": 198,
+          "action": "Essential Action 7",
+          "entityType": "Standard Tier",
+          "entityId": 198,
+          "detailsJson": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "ipAddress": "Seattle"
+        },
+        {
+          "userId": 146,
+          "action": "Primary Action 8",
+          "entityType": "Basic Tier",
+          "entityId": 146,
+          "detailsJson": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "ipAddress": "Boston"
+        },
+        {
+          "userId": 194,
+          "action": "Global Action 9",
+          "entityType": "Enterprise",
+          "entityId": 194,
+          "detailsJson": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "ipAddress": "Denver"
+        },
+        {
+          "userId": 242,
+          "action": "Regional Action 10",
+          "entityType": "Starter",
+          "entityId": 242,
+          "detailsJson": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "ipAddress": "Miami"
+        },
+        {
+          "userId": 190,
+          "action": "Custom Action 11",
+          "entityType": "Growth",
+          "entityId": 190,
+          "detailsJson": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "ipAddress": "Austin"
+        },
+        {
+          "userId": 238,
+          "action": "Smart Action 12",
+          "entityType": "Scale",
+          "entityId": 238,
+          "detailsJson": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "ipAddress": "Portland"
+        },
+        {
+          "userId": 286,
+          "action": "Rapid Action 13",
+          "entityType": "Foundation",
+          "entityId": 286,
+          "detailsJson": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "ipAddress": "Dallas"
+        },
+        {
+          "userId": 234,
+          "action": "Secure Action 14",
+          "entityType": "Advanced",
+          "entityId": 234,
+          "detailsJson": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "ipAddress": "Atlanta"
+        },
+        {
+          "userId": 282,
+          "action": "Modern Action 15",
+          "entityType": "Professional",
+          "entityId": 282,
+          "detailsJson": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "ipAddress": "Nashville"
+        }
+      ]
+    },
+    {
+      "modelName": "BehavioralPattern",
+      "routeKey": "behavioral-patterns",
+      "label": "Behavioral Pattern",
+      "icon": "map-pin",
+      "aiFunction": "analyzeBehavioralPattern",
+      "aiPrompt": "You are an AI analyst for A I Anti Fraud. Analyze the provided Behavioral Pattern data. The data includes: Customer Id, Pattern Type, Avg Transaction Amount, Max Transaction Amount, Typical Locations, Typical Times, Device Fingerprints, Anomaly Score, Last Updated. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "patternType",
+          "label": "Pattern Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "avgTransactionAmount",
+          "label": "Avg Transaction Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "maxTransactionAmount",
+          "label": "Max Transaction Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "typicalLocations",
+          "label": "Typical Locations",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "typicalTimes",
+          "label": "Typical Times",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "deviceFingerprints",
+          "label": "Device Fingerprints",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "anomalyScore",
+          "label": "Anomaly Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "lastUpdated",
+          "label": "Last Updated",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerId": "Advanced Customer Id 1",
+          "patternType": "Category A",
+          "avgTransactionAmount": 500,
+          "maxTransactionAmount": 500,
+          "typicalLocations": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "typicalTimes": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "deviceFingerprints": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "anomalyScore": 1.5,
+          "lastUpdated": "2024-01-01"
+        },
+        {
+          "customerId": "Premium Customer Id 2",
+          "patternType": "Category B",
+          "avgTransactionAmount": 2481,
+          "maxTransactionAmount": 2481,
+          "typicalLocations": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "typicalTimes": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "deviceFingerprints": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "anomalyScore": 2.1,
+          "lastUpdated": "2024-02-03"
+        },
+        {
+          "customerId": "Standard Customer Id 3",
+          "patternType": "Category C",
+          "avgTransactionAmount": 4462,
+          "maxTransactionAmount": 4462,
+          "typicalLocations": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "typicalTimes": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "deviceFingerprints": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "anomalyScore": 2.7,
+          "lastUpdated": "2024-03-05"
+        },
+        {
+          "customerId": "Elite Customer Id 4",
+          "patternType": "Category D",
+          "avgTransactionAmount": 6443,
+          "maxTransactionAmount": 6443,
+          "typicalLocations": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "typicalTimes": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "deviceFingerprints": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "anomalyScore": 3.3,
+          "lastUpdated": "2024-04-07"
+        },
+        {
+          "customerId": "Core Customer Id 5",
+          "patternType": "Category E",
+          "avgTransactionAmount": 8424,
+          "maxTransactionAmount": 8424,
+          "typicalLocations": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "typicalTimes": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "deviceFingerprints": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "anomalyScore": 3.9,
+          "lastUpdated": "2024-05-09"
+        },
+        {
+          "customerId": "Pro Customer Id 6",
+          "patternType": "Premium Tier",
+          "avgTransactionAmount": 10405,
+          "maxTransactionAmount": 10405,
+          "typicalLocations": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "typicalTimes": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "deviceFingerprints": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "anomalyScore": 4.5,
+          "lastUpdated": "2024-06-11"
+        },
+        {
+          "customerId": "Essential Customer Id 7",
+          "patternType": "Standard Tier",
+          "avgTransactionAmount": 12386,
+          "maxTransactionAmount": 12386,
+          "typicalLocations": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "typicalTimes": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "deviceFingerprints": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "anomalyScore": 5.1,
+          "lastUpdated": "2024-07-13"
+        },
+        {
+          "customerId": "Primary Customer Id 8",
+          "patternType": "Basic Tier",
+          "avgTransactionAmount": 9367,
+          "maxTransactionAmount": 9367,
+          "typicalLocations": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "typicalTimes": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "deviceFingerprints": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "anomalyScore": 5.7,
+          "lastUpdated": "2024-08-15"
+        },
+        {
+          "customerId": "Global Customer Id 9",
+          "patternType": "Enterprise",
+          "avgTransactionAmount": 11348,
+          "maxTransactionAmount": 11348,
+          "typicalLocations": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "typicalTimes": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "deviceFingerprints": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "anomalyScore": 6.3,
+          "lastUpdated": "2024-09-17"
+        },
+        {
+          "customerId": "Regional Customer Id 10",
+          "patternType": "Starter",
+          "avgTransactionAmount": 13329,
+          "maxTransactionAmount": 13329,
+          "typicalLocations": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "typicalTimes": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "deviceFingerprints": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "anomalyScore": 1.9,
+          "lastUpdated": "2024-10-19"
+        },
+        {
+          "customerId": "Custom Customer Id 11",
+          "patternType": "Growth",
+          "avgTransactionAmount": 15310,
+          "maxTransactionAmount": 15310,
+          "typicalLocations": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "typicalTimes": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "deviceFingerprints": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "anomalyScore": 2.5,
+          "lastUpdated": "2024-11-21"
+        },
+        {
+          "customerId": "Smart Customer Id 12",
+          "patternType": "Scale",
+          "avgTransactionAmount": 17291,
+          "maxTransactionAmount": 17291,
+          "typicalLocations": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "typicalTimes": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "deviceFingerprints": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "anomalyScore": 3.1,
+          "lastUpdated": "2024-12-23"
+        },
+        {
+          "customerId": "Rapid Customer Id 13",
+          "patternType": "Foundation",
+          "avgTransactionAmount": 19272,
+          "maxTransactionAmount": 19272,
+          "typicalLocations": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "typicalTimes": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "deviceFingerprints": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "anomalyScore": 3.7,
+          "lastUpdated": "2024-01-25"
+        },
+        {
+          "customerId": "Secure Customer Id 14",
+          "patternType": "Advanced",
+          "avgTransactionAmount": 21253,
+          "maxTransactionAmount": 21253,
+          "typicalLocations": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "typicalTimes": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "deviceFingerprints": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "anomalyScore": 4.3,
+          "lastUpdated": "2024-02-27"
+        },
+        {
+          "customerId": "Modern Customer Id 15",
+          "patternType": "Professional",
+          "avgTransactionAmount": 18234,
+          "maxTransactionAmount": 18234,
+          "typicalLocations": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "typicalTimes": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "deviceFingerprints": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "anomalyScore": 4.9,
+          "lastUpdated": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "MerchantRiskProfile",
+      "routeKey": "merchant-risk-profiles",
+      "label": "Merchant Risk Profile",
+      "icon": "package",
+      "aiFunction": "analyzeMerchantRiskProfile",
+      "aiPrompt": "You are an AI analyst for A I Anti Fraud. Analyze the provided Merchant Risk Profile data. The data includes: Merchant Name, Merchant Category, Risk Score, Chargeback Rate, Fraud Incident Count, Avg Transaction Amount, Country, Is Flagged. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "merchantName",
+          "label": "Merchant Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "merchantCategory",
+          "label": "Merchant Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "riskScore",
+          "label": "Risk Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "chargebackRate",
+          "label": "Chargeback Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "fraudIncidentCount",
+          "label": "Fraud Incident Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "avgTransactionAmount",
+          "label": "Avg Transaction Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "country",
+          "label": "Country",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isFlagged",
+          "label": "Is Flagged",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "merchantName": "Advanced Merchant 1",
+          "merchantCategory": "Category A",
+          "riskScore": 1.5,
+          "chargebackRate": 1.5,
+          "fraudIncidentCount": 139,
+          "avgTransactionAmount": 500,
+          "country": "Advanced Country 1",
+          "isFlagged": true
+        },
+        {
+          "merchantName": "Premium Merchant 2",
+          "merchantCategory": "Category B",
+          "riskScore": 2.1,
+          "chargebackRate": 2.1,
+          "fraudIncidentCount": 151,
+          "avgTransactionAmount": 2481,
+          "country": "Premium Country 2",
+          "isFlagged": true
+        },
+        {
+          "merchantName": "Standard Merchant 3",
+          "merchantCategory": "Category C",
+          "riskScore": 2.7,
+          "chargebackRate": 2.7,
+          "fraudIncidentCount": 68,
+          "avgTransactionAmount": 4462,
+          "country": "Standard Country 3",
+          "isFlagged": false
+        },
+        {
+          "merchantName": "Elite Merchant 4",
+          "merchantCategory": "Category D",
+          "riskScore": 3.3,
+          "chargebackRate": 3.3,
+          "fraudIncidentCount": 44,
+          "avgTransactionAmount": 6443,
+          "country": "Elite Country 4",
+          "isFlagged": true
+        },
+        {
+          "merchantName": "Core Merchant 5",
+          "merchantCategory": "Category E",
+          "riskScore": 3.9,
+          "chargebackRate": 3.9,
+          "fraudIncidentCount": 209,
+          "avgTransactionAmount": 8424,
+          "country": "Core Country 5",
+          "isFlagged": false
+        },
+        {
+          "merchantName": "Pro Merchant 6",
+          "merchantCategory": "Premium Tier",
+          "riskScore": 4.5,
+          "chargebackRate": 4.5,
+          "fraudIncidentCount": 199,
+          "avgTransactionAmount": 10405,
+          "country": "Pro Country 6",
+          "isFlagged": true
+        },
+        {
+          "merchantName": "Essential Merchant 7",
+          "merchantCategory": "Standard Tier",
+          "riskScore": 5.1,
+          "chargebackRate": 5.1,
+          "fraudIncidentCount": 104,
+          "avgTransactionAmount": 12386,
+          "country": "Essential Country 7",
+          "isFlagged": true
+        },
+        {
+          "merchantName": "Primary Merchant 8",
+          "merchantCategory": "Basic Tier",
+          "riskScore": 5.7,
+          "chargebackRate": 5.7,
+          "fraudIncidentCount": 189,
+          "avgTransactionAmount": 9367,
+          "country": "Primary Country 8",
+          "isFlagged": false
+        },
+        {
+          "merchantName": "Global Merchant 9",
+          "merchantCategory": "Enterprise",
+          "riskScore": 6.3,
+          "chargebackRate": 6.3,
+          "fraudIncidentCount": 177,
+          "avgTransactionAmount": 11348,
+          "country": "Global Country 9",
+          "isFlagged": true
+        },
+        {
+          "merchantName": "Regional Merchant 10",
+          "merchantCategory": "Starter",
+          "riskScore": 1.9,
+          "chargebackRate": 1.9,
+          "fraudIncidentCount": 102,
+          "avgTransactionAmount": 13329,
+          "country": "Regional Country 10",
+          "isFlagged": true
+        },
+        {
+          "merchantName": "Custom Merchant 11",
+          "merchantCategory": "Growth",
+          "riskScore": 2.5,
+          "chargebackRate": 2.5,
+          "fraudIncidentCount": 267,
+          "avgTransactionAmount": 15310,
+          "country": "Custom Country 11",
+          "isFlagged": false
+        },
+        {
+          "merchantName": "Smart Merchant 12",
+          "merchantCategory": "Scale",
+          "riskScore": 3.1,
+          "chargebackRate": 3.1,
+          "fraudIncidentCount": 134,
+          "avgTransactionAmount": 17291,
+          "country": "Smart Country 12",
+          "isFlagged": true
+        },
+        {
+          "merchantName": "Rapid Merchant 13",
+          "merchantCategory": "Foundation",
+          "riskScore": 3.7,
+          "chargebackRate": 3.7,
+          "fraudIncidentCount": 223,
+          "avgTransactionAmount": 19272,
+          "country": "Rapid Country 13",
+          "isFlagged": false
+        },
+        {
+          "merchantName": "Secure Merchant 14",
+          "merchantCategory": "Advanced",
+          "riskScore": 4.3,
+          "chargebackRate": 4.3,
+          "fraudIncidentCount": 206,
+          "avgTransactionAmount": 21253,
+          "country": "Secure Country 14",
+          "isFlagged": true
+        },
+        {
+          "merchantName": "Modern Merchant 15",
+          "merchantCategory": "Professional",
+          "riskScore": 4.9,
+          "chargebackRate": 4.9,
+          "fraudIncidentCount": 275,
+          "avgTransactionAmount": 18234,
+          "country": "Modern Country 15",
+          "isFlagged": true
+        }
+      ]
+    }
+  ]
+}

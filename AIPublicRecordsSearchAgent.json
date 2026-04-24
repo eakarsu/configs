@@ -1,0 +1,4982 @@
+{
+  "appName": "A I Public Records Search Agent",
+  "dbName": "a_i_public_records_search_agent",
+  "folderName": "generated/AIPublicRecordsSearchAgent",
+  "features": [
+    {
+      "modelName": "BuildingPermit",
+      "routeKey": "building-permits",
+      "label": "Building Permit",
+      "icon": "activity",
+      "aiFunction": "analyzeBuildingPermit",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Building Permit data. The data includes: Permit Number, Property Address, Permit Type, Applicant Name, Contractor Name, Status, Application Date, Approval Date, Estimated Cost, Description, Inspections, Municipality, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "permitNumber",
+          "label": "Permit Number",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "new_construction",
+            "renovation",
+            "demolition",
+            "electrical",
+            "plumbing",
+            "mechanical"
+          ]
+        },
+        {
+          "key": "propertyAddress",
+          "label": "Property Address",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "new_construction",
+            "renovation",
+            "demolition",
+            "electrical",
+            "plumbing",
+            "mechanical"
+          ]
+        },
+        {
+          "key": "permitType",
+          "label": "Permit Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "new_construction",
+            "renovation",
+            "demolition",
+            "electrical",
+            "plumbing",
+            "mechanical"
+          ]
+        },
+        {
+          "key": "applicantName",
+          "label": "Applicant Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "applied",
+            "approved",
+            "denied",
+            "expired",
+            "completed",
+            "inspection_pending"
+          ]
+        },
+        {
+          "key": "contractorName",
+          "label": "Contractor Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "applied",
+            "approved",
+            "denied",
+            "expired",
+            "completed",
+            "inspection_pending"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "applied",
+            "approved",
+            "denied",
+            "expired",
+            "completed",
+            "inspection_pending"
+          ]
+        },
+        {
+          "key": "applicationDate",
+          "label": "Application Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "approvalDate",
+          "label": "Approval Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "estimatedCost",
+          "label": "Estimated Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "inspections",
+          "label": "Inspections",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "municipality",
+          "label": "Municipality",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "permitNumber": "new_construction",
+          "propertyAddress": "New York",
+          "permitType": "new_construction",
+          "applicantName": "Advanced Applicant 1",
+          "contractorName": "Advanced Contractor 1",
+          "status": "applied",
+          "applicationDate": "2024-01-01",
+          "approvalDate": "2024-01-01",
+          "estimatedCost": 500,
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "inspections": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "municipality": "Advanced Municipality 1",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "permitNumber": "renovation",
+          "propertyAddress": "Los Angeles",
+          "permitType": "renovation",
+          "applicantName": "Premium Applicant 2",
+          "contractorName": "Premium Contractor 2",
+          "status": "approved",
+          "applicationDate": "2024-02-03",
+          "approvalDate": "2024-02-03",
+          "estimatedCost": 2481,
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "inspections": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "municipality": "Premium Municipality 2",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "permitNumber": "demolition",
+          "propertyAddress": "Chicago",
+          "permitType": "demolition",
+          "applicantName": "Standard Applicant 3",
+          "contractorName": "Standard Contractor 3",
+          "status": "denied",
+          "applicationDate": "2024-03-05",
+          "approvalDate": "2024-03-05",
+          "estimatedCost": 4462,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "inspections": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "municipality": "Standard Municipality 3",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "permitNumber": "electrical",
+          "propertyAddress": "Houston",
+          "permitType": "electrical",
+          "applicantName": "Elite Applicant 4",
+          "contractorName": "Elite Contractor 4",
+          "status": "expired",
+          "applicationDate": "2024-04-07",
+          "approvalDate": "2024-04-07",
+          "estimatedCost": 6443,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "inspections": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "municipality": "Elite Municipality 4",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "permitNumber": "plumbing",
+          "propertyAddress": "Phoenix",
+          "permitType": "plumbing",
+          "applicantName": "Core Applicant 5",
+          "contractorName": "Core Contractor 5",
+          "status": "completed",
+          "applicationDate": "2024-05-09",
+          "approvalDate": "2024-05-09",
+          "estimatedCost": 8424,
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "inspections": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "municipality": "Core Municipality 5",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "permitNumber": "mechanical",
+          "propertyAddress": "San Francisco",
+          "permitType": "mechanical",
+          "applicantName": "Pro Applicant 6",
+          "contractorName": "Pro Contractor 6",
+          "status": "inspection_pending",
+          "applicationDate": "2024-06-11",
+          "approvalDate": "2024-06-11",
+          "estimatedCost": 10405,
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "inspections": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "municipality": "Pro Municipality 6",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "permitNumber": "new_construction",
+          "propertyAddress": "Seattle",
+          "permitType": "new_construction",
+          "applicantName": "Essential Applicant 7",
+          "contractorName": "Essential Contractor 7",
+          "status": "applied",
+          "applicationDate": "2024-07-13",
+          "approvalDate": "2024-07-13",
+          "estimatedCost": 12386,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "inspections": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "municipality": "Essential Municipality 7",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "permitNumber": "renovation",
+          "propertyAddress": "Boston",
+          "permitType": "renovation",
+          "applicantName": "Primary Applicant 8",
+          "contractorName": "Primary Contractor 8",
+          "status": "approved",
+          "applicationDate": "2024-08-15",
+          "approvalDate": "2024-08-15",
+          "estimatedCost": 9367,
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "inspections": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "municipality": "Primary Municipality 8",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "permitNumber": "demolition",
+          "propertyAddress": "Denver",
+          "permitType": "demolition",
+          "applicantName": "Global Applicant 9",
+          "contractorName": "Global Contractor 9",
+          "status": "denied",
+          "applicationDate": "2024-09-17",
+          "approvalDate": "2024-09-17",
+          "estimatedCost": 11348,
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "inspections": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "municipality": "Global Municipality 9",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "permitNumber": "electrical",
+          "propertyAddress": "Miami",
+          "permitType": "electrical",
+          "applicantName": "Regional Applicant 10",
+          "contractorName": "Regional Contractor 10",
+          "status": "expired",
+          "applicationDate": "2024-10-19",
+          "approvalDate": "2024-10-19",
+          "estimatedCost": 13329,
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "inspections": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "municipality": "Regional Municipality 10",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "permitNumber": "plumbing",
+          "propertyAddress": "Austin",
+          "permitType": "plumbing",
+          "applicantName": "Custom Applicant 11",
+          "contractorName": "Custom Contractor 11",
+          "status": "completed",
+          "applicationDate": "2024-11-21",
+          "approvalDate": "2024-11-21",
+          "estimatedCost": 15310,
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "inspections": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "municipality": "Custom Municipality 11",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "permitNumber": "mechanical",
+          "propertyAddress": "Portland",
+          "permitType": "mechanical",
+          "applicantName": "Smart Applicant 12",
+          "contractorName": "Smart Contractor 12",
+          "status": "inspection_pending",
+          "applicationDate": "2024-12-23",
+          "approvalDate": "2024-12-23",
+          "estimatedCost": 17291,
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "inspections": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "municipality": "Smart Municipality 12",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "permitNumber": "new_construction",
+          "propertyAddress": "Dallas",
+          "permitType": "new_construction",
+          "applicantName": "Rapid Applicant 13",
+          "contractorName": "Rapid Contractor 13",
+          "status": "applied",
+          "applicationDate": "2024-01-25",
+          "approvalDate": "2024-01-25",
+          "estimatedCost": 19272,
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "inspections": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "municipality": "Rapid Municipality 13",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "permitNumber": "renovation",
+          "propertyAddress": "Atlanta",
+          "permitType": "renovation",
+          "applicantName": "Secure Applicant 14",
+          "contractorName": "Secure Contractor 14",
+          "status": "approved",
+          "applicationDate": "2024-02-27",
+          "approvalDate": "2024-02-27",
+          "estimatedCost": 21253,
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "inspections": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "municipality": "Secure Municipality 14",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "permitNumber": "demolition",
+          "propertyAddress": "Nashville",
+          "permitType": "demolition",
+          "applicantName": "Modern Applicant 15",
+          "contractorName": "Modern Contractor 15",
+          "status": "denied",
+          "applicationDate": "2024-03-01",
+          "approvalDate": "2024-03-01",
+          "estimatedCost": 18234,
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "inspections": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "municipality": "Modern Municipality 15",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "BusinessFiling",
+      "routeKey": "business-filings",
+      "label": "Business Filing",
+      "icon": "briefcase",
+      "aiFunction": "analyzeBusinessFiling",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Business Filing data. The data includes: Business Name, Entity Type, State Of Incorporation, Filing Number, Registered Agent, Principal Address, Status, Filing Date, Annual Report Due, Officers, Industry, Ein, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "businessName",
+          "label": "Business Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "LLC",
+            "Corporation",
+            "Partnership",
+            "Sole Proprietorship",
+            "Non-Profit"
+          ]
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "LLC",
+            "Corporation",
+            "Partnership",
+            "Sole Proprietorship",
+            "Non-Profit"
+          ]
+        },
+        {
+          "key": "stateOfIncorporation",
+          "label": "State Of Incorporation",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive",
+            "dissolved",
+            "suspended",
+            "revoked"
+          ]
+        },
+        {
+          "key": "filingNumber",
+          "label": "Filing Number",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive",
+            "dissolved",
+            "suspended",
+            "revoked"
+          ]
+        },
+        {
+          "key": "registeredAgent",
+          "label": "Registered Agent",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive",
+            "dissolved",
+            "suspended",
+            "revoked"
+          ]
+        },
+        {
+          "key": "principalAddress",
+          "label": "Principal Address",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive",
+            "dissolved",
+            "suspended",
+            "revoked"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "inactive",
+            "dissolved",
+            "suspended",
+            "revoked"
+          ]
+        },
+        {
+          "key": "filingDate",
+          "label": "Filing Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "annualReportDue",
+          "label": "Annual Report Due",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "officers",
+          "label": "Officers",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "industry",
+          "label": "Industry",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ein",
+          "label": "Ein",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "businessName": "Advanced Business 1",
+          "entityType": "LLC",
+          "stateOfIncorporation": "active",
+          "filingNumber": "active",
+          "registeredAgent": "active",
+          "principalAddress": "New York",
+          "status": "active",
+          "filingDate": "2024-01-01",
+          "annualReportDue": "2024-01-01",
+          "officers": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "industry": "Advanced Industry 1",
+          "ein": "Advanced Ein 1",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "businessName": "Premium Business 2",
+          "entityType": "Corporation",
+          "stateOfIncorporation": "inactive",
+          "filingNumber": "inactive",
+          "registeredAgent": "inactive",
+          "principalAddress": "Los Angeles",
+          "status": "inactive",
+          "filingDate": "2024-02-03",
+          "annualReportDue": "2024-02-03",
+          "officers": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "industry": "Premium Industry 2",
+          "ein": "Premium Ein 2",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "businessName": "Standard Business 3",
+          "entityType": "Partnership",
+          "stateOfIncorporation": "dissolved",
+          "filingNumber": "dissolved",
+          "registeredAgent": "dissolved",
+          "principalAddress": "Chicago",
+          "status": "dissolved",
+          "filingDate": "2024-03-05",
+          "annualReportDue": "2024-03-05",
+          "officers": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "industry": "Standard Industry 3",
+          "ein": "Standard Ein 3",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "businessName": "Elite Business 4",
+          "entityType": "Sole Proprietorship",
+          "stateOfIncorporation": "suspended",
+          "filingNumber": "suspended",
+          "registeredAgent": "suspended",
+          "principalAddress": "Houston",
+          "status": "suspended",
+          "filingDate": "2024-04-07",
+          "annualReportDue": "2024-04-07",
+          "officers": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "industry": "Elite Industry 4",
+          "ein": "Elite Ein 4",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "businessName": "Core Business 5",
+          "entityType": "Non-Profit",
+          "stateOfIncorporation": "revoked",
+          "filingNumber": "revoked",
+          "registeredAgent": "revoked",
+          "principalAddress": "Phoenix",
+          "status": "revoked",
+          "filingDate": "2024-05-09",
+          "annualReportDue": "2024-05-09",
+          "officers": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "industry": "Core Industry 5",
+          "ein": "Core Ein 5",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "businessName": "Pro Business 6",
+          "entityType": "LLC",
+          "stateOfIncorporation": "active",
+          "filingNumber": "active",
+          "registeredAgent": "active",
+          "principalAddress": "San Francisco",
+          "status": "active",
+          "filingDate": "2024-06-11",
+          "annualReportDue": "2024-06-11",
+          "officers": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "industry": "Pro Industry 6",
+          "ein": "Pro Ein 6",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "businessName": "Essential Business 7",
+          "entityType": "Corporation",
+          "stateOfIncorporation": "inactive",
+          "filingNumber": "inactive",
+          "registeredAgent": "inactive",
+          "principalAddress": "Seattle",
+          "status": "inactive",
+          "filingDate": "2024-07-13",
+          "annualReportDue": "2024-07-13",
+          "officers": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "industry": "Essential Industry 7",
+          "ein": "Essential Ein 7",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "businessName": "Primary Business 8",
+          "entityType": "Partnership",
+          "stateOfIncorporation": "dissolved",
+          "filingNumber": "dissolved",
+          "registeredAgent": "dissolved",
+          "principalAddress": "Boston",
+          "status": "dissolved",
+          "filingDate": "2024-08-15",
+          "annualReportDue": "2024-08-15",
+          "officers": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "industry": "Primary Industry 8",
+          "ein": "Primary Ein 8",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "businessName": "Global Business 9",
+          "entityType": "Sole Proprietorship",
+          "stateOfIncorporation": "suspended",
+          "filingNumber": "suspended",
+          "registeredAgent": "suspended",
+          "principalAddress": "Denver",
+          "status": "suspended",
+          "filingDate": "2024-09-17",
+          "annualReportDue": "2024-09-17",
+          "officers": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "industry": "Global Industry 9",
+          "ein": "Global Ein 9",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "businessName": "Regional Business 10",
+          "entityType": "Non-Profit",
+          "stateOfIncorporation": "revoked",
+          "filingNumber": "revoked",
+          "registeredAgent": "revoked",
+          "principalAddress": "Miami",
+          "status": "revoked",
+          "filingDate": "2024-10-19",
+          "annualReportDue": "2024-10-19",
+          "officers": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "industry": "Regional Industry 10",
+          "ein": "Regional Ein 10",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "businessName": "Custom Business 11",
+          "entityType": "LLC",
+          "stateOfIncorporation": "active",
+          "filingNumber": "active",
+          "registeredAgent": "active",
+          "principalAddress": "Austin",
+          "status": "active",
+          "filingDate": "2024-11-21",
+          "annualReportDue": "2024-11-21",
+          "officers": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "industry": "Custom Industry 11",
+          "ein": "Custom Ein 11",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "businessName": "Smart Business 12",
+          "entityType": "Corporation",
+          "stateOfIncorporation": "inactive",
+          "filingNumber": "inactive",
+          "registeredAgent": "inactive",
+          "principalAddress": "Portland",
+          "status": "inactive",
+          "filingDate": "2024-12-23",
+          "annualReportDue": "2024-12-23",
+          "officers": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "industry": "Smart Industry 12",
+          "ein": "Smart Ein 12",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "businessName": "Rapid Business 13",
+          "entityType": "Partnership",
+          "stateOfIncorporation": "dissolved",
+          "filingNumber": "dissolved",
+          "registeredAgent": "dissolved",
+          "principalAddress": "Dallas",
+          "status": "dissolved",
+          "filingDate": "2024-01-25",
+          "annualReportDue": "2024-01-25",
+          "officers": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "industry": "Rapid Industry 13",
+          "ein": "Rapid Ein 13",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "businessName": "Secure Business 14",
+          "entityType": "Sole Proprietorship",
+          "stateOfIncorporation": "suspended",
+          "filingNumber": "suspended",
+          "registeredAgent": "suspended",
+          "principalAddress": "Atlanta",
+          "status": "suspended",
+          "filingDate": "2024-02-27",
+          "annualReportDue": "2024-02-27",
+          "officers": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "industry": "Secure Industry 14",
+          "ein": "Secure Ein 14",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "businessName": "Modern Business 15",
+          "entityType": "Non-Profit",
+          "stateOfIncorporation": "revoked",
+          "filingNumber": "revoked",
+          "registeredAgent": "revoked",
+          "principalAddress": "Nashville",
+          "status": "revoked",
+          "filingDate": "2024-03-01",
+          "annualReportDue": "2024-03-01",
+          "officers": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "industry": "Modern Industry 15",
+          "ein": "Modern Ein 15",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "CampaignFinance",
+      "routeKey": "campaign-finances",
+      "label": "Campaign Finance",
+      "icon": "clipboard",
+      "aiFunction": "analyzeCampaignFinance",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Campaign Finance data. The data includes: Committee Name, Candidate Name, Office, Party, Filing Type, Amount, Donor Name, Donor Address, Filing Date, Election Cycle, Reporting Period, Status, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "committeeName",
+          "label": "Committee Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "contribution",
+            "expenditure",
+            "quarterly",
+            "annual",
+            "amendment"
+          ]
+        },
+        {
+          "key": "candidateName",
+          "label": "Candidate Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "contribution",
+            "expenditure",
+            "quarterly",
+            "annual",
+            "amendment"
+          ]
+        },
+        {
+          "key": "office",
+          "label": "Office",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "contribution",
+            "expenditure",
+            "quarterly",
+            "annual",
+            "amendment"
+          ]
+        },
+        {
+          "key": "party",
+          "label": "Party",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "contribution",
+            "expenditure",
+            "quarterly",
+            "annual",
+            "amendment"
+          ]
+        },
+        {
+          "key": "filingType",
+          "label": "Filing Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "contribution",
+            "expenditure",
+            "quarterly",
+            "annual",
+            "amendment"
+          ]
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "select",
+          "options": [
+            "filed",
+            "amended",
+            "under_review",
+            "approved",
+            "flagged"
+          ]
+        },
+        {
+          "key": "donorName",
+          "label": "Donor Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "filed",
+            "amended",
+            "under_review",
+            "approved",
+            "flagged"
+          ]
+        },
+        {
+          "key": "donorAddress",
+          "label": "Donor Address",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "filed",
+            "amended",
+            "under_review",
+            "approved",
+            "flagged"
+          ]
+        },
+        {
+          "key": "filingDate",
+          "label": "Filing Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "filed",
+            "amended",
+            "under_review",
+            "approved",
+            "flagged"
+          ]
+        },
+        {
+          "key": "electionCycle",
+          "label": "Election Cycle",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "filed",
+            "amended",
+            "under_review",
+            "approved",
+            "flagged"
+          ]
+        },
+        {
+          "key": "reportingPeriod",
+          "label": "Reporting Period",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "filed",
+            "amended",
+            "under_review",
+            "approved",
+            "flagged"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "filed",
+            "amended",
+            "under_review",
+            "approved",
+            "flagged"
+          ]
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "committeeName": "Advanced Committee 1",
+          "candidateName": "Advanced Candidate 1",
+          "office": "contribution",
+          "party": "contribution",
+          "filingType": "contribution",
+          "amount": 500,
+          "donorName": "Advanced Donor 1",
+          "donorAddress": "New York",
+          "filingDate": "2024-01-01",
+          "electionCycle": "filed",
+          "reportingPeriod": "filed",
+          "status": "filed",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "committeeName": "Premium Committee 2",
+          "candidateName": "Premium Candidate 2",
+          "office": "expenditure",
+          "party": "expenditure",
+          "filingType": "expenditure",
+          "amount": 2481,
+          "donorName": "Premium Donor 2",
+          "donorAddress": "Los Angeles",
+          "filingDate": "2024-02-03",
+          "electionCycle": "amended",
+          "reportingPeriod": "amended",
+          "status": "amended",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "committeeName": "Standard Committee 3",
+          "candidateName": "Standard Candidate 3",
+          "office": "quarterly",
+          "party": "quarterly",
+          "filingType": "quarterly",
+          "amount": 4462,
+          "donorName": "Standard Donor 3",
+          "donorAddress": "Chicago",
+          "filingDate": "2024-03-05",
+          "electionCycle": "under_review",
+          "reportingPeriod": "under_review",
+          "status": "under_review",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "committeeName": "Elite Committee 4",
+          "candidateName": "Elite Candidate 4",
+          "office": "annual",
+          "party": "annual",
+          "filingType": "annual",
+          "amount": 6443,
+          "donorName": "Elite Donor 4",
+          "donorAddress": "Houston",
+          "filingDate": "2024-04-07",
+          "electionCycle": "approved",
+          "reportingPeriod": "approved",
+          "status": "approved",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "committeeName": "Core Committee 5",
+          "candidateName": "Core Candidate 5",
+          "office": "amendment",
+          "party": "amendment",
+          "filingType": "amendment",
+          "amount": 8424,
+          "donorName": "Core Donor 5",
+          "donorAddress": "Phoenix",
+          "filingDate": "2024-05-09",
+          "electionCycle": "flagged",
+          "reportingPeriod": "flagged",
+          "status": "flagged",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "committeeName": "Pro Committee 6",
+          "candidateName": "Pro Candidate 6",
+          "office": "contribution",
+          "party": "contribution",
+          "filingType": "contribution",
+          "amount": 10405,
+          "donorName": "Pro Donor 6",
+          "donorAddress": "San Francisco",
+          "filingDate": "2024-06-11",
+          "electionCycle": "filed",
+          "reportingPeriod": "filed",
+          "status": "filed",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "committeeName": "Essential Committee 7",
+          "candidateName": "Essential Candidate 7",
+          "office": "expenditure",
+          "party": "expenditure",
+          "filingType": "expenditure",
+          "amount": 12386,
+          "donorName": "Essential Donor 7",
+          "donorAddress": "Seattle",
+          "filingDate": "2024-07-13",
+          "electionCycle": "amended",
+          "reportingPeriod": "amended",
+          "status": "amended",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "committeeName": "Primary Committee 8",
+          "candidateName": "Primary Candidate 8",
+          "office": "quarterly",
+          "party": "quarterly",
+          "filingType": "quarterly",
+          "amount": 9367,
+          "donorName": "Primary Donor 8",
+          "donorAddress": "Boston",
+          "filingDate": "2024-08-15",
+          "electionCycle": "under_review",
+          "reportingPeriod": "under_review",
+          "status": "under_review",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "committeeName": "Global Committee 9",
+          "candidateName": "Global Candidate 9",
+          "office": "annual",
+          "party": "annual",
+          "filingType": "annual",
+          "amount": 11348,
+          "donorName": "Global Donor 9",
+          "donorAddress": "Denver",
+          "filingDate": "2024-09-17",
+          "electionCycle": "approved",
+          "reportingPeriod": "approved",
+          "status": "approved",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "committeeName": "Regional Committee 10",
+          "candidateName": "Regional Candidate 10",
+          "office": "amendment",
+          "party": "amendment",
+          "filingType": "amendment",
+          "amount": 13329,
+          "donorName": "Regional Donor 10",
+          "donorAddress": "Miami",
+          "filingDate": "2024-10-19",
+          "electionCycle": "flagged",
+          "reportingPeriod": "flagged",
+          "status": "flagged",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "committeeName": "Custom Committee 11",
+          "candidateName": "Custom Candidate 11",
+          "office": "contribution",
+          "party": "contribution",
+          "filingType": "contribution",
+          "amount": 15310,
+          "donorName": "Custom Donor 11",
+          "donorAddress": "Austin",
+          "filingDate": "2024-11-21",
+          "electionCycle": "filed",
+          "reportingPeriod": "filed",
+          "status": "filed",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "committeeName": "Smart Committee 12",
+          "candidateName": "Smart Candidate 12",
+          "office": "expenditure",
+          "party": "expenditure",
+          "filingType": "expenditure",
+          "amount": 17291,
+          "donorName": "Smart Donor 12",
+          "donorAddress": "Portland",
+          "filingDate": "2024-12-23",
+          "electionCycle": "amended",
+          "reportingPeriod": "amended",
+          "status": "amended",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "committeeName": "Rapid Committee 13",
+          "candidateName": "Rapid Candidate 13",
+          "office": "quarterly",
+          "party": "quarterly",
+          "filingType": "quarterly",
+          "amount": 19272,
+          "donorName": "Rapid Donor 13",
+          "donorAddress": "Dallas",
+          "filingDate": "2024-01-25",
+          "electionCycle": "under_review",
+          "reportingPeriod": "under_review",
+          "status": "under_review",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "committeeName": "Secure Committee 14",
+          "candidateName": "Secure Candidate 14",
+          "office": "annual",
+          "party": "annual",
+          "filingType": "annual",
+          "amount": 21253,
+          "donorName": "Secure Donor 14",
+          "donorAddress": "Atlanta",
+          "filingDate": "2024-02-27",
+          "electionCycle": "approved",
+          "reportingPeriod": "approved",
+          "status": "approved",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "committeeName": "Modern Committee 15",
+          "candidateName": "Modern Candidate 15",
+          "office": "amendment",
+          "party": "amendment",
+          "filingType": "amendment",
+          "amount": 18234,
+          "donorName": "Modern Donor 15",
+          "donorAddress": "Nashville",
+          "filingDate": "2024-03-01",
+          "electionCycle": "flagged",
+          "reportingPeriod": "flagged",
+          "status": "flagged",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "CourtRecord",
+      "routeKey": "court-records",
+      "label": "Court Record",
+      "icon": "database",
+      "aiFunction": "analyzeCourtRecord",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Court Record data. The data includes: Case Number, Case Title, Court, Judge, Plaintiff, Defendant, Case Type, Filing Date, Status, Description, Jurisdiction, Damages Amount, Next Hearing, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseNumber",
+          "label": "Case Number",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "civil",
+            "criminal",
+            "family",
+            "bankruptcy",
+            "appellate"
+          ]
+        },
+        {
+          "key": "caseTitle",
+          "label": "Case Title",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "civil",
+            "criminal",
+            "family",
+            "bankruptcy",
+            "appellate"
+          ]
+        },
+        {
+          "key": "court",
+          "label": "Court",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "civil",
+            "criminal",
+            "family",
+            "bankruptcy",
+            "appellate"
+          ]
+        },
+        {
+          "key": "judge",
+          "label": "Judge",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "civil",
+            "criminal",
+            "family",
+            "bankruptcy",
+            "appellate"
+          ]
+        },
+        {
+          "key": "plaintiff",
+          "label": "Plaintiff",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "civil",
+            "criminal",
+            "family",
+            "bankruptcy",
+            "appellate"
+          ]
+        },
+        {
+          "key": "defendant",
+          "label": "Defendant",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "civil",
+            "criminal",
+            "family",
+            "bankruptcy",
+            "appellate"
+          ]
+        },
+        {
+          "key": "caseType",
+          "label": "Case Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "civil",
+            "criminal",
+            "family",
+            "bankruptcy",
+            "appellate"
+          ]
+        },
+        {
+          "key": "filingDate",
+          "label": "Filing Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "open",
+            "closed",
+            "settled",
+            "dismissed",
+            "appealed"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "open",
+            "closed",
+            "settled",
+            "dismissed",
+            "appealed"
+          ]
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "damagesAmount",
+          "label": "Damages Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "nextHearing",
+          "label": "Next Hearing",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseNumber": "civil",
+          "caseTitle": "civil",
+          "court": "civil",
+          "judge": "civil",
+          "plaintiff": "civil",
+          "defendant": "civil",
+          "caseType": "civil",
+          "filingDate": "2024-01-01",
+          "status": "open",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "jurisdiction": "Advanced Jurisdiction 1",
+          "damagesAmount": 500,
+          "nextHearing": "2024-01-01",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "caseNumber": "criminal",
+          "caseTitle": "criminal",
+          "court": "criminal",
+          "judge": "criminal",
+          "plaintiff": "criminal",
+          "defendant": "criminal",
+          "caseType": "criminal",
+          "filingDate": "2024-02-03",
+          "status": "closed",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "jurisdiction": "Premium Jurisdiction 2",
+          "damagesAmount": 2481,
+          "nextHearing": "2024-02-03",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "caseNumber": "family",
+          "caseTitle": "family",
+          "court": "family",
+          "judge": "family",
+          "plaintiff": "family",
+          "defendant": "family",
+          "caseType": "family",
+          "filingDate": "2024-03-05",
+          "status": "settled",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "jurisdiction": "Standard Jurisdiction 3",
+          "damagesAmount": 4462,
+          "nextHearing": "2024-03-05",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "caseNumber": "bankruptcy",
+          "caseTitle": "bankruptcy",
+          "court": "bankruptcy",
+          "judge": "bankruptcy",
+          "plaintiff": "bankruptcy",
+          "defendant": "bankruptcy",
+          "caseType": "bankruptcy",
+          "filingDate": "2024-04-07",
+          "status": "dismissed",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "jurisdiction": "Elite Jurisdiction 4",
+          "damagesAmount": 6443,
+          "nextHearing": "2024-04-07",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "caseNumber": "appellate",
+          "caseTitle": "appellate",
+          "court": "appellate",
+          "judge": "appellate",
+          "plaintiff": "appellate",
+          "defendant": "appellate",
+          "caseType": "appellate",
+          "filingDate": "2024-05-09",
+          "status": "appealed",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "jurisdiction": "Core Jurisdiction 5",
+          "damagesAmount": 8424,
+          "nextHearing": "2024-05-09",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "caseNumber": "civil",
+          "caseTitle": "civil",
+          "court": "civil",
+          "judge": "civil",
+          "plaintiff": "civil",
+          "defendant": "civil",
+          "caseType": "civil",
+          "filingDate": "2024-06-11",
+          "status": "open",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "jurisdiction": "Pro Jurisdiction 6",
+          "damagesAmount": 10405,
+          "nextHearing": "2024-06-11",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "caseNumber": "criminal",
+          "caseTitle": "criminal",
+          "court": "criminal",
+          "judge": "criminal",
+          "plaintiff": "criminal",
+          "defendant": "criminal",
+          "caseType": "criminal",
+          "filingDate": "2024-07-13",
+          "status": "closed",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "jurisdiction": "Essential Jurisdiction 7",
+          "damagesAmount": 12386,
+          "nextHearing": "2024-07-13",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "caseNumber": "family",
+          "caseTitle": "family",
+          "court": "family",
+          "judge": "family",
+          "plaintiff": "family",
+          "defendant": "family",
+          "caseType": "family",
+          "filingDate": "2024-08-15",
+          "status": "settled",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "jurisdiction": "Primary Jurisdiction 8",
+          "damagesAmount": 9367,
+          "nextHearing": "2024-08-15",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "caseNumber": "bankruptcy",
+          "caseTitle": "bankruptcy",
+          "court": "bankruptcy",
+          "judge": "bankruptcy",
+          "plaintiff": "bankruptcy",
+          "defendant": "bankruptcy",
+          "caseType": "bankruptcy",
+          "filingDate": "2024-09-17",
+          "status": "dismissed",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "jurisdiction": "Global Jurisdiction 9",
+          "damagesAmount": 11348,
+          "nextHearing": "2024-09-17",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "caseNumber": "appellate",
+          "caseTitle": "appellate",
+          "court": "appellate",
+          "judge": "appellate",
+          "plaintiff": "appellate",
+          "defendant": "appellate",
+          "caseType": "appellate",
+          "filingDate": "2024-10-19",
+          "status": "appealed",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "jurisdiction": "Regional Jurisdiction 10",
+          "damagesAmount": 13329,
+          "nextHearing": "2024-10-19",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "caseNumber": "civil",
+          "caseTitle": "civil",
+          "court": "civil",
+          "judge": "civil",
+          "plaintiff": "civil",
+          "defendant": "civil",
+          "caseType": "civil",
+          "filingDate": "2024-11-21",
+          "status": "open",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "jurisdiction": "Custom Jurisdiction 11",
+          "damagesAmount": 15310,
+          "nextHearing": "2024-11-21",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "caseNumber": "criminal",
+          "caseTitle": "criminal",
+          "court": "criminal",
+          "judge": "criminal",
+          "plaintiff": "criminal",
+          "defendant": "criminal",
+          "caseType": "criminal",
+          "filingDate": "2024-12-23",
+          "status": "closed",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "jurisdiction": "Smart Jurisdiction 12",
+          "damagesAmount": 17291,
+          "nextHearing": "2024-12-23",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "caseNumber": "family",
+          "caseTitle": "family",
+          "court": "family",
+          "judge": "family",
+          "plaintiff": "family",
+          "defendant": "family",
+          "caseType": "family",
+          "filingDate": "2024-01-25",
+          "status": "settled",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "jurisdiction": "Rapid Jurisdiction 13",
+          "damagesAmount": 19272,
+          "nextHearing": "2024-01-25",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "caseNumber": "bankruptcy",
+          "caseTitle": "bankruptcy",
+          "court": "bankruptcy",
+          "judge": "bankruptcy",
+          "plaintiff": "bankruptcy",
+          "defendant": "bankruptcy",
+          "caseType": "bankruptcy",
+          "filingDate": "2024-02-27",
+          "status": "dismissed",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "jurisdiction": "Secure Jurisdiction 14",
+          "damagesAmount": 21253,
+          "nextHearing": "2024-02-27",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "caseNumber": "appellate",
+          "caseTitle": "appellate",
+          "court": "appellate",
+          "judge": "appellate",
+          "plaintiff": "appellate",
+          "defendant": "appellate",
+          "caseType": "appellate",
+          "filingDate": "2024-03-01",
+          "status": "appealed",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "jurisdiction": "Modern Jurisdiction 15",
+          "damagesAmount": 18234,
+          "nextHearing": "2024-03-01",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "EnvironmentalRecord",
+      "routeKey": "environmental-records",
+      "label": "Environmental Record",
+      "icon": "file-text",
+      "aiFunction": "analyzeEnvironmentalRecord",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Environmental Record data. The data includes: Site Name, Address, Record Type, Agency, Status, Contaminants, Report Date, Cleanup Cost, Risk Level, Description, Responsible Party, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "siteName",
+          "label": "Site Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "contamination",
+            "permit",
+            "violation",
+            "assessment",
+            "remediation"
+          ]
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "contamination",
+            "permit",
+            "violation",
+            "assessment",
+            "remediation"
+          ]
+        },
+        {
+          "key": "recordType",
+          "label": "Record Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "contamination",
+            "permit",
+            "violation",
+            "assessment",
+            "remediation"
+          ]
+        },
+        {
+          "key": "agency",
+          "label": "Agency",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "open",
+            "closed",
+            "monitoring",
+            "remediation",
+            "compliant"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "open",
+            "closed",
+            "monitoring",
+            "remediation",
+            "compliant"
+          ]
+        },
+        {
+          "key": "contaminants",
+          "label": "Contaminants",
+          "type": "JSON",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "reportDate",
+          "label": "Report Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "cleanupCost",
+          "label": "Cleanup Cost",
+          "type": "DECIMAL",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "responsibleParty",
+          "label": "Responsible Party",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "siteName": "Advanced Site 1",
+          "address": "New York",
+          "recordType": "contamination",
+          "agency": "open",
+          "status": "open",
+          "contaminants": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "reportDate": "2024-01-01",
+          "cleanupCost": 500,
+          "riskLevel": "low",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "responsibleParty": "Advanced Responsible Party 1",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "siteName": "Premium Site 2",
+          "address": "Los Angeles",
+          "recordType": "permit",
+          "agency": "closed",
+          "status": "closed",
+          "contaminants": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "reportDate": "2024-02-03",
+          "cleanupCost": 2481,
+          "riskLevel": "medium",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "responsibleParty": "Premium Responsible Party 2",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "siteName": "Standard Site 3",
+          "address": "Chicago",
+          "recordType": "violation",
+          "agency": "monitoring",
+          "status": "monitoring",
+          "contaminants": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "reportDate": "2024-03-05",
+          "cleanupCost": 4462,
+          "riskLevel": "high",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "responsibleParty": "Standard Responsible Party 3",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "siteName": "Elite Site 4",
+          "address": "Houston",
+          "recordType": "assessment",
+          "agency": "remediation",
+          "status": "remediation",
+          "contaminants": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "reportDate": "2024-04-07",
+          "cleanupCost": 6443,
+          "riskLevel": "critical",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "responsibleParty": "Elite Responsible Party 4",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "siteName": "Core Site 5",
+          "address": "Phoenix",
+          "recordType": "remediation",
+          "agency": "compliant",
+          "status": "compliant",
+          "contaminants": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "reportDate": "2024-05-09",
+          "cleanupCost": 8424,
+          "riskLevel": "low",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "responsibleParty": "Core Responsible Party 5",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "siteName": "Pro Site 6",
+          "address": "San Francisco",
+          "recordType": "contamination",
+          "agency": "open",
+          "status": "open",
+          "contaminants": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "reportDate": "2024-06-11",
+          "cleanupCost": 10405,
+          "riskLevel": "medium",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "responsibleParty": "Pro Responsible Party 6",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "siteName": "Essential Site 7",
+          "address": "Seattle",
+          "recordType": "permit",
+          "agency": "closed",
+          "status": "closed",
+          "contaminants": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "reportDate": "2024-07-13",
+          "cleanupCost": 12386,
+          "riskLevel": "high",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "responsibleParty": "Essential Responsible Party 7",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "siteName": "Primary Site 8",
+          "address": "Boston",
+          "recordType": "violation",
+          "agency": "monitoring",
+          "status": "monitoring",
+          "contaminants": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "reportDate": "2024-08-15",
+          "cleanupCost": 9367,
+          "riskLevel": "critical",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "responsibleParty": "Primary Responsible Party 8",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "siteName": "Global Site 9",
+          "address": "Denver",
+          "recordType": "assessment",
+          "agency": "remediation",
+          "status": "remediation",
+          "contaminants": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "reportDate": "2024-09-17",
+          "cleanupCost": 11348,
+          "riskLevel": "low",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "responsibleParty": "Global Responsible Party 9",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "siteName": "Regional Site 10",
+          "address": "Miami",
+          "recordType": "remediation",
+          "agency": "compliant",
+          "status": "compliant",
+          "contaminants": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "reportDate": "2024-10-19",
+          "cleanupCost": 13329,
+          "riskLevel": "medium",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "responsibleParty": "Regional Responsible Party 10",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "siteName": "Custom Site 11",
+          "address": "Austin",
+          "recordType": "contamination",
+          "agency": "open",
+          "status": "open",
+          "contaminants": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "reportDate": "2024-11-21",
+          "cleanupCost": 15310,
+          "riskLevel": "high",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "responsibleParty": "Custom Responsible Party 11",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "siteName": "Smart Site 12",
+          "address": "Portland",
+          "recordType": "permit",
+          "agency": "closed",
+          "status": "closed",
+          "contaminants": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "reportDate": "2024-12-23",
+          "cleanupCost": 17291,
+          "riskLevel": "critical",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "responsibleParty": "Smart Responsible Party 12",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "siteName": "Rapid Site 13",
+          "address": "Dallas",
+          "recordType": "violation",
+          "agency": "monitoring",
+          "status": "monitoring",
+          "contaminants": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "reportDate": "2024-01-25",
+          "cleanupCost": 19272,
+          "riskLevel": "low",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "responsibleParty": "Rapid Responsible Party 13",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "siteName": "Secure Site 14",
+          "address": "Atlanta",
+          "recordType": "assessment",
+          "agency": "remediation",
+          "status": "remediation",
+          "contaminants": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "reportDate": "2024-02-27",
+          "cleanupCost": 21253,
+          "riskLevel": "medium",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "responsibleParty": "Secure Responsible Party 14",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "siteName": "Modern Site 15",
+          "address": "Nashville",
+          "recordType": "remediation",
+          "agency": "compliant",
+          "status": "compliant",
+          "contaminants": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "reportDate": "2024-03-01",
+          "cleanupCost": 18234,
+          "riskLevel": "high",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "responsibleParty": "Modern Responsible Party 15",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "FoiaRequest",
+      "routeKey": "foia-requests",
+      "label": "Foia Request",
+      "icon": "heart",
+      "aiFunction": "analyzeFoiaRequest",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Foia Request data. The data includes: Title, Agency, Status, Description, Request Date, Response Date, Requestor Name, Requestor Email, Tracking Number, Estimated Cost, Category, Priority, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pending",
+            "in_progress",
+            "completed",
+            "denied",
+            "appealed"
+          ]
+        },
+        {
+          "key": "agency",
+          "label": "Agency",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pending",
+            "in_progress",
+            "completed",
+            "denied",
+            "appealed"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "pending",
+            "in_progress",
+            "completed",
+            "denied",
+            "appealed"
+          ]
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ]
+        },
+        {
+          "key": "requestDate",
+          "label": "Request Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ]
+        },
+        {
+          "key": "responseDate",
+          "label": "Response Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ]
+        },
+        {
+          "key": "requestorName",
+          "label": "Requestor Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ]
+        },
+        {
+          "key": "requestorEmail",
+          "label": "Requestor Email",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ]
+        },
+        {
+          "key": "trackingNumber",
+          "label": "Tracking Number",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ]
+        },
+        {
+          "key": "estimatedCost",
+          "label": "Estimated Cost",
+          "type": "DECIMAL",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ]
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ]
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ]
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "pending",
+          "agency": "pending",
+          "status": "pending",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "requestDate": "2024-01-01",
+          "responseDate": "2024-01-01",
+          "requestorName": "Advanced Requestor 1",
+          "requestorEmail": "james.wilson@example.com",
+          "trackingNumber": "low",
+          "estimatedCost": 500,
+          "category": "low",
+          "priority": "low",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "title": "in_progress",
+          "agency": "in_progress",
+          "status": "in_progress",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "requestDate": "2024-02-03",
+          "responseDate": "2024-02-03",
+          "requestorName": "Premium Requestor 2",
+          "requestorEmail": "sarah.chen@example.com",
+          "trackingNumber": "medium",
+          "estimatedCost": 2481,
+          "category": "medium",
+          "priority": "medium",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "title": "completed",
+          "agency": "completed",
+          "status": "completed",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "requestDate": "2024-03-05",
+          "responseDate": "2024-03-05",
+          "requestorName": "Standard Requestor 3",
+          "requestorEmail": "michael.brown@example.com",
+          "trackingNumber": "high",
+          "estimatedCost": 4462,
+          "category": "high",
+          "priority": "high",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "title": "denied",
+          "agency": "denied",
+          "status": "denied",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "requestDate": "2024-04-07",
+          "responseDate": "2024-04-07",
+          "requestorName": "Elite Requestor 4",
+          "requestorEmail": "emily.davis@example.com",
+          "trackingNumber": "urgent",
+          "estimatedCost": 6443,
+          "category": "urgent",
+          "priority": "urgent",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "title": "appealed",
+          "agency": "appealed",
+          "status": "appealed",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "requestDate": "2024-05-09",
+          "responseDate": "2024-05-09",
+          "requestorName": "Core Requestor 5",
+          "requestorEmail": "robert.garcia@example.com",
+          "trackingNumber": "low",
+          "estimatedCost": 8424,
+          "category": "low",
+          "priority": "low",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "title": "pending",
+          "agency": "pending",
+          "status": "pending",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "requestDate": "2024-06-11",
+          "responseDate": "2024-06-11",
+          "requestorName": "Pro Requestor 6",
+          "requestorEmail": "lisa.anderson@example.com",
+          "trackingNumber": "medium",
+          "estimatedCost": 10405,
+          "category": "medium",
+          "priority": "medium",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "title": "in_progress",
+          "agency": "in_progress",
+          "status": "in_progress",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "requestDate": "2024-07-13",
+          "responseDate": "2024-07-13",
+          "requestorName": "Essential Requestor 7",
+          "requestorEmail": "david.martinez@example.com",
+          "trackingNumber": "high",
+          "estimatedCost": 12386,
+          "category": "high",
+          "priority": "high",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "title": "completed",
+          "agency": "completed",
+          "status": "completed",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "requestDate": "2024-08-15",
+          "responseDate": "2024-08-15",
+          "requestorName": "Primary Requestor 8",
+          "requestorEmail": "jennifer.taylor@example.com",
+          "trackingNumber": "urgent",
+          "estimatedCost": 9367,
+          "category": "urgent",
+          "priority": "urgent",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "title": "denied",
+          "agency": "denied",
+          "status": "denied",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "requestDate": "2024-09-17",
+          "responseDate": "2024-09-17",
+          "requestorName": "Global Requestor 9",
+          "requestorEmail": "william.johnson@example.com",
+          "trackingNumber": "low",
+          "estimatedCost": 11348,
+          "category": "low",
+          "priority": "low",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "title": "appealed",
+          "agency": "appealed",
+          "status": "appealed",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "requestDate": "2024-10-19",
+          "responseDate": "2024-10-19",
+          "requestorName": "Regional Requestor 10",
+          "requestorEmail": "maria.rodriguez@example.com",
+          "trackingNumber": "medium",
+          "estimatedCost": 13329,
+          "category": "medium",
+          "priority": "medium",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "title": "pending",
+          "agency": "pending",
+          "status": "pending",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "requestDate": "2024-11-21",
+          "responseDate": "2024-11-21",
+          "requestorName": "Custom Requestor 11",
+          "requestorEmail": "thomas.lee@example.com",
+          "trackingNumber": "high",
+          "estimatedCost": 15310,
+          "category": "high",
+          "priority": "high",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "title": "in_progress",
+          "agency": "in_progress",
+          "status": "in_progress",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "requestDate": "2024-12-23",
+          "responseDate": "2024-12-23",
+          "requestorName": "Smart Requestor 12",
+          "requestorEmail": "patricia.white@example.com",
+          "trackingNumber": "urgent",
+          "estimatedCost": 17291,
+          "category": "urgent",
+          "priority": "urgent",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "title": "completed",
+          "agency": "completed",
+          "status": "completed",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "requestDate": "2024-01-25",
+          "responseDate": "2024-01-25",
+          "requestorName": "Rapid Requestor 13",
+          "requestorEmail": "christopher.hall@example.com",
+          "trackingNumber": "low",
+          "estimatedCost": 19272,
+          "category": "low",
+          "priority": "low",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "title": "denied",
+          "agency": "denied",
+          "status": "denied",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "requestDate": "2024-02-27",
+          "responseDate": "2024-02-27",
+          "requestorName": "Secure Requestor 14",
+          "requestorEmail": "amanda.clark@example.com",
+          "trackingNumber": "medium",
+          "estimatedCost": 21253,
+          "category": "medium",
+          "priority": "medium",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "title": "appealed",
+          "agency": "appealed",
+          "status": "appealed",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "requestDate": "2024-03-01",
+          "responseDate": "2024-03-01",
+          "requestorName": "Modern Requestor 15",
+          "requestorEmail": "daniel.wright@example.com",
+          "trackingNumber": "high",
+          "estimatedCost": 18234,
+          "category": "high",
+          "priority": "high",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "GovernmentContract",
+      "routeKey": "government-contracts",
+      "label": "Government Contract",
+      "icon": "layers",
+      "aiFunction": "analyzeGovernmentContract",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Government Contract data. The data includes: Contract Number, Title, Agency, Vendor Name, Contract Value, Start Date, End Date, Status, Contract Type, Description, Set Aside, Naics Code, Place Of Performance, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "contractNumber",
+          "label": "Contract Number",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "completed",
+            "terminated",
+            "pending",
+            "awarded"
+          ]
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "completed",
+            "terminated",
+            "pending",
+            "awarded"
+          ]
+        },
+        {
+          "key": "agency",
+          "label": "Agency",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "completed",
+            "terminated",
+            "pending",
+            "awarded"
+          ]
+        },
+        {
+          "key": "vendorName",
+          "label": "Vendor Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "completed",
+            "terminated",
+            "pending",
+            "awarded"
+          ]
+        },
+        {
+          "key": "contractValue",
+          "label": "Contract Value",
+          "type": "DECIMAL",
+          "formType": "select",
+          "options": [
+            "active",
+            "completed",
+            "terminated",
+            "pending",
+            "awarded"
+          ]
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "active",
+            "completed",
+            "terminated",
+            "pending",
+            "awarded"
+          ]
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "active",
+            "completed",
+            "terminated",
+            "pending",
+            "awarded"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "completed",
+            "terminated",
+            "pending",
+            "awarded"
+          ]
+        },
+        {
+          "key": "contractType",
+          "label": "Contract Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "fixed_price",
+            "cost_plus",
+            "time_materials",
+            "indefinite_delivery",
+            "blanket"
+          ]
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "setAside",
+          "label": "Set Aside",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "naicsCode",
+          "label": "Naics Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "placeOfPerformance",
+          "label": "Place Of Performance",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "contractNumber": "active",
+          "title": "active",
+          "agency": "active",
+          "vendorName": "Advanced Vendor 1",
+          "contractValue": 10,
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "status": "active",
+          "contractType": "fixed_price",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "setAside": "Advanced Set Aside 1",
+          "naicsCode": "Advanced Naics Code 1",
+          "placeOfPerformance": "Advanced Place Of Performance 1",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "contractNumber": "completed",
+          "title": "completed",
+          "agency": "completed",
+          "vendorName": "Premium Vendor 2",
+          "contractValue": 71.7,
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "status": "completed",
+          "contractType": "cost_plus",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "setAside": "Premium Set Aside 2",
+          "naicsCode": "Premium Naics Code 2",
+          "placeOfPerformance": "Premium Place Of Performance 2",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "contractNumber": "terminated",
+          "title": "terminated",
+          "agency": "terminated",
+          "vendorName": "Standard Vendor 3",
+          "contractValue": 33.4,
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "status": "terminated",
+          "contractType": "time_materials",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "setAside": "Standard Set Aside 3",
+          "naicsCode": "Standard Naics Code 3",
+          "placeOfPerformance": "Standard Place Of Performance 3",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "contractNumber": "pending",
+          "title": "pending",
+          "agency": "pending",
+          "vendorName": "Elite Vendor 4",
+          "contractValue": 95.1,
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "status": "pending",
+          "contractType": "indefinite_delivery",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "setAside": "Elite Set Aside 4",
+          "naicsCode": "Elite Naics Code 4",
+          "placeOfPerformance": "Elite Place Of Performance 4",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "contractNumber": "awarded",
+          "title": "awarded",
+          "agency": "awarded",
+          "vendorName": "Core Vendor 5",
+          "contractValue": 56.8,
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "status": "awarded",
+          "contractType": "blanket",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "setAside": "Core Set Aside 5",
+          "naicsCode": "Core Naics Code 5",
+          "placeOfPerformance": "Core Place Of Performance 5",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "contractNumber": "active",
+          "title": "active",
+          "agency": "active",
+          "vendorName": "Pro Vendor 6",
+          "contractValue": 118.5,
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "status": "active",
+          "contractType": "fixed_price",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "setAside": "Pro Set Aside 6",
+          "naicsCode": "Pro Naics Code 6",
+          "placeOfPerformance": "Pro Place Of Performance 6",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "contractNumber": "completed",
+          "title": "completed",
+          "agency": "completed",
+          "vendorName": "Essential Vendor 7",
+          "contractValue": 80.2,
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "status": "completed",
+          "contractType": "cost_plus",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "setAside": "Essential Set Aside 7",
+          "naicsCode": "Essential Naics Code 7",
+          "placeOfPerformance": "Essential Place Of Performance 7",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "contractNumber": "terminated",
+          "title": "terminated",
+          "agency": "terminated",
+          "vendorName": "Primary Vendor 8",
+          "contractValue": 141.9,
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "status": "terminated",
+          "contractType": "time_materials",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "setAside": "Primary Set Aside 8",
+          "naicsCode": "Primary Naics Code 8",
+          "placeOfPerformance": "Primary Place Of Performance 8",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "contractNumber": "pending",
+          "title": "pending",
+          "agency": "pending",
+          "vendorName": "Global Vendor 9",
+          "contractValue": 103.6,
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "status": "pending",
+          "contractType": "indefinite_delivery",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "setAside": "Global Set Aside 9",
+          "naicsCode": "Global Naics Code 9",
+          "placeOfPerformance": "Global Place Of Performance 9",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "contractNumber": "awarded",
+          "title": "awarded",
+          "agency": "awarded",
+          "vendorName": "Regional Vendor 10",
+          "contractValue": 165.3,
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "status": "awarded",
+          "contractType": "blanket",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "setAside": "Regional Set Aside 10",
+          "naicsCode": "Regional Naics Code 10",
+          "placeOfPerformance": "Regional Place Of Performance 10",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "contractNumber": "active",
+          "title": "active",
+          "agency": "active",
+          "vendorName": "Custom Vendor 11",
+          "contractValue": 127,
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "status": "active",
+          "contractType": "fixed_price",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "setAside": "Custom Set Aside 11",
+          "naicsCode": "Custom Naics Code 11",
+          "placeOfPerformance": "Custom Place Of Performance 11",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "contractNumber": "completed",
+          "title": "completed",
+          "agency": "completed",
+          "vendorName": "Smart Vendor 12",
+          "contractValue": 188.7,
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "status": "completed",
+          "contractType": "cost_plus",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "setAside": "Smart Set Aside 12",
+          "naicsCode": "Smart Naics Code 12",
+          "placeOfPerformance": "Smart Place Of Performance 12",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "contractNumber": "terminated",
+          "title": "terminated",
+          "agency": "terminated",
+          "vendorName": "Rapid Vendor 13",
+          "contractValue": 150.4,
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "status": "terminated",
+          "contractType": "time_materials",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "setAside": "Rapid Set Aside 13",
+          "naicsCode": "Rapid Naics Code 13",
+          "placeOfPerformance": "Rapid Place Of Performance 13",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "contractNumber": "pending",
+          "title": "pending",
+          "agency": "pending",
+          "vendorName": "Secure Vendor 14",
+          "contractValue": 212.1,
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "status": "pending",
+          "contractType": "indefinite_delivery",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "setAside": "Secure Set Aside 14",
+          "naicsCode": "Secure Naics Code 14",
+          "placeOfPerformance": "Secure Place Of Performance 14",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "contractNumber": "awarded",
+          "title": "awarded",
+          "agency": "awarded",
+          "vendorName": "Modern Vendor 15",
+          "contractValue": 173.8,
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "status": "awarded",
+          "contractType": "blanket",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "setAside": "Modern Set Aside 15",
+          "naicsCode": "Modern Naics Code 15",
+          "placeOfPerformance": "Modern Place Of Performance 15",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "ProfessionalLicense",
+      "routeKey": "professional-licenses",
+      "label": "Professional License",
+      "icon": "map-pin",
+      "aiFunction": "analyzeProfessionalLicense",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Professional License data. The data includes: License Number, License Type, Holder Name, Profession, Issuing Authority, State, Issue Date, Expiration Date, Status, Disciplinary Actions, Specializations, Address, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "licenseNumber",
+          "label": "License Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "licenseType",
+          "label": "License Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "suspended",
+            "revoked",
+            "pending_renewal"
+          ]
+        },
+        {
+          "key": "holderName",
+          "label": "Holder Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "suspended",
+            "revoked",
+            "pending_renewal"
+          ]
+        },
+        {
+          "key": "profession",
+          "label": "Profession",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "suspended",
+            "revoked",
+            "pending_renewal"
+          ]
+        },
+        {
+          "key": "issuingAuthority",
+          "label": "Issuing Authority",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "suspended",
+            "revoked",
+            "pending_renewal"
+          ]
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "suspended",
+            "revoked",
+            "pending_renewal"
+          ]
+        },
+        {
+          "key": "issueDate",
+          "label": "Issue Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "suspended",
+            "revoked",
+            "pending_renewal"
+          ]
+        },
+        {
+          "key": "expirationDate",
+          "label": "Expiration Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "suspended",
+            "revoked",
+            "pending_renewal"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "expired",
+            "suspended",
+            "revoked",
+            "pending_renewal"
+          ]
+        },
+        {
+          "key": "disciplinaryActions",
+          "label": "Disciplinary Actions",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "specializations",
+          "label": "Specializations",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "licenseNumber": "Advanced License Number 1",
+          "licenseType": "active",
+          "holderName": "Advanced Holder 1",
+          "profession": "active",
+          "issuingAuthority": "active",
+          "state": "active",
+          "issueDate": "2024-01-01",
+          "expirationDate": "2024-01-01",
+          "status": "active",
+          "disciplinaryActions": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "specializations": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "address": "New York",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "licenseNumber": "Premium License Number 2",
+          "licenseType": "expired",
+          "holderName": "Premium Holder 2",
+          "profession": "expired",
+          "issuingAuthority": "expired",
+          "state": "expired",
+          "issueDate": "2024-02-03",
+          "expirationDate": "2024-02-03",
+          "status": "expired",
+          "disciplinaryActions": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "specializations": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "address": "Los Angeles",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "licenseNumber": "Standard License Number 3",
+          "licenseType": "suspended",
+          "holderName": "Standard Holder 3",
+          "profession": "suspended",
+          "issuingAuthority": "suspended",
+          "state": "suspended",
+          "issueDate": "2024-03-05",
+          "expirationDate": "2024-03-05",
+          "status": "suspended",
+          "disciplinaryActions": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "specializations": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "address": "Chicago",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "licenseNumber": "Elite License Number 4",
+          "licenseType": "revoked",
+          "holderName": "Elite Holder 4",
+          "profession": "revoked",
+          "issuingAuthority": "revoked",
+          "state": "revoked",
+          "issueDate": "2024-04-07",
+          "expirationDate": "2024-04-07",
+          "status": "revoked",
+          "disciplinaryActions": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "specializations": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "address": "Houston",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "licenseNumber": "Core License Number 5",
+          "licenseType": "pending_renewal",
+          "holderName": "Core Holder 5",
+          "profession": "pending_renewal",
+          "issuingAuthority": "pending_renewal",
+          "state": "pending_renewal",
+          "issueDate": "2024-05-09",
+          "expirationDate": "2024-05-09",
+          "status": "pending_renewal",
+          "disciplinaryActions": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "specializations": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "address": "Phoenix",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "licenseNumber": "Pro License Number 6",
+          "licenseType": "active",
+          "holderName": "Pro Holder 6",
+          "profession": "active",
+          "issuingAuthority": "active",
+          "state": "active",
+          "issueDate": "2024-06-11",
+          "expirationDate": "2024-06-11",
+          "status": "active",
+          "disciplinaryActions": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "specializations": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "address": "San Francisco",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "licenseNumber": "Essential License Number 7",
+          "licenseType": "expired",
+          "holderName": "Essential Holder 7",
+          "profession": "expired",
+          "issuingAuthority": "expired",
+          "state": "expired",
+          "issueDate": "2024-07-13",
+          "expirationDate": "2024-07-13",
+          "status": "expired",
+          "disciplinaryActions": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "specializations": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "address": "Seattle",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "licenseNumber": "Primary License Number 8",
+          "licenseType": "suspended",
+          "holderName": "Primary Holder 8",
+          "profession": "suspended",
+          "issuingAuthority": "suspended",
+          "state": "suspended",
+          "issueDate": "2024-08-15",
+          "expirationDate": "2024-08-15",
+          "status": "suspended",
+          "disciplinaryActions": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "specializations": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "address": "Boston",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "licenseNumber": "Global License Number 9",
+          "licenseType": "revoked",
+          "holderName": "Global Holder 9",
+          "profession": "revoked",
+          "issuingAuthority": "revoked",
+          "state": "revoked",
+          "issueDate": "2024-09-17",
+          "expirationDate": "2024-09-17",
+          "status": "revoked",
+          "disciplinaryActions": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "specializations": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "address": "Denver",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "licenseNumber": "Regional License Number 10",
+          "licenseType": "pending_renewal",
+          "holderName": "Regional Holder 10",
+          "profession": "pending_renewal",
+          "issuingAuthority": "pending_renewal",
+          "state": "pending_renewal",
+          "issueDate": "2024-10-19",
+          "expirationDate": "2024-10-19",
+          "status": "pending_renewal",
+          "disciplinaryActions": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "specializations": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "address": "Miami",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "licenseNumber": "Custom License Number 11",
+          "licenseType": "active",
+          "holderName": "Custom Holder 11",
+          "profession": "active",
+          "issuingAuthority": "active",
+          "state": "active",
+          "issueDate": "2024-11-21",
+          "expirationDate": "2024-11-21",
+          "status": "active",
+          "disciplinaryActions": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "specializations": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "address": "Austin",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "licenseNumber": "Smart License Number 12",
+          "licenseType": "expired",
+          "holderName": "Smart Holder 12",
+          "profession": "expired",
+          "issuingAuthority": "expired",
+          "state": "expired",
+          "issueDate": "2024-12-23",
+          "expirationDate": "2024-12-23",
+          "status": "expired",
+          "disciplinaryActions": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "specializations": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "address": "Portland",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "licenseNumber": "Rapid License Number 13",
+          "licenseType": "suspended",
+          "holderName": "Rapid Holder 13",
+          "profession": "suspended",
+          "issuingAuthority": "suspended",
+          "state": "suspended",
+          "issueDate": "2024-01-25",
+          "expirationDate": "2024-01-25",
+          "status": "suspended",
+          "disciplinaryActions": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "specializations": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "address": "Dallas",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "licenseNumber": "Secure License Number 14",
+          "licenseType": "revoked",
+          "holderName": "Secure Holder 14",
+          "profession": "revoked",
+          "issuingAuthority": "revoked",
+          "state": "revoked",
+          "issueDate": "2024-02-27",
+          "expirationDate": "2024-02-27",
+          "status": "revoked",
+          "disciplinaryActions": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "specializations": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "address": "Atlanta",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "licenseNumber": "Modern License Number 15",
+          "licenseType": "pending_renewal",
+          "holderName": "Modern Holder 15",
+          "profession": "pending_renewal",
+          "issuingAuthority": "pending_renewal",
+          "state": "pending_renewal",
+          "issueDate": "2024-03-01",
+          "expirationDate": "2024-03-01",
+          "status": "pending_renewal",
+          "disciplinaryActions": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "specializations": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "address": "Nashville",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "PropertyRecord",
+      "routeKey": "property-records",
+      "label": "Property Record",
+      "icon": "package",
+      "aiFunction": "analyzePropertyRecord",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Property Record data. The data includes: Address, City, State, Zip Code, Owner Name, Property Type, Assessed Value, Market Value, Tax Amount, Square Feet, Lot Size, Year Built, Bedrooms, Bathrooms, Last Sale Date, Last Sale Price, Zoning Code, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "residential",
+            "commercial",
+            "industrial",
+            "agricultural",
+            "vacant"
+          ]
+        },
+        {
+          "key": "city",
+          "label": "City",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "residential",
+            "commercial",
+            "industrial",
+            "agricultural",
+            "vacant"
+          ]
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "residential",
+            "commercial",
+            "industrial",
+            "agricultural",
+            "vacant"
+          ]
+        },
+        {
+          "key": "zipCode",
+          "label": "Zip Code",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "residential",
+            "commercial",
+            "industrial",
+            "agricultural",
+            "vacant"
+          ]
+        },
+        {
+          "key": "ownerName",
+          "label": "Owner Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "residential",
+            "commercial",
+            "industrial",
+            "agricultural",
+            "vacant"
+          ]
+        },
+        {
+          "key": "propertyType",
+          "label": "Property Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "residential",
+            "commercial",
+            "industrial",
+            "agricultural",
+            "vacant"
+          ]
+        },
+        {
+          "key": "assessedValue",
+          "label": "Assessed Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "marketValue",
+          "label": "Market Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "taxAmount",
+          "label": "Tax Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "squareFeet",
+          "label": "Square Feet",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "lotSize",
+          "label": "Lot Size",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "yearBuilt",
+          "label": "Year Built",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bedrooms",
+          "label": "Bedrooms",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bathrooms",
+          "label": "Bathrooms",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "lastSaleDate",
+          "label": "Last Sale Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "lastSalePrice",
+          "label": "Last Sale Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "zoningCode",
+          "label": "Zoning Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "address": "New York",
+          "city": "New York",
+          "state": "residential",
+          "zipCode": "residential",
+          "ownerName": "Advanced Owner 1",
+          "propertyType": "residential",
+          "assessedValue": 10,
+          "marketValue": 10,
+          "taxAmount": 500,
+          "squareFeet": 10,
+          "lotSize": 10,
+          "yearBuilt": 2020,
+          "bedrooms": 10,
+          "bathrooms": 10,
+          "lastSaleDate": "2024-01-01",
+          "lastSalePrice": 500,
+          "zoningCode": "Advanced Zoning Code 1",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "address": "Los Angeles",
+          "city": "Los Angeles",
+          "state": "commercial",
+          "zipCode": "commercial",
+          "ownerName": "Premium Owner 2",
+          "propertyType": "commercial",
+          "assessedValue": 71.7,
+          "marketValue": 71.7,
+          "taxAmount": 2481,
+          "squareFeet": 58,
+          "lotSize": 71.7,
+          "yearBuilt": 2021,
+          "bedrooms": 58,
+          "bathrooms": 71.7,
+          "lastSaleDate": "2024-02-03",
+          "lastSalePrice": 2481,
+          "zoningCode": "Premium Zoning Code 2",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "address": "Chicago",
+          "city": "Chicago",
+          "state": "industrial",
+          "zipCode": "industrial",
+          "ownerName": "Standard Owner 3",
+          "propertyType": "industrial",
+          "assessedValue": 33.4,
+          "marketValue": 33.4,
+          "taxAmount": 4462,
+          "squareFeet": 106,
+          "lotSize": 33.4,
+          "yearBuilt": 2022,
+          "bedrooms": 106,
+          "bathrooms": 33.4,
+          "lastSaleDate": "2024-03-05",
+          "lastSalePrice": 4462,
+          "zoningCode": "Standard Zoning Code 3",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "address": "Houston",
+          "city": "Houston",
+          "state": "agricultural",
+          "zipCode": "agricultural",
+          "ownerName": "Elite Owner 4",
+          "propertyType": "agricultural",
+          "assessedValue": 95.1,
+          "marketValue": 95.1,
+          "taxAmount": 6443,
+          "squareFeet": 154,
+          "lotSize": 95.1,
+          "yearBuilt": 2023,
+          "bedrooms": 154,
+          "bathrooms": 95.1,
+          "lastSaleDate": "2024-04-07",
+          "lastSalePrice": 6443,
+          "zoningCode": "Elite Zoning Code 4",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "address": "Phoenix",
+          "city": "Phoenix",
+          "state": "vacant",
+          "zipCode": "vacant",
+          "ownerName": "Core Owner 5",
+          "propertyType": "vacant",
+          "assessedValue": 56.8,
+          "marketValue": 56.8,
+          "taxAmount": 8424,
+          "squareFeet": 102,
+          "lotSize": 56.8,
+          "yearBuilt": 2024,
+          "bedrooms": 102,
+          "bathrooms": 56.8,
+          "lastSaleDate": "2024-05-09",
+          "lastSalePrice": 8424,
+          "zoningCode": "Core Zoning Code 5",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "address": "San Francisco",
+          "city": "San Francisco",
+          "state": "residential",
+          "zipCode": "residential",
+          "ownerName": "Pro Owner 6",
+          "propertyType": "residential",
+          "assessedValue": 118.5,
+          "marketValue": 118.5,
+          "taxAmount": 10405,
+          "squareFeet": 150,
+          "lotSize": 118.5,
+          "yearBuilt": 2025,
+          "bedrooms": 150,
+          "bathrooms": 118.5,
+          "lastSaleDate": "2024-06-11",
+          "lastSalePrice": 10405,
+          "zoningCode": "Pro Zoning Code 6",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "address": "Seattle",
+          "city": "Seattle",
+          "state": "commercial",
+          "zipCode": "commercial",
+          "ownerName": "Essential Owner 7",
+          "propertyType": "commercial",
+          "assessedValue": 80.2,
+          "marketValue": 80.2,
+          "taxAmount": 12386,
+          "squareFeet": 198,
+          "lotSize": 80.2,
+          "yearBuilt": 2020,
+          "bedrooms": 198,
+          "bathrooms": 80.2,
+          "lastSaleDate": "2024-07-13",
+          "lastSalePrice": 12386,
+          "zoningCode": "Essential Zoning Code 7",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "address": "Boston",
+          "city": "Boston",
+          "state": "industrial",
+          "zipCode": "industrial",
+          "ownerName": "Primary Owner 8",
+          "propertyType": "industrial",
+          "assessedValue": 141.9,
+          "marketValue": 141.9,
+          "taxAmount": 9367,
+          "squareFeet": 146,
+          "lotSize": 141.9,
+          "yearBuilt": 2021,
+          "bedrooms": 146,
+          "bathrooms": 141.9,
+          "lastSaleDate": "2024-08-15",
+          "lastSalePrice": 9367,
+          "zoningCode": "Primary Zoning Code 8",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "address": "Denver",
+          "city": "Denver",
+          "state": "agricultural",
+          "zipCode": "agricultural",
+          "ownerName": "Global Owner 9",
+          "propertyType": "agricultural",
+          "assessedValue": 103.6,
+          "marketValue": 103.6,
+          "taxAmount": 11348,
+          "squareFeet": 194,
+          "lotSize": 103.6,
+          "yearBuilt": 2022,
+          "bedrooms": 194,
+          "bathrooms": 103.6,
+          "lastSaleDate": "2024-09-17",
+          "lastSalePrice": 11348,
+          "zoningCode": "Global Zoning Code 9",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "address": "Miami",
+          "city": "Miami",
+          "state": "vacant",
+          "zipCode": "vacant",
+          "ownerName": "Regional Owner 10",
+          "propertyType": "vacant",
+          "assessedValue": 165.3,
+          "marketValue": 165.3,
+          "taxAmount": 13329,
+          "squareFeet": 242,
+          "lotSize": 165.3,
+          "yearBuilt": 2023,
+          "bedrooms": 242,
+          "bathrooms": 165.3,
+          "lastSaleDate": "2024-10-19",
+          "lastSalePrice": 13329,
+          "zoningCode": "Regional Zoning Code 10",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "address": "Austin",
+          "city": "Austin",
+          "state": "residential",
+          "zipCode": "residential",
+          "ownerName": "Custom Owner 11",
+          "propertyType": "residential",
+          "assessedValue": 127,
+          "marketValue": 127,
+          "taxAmount": 15310,
+          "squareFeet": 190,
+          "lotSize": 127,
+          "yearBuilt": 2024,
+          "bedrooms": 190,
+          "bathrooms": 127,
+          "lastSaleDate": "2024-11-21",
+          "lastSalePrice": 15310,
+          "zoningCode": "Custom Zoning Code 11",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "address": "Portland",
+          "city": "Portland",
+          "state": "commercial",
+          "zipCode": "commercial",
+          "ownerName": "Smart Owner 12",
+          "propertyType": "commercial",
+          "assessedValue": 188.7,
+          "marketValue": 188.7,
+          "taxAmount": 17291,
+          "squareFeet": 238,
+          "lotSize": 188.7,
+          "yearBuilt": 2025,
+          "bedrooms": 238,
+          "bathrooms": 188.7,
+          "lastSaleDate": "2024-12-23",
+          "lastSalePrice": 17291,
+          "zoningCode": "Smart Zoning Code 12",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "address": "Dallas",
+          "city": "Dallas",
+          "state": "industrial",
+          "zipCode": "industrial",
+          "ownerName": "Rapid Owner 13",
+          "propertyType": "industrial",
+          "assessedValue": 150.4,
+          "marketValue": 150.4,
+          "taxAmount": 19272,
+          "squareFeet": 286,
+          "lotSize": 150.4,
+          "yearBuilt": 2020,
+          "bedrooms": 286,
+          "bathrooms": 150.4,
+          "lastSaleDate": "2024-01-25",
+          "lastSalePrice": 19272,
+          "zoningCode": "Rapid Zoning Code 13",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "address": "Atlanta",
+          "city": "Atlanta",
+          "state": "agricultural",
+          "zipCode": "agricultural",
+          "ownerName": "Secure Owner 14",
+          "propertyType": "agricultural",
+          "assessedValue": 212.1,
+          "marketValue": 212.1,
+          "taxAmount": 21253,
+          "squareFeet": 234,
+          "lotSize": 212.1,
+          "yearBuilt": 2021,
+          "bedrooms": 234,
+          "bathrooms": 212.1,
+          "lastSaleDate": "2024-02-27",
+          "lastSalePrice": 21253,
+          "zoningCode": "Secure Zoning Code 14",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "address": "Nashville",
+          "city": "Nashville",
+          "state": "vacant",
+          "zipCode": "vacant",
+          "ownerName": "Modern Owner 15",
+          "propertyType": "vacant",
+          "assessedValue": 173.8,
+          "marketValue": 173.8,
+          "taxAmount": 18234,
+          "squareFeet": 282,
+          "lotSize": 173.8,
+          "yearBuilt": 2022,
+          "bedrooms": 282,
+          "bathrooms": 173.8,
+          "lastSaleDate": "2024-03-01",
+          "lastSalePrice": 18234,
+          "zoningCode": "Modern Zoning Code 15",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "RegulatoryFiling",
+      "routeKey": "regulatory-filings",
+      "label": "Regulatory Filing",
+      "icon": "shield",
+      "aiFunction": "analyzeRegulatoryFiling",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Regulatory Filing data. The data includes: Filing Type, Entity Name, Regulatory Body, Filing Number, Filing Date, Due Date, Status, Description, Industry, Compliance Score, Penalty Amount, Documents, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "filingType",
+          "label": "Filing Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "submitted",
+            "under_review",
+            "approved",
+            "rejected",
+            "amended"
+          ]
+        },
+        {
+          "key": "entityName",
+          "label": "Entity Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "submitted",
+            "under_review",
+            "approved",
+            "rejected",
+            "amended"
+          ]
+        },
+        {
+          "key": "regulatoryBody",
+          "label": "Regulatory Body",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "submitted",
+            "under_review",
+            "approved",
+            "rejected",
+            "amended"
+          ]
+        },
+        {
+          "key": "filingNumber",
+          "label": "Filing Number",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "submitted",
+            "under_review",
+            "approved",
+            "rejected",
+            "amended"
+          ]
+        },
+        {
+          "key": "filingDate",
+          "label": "Filing Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "submitted",
+            "under_review",
+            "approved",
+            "rejected",
+            "amended"
+          ]
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "submitted",
+            "under_review",
+            "approved",
+            "rejected",
+            "amended"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "submitted",
+            "under_review",
+            "approved",
+            "rejected",
+            "amended"
+          ]
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "industry",
+          "label": "Industry",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "complianceScore",
+          "label": "Compliance Score",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "penaltyAmount",
+          "label": "Penalty Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "documents",
+          "label": "Documents",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "filingType": "submitted",
+          "entityName": "Advanced Entity 1",
+          "regulatoryBody": "submitted",
+          "filingNumber": "submitted",
+          "filingDate": "2024-01-01",
+          "dueDate": "2024-01-01",
+          "status": "submitted",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "industry": "Advanced Industry 1",
+          "complianceScore": 10,
+          "penaltyAmount": 500,
+          "documents": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "filingType": "under_review",
+          "entityName": "Premium Entity 2",
+          "regulatoryBody": "under_review",
+          "filingNumber": "under_review",
+          "filingDate": "2024-02-03",
+          "dueDate": "2024-02-03",
+          "status": "under_review",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "industry": "Premium Industry 2",
+          "complianceScore": 58,
+          "penaltyAmount": 2481,
+          "documents": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "filingType": "approved",
+          "entityName": "Standard Entity 3",
+          "regulatoryBody": "approved",
+          "filingNumber": "approved",
+          "filingDate": "2024-03-05",
+          "dueDate": "2024-03-05",
+          "status": "approved",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "industry": "Standard Industry 3",
+          "complianceScore": 106,
+          "penaltyAmount": 4462,
+          "documents": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "filingType": "rejected",
+          "entityName": "Elite Entity 4",
+          "regulatoryBody": "rejected",
+          "filingNumber": "rejected",
+          "filingDate": "2024-04-07",
+          "dueDate": "2024-04-07",
+          "status": "rejected",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "industry": "Elite Industry 4",
+          "complianceScore": 154,
+          "penaltyAmount": 6443,
+          "documents": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "filingType": "amended",
+          "entityName": "Core Entity 5",
+          "regulatoryBody": "amended",
+          "filingNumber": "amended",
+          "filingDate": "2024-05-09",
+          "dueDate": "2024-05-09",
+          "status": "amended",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "industry": "Core Industry 5",
+          "complianceScore": 102,
+          "penaltyAmount": 8424,
+          "documents": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "filingType": "submitted",
+          "entityName": "Pro Entity 6",
+          "regulatoryBody": "submitted",
+          "filingNumber": "submitted",
+          "filingDate": "2024-06-11",
+          "dueDate": "2024-06-11",
+          "status": "submitted",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "industry": "Pro Industry 6",
+          "complianceScore": 150,
+          "penaltyAmount": 10405,
+          "documents": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "filingType": "under_review",
+          "entityName": "Essential Entity 7",
+          "regulatoryBody": "under_review",
+          "filingNumber": "under_review",
+          "filingDate": "2024-07-13",
+          "dueDate": "2024-07-13",
+          "status": "under_review",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "industry": "Essential Industry 7",
+          "complianceScore": 198,
+          "penaltyAmount": 12386,
+          "documents": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "filingType": "approved",
+          "entityName": "Primary Entity 8",
+          "regulatoryBody": "approved",
+          "filingNumber": "approved",
+          "filingDate": "2024-08-15",
+          "dueDate": "2024-08-15",
+          "status": "approved",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "industry": "Primary Industry 8",
+          "complianceScore": 146,
+          "penaltyAmount": 9367,
+          "documents": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "filingType": "rejected",
+          "entityName": "Global Entity 9",
+          "regulatoryBody": "rejected",
+          "filingNumber": "rejected",
+          "filingDate": "2024-09-17",
+          "dueDate": "2024-09-17",
+          "status": "rejected",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "industry": "Global Industry 9",
+          "complianceScore": 194,
+          "penaltyAmount": 11348,
+          "documents": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "filingType": "amended",
+          "entityName": "Regional Entity 10",
+          "regulatoryBody": "amended",
+          "filingNumber": "amended",
+          "filingDate": "2024-10-19",
+          "dueDate": "2024-10-19",
+          "status": "amended",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "industry": "Regional Industry 10",
+          "complianceScore": 242,
+          "penaltyAmount": 13329,
+          "documents": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "filingType": "submitted",
+          "entityName": "Custom Entity 11",
+          "regulatoryBody": "submitted",
+          "filingNumber": "submitted",
+          "filingDate": "2024-11-21",
+          "dueDate": "2024-11-21",
+          "status": "submitted",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "industry": "Custom Industry 11",
+          "complianceScore": 190,
+          "penaltyAmount": 15310,
+          "documents": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "filingType": "under_review",
+          "entityName": "Smart Entity 12",
+          "regulatoryBody": "under_review",
+          "filingNumber": "under_review",
+          "filingDate": "2024-12-23",
+          "dueDate": "2024-12-23",
+          "status": "under_review",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "industry": "Smart Industry 12",
+          "complianceScore": 238,
+          "penaltyAmount": 17291,
+          "documents": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "filingType": "approved",
+          "entityName": "Rapid Entity 13",
+          "regulatoryBody": "approved",
+          "filingNumber": "approved",
+          "filingDate": "2024-01-25",
+          "dueDate": "2024-01-25",
+          "status": "approved",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "industry": "Rapid Industry 13",
+          "complianceScore": 286,
+          "penaltyAmount": 19272,
+          "documents": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "filingType": "rejected",
+          "entityName": "Secure Entity 14",
+          "regulatoryBody": "rejected",
+          "filingNumber": "rejected",
+          "filingDate": "2024-02-27",
+          "dueDate": "2024-02-27",
+          "status": "rejected",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "industry": "Secure Industry 14",
+          "complianceScore": 234,
+          "penaltyAmount": 21253,
+          "documents": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "filingType": "amended",
+          "entityName": "Modern Entity 15",
+          "regulatoryBody": "amended",
+          "filingNumber": "amended",
+          "filingDate": "2024-03-01",
+          "dueDate": "2024-03-01",
+          "status": "amended",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "industry": "Modern Industry 15",
+          "complianceScore": 282,
+          "penaltyAmount": 18234,
+          "documents": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "TaxLien",
+      "routeKey": "tax-liens",
+      "label": "Tax Lien",
+      "icon": "star",
+      "aiFunction": "analyzeTaxLien",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Tax Lien data. The data includes: Lien Number, Debtor Name, Lien Type, Amount, Filing Date, Release Date, Status, Property Address, Jurisdiction, Tax Year, Interest Rate, Penalty Amount, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "lienNumber",
+          "label": "Lien Number",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "federal",
+            "state",
+            "property",
+            "income",
+            "payroll"
+          ]
+        },
+        {
+          "key": "debtorName",
+          "label": "Debtor Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "federal",
+            "state",
+            "property",
+            "income",
+            "payroll"
+          ]
+        },
+        {
+          "key": "lienType",
+          "label": "Lien Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "federal",
+            "state",
+            "property",
+            "income",
+            "payroll"
+          ]
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "select",
+          "options": [
+            "active",
+            "released",
+            "subordinated",
+            "expired",
+            "paid"
+          ]
+        },
+        {
+          "key": "filingDate",
+          "label": "Filing Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "active",
+            "released",
+            "subordinated",
+            "expired",
+            "paid"
+          ]
+        },
+        {
+          "key": "releaseDate",
+          "label": "Release Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "active",
+            "released",
+            "subordinated",
+            "expired",
+            "paid"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "active",
+            "released",
+            "subordinated",
+            "expired",
+            "paid"
+          ]
+        },
+        {
+          "key": "propertyAddress",
+          "label": "Property Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "taxYear",
+          "label": "Tax Year",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "interestRate",
+          "label": "Interest Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "penaltyAmount",
+          "label": "Penalty Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "lienNumber": "federal",
+          "debtorName": "Advanced Debtor 1",
+          "lienType": "federal",
+          "amount": 500,
+          "filingDate": "2024-01-01",
+          "releaseDate": "2024-01-01",
+          "status": "active",
+          "propertyAddress": "New York",
+          "jurisdiction": "Advanced Jurisdiction 1",
+          "taxYear": 2020,
+          "interestRate": 1.5,
+          "penaltyAmount": 500,
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "lienNumber": "state",
+          "debtorName": "Premium Debtor 2",
+          "lienType": "state",
+          "amount": 2481,
+          "filingDate": "2024-02-03",
+          "releaseDate": "2024-02-03",
+          "status": "released",
+          "propertyAddress": "Los Angeles",
+          "jurisdiction": "Premium Jurisdiction 2",
+          "taxYear": 2021,
+          "interestRate": 2.1,
+          "penaltyAmount": 2481,
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "lienNumber": "property",
+          "debtorName": "Standard Debtor 3",
+          "lienType": "property",
+          "amount": 4462,
+          "filingDate": "2024-03-05",
+          "releaseDate": "2024-03-05",
+          "status": "subordinated",
+          "propertyAddress": "Chicago",
+          "jurisdiction": "Standard Jurisdiction 3",
+          "taxYear": 2022,
+          "interestRate": 2.7,
+          "penaltyAmount": 4462,
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "lienNumber": "income",
+          "debtorName": "Elite Debtor 4",
+          "lienType": "income",
+          "amount": 6443,
+          "filingDate": "2024-04-07",
+          "releaseDate": "2024-04-07",
+          "status": "expired",
+          "propertyAddress": "Houston",
+          "jurisdiction": "Elite Jurisdiction 4",
+          "taxYear": 2023,
+          "interestRate": 3.3,
+          "penaltyAmount": 6443,
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "lienNumber": "payroll",
+          "debtorName": "Core Debtor 5",
+          "lienType": "payroll",
+          "amount": 8424,
+          "filingDate": "2024-05-09",
+          "releaseDate": "2024-05-09",
+          "status": "paid",
+          "propertyAddress": "Phoenix",
+          "jurisdiction": "Core Jurisdiction 5",
+          "taxYear": 2024,
+          "interestRate": 3.9,
+          "penaltyAmount": 8424,
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "lienNumber": "federal",
+          "debtorName": "Pro Debtor 6",
+          "lienType": "federal",
+          "amount": 10405,
+          "filingDate": "2024-06-11",
+          "releaseDate": "2024-06-11",
+          "status": "active",
+          "propertyAddress": "San Francisco",
+          "jurisdiction": "Pro Jurisdiction 6",
+          "taxYear": 2025,
+          "interestRate": 4.5,
+          "penaltyAmount": 10405,
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "lienNumber": "state",
+          "debtorName": "Essential Debtor 7",
+          "lienType": "state",
+          "amount": 12386,
+          "filingDate": "2024-07-13",
+          "releaseDate": "2024-07-13",
+          "status": "released",
+          "propertyAddress": "Seattle",
+          "jurisdiction": "Essential Jurisdiction 7",
+          "taxYear": 2020,
+          "interestRate": 5.1,
+          "penaltyAmount": 12386,
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "lienNumber": "property",
+          "debtorName": "Primary Debtor 8",
+          "lienType": "property",
+          "amount": 9367,
+          "filingDate": "2024-08-15",
+          "releaseDate": "2024-08-15",
+          "status": "subordinated",
+          "propertyAddress": "Boston",
+          "jurisdiction": "Primary Jurisdiction 8",
+          "taxYear": 2021,
+          "interestRate": 5.7,
+          "penaltyAmount": 9367,
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "lienNumber": "income",
+          "debtorName": "Global Debtor 9",
+          "lienType": "income",
+          "amount": 11348,
+          "filingDate": "2024-09-17",
+          "releaseDate": "2024-09-17",
+          "status": "expired",
+          "propertyAddress": "Denver",
+          "jurisdiction": "Global Jurisdiction 9",
+          "taxYear": 2022,
+          "interestRate": 6.3,
+          "penaltyAmount": 11348,
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "lienNumber": "payroll",
+          "debtorName": "Regional Debtor 10",
+          "lienType": "payroll",
+          "amount": 13329,
+          "filingDate": "2024-10-19",
+          "releaseDate": "2024-10-19",
+          "status": "paid",
+          "propertyAddress": "Miami",
+          "jurisdiction": "Regional Jurisdiction 10",
+          "taxYear": 2023,
+          "interestRate": 1.9,
+          "penaltyAmount": 13329,
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "lienNumber": "federal",
+          "debtorName": "Custom Debtor 11",
+          "lienType": "federal",
+          "amount": 15310,
+          "filingDate": "2024-11-21",
+          "releaseDate": "2024-11-21",
+          "status": "active",
+          "propertyAddress": "Austin",
+          "jurisdiction": "Custom Jurisdiction 11",
+          "taxYear": 2024,
+          "interestRate": 2.5,
+          "penaltyAmount": 15310,
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "lienNumber": "state",
+          "debtorName": "Smart Debtor 12",
+          "lienType": "state",
+          "amount": 17291,
+          "filingDate": "2024-12-23",
+          "releaseDate": "2024-12-23",
+          "status": "released",
+          "propertyAddress": "Portland",
+          "jurisdiction": "Smart Jurisdiction 12",
+          "taxYear": 2025,
+          "interestRate": 3.1,
+          "penaltyAmount": 17291,
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "lienNumber": "property",
+          "debtorName": "Rapid Debtor 13",
+          "lienType": "property",
+          "amount": 19272,
+          "filingDate": "2024-01-25",
+          "releaseDate": "2024-01-25",
+          "status": "subordinated",
+          "propertyAddress": "Dallas",
+          "jurisdiction": "Rapid Jurisdiction 13",
+          "taxYear": 2020,
+          "interestRate": 3.7,
+          "penaltyAmount": 19272,
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "lienNumber": "income",
+          "debtorName": "Secure Debtor 14",
+          "lienType": "income",
+          "amount": 21253,
+          "filingDate": "2024-02-27",
+          "releaseDate": "2024-02-27",
+          "status": "expired",
+          "propertyAddress": "Atlanta",
+          "jurisdiction": "Secure Jurisdiction 14",
+          "taxYear": 2021,
+          "interestRate": 4.3,
+          "penaltyAmount": 21253,
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "lienNumber": "payroll",
+          "debtorName": "Modern Debtor 15",
+          "lienType": "payroll",
+          "amount": 18234,
+          "filingDate": "2024-03-01",
+          "releaseDate": "2024-03-01",
+          "status": "paid",
+          "propertyAddress": "Nashville",
+          "jurisdiction": "Modern Jurisdiction 15",
+          "taxYear": 2022,
+          "interestRate": 4.9,
+          "penaltyAmount": 18234,
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "TitleSearch",
+      "routeKey": "title-searchs",
+      "label": "Title Search",
+      "icon": "truck",
+      "aiFunction": "analyzeTitleSearch",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Title Search data. The data includes: Property Address, County, State, Owner Name, Parcel Number, Legal Description, Title Status, Search Date, Liens, Encumbrances, Assessed Value, Market Value, Property Type, Year Built, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "propertyAddress",
+          "label": "Property Address",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "clear",
+            "encumbered",
+            "pending",
+            "disputed"
+          ]
+        },
+        {
+          "key": "county",
+          "label": "County",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "clear",
+            "encumbered",
+            "pending",
+            "disputed"
+          ]
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "clear",
+            "encumbered",
+            "pending",
+            "disputed"
+          ]
+        },
+        {
+          "key": "ownerName",
+          "label": "Owner Name",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "clear",
+            "encumbered",
+            "pending",
+            "disputed"
+          ]
+        },
+        {
+          "key": "parcelNumber",
+          "label": "Parcel Number",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "clear",
+            "encumbered",
+            "pending",
+            "disputed"
+          ]
+        },
+        {
+          "key": "legalDescription",
+          "label": "Legal Description",
+          "type": "TEXT",
+          "formType": "select",
+          "options": [
+            "clear",
+            "encumbered",
+            "pending",
+            "disputed"
+          ]
+        },
+        {
+          "key": "titleStatus",
+          "label": "Title Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "clear",
+            "encumbered",
+            "pending",
+            "disputed"
+          ]
+        },
+        {
+          "key": "searchDate",
+          "label": "Search Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "liens",
+          "label": "Liens",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "encumbrances",
+          "label": "Encumbrances",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "assessedValue",
+          "label": "Assessed Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "marketValue",
+          "label": "Market Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "propertyType",
+          "label": "Property Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "yearBuilt",
+          "label": "Year Built",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "propertyAddress": "New York",
+          "county": "clear",
+          "state": "clear",
+          "ownerName": "Advanced Owner 1",
+          "parcelNumber": "clear",
+          "legalDescription": "Comprehensive solution designed for optimal performance and efficiency.",
+          "titleStatus": "clear",
+          "searchDate": "2024-01-01",
+          "liens": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "encumbrances": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "assessedValue": 10,
+          "marketValue": 10,
+          "propertyType": "Category A",
+          "yearBuilt": 2020,
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "propertyAddress": "Los Angeles",
+          "county": "encumbered",
+          "state": "encumbered",
+          "ownerName": "Premium Owner 2",
+          "parcelNumber": "encumbered",
+          "legalDescription": "Industry-leading approach with proven results across multiple deployments.",
+          "titleStatus": "encumbered",
+          "searchDate": "2024-02-03",
+          "liens": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "encumbrances": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "assessedValue": 71.7,
+          "marketValue": 71.7,
+          "propertyType": "Category B",
+          "yearBuilt": 2021,
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "propertyAddress": "Chicago",
+          "county": "pending",
+          "state": "pending",
+          "ownerName": "Standard Owner 3",
+          "parcelNumber": "pending",
+          "legalDescription": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "titleStatus": "pending",
+          "searchDate": "2024-03-05",
+          "liens": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "encumbrances": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "assessedValue": 33.4,
+          "marketValue": 33.4,
+          "propertyType": "Category C",
+          "yearBuilt": 2022,
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "propertyAddress": "Houston",
+          "county": "disputed",
+          "state": "disputed",
+          "ownerName": "Elite Owner 4",
+          "parcelNumber": "disputed",
+          "legalDescription": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "titleStatus": "disputed",
+          "searchDate": "2024-04-07",
+          "liens": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "encumbrances": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "assessedValue": 95.1,
+          "marketValue": 95.1,
+          "propertyType": "Category D",
+          "yearBuilt": 2023,
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "propertyAddress": "Phoenix",
+          "county": "clear",
+          "state": "clear",
+          "ownerName": "Core Owner 5",
+          "parcelNumber": "clear",
+          "legalDescription": "Cost-effective strategy focused on sustainable long-term growth.",
+          "titleStatus": "clear",
+          "searchDate": "2024-05-09",
+          "liens": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "encumbrances": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "assessedValue": 56.8,
+          "marketValue": 56.8,
+          "propertyType": "Category E",
+          "yearBuilt": 2024,
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "propertyAddress": "San Francisco",
+          "county": "encumbered",
+          "state": "encumbered",
+          "ownerName": "Pro Owner 6",
+          "parcelNumber": "encumbered",
+          "legalDescription": "High-priority initiative aligned with organizational strategic objectives.",
+          "titleStatus": "encumbered",
+          "searchDate": "2024-06-11",
+          "liens": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "encumbrances": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "assessedValue": 118.5,
+          "marketValue": 118.5,
+          "propertyType": "Premium Tier",
+          "yearBuilt": 2025,
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "propertyAddress": "Seattle",
+          "county": "pending",
+          "state": "pending",
+          "ownerName": "Essential Owner 7",
+          "parcelNumber": "pending",
+          "legalDescription": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "titleStatus": "pending",
+          "searchDate": "2024-07-13",
+          "liens": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "encumbrances": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "assessedValue": 80.2,
+          "marketValue": 80.2,
+          "propertyType": "Standard Tier",
+          "yearBuilt": 2020,
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "propertyAddress": "Boston",
+          "county": "disputed",
+          "state": "disputed",
+          "ownerName": "Primary Owner 8",
+          "parcelNumber": "disputed",
+          "legalDescription": "Innovative framework incorporating best practices and emerging technologies.",
+          "titleStatus": "disputed",
+          "searchDate": "2024-08-15",
+          "liens": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "encumbrances": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "assessedValue": 141.9,
+          "marketValue": 141.9,
+          "propertyType": "Basic Tier",
+          "yearBuilt": 2021,
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "propertyAddress": "Denver",
+          "county": "clear",
+          "state": "clear",
+          "ownerName": "Global Owner 9",
+          "parcelNumber": "clear",
+          "legalDescription": "Scalable architecture built to accommodate rapid expansion and change.",
+          "titleStatus": "clear",
+          "searchDate": "2024-09-17",
+          "liens": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "encumbrances": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "assessedValue": 103.6,
+          "marketValue": 103.6,
+          "propertyType": "Enterprise",
+          "yearBuilt": 2022,
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "propertyAddress": "Miami",
+          "county": "encumbered",
+          "state": "encumbered",
+          "ownerName": "Regional Owner 10",
+          "parcelNumber": "encumbered",
+          "legalDescription": "Enterprise-grade solution with robust security and compliance features.",
+          "titleStatus": "encumbered",
+          "searchDate": "2024-10-19",
+          "liens": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "encumbrances": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "assessedValue": 165.3,
+          "marketValue": 165.3,
+          "propertyType": "Starter",
+          "yearBuilt": 2023,
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "propertyAddress": "Austin",
+          "county": "pending",
+          "state": "pending",
+          "ownerName": "Custom Owner 11",
+          "parcelNumber": "pending",
+          "legalDescription": "Integrated platform connecting multiple systems for seamless operations.",
+          "titleStatus": "pending",
+          "searchDate": "2024-11-21",
+          "liens": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "encumbrances": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "assessedValue": 127,
+          "marketValue": 127,
+          "propertyType": "Growth",
+          "yearBuilt": 2024,
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "propertyAddress": "Portland",
+          "county": "disputed",
+          "state": "disputed",
+          "ownerName": "Smart Owner 12",
+          "parcelNumber": "disputed",
+          "legalDescription": "Automated workflow reducing manual intervention and human error.",
+          "titleStatus": "disputed",
+          "searchDate": "2024-12-23",
+          "liens": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "encumbrances": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "assessedValue": 188.7,
+          "marketValue": 188.7,
+          "propertyType": "Scale",
+          "yearBuilt": 2025,
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "propertyAddress": "Dallas",
+          "county": "clear",
+          "state": "clear",
+          "ownerName": "Rapid Owner 13",
+          "parcelNumber": "clear",
+          "legalDescription": "Real-time monitoring system with intelligent alerting capabilities.",
+          "titleStatus": "clear",
+          "searchDate": "2024-01-25",
+          "liens": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "encumbrances": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "assessedValue": 150.4,
+          "marketValue": 150.4,
+          "propertyType": "Foundation",
+          "yearBuilt": 2020,
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "propertyAddress": "Atlanta",
+          "county": "encumbered",
+          "state": "encumbered",
+          "ownerName": "Secure Owner 14",
+          "parcelNumber": "encumbered",
+          "legalDescription": "Customizable module adaptable to diverse operational requirements.",
+          "titleStatus": "encumbered",
+          "searchDate": "2024-02-27",
+          "liens": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "encumbrances": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "assessedValue": 212.1,
+          "marketValue": 212.1,
+          "propertyType": "Advanced",
+          "yearBuilt": 2021,
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "propertyAddress": "Nashville",
+          "county": "pending",
+          "state": "pending",
+          "ownerName": "Modern Owner 15",
+          "parcelNumber": "pending",
+          "legalDescription": "Performance-optimized design achieving superior throughput and reliability.",
+          "titleStatus": "pending",
+          "searchDate": "2024-03-01",
+          "liens": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "encumbrances": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "assessedValue": 173.8,
+          "marketValue": 173.8,
+          "propertyType": "Professional",
+          "yearBuilt": 2022,
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "VitalRecord",
+      "routeKey": "vital-records",
+      "label": "Vital Record",
+      "icon": "users",
+      "aiFunction": "analyzeVitalRecord",
+      "aiPrompt": "You are an AI analyst for A I Public Records Search Agent. Analyze the provided Vital Record data. The data includes: Record Type, Full Name, Date Of Event, County, State, Certificate Number, Filing Date, Additional Names, Location, Status, Notes, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "recordType",
+          "label": "Record Type",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "birth",
+            "death",
+            "marriage",
+            "divorce"
+          ]
+        },
+        {
+          "key": "fullName",
+          "label": "Full Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dateOfEvent",
+          "label": "Date Of Event",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "amended",
+            "sealed"
+          ]
+        },
+        {
+          "key": "county",
+          "label": "County",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "amended",
+            "sealed"
+          ]
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "amended",
+            "sealed"
+          ]
+        },
+        {
+          "key": "certificateNumber",
+          "label": "Certificate Number",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "amended",
+            "sealed"
+          ]
+        },
+        {
+          "key": "filingDate",
+          "label": "Filing Date",
+          "type": "DATEONLY",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "amended",
+            "sealed"
+          ]
+        },
+        {
+          "key": "additionalNames",
+          "label": "Additional Names",
+          "type": "JSON",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "amended",
+            "sealed"
+          ]
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "amended",
+            "sealed"
+          ]
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "select",
+          "options": [
+            "verified",
+            "pending",
+            "amended",
+            "sealed"
+          ]
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "recordType": "birth",
+          "fullName": "Advanced Full 1",
+          "dateOfEvent": "2024-01-01",
+          "county": "verified",
+          "state": "verified",
+          "certificateNumber": "verified",
+          "filingDate": "2024-01-01",
+          "additionalNames": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "location": "New York",
+          "status": "verified",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "recordType": "death",
+          "fullName": "Premium Full 2",
+          "dateOfEvent": "2024-02-03",
+          "county": "pending",
+          "state": "pending",
+          "certificateNumber": "pending",
+          "filingDate": "2024-02-03",
+          "additionalNames": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "location": "Los Angeles",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "recordType": "marriage",
+          "fullName": "Standard Full 3",
+          "dateOfEvent": "2024-03-05",
+          "county": "amended",
+          "state": "amended",
+          "certificateNumber": "amended",
+          "filingDate": "2024-03-05",
+          "additionalNames": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "location": "Chicago",
+          "status": "amended",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "recordType": "divorce",
+          "fullName": "Elite Full 4",
+          "dateOfEvent": "2024-04-07",
+          "county": "sealed",
+          "state": "sealed",
+          "certificateNumber": "sealed",
+          "filingDate": "2024-04-07",
+          "additionalNames": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "location": "Houston",
+          "status": "sealed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "recordType": "birth",
+          "fullName": "Core Full 5",
+          "dateOfEvent": "2024-05-09",
+          "county": "verified",
+          "state": "verified",
+          "certificateNumber": "verified",
+          "filingDate": "2024-05-09",
+          "additionalNames": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "location": "Phoenix",
+          "status": "verified",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "recordType": "death",
+          "fullName": "Pro Full 6",
+          "dateOfEvent": "2024-06-11",
+          "county": "pending",
+          "state": "pending",
+          "certificateNumber": "pending",
+          "filingDate": "2024-06-11",
+          "additionalNames": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "location": "San Francisco",
+          "status": "pending",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "recordType": "marriage",
+          "fullName": "Essential Full 7",
+          "dateOfEvent": "2024-07-13",
+          "county": "amended",
+          "state": "amended",
+          "certificateNumber": "amended",
+          "filingDate": "2024-07-13",
+          "additionalNames": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "location": "Seattle",
+          "status": "amended",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "recordType": "divorce",
+          "fullName": "Primary Full 8",
+          "dateOfEvent": "2024-08-15",
+          "county": "sealed",
+          "state": "sealed",
+          "certificateNumber": "sealed",
+          "filingDate": "2024-08-15",
+          "additionalNames": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "location": "Boston",
+          "status": "sealed",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "recordType": "birth",
+          "fullName": "Global Full 9",
+          "dateOfEvent": "2024-09-17",
+          "county": "verified",
+          "state": "verified",
+          "certificateNumber": "verified",
+          "filingDate": "2024-09-17",
+          "additionalNames": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "location": "Denver",
+          "status": "verified",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "recordType": "death",
+          "fullName": "Regional Full 10",
+          "dateOfEvent": "2024-10-19",
+          "county": "pending",
+          "state": "pending",
+          "certificateNumber": "pending",
+          "filingDate": "2024-10-19",
+          "additionalNames": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "location": "Miami",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "recordType": "marriage",
+          "fullName": "Custom Full 11",
+          "dateOfEvent": "2024-11-21",
+          "county": "amended",
+          "state": "amended",
+          "certificateNumber": "amended",
+          "filingDate": "2024-11-21",
+          "additionalNames": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "location": "Austin",
+          "status": "amended",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "recordType": "divorce",
+          "fullName": "Smart Full 12",
+          "dateOfEvent": "2024-12-23",
+          "county": "sealed",
+          "state": "sealed",
+          "certificateNumber": "sealed",
+          "filingDate": "2024-12-23",
+          "additionalNames": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "location": "Portland",
+          "status": "sealed",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "recordType": "birth",
+          "fullName": "Rapid Full 13",
+          "dateOfEvent": "2024-01-25",
+          "county": "verified",
+          "state": "verified",
+          "certificateNumber": "verified",
+          "filingDate": "2024-01-25",
+          "additionalNames": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "location": "Dallas",
+          "status": "verified",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "recordType": "death",
+          "fullName": "Secure Full 14",
+          "dateOfEvent": "2024-02-27",
+          "county": "pending",
+          "state": "pending",
+          "certificateNumber": "pending",
+          "filingDate": "2024-02-27",
+          "additionalNames": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "location": "Atlanta",
+          "status": "pending",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "recordType": "marriage",
+          "fullName": "Modern Full 15",
+          "dateOfEvent": "2024-03-01",
+          "county": "amended",
+          "state": "amended",
+          "certificateNumber": "amended",
+          "filingDate": "2024-03-01",
+          "additionalNames": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "location": "Nashville",
+          "status": "amended",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1939 @@
+{
+  "appName": "ai-food-flow-order",
+  "dbName": "ai_food_flow_order",
+  "folderName": "generated/ai-food-flow-order",
+  "features": [
+    {
+      "modelName": "InventoryItem",
+      "routeKey": "inventory-items",
+      "label": "Inventory Item",
+      "icon": "activity",
+      "aiFunction": "analyzeInventoryItem",
+      "aiPrompt": "You are an AI analyst for ai-food-flow-order. Analyze the provided Inventory Item data. The data includes: Restaurant Id, Name, Description, Category, Sku, Unit, Current Quantity, Min Quantity, Max Quantity, Reorder Point, Unit Cost, Supplier, Supplier Contact, Storage Location, Expiry Date, Last Restocked At, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "restaurantId",
+          "label": "Restaurant Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sku",
+          "label": "Sku",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "unit",
+          "label": "Unit",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "currentQuantity",
+          "label": "Current Quantity",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "minQuantity",
+          "label": "Min Quantity",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "maxQuantity",
+          "label": "Max Quantity",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "reorderPoint",
+          "label": "Reorder Point",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "unitCost",
+          "label": "Unit Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "supplier",
+          "label": "Supplier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "supplierContact",
+          "label": "Supplier Contact",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "storageLocation",
+          "label": "Storage Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "lastRestockedAt",
+          "label": "Last Restocked At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "restaurantId": "Advanced Restaurant Id 1",
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "Category A",
+          "sku": "Advanced Sku 1",
+          "unit": "Advanced Unit 1",
+          "currentQuantity": 10,
+          "minQuantity": 10,
+          "maxQuantity": 10,
+          "reorderPoint": 10,
+          "unitCost": 500,
+          "supplier": "Advanced Supplier 1",
+          "supplierContact": "Advanced Supplier Contact 1",
+          "storageLocation": "New York",
+          "expiryDate": "2024-01-01",
+          "lastRestockedAt": "2024-01-01",
+          "isActive": true
+        },
+        {
+          "restaurantId": "Premium Restaurant Id 2",
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "Category B",
+          "sku": "Premium Sku 2",
+          "unit": "Premium Unit 2",
+          "currentQuantity": 71.7,
+          "minQuantity": 71.7,
+          "maxQuantity": 71.7,
+          "reorderPoint": 71.7,
+          "unitCost": 2481,
+          "supplier": "Premium Supplier 2",
+          "supplierContact": "Premium Supplier Contact 2",
+          "storageLocation": "Los Angeles",
+          "expiryDate": "2024-02-03",
+          "lastRestockedAt": "2024-02-03",
+          "isActive": true
+        },
+        {
+          "restaurantId": "Standard Restaurant Id 3",
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "Category C",
+          "sku": "Standard Sku 3",
+          "unit": "Standard Unit 3",
+          "currentQuantity": 33.4,
+          "minQuantity": 33.4,
+          "maxQuantity": 33.4,
+          "reorderPoint": 33.4,
+          "unitCost": 4462,
+          "supplier": "Standard Supplier 3",
+          "supplierContact": "Standard Supplier Contact 3",
+          "storageLocation": "Chicago",
+          "expiryDate": "2024-03-05",
+          "lastRestockedAt": "2024-03-05",
+          "isActive": false
+        },
+        {
+          "restaurantId": "Elite Restaurant Id 4",
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "Category D",
+          "sku": "Elite Sku 4",
+          "unit": "Elite Unit 4",
+          "currentQuantity": 95.1,
+          "minQuantity": 95.1,
+          "maxQuantity": 95.1,
+          "reorderPoint": 95.1,
+          "unitCost": 6443,
+          "supplier": "Elite Supplier 4",
+          "supplierContact": "Elite Supplier Contact 4",
+          "storageLocation": "Houston",
+          "expiryDate": "2024-04-07",
+          "lastRestockedAt": "2024-04-07",
+          "isActive": true
+        },
+        {
+          "restaurantId": "Core Restaurant Id 5",
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "Category E",
+          "sku": "Core Sku 5",
+          "unit": "Core Unit 5",
+          "currentQuantity": 56.8,
+          "minQuantity": 56.8,
+          "maxQuantity": 56.8,
+          "reorderPoint": 56.8,
+          "unitCost": 8424,
+          "supplier": "Core Supplier 5",
+          "supplierContact": "Core Supplier Contact 5",
+          "storageLocation": "Phoenix",
+          "expiryDate": "2024-05-09",
+          "lastRestockedAt": "2024-05-09",
+          "isActive": false
+        },
+        {
+          "restaurantId": "Pro Restaurant Id 6",
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "Premium Tier",
+          "sku": "Pro Sku 6",
+          "unit": "Pro Unit 6",
+          "currentQuantity": 118.5,
+          "minQuantity": 118.5,
+          "maxQuantity": 118.5,
+          "reorderPoint": 118.5,
+          "unitCost": 10405,
+          "supplier": "Pro Supplier 6",
+          "supplierContact": "Pro Supplier Contact 6",
+          "storageLocation": "San Francisco",
+          "expiryDate": "2024-06-11",
+          "lastRestockedAt": "2024-06-11",
+          "isActive": true
+        },
+        {
+          "restaurantId": "Essential Restaurant Id 7",
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "Standard Tier",
+          "sku": "Essential Sku 7",
+          "unit": "Essential Unit 7",
+          "currentQuantity": 80.2,
+          "minQuantity": 80.2,
+          "maxQuantity": 80.2,
+          "reorderPoint": 80.2,
+          "unitCost": 12386,
+          "supplier": "Essential Supplier 7",
+          "supplierContact": "Essential Supplier Contact 7",
+          "storageLocation": "Seattle",
+          "expiryDate": "2024-07-13",
+          "lastRestockedAt": "2024-07-13",
+          "isActive": true
+        },
+        {
+          "restaurantId": "Primary Restaurant Id 8",
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "Basic Tier",
+          "sku": "Primary Sku 8",
+          "unit": "Primary Unit 8",
+          "currentQuantity": 141.9,
+          "minQuantity": 141.9,
+          "maxQuantity": 141.9,
+          "reorderPoint": 141.9,
+          "unitCost": 9367,
+          "supplier": "Primary Supplier 8",
+          "supplierContact": "Primary Supplier Contact 8",
+          "storageLocation": "Boston",
+          "expiryDate": "2024-08-15",
+          "lastRestockedAt": "2024-08-15",
+          "isActive": false
+        },
+        {
+          "restaurantId": "Global Restaurant Id 9",
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "Enterprise",
+          "sku": "Global Sku 9",
+          "unit": "Global Unit 9",
+          "currentQuantity": 103.6,
+          "minQuantity": 103.6,
+          "maxQuantity": 103.6,
+          "reorderPoint": 103.6,
+          "unitCost": 11348,
+          "supplier": "Global Supplier 9",
+          "supplierContact": "Global Supplier Contact 9",
+          "storageLocation": "Denver",
+          "expiryDate": "2024-09-17",
+          "lastRestockedAt": "2024-09-17",
+          "isActive": true
+        },
+        {
+          "restaurantId": "Regional Restaurant Id 10",
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "Starter",
+          "sku": "Regional Sku 10",
+          "unit": "Regional Unit 10",
+          "currentQuantity": 165.3,
+          "minQuantity": 165.3,
+          "maxQuantity": 165.3,
+          "reorderPoint": 165.3,
+          "unitCost": 13329,
+          "supplier": "Regional Supplier 10",
+          "supplierContact": "Regional Supplier Contact 10",
+          "storageLocation": "Miami",
+          "expiryDate": "2024-10-19",
+          "lastRestockedAt": "2024-10-19",
+          "isActive": true
+        },
+        {
+          "restaurantId": "Custom Restaurant Id 11",
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "Growth",
+          "sku": "Custom Sku 11",
+          "unit": "Custom Unit 11",
+          "currentQuantity": 127,
+          "minQuantity": 127,
+          "maxQuantity": 127,
+          "reorderPoint": 127,
+          "unitCost": 15310,
+          "supplier": "Custom Supplier 11",
+          "supplierContact": "Custom Supplier Contact 11",
+          "storageLocation": "Austin",
+          "expiryDate": "2024-11-21",
+          "lastRestockedAt": "2024-11-21",
+          "isActive": false
+        },
+        {
+          "restaurantId": "Smart Restaurant Id 12",
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "category": "Scale",
+          "sku": "Smart Sku 12",
+          "unit": "Smart Unit 12",
+          "currentQuantity": 188.7,
+          "minQuantity": 188.7,
+          "maxQuantity": 188.7,
+          "reorderPoint": 188.7,
+          "unitCost": 17291,
+          "supplier": "Smart Supplier 12",
+          "supplierContact": "Smart Supplier Contact 12",
+          "storageLocation": "Portland",
+          "expiryDate": "2024-12-23",
+          "lastRestockedAt": "2024-12-23",
+          "isActive": true
+        },
+        {
+          "restaurantId": "Rapid Restaurant Id 13",
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "Foundation",
+          "sku": "Rapid Sku 13",
+          "unit": "Rapid Unit 13",
+          "currentQuantity": 150.4,
+          "minQuantity": 150.4,
+          "maxQuantity": 150.4,
+          "reorderPoint": 150.4,
+          "unitCost": 19272,
+          "supplier": "Rapid Supplier 13",
+          "supplierContact": "Rapid Supplier Contact 13",
+          "storageLocation": "Dallas",
+          "expiryDate": "2024-01-25",
+          "lastRestockedAt": "2024-01-25",
+          "isActive": false
+        },
+        {
+          "restaurantId": "Secure Restaurant Id 14",
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "category": "Advanced",
+          "sku": "Secure Sku 14",
+          "unit": "Secure Unit 14",
+          "currentQuantity": 212.1,
+          "minQuantity": 212.1,
+          "maxQuantity": 212.1,
+          "reorderPoint": 212.1,
+          "unitCost": 21253,
+          "supplier": "Secure Supplier 14",
+          "supplierContact": "Secure Supplier Contact 14",
+          "storageLocation": "Atlanta",
+          "expiryDate": "2024-02-27",
+          "lastRestockedAt": "2024-02-27",
+          "isActive": true
+        },
+        {
+          "restaurantId": "Modern Restaurant Id 15",
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "Professional",
+          "sku": "Modern Sku 15",
+          "unit": "Modern Unit 15",
+          "currentQuantity": 173.8,
+          "minQuantity": 173.8,
+          "maxQuantity": 173.8,
+          "reorderPoint": 173.8,
+          "unitCost": 18234,
+          "supplier": "Modern Supplier 15",
+          "supplierContact": "Modern Supplier Contact 15",
+          "storageLocation": "Nashville",
+          "expiryDate": "2024-03-01",
+          "lastRestockedAt": "2024-03-01",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "InventoryUsageHistory",
+      "routeKey": "inventory-usage-historys",
+      "label": "Inventory Usage History",
+      "icon": "briefcase",
+      "aiFunction": "analyzeInventoryUsageHistory",
+      "aiPrompt": "You are an AI analyst for ai-food-flow-order. Analyze the provided Inventory Usage History data. The data includes: Inventory Item Id, Quantity Used, Usage Type, Notes, Recorded At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "inventoryItemId",
+          "label": "Inventory Item Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantityUsed",
+          "label": "Quantity Used",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "usageType",
+          "label": "Usage Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "recordedAt",
+          "label": "Recorded At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "inventoryItemId": "Advanced Inventory Item Id 1",
+          "quantityUsed": 10,
+          "usageType": "Category A",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "recordedAt": "2024-01-01"
+        },
+        {
+          "inventoryItemId": "Premium Inventory Item Id 2",
+          "quantityUsed": 71.7,
+          "usageType": "Category B",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "recordedAt": "2024-02-03"
+        },
+        {
+          "inventoryItemId": "Standard Inventory Item Id 3",
+          "quantityUsed": 33.4,
+          "usageType": "Category C",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "recordedAt": "2024-03-05"
+        },
+        {
+          "inventoryItemId": "Elite Inventory Item Id 4",
+          "quantityUsed": 95.1,
+          "usageType": "Category D",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "recordedAt": "2024-04-07"
+        },
+        {
+          "inventoryItemId": "Core Inventory Item Id 5",
+          "quantityUsed": 56.8,
+          "usageType": "Category E",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "recordedAt": "2024-05-09"
+        },
+        {
+          "inventoryItemId": "Pro Inventory Item Id 6",
+          "quantityUsed": 118.5,
+          "usageType": "Premium Tier",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "recordedAt": "2024-06-11"
+        },
+        {
+          "inventoryItemId": "Essential Inventory Item Id 7",
+          "quantityUsed": 80.2,
+          "usageType": "Standard Tier",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "recordedAt": "2024-07-13"
+        },
+        {
+          "inventoryItemId": "Primary Inventory Item Id 8",
+          "quantityUsed": 141.9,
+          "usageType": "Basic Tier",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "recordedAt": "2024-08-15"
+        },
+        {
+          "inventoryItemId": "Global Inventory Item Id 9",
+          "quantityUsed": 103.6,
+          "usageType": "Enterprise",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "recordedAt": "2024-09-17"
+        },
+        {
+          "inventoryItemId": "Regional Inventory Item Id 10",
+          "quantityUsed": 165.3,
+          "usageType": "Starter",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "recordedAt": "2024-10-19"
+        },
+        {
+          "inventoryItemId": "Custom Inventory Item Id 11",
+          "quantityUsed": 127,
+          "usageType": "Growth",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "recordedAt": "2024-11-21"
+        },
+        {
+          "inventoryItemId": "Smart Inventory Item Id 12",
+          "quantityUsed": 188.7,
+          "usageType": "Scale",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "recordedAt": "2024-12-23"
+        },
+        {
+          "inventoryItemId": "Rapid Inventory Item Id 13",
+          "quantityUsed": 150.4,
+          "usageType": "Foundation",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "recordedAt": "2024-01-25"
+        },
+        {
+          "inventoryItemId": "Secure Inventory Item Id 14",
+          "quantityUsed": 212.1,
+          "usageType": "Advanced",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "recordedAt": "2024-02-27"
+        },
+        {
+          "inventoryItemId": "Modern Inventory Item Id 15",
+          "quantityUsed": 173.8,
+          "usageType": "Professional",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "recordedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "StaffMember",
+      "routeKey": "staff-members",
+      "label": "Staff Member",
+      "icon": "clipboard",
+      "aiFunction": "analyzeStaffMember",
+      "aiPrompt": "You are an AI analyst for ai-food-flow-order. Analyze the provided Staff Member data. The data includes: Restaurant Id, First Name, Last Name, Email, Phone, Role, Hourly Rate, Employment Type, Hire Date, Skills, Availability, Max Hours Per Week, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "restaurantId",
+          "label": "Restaurant Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "hourlyRate",
+          "label": "Hourly Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "employmentType",
+          "label": "Employment Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "hireDate",
+          "label": "Hire Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "skills",
+          "label": "Skills",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "availability",
+          "label": "Availability",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "maxHoursPerWeek",
+          "label": "Max Hours Per Week",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "restaurantId": "Advanced Restaurant Id 1",
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "role": "Advanced Role 1",
+          "hourlyRate": 1.5,
+          "employmentType": "Category A",
+          "hireDate": "2024-01-01",
+          "skills": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "availability": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "maxHoursPerWeek": 10,
+          "isActive": true
+        },
+        {
+          "restaurantId": "Premium Restaurant Id 2",
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "role": "Premium Role 2",
+          "hourlyRate": 2.1,
+          "employmentType": "Category B",
+          "hireDate": "2024-02-03",
+          "skills": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "availability": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "maxHoursPerWeek": 58,
+          "isActive": true
+        },
+        {
+          "restaurantId": "Standard Restaurant Id 3",
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "role": "Standard Role 3",
+          "hourlyRate": 2.7,
+          "employmentType": "Category C",
+          "hireDate": "2024-03-05",
+          "skills": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "availability": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "maxHoursPerWeek": 106,
+          "isActive": false
+        },
+        {
+          "restaurantId": "Elite Restaurant Id 4",
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "role": "Elite Role 4",
+          "hourlyRate": 3.3,
+          "employmentType": "Category D",
+          "hireDate": "2024-04-07",
+          "skills": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "availability": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "maxHoursPerWeek": 154,
+          "isActive": true
+        },
+        {
+          "restaurantId": "Core Restaurant Id 5",
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "role": "Core Role 5",
+          "hourlyRate": 3.9,
+          "employmentType": "Category E",
+          "hireDate": "2024-05-09",
+          "skills": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "availability": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "maxHoursPerWeek": 102,
+          "isActive": false
+        },
+        {
+          "restaurantId": "Pro Restaurant Id 6",
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "role": "Pro Role 6",
+          "hourlyRate": 4.5,
+          "employmentType": "Premium Tier",
+          "hireDate": "2024-06-11",
+          "skills": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "availability": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "maxHoursPerWeek": 150,
+          "isActive": true
+        },
+        {
+          "restaurantId": "Essential Restaurant Id 7",
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "role": "Essential Role 7",
+          "hourlyRate": 5.1,
+          "employmentType": "Standard Tier",
+          "hireDate": "2024-07-13",
+          "skills": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "availability": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "maxHoursPerWeek": 198,
+          "isActive": true
+        },
+        {
+          "restaurantId": "Primary Restaurant Id 8",
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "role": "Primary Role 8",
+          "hourlyRate": 5.7,
+          "employmentType": "Basic Tier",
+          "hireDate": "2024-08-15",
+          "skills": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "availability": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "maxHoursPerWeek": 146,
+          "isActive": false
+        },
+        {
+          "restaurantId": "Global Restaurant Id 9",
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "role": "Global Role 9",
+          "hourlyRate": 6.3,
+          "employmentType": "Enterprise",
+          "hireDate": "2024-09-17",
+          "skills": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "availability": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "maxHoursPerWeek": 194,
+          "isActive": true
+        },
+        {
+          "restaurantId": "Regional Restaurant Id 10",
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "role": "Regional Role 10",
+          "hourlyRate": 1.9,
+          "employmentType": "Starter",
+          "hireDate": "2024-10-19",
+          "skills": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "availability": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "maxHoursPerWeek": 242,
+          "isActive": true
+        },
+        {
+          "restaurantId": "Custom Restaurant Id 11",
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "role": "Custom Role 11",
+          "hourlyRate": 2.5,
+          "employmentType": "Growth",
+          "hireDate": "2024-11-21",
+          "skills": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "availability": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "maxHoursPerWeek": 190,
+          "isActive": false
+        },
+        {
+          "restaurantId": "Smart Restaurant Id 12",
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "role": "Smart Role 12",
+          "hourlyRate": 3.1,
+          "employmentType": "Scale",
+          "hireDate": "2024-12-23",
+          "skills": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "availability": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "maxHoursPerWeek": 238,
+          "isActive": true
+        },
+        {
+          "restaurantId": "Rapid Restaurant Id 13",
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "role": "Rapid Role 13",
+          "hourlyRate": 3.7,
+          "employmentType": "Foundation",
+          "hireDate": "2024-01-25",
+          "skills": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "availability": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "maxHoursPerWeek": 286,
+          "isActive": false
+        },
+        {
+          "restaurantId": "Secure Restaurant Id 14",
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "role": "Secure Role 14",
+          "hourlyRate": 4.3,
+          "employmentType": "Advanced",
+          "hireDate": "2024-02-27",
+          "skills": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "availability": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "maxHoursPerWeek": 234,
+          "isActive": true
+        },
+        {
+          "restaurantId": "Modern Restaurant Id 15",
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "role": "Modern Role 15",
+          "hourlyRate": 4.9,
+          "employmentType": "Professional",
+          "hireDate": "2024-03-01",
+          "skills": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "availability": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "maxHoursPerWeek": 282,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "StaffSchedule",
+      "routeKey": "staff-schedules",
+      "label": "Staff Schedule",
+      "icon": "database",
+      "aiFunction": "analyzeStaffSchedule",
+      "aiPrompt": "You are an AI analyst for ai-food-flow-order. Analyze the provided Staff Schedule data. The data includes: Staff Member Id, Restaurant Id, Shift Date, Start Time, End Time, Break Minutes, Role For Shift, Status, Ai Suggested, Ai Confidence, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "staffMemberId",
+          "label": "Staff Member Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "restaurantId",
+          "label": "Restaurant Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "shiftDate",
+          "label": "Shift Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "breakMinutes",
+          "label": "Break Minutes",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "roleForShift",
+          "label": "Role For Shift",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiSuggested",
+          "label": "Ai Suggested",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "aiConfidence",
+          "label": "Ai Confidence",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "staffMemberId": "Advanced Staff Member Id 1",
+          "restaurantId": "Advanced Restaurant Id 1",
+          "shiftDate": "2024-01-01",
+          "startTime": "Advanced Start Time 1",
+          "endTime": "Advanced End Time 1",
+          "breakMinutes": 10,
+          "roleForShift": "Advanced Role For Shift 1",
+          "status": "active",
+          "aiSuggested": true,
+          "aiConfidence": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "staffMemberId": "Premium Staff Member Id 2",
+          "restaurantId": "Premium Restaurant Id 2",
+          "shiftDate": "2024-02-03",
+          "startTime": "Premium Start Time 2",
+          "endTime": "Premium End Time 2",
+          "breakMinutes": 58,
+          "roleForShift": "Premium Role For Shift 2",
+          "status": "pending",
+          "aiSuggested": true,
+          "aiConfidence": 71.7,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "staffMemberId": "Standard Staff Member Id 3",
+          "restaurantId": "Standard Restaurant Id 3",
+          "shiftDate": "2024-03-05",
+          "startTime": "Standard Start Time 3",
+          "endTime": "Standard End Time 3",
+          "breakMinutes": 106,
+          "roleForShift": "Standard Role For Shift 3",
+          "status": "in_progress",
+          "aiSuggested": false,
+          "aiConfidence": 33.4,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "staffMemberId": "Elite Staff Member Id 4",
+          "restaurantId": "Elite Restaurant Id 4",
+          "shiftDate": "2024-04-07",
+          "startTime": "Elite Start Time 4",
+          "endTime": "Elite End Time 4",
+          "breakMinutes": 154,
+          "roleForShift": "Elite Role For Shift 4",
+          "status": "completed",
+          "aiSuggested": true,
+          "aiConfidence": 95.1,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "staffMemberId": "Core Staff Member Id 5",
+          "restaurantId": "Core Restaurant Id 5",
+          "shiftDate": "2024-05-09",
+          "startTime": "Core Start Time 5",
+          "endTime": "Core End Time 5",
+          "breakMinutes": 102,
+          "roleForShift": "Core Role For Shift 5",
+          "status": "under_review",
+          "aiSuggested": false,
+          "aiConfidence": 56.8,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "staffMemberId": "Pro Staff Member Id 6",
+          "restaurantId": "Pro Restaurant Id 6",
+          "shiftDate": "2024-06-11",
+          "startTime": "Pro Start Time 6",
+          "endTime": "Pro End Time 6",
+          "breakMinutes": 150,
+          "roleForShift": "Pro Role For Shift 6",
+          "status": "approved",
+          "aiSuggested": true,
+          "aiConfidence": 118.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "staffMemberId": "Essential Staff Member Id 7",
+          "restaurantId": "Essential Restaurant Id 7",
+          "shiftDate": "2024-07-13",
+          "startTime": "Essential Start Time 7",
+          "endTime": "Essential End Time 7",
+          "breakMinutes": 198,
+          "roleForShift": "Essential Role For Shift 7",
+          "status": "active",
+          "aiSuggested": true,
+          "aiConfidence": 80.2,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "staffMemberId": "Primary Staff Member Id 8",
+          "restaurantId": "Primary Restaurant Id 8",
+          "shiftDate": "2024-08-15",
+          "startTime": "Primary Start Time 8",
+          "endTime": "Primary End Time 8",
+          "breakMinutes": 146,
+          "roleForShift": "Primary Role For Shift 8",
+          "status": "active",
+          "aiSuggested": false,
+          "aiConfidence": 141.9,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "staffMemberId": "Global Staff Member Id 9",
+          "restaurantId": "Global Restaurant Id 9",
+          "shiftDate": "2024-09-17",
+          "startTime": "Global Start Time 9",
+          "endTime": "Global End Time 9",
+          "breakMinutes": 194,
+          "roleForShift": "Global Role For Shift 9",
+          "status": "active",
+          "aiSuggested": true,
+          "aiConfidence": 103.6,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "staffMemberId": "Regional Staff Member Id 10",
+          "restaurantId": "Regional Restaurant Id 10",
+          "shiftDate": "2024-10-19",
+          "startTime": "Regional Start Time 10",
+          "endTime": "Regional End Time 10",
+          "breakMinutes": 242,
+          "roleForShift": "Regional Role For Shift 10",
+          "status": "pending",
+          "aiSuggested": true,
+          "aiConfidence": 165.3,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "staffMemberId": "Custom Staff Member Id 11",
+          "restaurantId": "Custom Restaurant Id 11",
+          "shiftDate": "2024-11-21",
+          "startTime": "Custom Start Time 11",
+          "endTime": "Custom End Time 11",
+          "breakMinutes": 190,
+          "roleForShift": "Custom Role For Shift 11",
+          "status": "completed",
+          "aiSuggested": false,
+          "aiConfidence": 127,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "staffMemberId": "Smart Staff Member Id 12",
+          "restaurantId": "Smart Restaurant Id 12",
+          "shiftDate": "2024-12-23",
+          "startTime": "Smart Start Time 12",
+          "endTime": "Smart End Time 12",
+          "breakMinutes": 238,
+          "roleForShift": "Smart Role For Shift 12",
+          "status": "active",
+          "aiSuggested": true,
+          "aiConfidence": 188.7,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "staffMemberId": "Rapid Staff Member Id 13",
+          "restaurantId": "Rapid Restaurant Id 13",
+          "shiftDate": "2024-01-25",
+          "startTime": "Rapid Start Time 13",
+          "endTime": "Rapid End Time 13",
+          "breakMinutes": 286,
+          "roleForShift": "Rapid Role For Shift 13",
+          "status": "in_progress",
+          "aiSuggested": false,
+          "aiConfidence": 150.4,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "staffMemberId": "Secure Staff Member Id 14",
+          "restaurantId": "Secure Restaurant Id 14",
+          "shiftDate": "2024-02-27",
+          "startTime": "Secure Start Time 14",
+          "endTime": "Secure End Time 14",
+          "breakMinutes": 234,
+          "roleForShift": "Secure Role For Shift 14",
+          "status": "active",
+          "aiSuggested": true,
+          "aiConfidence": 212.1,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "staffMemberId": "Modern Staff Member Id 15",
+          "restaurantId": "Modern Restaurant Id 15",
+          "shiftDate": "2024-03-01",
+          "startTime": "Modern Start Time 15",
+          "endTime": "Modern End Time 15",
+          "breakMinutes": 282,
+          "roleForShift": "Modern Role For Shift 15",
+          "status": "approved",
+          "aiSuggested": true,
+          "aiConfidence": 173.8,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Review",
+      "routeKey": "reviews",
+      "label": "Review",
+      "icon": "file-text",
+      "aiFunction": "analyzeReview",
+      "aiPrompt": "You are an AI analyst for ai-food-flow-order. Analyze the provided Review data. The data includes: Restaurant Id, Order Id, User Id, Customer Name, Rating, Title, Content, Sentiment, Ai Response, Ai Response Generated At, Is Published, Is Responded, Response Published At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "restaurantId",
+          "label": "Restaurant Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "orderId",
+          "label": "Order Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "sentiment",
+          "label": "Sentiment",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "aiResponse",
+          "label": "Ai Response",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiResponseGeneratedAt",
+          "label": "Ai Response Generated At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "isPublished",
+          "label": "Is Published",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "isResponded",
+          "label": "Is Responded",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "responsePublishedAt",
+          "label": "Response Published At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "restaurantId": "Advanced Restaurant Id 1",
+          "orderId": "Advanced Order Id 1",
+          "userId": "Advanced User Id 1",
+          "customerName": "James Wilson",
+          "rating": 10,
+          "title": "Advanced Title 1",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "sentiment": "Advanced Sentiment 1",
+          "aiResponse": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiResponseGeneratedAt": "2024-01-01",
+          "isPublished": true,
+          "isResponded": true,
+          "responsePublishedAt": "2024-01-01"
+        },
+        {
+          "restaurantId": "Premium Restaurant Id 2",
+          "orderId": "Premium Order Id 2",
+          "userId": "Premium User Id 2",
+          "customerName": "Sarah Chen",
+          "rating": 58,
+          "title": "Premium Title 2",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "sentiment": "Premium Sentiment 2",
+          "aiResponse": "Industry-leading approach with proven results across multiple deployments.",
+          "aiResponseGeneratedAt": "2024-02-03",
+          "isPublished": true,
+          "isResponded": true,
+          "responsePublishedAt": "2024-02-03"
+        },
+        {
+          "restaurantId": "Standard Restaurant Id 3",
+          "orderId": "Standard Order Id 3",
+          "userId": "Standard User Id 3",
+          "customerName": "Michael Brown",
+          "rating": 106,
+          "title": "Standard Title 3",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "sentiment": "Standard Sentiment 3",
+          "aiResponse": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiResponseGeneratedAt": "2024-03-05",
+          "isPublished": false,
+          "isResponded": false,
+          "responsePublishedAt": "2024-03-05"
+        },
+        {
+          "restaurantId": "Elite Restaurant Id 4",
+          "orderId": "Elite Order Id 4",
+          "userId": "Elite User Id 4",
+          "customerName": "Emily Davis",
+          "rating": 154,
+          "title": "Elite Title 4",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "sentiment": "Elite Sentiment 4",
+          "aiResponse": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiResponseGeneratedAt": "2024-04-07",
+          "isPublished": true,
+          "isResponded": true,
+          "responsePublishedAt": "2024-04-07"
+        },
+        {
+          "restaurantId": "Core Restaurant Id 5",
+          "orderId": "Core Order Id 5",
+          "userId": "Core User Id 5",
+          "customerName": "Robert Garcia",
+          "rating": 102,
+          "title": "Core Title 5",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "sentiment": "Core Sentiment 5",
+          "aiResponse": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiResponseGeneratedAt": "2024-05-09",
+          "isPublished": false,
+          "isResponded": false,
+          "responsePublishedAt": "2024-05-09"
+        },
+        {
+          "restaurantId": "Pro Restaurant Id 6",
+          "orderId": "Pro Order Id 6",
+          "userId": "Pro User Id 6",
+          "customerName": "Lisa Anderson",
+          "rating": 150,
+          "title": "Pro Title 6",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "sentiment": "Pro Sentiment 6",
+          "aiResponse": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiResponseGeneratedAt": "2024-06-11",
+          "isPublished": true,
+          "isResponded": true,
+          "responsePublishedAt": "2024-06-11"
+        },
+        {
+          "restaurantId": "Essential Restaurant Id 7",
+          "orderId": "Essential Order Id 7",
+          "userId": "Essential User Id 7",
+          "customerName": "David Martinez",
+          "rating": 198,
+          "title": "Essential Title 7",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "sentiment": "Essential Sentiment 7",
+          "aiResponse": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiResponseGeneratedAt": "2024-07-13",
+          "isPublished": true,
+          "isResponded": true,
+          "responsePublishedAt": "2024-07-13"
+        },
+        {
+          "restaurantId": "Primary Restaurant Id 8",
+          "orderId": "Primary Order Id 8",
+          "userId": "Primary User Id 8",
+          "customerName": "Jennifer Taylor",
+          "rating": 146,
+          "title": "Primary Title 8",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "sentiment": "Primary Sentiment 8",
+          "aiResponse": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiResponseGeneratedAt": "2024-08-15",
+          "isPublished": false,
+          "isResponded": false,
+          "responsePublishedAt": "2024-08-15"
+        },
+        {
+          "restaurantId": "Global Restaurant Id 9",
+          "orderId": "Global Order Id 9",
+          "userId": "Global User Id 9",
+          "customerName": "William Johnson",
+          "rating": 194,
+          "title": "Global Title 9",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "sentiment": "Global Sentiment 9",
+          "aiResponse": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiResponseGeneratedAt": "2024-09-17",
+          "isPublished": true,
+          "isResponded": true,
+          "responsePublishedAt": "2024-09-17"
+        },
+        {
+          "restaurantId": "Regional Restaurant Id 10",
+          "orderId": "Regional Order Id 10",
+          "userId": "Regional User Id 10",
+          "customerName": "Maria Rodriguez",
+          "rating": 242,
+          "title": "Regional Title 10",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "sentiment": "Regional Sentiment 10",
+          "aiResponse": "Enterprise-grade solution with robust security and compliance features.",
+          "aiResponseGeneratedAt": "2024-10-19",
+          "isPublished": true,
+          "isResponded": true,
+          "responsePublishedAt": "2024-10-19"
+        },
+        {
+          "restaurantId": "Custom Restaurant Id 11",
+          "orderId": "Custom Order Id 11",
+          "userId": "Custom User Id 11",
+          "customerName": "Thomas Lee",
+          "rating": 190,
+          "title": "Custom Title 11",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "sentiment": "Custom Sentiment 11",
+          "aiResponse": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiResponseGeneratedAt": "2024-11-21",
+          "isPublished": false,
+          "isResponded": false,
+          "responsePublishedAt": "2024-11-21"
+        },
+        {
+          "restaurantId": "Smart Restaurant Id 12",
+          "orderId": "Smart Order Id 12",
+          "userId": "Smart User Id 12",
+          "customerName": "Patricia White",
+          "rating": 238,
+          "title": "Smart Title 12",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "sentiment": "Smart Sentiment 12",
+          "aiResponse": "Automated workflow reducing manual intervention and human error.",
+          "aiResponseGeneratedAt": "2024-12-23",
+          "isPublished": true,
+          "isResponded": true,
+          "responsePublishedAt": "2024-12-23"
+        },
+        {
+          "restaurantId": "Rapid Restaurant Id 13",
+          "orderId": "Rapid Order Id 13",
+          "userId": "Rapid User Id 13",
+          "customerName": "Christopher Hall",
+          "rating": 286,
+          "title": "Rapid Title 13",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "sentiment": "Rapid Sentiment 13",
+          "aiResponse": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiResponseGeneratedAt": "2024-01-25",
+          "isPublished": false,
+          "isResponded": false,
+          "responsePublishedAt": "2024-01-25"
+        },
+        {
+          "restaurantId": "Secure Restaurant Id 14",
+          "orderId": "Secure Order Id 14",
+          "userId": "Secure User Id 14",
+          "customerName": "Amanda Clark",
+          "rating": 234,
+          "title": "Secure Title 14",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "sentiment": "Secure Sentiment 14",
+          "aiResponse": "Customizable module adaptable to diverse operational requirements.",
+          "aiResponseGeneratedAt": "2024-02-27",
+          "isPublished": true,
+          "isResponded": true,
+          "responsePublishedAt": "2024-02-27"
+        },
+        {
+          "restaurantId": "Modern Restaurant Id 15",
+          "orderId": "Modern Order Id 15",
+          "userId": "Modern User Id 15",
+          "customerName": "Daniel Wright",
+          "rating": 282,
+          "title": "Modern Title 15",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "sentiment": "Modern Sentiment 15",
+          "aiResponse": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiResponseGeneratedAt": "2024-03-01",
+          "isPublished": true,
+          "isResponded": true,
+          "responsePublishedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "WaitTimePrediction",
+      "routeKey": "wait-time-predictions",
+      "label": "Wait Time Prediction",
+      "icon": "heart",
+      "aiFunction": "analyzeWaitTimePrediction",
+      "aiPrompt": "You are an AI analyst for ai-food-flow-order. Analyze the provided Wait Time Prediction data. The data includes: Restaurant Id, Order Id, Predicted Minutes, Actual Minutes, Order Items Count, Current Queue Size, Time Of Day, Day Of Week, Confidence, Factors. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "restaurantId",
+          "label": "Restaurant Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "orderId",
+          "label": "Order Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "predictedMinutes",
+          "label": "Predicted Minutes",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "actualMinutes",
+          "label": "Actual Minutes",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "orderItemsCount",
+          "label": "Order Items Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "currentQueueSize",
+          "label": "Current Queue Size",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "timeOfDay",
+          "label": "Time Of Day",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dayOfWeek",
+          "label": "Day Of Week",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "confidence",
+          "label": "Confidence",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "factors",
+          "label": "Factors",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "restaurantId": "Advanced Restaurant Id 1",
+          "orderId": "Advanced Order Id 1",
+          "predictedMinutes": 10,
+          "actualMinutes": 10,
+          "orderItemsCount": 63,
+          "currentQueueSize": 10,
+          "timeOfDay": "Advanced Time Of Day 1",
+          "dayOfWeek": "Advanced Day Of Week 1",
+          "confidence": 10,
+          "factors": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "restaurantId": "Premium Restaurant Id 2",
+          "orderId": "Premium Order Id 2",
+          "predictedMinutes": 58,
+          "actualMinutes": 58,
+          "orderItemsCount": 124,
+          "currentQueueSize": 58,
+          "timeOfDay": "Premium Time Of Day 2",
+          "dayOfWeek": "Premium Day Of Week 2",
+          "confidence": 71.7,
+          "factors": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "restaurantId": "Standard Restaurant Id 3",
+          "orderId": "Standard Order Id 3",
+          "predictedMinutes": 106,
+          "actualMinutes": 106,
+          "orderItemsCount": 52,
+          "currentQueueSize": 106,
+          "timeOfDay": "Standard Time Of Day 3",
+          "dayOfWeek": "Standard Day Of Week 3",
+          "confidence": 33.4,
+          "factors": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "restaurantId": "Elite Restaurant Id 4",
+          "orderId": "Elite Order Id 4",
+          "predictedMinutes": 154,
+          "actualMinutes": 154,
+          "orderItemsCount": 176,
+          "currentQueueSize": 154,
+          "timeOfDay": "Elite Time Of Day 4",
+          "dayOfWeek": "Elite Day Of Week 4",
+          "confidence": 95.1,
+          "factors": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "restaurantId": "Core Restaurant Id 5",
+          "orderId": "Core Order Id 5",
+          "predictedMinutes": 102,
+          "actualMinutes": 102,
+          "orderItemsCount": 208,
+          "currentQueueSize": 102,
+          "timeOfDay": "Core Time Of Day 5",
+          "dayOfWeek": "Core Day Of Week 5",
+          "confidence": 56.8,
+          "factors": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "restaurantId": "Pro Restaurant Id 6",
+          "orderId": "Pro Order Id 6",
+          "predictedMinutes": 150,
+          "actualMinutes": 150,
+          "orderItemsCount": 189,
+          "currentQueueSize": 150,
+          "timeOfDay": "Pro Time Of Day 6",
+          "dayOfWeek": "Pro Day Of Week 6",
+          "confidence": 118.5,
+          "factors": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "restaurantId": "Essential Restaurant Id 7",
+          "orderId": "Essential Order Id 7",
+          "predictedMinutes": 198,
+          "actualMinutes": 198,
+          "orderItemsCount": 222,
+          "currentQueueSize": 198,
+          "timeOfDay": "Essential Time Of Day 7",
+          "dayOfWeek": "Essential Day Of Week 7",
+          "confidence": 80.2,
+          "factors": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "restaurantId": "Primary Restaurant Id 8",
+          "orderId": "Primary Order Id 8",
+          "predictedMinutes": 146,
+          "actualMinutes": 146,
+          "orderItemsCount": 147,
+          "currentQueueSize": 146,
+          "timeOfDay": "Primary Time Of Day 8",
+          "dayOfWeek": "Primary Day Of Week 8",
+          "confidence": 141.9,
+          "factors": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "restaurantId": "Global Restaurant Id 9",
+          "orderId": "Global Order Id 9",
+          "predictedMinutes": 194,
+          "actualMinutes": 194,
+          "orderItemsCount": 110,
+          "currentQueueSize": 194,
+          "timeOfDay": "Global Time Of Day 9",
+          "dayOfWeek": "Global Day Of Week 9",
+          "confidence": 103.6,
+          "factors": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "restaurantId": "Regional Restaurant Id 10",
+          "orderId": "Regional Order Id 10",
+          "predictedMinutes": 242,
+          "actualMinutes": 242,
+          "orderItemsCount": 192,
+          "currentQueueSize": 242,
+          "timeOfDay": "Regional Time Of Day 10",
+          "dayOfWeek": "Regional Day Of Week 10",
+          "confidence": 165.3,
+          "factors": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "restaurantId": "Custom Restaurant Id 11",
+          "orderId": "Custom Order Id 11",
+          "predictedMinutes": 190,
+          "actualMinutes": 190,
+          "orderItemsCount": 212,
+          "currentQueueSize": 190,
+          "timeOfDay": "Custom Time Of Day 11",
+          "dayOfWeek": "Custom Day Of Week 11",
+          "confidence": 127,
+          "factors": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "restaurantId": "Smart Restaurant Id 12",
+          "orderId": "Smart Order Id 12",
+          "predictedMinutes": 238,
+          "actualMinutes": 238,
+          "orderItemsCount": 153,
+          "currentQueueSize": 238,
+          "timeOfDay": "Smart Time Of Day 12",
+          "dayOfWeek": "Smart Day Of Week 12",
+          "confidence": 188.7,
+          "factors": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "restaurantId": "Rapid Restaurant Id 13",
+          "orderId": "Rapid Order Id 13",
+          "predictedMinutes": 286,
+          "actualMinutes": 286,
+          "orderItemsCount": 280,
+          "currentQueueSize": 286,
+          "timeOfDay": "Rapid Time Of Day 13",
+          "dayOfWeek": "Rapid Day Of Week 13",
+          "confidence": 150.4,
+          "factors": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "restaurantId": "Secure Restaurant Id 14",
+          "orderId": "Secure Order Id 14",
+          "predictedMinutes": 234,
+          "actualMinutes": 234,
+          "orderItemsCount": 179,
+          "currentQueueSize": 234,
+          "timeOfDay": "Secure Time Of Day 14",
+          "dayOfWeek": "Secure Day Of Week 14",
+          "confidence": 212.1,
+          "factors": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "restaurantId": "Modern Restaurant Id 15",
+          "orderId": "Modern Order Id 15",
+          "predictedMinutes": 282,
+          "actualMinutes": 282,
+          "orderItemsCount": 298,
+          "currentQueueSize": 282,
+          "timeOfDay": "Modern Time Of Day 15",
+          "dayOfWeek": "Modern Day Of Week 15",
+          "confidence": 173.8,
+          "factors": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "UpsellRecommendation",
+      "routeKey": "upsell-recommendations",
+      "label": "Upsell Recommendation",
+      "icon": "layers",
+      "aiFunction": "analyzeUpsellRecommendation",
+      "aiPrompt": "You are an AI analyst for ai-food-flow-order. Analyze the provided Upsell Recommendation data. The data includes: Restaurant Id, Cart Id, User Id, Cart Items, Recommended Items, Recommendation Reason, Confidence, Was Accepted, Accepted Item Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "restaurantId",
+          "label": "Restaurant Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cartId",
+          "label": "Cart Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cartItems",
+          "label": "Cart Items",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "recommendedItems",
+          "label": "Recommended Items",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "recommendationReason",
+          "label": "Recommendation Reason",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "confidence",
+          "label": "Confidence",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "wasAccepted",
+          "label": "Was Accepted",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "acceptedItemId",
+          "label": "Accepted Item Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "restaurantId": "Advanced Restaurant Id 1",
+          "cartId": "Advanced Cart Id 1",
+          "userId": "Advanced User Id 1",
+          "cartItems": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "recommendedItems": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "recommendationReason": "Comprehensive solution designed for optimal performance and efficiency.",
+          "confidence": 10,
+          "wasAccepted": true,
+          "acceptedItemId": "Advanced Accepted Item Id 1"
+        },
+        {
+          "restaurantId": "Premium Restaurant Id 2",
+          "cartId": "Premium Cart Id 2",
+          "userId": "Premium User Id 2",
+          "cartItems": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "recommendedItems": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "recommendationReason": "Industry-leading approach with proven results across multiple deployments.",
+          "confidence": 71.7,
+          "wasAccepted": true,
+          "acceptedItemId": "Premium Accepted Item Id 2"
+        },
+        {
+          "restaurantId": "Standard Restaurant Id 3",
+          "cartId": "Standard Cart Id 3",
+          "userId": "Standard User Id 3",
+          "cartItems": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "recommendedItems": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "recommendationReason": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "confidence": 33.4,
+          "wasAccepted": false,
+          "acceptedItemId": "Standard Accepted Item Id 3"
+        },
+        {
+          "restaurantId": "Elite Restaurant Id 4",
+          "cartId": "Elite Cart Id 4",
+          "userId": "Elite User Id 4",
+          "cartItems": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "recommendedItems": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "recommendationReason": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "confidence": 95.1,
+          "wasAccepted": true,
+          "acceptedItemId": "Elite Accepted Item Id 4"
+        },
+        {
+          "restaurantId": "Core Restaurant Id 5",
+          "cartId": "Core Cart Id 5",
+          "userId": "Core User Id 5",
+          "cartItems": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "recommendedItems": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "recommendationReason": "Cost-effective strategy focused on sustainable long-term growth.",
+          "confidence": 56.8,
+          "wasAccepted": false,
+          "acceptedItemId": "Core Accepted Item Id 5"
+        },
+        {
+          "restaurantId": "Pro Restaurant Id 6",
+          "cartId": "Pro Cart Id 6",
+          "userId": "Pro User Id 6",
+          "cartItems": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "recommendedItems": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "recommendationReason": "High-priority initiative aligned with organizational strategic objectives.",
+          "confidence": 118.5,
+          "wasAccepted": true,
+          "acceptedItemId": "Pro Accepted Item Id 6"
+        },
+        {
+          "restaurantId": "Essential Restaurant Id 7",
+          "cartId": "Essential Cart Id 7",
+          "userId": "Essential User Id 7",
+          "cartItems": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "recommendedItems": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "recommendationReason": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "confidence": 80.2,
+          "wasAccepted": true,
+          "acceptedItemId": "Essential Accepted Item Id 7"
+        },
+        {
+          "restaurantId": "Primary Restaurant Id 8",
+          "cartId": "Primary Cart Id 8",
+          "userId": "Primary User Id 8",
+          "cartItems": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "recommendedItems": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "recommendationReason": "Innovative framework incorporating best practices and emerging technologies.",
+          "confidence": 141.9,
+          "wasAccepted": false,
+          "acceptedItemId": "Primary Accepted Item Id 8"
+        },
+        {
+          "restaurantId": "Global Restaurant Id 9",
+          "cartId": "Global Cart Id 9",
+          "userId": "Global User Id 9",
+          "cartItems": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "recommendedItems": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "recommendationReason": "Scalable architecture built to accommodate rapid expansion and change.",
+          "confidence": 103.6,
+          "wasAccepted": true,
+          "acceptedItemId": "Global Accepted Item Id 9"
+        },
+        {
+          "restaurantId": "Regional Restaurant Id 10",
+          "cartId": "Regional Cart Id 10",
+          "userId": "Regional User Id 10",
+          "cartItems": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "recommendedItems": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "recommendationReason": "Enterprise-grade solution with robust security and compliance features.",
+          "confidence": 165.3,
+          "wasAccepted": true,
+          "acceptedItemId": "Regional Accepted Item Id 10"
+        },
+        {
+          "restaurantId": "Custom Restaurant Id 11",
+          "cartId": "Custom Cart Id 11",
+          "userId": "Custom User Id 11",
+          "cartItems": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "recommendedItems": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "recommendationReason": "Integrated platform connecting multiple systems for seamless operations.",
+          "confidence": 127,
+          "wasAccepted": false,
+          "acceptedItemId": "Custom Accepted Item Id 11"
+        },
+        {
+          "restaurantId": "Smart Restaurant Id 12",
+          "cartId": "Smart Cart Id 12",
+          "userId": "Smart User Id 12",
+          "cartItems": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "recommendedItems": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "recommendationReason": "Automated workflow reducing manual intervention and human error.",
+          "confidence": 188.7,
+          "wasAccepted": true,
+          "acceptedItemId": "Smart Accepted Item Id 12"
+        },
+        {
+          "restaurantId": "Rapid Restaurant Id 13",
+          "cartId": "Rapid Cart Id 13",
+          "userId": "Rapid User Id 13",
+          "cartItems": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "recommendedItems": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "recommendationReason": "Real-time monitoring system with intelligent alerting capabilities.",
+          "confidence": 150.4,
+          "wasAccepted": false,
+          "acceptedItemId": "Rapid Accepted Item Id 13"
+        },
+        {
+          "restaurantId": "Secure Restaurant Id 14",
+          "cartId": "Secure Cart Id 14",
+          "userId": "Secure User Id 14",
+          "cartItems": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "recommendedItems": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "recommendationReason": "Customizable module adaptable to diverse operational requirements.",
+          "confidence": 212.1,
+          "wasAccepted": true,
+          "acceptedItemId": "Secure Accepted Item Id 14"
+        },
+        {
+          "restaurantId": "Modern Restaurant Id 15",
+          "cartId": "Modern Cart Id 15",
+          "userId": "Modern User Id 15",
+          "cartItems": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "recommendedItems": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "recommendationReason": "Performance-optimized design achieving superior throughput and reliability.",
+          "confidence": 173.8,
+          "wasAccepted": true,
+          "acceptedItemId": "Modern Accepted Item Id 15"
+        }
+      ]
+    }
+  ]
+}

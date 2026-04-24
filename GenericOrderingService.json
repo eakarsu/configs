@@ -1,0 +1,595 @@
+{
+  "appName": "Generic Ordering Service",
+  "dbName": "generic_ordering_service",
+  "folderName": "generated/GenericOrderingService",
+  "features": [
+    {
+      "modelName": "AuditLog",
+      "routeKey": "audit-logs",
+      "label": "Audit Log",
+      "icon": "activity",
+      "aiFunction": "analyzeAuditLog",
+      "aiPrompt": "You are an AI analyst for Generic Ordering Service. Analyze the provided Audit Log data. The data includes: Action, Entity Type, Entity Id, Details. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "details",
+          "label": "Details",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "action": "Advanced Action 1",
+          "entityType": "Category A",
+          "entityId": 10,
+          "details": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "action": "Premium Action 2",
+          "entityType": "Category B",
+          "entityId": 58,
+          "details": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "action": "Standard Action 3",
+          "entityType": "Category C",
+          "entityId": 106,
+          "details": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "action": "Elite Action 4",
+          "entityType": "Category D",
+          "entityId": 154,
+          "details": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "action": "Core Action 5",
+          "entityType": "Category E",
+          "entityId": 102,
+          "details": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "action": "Pro Action 6",
+          "entityType": "Premium Tier",
+          "entityId": 150,
+          "details": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "action": "Essential Action 7",
+          "entityType": "Standard Tier",
+          "entityId": 198,
+          "details": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "action": "Primary Action 8",
+          "entityType": "Basic Tier",
+          "entityId": 146,
+          "details": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "action": "Global Action 9",
+          "entityType": "Enterprise",
+          "entityId": 194,
+          "details": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "action": "Regional Action 10",
+          "entityType": "Starter",
+          "entityId": 242,
+          "details": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "action": "Custom Action 11",
+          "entityType": "Growth",
+          "entityId": 190,
+          "details": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "action": "Smart Action 12",
+          "entityType": "Scale",
+          "entityId": 238,
+          "details": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "action": "Rapid Action 13",
+          "entityType": "Foundation",
+          "entityId": 286,
+          "details": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "action": "Secure Action 14",
+          "entityType": "Advanced",
+          "entityId": 234,
+          "details": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "action": "Modern Action 15",
+          "entityType": "Professional",
+          "entityId": 282,
+          "details": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "Order",
+      "routeKey": "orders",
+      "label": "Order",
+      "icon": "briefcase",
+      "aiFunction": "analyzeOrder",
+      "aiPrompt": "You are an AI analyst for Generic Ordering Service. Analyze the provided Order data. The data includes: Customer Name, Customer Phone, Customer Email, Sector, Status, Items, Total Amount, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerPhone",
+          "label": "Customer Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerEmail",
+          "label": "Customer Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sector",
+          "label": "Sector",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "items",
+          "label": "Items",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "totalAmount",
+          "label": "Total Amount",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerName": "James Wilson",
+          "customerPhone": "(555) 100-1000",
+          "customerEmail": "james.wilson@example.com",
+          "sector": "Advanced Sector 1",
+          "status": "active",
+          "items": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "totalAmount": 500,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "customerName": "Sarah Chen",
+          "customerPhone": "(556) 137-1113",
+          "customerEmail": "sarah.chen@example.com",
+          "sector": "Premium Sector 2",
+          "status": "pending",
+          "items": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "totalAmount": 2481,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "customerName": "Michael Brown",
+          "customerPhone": "(557) 174-1226",
+          "customerEmail": "michael.brown@example.com",
+          "sector": "Standard Sector 3",
+          "status": "in_progress",
+          "items": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "totalAmount": 4462,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "customerName": "Emily Davis",
+          "customerPhone": "(558) 211-1339",
+          "customerEmail": "emily.davis@example.com",
+          "sector": "Elite Sector 4",
+          "status": "completed",
+          "items": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "totalAmount": 6443,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "customerName": "Robert Garcia",
+          "customerPhone": "(555) 248-1452",
+          "customerEmail": "robert.garcia@example.com",
+          "sector": "Core Sector 5",
+          "status": "under_review",
+          "items": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "totalAmount": 8424,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "customerName": "Lisa Anderson",
+          "customerPhone": "(556) 285-1565",
+          "customerEmail": "lisa.anderson@example.com",
+          "sector": "Pro Sector 6",
+          "status": "approved",
+          "items": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "totalAmount": 10405,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "customerName": "David Martinez",
+          "customerPhone": "(557) 322-1678",
+          "customerEmail": "david.martinez@example.com",
+          "sector": "Essential Sector 7",
+          "status": "active",
+          "items": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "totalAmount": 12386,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "customerName": "Jennifer Taylor",
+          "customerPhone": "(558) 359-1791",
+          "customerEmail": "jennifer.taylor@example.com",
+          "sector": "Primary Sector 8",
+          "status": "active",
+          "items": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "totalAmount": 9367,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "customerName": "William Johnson",
+          "customerPhone": "(555) 396-1904",
+          "customerEmail": "william.johnson@example.com",
+          "sector": "Global Sector 9",
+          "status": "active",
+          "items": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "totalAmount": 11348,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "customerName": "Maria Rodriguez",
+          "customerPhone": "(556) 433-2017",
+          "customerEmail": "maria.rodriguez@example.com",
+          "sector": "Regional Sector 10",
+          "status": "pending",
+          "items": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "totalAmount": 13329,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "customerName": "Thomas Lee",
+          "customerPhone": "(557) 470-2130",
+          "customerEmail": "thomas.lee@example.com",
+          "sector": "Custom Sector 11",
+          "status": "completed",
+          "items": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "totalAmount": 15310,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "customerName": "Patricia White",
+          "customerPhone": "(558) 507-2243",
+          "customerEmail": "patricia.white@example.com",
+          "sector": "Smart Sector 12",
+          "status": "active",
+          "items": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "totalAmount": 17291,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "customerName": "Christopher Hall",
+          "customerPhone": "(555) 544-2356",
+          "customerEmail": "christopher.hall@example.com",
+          "sector": "Rapid Sector 13",
+          "status": "in_progress",
+          "items": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "totalAmount": 19272,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "customerName": "Amanda Clark",
+          "customerPhone": "(556) 581-2469",
+          "customerEmail": "amanda.clark@example.com",
+          "sector": "Secure Sector 14",
+          "status": "active",
+          "items": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "totalAmount": 21253,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "customerName": "Daniel Wright",
+          "customerPhone": "(557) 618-2582",
+          "customerEmail": "daniel.wright@example.com",
+          "sector": "Modern Sector 15",
+          "status": "approved",
+          "items": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "totalAmount": 18234,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Role",
+      "routeKey": "roles",
+      "label": "Role",
+      "icon": "clipboard",
+      "aiFunction": "analyzeRole",
+      "aiPrompt": "You are an AI analyst for Generic Ordering Service. Analyze the provided Role data. The data includes: Name, Display Name, Permissions. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "displayName",
+          "label": "Display Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "permissions",
+          "label": "Permissions",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "displayName": "Advanced Display 1",
+          "permissions": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "name": "Premium Name 2",
+          "displayName": "Premium Display 2",
+          "permissions": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "name": "Standard Name 3",
+          "displayName": "Standard Display 3",
+          "permissions": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "name": "Elite Name 4",
+          "displayName": "Elite Display 4",
+          "permissions": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "name": "Core Name 5",
+          "displayName": "Core Display 5",
+          "permissions": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "name": "Pro Name 6",
+          "displayName": "Pro Display 6",
+          "permissions": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "name": "Essential Name 7",
+          "displayName": "Essential Display 7",
+          "permissions": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "name": "Primary Name 8",
+          "displayName": "Primary Display 8",
+          "permissions": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "name": "Global Name 9",
+          "displayName": "Global Display 9",
+          "permissions": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "name": "Regional Name 10",
+          "displayName": "Regional Display 10",
+          "permissions": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "name": "Custom Name 11",
+          "displayName": "Custom Display 11",
+          "permissions": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "name": "Smart Name 12",
+          "displayName": "Smart Display 12",
+          "permissions": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "name": "Rapid Name 13",
+          "displayName": "Rapid Display 13",
+          "permissions": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "name": "Secure Name 14",
+          "displayName": "Secure Display 14",
+          "permissions": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "name": "Modern Name 15",
+          "displayName": "Modern Display 15",
+          "permissions": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "Sector",
+      "routeKey": "sectors",
+      "label": "Sector",
+      "icon": "database",
+      "aiFunction": "analyzeSector",
+      "aiPrompt": "You are an AI analyst for Generic Ordering Service. Analyze the provided Sector data. The data includes: Name, Display Name, Description, Icon, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "displayName",
+          "label": "Display Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "icon",
+          "label": "Icon",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "displayName": "Advanced Display 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "icon": "Advanced Icon 1",
+          "isActive": true
+        },
+        {
+          "name": "Premium Name 2",
+          "displayName": "Premium Display 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "icon": "Premium Icon 2",
+          "isActive": true
+        },
+        {
+          "name": "Standard Name 3",
+          "displayName": "Standard Display 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "icon": "Standard Icon 3",
+          "isActive": false
+        },
+        {
+          "name": "Elite Name 4",
+          "displayName": "Elite Display 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "icon": "Elite Icon 4",
+          "isActive": true
+        },
+        {
+          "name": "Core Name 5",
+          "displayName": "Core Display 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "icon": "Core Icon 5",
+          "isActive": false
+        },
+        {
+          "name": "Pro Name 6",
+          "displayName": "Pro Display 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "icon": "Pro Icon 6",
+          "isActive": true
+        },
+        {
+          "name": "Essential Name 7",
+          "displayName": "Essential Display 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "icon": "Essential Icon 7",
+          "isActive": true
+        },
+        {
+          "name": "Primary Name 8",
+          "displayName": "Primary Display 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "icon": "Primary Icon 8",
+          "isActive": false
+        },
+        {
+          "name": "Global Name 9",
+          "displayName": "Global Display 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "icon": "Global Icon 9",
+          "isActive": true
+        },
+        {
+          "name": "Regional Name 10",
+          "displayName": "Regional Display 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "icon": "Regional Icon 10",
+          "isActive": true
+        },
+        {
+          "name": "Custom Name 11",
+          "displayName": "Custom Display 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "icon": "Custom Icon 11",
+          "isActive": false
+        },
+        {
+          "name": "Smart Name 12",
+          "displayName": "Smart Display 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "icon": "Smart Icon 12",
+          "isActive": true
+        },
+        {
+          "name": "Rapid Name 13",
+          "displayName": "Rapid Display 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "icon": "Rapid Icon 13",
+          "isActive": false
+        },
+        {
+          "name": "Secure Name 14",
+          "displayName": "Secure Display 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "icon": "Secure Icon 14",
+          "isActive": true
+        },
+        {
+          "name": "Modern Name 15",
+          "displayName": "Modern Display 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "icon": "Modern Icon 15",
+          "isActive": true
+        }
+      ]
+    }
+  ]
+}

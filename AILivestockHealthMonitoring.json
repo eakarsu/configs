@@ -1,0 +1,4207 @@
+{
+  "appName": "A I Livestock Health Monitoring",
+  "dbName": "a_i_livestock_health_monitoring",
+  "folderName": "generated/AILivestockHealthMonitoring",
+  "features": [
+    {
+      "modelName": "Alert",
+      "routeKey": "alerts",
+      "label": "Alert",
+      "icon": "activity",
+      "aiFunction": "analyzeAlert",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Alert data. The data includes: Animal Id, Alert Type, Severity, Title, Message, Source, Is Read, Is Resolved, Resolved By, Resolved At, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "animal_id",
+          "label": "Animal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "alert_type",
+          "label": "Alert Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "is_read",
+          "label": "Is Read",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "is_resolved",
+          "label": "Is Resolved",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "resolved_by",
+          "label": "Resolved By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "resolved_at",
+          "label": "Resolved At",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "animal_id": 10,
+          "alert_type": "Category A",
+          "severity": "low",
+          "title": "Advanced Title 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "source": "Advanced Source 1",
+          "is_read": true,
+          "is_resolved": true,
+          "resolved_by": "Advanced Resolved By 1",
+          "resolved_at": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "animal_id": 58,
+          "alert_type": "Category B",
+          "severity": "medium",
+          "title": "Premium Title 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "source": "Premium Source 2",
+          "is_read": true,
+          "is_resolved": true,
+          "resolved_by": "Premium Resolved By 2",
+          "resolved_at": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "animal_id": 106,
+          "alert_type": "Category C",
+          "severity": "high",
+          "title": "Standard Title 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "source": "Standard Source 3",
+          "is_read": false,
+          "is_resolved": false,
+          "resolved_by": "Standard Resolved By 3",
+          "resolved_at": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "animal_id": 154,
+          "alert_type": "Category D",
+          "severity": "critical",
+          "title": "Elite Title 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "source": "Elite Source 4",
+          "is_read": true,
+          "is_resolved": true,
+          "resolved_by": "Elite Resolved By 4",
+          "resolved_at": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "animal_id": 102,
+          "alert_type": "Category E",
+          "severity": "medium",
+          "title": "Core Title 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "source": "Core Source 5",
+          "is_read": false,
+          "is_resolved": false,
+          "resolved_by": "Core Resolved By 5",
+          "resolved_at": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "animal_id": 150,
+          "alert_type": "Premium Tier",
+          "severity": "low",
+          "title": "Pro Title 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "source": "Pro Source 6",
+          "is_read": true,
+          "is_resolved": true,
+          "resolved_by": "Pro Resolved By 6",
+          "resolved_at": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "animal_id": 198,
+          "alert_type": "Standard Tier",
+          "severity": "medium",
+          "title": "Essential Title 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "source": "Essential Source 7",
+          "is_read": true,
+          "is_resolved": true,
+          "resolved_by": "Essential Resolved By 7",
+          "resolved_at": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "animal_id": 146,
+          "alert_type": "Basic Tier",
+          "severity": "high",
+          "title": "Primary Title 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "source": "Primary Source 8",
+          "is_read": false,
+          "is_resolved": false,
+          "resolved_by": "Primary Resolved By 8",
+          "resolved_at": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "animal_id": 194,
+          "alert_type": "Enterprise",
+          "severity": "critical",
+          "title": "Global Title 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "source": "Global Source 9",
+          "is_read": true,
+          "is_resolved": true,
+          "resolved_by": "Global Resolved By 9",
+          "resolved_at": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "animal_id": 242,
+          "alert_type": "Starter",
+          "severity": "medium",
+          "title": "Regional Title 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "source": "Regional Source 10",
+          "is_read": true,
+          "is_resolved": true,
+          "resolved_by": "Regional Resolved By 10",
+          "resolved_at": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "animal_id": 190,
+          "alert_type": "Growth",
+          "severity": "low",
+          "title": "Custom Title 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "source": "Custom Source 11",
+          "is_read": false,
+          "is_resolved": false,
+          "resolved_by": "Custom Resolved By 11",
+          "resolved_at": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "animal_id": 238,
+          "alert_type": "Scale",
+          "severity": "medium",
+          "title": "Smart Title 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "source": "Smart Source 12",
+          "is_read": true,
+          "is_resolved": true,
+          "resolved_by": "Smart Resolved By 12",
+          "resolved_at": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "animal_id": 286,
+          "alert_type": "Foundation",
+          "severity": "high",
+          "title": "Rapid Title 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "source": "Rapid Source 13",
+          "is_read": false,
+          "is_resolved": false,
+          "resolved_by": "Rapid Resolved By 13",
+          "resolved_at": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "animal_id": 234,
+          "alert_type": "Advanced",
+          "severity": "critical",
+          "title": "Secure Title 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "source": "Secure Source 14",
+          "is_read": true,
+          "is_resolved": true,
+          "resolved_by": "Secure Resolved By 14",
+          "resolved_at": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "animal_id": 282,
+          "alert_type": "Professional",
+          "severity": "medium",
+          "title": "Modern Title 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "source": "Modern Source 15",
+          "is_read": true,
+          "is_resolved": true,
+          "resolved_by": "Modern Resolved By 15",
+          "resolved_at": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Animal",
+      "routeKey": "animals",
+      "label": "Animal",
+      "icon": "briefcase",
+      "aiFunction": "analyzeAnimal",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Animal data. The data includes: Tag Id, Name, Species, Breed, Date Of Birth, Gender, Weight, Color, Status, Purchase Date, Purchase Price, Herd Id, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "tag_id",
+          "label": "Tag Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "species",
+          "label": "Species",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "breed",
+          "label": "Breed",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "date_of_birth",
+          "label": "Date Of Birth",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "gender",
+          "label": "Gender",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "color",
+          "label": "Color",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "purchase_date",
+          "label": "Purchase Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "purchase_price",
+          "label": "Purchase Price",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "herd_id",
+          "label": "Herd Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "tag_id": "Advanced Tag Id 1",
+          "name": "Advanced Name 1",
+          "species": "Advanced Species 1",
+          "breed": "Advanced Breed 1",
+          "date_of_birth": "2024-01-01",
+          "gender": "Advanced Gender 1",
+          "weight": 10,
+          "color": "Advanced Color 1",
+          "status": "active",
+          "purchase_date": "2024-01-01",
+          "purchase_price": 500,
+          "herd_id": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "tag_id": "Premium Tag Id 2",
+          "name": "Premium Name 2",
+          "species": "Premium Species 2",
+          "breed": "Premium Breed 2",
+          "date_of_birth": "2024-02-03",
+          "gender": "Premium Gender 2",
+          "weight": 71.7,
+          "color": "Premium Color 2",
+          "status": "pending",
+          "purchase_date": "2024-02-03",
+          "purchase_price": 2481,
+          "herd_id": 58,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "tag_id": "Standard Tag Id 3",
+          "name": "Standard Name 3",
+          "species": "Standard Species 3",
+          "breed": "Standard Breed 3",
+          "date_of_birth": "2024-03-05",
+          "gender": "Standard Gender 3",
+          "weight": 33.4,
+          "color": "Standard Color 3",
+          "status": "in_progress",
+          "purchase_date": "2024-03-05",
+          "purchase_price": 4462,
+          "herd_id": 106,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "tag_id": "Elite Tag Id 4",
+          "name": "Elite Name 4",
+          "species": "Elite Species 4",
+          "breed": "Elite Breed 4",
+          "date_of_birth": "2024-04-07",
+          "gender": "Elite Gender 4",
+          "weight": 95.1,
+          "color": "Elite Color 4",
+          "status": "completed",
+          "purchase_date": "2024-04-07",
+          "purchase_price": 6443,
+          "herd_id": 154,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "tag_id": "Core Tag Id 5",
+          "name": "Core Name 5",
+          "species": "Core Species 5",
+          "breed": "Core Breed 5",
+          "date_of_birth": "2024-05-09",
+          "gender": "Core Gender 5",
+          "weight": 56.8,
+          "color": "Core Color 5",
+          "status": "under_review",
+          "purchase_date": "2024-05-09",
+          "purchase_price": 8424,
+          "herd_id": 102,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "tag_id": "Pro Tag Id 6",
+          "name": "Pro Name 6",
+          "species": "Pro Species 6",
+          "breed": "Pro Breed 6",
+          "date_of_birth": "2024-06-11",
+          "gender": "Pro Gender 6",
+          "weight": 118.5,
+          "color": "Pro Color 6",
+          "status": "approved",
+          "purchase_date": "2024-06-11",
+          "purchase_price": 10405,
+          "herd_id": 150,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "tag_id": "Essential Tag Id 7",
+          "name": "Essential Name 7",
+          "species": "Essential Species 7",
+          "breed": "Essential Breed 7",
+          "date_of_birth": "2024-07-13",
+          "gender": "Essential Gender 7",
+          "weight": 80.2,
+          "color": "Essential Color 7",
+          "status": "active",
+          "purchase_date": "2024-07-13",
+          "purchase_price": 12386,
+          "herd_id": 198,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "tag_id": "Primary Tag Id 8",
+          "name": "Primary Name 8",
+          "species": "Primary Species 8",
+          "breed": "Primary Breed 8",
+          "date_of_birth": "2024-08-15",
+          "gender": "Primary Gender 8",
+          "weight": 141.9,
+          "color": "Primary Color 8",
+          "status": "active",
+          "purchase_date": "2024-08-15",
+          "purchase_price": 9367,
+          "herd_id": 146,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "tag_id": "Global Tag Id 9",
+          "name": "Global Name 9",
+          "species": "Global Species 9",
+          "breed": "Global Breed 9",
+          "date_of_birth": "2024-09-17",
+          "gender": "Global Gender 9",
+          "weight": 103.6,
+          "color": "Global Color 9",
+          "status": "active",
+          "purchase_date": "2024-09-17",
+          "purchase_price": 11348,
+          "herd_id": 194,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "tag_id": "Regional Tag Id 10",
+          "name": "Regional Name 10",
+          "species": "Regional Species 10",
+          "breed": "Regional Breed 10",
+          "date_of_birth": "2024-10-19",
+          "gender": "Regional Gender 10",
+          "weight": 165.3,
+          "color": "Regional Color 10",
+          "status": "pending",
+          "purchase_date": "2024-10-19",
+          "purchase_price": 13329,
+          "herd_id": 242,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "tag_id": "Custom Tag Id 11",
+          "name": "Custom Name 11",
+          "species": "Custom Species 11",
+          "breed": "Custom Breed 11",
+          "date_of_birth": "2024-11-21",
+          "gender": "Custom Gender 11",
+          "weight": 127,
+          "color": "Custom Color 11",
+          "status": "completed",
+          "purchase_date": "2024-11-21",
+          "purchase_price": 15310,
+          "herd_id": 190,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "tag_id": "Smart Tag Id 12",
+          "name": "Smart Name 12",
+          "species": "Smart Species 12",
+          "breed": "Smart Breed 12",
+          "date_of_birth": "2024-12-23",
+          "gender": "Smart Gender 12",
+          "weight": 188.7,
+          "color": "Smart Color 12",
+          "status": "active",
+          "purchase_date": "2024-12-23",
+          "purchase_price": 17291,
+          "herd_id": 238,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "tag_id": "Rapid Tag Id 13",
+          "name": "Rapid Name 13",
+          "species": "Rapid Species 13",
+          "breed": "Rapid Breed 13",
+          "date_of_birth": "2024-01-25",
+          "gender": "Rapid Gender 13",
+          "weight": 150.4,
+          "color": "Rapid Color 13",
+          "status": "in_progress",
+          "purchase_date": "2024-01-25",
+          "purchase_price": 19272,
+          "herd_id": 286,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "tag_id": "Secure Tag Id 14",
+          "name": "Secure Name 14",
+          "species": "Secure Species 14",
+          "breed": "Secure Breed 14",
+          "date_of_birth": "2024-02-27",
+          "gender": "Secure Gender 14",
+          "weight": 212.1,
+          "color": "Secure Color 14",
+          "status": "active",
+          "purchase_date": "2024-02-27",
+          "purchase_price": 21253,
+          "herd_id": 234,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "tag_id": "Modern Tag Id 15",
+          "name": "Modern Name 15",
+          "species": "Modern Species 15",
+          "breed": "Modern Breed 15",
+          "date_of_birth": "2024-03-01",
+          "gender": "Modern Gender 15",
+          "weight": 173.8,
+          "color": "Modern Color 15",
+          "status": "approved",
+          "purchase_date": "2024-03-01",
+          "purchase_price": 18234,
+          "herd_id": 282,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "BreedingRecord",
+      "routeKey": "breeding-records",
+      "label": "Breeding Record",
+      "icon": "clipboard",
+      "aiFunction": "analyzeBreedingRecord",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Breeding Record data. The data includes: Animal Id, Mate Id, Breeding Date, Method, Expected Due Date, Actual Birth Date, Offspring Count, Pregnancy Status, Sire Info, Genetic Notes, Complications, Veterinarian, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "animal_id",
+          "label": "Animal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "mate_id",
+          "label": "Mate Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "breeding_date",
+          "label": "Breeding Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "method",
+          "label": "Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "expected_due_date",
+          "label": "Expected Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "actual_birth_date",
+          "label": "Actual Birth Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "offspring_count",
+          "label": "Offspring Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "pregnancy_status",
+          "label": "Pregnancy Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sire_info",
+          "label": "Sire Info",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "genetic_notes",
+          "label": "Genetic Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "complications",
+          "label": "Complications",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "veterinarian",
+          "label": "Veterinarian",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "animal_id": 10,
+          "mate_id": 10,
+          "breeding_date": "2024-01-01",
+          "method": "Advanced Method 1",
+          "expected_due_date": "2024-01-01",
+          "actual_birth_date": "2024-01-01",
+          "offspring_count": 152,
+          "pregnancy_status": "active",
+          "sire_info": "Advanced Sire Info 1",
+          "genetic_notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "complications": "Comprehensive solution designed for optimal performance and efficiency.",
+          "veterinarian": "Advanced Veterinarian 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "animal_id": 58,
+          "mate_id": 58,
+          "breeding_date": "2024-02-03",
+          "method": "Premium Method 2",
+          "expected_due_date": "2024-02-03",
+          "actual_birth_date": "2024-02-03",
+          "offspring_count": 95,
+          "pregnancy_status": "pending",
+          "sire_info": "Premium Sire Info 2",
+          "genetic_notes": "Industry-leading approach with proven results across multiple deployments.",
+          "complications": "Industry-leading approach with proven results across multiple deployments.",
+          "veterinarian": "Premium Veterinarian 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "animal_id": 106,
+          "mate_id": 106,
+          "breeding_date": "2024-03-05",
+          "method": "Standard Method 3",
+          "expected_due_date": "2024-03-05",
+          "actual_birth_date": "2024-03-05",
+          "offspring_count": 216,
+          "pregnancy_status": "in_progress",
+          "sire_info": "Standard Sire Info 3",
+          "genetic_notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "complications": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "veterinarian": "Standard Veterinarian 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "animal_id": 154,
+          "mate_id": 154,
+          "breeding_date": "2024-04-07",
+          "method": "Elite Method 4",
+          "expected_due_date": "2024-04-07",
+          "actual_birth_date": "2024-04-07",
+          "offspring_count": 163,
+          "pregnancy_status": "completed",
+          "sire_info": "Elite Sire Info 4",
+          "genetic_notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "complications": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "veterinarian": "Elite Veterinarian 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "animal_id": 102,
+          "mate_id": 102,
+          "breeding_date": "2024-05-09",
+          "method": "Core Method 5",
+          "expected_due_date": "2024-05-09",
+          "actual_birth_date": "2024-05-09",
+          "offspring_count": 92,
+          "pregnancy_status": "under_review",
+          "sire_info": "Core Sire Info 5",
+          "genetic_notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "complications": "Cost-effective strategy focused on sustainable long-term growth.",
+          "veterinarian": "Core Veterinarian 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "animal_id": 150,
+          "mate_id": 150,
+          "breeding_date": "2024-06-11",
+          "method": "Pro Method 6",
+          "expected_due_date": "2024-06-11",
+          "actual_birth_date": "2024-06-11",
+          "offspring_count": 219,
+          "pregnancy_status": "approved",
+          "sire_info": "Pro Sire Info 6",
+          "genetic_notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "complications": "High-priority initiative aligned with organizational strategic objectives.",
+          "veterinarian": "Pro Veterinarian 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "animal_id": 198,
+          "mate_id": 198,
+          "breeding_date": "2024-07-13",
+          "method": "Essential Method 7",
+          "expected_due_date": "2024-07-13",
+          "actual_birth_date": "2024-07-13",
+          "offspring_count": 199,
+          "pregnancy_status": "active",
+          "sire_info": "Essential Sire Info 7",
+          "genetic_notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "complications": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "veterinarian": "Essential Veterinarian 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "animal_id": 146,
+          "mate_id": 146,
+          "breeding_date": "2024-08-15",
+          "method": "Primary Method 8",
+          "expected_due_date": "2024-08-15",
+          "actual_birth_date": "2024-08-15",
+          "offspring_count": 145,
+          "pregnancy_status": "active",
+          "sire_info": "Primary Sire Info 8",
+          "genetic_notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "complications": "Innovative framework incorporating best practices and emerging technologies.",
+          "veterinarian": "Primary Veterinarian 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "animal_id": 194,
+          "mate_id": 194,
+          "breeding_date": "2024-09-17",
+          "method": "Global Method 9",
+          "expected_due_date": "2024-09-17",
+          "actual_birth_date": "2024-09-17",
+          "offspring_count": 205,
+          "pregnancy_status": "active",
+          "sire_info": "Global Sire Info 9",
+          "genetic_notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "complications": "Scalable architecture built to accommodate rapid expansion and change.",
+          "veterinarian": "Global Veterinarian 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "animal_id": 242,
+          "mate_id": 242,
+          "breeding_date": "2024-10-19",
+          "method": "Regional Method 10",
+          "expected_due_date": "2024-10-19",
+          "actual_birth_date": "2024-10-19",
+          "offspring_count": 200,
+          "pregnancy_status": "pending",
+          "sire_info": "Regional Sire Info 10",
+          "genetic_notes": "Enterprise-grade solution with robust security and compliance features.",
+          "complications": "Enterprise-grade solution with robust security and compliance features.",
+          "veterinarian": "Regional Veterinarian 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "animal_id": 190,
+          "mate_id": 190,
+          "breeding_date": "2024-11-21",
+          "method": "Custom Method 11",
+          "expected_due_date": "2024-11-21",
+          "actual_birth_date": "2024-11-21",
+          "offspring_count": 191,
+          "pregnancy_status": "completed",
+          "sire_info": "Custom Sire Info 11",
+          "genetic_notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "complications": "Integrated platform connecting multiple systems for seamless operations.",
+          "veterinarian": "Custom Veterinarian 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "animal_id": 238,
+          "mate_id": 238,
+          "breeding_date": "2024-12-23",
+          "method": "Smart Method 12",
+          "expected_due_date": "2024-12-23",
+          "actual_birth_date": "2024-12-23",
+          "offspring_count": 82,
+          "pregnancy_status": "active",
+          "sire_info": "Smart Sire Info 12",
+          "genetic_notes": "Automated workflow reducing manual intervention and human error.",
+          "complications": "Automated workflow reducing manual intervention and human error.",
+          "veterinarian": "Smart Veterinarian 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "animal_id": 286,
+          "mate_id": 286,
+          "breeding_date": "2024-01-25",
+          "method": "Rapid Method 13",
+          "expected_due_date": "2024-01-25",
+          "actual_birth_date": "2024-01-25",
+          "offspring_count": 98,
+          "pregnancy_status": "in_progress",
+          "sire_info": "Rapid Sire Info 13",
+          "genetic_notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "complications": "Real-time monitoring system with intelligent alerting capabilities.",
+          "veterinarian": "Rapid Veterinarian 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "animal_id": 234,
+          "mate_id": 234,
+          "breeding_date": "2024-02-27",
+          "method": "Secure Method 14",
+          "expected_due_date": "2024-02-27",
+          "actual_birth_date": "2024-02-27",
+          "offspring_count": 227,
+          "pregnancy_status": "active",
+          "sire_info": "Secure Sire Info 14",
+          "genetic_notes": "Customizable module adaptable to diverse operational requirements.",
+          "complications": "Customizable module adaptable to diverse operational requirements.",
+          "veterinarian": "Secure Veterinarian 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "animal_id": 282,
+          "mate_id": 282,
+          "breeding_date": "2024-03-01",
+          "method": "Modern Method 15",
+          "expected_due_date": "2024-03-01",
+          "actual_birth_date": "2024-03-01",
+          "offspring_count": 126,
+          "pregnancy_status": "approved",
+          "sire_info": "Modern Sire Info 15",
+          "genetic_notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "complications": "Performance-optimized design achieving superior throughput and reliability.",
+          "veterinarian": "Modern Veterinarian 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "DiseaseDetection",
+      "routeKey": "disease-detections",
+      "label": "Disease Detection",
+      "icon": "database",
+      "aiFunction": "analyzeDiseaseDetection",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Disease Detection data. The data includes: Animal Id, Detection Date, Disease Name, Symptoms, Confidence Level, Detection Method, Ai Analysis, Severity, Contagious, Quarantine Required, Treatment Plan, Detected By, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "animal_id",
+          "label": "Animal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "detection_date",
+          "label": "Detection Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "disease_name",
+          "label": "Disease Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "symptoms",
+          "label": "Symptoms",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "confidence_level",
+          "label": "Confidence Level",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "detection_method",
+          "label": "Detection Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ai_analysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "contagious",
+          "label": "Contagious",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "quarantine_required",
+          "label": "Quarantine Required",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "treatment_plan",
+          "label": "Treatment Plan",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "detected_by",
+          "label": "Detected By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "animal_id": 10,
+          "detection_date": "2024-01-01",
+          "disease_name": "Advanced Disease 1",
+          "symptoms": "Comprehensive solution designed for optimal performance and efficiency.",
+          "confidence_level": 10,
+          "detection_method": "Advanced Detection Method 1",
+          "ai_analysis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "severity": "low",
+          "contagious": true,
+          "quarantine_required": true,
+          "treatment_plan": "Comprehensive solution designed for optimal performance and efficiency.",
+          "detected_by": "Advanced Detected By 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "animal_id": 58,
+          "detection_date": "2024-02-03",
+          "disease_name": "Premium Disease 2",
+          "symptoms": "Industry-leading approach with proven results across multiple deployments.",
+          "confidence_level": 71.7,
+          "detection_method": "Premium Detection Method 2",
+          "ai_analysis": "Industry-leading approach with proven results across multiple deployments.",
+          "severity": "medium",
+          "contagious": true,
+          "quarantine_required": true,
+          "treatment_plan": "Industry-leading approach with proven results across multiple deployments.",
+          "detected_by": "Premium Detected By 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "animal_id": 106,
+          "detection_date": "2024-03-05",
+          "disease_name": "Standard Disease 3",
+          "symptoms": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "confidence_level": 33.4,
+          "detection_method": "Standard Detection Method 3",
+          "ai_analysis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "severity": "high",
+          "contagious": false,
+          "quarantine_required": false,
+          "treatment_plan": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "detected_by": "Standard Detected By 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "animal_id": 154,
+          "detection_date": "2024-04-07",
+          "disease_name": "Elite Disease 4",
+          "symptoms": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "confidence_level": 95.1,
+          "detection_method": "Elite Detection Method 4",
+          "ai_analysis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "severity": "critical",
+          "contagious": true,
+          "quarantine_required": true,
+          "treatment_plan": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "detected_by": "Elite Detected By 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "animal_id": 102,
+          "detection_date": "2024-05-09",
+          "disease_name": "Core Disease 5",
+          "symptoms": "Cost-effective strategy focused on sustainable long-term growth.",
+          "confidence_level": 56.8,
+          "detection_method": "Core Detection Method 5",
+          "ai_analysis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "severity": "medium",
+          "contagious": false,
+          "quarantine_required": false,
+          "treatment_plan": "Cost-effective strategy focused on sustainable long-term growth.",
+          "detected_by": "Core Detected By 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "animal_id": 150,
+          "detection_date": "2024-06-11",
+          "disease_name": "Pro Disease 6",
+          "symptoms": "High-priority initiative aligned with organizational strategic objectives.",
+          "confidence_level": 118.5,
+          "detection_method": "Pro Detection Method 6",
+          "ai_analysis": "High-priority initiative aligned with organizational strategic objectives.",
+          "severity": "low",
+          "contagious": true,
+          "quarantine_required": true,
+          "treatment_plan": "High-priority initiative aligned with organizational strategic objectives.",
+          "detected_by": "Pro Detected By 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "animal_id": 198,
+          "detection_date": "2024-07-13",
+          "disease_name": "Essential Disease 7",
+          "symptoms": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "confidence_level": 80.2,
+          "detection_method": "Essential Detection Method 7",
+          "ai_analysis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "severity": "medium",
+          "contagious": true,
+          "quarantine_required": true,
+          "treatment_plan": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "detected_by": "Essential Detected By 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "animal_id": 146,
+          "detection_date": "2024-08-15",
+          "disease_name": "Primary Disease 8",
+          "symptoms": "Innovative framework incorporating best practices and emerging technologies.",
+          "confidence_level": 141.9,
+          "detection_method": "Primary Detection Method 8",
+          "ai_analysis": "Innovative framework incorporating best practices and emerging technologies.",
+          "severity": "high",
+          "contagious": false,
+          "quarantine_required": false,
+          "treatment_plan": "Innovative framework incorporating best practices and emerging technologies.",
+          "detected_by": "Primary Detected By 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "animal_id": 194,
+          "detection_date": "2024-09-17",
+          "disease_name": "Global Disease 9",
+          "symptoms": "Scalable architecture built to accommodate rapid expansion and change.",
+          "confidence_level": 103.6,
+          "detection_method": "Global Detection Method 9",
+          "ai_analysis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "severity": "critical",
+          "contagious": true,
+          "quarantine_required": true,
+          "treatment_plan": "Scalable architecture built to accommodate rapid expansion and change.",
+          "detected_by": "Global Detected By 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "animal_id": 242,
+          "detection_date": "2024-10-19",
+          "disease_name": "Regional Disease 10",
+          "symptoms": "Enterprise-grade solution with robust security and compliance features.",
+          "confidence_level": 165.3,
+          "detection_method": "Regional Detection Method 10",
+          "ai_analysis": "Enterprise-grade solution with robust security and compliance features.",
+          "severity": "medium",
+          "contagious": true,
+          "quarantine_required": true,
+          "treatment_plan": "Enterprise-grade solution with robust security and compliance features.",
+          "detected_by": "Regional Detected By 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "animal_id": 190,
+          "detection_date": "2024-11-21",
+          "disease_name": "Custom Disease 11",
+          "symptoms": "Integrated platform connecting multiple systems for seamless operations.",
+          "confidence_level": 127,
+          "detection_method": "Custom Detection Method 11",
+          "ai_analysis": "Integrated platform connecting multiple systems for seamless operations.",
+          "severity": "low",
+          "contagious": false,
+          "quarantine_required": false,
+          "treatment_plan": "Integrated platform connecting multiple systems for seamless operations.",
+          "detected_by": "Custom Detected By 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "animal_id": 238,
+          "detection_date": "2024-12-23",
+          "disease_name": "Smart Disease 12",
+          "symptoms": "Automated workflow reducing manual intervention and human error.",
+          "confidence_level": 188.7,
+          "detection_method": "Smart Detection Method 12",
+          "ai_analysis": "Automated workflow reducing manual intervention and human error.",
+          "severity": "medium",
+          "contagious": true,
+          "quarantine_required": true,
+          "treatment_plan": "Automated workflow reducing manual intervention and human error.",
+          "detected_by": "Smart Detected By 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "animal_id": 286,
+          "detection_date": "2024-01-25",
+          "disease_name": "Rapid Disease 13",
+          "symptoms": "Real-time monitoring system with intelligent alerting capabilities.",
+          "confidence_level": 150.4,
+          "detection_method": "Rapid Detection Method 13",
+          "ai_analysis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "severity": "high",
+          "contagious": false,
+          "quarantine_required": false,
+          "treatment_plan": "Real-time monitoring system with intelligent alerting capabilities.",
+          "detected_by": "Rapid Detected By 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "animal_id": 234,
+          "detection_date": "2024-02-27",
+          "disease_name": "Secure Disease 14",
+          "symptoms": "Customizable module adaptable to diverse operational requirements.",
+          "confidence_level": 212.1,
+          "detection_method": "Secure Detection Method 14",
+          "ai_analysis": "Customizable module adaptable to diverse operational requirements.",
+          "severity": "critical",
+          "contagious": true,
+          "quarantine_required": true,
+          "treatment_plan": "Customizable module adaptable to diverse operational requirements.",
+          "detected_by": "Secure Detected By 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "animal_id": 282,
+          "detection_date": "2024-03-01",
+          "disease_name": "Modern Disease 15",
+          "symptoms": "Performance-optimized design achieving superior throughput and reliability.",
+          "confidence_level": 173.8,
+          "detection_method": "Modern Detection Method 15",
+          "ai_analysis": "Performance-optimized design achieving superior throughput and reliability.",
+          "severity": "medium",
+          "contagious": true,
+          "quarantine_required": true,
+          "treatment_plan": "Performance-optimized design achieving superior throughput and reliability.",
+          "detected_by": "Modern Detected By 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "FeedManagement",
+      "routeKey": "feed-managements",
+      "label": "Feed Management",
+      "icon": "file-text",
+      "aiFunction": "analyzeFeedManagement",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Feed Management data. The data includes: Animal Id, Herd Id, Feed Type, Brand, Quantity Kg, Feeding Date, Feeding Time, Cost Per Kg, Total Cost, Nutritional Info, Supplier, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "animal_id",
+          "label": "Animal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "herd_id",
+          "label": "Herd Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "feed_type",
+          "label": "Feed Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "brand",
+          "label": "Brand",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity_kg",
+          "label": "Quantity Kg",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "feeding_date",
+          "label": "Feeding Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "feeding_time",
+          "label": "Feeding Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cost_per_kg",
+          "label": "Cost Per Kg",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "total_cost",
+          "label": "Total Cost",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "nutritional_info",
+          "label": "Nutritional Info",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "supplier",
+          "label": "Supplier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "animal_id": 10,
+          "herd_id": 10,
+          "feed_type": "Category A",
+          "brand": "Advanced Brand 1",
+          "quantity_kg": 10,
+          "feeding_date": "2024-01-01",
+          "feeding_time": "Advanced Feeding Time 1",
+          "cost_per_kg": 500,
+          "total_cost": 500,
+          "nutritional_info": "Comprehensive solution designed for optimal performance and efficiency.",
+          "supplier": "Advanced Supplier 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "animal_id": 58,
+          "herd_id": 58,
+          "feed_type": "Category B",
+          "brand": "Premium Brand 2",
+          "quantity_kg": 71.7,
+          "feeding_date": "2024-02-03",
+          "feeding_time": "Premium Feeding Time 2",
+          "cost_per_kg": 2481,
+          "total_cost": 2481,
+          "nutritional_info": "Industry-leading approach with proven results across multiple deployments.",
+          "supplier": "Premium Supplier 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "animal_id": 106,
+          "herd_id": 106,
+          "feed_type": "Category C",
+          "brand": "Standard Brand 3",
+          "quantity_kg": 33.4,
+          "feeding_date": "2024-03-05",
+          "feeding_time": "Standard Feeding Time 3",
+          "cost_per_kg": 4462,
+          "total_cost": 4462,
+          "nutritional_info": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "supplier": "Standard Supplier 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "animal_id": 154,
+          "herd_id": 154,
+          "feed_type": "Category D",
+          "brand": "Elite Brand 4",
+          "quantity_kg": 95.1,
+          "feeding_date": "2024-04-07",
+          "feeding_time": "Elite Feeding Time 4",
+          "cost_per_kg": 6443,
+          "total_cost": 6443,
+          "nutritional_info": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "supplier": "Elite Supplier 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "animal_id": 102,
+          "herd_id": 102,
+          "feed_type": "Category E",
+          "brand": "Core Brand 5",
+          "quantity_kg": 56.8,
+          "feeding_date": "2024-05-09",
+          "feeding_time": "Core Feeding Time 5",
+          "cost_per_kg": 8424,
+          "total_cost": 8424,
+          "nutritional_info": "Cost-effective strategy focused on sustainable long-term growth.",
+          "supplier": "Core Supplier 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "animal_id": 150,
+          "herd_id": 150,
+          "feed_type": "Premium Tier",
+          "brand": "Pro Brand 6",
+          "quantity_kg": 118.5,
+          "feeding_date": "2024-06-11",
+          "feeding_time": "Pro Feeding Time 6",
+          "cost_per_kg": 10405,
+          "total_cost": 10405,
+          "nutritional_info": "High-priority initiative aligned with organizational strategic objectives.",
+          "supplier": "Pro Supplier 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "animal_id": 198,
+          "herd_id": 198,
+          "feed_type": "Standard Tier",
+          "brand": "Essential Brand 7",
+          "quantity_kg": 80.2,
+          "feeding_date": "2024-07-13",
+          "feeding_time": "Essential Feeding Time 7",
+          "cost_per_kg": 12386,
+          "total_cost": 12386,
+          "nutritional_info": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "supplier": "Essential Supplier 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "animal_id": 146,
+          "herd_id": 146,
+          "feed_type": "Basic Tier",
+          "brand": "Primary Brand 8",
+          "quantity_kg": 141.9,
+          "feeding_date": "2024-08-15",
+          "feeding_time": "Primary Feeding Time 8",
+          "cost_per_kg": 9367,
+          "total_cost": 9367,
+          "nutritional_info": "Innovative framework incorporating best practices and emerging technologies.",
+          "supplier": "Primary Supplier 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "animal_id": 194,
+          "herd_id": 194,
+          "feed_type": "Enterprise",
+          "brand": "Global Brand 9",
+          "quantity_kg": 103.6,
+          "feeding_date": "2024-09-17",
+          "feeding_time": "Global Feeding Time 9",
+          "cost_per_kg": 11348,
+          "total_cost": 11348,
+          "nutritional_info": "Scalable architecture built to accommodate rapid expansion and change.",
+          "supplier": "Global Supplier 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "animal_id": 242,
+          "herd_id": 242,
+          "feed_type": "Starter",
+          "brand": "Regional Brand 10",
+          "quantity_kg": 165.3,
+          "feeding_date": "2024-10-19",
+          "feeding_time": "Regional Feeding Time 10",
+          "cost_per_kg": 13329,
+          "total_cost": 13329,
+          "nutritional_info": "Enterprise-grade solution with robust security and compliance features.",
+          "supplier": "Regional Supplier 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "animal_id": 190,
+          "herd_id": 190,
+          "feed_type": "Growth",
+          "brand": "Custom Brand 11",
+          "quantity_kg": 127,
+          "feeding_date": "2024-11-21",
+          "feeding_time": "Custom Feeding Time 11",
+          "cost_per_kg": 15310,
+          "total_cost": 15310,
+          "nutritional_info": "Integrated platform connecting multiple systems for seamless operations.",
+          "supplier": "Custom Supplier 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "animal_id": 238,
+          "herd_id": 238,
+          "feed_type": "Scale",
+          "brand": "Smart Brand 12",
+          "quantity_kg": 188.7,
+          "feeding_date": "2024-12-23",
+          "feeding_time": "Smart Feeding Time 12",
+          "cost_per_kg": 17291,
+          "total_cost": 17291,
+          "nutritional_info": "Automated workflow reducing manual intervention and human error.",
+          "supplier": "Smart Supplier 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "animal_id": 286,
+          "herd_id": 286,
+          "feed_type": "Foundation",
+          "brand": "Rapid Brand 13",
+          "quantity_kg": 150.4,
+          "feeding_date": "2024-01-25",
+          "feeding_time": "Rapid Feeding Time 13",
+          "cost_per_kg": 19272,
+          "total_cost": 19272,
+          "nutritional_info": "Real-time monitoring system with intelligent alerting capabilities.",
+          "supplier": "Rapid Supplier 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "animal_id": 234,
+          "herd_id": 234,
+          "feed_type": "Advanced",
+          "brand": "Secure Brand 14",
+          "quantity_kg": 212.1,
+          "feeding_date": "2024-02-27",
+          "feeding_time": "Secure Feeding Time 14",
+          "cost_per_kg": 21253,
+          "total_cost": 21253,
+          "nutritional_info": "Customizable module adaptable to diverse operational requirements.",
+          "supplier": "Secure Supplier 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "animal_id": 282,
+          "herd_id": 282,
+          "feed_type": "Professional",
+          "brand": "Modern Brand 15",
+          "quantity_kg": 173.8,
+          "feeding_date": "2024-03-01",
+          "feeding_time": "Modern Feeding Time 15",
+          "cost_per_kg": 18234,
+          "total_cost": 18234,
+          "nutritional_info": "Performance-optimized design achieving superior throughput and reliability.",
+          "supplier": "Modern Supplier 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "FinancialRecord",
+      "routeKey": "financial-records",
+      "label": "Financial Record",
+      "icon": "heart",
+      "aiFunction": "analyzeFinancialRecord",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Financial Record data. The data includes: Category, Type, Amount, Date, Description, Animal Id, Herd Id, Vendor, Invoice Number, Payment Method, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "animal_id",
+          "label": "Animal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "herd_id",
+          "label": "Herd Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "vendor",
+          "label": "Vendor",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "invoice_number",
+          "label": "Invoice Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "payment_method",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "category": "Category A",
+          "type": "Category A",
+          "amount": 500,
+          "date": "2024-01-01",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "animal_id": 10,
+          "herd_id": 10,
+          "vendor": "Advanced Vendor 1",
+          "invoice_number": "Advanced Invoice Number 1",
+          "payment_method": "Advanced Payment Method 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "category": "Category B",
+          "type": "Category B",
+          "amount": 2481,
+          "date": "2024-02-03",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "animal_id": 58,
+          "herd_id": 58,
+          "vendor": "Premium Vendor 2",
+          "invoice_number": "Premium Invoice Number 2",
+          "payment_method": "Premium Payment Method 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "category": "Category C",
+          "type": "Category C",
+          "amount": 4462,
+          "date": "2024-03-05",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "animal_id": 106,
+          "herd_id": 106,
+          "vendor": "Standard Vendor 3",
+          "invoice_number": "Standard Invoice Number 3",
+          "payment_method": "Standard Payment Method 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "category": "Category D",
+          "type": "Category D",
+          "amount": 6443,
+          "date": "2024-04-07",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "animal_id": 154,
+          "herd_id": 154,
+          "vendor": "Elite Vendor 4",
+          "invoice_number": "Elite Invoice Number 4",
+          "payment_method": "Elite Payment Method 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "category": "Category E",
+          "type": "Category E",
+          "amount": 8424,
+          "date": "2024-05-09",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "animal_id": 102,
+          "herd_id": 102,
+          "vendor": "Core Vendor 5",
+          "invoice_number": "Core Invoice Number 5",
+          "payment_method": "Core Payment Method 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "category": "Premium Tier",
+          "type": "Premium Tier",
+          "amount": 10405,
+          "date": "2024-06-11",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "animal_id": 150,
+          "herd_id": 150,
+          "vendor": "Pro Vendor 6",
+          "invoice_number": "Pro Invoice Number 6",
+          "payment_method": "Pro Payment Method 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "category": "Standard Tier",
+          "type": "Standard Tier",
+          "amount": 12386,
+          "date": "2024-07-13",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "animal_id": 198,
+          "herd_id": 198,
+          "vendor": "Essential Vendor 7",
+          "invoice_number": "Essential Invoice Number 7",
+          "payment_method": "Essential Payment Method 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "category": "Basic Tier",
+          "type": "Basic Tier",
+          "amount": 9367,
+          "date": "2024-08-15",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "animal_id": 146,
+          "herd_id": 146,
+          "vendor": "Primary Vendor 8",
+          "invoice_number": "Primary Invoice Number 8",
+          "payment_method": "Primary Payment Method 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "category": "Enterprise",
+          "type": "Enterprise",
+          "amount": 11348,
+          "date": "2024-09-17",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "animal_id": 194,
+          "herd_id": 194,
+          "vendor": "Global Vendor 9",
+          "invoice_number": "Global Invoice Number 9",
+          "payment_method": "Global Payment Method 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "category": "Starter",
+          "type": "Starter",
+          "amount": 13329,
+          "date": "2024-10-19",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "animal_id": 242,
+          "herd_id": 242,
+          "vendor": "Regional Vendor 10",
+          "invoice_number": "Regional Invoice Number 10",
+          "payment_method": "Regional Payment Method 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "category": "Growth",
+          "type": "Growth",
+          "amount": 15310,
+          "date": "2024-11-21",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "animal_id": 190,
+          "herd_id": 190,
+          "vendor": "Custom Vendor 11",
+          "invoice_number": "Custom Invoice Number 11",
+          "payment_method": "Custom Payment Method 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "category": "Scale",
+          "type": "Scale",
+          "amount": 17291,
+          "date": "2024-12-23",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "animal_id": 238,
+          "herd_id": 238,
+          "vendor": "Smart Vendor 12",
+          "invoice_number": "Smart Invoice Number 12",
+          "payment_method": "Smart Payment Method 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "category": "Foundation",
+          "type": "Foundation",
+          "amount": 19272,
+          "date": "2024-01-25",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "animal_id": 286,
+          "herd_id": 286,
+          "vendor": "Rapid Vendor 13",
+          "invoice_number": "Rapid Invoice Number 13",
+          "payment_method": "Rapid Payment Method 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "category": "Advanced",
+          "type": "Advanced",
+          "amount": 21253,
+          "date": "2024-02-27",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "animal_id": 234,
+          "herd_id": 234,
+          "vendor": "Secure Vendor 14",
+          "invoice_number": "Secure Invoice Number 14",
+          "payment_method": "Secure Payment Method 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "category": "Professional",
+          "type": "Professional",
+          "amount": 18234,
+          "date": "2024-03-01",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "animal_id": 282,
+          "herd_id": 282,
+          "vendor": "Modern Vendor 15",
+          "invoice_number": "Modern Invoice Number 15",
+          "payment_method": "Modern Payment Method 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "HealthRecord",
+      "routeKey": "health-records",
+      "label": "Health Record",
+      "icon": "layers",
+      "aiFunction": "analyzeHealthRecord",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Health Record data. The data includes: Animal Id, Record Date, Temperature, Heart Rate, Respiratory Rate, Weight, Body Condition Score, Symptoms, Diagnosis, Treatment, Veterinarian, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "animal_id",
+          "label": "Animal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "record_date",
+          "label": "Record Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "temperature",
+          "label": "Temperature",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "heart_rate",
+          "label": "Heart Rate",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "respiratory_rate",
+          "label": "Respiratory Rate",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "body_condition_score",
+          "label": "Body Condition Score",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "symptoms",
+          "label": "Symptoms",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "diagnosis",
+          "label": "Diagnosis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "treatment",
+          "label": "Treatment",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "veterinarian",
+          "label": "Veterinarian",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "animal_id": 10,
+          "record_date": "2024-01-01",
+          "temperature": 10,
+          "heart_rate": 10,
+          "respiratory_rate": 10,
+          "weight": 10,
+          "body_condition_score": 1.5,
+          "symptoms": "Comprehensive solution designed for optimal performance and efficiency.",
+          "diagnosis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "treatment": "Comprehensive solution designed for optimal performance and efficiency.",
+          "veterinarian": "Advanced Veterinarian 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "animal_id": 58,
+          "record_date": "2024-02-03",
+          "temperature": 71.7,
+          "heart_rate": 58,
+          "respiratory_rate": 58,
+          "weight": 71.7,
+          "body_condition_score": 2.1,
+          "symptoms": "Industry-leading approach with proven results across multiple deployments.",
+          "diagnosis": "Industry-leading approach with proven results across multiple deployments.",
+          "treatment": "Industry-leading approach with proven results across multiple deployments.",
+          "veterinarian": "Premium Veterinarian 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "animal_id": 106,
+          "record_date": "2024-03-05",
+          "temperature": 33.4,
+          "heart_rate": 106,
+          "respiratory_rate": 106,
+          "weight": 33.4,
+          "body_condition_score": 2.7,
+          "symptoms": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "diagnosis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "treatment": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "veterinarian": "Standard Veterinarian 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "animal_id": 154,
+          "record_date": "2024-04-07",
+          "temperature": 95.1,
+          "heart_rate": 154,
+          "respiratory_rate": 154,
+          "weight": 95.1,
+          "body_condition_score": 3.3,
+          "symptoms": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "diagnosis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "treatment": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "veterinarian": "Elite Veterinarian 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "animal_id": 102,
+          "record_date": "2024-05-09",
+          "temperature": 56.8,
+          "heart_rate": 102,
+          "respiratory_rate": 102,
+          "weight": 56.8,
+          "body_condition_score": 3.9,
+          "symptoms": "Cost-effective strategy focused on sustainable long-term growth.",
+          "diagnosis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "treatment": "Cost-effective strategy focused on sustainable long-term growth.",
+          "veterinarian": "Core Veterinarian 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "animal_id": 150,
+          "record_date": "2024-06-11",
+          "temperature": 118.5,
+          "heart_rate": 150,
+          "respiratory_rate": 150,
+          "weight": 118.5,
+          "body_condition_score": 4.5,
+          "symptoms": "High-priority initiative aligned with organizational strategic objectives.",
+          "diagnosis": "High-priority initiative aligned with organizational strategic objectives.",
+          "treatment": "High-priority initiative aligned with organizational strategic objectives.",
+          "veterinarian": "Pro Veterinarian 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "animal_id": 198,
+          "record_date": "2024-07-13",
+          "temperature": 80.2,
+          "heart_rate": 198,
+          "respiratory_rate": 198,
+          "weight": 80.2,
+          "body_condition_score": 5.1,
+          "symptoms": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "diagnosis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "treatment": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "veterinarian": "Essential Veterinarian 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "animal_id": 146,
+          "record_date": "2024-08-15",
+          "temperature": 141.9,
+          "heart_rate": 146,
+          "respiratory_rate": 146,
+          "weight": 141.9,
+          "body_condition_score": 5.7,
+          "symptoms": "Innovative framework incorporating best practices and emerging technologies.",
+          "diagnosis": "Innovative framework incorporating best practices and emerging technologies.",
+          "treatment": "Innovative framework incorporating best practices and emerging technologies.",
+          "veterinarian": "Primary Veterinarian 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "animal_id": 194,
+          "record_date": "2024-09-17",
+          "temperature": 103.6,
+          "heart_rate": 194,
+          "respiratory_rate": 194,
+          "weight": 103.6,
+          "body_condition_score": 6.3,
+          "symptoms": "Scalable architecture built to accommodate rapid expansion and change.",
+          "diagnosis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "treatment": "Scalable architecture built to accommodate rapid expansion and change.",
+          "veterinarian": "Global Veterinarian 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "animal_id": 242,
+          "record_date": "2024-10-19",
+          "temperature": 165.3,
+          "heart_rate": 242,
+          "respiratory_rate": 242,
+          "weight": 165.3,
+          "body_condition_score": 1.9,
+          "symptoms": "Enterprise-grade solution with robust security and compliance features.",
+          "diagnosis": "Enterprise-grade solution with robust security and compliance features.",
+          "treatment": "Enterprise-grade solution with robust security and compliance features.",
+          "veterinarian": "Regional Veterinarian 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "animal_id": 190,
+          "record_date": "2024-11-21",
+          "temperature": 127,
+          "heart_rate": 190,
+          "respiratory_rate": 190,
+          "weight": 127,
+          "body_condition_score": 2.5,
+          "symptoms": "Integrated platform connecting multiple systems for seamless operations.",
+          "diagnosis": "Integrated platform connecting multiple systems for seamless operations.",
+          "treatment": "Integrated platform connecting multiple systems for seamless operations.",
+          "veterinarian": "Custom Veterinarian 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "animal_id": 238,
+          "record_date": "2024-12-23",
+          "temperature": 188.7,
+          "heart_rate": 238,
+          "respiratory_rate": 238,
+          "weight": 188.7,
+          "body_condition_score": 3.1,
+          "symptoms": "Automated workflow reducing manual intervention and human error.",
+          "diagnosis": "Automated workflow reducing manual intervention and human error.",
+          "treatment": "Automated workflow reducing manual intervention and human error.",
+          "veterinarian": "Smart Veterinarian 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "animal_id": 286,
+          "record_date": "2024-01-25",
+          "temperature": 150.4,
+          "heart_rate": 286,
+          "respiratory_rate": 286,
+          "weight": 150.4,
+          "body_condition_score": 3.7,
+          "symptoms": "Real-time monitoring system with intelligent alerting capabilities.",
+          "diagnosis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "treatment": "Real-time monitoring system with intelligent alerting capabilities.",
+          "veterinarian": "Rapid Veterinarian 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "animal_id": 234,
+          "record_date": "2024-02-27",
+          "temperature": 212.1,
+          "heart_rate": 234,
+          "respiratory_rate": 234,
+          "weight": 212.1,
+          "body_condition_score": 4.3,
+          "symptoms": "Customizable module adaptable to diverse operational requirements.",
+          "diagnosis": "Customizable module adaptable to diverse operational requirements.",
+          "treatment": "Customizable module adaptable to diverse operational requirements.",
+          "veterinarian": "Secure Veterinarian 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "animal_id": 282,
+          "record_date": "2024-03-01",
+          "temperature": 173.8,
+          "heart_rate": 282,
+          "respiratory_rate": 282,
+          "weight": 173.8,
+          "body_condition_score": 4.9,
+          "symptoms": "Performance-optimized design achieving superior throughput and reliability.",
+          "diagnosis": "Performance-optimized design achieving superior throughput and reliability.",
+          "treatment": "Performance-optimized design achieving superior throughput and reliability.",
+          "veterinarian": "Modern Veterinarian 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Herd",
+      "routeKey": "herds",
+      "label": "Herd",
+      "icon": "map-pin",
+      "aiFunction": "analyzeHerd",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Herd data. The data includes: Name, Herd Type, Location, Capacity, Current Count, Manager, Established Date, Purpose, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "herd_type",
+          "label": "Herd Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "capacity",
+          "label": "Capacity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "current_count",
+          "label": "Current Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "manager",
+          "label": "Manager",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "established_date",
+          "label": "Established Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "purpose",
+          "label": "Purpose",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "herd_type": "Category A",
+          "location": "New York",
+          "capacity": 10,
+          "current_count": 78,
+          "manager": "Advanced Manager 1",
+          "established_date": "2024-01-01",
+          "purpose": "Advanced Purpose 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "herd_type": "Category B",
+          "location": "Los Angeles",
+          "capacity": 58,
+          "current_count": 180,
+          "manager": "Premium Manager 2",
+          "established_date": "2024-02-03",
+          "purpose": "Premium Purpose 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "herd_type": "Category C",
+          "location": "Chicago",
+          "capacity": 106,
+          "current_count": 214,
+          "manager": "Standard Manager 3",
+          "established_date": "2024-03-05",
+          "purpose": "Standard Purpose 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "herd_type": "Category D",
+          "location": "Houston",
+          "capacity": 154,
+          "current_count": 206,
+          "manager": "Elite Manager 4",
+          "established_date": "2024-04-07",
+          "purpose": "Elite Purpose 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "herd_type": "Category E",
+          "location": "Phoenix",
+          "capacity": 102,
+          "current_count": 143,
+          "manager": "Core Manager 5",
+          "established_date": "2024-05-09",
+          "purpose": "Core Purpose 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "herd_type": "Premium Tier",
+          "location": "San Francisco",
+          "capacity": 150,
+          "current_count": 160,
+          "manager": "Pro Manager 6",
+          "established_date": "2024-06-11",
+          "purpose": "Pro Purpose 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "herd_type": "Standard Tier",
+          "location": "Seattle",
+          "capacity": 198,
+          "current_count": 154,
+          "manager": "Essential Manager 7",
+          "established_date": "2024-07-13",
+          "purpose": "Essential Purpose 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "herd_type": "Basic Tier",
+          "location": "Boston",
+          "capacity": 146,
+          "current_count": 90,
+          "manager": "Primary Manager 8",
+          "established_date": "2024-08-15",
+          "purpose": "Primary Purpose 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "herd_type": "Enterprise",
+          "location": "Denver",
+          "capacity": 194,
+          "current_count": 111,
+          "manager": "Global Manager 9",
+          "established_date": "2024-09-17",
+          "purpose": "Global Purpose 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "herd_type": "Starter",
+          "location": "Miami",
+          "capacity": 242,
+          "current_count": 177,
+          "manager": "Regional Manager 10",
+          "established_date": "2024-10-19",
+          "purpose": "Regional Purpose 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "herd_type": "Growth",
+          "location": "Austin",
+          "capacity": 190,
+          "current_count": 183,
+          "manager": "Custom Manager 11",
+          "established_date": "2024-11-21",
+          "purpose": "Custom Purpose 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "herd_type": "Scale",
+          "location": "Portland",
+          "capacity": 238,
+          "current_count": 229,
+          "manager": "Smart Manager 12",
+          "established_date": "2024-12-23",
+          "purpose": "Smart Purpose 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "herd_type": "Foundation",
+          "location": "Dallas",
+          "capacity": 286,
+          "current_count": 133,
+          "manager": "Rapid Manager 13",
+          "established_date": "2024-01-25",
+          "purpose": "Rapid Purpose 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "herd_type": "Advanced",
+          "location": "Atlanta",
+          "capacity": 234,
+          "current_count": 288,
+          "manager": "Secure Manager 14",
+          "established_date": "2024-02-27",
+          "purpose": "Secure Purpose 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "herd_type": "Professional",
+          "location": "Nashville",
+          "capacity": 282,
+          "current_count": 226,
+          "manager": "Modern Manager 15",
+          "established_date": "2024-03-01",
+          "purpose": "Modern Purpose 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Medication",
+      "routeKey": "medications",
+      "label": "Medication",
+      "icon": "package",
+      "aiFunction": "analyzeMedication",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Medication data. The data includes: Animal Id, Medication Name, Medication Type, Dosage, Frequency, Start Date, End Date, Prescribed By, Reason, Side Effects, Withdrawal Period, Cost, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "animal_id",
+          "label": "Animal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "medication_name",
+          "label": "Medication Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "medication_type",
+          "label": "Medication Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dosage",
+          "label": "Dosage",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "frequency",
+          "label": "Frequency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "start_date",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "end_date",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "prescribed_by",
+          "label": "Prescribed By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reason",
+          "label": "Reason",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "side_effects",
+          "label": "Side Effects",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "withdrawal_period",
+          "label": "Withdrawal Period",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "animal_id": 10,
+          "medication_name": "Advanced Medication 1",
+          "medication_type": "Category A",
+          "dosage": "Advanced Dosage 1",
+          "frequency": "Advanced Frequency 1",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-01",
+          "prescribed_by": "Advanced Prescribed By 1",
+          "reason": "Advanced Reason 1",
+          "side_effects": "Comprehensive solution designed for optimal performance and efficiency.",
+          "withdrawal_period": "Advanced Withdrawal Period 1",
+          "cost": 500,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "animal_id": 58,
+          "medication_name": "Premium Medication 2",
+          "medication_type": "Category B",
+          "dosage": "Premium Dosage 2",
+          "frequency": "Premium Frequency 2",
+          "start_date": "2024-02-03",
+          "end_date": "2024-02-03",
+          "prescribed_by": "Premium Prescribed By 2",
+          "reason": "Premium Reason 2",
+          "side_effects": "Industry-leading approach with proven results across multiple deployments.",
+          "withdrawal_period": "Premium Withdrawal Period 2",
+          "cost": 2481,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "animal_id": 106,
+          "medication_name": "Standard Medication 3",
+          "medication_type": "Category C",
+          "dosage": "Standard Dosage 3",
+          "frequency": "Standard Frequency 3",
+          "start_date": "2024-03-05",
+          "end_date": "2024-03-05",
+          "prescribed_by": "Standard Prescribed By 3",
+          "reason": "Standard Reason 3",
+          "side_effects": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "withdrawal_period": "Standard Withdrawal Period 3",
+          "cost": 4462,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "animal_id": 154,
+          "medication_name": "Elite Medication 4",
+          "medication_type": "Category D",
+          "dosage": "Elite Dosage 4",
+          "frequency": "Elite Frequency 4",
+          "start_date": "2024-04-07",
+          "end_date": "2024-04-07",
+          "prescribed_by": "Elite Prescribed By 4",
+          "reason": "Elite Reason 4",
+          "side_effects": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "withdrawal_period": "Elite Withdrawal Period 4",
+          "cost": 6443,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "animal_id": 102,
+          "medication_name": "Core Medication 5",
+          "medication_type": "Category E",
+          "dosage": "Core Dosage 5",
+          "frequency": "Core Frequency 5",
+          "start_date": "2024-05-09",
+          "end_date": "2024-05-09",
+          "prescribed_by": "Core Prescribed By 5",
+          "reason": "Core Reason 5",
+          "side_effects": "Cost-effective strategy focused on sustainable long-term growth.",
+          "withdrawal_period": "Core Withdrawal Period 5",
+          "cost": 8424,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "animal_id": 150,
+          "medication_name": "Pro Medication 6",
+          "medication_type": "Premium Tier",
+          "dosage": "Pro Dosage 6",
+          "frequency": "Pro Frequency 6",
+          "start_date": "2024-06-11",
+          "end_date": "2024-06-11",
+          "prescribed_by": "Pro Prescribed By 6",
+          "reason": "Pro Reason 6",
+          "side_effects": "High-priority initiative aligned with organizational strategic objectives.",
+          "withdrawal_period": "Pro Withdrawal Period 6",
+          "cost": 10405,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "animal_id": 198,
+          "medication_name": "Essential Medication 7",
+          "medication_type": "Standard Tier",
+          "dosage": "Essential Dosage 7",
+          "frequency": "Essential Frequency 7",
+          "start_date": "2024-07-13",
+          "end_date": "2024-07-13",
+          "prescribed_by": "Essential Prescribed By 7",
+          "reason": "Essential Reason 7",
+          "side_effects": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "withdrawal_period": "Essential Withdrawal Period 7",
+          "cost": 12386,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "animal_id": 146,
+          "medication_name": "Primary Medication 8",
+          "medication_type": "Basic Tier",
+          "dosage": "Primary Dosage 8",
+          "frequency": "Primary Frequency 8",
+          "start_date": "2024-08-15",
+          "end_date": "2024-08-15",
+          "prescribed_by": "Primary Prescribed By 8",
+          "reason": "Primary Reason 8",
+          "side_effects": "Innovative framework incorporating best practices and emerging technologies.",
+          "withdrawal_period": "Primary Withdrawal Period 8",
+          "cost": 9367,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "animal_id": 194,
+          "medication_name": "Global Medication 9",
+          "medication_type": "Enterprise",
+          "dosage": "Global Dosage 9",
+          "frequency": "Global Frequency 9",
+          "start_date": "2024-09-17",
+          "end_date": "2024-09-17",
+          "prescribed_by": "Global Prescribed By 9",
+          "reason": "Global Reason 9",
+          "side_effects": "Scalable architecture built to accommodate rapid expansion and change.",
+          "withdrawal_period": "Global Withdrawal Period 9",
+          "cost": 11348,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "animal_id": 242,
+          "medication_name": "Regional Medication 10",
+          "medication_type": "Starter",
+          "dosage": "Regional Dosage 10",
+          "frequency": "Regional Frequency 10",
+          "start_date": "2024-10-19",
+          "end_date": "2024-10-19",
+          "prescribed_by": "Regional Prescribed By 10",
+          "reason": "Regional Reason 10",
+          "side_effects": "Enterprise-grade solution with robust security and compliance features.",
+          "withdrawal_period": "Regional Withdrawal Period 10",
+          "cost": 13329,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "animal_id": 190,
+          "medication_name": "Custom Medication 11",
+          "medication_type": "Growth",
+          "dosage": "Custom Dosage 11",
+          "frequency": "Custom Frequency 11",
+          "start_date": "2024-11-21",
+          "end_date": "2024-11-21",
+          "prescribed_by": "Custom Prescribed By 11",
+          "reason": "Custom Reason 11",
+          "side_effects": "Integrated platform connecting multiple systems for seamless operations.",
+          "withdrawal_period": "Custom Withdrawal Period 11",
+          "cost": 15310,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "animal_id": 238,
+          "medication_name": "Smart Medication 12",
+          "medication_type": "Scale",
+          "dosage": "Smart Dosage 12",
+          "frequency": "Smart Frequency 12",
+          "start_date": "2024-12-23",
+          "end_date": "2024-12-23",
+          "prescribed_by": "Smart Prescribed By 12",
+          "reason": "Smart Reason 12",
+          "side_effects": "Automated workflow reducing manual intervention and human error.",
+          "withdrawal_period": "Smart Withdrawal Period 12",
+          "cost": 17291,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "animal_id": 286,
+          "medication_name": "Rapid Medication 13",
+          "medication_type": "Foundation",
+          "dosage": "Rapid Dosage 13",
+          "frequency": "Rapid Frequency 13",
+          "start_date": "2024-01-25",
+          "end_date": "2024-01-25",
+          "prescribed_by": "Rapid Prescribed By 13",
+          "reason": "Rapid Reason 13",
+          "side_effects": "Real-time monitoring system with intelligent alerting capabilities.",
+          "withdrawal_period": "Rapid Withdrawal Period 13",
+          "cost": 19272,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "animal_id": 234,
+          "medication_name": "Secure Medication 14",
+          "medication_type": "Advanced",
+          "dosage": "Secure Dosage 14",
+          "frequency": "Secure Frequency 14",
+          "start_date": "2024-02-27",
+          "end_date": "2024-02-27",
+          "prescribed_by": "Secure Prescribed By 14",
+          "reason": "Secure Reason 14",
+          "side_effects": "Customizable module adaptable to diverse operational requirements.",
+          "withdrawal_period": "Secure Withdrawal Period 14",
+          "cost": 21253,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "animal_id": 282,
+          "medication_name": "Modern Medication 15",
+          "medication_type": "Professional",
+          "dosage": "Modern Dosage 15",
+          "frequency": "Modern Frequency 15",
+          "start_date": "2024-03-01",
+          "end_date": "2024-03-01",
+          "prescribed_by": "Modern Prescribed By 15",
+          "reason": "Modern Reason 15",
+          "side_effects": "Performance-optimized design achieving superior throughput and reliability.",
+          "withdrawal_period": "Modern Withdrawal Period 15",
+          "cost": 18234,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "MilkProduction",
+      "routeKey": "milk-productions",
+      "label": "Milk Production",
+      "icon": "shield",
+      "aiFunction": "analyzeMilkProduction",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Milk Production data. The data includes: Animal Id, Production Date, Session, Quantity Liters, Fat Percentage, Protein Percentage, Somatic Cell Count, Temperature, Quality Grade, Storage Tank, Recorded By, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "animal_id",
+          "label": "Animal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "production_date",
+          "label": "Production Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "session",
+          "label": "Session",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity_liters",
+          "label": "Quantity Liters",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "fat_percentage",
+          "label": "Fat Percentage",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "protein_percentage",
+          "label": "Protein Percentage",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "somatic_cell_count",
+          "label": "Somatic Cell Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "temperature",
+          "label": "Temperature",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "quality_grade",
+          "label": "Quality Grade",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "storage_tank",
+          "label": "Storage Tank",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recorded_by",
+          "label": "Recorded By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "animal_id": 10,
+          "production_date": "2024-01-01",
+          "session": "Advanced Session 1",
+          "quantity_liters": 10,
+          "fat_percentage": 1.5,
+          "protein_percentage": 1.5,
+          "somatic_cell_count": 127,
+          "temperature": 10,
+          "quality_grade": "Advanced Quality Grade 1",
+          "storage_tank": "Advanced Storage Tank 1",
+          "recorded_by": "Advanced Recorded By 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "animal_id": 58,
+          "production_date": "2024-02-03",
+          "session": "Premium Session 2",
+          "quantity_liters": 71.7,
+          "fat_percentage": 2.1,
+          "protein_percentage": 2.1,
+          "somatic_cell_count": 63,
+          "temperature": 71.7,
+          "quality_grade": "Premium Quality Grade 2",
+          "storage_tank": "Premium Storage Tank 2",
+          "recorded_by": "Premium Recorded By 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "animal_id": 106,
+          "production_date": "2024-03-05",
+          "session": "Standard Session 3",
+          "quantity_liters": 33.4,
+          "fat_percentage": 2.7,
+          "protein_percentage": 2.7,
+          "somatic_cell_count": 144,
+          "temperature": 33.4,
+          "quality_grade": "Standard Quality Grade 3",
+          "storage_tank": "Standard Storage Tank 3",
+          "recorded_by": "Standard Recorded By 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "animal_id": 154,
+          "production_date": "2024-04-07",
+          "session": "Elite Session 4",
+          "quantity_liters": 95.1,
+          "fat_percentage": 3.3,
+          "protein_percentage": 3.3,
+          "somatic_cell_count": 171,
+          "temperature": 95.1,
+          "quality_grade": "Elite Quality Grade 4",
+          "storage_tank": "Elite Storage Tank 4",
+          "recorded_by": "Elite Recorded By 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "animal_id": 102,
+          "production_date": "2024-05-09",
+          "session": "Core Session 5",
+          "quantity_liters": 56.8,
+          "fat_percentage": 3.9,
+          "protein_percentage": 3.9,
+          "somatic_cell_count": 103,
+          "temperature": 56.8,
+          "quality_grade": "Core Quality Grade 5",
+          "storage_tank": "Core Storage Tank 5",
+          "recorded_by": "Core Recorded By 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "animal_id": 150,
+          "production_date": "2024-06-11",
+          "session": "Pro Session 6",
+          "quantity_liters": 118.5,
+          "fat_percentage": 4.5,
+          "protein_percentage": 4.5,
+          "somatic_cell_count": 174,
+          "temperature": 118.5,
+          "quality_grade": "Pro Quality Grade 6",
+          "storage_tank": "Pro Storage Tank 6",
+          "recorded_by": "Pro Recorded By 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "animal_id": 198,
+          "production_date": "2024-07-13",
+          "session": "Essential Session 7",
+          "quantity_liters": 80.2,
+          "fat_percentage": 5.1,
+          "protein_percentage": 5.1,
+          "somatic_cell_count": 156,
+          "temperature": 80.2,
+          "quality_grade": "Essential Quality Grade 7",
+          "storage_tank": "Essential Storage Tank 7",
+          "recorded_by": "Essential Recorded By 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "animal_id": 146,
+          "production_date": "2024-08-15",
+          "session": "Primary Session 8",
+          "quantity_liters": 141.9,
+          "fat_percentage": 5.7,
+          "protein_percentage": 5.7,
+          "somatic_cell_count": 76,
+          "temperature": 141.9,
+          "quality_grade": "Primary Quality Grade 8",
+          "storage_tank": "Primary Storage Tank 8",
+          "recorded_by": "Primary Recorded By 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "animal_id": 194,
+          "production_date": "2024-09-17",
+          "session": "Global Session 9",
+          "quantity_liters": 103.6,
+          "fat_percentage": 6.3,
+          "protein_percentage": 6.3,
+          "somatic_cell_count": 160,
+          "temperature": 103.6,
+          "quality_grade": "Global Quality Grade 9",
+          "storage_tank": "Global Storage Tank 9",
+          "recorded_by": "Global Recorded By 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "animal_id": 242,
+          "production_date": "2024-10-19",
+          "session": "Regional Session 10",
+          "quantity_liters": 165.3,
+          "fat_percentage": 1.9,
+          "protein_percentage": 1.9,
+          "somatic_cell_count": 220,
+          "temperature": 165.3,
+          "quality_grade": "Regional Quality Grade 10",
+          "storage_tank": "Regional Storage Tank 10",
+          "recorded_by": "Regional Recorded By 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "animal_id": 190,
+          "production_date": "2024-11-21",
+          "session": "Custom Session 11",
+          "quantity_liters": 127,
+          "fat_percentage": 2.5,
+          "protein_percentage": 2.5,
+          "somatic_cell_count": 242,
+          "temperature": 127,
+          "quality_grade": "Custom Quality Grade 11",
+          "storage_tank": "Custom Storage Tank 11",
+          "recorded_by": "Custom Recorded By 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "animal_id": 238,
+          "production_date": "2024-12-23",
+          "session": "Smart Session 12",
+          "quantity_liters": 188.7,
+          "fat_percentage": 3.1,
+          "protein_percentage": 3.1,
+          "somatic_cell_count": 242,
+          "temperature": 188.7,
+          "quality_grade": "Smart Quality Grade 12",
+          "storage_tank": "Smart Storage Tank 12",
+          "recorded_by": "Smart Recorded By 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "animal_id": 286,
+          "production_date": "2024-01-25",
+          "session": "Rapid Session 13",
+          "quantity_liters": 150.4,
+          "fat_percentage": 3.7,
+          "protein_percentage": 3.7,
+          "somatic_cell_count": 104,
+          "temperature": 150.4,
+          "quality_grade": "Rapid Quality Grade 13",
+          "storage_tank": "Rapid Storage Tank 13",
+          "recorded_by": "Rapid Recorded By 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "animal_id": 234,
+          "production_date": "2024-02-27",
+          "session": "Secure Session 14",
+          "quantity_liters": 212.1,
+          "fat_percentage": 4.3,
+          "protein_percentage": 4.3,
+          "somatic_cell_count": 135,
+          "temperature": 212.1,
+          "quality_grade": "Secure Quality Grade 14",
+          "storage_tank": "Secure Storage Tank 14",
+          "recorded_by": "Secure Recorded By 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "animal_id": 282,
+          "production_date": "2024-03-01",
+          "session": "Modern Session 15",
+          "quantity_liters": 173.8,
+          "fat_percentage": 4.9,
+          "protein_percentage": 4.9,
+          "somatic_cell_count": 214,
+          "temperature": 173.8,
+          "quality_grade": "Modern Quality Grade 15",
+          "storage_tank": "Modern Storage Tank 15",
+          "recorded_by": "Modern Recorded By 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "MortalityRecord",
+      "routeKey": "mortality-records",
+      "label": "Mortality Record",
+      "icon": "star",
+      "aiFunction": "analyzeMortalityRecord",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Mortality Record data. The data includes: Animal Id, Date Of Death, Cause Of Death, Category, Age At Death, Symptoms Before Death, Autopsy Performed, Autopsy Findings, Economic Loss, Preventable, Reported By, Veterinarian, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "animal_id",
+          "label": "Animal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "date_of_death",
+          "label": "Date Of Death",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "cause_of_death",
+          "label": "Cause Of Death",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "age_at_death",
+          "label": "Age At Death",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "symptoms_before_death",
+          "label": "Symptoms Before Death",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "autopsy_performed",
+          "label": "Autopsy Performed",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "autopsy_findings",
+          "label": "Autopsy Findings",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "economic_loss",
+          "label": "Economic Loss",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "preventable",
+          "label": "Preventable",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "reported_by",
+          "label": "Reported By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "veterinarian",
+          "label": "Veterinarian",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "animal_id": 10,
+          "date_of_death": "2024-01-01",
+          "cause_of_death": "Advanced Cause Of Death 1",
+          "category": "Category A",
+          "age_at_death": "Advanced Age At Death 1",
+          "symptoms_before_death": "Comprehensive solution designed for optimal performance and efficiency.",
+          "autopsy_performed": true,
+          "autopsy_findings": "Comprehensive solution designed for optimal performance and efficiency.",
+          "economic_loss": 10,
+          "preventable": true,
+          "reported_by": "Advanced Reported By 1",
+          "veterinarian": "Advanced Veterinarian 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "animal_id": 58,
+          "date_of_death": "2024-02-03",
+          "cause_of_death": "Premium Cause Of Death 2",
+          "category": "Category B",
+          "age_at_death": "Premium Age At Death 2",
+          "symptoms_before_death": "Industry-leading approach with proven results across multiple deployments.",
+          "autopsy_performed": true,
+          "autopsy_findings": "Industry-leading approach with proven results across multiple deployments.",
+          "economic_loss": 71.7,
+          "preventable": true,
+          "reported_by": "Premium Reported By 2",
+          "veterinarian": "Premium Veterinarian 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "animal_id": 106,
+          "date_of_death": "2024-03-05",
+          "cause_of_death": "Standard Cause Of Death 3",
+          "category": "Category C",
+          "age_at_death": "Standard Age At Death 3",
+          "symptoms_before_death": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "autopsy_performed": false,
+          "autopsy_findings": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "economic_loss": 33.4,
+          "preventable": false,
+          "reported_by": "Standard Reported By 3",
+          "veterinarian": "Standard Veterinarian 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "animal_id": 154,
+          "date_of_death": "2024-04-07",
+          "cause_of_death": "Elite Cause Of Death 4",
+          "category": "Category D",
+          "age_at_death": "Elite Age At Death 4",
+          "symptoms_before_death": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "autopsy_performed": true,
+          "autopsy_findings": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "economic_loss": 95.1,
+          "preventable": true,
+          "reported_by": "Elite Reported By 4",
+          "veterinarian": "Elite Veterinarian 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "animal_id": 102,
+          "date_of_death": "2024-05-09",
+          "cause_of_death": "Core Cause Of Death 5",
+          "category": "Category E",
+          "age_at_death": "Core Age At Death 5",
+          "symptoms_before_death": "Cost-effective strategy focused on sustainable long-term growth.",
+          "autopsy_performed": false,
+          "autopsy_findings": "Cost-effective strategy focused on sustainable long-term growth.",
+          "economic_loss": 56.8,
+          "preventable": false,
+          "reported_by": "Core Reported By 5",
+          "veterinarian": "Core Veterinarian 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "animal_id": 150,
+          "date_of_death": "2024-06-11",
+          "cause_of_death": "Pro Cause Of Death 6",
+          "category": "Premium Tier",
+          "age_at_death": "Pro Age At Death 6",
+          "symptoms_before_death": "High-priority initiative aligned with organizational strategic objectives.",
+          "autopsy_performed": true,
+          "autopsy_findings": "High-priority initiative aligned with organizational strategic objectives.",
+          "economic_loss": 118.5,
+          "preventable": true,
+          "reported_by": "Pro Reported By 6",
+          "veterinarian": "Pro Veterinarian 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "animal_id": 198,
+          "date_of_death": "2024-07-13",
+          "cause_of_death": "Essential Cause Of Death 7",
+          "category": "Standard Tier",
+          "age_at_death": "Essential Age At Death 7",
+          "symptoms_before_death": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "autopsy_performed": true,
+          "autopsy_findings": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "economic_loss": 80.2,
+          "preventable": true,
+          "reported_by": "Essential Reported By 7",
+          "veterinarian": "Essential Veterinarian 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "animal_id": 146,
+          "date_of_death": "2024-08-15",
+          "cause_of_death": "Primary Cause Of Death 8",
+          "category": "Basic Tier",
+          "age_at_death": "Primary Age At Death 8",
+          "symptoms_before_death": "Innovative framework incorporating best practices and emerging technologies.",
+          "autopsy_performed": false,
+          "autopsy_findings": "Innovative framework incorporating best practices and emerging technologies.",
+          "economic_loss": 141.9,
+          "preventable": false,
+          "reported_by": "Primary Reported By 8",
+          "veterinarian": "Primary Veterinarian 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "animal_id": 194,
+          "date_of_death": "2024-09-17",
+          "cause_of_death": "Global Cause Of Death 9",
+          "category": "Enterprise",
+          "age_at_death": "Global Age At Death 9",
+          "symptoms_before_death": "Scalable architecture built to accommodate rapid expansion and change.",
+          "autopsy_performed": true,
+          "autopsy_findings": "Scalable architecture built to accommodate rapid expansion and change.",
+          "economic_loss": 103.6,
+          "preventable": true,
+          "reported_by": "Global Reported By 9",
+          "veterinarian": "Global Veterinarian 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "animal_id": 242,
+          "date_of_death": "2024-10-19",
+          "cause_of_death": "Regional Cause Of Death 10",
+          "category": "Starter",
+          "age_at_death": "Regional Age At Death 10",
+          "symptoms_before_death": "Enterprise-grade solution with robust security and compliance features.",
+          "autopsy_performed": true,
+          "autopsy_findings": "Enterprise-grade solution with robust security and compliance features.",
+          "economic_loss": 165.3,
+          "preventable": true,
+          "reported_by": "Regional Reported By 10",
+          "veterinarian": "Regional Veterinarian 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "animal_id": 190,
+          "date_of_death": "2024-11-21",
+          "cause_of_death": "Custom Cause Of Death 11",
+          "category": "Growth",
+          "age_at_death": "Custom Age At Death 11",
+          "symptoms_before_death": "Integrated platform connecting multiple systems for seamless operations.",
+          "autopsy_performed": false,
+          "autopsy_findings": "Integrated platform connecting multiple systems for seamless operations.",
+          "economic_loss": 127,
+          "preventable": false,
+          "reported_by": "Custom Reported By 11",
+          "veterinarian": "Custom Veterinarian 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "animal_id": 238,
+          "date_of_death": "2024-12-23",
+          "cause_of_death": "Smart Cause Of Death 12",
+          "category": "Scale",
+          "age_at_death": "Smart Age At Death 12",
+          "symptoms_before_death": "Automated workflow reducing manual intervention and human error.",
+          "autopsy_performed": true,
+          "autopsy_findings": "Automated workflow reducing manual intervention and human error.",
+          "economic_loss": 188.7,
+          "preventable": true,
+          "reported_by": "Smart Reported By 12",
+          "veterinarian": "Smart Veterinarian 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "animal_id": 286,
+          "date_of_death": "2024-01-25",
+          "cause_of_death": "Rapid Cause Of Death 13",
+          "category": "Foundation",
+          "age_at_death": "Rapid Age At Death 13",
+          "symptoms_before_death": "Real-time monitoring system with intelligent alerting capabilities.",
+          "autopsy_performed": false,
+          "autopsy_findings": "Real-time monitoring system with intelligent alerting capabilities.",
+          "economic_loss": 150.4,
+          "preventable": false,
+          "reported_by": "Rapid Reported By 13",
+          "veterinarian": "Rapid Veterinarian 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "animal_id": 234,
+          "date_of_death": "2024-02-27",
+          "cause_of_death": "Secure Cause Of Death 14",
+          "category": "Advanced",
+          "age_at_death": "Secure Age At Death 14",
+          "symptoms_before_death": "Customizable module adaptable to diverse operational requirements.",
+          "autopsy_performed": true,
+          "autopsy_findings": "Customizable module adaptable to diverse operational requirements.",
+          "economic_loss": 212.1,
+          "preventable": true,
+          "reported_by": "Secure Reported By 14",
+          "veterinarian": "Secure Veterinarian 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "animal_id": 282,
+          "date_of_death": "2024-03-01",
+          "cause_of_death": "Modern Cause Of Death 15",
+          "category": "Professional",
+          "age_at_death": "Modern Age At Death 15",
+          "symptoms_before_death": "Performance-optimized design achieving superior throughput and reliability.",
+          "autopsy_performed": true,
+          "autopsy_findings": "Performance-optimized design achieving superior throughput and reliability.",
+          "economic_loss": 173.8,
+          "preventable": true,
+          "reported_by": "Modern Reported By 15",
+          "veterinarian": "Modern Veterinarian 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Vaccination",
+      "routeKey": "vaccinations",
+      "label": "Vaccination",
+      "icon": "truck",
+      "aiFunction": "analyzeVaccination",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Vaccination data. The data includes: Animal Id, Vaccine Name, Vaccine Type, Date Administered, Next Due Date, Dosage, Batch Number, Administered By, Site, Reaction, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "animal_id",
+          "label": "Animal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "vaccine_name",
+          "label": "Vaccine Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "vaccine_type",
+          "label": "Vaccine Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "date_administered",
+          "label": "Date Administered",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "next_due_date",
+          "label": "Next Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "dosage",
+          "label": "Dosage",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "batch_number",
+          "label": "Batch Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "administered_by",
+          "label": "Administered By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "site",
+          "label": "Site",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reaction",
+          "label": "Reaction",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "animal_id": 10,
+          "vaccine_name": "Advanced Vaccine 1",
+          "vaccine_type": "Category A",
+          "date_administered": "2024-01-01",
+          "next_due_date": "2024-01-01",
+          "dosage": "Advanced Dosage 1",
+          "batch_number": "Advanced Batch Number 1",
+          "administered_by": "Advanced Administered By 1",
+          "site": "Advanced Site 1",
+          "reaction": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "animal_id": 58,
+          "vaccine_name": "Premium Vaccine 2",
+          "vaccine_type": "Category B",
+          "date_administered": "2024-02-03",
+          "next_due_date": "2024-02-03",
+          "dosage": "Premium Dosage 2",
+          "batch_number": "Premium Batch Number 2",
+          "administered_by": "Premium Administered By 2",
+          "site": "Premium Site 2",
+          "reaction": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "animal_id": 106,
+          "vaccine_name": "Standard Vaccine 3",
+          "vaccine_type": "Category C",
+          "date_administered": "2024-03-05",
+          "next_due_date": "2024-03-05",
+          "dosage": "Standard Dosage 3",
+          "batch_number": "Standard Batch Number 3",
+          "administered_by": "Standard Administered By 3",
+          "site": "Standard Site 3",
+          "reaction": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "animal_id": 154,
+          "vaccine_name": "Elite Vaccine 4",
+          "vaccine_type": "Category D",
+          "date_administered": "2024-04-07",
+          "next_due_date": "2024-04-07",
+          "dosage": "Elite Dosage 4",
+          "batch_number": "Elite Batch Number 4",
+          "administered_by": "Elite Administered By 4",
+          "site": "Elite Site 4",
+          "reaction": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "animal_id": 102,
+          "vaccine_name": "Core Vaccine 5",
+          "vaccine_type": "Category E",
+          "date_administered": "2024-05-09",
+          "next_due_date": "2024-05-09",
+          "dosage": "Core Dosage 5",
+          "batch_number": "Core Batch Number 5",
+          "administered_by": "Core Administered By 5",
+          "site": "Core Site 5",
+          "reaction": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "animal_id": 150,
+          "vaccine_name": "Pro Vaccine 6",
+          "vaccine_type": "Premium Tier",
+          "date_administered": "2024-06-11",
+          "next_due_date": "2024-06-11",
+          "dosage": "Pro Dosage 6",
+          "batch_number": "Pro Batch Number 6",
+          "administered_by": "Pro Administered By 6",
+          "site": "Pro Site 6",
+          "reaction": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "animal_id": 198,
+          "vaccine_name": "Essential Vaccine 7",
+          "vaccine_type": "Standard Tier",
+          "date_administered": "2024-07-13",
+          "next_due_date": "2024-07-13",
+          "dosage": "Essential Dosage 7",
+          "batch_number": "Essential Batch Number 7",
+          "administered_by": "Essential Administered By 7",
+          "site": "Essential Site 7",
+          "reaction": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "animal_id": 146,
+          "vaccine_name": "Primary Vaccine 8",
+          "vaccine_type": "Basic Tier",
+          "date_administered": "2024-08-15",
+          "next_due_date": "2024-08-15",
+          "dosage": "Primary Dosage 8",
+          "batch_number": "Primary Batch Number 8",
+          "administered_by": "Primary Administered By 8",
+          "site": "Primary Site 8",
+          "reaction": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "animal_id": 194,
+          "vaccine_name": "Global Vaccine 9",
+          "vaccine_type": "Enterprise",
+          "date_administered": "2024-09-17",
+          "next_due_date": "2024-09-17",
+          "dosage": "Global Dosage 9",
+          "batch_number": "Global Batch Number 9",
+          "administered_by": "Global Administered By 9",
+          "site": "Global Site 9",
+          "reaction": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "animal_id": 242,
+          "vaccine_name": "Regional Vaccine 10",
+          "vaccine_type": "Starter",
+          "date_administered": "2024-10-19",
+          "next_due_date": "2024-10-19",
+          "dosage": "Regional Dosage 10",
+          "batch_number": "Regional Batch Number 10",
+          "administered_by": "Regional Administered By 10",
+          "site": "Regional Site 10",
+          "reaction": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "animal_id": 190,
+          "vaccine_name": "Custom Vaccine 11",
+          "vaccine_type": "Growth",
+          "date_administered": "2024-11-21",
+          "next_due_date": "2024-11-21",
+          "dosage": "Custom Dosage 11",
+          "batch_number": "Custom Batch Number 11",
+          "administered_by": "Custom Administered By 11",
+          "site": "Custom Site 11",
+          "reaction": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "animal_id": 238,
+          "vaccine_name": "Smart Vaccine 12",
+          "vaccine_type": "Scale",
+          "date_administered": "2024-12-23",
+          "next_due_date": "2024-12-23",
+          "dosage": "Smart Dosage 12",
+          "batch_number": "Smart Batch Number 12",
+          "administered_by": "Smart Administered By 12",
+          "site": "Smart Site 12",
+          "reaction": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "animal_id": 286,
+          "vaccine_name": "Rapid Vaccine 13",
+          "vaccine_type": "Foundation",
+          "date_administered": "2024-01-25",
+          "next_due_date": "2024-01-25",
+          "dosage": "Rapid Dosage 13",
+          "batch_number": "Rapid Batch Number 13",
+          "administered_by": "Rapid Administered By 13",
+          "site": "Rapid Site 13",
+          "reaction": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "animal_id": 234,
+          "vaccine_name": "Secure Vaccine 14",
+          "vaccine_type": "Advanced",
+          "date_administered": "2024-02-27",
+          "next_due_date": "2024-02-27",
+          "dosage": "Secure Dosage 14",
+          "batch_number": "Secure Batch Number 14",
+          "administered_by": "Secure Administered By 14",
+          "site": "Secure Site 14",
+          "reaction": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "animal_id": 282,
+          "vaccine_name": "Modern Vaccine 15",
+          "vaccine_type": "Professional",
+          "date_administered": "2024-03-01",
+          "next_due_date": "2024-03-01",
+          "dosage": "Modern Dosage 15",
+          "batch_number": "Modern Batch Number 15",
+          "administered_by": "Modern Administered By 15",
+          "site": "Modern Site 15",
+          "reaction": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "VetVisit",
+      "routeKey": "vet-visits",
+      "label": "Vet Visit",
+      "icon": "users",
+      "aiFunction": "analyzeVetVisit",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Vet Visit data. The data includes: Animal Id, Visit Date, Veterinarian, Clinic, Reason, Diagnosis, Treatment, Prescription, Follow Up Date, Cost, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "animal_id",
+          "label": "Animal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "visit_date",
+          "label": "Visit Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "veterinarian",
+          "label": "Veterinarian",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "clinic",
+          "label": "Clinic",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reason",
+          "label": "Reason",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "diagnosis",
+          "label": "Diagnosis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "treatment",
+          "label": "Treatment",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "prescription",
+          "label": "Prescription",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "follow_up_date",
+          "label": "Follow Up Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "animal_id": 10,
+          "visit_date": "2024-01-01",
+          "veterinarian": "Advanced Veterinarian 1",
+          "clinic": "Advanced Clinic 1",
+          "reason": "Advanced Reason 1",
+          "diagnosis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "treatment": "Comprehensive solution designed for optimal performance and efficiency.",
+          "prescription": "Comprehensive solution designed for optimal performance and efficiency.",
+          "follow_up_date": "2024-01-01",
+          "cost": 500,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "animal_id": 58,
+          "visit_date": "2024-02-03",
+          "veterinarian": "Premium Veterinarian 2",
+          "clinic": "Premium Clinic 2",
+          "reason": "Premium Reason 2",
+          "diagnosis": "Industry-leading approach with proven results across multiple deployments.",
+          "treatment": "Industry-leading approach with proven results across multiple deployments.",
+          "prescription": "Industry-leading approach with proven results across multiple deployments.",
+          "follow_up_date": "2024-02-03",
+          "cost": 2481,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "animal_id": 106,
+          "visit_date": "2024-03-05",
+          "veterinarian": "Standard Veterinarian 3",
+          "clinic": "Standard Clinic 3",
+          "reason": "Standard Reason 3",
+          "diagnosis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "treatment": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "prescription": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "follow_up_date": "2024-03-05",
+          "cost": 4462,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "animal_id": 154,
+          "visit_date": "2024-04-07",
+          "veterinarian": "Elite Veterinarian 4",
+          "clinic": "Elite Clinic 4",
+          "reason": "Elite Reason 4",
+          "diagnosis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "treatment": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "prescription": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "follow_up_date": "2024-04-07",
+          "cost": 6443,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "animal_id": 102,
+          "visit_date": "2024-05-09",
+          "veterinarian": "Core Veterinarian 5",
+          "clinic": "Core Clinic 5",
+          "reason": "Core Reason 5",
+          "diagnosis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "treatment": "Cost-effective strategy focused on sustainable long-term growth.",
+          "prescription": "Cost-effective strategy focused on sustainable long-term growth.",
+          "follow_up_date": "2024-05-09",
+          "cost": 8424,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "animal_id": 150,
+          "visit_date": "2024-06-11",
+          "veterinarian": "Pro Veterinarian 6",
+          "clinic": "Pro Clinic 6",
+          "reason": "Pro Reason 6",
+          "diagnosis": "High-priority initiative aligned with organizational strategic objectives.",
+          "treatment": "High-priority initiative aligned with organizational strategic objectives.",
+          "prescription": "High-priority initiative aligned with organizational strategic objectives.",
+          "follow_up_date": "2024-06-11",
+          "cost": 10405,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "animal_id": 198,
+          "visit_date": "2024-07-13",
+          "veterinarian": "Essential Veterinarian 7",
+          "clinic": "Essential Clinic 7",
+          "reason": "Essential Reason 7",
+          "diagnosis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "treatment": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "prescription": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "follow_up_date": "2024-07-13",
+          "cost": 12386,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "animal_id": 146,
+          "visit_date": "2024-08-15",
+          "veterinarian": "Primary Veterinarian 8",
+          "clinic": "Primary Clinic 8",
+          "reason": "Primary Reason 8",
+          "diagnosis": "Innovative framework incorporating best practices and emerging technologies.",
+          "treatment": "Innovative framework incorporating best practices and emerging technologies.",
+          "prescription": "Innovative framework incorporating best practices and emerging technologies.",
+          "follow_up_date": "2024-08-15",
+          "cost": 9367,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "animal_id": 194,
+          "visit_date": "2024-09-17",
+          "veterinarian": "Global Veterinarian 9",
+          "clinic": "Global Clinic 9",
+          "reason": "Global Reason 9",
+          "diagnosis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "treatment": "Scalable architecture built to accommodate rapid expansion and change.",
+          "prescription": "Scalable architecture built to accommodate rapid expansion and change.",
+          "follow_up_date": "2024-09-17",
+          "cost": 11348,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "animal_id": 242,
+          "visit_date": "2024-10-19",
+          "veterinarian": "Regional Veterinarian 10",
+          "clinic": "Regional Clinic 10",
+          "reason": "Regional Reason 10",
+          "diagnosis": "Enterprise-grade solution with robust security and compliance features.",
+          "treatment": "Enterprise-grade solution with robust security and compliance features.",
+          "prescription": "Enterprise-grade solution with robust security and compliance features.",
+          "follow_up_date": "2024-10-19",
+          "cost": 13329,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "animal_id": 190,
+          "visit_date": "2024-11-21",
+          "veterinarian": "Custom Veterinarian 11",
+          "clinic": "Custom Clinic 11",
+          "reason": "Custom Reason 11",
+          "diagnosis": "Integrated platform connecting multiple systems for seamless operations.",
+          "treatment": "Integrated platform connecting multiple systems for seamless operations.",
+          "prescription": "Integrated platform connecting multiple systems for seamless operations.",
+          "follow_up_date": "2024-11-21",
+          "cost": 15310,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "animal_id": 238,
+          "visit_date": "2024-12-23",
+          "veterinarian": "Smart Veterinarian 12",
+          "clinic": "Smart Clinic 12",
+          "reason": "Smart Reason 12",
+          "diagnosis": "Automated workflow reducing manual intervention and human error.",
+          "treatment": "Automated workflow reducing manual intervention and human error.",
+          "prescription": "Automated workflow reducing manual intervention and human error.",
+          "follow_up_date": "2024-12-23",
+          "cost": 17291,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "animal_id": 286,
+          "visit_date": "2024-01-25",
+          "veterinarian": "Rapid Veterinarian 13",
+          "clinic": "Rapid Clinic 13",
+          "reason": "Rapid Reason 13",
+          "diagnosis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "treatment": "Real-time monitoring system with intelligent alerting capabilities.",
+          "prescription": "Real-time monitoring system with intelligent alerting capabilities.",
+          "follow_up_date": "2024-01-25",
+          "cost": 19272,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "animal_id": 234,
+          "visit_date": "2024-02-27",
+          "veterinarian": "Secure Veterinarian 14",
+          "clinic": "Secure Clinic 14",
+          "reason": "Secure Reason 14",
+          "diagnosis": "Customizable module adaptable to diverse operational requirements.",
+          "treatment": "Customizable module adaptable to diverse operational requirements.",
+          "prescription": "Customizable module adaptable to diverse operational requirements.",
+          "follow_up_date": "2024-02-27",
+          "cost": 21253,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "animal_id": 282,
+          "visit_date": "2024-03-01",
+          "veterinarian": "Modern Veterinarian 15",
+          "clinic": "Modern Clinic 15",
+          "reason": "Modern Reason 15",
+          "diagnosis": "Performance-optimized design achieving superior throughput and reliability.",
+          "treatment": "Performance-optimized design achieving superior throughput and reliability.",
+          "prescription": "Performance-optimized design achieving superior throughput and reliability.",
+          "follow_up_date": "2024-03-01",
+          "cost": 18234,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "WeightTracking",
+      "routeKey": "weight-trackings",
+      "label": "Weight Tracking",
+      "icon": "zap",
+      "aiFunction": "analyzeWeightTracking",
+      "aiPrompt": "You are an AI analyst for A I Livestock Health Monitoring. Analyze the provided Weight Tracking data. The data includes: Animal Id, Weight, Measurement Date, Method, Body Condition Score, Daily Gain, Target Weight, Measured By, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "animal_id",
+          "label": "Animal Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "measurement_date",
+          "label": "Measurement Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "method",
+          "label": "Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "body_condition_score",
+          "label": "Body Condition Score",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "daily_gain",
+          "label": "Daily Gain",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "target_weight",
+          "label": "Target Weight",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "measured_by",
+          "label": "Measured By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "animal_id": 10,
+          "weight": 10,
+          "measurement_date": "2024-01-01",
+          "method": "Advanced Method 1",
+          "body_condition_score": 1.5,
+          "daily_gain": 10,
+          "target_weight": 10,
+          "measured_by": "Advanced Measured By 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "animal_id": 58,
+          "weight": 71.7,
+          "measurement_date": "2024-02-03",
+          "method": "Premium Method 2",
+          "body_condition_score": 2.1,
+          "daily_gain": 71.7,
+          "target_weight": 71.7,
+          "measured_by": "Premium Measured By 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "animal_id": 106,
+          "weight": 33.4,
+          "measurement_date": "2024-03-05",
+          "method": "Standard Method 3",
+          "body_condition_score": 2.7,
+          "daily_gain": 33.4,
+          "target_weight": 33.4,
+          "measured_by": "Standard Measured By 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "animal_id": 154,
+          "weight": 95.1,
+          "measurement_date": "2024-04-07",
+          "method": "Elite Method 4",
+          "body_condition_score": 3.3,
+          "daily_gain": 95.1,
+          "target_weight": 95.1,
+          "measured_by": "Elite Measured By 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "animal_id": 102,
+          "weight": 56.8,
+          "measurement_date": "2024-05-09",
+          "method": "Core Method 5",
+          "body_condition_score": 3.9,
+          "daily_gain": 56.8,
+          "target_weight": 56.8,
+          "measured_by": "Core Measured By 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "animal_id": 150,
+          "weight": 118.5,
+          "measurement_date": "2024-06-11",
+          "method": "Pro Method 6",
+          "body_condition_score": 4.5,
+          "daily_gain": 118.5,
+          "target_weight": 118.5,
+          "measured_by": "Pro Measured By 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "animal_id": 198,
+          "weight": 80.2,
+          "measurement_date": "2024-07-13",
+          "method": "Essential Method 7",
+          "body_condition_score": 5.1,
+          "daily_gain": 80.2,
+          "target_weight": 80.2,
+          "measured_by": "Essential Measured By 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "animal_id": 146,
+          "weight": 141.9,
+          "measurement_date": "2024-08-15",
+          "method": "Primary Method 8",
+          "body_condition_score": 5.7,
+          "daily_gain": 141.9,
+          "target_weight": 141.9,
+          "measured_by": "Primary Measured By 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "animal_id": 194,
+          "weight": 103.6,
+          "measurement_date": "2024-09-17",
+          "method": "Global Method 9",
+          "body_condition_score": 6.3,
+          "daily_gain": 103.6,
+          "target_weight": 103.6,
+          "measured_by": "Global Measured By 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "animal_id": 242,
+          "weight": 165.3,
+          "measurement_date": "2024-10-19",
+          "method": "Regional Method 10",
+          "body_condition_score": 1.9,
+          "daily_gain": 165.3,
+          "target_weight": 165.3,
+          "measured_by": "Regional Measured By 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "animal_id": 190,
+          "weight": 127,
+          "measurement_date": "2024-11-21",
+          "method": "Custom Method 11",
+          "body_condition_score": 2.5,
+          "daily_gain": 127,
+          "target_weight": 127,
+          "measured_by": "Custom Measured By 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "animal_id": 238,
+          "weight": 188.7,
+          "measurement_date": "2024-12-23",
+          "method": "Smart Method 12",
+          "body_condition_score": 3.1,
+          "daily_gain": 188.7,
+          "target_weight": 188.7,
+          "measured_by": "Smart Measured By 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "animal_id": 286,
+          "weight": 150.4,
+          "measurement_date": "2024-01-25",
+          "method": "Rapid Method 13",
+          "body_condition_score": 3.7,
+          "daily_gain": 150.4,
+          "target_weight": 150.4,
+          "measured_by": "Rapid Measured By 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "animal_id": 234,
+          "weight": 212.1,
+          "measurement_date": "2024-02-27",
+          "method": "Secure Method 14",
+          "body_condition_score": 4.3,
+          "daily_gain": 212.1,
+          "target_weight": 212.1,
+          "measured_by": "Secure Measured By 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "animal_id": 282,
+          "weight": 173.8,
+          "measurement_date": "2024-03-01",
+          "method": "Modern Method 15",
+          "body_condition_score": 4.9,
+          "daily_gain": 173.8,
+          "target_weight": 173.8,
+          "measured_by": "Modern Measured By 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

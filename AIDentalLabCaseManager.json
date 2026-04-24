@@ -1,0 +1,4963 @@
+{
+  "appName": "A I Dental Lab Case Manager",
+  "dbName": "a_i_dental_lab_case_manager",
+  "folderName": "generated/AIDentalLabCaseManager",
+  "features": [
+    {
+      "modelName": "Dentist",
+      "routeKey": "dentists",
+      "label": "Dentist",
+      "icon": "activity",
+      "aiFunction": "analyzeDentist",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Dentist data. The data includes: Name, Practice Name, Email, Phone, Address, Preferred Lab Contact, Account Status, Notes, Satisfaction Score, Total Cases. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "practiceName",
+          "label": "Practice Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "preferredLabContact",
+          "label": "Preferred Lab Contact",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "accountStatus",
+          "label": "Account Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "satisfactionScore",
+          "label": "Satisfaction Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalCases",
+          "label": "Total Cases",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "practiceName": "Advanced Practice 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "preferredLabContact": "Advanced Preferred Lab Contact 1",
+          "accountStatus": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "satisfactionScore": 1.5,
+          "totalCases": 10
+        },
+        {
+          "name": "Premium Name 2",
+          "practiceName": "Premium Practice 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "preferredLabContact": "Premium Preferred Lab Contact 2",
+          "accountStatus": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "satisfactionScore": 2.1,
+          "totalCases": 58
+        },
+        {
+          "name": "Standard Name 3",
+          "practiceName": "Standard Practice 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "preferredLabContact": "Standard Preferred Lab Contact 3",
+          "accountStatus": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "satisfactionScore": 2.7,
+          "totalCases": 106
+        },
+        {
+          "name": "Elite Name 4",
+          "practiceName": "Elite Practice 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "preferredLabContact": "Elite Preferred Lab Contact 4",
+          "accountStatus": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "satisfactionScore": 3.3,
+          "totalCases": 154
+        },
+        {
+          "name": "Core Name 5",
+          "practiceName": "Core Practice 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "preferredLabContact": "Core Preferred Lab Contact 5",
+          "accountStatus": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "satisfactionScore": 3.9,
+          "totalCases": 102
+        },
+        {
+          "name": "Pro Name 6",
+          "practiceName": "Pro Practice 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "preferredLabContact": "Pro Preferred Lab Contact 6",
+          "accountStatus": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "satisfactionScore": 4.5,
+          "totalCases": 150
+        },
+        {
+          "name": "Essential Name 7",
+          "practiceName": "Essential Practice 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "preferredLabContact": "Essential Preferred Lab Contact 7",
+          "accountStatus": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "satisfactionScore": 5.1,
+          "totalCases": 198
+        },
+        {
+          "name": "Primary Name 8",
+          "practiceName": "Primary Practice 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "preferredLabContact": "Primary Preferred Lab Contact 8",
+          "accountStatus": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "satisfactionScore": 5.7,
+          "totalCases": 146
+        },
+        {
+          "name": "Global Name 9",
+          "practiceName": "Global Practice 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "preferredLabContact": "Global Preferred Lab Contact 9",
+          "accountStatus": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "satisfactionScore": 6.3,
+          "totalCases": 194
+        },
+        {
+          "name": "Regional Name 10",
+          "practiceName": "Regional Practice 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "preferredLabContact": "Regional Preferred Lab Contact 10",
+          "accountStatus": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "satisfactionScore": 1.9,
+          "totalCases": 242
+        },
+        {
+          "name": "Custom Name 11",
+          "practiceName": "Custom Practice 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "preferredLabContact": "Custom Preferred Lab Contact 11",
+          "accountStatus": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "satisfactionScore": 2.5,
+          "totalCases": 190
+        },
+        {
+          "name": "Smart Name 12",
+          "practiceName": "Smart Practice 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "preferredLabContact": "Smart Preferred Lab Contact 12",
+          "accountStatus": "active",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "satisfactionScore": 3.1,
+          "totalCases": 238
+        },
+        {
+          "name": "Rapid Name 13",
+          "practiceName": "Rapid Practice 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "preferredLabContact": "Rapid Preferred Lab Contact 13",
+          "accountStatus": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "satisfactionScore": 3.7,
+          "totalCases": 286
+        },
+        {
+          "name": "Secure Name 14",
+          "practiceName": "Secure Practice 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "preferredLabContact": "Secure Preferred Lab Contact 14",
+          "accountStatus": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "satisfactionScore": 4.3,
+          "totalCases": 234
+        },
+        {
+          "name": "Modern Name 15",
+          "practiceName": "Modern Practice 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "preferredLabContact": "Modern Preferred Lab Contact 15",
+          "accountStatus": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "satisfactionScore": 4.9,
+          "totalCases": 282
+        }
+      ]
+    },
+    {
+      "modelName": "Case",
+      "routeKey": "cases",
+      "label": "Case",
+      "icon": "briefcase",
+      "aiFunction": "analyzeCase",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Case data. The data includes: Case Number, Dentist Id, Patient Name, Rx Details, Tooth Numbers, Restoration Type, Material Requested, Shade, Status, Priority, Complexity Score, Estimated Turnaround, Due Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseNumber",
+          "label": "Case Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dentistId",
+          "label": "Dentist Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "patientName",
+          "label": "Patient Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rxDetails",
+          "label": "Rx Details",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "toothNumbers",
+          "label": "Tooth Numbers",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "restorationType",
+          "label": "Restoration Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "materialRequested",
+          "label": "Material Requested",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "shade",
+          "label": "Shade",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "complexityScore",
+          "label": "Complexity Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "estimatedTurnaround",
+          "label": "Estimated Turnaround",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseNumber": "Advanced Case Number 1",
+          "dentistId": 10,
+          "patientName": "Advanced Patient 1",
+          "rxDetails": "Comprehensive solution designed for optimal performance and efficiency.",
+          "toothNumbers": "Advanced Tooth Numbers 1",
+          "restorationType": "Category A",
+          "materialRequested": "Advanced Material Requested 1",
+          "shade": "Advanced Shade 1",
+          "status": "active",
+          "priority": "low",
+          "complexityScore": 1.5,
+          "estimatedTurnaround": 10,
+          "dueDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "caseNumber": "Premium Case Number 2",
+          "dentistId": 58,
+          "patientName": "Premium Patient 2",
+          "rxDetails": "Industry-leading approach with proven results across multiple deployments.",
+          "toothNumbers": "Premium Tooth Numbers 2",
+          "restorationType": "Category B",
+          "materialRequested": "Premium Material Requested 2",
+          "shade": "Premium Shade 2",
+          "status": "pending",
+          "priority": "medium",
+          "complexityScore": 2.1,
+          "estimatedTurnaround": 58,
+          "dueDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "caseNumber": "Standard Case Number 3",
+          "dentistId": 106,
+          "patientName": "Standard Patient 3",
+          "rxDetails": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "toothNumbers": "Standard Tooth Numbers 3",
+          "restorationType": "Category C",
+          "materialRequested": "Standard Material Requested 3",
+          "shade": "Standard Shade 3",
+          "status": "in_progress",
+          "priority": "high",
+          "complexityScore": 2.7,
+          "estimatedTurnaround": 106,
+          "dueDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "caseNumber": "Elite Case Number 4",
+          "dentistId": 154,
+          "patientName": "Elite Patient 4",
+          "rxDetails": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "toothNumbers": "Elite Tooth Numbers 4",
+          "restorationType": "Category D",
+          "materialRequested": "Elite Material Requested 4",
+          "shade": "Elite Shade 4",
+          "status": "completed",
+          "priority": "critical",
+          "complexityScore": 3.3,
+          "estimatedTurnaround": 154,
+          "dueDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "caseNumber": "Core Case Number 5",
+          "dentistId": 102,
+          "patientName": "Core Patient 5",
+          "rxDetails": "Cost-effective strategy focused on sustainable long-term growth.",
+          "toothNumbers": "Core Tooth Numbers 5",
+          "restorationType": "Category E",
+          "materialRequested": "Core Material Requested 5",
+          "shade": "Core Shade 5",
+          "status": "under_review",
+          "priority": "medium",
+          "complexityScore": 3.9,
+          "estimatedTurnaround": 102,
+          "dueDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "caseNumber": "Pro Case Number 6",
+          "dentistId": 150,
+          "patientName": "Pro Patient 6",
+          "rxDetails": "High-priority initiative aligned with organizational strategic objectives.",
+          "toothNumbers": "Pro Tooth Numbers 6",
+          "restorationType": "Premium Tier",
+          "materialRequested": "Pro Material Requested 6",
+          "shade": "Pro Shade 6",
+          "status": "approved",
+          "priority": "low",
+          "complexityScore": 4.5,
+          "estimatedTurnaround": 150,
+          "dueDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "caseNumber": "Essential Case Number 7",
+          "dentistId": 198,
+          "patientName": "Essential Patient 7",
+          "rxDetails": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "toothNumbers": "Essential Tooth Numbers 7",
+          "restorationType": "Standard Tier",
+          "materialRequested": "Essential Material Requested 7",
+          "shade": "Essential Shade 7",
+          "status": "active",
+          "priority": "medium",
+          "complexityScore": 5.1,
+          "estimatedTurnaround": 198,
+          "dueDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "caseNumber": "Primary Case Number 8",
+          "dentistId": 146,
+          "patientName": "Primary Patient 8",
+          "rxDetails": "Innovative framework incorporating best practices and emerging technologies.",
+          "toothNumbers": "Primary Tooth Numbers 8",
+          "restorationType": "Basic Tier",
+          "materialRequested": "Primary Material Requested 8",
+          "shade": "Primary Shade 8",
+          "status": "active",
+          "priority": "high",
+          "complexityScore": 5.7,
+          "estimatedTurnaround": 146,
+          "dueDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "caseNumber": "Global Case Number 9",
+          "dentistId": 194,
+          "patientName": "Global Patient 9",
+          "rxDetails": "Scalable architecture built to accommodate rapid expansion and change.",
+          "toothNumbers": "Global Tooth Numbers 9",
+          "restorationType": "Enterprise",
+          "materialRequested": "Global Material Requested 9",
+          "shade": "Global Shade 9",
+          "status": "active",
+          "priority": "critical",
+          "complexityScore": 6.3,
+          "estimatedTurnaround": 194,
+          "dueDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "caseNumber": "Regional Case Number 10",
+          "dentistId": 242,
+          "patientName": "Regional Patient 10",
+          "rxDetails": "Enterprise-grade solution with robust security and compliance features.",
+          "toothNumbers": "Regional Tooth Numbers 10",
+          "restorationType": "Starter",
+          "materialRequested": "Regional Material Requested 10",
+          "shade": "Regional Shade 10",
+          "status": "pending",
+          "priority": "medium",
+          "complexityScore": 1.9,
+          "estimatedTurnaround": 242,
+          "dueDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "caseNumber": "Custom Case Number 11",
+          "dentistId": 190,
+          "patientName": "Custom Patient 11",
+          "rxDetails": "Integrated platform connecting multiple systems for seamless operations.",
+          "toothNumbers": "Custom Tooth Numbers 11",
+          "restorationType": "Growth",
+          "materialRequested": "Custom Material Requested 11",
+          "shade": "Custom Shade 11",
+          "status": "completed",
+          "priority": "low",
+          "complexityScore": 2.5,
+          "estimatedTurnaround": 190,
+          "dueDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "caseNumber": "Smart Case Number 12",
+          "dentistId": 238,
+          "patientName": "Smart Patient 12",
+          "rxDetails": "Automated workflow reducing manual intervention and human error.",
+          "toothNumbers": "Smart Tooth Numbers 12",
+          "restorationType": "Scale",
+          "materialRequested": "Smart Material Requested 12",
+          "shade": "Smart Shade 12",
+          "status": "active",
+          "priority": "medium",
+          "complexityScore": 3.1,
+          "estimatedTurnaround": 238,
+          "dueDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "caseNumber": "Rapid Case Number 13",
+          "dentistId": 286,
+          "patientName": "Rapid Patient 13",
+          "rxDetails": "Real-time monitoring system with intelligent alerting capabilities.",
+          "toothNumbers": "Rapid Tooth Numbers 13",
+          "restorationType": "Foundation",
+          "materialRequested": "Rapid Material Requested 13",
+          "shade": "Rapid Shade 13",
+          "status": "in_progress",
+          "priority": "high",
+          "complexityScore": 3.7,
+          "estimatedTurnaround": 286,
+          "dueDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "caseNumber": "Secure Case Number 14",
+          "dentistId": 234,
+          "patientName": "Secure Patient 14",
+          "rxDetails": "Customizable module adaptable to diverse operational requirements.",
+          "toothNumbers": "Secure Tooth Numbers 14",
+          "restorationType": "Advanced",
+          "materialRequested": "Secure Material Requested 14",
+          "shade": "Secure Shade 14",
+          "status": "active",
+          "priority": "critical",
+          "complexityScore": 4.3,
+          "estimatedTurnaround": 234,
+          "dueDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "caseNumber": "Modern Case Number 15",
+          "dentistId": 282,
+          "patientName": "Modern Patient 15",
+          "rxDetails": "Performance-optimized design achieving superior throughput and reliability.",
+          "toothNumbers": "Modern Tooth Numbers 15",
+          "restorationType": "Professional",
+          "materialRequested": "Modern Material Requested 15",
+          "shade": "Modern Shade 15",
+          "status": "approved",
+          "priority": "medium",
+          "complexityScore": 4.9,
+          "estimatedTurnaround": 282,
+          "dueDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "DigitalImpression",
+      "routeKey": "digital-impressions",
+      "label": "Digital Impression",
+      "icon": "clipboard",
+      "aiFunction": "analyzeDigitalImpression",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Digital Impression data. The data includes: Case Id, File Name, File Type, Scanner Type, Quality Rating, Notes, Uploaded At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "fileName",
+          "label": "File Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fileType",
+          "label": "File Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scannerType",
+          "label": "Scanner Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "qualityRating",
+          "label": "Quality Rating",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "uploadedAt",
+          "label": "Uploaded At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseId": 10,
+          "fileName": "Advanced File 1",
+          "fileType": "Category A",
+          "scannerType": "Category A",
+          "qualityRating": "Advanced Quality Rating 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "uploadedAt": "2024-01-01"
+        },
+        {
+          "caseId": 58,
+          "fileName": "Premium File 2",
+          "fileType": "Category B",
+          "scannerType": "Category B",
+          "qualityRating": "Premium Quality Rating 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "uploadedAt": "2024-02-03"
+        },
+        {
+          "caseId": 106,
+          "fileName": "Standard File 3",
+          "fileType": "Category C",
+          "scannerType": "Category C",
+          "qualityRating": "Standard Quality Rating 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "uploadedAt": "2024-03-05"
+        },
+        {
+          "caseId": 154,
+          "fileName": "Elite File 4",
+          "fileType": "Category D",
+          "scannerType": "Category D",
+          "qualityRating": "Elite Quality Rating 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "uploadedAt": "2024-04-07"
+        },
+        {
+          "caseId": 102,
+          "fileName": "Core File 5",
+          "fileType": "Category E",
+          "scannerType": "Category E",
+          "qualityRating": "Core Quality Rating 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "uploadedAt": "2024-05-09"
+        },
+        {
+          "caseId": 150,
+          "fileName": "Pro File 6",
+          "fileType": "Premium Tier",
+          "scannerType": "Premium Tier",
+          "qualityRating": "Pro Quality Rating 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "uploadedAt": "2024-06-11"
+        },
+        {
+          "caseId": 198,
+          "fileName": "Essential File 7",
+          "fileType": "Standard Tier",
+          "scannerType": "Standard Tier",
+          "qualityRating": "Essential Quality Rating 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "uploadedAt": "2024-07-13"
+        },
+        {
+          "caseId": 146,
+          "fileName": "Primary File 8",
+          "fileType": "Basic Tier",
+          "scannerType": "Basic Tier",
+          "qualityRating": "Primary Quality Rating 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "uploadedAt": "2024-08-15"
+        },
+        {
+          "caseId": 194,
+          "fileName": "Global File 9",
+          "fileType": "Enterprise",
+          "scannerType": "Enterprise",
+          "qualityRating": "Global Quality Rating 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "uploadedAt": "2024-09-17"
+        },
+        {
+          "caseId": 242,
+          "fileName": "Regional File 10",
+          "fileType": "Starter",
+          "scannerType": "Starter",
+          "qualityRating": "Regional Quality Rating 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "uploadedAt": "2024-10-19"
+        },
+        {
+          "caseId": 190,
+          "fileName": "Custom File 11",
+          "fileType": "Growth",
+          "scannerType": "Growth",
+          "qualityRating": "Custom Quality Rating 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "uploadedAt": "2024-11-21"
+        },
+        {
+          "caseId": 238,
+          "fileName": "Smart File 12",
+          "fileType": "Scale",
+          "scannerType": "Scale",
+          "qualityRating": "Smart Quality Rating 12",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "uploadedAt": "2024-12-23"
+        },
+        {
+          "caseId": 286,
+          "fileName": "Rapid File 13",
+          "fileType": "Foundation",
+          "scannerType": "Foundation",
+          "qualityRating": "Rapid Quality Rating 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "uploadedAt": "2024-01-25"
+        },
+        {
+          "caseId": 234,
+          "fileName": "Secure File 14",
+          "fileType": "Advanced",
+          "scannerType": "Advanced",
+          "qualityRating": "Secure Quality Rating 14",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "uploadedAt": "2024-02-27"
+        },
+        {
+          "caseId": 282,
+          "fileName": "Modern File 15",
+          "fileType": "Professional",
+          "scannerType": "Professional",
+          "qualityRating": "Modern Quality Rating 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "uploadedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Technician",
+      "routeKey": "technicians",
+      "label": "Technician",
+      "icon": "database",
+      "aiFunction": "analyzeTechnician",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Technician data. The data includes: Name, Specialization, Skill Level, Current Workload, Max Workload, Status, Phone, Email, Hire Date, Certifications. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "specialization",
+          "label": "Specialization",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "skillLevel",
+          "label": "Skill Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "currentWorkload",
+          "label": "Current Workload",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "maxWorkload",
+          "label": "Max Workload",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "hireDate",
+          "label": "Hire Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "certifications",
+          "label": "Certifications",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "specialization": "Advanced Specialization 1",
+          "skillLevel": "low",
+          "currentWorkload": 10,
+          "maxWorkload": 10,
+          "status": "active",
+          "phone": "(555) 100-1000",
+          "email": "james.wilson@example.com",
+          "hireDate": "2024-01-01",
+          "certifications": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "specialization": "Premium Specialization 2",
+          "skillLevel": "medium",
+          "currentWorkload": 58,
+          "maxWorkload": 58,
+          "status": "pending",
+          "phone": "(556) 137-1113",
+          "email": "sarah.chen@example.com",
+          "hireDate": "2024-02-03",
+          "certifications": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "specialization": "Standard Specialization 3",
+          "skillLevel": "high",
+          "currentWorkload": 106,
+          "maxWorkload": 106,
+          "status": "in_progress",
+          "phone": "(557) 174-1226",
+          "email": "michael.brown@example.com",
+          "hireDate": "2024-03-05",
+          "certifications": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "specialization": "Elite Specialization 4",
+          "skillLevel": "critical",
+          "currentWorkload": 154,
+          "maxWorkload": 154,
+          "status": "completed",
+          "phone": "(558) 211-1339",
+          "email": "emily.davis@example.com",
+          "hireDate": "2024-04-07",
+          "certifications": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "specialization": "Core Specialization 5",
+          "skillLevel": "medium",
+          "currentWorkload": 102,
+          "maxWorkload": 102,
+          "status": "under_review",
+          "phone": "(555) 248-1452",
+          "email": "robert.garcia@example.com",
+          "hireDate": "2024-05-09",
+          "certifications": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "specialization": "Pro Specialization 6",
+          "skillLevel": "low",
+          "currentWorkload": 150,
+          "maxWorkload": 150,
+          "status": "approved",
+          "phone": "(556) 285-1565",
+          "email": "lisa.anderson@example.com",
+          "hireDate": "2024-06-11",
+          "certifications": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "specialization": "Essential Specialization 7",
+          "skillLevel": "medium",
+          "currentWorkload": 198,
+          "maxWorkload": 198,
+          "status": "active",
+          "phone": "(557) 322-1678",
+          "email": "david.martinez@example.com",
+          "hireDate": "2024-07-13",
+          "certifications": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "specialization": "Primary Specialization 8",
+          "skillLevel": "high",
+          "currentWorkload": 146,
+          "maxWorkload": 146,
+          "status": "active",
+          "phone": "(558) 359-1791",
+          "email": "jennifer.taylor@example.com",
+          "hireDate": "2024-08-15",
+          "certifications": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "specialization": "Global Specialization 9",
+          "skillLevel": "critical",
+          "currentWorkload": 194,
+          "maxWorkload": 194,
+          "status": "active",
+          "phone": "(555) 396-1904",
+          "email": "william.johnson@example.com",
+          "hireDate": "2024-09-17",
+          "certifications": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "specialization": "Regional Specialization 10",
+          "skillLevel": "medium",
+          "currentWorkload": 242,
+          "maxWorkload": 242,
+          "status": "pending",
+          "phone": "(556) 433-2017",
+          "email": "maria.rodriguez@example.com",
+          "hireDate": "2024-10-19",
+          "certifications": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "specialization": "Custom Specialization 11",
+          "skillLevel": "low",
+          "currentWorkload": 190,
+          "maxWorkload": 190,
+          "status": "completed",
+          "phone": "(557) 470-2130",
+          "email": "thomas.lee@example.com",
+          "hireDate": "2024-11-21",
+          "certifications": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "specialization": "Smart Specialization 12",
+          "skillLevel": "medium",
+          "currentWorkload": 238,
+          "maxWorkload": 238,
+          "status": "active",
+          "phone": "(558) 507-2243",
+          "email": "patricia.white@example.com",
+          "hireDate": "2024-12-23",
+          "certifications": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "specialization": "Rapid Specialization 13",
+          "skillLevel": "high",
+          "currentWorkload": 286,
+          "maxWorkload": 286,
+          "status": "in_progress",
+          "phone": "(555) 544-2356",
+          "email": "christopher.hall@example.com",
+          "hireDate": "2024-01-25",
+          "certifications": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "specialization": "Secure Specialization 14",
+          "skillLevel": "critical",
+          "currentWorkload": 234,
+          "maxWorkload": 234,
+          "status": "active",
+          "phone": "(556) 581-2469",
+          "email": "amanda.clark@example.com",
+          "hireDate": "2024-02-27",
+          "certifications": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "specialization": "Modern Specialization 15",
+          "skillLevel": "medium",
+          "currentWorkload": 282,
+          "maxWorkload": 282,
+          "status": "approved",
+          "phone": "(557) 618-2582",
+          "email": "daniel.wright@example.com",
+          "hireDate": "2024-03-01",
+          "certifications": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "ProductionSchedule",
+      "routeKey": "production-schedules",
+      "label": "Production Schedule",
+      "icon": "file-text",
+      "aiFunction": "analyzeProductionSchedule",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Production Schedule data. The data includes: Case Id, Technician Id, Stage, Scheduled Start, Scheduled End, Actual Start, Actual End, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "technicianId",
+          "label": "Technician Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "stage",
+          "label": "Stage",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledStart",
+          "label": "Scheduled Start",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "scheduledEnd",
+          "label": "Scheduled End",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "actualStart",
+          "label": "Actual Start",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "actualEnd",
+          "label": "Actual End",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseId": 10,
+          "technicianId": 10,
+          "stage": "Advanced Stage 1",
+          "scheduledStart": "2024-01-01",
+          "scheduledEnd": "2024-01-01",
+          "actualStart": "2024-01-01",
+          "actualEnd": "2024-01-01",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "caseId": 58,
+          "technicianId": 58,
+          "stage": "Premium Stage 2",
+          "scheduledStart": "2024-02-03",
+          "scheduledEnd": "2024-02-03",
+          "actualStart": "2024-02-03",
+          "actualEnd": "2024-02-03",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "caseId": 106,
+          "technicianId": 106,
+          "stage": "Standard Stage 3",
+          "scheduledStart": "2024-03-05",
+          "scheduledEnd": "2024-03-05",
+          "actualStart": "2024-03-05",
+          "actualEnd": "2024-03-05",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "caseId": 154,
+          "technicianId": 154,
+          "stage": "Elite Stage 4",
+          "scheduledStart": "2024-04-07",
+          "scheduledEnd": "2024-04-07",
+          "actualStart": "2024-04-07",
+          "actualEnd": "2024-04-07",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "caseId": 102,
+          "technicianId": 102,
+          "stage": "Core Stage 5",
+          "scheduledStart": "2024-05-09",
+          "scheduledEnd": "2024-05-09",
+          "actualStart": "2024-05-09",
+          "actualEnd": "2024-05-09",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "caseId": 150,
+          "technicianId": 150,
+          "stage": "Pro Stage 6",
+          "scheduledStart": "2024-06-11",
+          "scheduledEnd": "2024-06-11",
+          "actualStart": "2024-06-11",
+          "actualEnd": "2024-06-11",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "caseId": 198,
+          "technicianId": 198,
+          "stage": "Essential Stage 7",
+          "scheduledStart": "2024-07-13",
+          "scheduledEnd": "2024-07-13",
+          "actualStart": "2024-07-13",
+          "actualEnd": "2024-07-13",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "caseId": 146,
+          "technicianId": 146,
+          "stage": "Primary Stage 8",
+          "scheduledStart": "2024-08-15",
+          "scheduledEnd": "2024-08-15",
+          "actualStart": "2024-08-15",
+          "actualEnd": "2024-08-15",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "caseId": 194,
+          "technicianId": 194,
+          "stage": "Global Stage 9",
+          "scheduledStart": "2024-09-17",
+          "scheduledEnd": "2024-09-17",
+          "actualStart": "2024-09-17",
+          "actualEnd": "2024-09-17",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "caseId": 242,
+          "technicianId": 242,
+          "stage": "Regional Stage 10",
+          "scheduledStart": "2024-10-19",
+          "scheduledEnd": "2024-10-19",
+          "actualStart": "2024-10-19",
+          "actualEnd": "2024-10-19",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "caseId": 190,
+          "technicianId": 190,
+          "stage": "Custom Stage 11",
+          "scheduledStart": "2024-11-21",
+          "scheduledEnd": "2024-11-21",
+          "actualStart": "2024-11-21",
+          "actualEnd": "2024-11-21",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "caseId": 238,
+          "technicianId": 238,
+          "stage": "Smart Stage 12",
+          "scheduledStart": "2024-12-23",
+          "scheduledEnd": "2024-12-23",
+          "actualStart": "2024-12-23",
+          "actualEnd": "2024-12-23",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "caseId": 286,
+          "technicianId": 286,
+          "stage": "Rapid Stage 13",
+          "scheduledStart": "2024-01-25",
+          "scheduledEnd": "2024-01-25",
+          "actualStart": "2024-01-25",
+          "actualEnd": "2024-01-25",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "caseId": 234,
+          "technicianId": 234,
+          "stage": "Secure Stage 14",
+          "scheduledStart": "2024-02-27",
+          "scheduledEnd": "2024-02-27",
+          "actualStart": "2024-02-27",
+          "actualEnd": "2024-02-27",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "caseId": 282,
+          "technicianId": 282,
+          "stage": "Modern Stage 15",
+          "scheduledStart": "2024-03-01",
+          "scheduledEnd": "2024-03-01",
+          "actualStart": "2024-03-01",
+          "actualEnd": "2024-03-01",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Material",
+      "routeKey": "materials",
+      "label": "Material",
+      "icon": "heart",
+      "aiFunction": "analyzeMaterial",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Material data. The data includes: Name, Category, Manufacturer, Lot Number, Quantity, Unit, Reorder Level, Cost Per Unit, Expiry Date, Location, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "manufacturer",
+          "label": "Manufacturer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lotNumber",
+          "label": "Lot Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "unit",
+          "label": "Unit",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reorderLevel",
+          "label": "Reorder Level",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "costPerUnit",
+          "label": "Cost Per Unit",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "manufacturer": "Advanced Manufacturer 1",
+          "lotNumber": "Advanced Lot Number 1",
+          "quantity": 10,
+          "unit": "Advanced Unit 1",
+          "reorderLevel": 10,
+          "costPerUnit": 500,
+          "expiryDate": "2024-01-01",
+          "location": "New York",
+          "status": "active"
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "manufacturer": "Premium Manufacturer 2",
+          "lotNumber": "Premium Lot Number 2",
+          "quantity": 71.7,
+          "unit": "Premium Unit 2",
+          "reorderLevel": 71.7,
+          "costPerUnit": 2481,
+          "expiryDate": "2024-02-03",
+          "location": "Los Angeles",
+          "status": "pending"
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "manufacturer": "Standard Manufacturer 3",
+          "lotNumber": "Standard Lot Number 3",
+          "quantity": 33.4,
+          "unit": "Standard Unit 3",
+          "reorderLevel": 33.4,
+          "costPerUnit": 4462,
+          "expiryDate": "2024-03-05",
+          "location": "Chicago",
+          "status": "in_progress"
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "manufacturer": "Elite Manufacturer 4",
+          "lotNumber": "Elite Lot Number 4",
+          "quantity": 95.1,
+          "unit": "Elite Unit 4",
+          "reorderLevel": 95.1,
+          "costPerUnit": 6443,
+          "expiryDate": "2024-04-07",
+          "location": "Houston",
+          "status": "completed"
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "manufacturer": "Core Manufacturer 5",
+          "lotNumber": "Core Lot Number 5",
+          "quantity": 56.8,
+          "unit": "Core Unit 5",
+          "reorderLevel": 56.8,
+          "costPerUnit": 8424,
+          "expiryDate": "2024-05-09",
+          "location": "Phoenix",
+          "status": "under_review"
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "manufacturer": "Pro Manufacturer 6",
+          "lotNumber": "Pro Lot Number 6",
+          "quantity": 118.5,
+          "unit": "Pro Unit 6",
+          "reorderLevel": 118.5,
+          "costPerUnit": 10405,
+          "expiryDate": "2024-06-11",
+          "location": "San Francisco",
+          "status": "approved"
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "manufacturer": "Essential Manufacturer 7",
+          "lotNumber": "Essential Lot Number 7",
+          "quantity": 80.2,
+          "unit": "Essential Unit 7",
+          "reorderLevel": 80.2,
+          "costPerUnit": 12386,
+          "expiryDate": "2024-07-13",
+          "location": "Seattle",
+          "status": "active"
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "manufacturer": "Primary Manufacturer 8",
+          "lotNumber": "Primary Lot Number 8",
+          "quantity": 141.9,
+          "unit": "Primary Unit 8",
+          "reorderLevel": 141.9,
+          "costPerUnit": 9367,
+          "expiryDate": "2024-08-15",
+          "location": "Boston",
+          "status": "active"
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "manufacturer": "Global Manufacturer 9",
+          "lotNumber": "Global Lot Number 9",
+          "quantity": 103.6,
+          "unit": "Global Unit 9",
+          "reorderLevel": 103.6,
+          "costPerUnit": 11348,
+          "expiryDate": "2024-09-17",
+          "location": "Denver",
+          "status": "active"
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "manufacturer": "Regional Manufacturer 10",
+          "lotNumber": "Regional Lot Number 10",
+          "quantity": 165.3,
+          "unit": "Regional Unit 10",
+          "reorderLevel": 165.3,
+          "costPerUnit": 13329,
+          "expiryDate": "2024-10-19",
+          "location": "Miami",
+          "status": "pending"
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "manufacturer": "Custom Manufacturer 11",
+          "lotNumber": "Custom Lot Number 11",
+          "quantity": 127,
+          "unit": "Custom Unit 11",
+          "reorderLevel": 127,
+          "costPerUnit": 15310,
+          "expiryDate": "2024-11-21",
+          "location": "Austin",
+          "status": "completed"
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "manufacturer": "Smart Manufacturer 12",
+          "lotNumber": "Smart Lot Number 12",
+          "quantity": 188.7,
+          "unit": "Smart Unit 12",
+          "reorderLevel": 188.7,
+          "costPerUnit": 17291,
+          "expiryDate": "2024-12-23",
+          "location": "Portland",
+          "status": "active"
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "manufacturer": "Rapid Manufacturer 13",
+          "lotNumber": "Rapid Lot Number 13",
+          "quantity": 150.4,
+          "unit": "Rapid Unit 13",
+          "reorderLevel": 150.4,
+          "costPerUnit": 19272,
+          "expiryDate": "2024-01-25",
+          "location": "Dallas",
+          "status": "in_progress"
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "manufacturer": "Secure Manufacturer 14",
+          "lotNumber": "Secure Lot Number 14",
+          "quantity": 212.1,
+          "unit": "Secure Unit 14",
+          "reorderLevel": 212.1,
+          "costPerUnit": 21253,
+          "expiryDate": "2024-02-27",
+          "location": "Atlanta",
+          "status": "active"
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "manufacturer": "Modern Manufacturer 15",
+          "lotNumber": "Modern Lot Number 15",
+          "quantity": 173.8,
+          "unit": "Modern Unit 15",
+          "reorderLevel": 173.8,
+          "costPerUnit": 18234,
+          "expiryDate": "2024-03-01",
+          "location": "Nashville",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "ShadeRecord",
+      "routeKey": "shade-records",
+      "label": "Shade Record",
+      "icon": "layers",
+      "aiFunction": "analyzeShadeRecord",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Shade Record data. The data includes: Case Id, Shade System, Base Shade, Cervical Shade, Body Shade, Incisal Shade, Custom Staining, Photo Reference, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "shadeSystem",
+          "label": "Shade System",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "baseShade",
+          "label": "Base Shade",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cervicalShade",
+          "label": "Cervical Shade",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "bodyShade",
+          "label": "Body Shade",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "incisalShade",
+          "label": "Incisal Shade",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customStaining",
+          "label": "Custom Staining",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "photoReference",
+          "label": "Photo Reference",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseId": 10,
+          "shadeSystem": "Advanced Shade System 1",
+          "baseShade": "Advanced Base Shade 1",
+          "cervicalShade": "Advanced Cervical Shade 1",
+          "bodyShade": "Advanced Body Shade 1",
+          "incisalShade": "Advanced Incisal Shade 1",
+          "customStaining": "Comprehensive solution designed for optimal performance and efficiency.",
+          "photoReference": "Advanced Photo Reference 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "caseId": 58,
+          "shadeSystem": "Premium Shade System 2",
+          "baseShade": "Premium Base Shade 2",
+          "cervicalShade": "Premium Cervical Shade 2",
+          "bodyShade": "Premium Body Shade 2",
+          "incisalShade": "Premium Incisal Shade 2",
+          "customStaining": "Industry-leading approach with proven results across multiple deployments.",
+          "photoReference": "Premium Photo Reference 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "caseId": 106,
+          "shadeSystem": "Standard Shade System 3",
+          "baseShade": "Standard Base Shade 3",
+          "cervicalShade": "Standard Cervical Shade 3",
+          "bodyShade": "Standard Body Shade 3",
+          "incisalShade": "Standard Incisal Shade 3",
+          "customStaining": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "photoReference": "Standard Photo Reference 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "caseId": 154,
+          "shadeSystem": "Elite Shade System 4",
+          "baseShade": "Elite Base Shade 4",
+          "cervicalShade": "Elite Cervical Shade 4",
+          "bodyShade": "Elite Body Shade 4",
+          "incisalShade": "Elite Incisal Shade 4",
+          "customStaining": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "photoReference": "Elite Photo Reference 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "caseId": 102,
+          "shadeSystem": "Core Shade System 5",
+          "baseShade": "Core Base Shade 5",
+          "cervicalShade": "Core Cervical Shade 5",
+          "bodyShade": "Core Body Shade 5",
+          "incisalShade": "Core Incisal Shade 5",
+          "customStaining": "Cost-effective strategy focused on sustainable long-term growth.",
+          "photoReference": "Core Photo Reference 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "caseId": 150,
+          "shadeSystem": "Pro Shade System 6",
+          "baseShade": "Pro Base Shade 6",
+          "cervicalShade": "Pro Cervical Shade 6",
+          "bodyShade": "Pro Body Shade 6",
+          "incisalShade": "Pro Incisal Shade 6",
+          "customStaining": "High-priority initiative aligned with organizational strategic objectives.",
+          "photoReference": "Pro Photo Reference 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "caseId": 198,
+          "shadeSystem": "Essential Shade System 7",
+          "baseShade": "Essential Base Shade 7",
+          "cervicalShade": "Essential Cervical Shade 7",
+          "bodyShade": "Essential Body Shade 7",
+          "incisalShade": "Essential Incisal Shade 7",
+          "customStaining": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "photoReference": "Essential Photo Reference 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "caseId": 146,
+          "shadeSystem": "Primary Shade System 8",
+          "baseShade": "Primary Base Shade 8",
+          "cervicalShade": "Primary Cervical Shade 8",
+          "bodyShade": "Primary Body Shade 8",
+          "incisalShade": "Primary Incisal Shade 8",
+          "customStaining": "Innovative framework incorporating best practices and emerging technologies.",
+          "photoReference": "Primary Photo Reference 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "caseId": 194,
+          "shadeSystem": "Global Shade System 9",
+          "baseShade": "Global Base Shade 9",
+          "cervicalShade": "Global Cervical Shade 9",
+          "bodyShade": "Global Body Shade 9",
+          "incisalShade": "Global Incisal Shade 9",
+          "customStaining": "Scalable architecture built to accommodate rapid expansion and change.",
+          "photoReference": "Global Photo Reference 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "caseId": 242,
+          "shadeSystem": "Regional Shade System 10",
+          "baseShade": "Regional Base Shade 10",
+          "cervicalShade": "Regional Cervical Shade 10",
+          "bodyShade": "Regional Body Shade 10",
+          "incisalShade": "Regional Incisal Shade 10",
+          "customStaining": "Enterprise-grade solution with robust security and compliance features.",
+          "photoReference": "Regional Photo Reference 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "caseId": 190,
+          "shadeSystem": "Custom Shade System 11",
+          "baseShade": "Custom Base Shade 11",
+          "cervicalShade": "Custom Cervical Shade 11",
+          "bodyShade": "Custom Body Shade 11",
+          "incisalShade": "Custom Incisal Shade 11",
+          "customStaining": "Integrated platform connecting multiple systems for seamless operations.",
+          "photoReference": "Custom Photo Reference 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "caseId": 238,
+          "shadeSystem": "Smart Shade System 12",
+          "baseShade": "Smart Base Shade 12",
+          "cervicalShade": "Smart Cervical Shade 12",
+          "bodyShade": "Smart Body Shade 12",
+          "incisalShade": "Smart Incisal Shade 12",
+          "customStaining": "Automated workflow reducing manual intervention and human error.",
+          "photoReference": "Smart Photo Reference 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "caseId": 286,
+          "shadeSystem": "Rapid Shade System 13",
+          "baseShade": "Rapid Base Shade 13",
+          "cervicalShade": "Rapid Cervical Shade 13",
+          "bodyShade": "Rapid Body Shade 13",
+          "incisalShade": "Rapid Incisal Shade 13",
+          "customStaining": "Real-time monitoring system with intelligent alerting capabilities.",
+          "photoReference": "Rapid Photo Reference 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "caseId": 234,
+          "shadeSystem": "Secure Shade System 14",
+          "baseShade": "Secure Base Shade 14",
+          "cervicalShade": "Secure Cervical Shade 14",
+          "bodyShade": "Secure Body Shade 14",
+          "incisalShade": "Secure Incisal Shade 14",
+          "customStaining": "Customizable module adaptable to diverse operational requirements.",
+          "photoReference": "Secure Photo Reference 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "caseId": 282,
+          "shadeSystem": "Modern Shade System 15",
+          "baseShade": "Modern Base Shade 15",
+          "cervicalShade": "Modern Cervical Shade 15",
+          "bodyShade": "Modern Body Shade 15",
+          "incisalShade": "Modern Incisal Shade 15",
+          "customStaining": "Performance-optimized design achieving superior throughput and reliability.",
+          "photoReference": "Modern Photo Reference 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "MillingSchedule",
+      "routeKey": "milling-schedules",
+      "label": "Milling Schedule",
+      "icon": "map-pin",
+      "aiFunction": "analyzeMillingSchedule",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Milling Schedule data. The data includes: Case Id, Machine Name, Material, Program, Scheduled Start, Scheduled End, Actual Start, Actual End, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "machineName",
+          "label": "Machine Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "material",
+          "label": "Material",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "program",
+          "label": "Program",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "scheduledStart",
+          "label": "Scheduled Start",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "scheduledEnd",
+          "label": "Scheduled End",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "actualStart",
+          "label": "Actual Start",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "actualEnd",
+          "label": "Actual End",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseId": 10,
+          "machineName": "Advanced Machine 1",
+          "material": "Advanced Material 1",
+          "program": "Advanced Program 1",
+          "scheduledStart": "2024-01-01",
+          "scheduledEnd": "2024-01-01",
+          "actualStart": "2024-01-01",
+          "actualEnd": "2024-01-01",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "caseId": 58,
+          "machineName": "Premium Machine 2",
+          "material": "Premium Material 2",
+          "program": "Premium Program 2",
+          "scheduledStart": "2024-02-03",
+          "scheduledEnd": "2024-02-03",
+          "actualStart": "2024-02-03",
+          "actualEnd": "2024-02-03",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "caseId": 106,
+          "machineName": "Standard Machine 3",
+          "material": "Standard Material 3",
+          "program": "Standard Program 3",
+          "scheduledStart": "2024-03-05",
+          "scheduledEnd": "2024-03-05",
+          "actualStart": "2024-03-05",
+          "actualEnd": "2024-03-05",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "caseId": 154,
+          "machineName": "Elite Machine 4",
+          "material": "Elite Material 4",
+          "program": "Elite Program 4",
+          "scheduledStart": "2024-04-07",
+          "scheduledEnd": "2024-04-07",
+          "actualStart": "2024-04-07",
+          "actualEnd": "2024-04-07",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "caseId": 102,
+          "machineName": "Core Machine 5",
+          "material": "Core Material 5",
+          "program": "Core Program 5",
+          "scheduledStart": "2024-05-09",
+          "scheduledEnd": "2024-05-09",
+          "actualStart": "2024-05-09",
+          "actualEnd": "2024-05-09",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "caseId": 150,
+          "machineName": "Pro Machine 6",
+          "material": "Pro Material 6",
+          "program": "Pro Program 6",
+          "scheduledStart": "2024-06-11",
+          "scheduledEnd": "2024-06-11",
+          "actualStart": "2024-06-11",
+          "actualEnd": "2024-06-11",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "caseId": 198,
+          "machineName": "Essential Machine 7",
+          "material": "Essential Material 7",
+          "program": "Essential Program 7",
+          "scheduledStart": "2024-07-13",
+          "scheduledEnd": "2024-07-13",
+          "actualStart": "2024-07-13",
+          "actualEnd": "2024-07-13",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "caseId": 146,
+          "machineName": "Primary Machine 8",
+          "material": "Primary Material 8",
+          "program": "Primary Program 8",
+          "scheduledStart": "2024-08-15",
+          "scheduledEnd": "2024-08-15",
+          "actualStart": "2024-08-15",
+          "actualEnd": "2024-08-15",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "caseId": 194,
+          "machineName": "Global Machine 9",
+          "material": "Global Material 9",
+          "program": "Global Program 9",
+          "scheduledStart": "2024-09-17",
+          "scheduledEnd": "2024-09-17",
+          "actualStart": "2024-09-17",
+          "actualEnd": "2024-09-17",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "caseId": 242,
+          "machineName": "Regional Machine 10",
+          "material": "Regional Material 10",
+          "program": "Regional Program 10",
+          "scheduledStart": "2024-10-19",
+          "scheduledEnd": "2024-10-19",
+          "actualStart": "2024-10-19",
+          "actualEnd": "2024-10-19",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "caseId": 190,
+          "machineName": "Custom Machine 11",
+          "material": "Custom Material 11",
+          "program": "Custom Program 11",
+          "scheduledStart": "2024-11-21",
+          "scheduledEnd": "2024-11-21",
+          "actualStart": "2024-11-21",
+          "actualEnd": "2024-11-21",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "caseId": 238,
+          "machineName": "Smart Machine 12",
+          "material": "Smart Material 12",
+          "program": "Smart Program 12",
+          "scheduledStart": "2024-12-23",
+          "scheduledEnd": "2024-12-23",
+          "actualStart": "2024-12-23",
+          "actualEnd": "2024-12-23",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "caseId": 286,
+          "machineName": "Rapid Machine 13",
+          "material": "Rapid Material 13",
+          "program": "Rapid Program 13",
+          "scheduledStart": "2024-01-25",
+          "scheduledEnd": "2024-01-25",
+          "actualStart": "2024-01-25",
+          "actualEnd": "2024-01-25",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "caseId": 234,
+          "machineName": "Secure Machine 14",
+          "material": "Secure Material 14",
+          "program": "Secure Program 14",
+          "scheduledStart": "2024-02-27",
+          "scheduledEnd": "2024-02-27",
+          "actualStart": "2024-02-27",
+          "actualEnd": "2024-02-27",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "caseId": 282,
+          "machineName": "Modern Machine 15",
+          "material": "Modern Material 15",
+          "program": "Modern Program 15",
+          "scheduledStart": "2024-03-01",
+          "scheduledEnd": "2024-03-01",
+          "actualStart": "2024-03-01",
+          "actualEnd": "2024-03-01",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "OvenSchedule",
+      "routeKey": "oven-schedules",
+      "label": "Oven Schedule",
+      "icon": "package",
+      "aiFunction": "analyzeOvenSchedule",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Oven Schedule data. The data includes: Case Id, Oven Name, Cycle Type, Temperature, Duration Minutes, Scheduled Start, Scheduled End, Actual Start, Actual End, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "ovenName",
+          "label": "Oven Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cycleType",
+          "label": "Cycle Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "temperature",
+          "label": "Temperature",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "durationMinutes",
+          "label": "Duration Minutes",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "scheduledStart",
+          "label": "Scheduled Start",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "scheduledEnd",
+          "label": "Scheduled End",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "actualStart",
+          "label": "Actual Start",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "actualEnd",
+          "label": "Actual End",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseId": 10,
+          "ovenName": "Advanced Oven 1",
+          "cycleType": "Category A",
+          "temperature": 10,
+          "durationMinutes": 10,
+          "scheduledStart": "2024-01-01",
+          "scheduledEnd": "2024-01-01",
+          "actualStart": "2024-01-01",
+          "actualEnd": "2024-01-01",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "caseId": 58,
+          "ovenName": "Premium Oven 2",
+          "cycleType": "Category B",
+          "temperature": 71.7,
+          "durationMinutes": 58,
+          "scheduledStart": "2024-02-03",
+          "scheduledEnd": "2024-02-03",
+          "actualStart": "2024-02-03",
+          "actualEnd": "2024-02-03",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "caseId": 106,
+          "ovenName": "Standard Oven 3",
+          "cycleType": "Category C",
+          "temperature": 33.4,
+          "durationMinutes": 106,
+          "scheduledStart": "2024-03-05",
+          "scheduledEnd": "2024-03-05",
+          "actualStart": "2024-03-05",
+          "actualEnd": "2024-03-05",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "caseId": 154,
+          "ovenName": "Elite Oven 4",
+          "cycleType": "Category D",
+          "temperature": 95.1,
+          "durationMinutes": 154,
+          "scheduledStart": "2024-04-07",
+          "scheduledEnd": "2024-04-07",
+          "actualStart": "2024-04-07",
+          "actualEnd": "2024-04-07",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "caseId": 102,
+          "ovenName": "Core Oven 5",
+          "cycleType": "Category E",
+          "temperature": 56.8,
+          "durationMinutes": 102,
+          "scheduledStart": "2024-05-09",
+          "scheduledEnd": "2024-05-09",
+          "actualStart": "2024-05-09",
+          "actualEnd": "2024-05-09",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "caseId": 150,
+          "ovenName": "Pro Oven 6",
+          "cycleType": "Premium Tier",
+          "temperature": 118.5,
+          "durationMinutes": 150,
+          "scheduledStart": "2024-06-11",
+          "scheduledEnd": "2024-06-11",
+          "actualStart": "2024-06-11",
+          "actualEnd": "2024-06-11",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "caseId": 198,
+          "ovenName": "Essential Oven 7",
+          "cycleType": "Standard Tier",
+          "temperature": 80.2,
+          "durationMinutes": 198,
+          "scheduledStart": "2024-07-13",
+          "scheduledEnd": "2024-07-13",
+          "actualStart": "2024-07-13",
+          "actualEnd": "2024-07-13",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "caseId": 146,
+          "ovenName": "Primary Oven 8",
+          "cycleType": "Basic Tier",
+          "temperature": 141.9,
+          "durationMinutes": 146,
+          "scheduledStart": "2024-08-15",
+          "scheduledEnd": "2024-08-15",
+          "actualStart": "2024-08-15",
+          "actualEnd": "2024-08-15",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "caseId": 194,
+          "ovenName": "Global Oven 9",
+          "cycleType": "Enterprise",
+          "temperature": 103.6,
+          "durationMinutes": 194,
+          "scheduledStart": "2024-09-17",
+          "scheduledEnd": "2024-09-17",
+          "actualStart": "2024-09-17",
+          "actualEnd": "2024-09-17",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "caseId": 242,
+          "ovenName": "Regional Oven 10",
+          "cycleType": "Starter",
+          "temperature": 165.3,
+          "durationMinutes": 242,
+          "scheduledStart": "2024-10-19",
+          "scheduledEnd": "2024-10-19",
+          "actualStart": "2024-10-19",
+          "actualEnd": "2024-10-19",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "caseId": 190,
+          "ovenName": "Custom Oven 11",
+          "cycleType": "Growth",
+          "temperature": 127,
+          "durationMinutes": 190,
+          "scheduledStart": "2024-11-21",
+          "scheduledEnd": "2024-11-21",
+          "actualStart": "2024-11-21",
+          "actualEnd": "2024-11-21",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "caseId": 238,
+          "ovenName": "Smart Oven 12",
+          "cycleType": "Scale",
+          "temperature": 188.7,
+          "durationMinutes": 238,
+          "scheduledStart": "2024-12-23",
+          "scheduledEnd": "2024-12-23",
+          "actualStart": "2024-12-23",
+          "actualEnd": "2024-12-23",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "caseId": 286,
+          "ovenName": "Rapid Oven 13",
+          "cycleType": "Foundation",
+          "temperature": 150.4,
+          "durationMinutes": 286,
+          "scheduledStart": "2024-01-25",
+          "scheduledEnd": "2024-01-25",
+          "actualStart": "2024-01-25",
+          "actualEnd": "2024-01-25",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "caseId": 234,
+          "ovenName": "Secure Oven 14",
+          "cycleType": "Advanced",
+          "temperature": 212.1,
+          "durationMinutes": 234,
+          "scheduledStart": "2024-02-27",
+          "scheduledEnd": "2024-02-27",
+          "actualStart": "2024-02-27",
+          "actualEnd": "2024-02-27",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "caseId": 282,
+          "ovenName": "Modern Oven 15",
+          "cycleType": "Professional",
+          "temperature": 173.8,
+          "durationMinutes": 282,
+          "scheduledStart": "2024-03-01",
+          "scheduledEnd": "2024-03-01",
+          "actualStart": "2024-03-01",
+          "actualEnd": "2024-03-01",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "QualityCheckpoint",
+      "routeKey": "quality-checkpoints",
+      "label": "Quality Checkpoint",
+      "icon": "shield",
+      "aiFunction": "analyzeQualityCheckpoint",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Quality Checkpoint data. The data includes: Case Id, Inspector, Status, Result, Measurements, Issues Found, Corrective Action, Inspected At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "inspector",
+          "label": "Inspector",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "result",
+          "label": "Result",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "measurements",
+          "label": "Measurements",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "issuesFound",
+          "label": "Issues Found",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "correctiveAction",
+          "label": "Corrective Action",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "inspectedAt",
+          "label": "Inspected At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseId": 10,
+          "inspector": "Advanced Inspector 1",
+          "status": "active",
+          "result": "Advanced Result 1",
+          "measurements": "Comprehensive solution designed for optimal performance and efficiency.",
+          "issuesFound": "Comprehensive solution designed for optimal performance and efficiency.",
+          "correctiveAction": "Comprehensive solution designed for optimal performance and efficiency.",
+          "inspectedAt": "2024-01-01"
+        },
+        {
+          "caseId": 58,
+          "inspector": "Premium Inspector 2",
+          "status": "pending",
+          "result": "Premium Result 2",
+          "measurements": "Industry-leading approach with proven results across multiple deployments.",
+          "issuesFound": "Industry-leading approach with proven results across multiple deployments.",
+          "correctiveAction": "Industry-leading approach with proven results across multiple deployments.",
+          "inspectedAt": "2024-02-03"
+        },
+        {
+          "caseId": 106,
+          "inspector": "Standard Inspector 3",
+          "status": "in_progress",
+          "result": "Standard Result 3",
+          "measurements": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "issuesFound": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "correctiveAction": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "inspectedAt": "2024-03-05"
+        },
+        {
+          "caseId": 154,
+          "inspector": "Elite Inspector 4",
+          "status": "completed",
+          "result": "Elite Result 4",
+          "measurements": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "issuesFound": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "correctiveAction": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "inspectedAt": "2024-04-07"
+        },
+        {
+          "caseId": 102,
+          "inspector": "Core Inspector 5",
+          "status": "under_review",
+          "result": "Core Result 5",
+          "measurements": "Cost-effective strategy focused on sustainable long-term growth.",
+          "issuesFound": "Cost-effective strategy focused on sustainable long-term growth.",
+          "correctiveAction": "Cost-effective strategy focused on sustainable long-term growth.",
+          "inspectedAt": "2024-05-09"
+        },
+        {
+          "caseId": 150,
+          "inspector": "Pro Inspector 6",
+          "status": "approved",
+          "result": "Pro Result 6",
+          "measurements": "High-priority initiative aligned with organizational strategic objectives.",
+          "issuesFound": "High-priority initiative aligned with organizational strategic objectives.",
+          "correctiveAction": "High-priority initiative aligned with organizational strategic objectives.",
+          "inspectedAt": "2024-06-11"
+        },
+        {
+          "caseId": 198,
+          "inspector": "Essential Inspector 7",
+          "status": "active",
+          "result": "Essential Result 7",
+          "measurements": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "issuesFound": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "correctiveAction": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "inspectedAt": "2024-07-13"
+        },
+        {
+          "caseId": 146,
+          "inspector": "Primary Inspector 8",
+          "status": "active",
+          "result": "Primary Result 8",
+          "measurements": "Innovative framework incorporating best practices and emerging technologies.",
+          "issuesFound": "Innovative framework incorporating best practices and emerging technologies.",
+          "correctiveAction": "Innovative framework incorporating best practices and emerging technologies.",
+          "inspectedAt": "2024-08-15"
+        },
+        {
+          "caseId": 194,
+          "inspector": "Global Inspector 9",
+          "status": "active",
+          "result": "Global Result 9",
+          "measurements": "Scalable architecture built to accommodate rapid expansion and change.",
+          "issuesFound": "Scalable architecture built to accommodate rapid expansion and change.",
+          "correctiveAction": "Scalable architecture built to accommodate rapid expansion and change.",
+          "inspectedAt": "2024-09-17"
+        },
+        {
+          "caseId": 242,
+          "inspector": "Regional Inspector 10",
+          "status": "pending",
+          "result": "Regional Result 10",
+          "measurements": "Enterprise-grade solution with robust security and compliance features.",
+          "issuesFound": "Enterprise-grade solution with robust security and compliance features.",
+          "correctiveAction": "Enterprise-grade solution with robust security and compliance features.",
+          "inspectedAt": "2024-10-19"
+        },
+        {
+          "caseId": 190,
+          "inspector": "Custom Inspector 11",
+          "status": "completed",
+          "result": "Custom Result 11",
+          "measurements": "Integrated platform connecting multiple systems for seamless operations.",
+          "issuesFound": "Integrated platform connecting multiple systems for seamless operations.",
+          "correctiveAction": "Integrated platform connecting multiple systems for seamless operations.",
+          "inspectedAt": "2024-11-21"
+        },
+        {
+          "caseId": 238,
+          "inspector": "Smart Inspector 12",
+          "status": "active",
+          "result": "Smart Result 12",
+          "measurements": "Automated workflow reducing manual intervention and human error.",
+          "issuesFound": "Automated workflow reducing manual intervention and human error.",
+          "correctiveAction": "Automated workflow reducing manual intervention and human error.",
+          "inspectedAt": "2024-12-23"
+        },
+        {
+          "caseId": 286,
+          "inspector": "Rapid Inspector 13",
+          "status": "in_progress",
+          "result": "Rapid Result 13",
+          "measurements": "Real-time monitoring system with intelligent alerting capabilities.",
+          "issuesFound": "Real-time monitoring system with intelligent alerting capabilities.",
+          "correctiveAction": "Real-time monitoring system with intelligent alerting capabilities.",
+          "inspectedAt": "2024-01-25"
+        },
+        {
+          "caseId": 234,
+          "inspector": "Secure Inspector 14",
+          "status": "active",
+          "result": "Secure Result 14",
+          "measurements": "Customizable module adaptable to diverse operational requirements.",
+          "issuesFound": "Customizable module adaptable to diverse operational requirements.",
+          "correctiveAction": "Customizable module adaptable to diverse operational requirements.",
+          "inspectedAt": "2024-02-27"
+        },
+        {
+          "caseId": 282,
+          "inspector": "Modern Inspector 15",
+          "status": "approved",
+          "result": "Modern Result 15",
+          "measurements": "Performance-optimized design achieving superior throughput and reliability.",
+          "issuesFound": "Performance-optimized design achieving superior throughput and reliability.",
+          "correctiveAction": "Performance-optimized design achieving superior throughput and reliability.",
+          "inspectedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Remake",
+      "routeKey": "remakes",
+      "label": "Remake",
+      "icon": "star",
+      "aiFunction": "analyzeRemake",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Remake data. The data includes: Case Id, Original Case Number, Reason, Fault Category, Cost Impact, New Due Date, Status, Root Cause, Corrective Action, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "originalCaseNumber",
+          "label": "Original Case Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reason",
+          "label": "Reason",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "faultCategory",
+          "label": "Fault Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "costImpact",
+          "label": "Cost Impact",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "newDueDate",
+          "label": "New Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rootCause",
+          "label": "Root Cause",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "correctiveAction",
+          "label": "Corrective Action",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseId": 10,
+          "originalCaseNumber": "Advanced Original Case Number 1",
+          "reason": "Advanced Reason 1",
+          "faultCategory": "Category A",
+          "costImpact": 500,
+          "newDueDate": "2024-01-01",
+          "status": "active",
+          "rootCause": "Comprehensive solution designed for optimal performance and efficiency.",
+          "correctiveAction": "Comprehensive solution designed for optimal performance and efficiency.",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "caseId": 58,
+          "originalCaseNumber": "Premium Original Case Number 2",
+          "reason": "Premium Reason 2",
+          "faultCategory": "Category B",
+          "costImpact": 2481,
+          "newDueDate": "2024-02-03",
+          "status": "pending",
+          "rootCause": "Industry-leading approach with proven results across multiple deployments.",
+          "correctiveAction": "Industry-leading approach with proven results across multiple deployments.",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "caseId": 106,
+          "originalCaseNumber": "Standard Original Case Number 3",
+          "reason": "Standard Reason 3",
+          "faultCategory": "Category C",
+          "costImpact": 4462,
+          "newDueDate": "2024-03-05",
+          "status": "in_progress",
+          "rootCause": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "correctiveAction": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "caseId": 154,
+          "originalCaseNumber": "Elite Original Case Number 4",
+          "reason": "Elite Reason 4",
+          "faultCategory": "Category D",
+          "costImpact": 6443,
+          "newDueDate": "2024-04-07",
+          "status": "completed",
+          "rootCause": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "correctiveAction": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "caseId": 102,
+          "originalCaseNumber": "Core Original Case Number 5",
+          "reason": "Core Reason 5",
+          "faultCategory": "Category E",
+          "costImpact": 8424,
+          "newDueDate": "2024-05-09",
+          "status": "under_review",
+          "rootCause": "Cost-effective strategy focused on sustainable long-term growth.",
+          "correctiveAction": "Cost-effective strategy focused on sustainable long-term growth.",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "caseId": 150,
+          "originalCaseNumber": "Pro Original Case Number 6",
+          "reason": "Pro Reason 6",
+          "faultCategory": "Premium Tier",
+          "costImpact": 10405,
+          "newDueDate": "2024-06-11",
+          "status": "approved",
+          "rootCause": "High-priority initiative aligned with organizational strategic objectives.",
+          "correctiveAction": "High-priority initiative aligned with organizational strategic objectives.",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "caseId": 198,
+          "originalCaseNumber": "Essential Original Case Number 7",
+          "reason": "Essential Reason 7",
+          "faultCategory": "Standard Tier",
+          "costImpact": 12386,
+          "newDueDate": "2024-07-13",
+          "status": "active",
+          "rootCause": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "correctiveAction": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "caseId": 146,
+          "originalCaseNumber": "Primary Original Case Number 8",
+          "reason": "Primary Reason 8",
+          "faultCategory": "Basic Tier",
+          "costImpact": 9367,
+          "newDueDate": "2024-08-15",
+          "status": "active",
+          "rootCause": "Innovative framework incorporating best practices and emerging technologies.",
+          "correctiveAction": "Innovative framework incorporating best practices and emerging technologies.",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "caseId": 194,
+          "originalCaseNumber": "Global Original Case Number 9",
+          "reason": "Global Reason 9",
+          "faultCategory": "Enterprise",
+          "costImpact": 11348,
+          "newDueDate": "2024-09-17",
+          "status": "active",
+          "rootCause": "Scalable architecture built to accommodate rapid expansion and change.",
+          "correctiveAction": "Scalable architecture built to accommodate rapid expansion and change.",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "caseId": 242,
+          "originalCaseNumber": "Regional Original Case Number 10",
+          "reason": "Regional Reason 10",
+          "faultCategory": "Starter",
+          "costImpact": 13329,
+          "newDueDate": "2024-10-19",
+          "status": "pending",
+          "rootCause": "Enterprise-grade solution with robust security and compliance features.",
+          "correctiveAction": "Enterprise-grade solution with robust security and compliance features.",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "caseId": 190,
+          "originalCaseNumber": "Custom Original Case Number 11",
+          "reason": "Custom Reason 11",
+          "faultCategory": "Growth",
+          "costImpact": 15310,
+          "newDueDate": "2024-11-21",
+          "status": "completed",
+          "rootCause": "Integrated platform connecting multiple systems for seamless operations.",
+          "correctiveAction": "Integrated platform connecting multiple systems for seamless operations.",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "caseId": 238,
+          "originalCaseNumber": "Smart Original Case Number 12",
+          "reason": "Smart Reason 12",
+          "faultCategory": "Scale",
+          "costImpact": 17291,
+          "newDueDate": "2024-12-23",
+          "status": "active",
+          "rootCause": "Automated workflow reducing manual intervention and human error.",
+          "correctiveAction": "Automated workflow reducing manual intervention and human error.",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "caseId": 286,
+          "originalCaseNumber": "Rapid Original Case Number 13",
+          "reason": "Rapid Reason 13",
+          "faultCategory": "Foundation",
+          "costImpact": 19272,
+          "newDueDate": "2024-01-25",
+          "status": "in_progress",
+          "rootCause": "Real-time monitoring system with intelligent alerting capabilities.",
+          "correctiveAction": "Real-time monitoring system with intelligent alerting capabilities.",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "caseId": 234,
+          "originalCaseNumber": "Secure Original Case Number 14",
+          "reason": "Secure Reason 14",
+          "faultCategory": "Advanced",
+          "costImpact": 21253,
+          "newDueDate": "2024-02-27",
+          "status": "active",
+          "rootCause": "Customizable module adaptable to diverse operational requirements.",
+          "correctiveAction": "Customizable module adaptable to diverse operational requirements.",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "caseId": 282,
+          "originalCaseNumber": "Modern Original Case Number 15",
+          "reason": "Modern Reason 15",
+          "faultCategory": "Professional",
+          "costImpact": 18234,
+          "newDueDate": "2024-03-01",
+          "status": "approved",
+          "rootCause": "Performance-optimized design achieving superior throughput and reliability.",
+          "correctiveAction": "Performance-optimized design achieving superior throughput and reliability.",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Shipment",
+      "routeKey": "shipments",
+      "label": "Shipment",
+      "icon": "truck",
+      "aiFunction": "analyzeShipment",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Shipment data. The data includes: Case Id, Tracking Number, Carrier, Ship Date, Estimated Delivery, Actual Delivery, Shipping Method, Cost, Status, Recipient Name, Recipient Address, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "trackingNumber",
+          "label": "Tracking Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "carrier",
+          "label": "Carrier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "shipDate",
+          "label": "Ship Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "estimatedDelivery",
+          "label": "Estimated Delivery",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "actualDelivery",
+          "label": "Actual Delivery",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "shippingMethod",
+          "label": "Shipping Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recipientName",
+          "label": "Recipient Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recipientAddress",
+          "label": "Recipient Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseId": 10,
+          "trackingNumber": "Advanced Tracking Number 1",
+          "carrier": "Advanced Carrier 1",
+          "shipDate": "2024-01-01",
+          "estimatedDelivery": "2024-01-01",
+          "actualDelivery": "2024-01-01",
+          "shippingMethod": "Advanced Shipping Method 1",
+          "cost": 500,
+          "status": "active",
+          "recipientName": "Advanced Recipient 1",
+          "recipientAddress": "Comprehensive solution designed for optimal performance and efficiency.",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "caseId": 58,
+          "trackingNumber": "Premium Tracking Number 2",
+          "carrier": "Premium Carrier 2",
+          "shipDate": "2024-02-03",
+          "estimatedDelivery": "2024-02-03",
+          "actualDelivery": "2024-02-03",
+          "shippingMethod": "Premium Shipping Method 2",
+          "cost": 2481,
+          "status": "pending",
+          "recipientName": "Premium Recipient 2",
+          "recipientAddress": "Industry-leading approach with proven results across multiple deployments.",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "caseId": 106,
+          "trackingNumber": "Standard Tracking Number 3",
+          "carrier": "Standard Carrier 3",
+          "shipDate": "2024-03-05",
+          "estimatedDelivery": "2024-03-05",
+          "actualDelivery": "2024-03-05",
+          "shippingMethod": "Standard Shipping Method 3",
+          "cost": 4462,
+          "status": "in_progress",
+          "recipientName": "Standard Recipient 3",
+          "recipientAddress": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "caseId": 154,
+          "trackingNumber": "Elite Tracking Number 4",
+          "carrier": "Elite Carrier 4",
+          "shipDate": "2024-04-07",
+          "estimatedDelivery": "2024-04-07",
+          "actualDelivery": "2024-04-07",
+          "shippingMethod": "Elite Shipping Method 4",
+          "cost": 6443,
+          "status": "completed",
+          "recipientName": "Elite Recipient 4",
+          "recipientAddress": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "caseId": 102,
+          "trackingNumber": "Core Tracking Number 5",
+          "carrier": "Core Carrier 5",
+          "shipDate": "2024-05-09",
+          "estimatedDelivery": "2024-05-09",
+          "actualDelivery": "2024-05-09",
+          "shippingMethod": "Core Shipping Method 5",
+          "cost": 8424,
+          "status": "under_review",
+          "recipientName": "Core Recipient 5",
+          "recipientAddress": "Cost-effective strategy focused on sustainable long-term growth.",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "caseId": 150,
+          "trackingNumber": "Pro Tracking Number 6",
+          "carrier": "Pro Carrier 6",
+          "shipDate": "2024-06-11",
+          "estimatedDelivery": "2024-06-11",
+          "actualDelivery": "2024-06-11",
+          "shippingMethod": "Pro Shipping Method 6",
+          "cost": 10405,
+          "status": "approved",
+          "recipientName": "Pro Recipient 6",
+          "recipientAddress": "High-priority initiative aligned with organizational strategic objectives.",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "caseId": 198,
+          "trackingNumber": "Essential Tracking Number 7",
+          "carrier": "Essential Carrier 7",
+          "shipDate": "2024-07-13",
+          "estimatedDelivery": "2024-07-13",
+          "actualDelivery": "2024-07-13",
+          "shippingMethod": "Essential Shipping Method 7",
+          "cost": 12386,
+          "status": "active",
+          "recipientName": "Essential Recipient 7",
+          "recipientAddress": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "caseId": 146,
+          "trackingNumber": "Primary Tracking Number 8",
+          "carrier": "Primary Carrier 8",
+          "shipDate": "2024-08-15",
+          "estimatedDelivery": "2024-08-15",
+          "actualDelivery": "2024-08-15",
+          "shippingMethod": "Primary Shipping Method 8",
+          "cost": 9367,
+          "status": "active",
+          "recipientName": "Primary Recipient 8",
+          "recipientAddress": "Innovative framework incorporating best practices and emerging technologies.",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "caseId": 194,
+          "trackingNumber": "Global Tracking Number 9",
+          "carrier": "Global Carrier 9",
+          "shipDate": "2024-09-17",
+          "estimatedDelivery": "2024-09-17",
+          "actualDelivery": "2024-09-17",
+          "shippingMethod": "Global Shipping Method 9",
+          "cost": 11348,
+          "status": "active",
+          "recipientName": "Global Recipient 9",
+          "recipientAddress": "Scalable architecture built to accommodate rapid expansion and change.",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "caseId": 242,
+          "trackingNumber": "Regional Tracking Number 10",
+          "carrier": "Regional Carrier 10",
+          "shipDate": "2024-10-19",
+          "estimatedDelivery": "2024-10-19",
+          "actualDelivery": "2024-10-19",
+          "shippingMethod": "Regional Shipping Method 10",
+          "cost": 13329,
+          "status": "pending",
+          "recipientName": "Regional Recipient 10",
+          "recipientAddress": "Enterprise-grade solution with robust security and compliance features.",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "caseId": 190,
+          "trackingNumber": "Custom Tracking Number 11",
+          "carrier": "Custom Carrier 11",
+          "shipDate": "2024-11-21",
+          "estimatedDelivery": "2024-11-21",
+          "actualDelivery": "2024-11-21",
+          "shippingMethod": "Custom Shipping Method 11",
+          "cost": 15310,
+          "status": "completed",
+          "recipientName": "Custom Recipient 11",
+          "recipientAddress": "Integrated platform connecting multiple systems for seamless operations.",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "caseId": 238,
+          "trackingNumber": "Smart Tracking Number 12",
+          "carrier": "Smart Carrier 12",
+          "shipDate": "2024-12-23",
+          "estimatedDelivery": "2024-12-23",
+          "actualDelivery": "2024-12-23",
+          "shippingMethod": "Smart Shipping Method 12",
+          "cost": 17291,
+          "status": "active",
+          "recipientName": "Smart Recipient 12",
+          "recipientAddress": "Automated workflow reducing manual intervention and human error.",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "caseId": 286,
+          "trackingNumber": "Rapid Tracking Number 13",
+          "carrier": "Rapid Carrier 13",
+          "shipDate": "2024-01-25",
+          "estimatedDelivery": "2024-01-25",
+          "actualDelivery": "2024-01-25",
+          "shippingMethod": "Rapid Shipping Method 13",
+          "cost": 19272,
+          "status": "in_progress",
+          "recipientName": "Rapid Recipient 13",
+          "recipientAddress": "Real-time monitoring system with intelligent alerting capabilities.",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "caseId": 234,
+          "trackingNumber": "Secure Tracking Number 14",
+          "carrier": "Secure Carrier 14",
+          "shipDate": "2024-02-27",
+          "estimatedDelivery": "2024-02-27",
+          "actualDelivery": "2024-02-27",
+          "shippingMethod": "Secure Shipping Method 14",
+          "cost": 21253,
+          "status": "active",
+          "recipientName": "Secure Recipient 14",
+          "recipientAddress": "Customizable module adaptable to diverse operational requirements.",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "caseId": 282,
+          "trackingNumber": "Modern Tracking Number 15",
+          "carrier": "Modern Carrier 15",
+          "shipDate": "2024-03-01",
+          "estimatedDelivery": "2024-03-01",
+          "actualDelivery": "2024-03-01",
+          "shippingMethod": "Modern Shipping Method 15",
+          "cost": 18234,
+          "status": "approved",
+          "recipientName": "Modern Recipient 15",
+          "recipientAddress": "Performance-optimized design achieving superior throughput and reliability.",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Pricing",
+      "routeKey": "pricings",
+      "label": "Pricing",
+      "icon": "users",
+      "aiFunction": "analyzePricing",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Pricing data. The data includes: Procedure Name, Procedure Code, Category, Base Price, Rush Surcharge, Complexity Surcharge, Material Tier, Description, Is Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "procedureName",
+          "label": "Procedure Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "procedureCode",
+          "label": "Procedure Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "basePrice",
+          "label": "Base Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "rushSurcharge",
+          "label": "Rush Surcharge",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "complexitySurcharge",
+          "label": "Complexity Surcharge",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "materialTier",
+          "label": "Material Tier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "procedureName": "Advanced Procedure 1",
+          "procedureCode": "Advanced Procedure Code 1",
+          "category": "Category A",
+          "basePrice": 500,
+          "rushSurcharge": 10,
+          "complexitySurcharge": 10,
+          "materialTier": "Advanced Material Tier 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "isActive": true
+        },
+        {
+          "procedureName": "Premium Procedure 2",
+          "procedureCode": "Premium Procedure Code 2",
+          "category": "Category B",
+          "basePrice": 2481,
+          "rushSurcharge": 71.7,
+          "complexitySurcharge": 71.7,
+          "materialTier": "Premium Material Tier 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "isActive": true
+        },
+        {
+          "procedureName": "Standard Procedure 3",
+          "procedureCode": "Standard Procedure Code 3",
+          "category": "Category C",
+          "basePrice": 4462,
+          "rushSurcharge": 33.4,
+          "complexitySurcharge": 33.4,
+          "materialTier": "Standard Material Tier 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "isActive": false
+        },
+        {
+          "procedureName": "Elite Procedure 4",
+          "procedureCode": "Elite Procedure Code 4",
+          "category": "Category D",
+          "basePrice": 6443,
+          "rushSurcharge": 95.1,
+          "complexitySurcharge": 95.1,
+          "materialTier": "Elite Material Tier 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "isActive": true
+        },
+        {
+          "procedureName": "Core Procedure 5",
+          "procedureCode": "Core Procedure Code 5",
+          "category": "Category E",
+          "basePrice": 8424,
+          "rushSurcharge": 56.8,
+          "complexitySurcharge": 56.8,
+          "materialTier": "Core Material Tier 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "isActive": false
+        },
+        {
+          "procedureName": "Pro Procedure 6",
+          "procedureCode": "Pro Procedure Code 6",
+          "category": "Premium Tier",
+          "basePrice": 10405,
+          "rushSurcharge": 118.5,
+          "complexitySurcharge": 118.5,
+          "materialTier": "Pro Material Tier 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "isActive": true
+        },
+        {
+          "procedureName": "Essential Procedure 7",
+          "procedureCode": "Essential Procedure Code 7",
+          "category": "Standard Tier",
+          "basePrice": 12386,
+          "rushSurcharge": 80.2,
+          "complexitySurcharge": 80.2,
+          "materialTier": "Essential Material Tier 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "isActive": true
+        },
+        {
+          "procedureName": "Primary Procedure 8",
+          "procedureCode": "Primary Procedure Code 8",
+          "category": "Basic Tier",
+          "basePrice": 9367,
+          "rushSurcharge": 141.9,
+          "complexitySurcharge": 141.9,
+          "materialTier": "Primary Material Tier 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "isActive": false
+        },
+        {
+          "procedureName": "Global Procedure 9",
+          "procedureCode": "Global Procedure Code 9",
+          "category": "Enterprise",
+          "basePrice": 11348,
+          "rushSurcharge": 103.6,
+          "complexitySurcharge": 103.6,
+          "materialTier": "Global Material Tier 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "isActive": true
+        },
+        {
+          "procedureName": "Regional Procedure 10",
+          "procedureCode": "Regional Procedure Code 10",
+          "category": "Starter",
+          "basePrice": 13329,
+          "rushSurcharge": 165.3,
+          "complexitySurcharge": 165.3,
+          "materialTier": "Regional Material Tier 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "isActive": true
+        },
+        {
+          "procedureName": "Custom Procedure 11",
+          "procedureCode": "Custom Procedure Code 11",
+          "category": "Growth",
+          "basePrice": 15310,
+          "rushSurcharge": 127,
+          "complexitySurcharge": 127,
+          "materialTier": "Custom Material Tier 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "isActive": false
+        },
+        {
+          "procedureName": "Smart Procedure 12",
+          "procedureCode": "Smart Procedure Code 12",
+          "category": "Scale",
+          "basePrice": 17291,
+          "rushSurcharge": 188.7,
+          "complexitySurcharge": 188.7,
+          "materialTier": "Smart Material Tier 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "isActive": true
+        },
+        {
+          "procedureName": "Rapid Procedure 13",
+          "procedureCode": "Rapid Procedure Code 13",
+          "category": "Foundation",
+          "basePrice": 19272,
+          "rushSurcharge": 150.4,
+          "complexitySurcharge": 150.4,
+          "materialTier": "Rapid Material Tier 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "isActive": false
+        },
+        {
+          "procedureName": "Secure Procedure 14",
+          "procedureCode": "Secure Procedure Code 14",
+          "category": "Advanced",
+          "basePrice": 21253,
+          "rushSurcharge": 212.1,
+          "complexitySurcharge": 212.1,
+          "materialTier": "Secure Material Tier 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "isActive": true
+        },
+        {
+          "procedureName": "Modern Procedure 15",
+          "procedureCode": "Modern Procedure Code 15",
+          "category": "Professional",
+          "basePrice": 18234,
+          "rushSurcharge": 173.8,
+          "complexitySurcharge": 173.8,
+          "materialTier": "Modern Material Tier 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "Invoice",
+      "routeKey": "invoices",
+      "label": "Invoice",
+      "icon": "zap",
+      "aiFunction": "analyzeInvoice",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Invoice data. The data includes: Invoice Number, Dentist Id, Case Id, Subtotal, Tax, Total, Status, Due Date, Paid Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "invoiceNumber",
+          "label": "Invoice Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dentistId",
+          "label": "Dentist Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "subtotal",
+          "label": "Subtotal",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "tax",
+          "label": "Tax",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "total",
+          "label": "Total",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "paidDate",
+          "label": "Paid Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "invoiceNumber": "Advanced Invoice Number 1",
+          "dentistId": 10,
+          "caseId": 10,
+          "subtotal": 10,
+          "tax": 10,
+          "total": 10,
+          "status": "active",
+          "dueDate": "2024-01-01",
+          "paidDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "invoiceNumber": "Premium Invoice Number 2",
+          "dentistId": 58,
+          "caseId": 58,
+          "subtotal": 71.7,
+          "tax": 71.7,
+          "total": 71.7,
+          "status": "pending",
+          "dueDate": "2024-02-03",
+          "paidDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "invoiceNumber": "Standard Invoice Number 3",
+          "dentistId": 106,
+          "caseId": 106,
+          "subtotal": 33.4,
+          "tax": 33.4,
+          "total": 33.4,
+          "status": "in_progress",
+          "dueDate": "2024-03-05",
+          "paidDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "invoiceNumber": "Elite Invoice Number 4",
+          "dentistId": 154,
+          "caseId": 154,
+          "subtotal": 95.1,
+          "tax": 95.1,
+          "total": 95.1,
+          "status": "completed",
+          "dueDate": "2024-04-07",
+          "paidDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "invoiceNumber": "Core Invoice Number 5",
+          "dentistId": 102,
+          "caseId": 102,
+          "subtotal": 56.8,
+          "tax": 56.8,
+          "total": 56.8,
+          "status": "under_review",
+          "dueDate": "2024-05-09",
+          "paidDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "invoiceNumber": "Pro Invoice Number 6",
+          "dentistId": 150,
+          "caseId": 150,
+          "subtotal": 118.5,
+          "tax": 118.5,
+          "total": 118.5,
+          "status": "approved",
+          "dueDate": "2024-06-11",
+          "paidDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "invoiceNumber": "Essential Invoice Number 7",
+          "dentistId": 198,
+          "caseId": 198,
+          "subtotal": 80.2,
+          "tax": 80.2,
+          "total": 80.2,
+          "status": "active",
+          "dueDate": "2024-07-13",
+          "paidDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "invoiceNumber": "Primary Invoice Number 8",
+          "dentistId": 146,
+          "caseId": 146,
+          "subtotal": 141.9,
+          "tax": 141.9,
+          "total": 141.9,
+          "status": "active",
+          "dueDate": "2024-08-15",
+          "paidDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "invoiceNumber": "Global Invoice Number 9",
+          "dentistId": 194,
+          "caseId": 194,
+          "subtotal": 103.6,
+          "tax": 103.6,
+          "total": 103.6,
+          "status": "active",
+          "dueDate": "2024-09-17",
+          "paidDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "invoiceNumber": "Regional Invoice Number 10",
+          "dentistId": 242,
+          "caseId": 242,
+          "subtotal": 165.3,
+          "tax": 165.3,
+          "total": 165.3,
+          "status": "pending",
+          "dueDate": "2024-10-19",
+          "paidDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "invoiceNumber": "Custom Invoice Number 11",
+          "dentistId": 190,
+          "caseId": 190,
+          "subtotal": 127,
+          "tax": 127,
+          "total": 127,
+          "status": "completed",
+          "dueDate": "2024-11-21",
+          "paidDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "invoiceNumber": "Smart Invoice Number 12",
+          "dentistId": 238,
+          "caseId": 238,
+          "subtotal": 188.7,
+          "tax": 188.7,
+          "total": 188.7,
+          "status": "active",
+          "dueDate": "2024-12-23",
+          "paidDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "invoiceNumber": "Rapid Invoice Number 13",
+          "dentistId": 286,
+          "caseId": 286,
+          "subtotal": 150.4,
+          "tax": 150.4,
+          "total": 150.4,
+          "status": "in_progress",
+          "dueDate": "2024-01-25",
+          "paidDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "invoiceNumber": "Secure Invoice Number 14",
+          "dentistId": 234,
+          "caseId": 234,
+          "subtotal": 212.1,
+          "tax": 212.1,
+          "total": 212.1,
+          "status": "active",
+          "dueDate": "2024-02-27",
+          "paidDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "invoiceNumber": "Modern Invoice Number 15",
+          "dentistId": 282,
+          "caseId": 282,
+          "subtotal": 173.8,
+          "tax": 173.8,
+          "total": 173.8,
+          "status": "approved",
+          "dueDate": "2024-03-01",
+          "paidDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "InvoiceItem",
+      "routeKey": "invoice-items",
+      "label": "Invoice Item",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeInvoiceItem",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Invoice Item data. The data includes: Invoice Id, Description, Quantity, Unit Price, Total. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "invoiceId",
+          "label": "Invoice Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "unitPrice",
+          "label": "Unit Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "total",
+          "label": "Total",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "invoiceId": 10,
+          "description": "Advanced Description 1",
+          "quantity": 172,
+          "unitPrice": 500,
+          "total": 10
+        },
+        {
+          "invoiceId": 58,
+          "description": "Premium Description 2",
+          "quantity": 116,
+          "unitPrice": 2481,
+          "total": 71.7
+        },
+        {
+          "invoiceId": 106,
+          "description": "Standard Description 3",
+          "quantity": 50,
+          "unitPrice": 4462,
+          "total": 33.4
+        },
+        {
+          "invoiceId": 154,
+          "description": "Elite Description 4",
+          "quantity": 38,
+          "unitPrice": 6443,
+          "total": 95.1
+        },
+        {
+          "invoiceId": 102,
+          "description": "Core Description 5",
+          "quantity": 156,
+          "unitPrice": 8424,
+          "total": 56.8
+        },
+        {
+          "invoiceId": 150,
+          "description": "Pro Description 6",
+          "quantity": 198,
+          "unitPrice": 10405,
+          "total": 118.5
+        },
+        {
+          "invoiceId": 198,
+          "description": "Essential Description 7",
+          "quantity": 218,
+          "unitPrice": 12386,
+          "total": 80.2
+        },
+        {
+          "invoiceId": 146,
+          "description": "Primary Description 8",
+          "quantity": 106,
+          "unitPrice": 9367,
+          "total": 141.9
+        },
+        {
+          "invoiceId": 194,
+          "description": "Global Description 9",
+          "quantity": 229,
+          "unitPrice": 11348,
+          "total": 103.6
+        },
+        {
+          "invoiceId": 242,
+          "description": "Regional Description 10",
+          "quantity": 153,
+          "unitPrice": 13329,
+          "total": 165.3
+        },
+        {
+          "invoiceId": 190,
+          "description": "Custom Description 11",
+          "quantity": 148,
+          "unitPrice": 15310,
+          "total": 127
+        },
+        {
+          "invoiceId": 238,
+          "description": "Smart Description 12",
+          "quantity": 199,
+          "unitPrice": 17291,
+          "total": 188.7
+        },
+        {
+          "invoiceId": 286,
+          "description": "Rapid Description 13",
+          "quantity": 141,
+          "unitPrice": 19272,
+          "total": 150.4
+        },
+        {
+          "invoiceId": 234,
+          "description": "Secure Description 14",
+          "quantity": 211,
+          "unitPrice": 21253,
+          "total": 212.1
+        },
+        {
+          "invoiceId": 282,
+          "description": "Modern Description 15",
+          "quantity": 270,
+          "unitPrice": 18234,
+          "total": 173.8
+        }
+      ]
+    },
+    {
+      "modelName": "EquipmentCalibration",
+      "routeKey": "equipment-calibrations",
+      "label": "Equipment Calibration",
+      "icon": "bell",
+      "aiFunction": "analyzeEquipmentCalibration",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Equipment Calibration data. The data includes: Equipment Name, Equipment Type, Serial Number, Last Calibration, Next Calibration, Calibrated By, Status, Results, Certificate Number, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "equipmentName",
+          "label": "Equipment Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "equipmentType",
+          "label": "Equipment Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "serialNumber",
+          "label": "Serial Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastCalibration",
+          "label": "Last Calibration",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "nextCalibration",
+          "label": "Next Calibration",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "calibratedBy",
+          "label": "Calibrated By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "results",
+          "label": "Results",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "certificateNumber",
+          "label": "Certificate Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "equipmentName": "Advanced Equipment 1",
+          "equipmentType": "Category A",
+          "serialNumber": "Advanced Serial Number 1",
+          "lastCalibration": "2024-01-01",
+          "nextCalibration": "2024-01-01",
+          "calibratedBy": "Advanced Calibrated By 1",
+          "status": "active",
+          "results": "Comprehensive solution designed for optimal performance and efficiency.",
+          "certificateNumber": "Advanced Certificate Number 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "equipmentName": "Premium Equipment 2",
+          "equipmentType": "Category B",
+          "serialNumber": "Premium Serial Number 2",
+          "lastCalibration": "2024-02-03",
+          "nextCalibration": "2024-02-03",
+          "calibratedBy": "Premium Calibrated By 2",
+          "status": "pending",
+          "results": "Industry-leading approach with proven results across multiple deployments.",
+          "certificateNumber": "Premium Certificate Number 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "equipmentName": "Standard Equipment 3",
+          "equipmentType": "Category C",
+          "serialNumber": "Standard Serial Number 3",
+          "lastCalibration": "2024-03-05",
+          "nextCalibration": "2024-03-05",
+          "calibratedBy": "Standard Calibrated By 3",
+          "status": "in_progress",
+          "results": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "certificateNumber": "Standard Certificate Number 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "equipmentName": "Elite Equipment 4",
+          "equipmentType": "Category D",
+          "serialNumber": "Elite Serial Number 4",
+          "lastCalibration": "2024-04-07",
+          "nextCalibration": "2024-04-07",
+          "calibratedBy": "Elite Calibrated By 4",
+          "status": "completed",
+          "results": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "certificateNumber": "Elite Certificate Number 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "equipmentName": "Core Equipment 5",
+          "equipmentType": "Category E",
+          "serialNumber": "Core Serial Number 5",
+          "lastCalibration": "2024-05-09",
+          "nextCalibration": "2024-05-09",
+          "calibratedBy": "Core Calibrated By 5",
+          "status": "under_review",
+          "results": "Cost-effective strategy focused on sustainable long-term growth.",
+          "certificateNumber": "Core Certificate Number 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "equipmentName": "Pro Equipment 6",
+          "equipmentType": "Premium Tier",
+          "serialNumber": "Pro Serial Number 6",
+          "lastCalibration": "2024-06-11",
+          "nextCalibration": "2024-06-11",
+          "calibratedBy": "Pro Calibrated By 6",
+          "status": "approved",
+          "results": "High-priority initiative aligned with organizational strategic objectives.",
+          "certificateNumber": "Pro Certificate Number 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "equipmentName": "Essential Equipment 7",
+          "equipmentType": "Standard Tier",
+          "serialNumber": "Essential Serial Number 7",
+          "lastCalibration": "2024-07-13",
+          "nextCalibration": "2024-07-13",
+          "calibratedBy": "Essential Calibrated By 7",
+          "status": "active",
+          "results": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "certificateNumber": "Essential Certificate Number 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "equipmentName": "Primary Equipment 8",
+          "equipmentType": "Basic Tier",
+          "serialNumber": "Primary Serial Number 8",
+          "lastCalibration": "2024-08-15",
+          "nextCalibration": "2024-08-15",
+          "calibratedBy": "Primary Calibrated By 8",
+          "status": "active",
+          "results": "Innovative framework incorporating best practices and emerging technologies.",
+          "certificateNumber": "Primary Certificate Number 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "equipmentName": "Global Equipment 9",
+          "equipmentType": "Enterprise",
+          "serialNumber": "Global Serial Number 9",
+          "lastCalibration": "2024-09-17",
+          "nextCalibration": "2024-09-17",
+          "calibratedBy": "Global Calibrated By 9",
+          "status": "active",
+          "results": "Scalable architecture built to accommodate rapid expansion and change.",
+          "certificateNumber": "Global Certificate Number 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "equipmentName": "Regional Equipment 10",
+          "equipmentType": "Starter",
+          "serialNumber": "Regional Serial Number 10",
+          "lastCalibration": "2024-10-19",
+          "nextCalibration": "2024-10-19",
+          "calibratedBy": "Regional Calibrated By 10",
+          "status": "pending",
+          "results": "Enterprise-grade solution with robust security and compliance features.",
+          "certificateNumber": "Regional Certificate Number 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "equipmentName": "Custom Equipment 11",
+          "equipmentType": "Growth",
+          "serialNumber": "Custom Serial Number 11",
+          "lastCalibration": "2024-11-21",
+          "nextCalibration": "2024-11-21",
+          "calibratedBy": "Custom Calibrated By 11",
+          "status": "completed",
+          "results": "Integrated platform connecting multiple systems for seamless operations.",
+          "certificateNumber": "Custom Certificate Number 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "equipmentName": "Smart Equipment 12",
+          "equipmentType": "Scale",
+          "serialNumber": "Smart Serial Number 12",
+          "lastCalibration": "2024-12-23",
+          "nextCalibration": "2024-12-23",
+          "calibratedBy": "Smart Calibrated By 12",
+          "status": "active",
+          "results": "Automated workflow reducing manual intervention and human error.",
+          "certificateNumber": "Smart Certificate Number 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "equipmentName": "Rapid Equipment 13",
+          "equipmentType": "Foundation",
+          "serialNumber": "Rapid Serial Number 13",
+          "lastCalibration": "2024-01-25",
+          "nextCalibration": "2024-01-25",
+          "calibratedBy": "Rapid Calibrated By 13",
+          "status": "in_progress",
+          "results": "Real-time monitoring system with intelligent alerting capabilities.",
+          "certificateNumber": "Rapid Certificate Number 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "equipmentName": "Secure Equipment 14",
+          "equipmentType": "Advanced",
+          "serialNumber": "Secure Serial Number 14",
+          "lastCalibration": "2024-02-27",
+          "nextCalibration": "2024-02-27",
+          "calibratedBy": "Secure Calibrated By 14",
+          "status": "active",
+          "results": "Customizable module adaptable to diverse operational requirements.",
+          "certificateNumber": "Secure Certificate Number 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "equipmentName": "Modern Equipment 15",
+          "equipmentType": "Professional",
+          "serialNumber": "Modern Serial Number 15",
+          "lastCalibration": "2024-03-01",
+          "nextCalibration": "2024-03-01",
+          "calibratedBy": "Modern Calibrated By 15",
+          "status": "approved",
+          "results": "Performance-optimized design achieving superior throughput and reliability.",
+          "certificateNumber": "Modern Certificate Number 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "ComplianceRecord",
+      "routeKey": "compliance-records",
+      "label": "Compliance Record",
+      "icon": "book",
+      "aiFunction": "analyzeComplianceRecord",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Compliance Record data. The data includes: Record Type, Title, Description, Status, Last Review, Next Review, Responsible Person, Documentation Link, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "recordType",
+          "label": "Record Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastReview",
+          "label": "Last Review",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "nextReview",
+          "label": "Next Review",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "responsiblePerson",
+          "label": "Responsible Person",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "documentationLink",
+          "label": "Documentation Link",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "recordType": "Category A",
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "lastReview": "2024-01-01",
+          "nextReview": "2024-01-01",
+          "responsiblePerson": "Advanced Responsible Person 1",
+          "documentationLink": "https://example.com/documentationLink/1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "recordType": "Category B",
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "lastReview": "2024-02-03",
+          "nextReview": "2024-02-03",
+          "responsiblePerson": "Premium Responsible Person 2",
+          "documentationLink": "https://example.com/documentationLink/2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "recordType": "Category C",
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "lastReview": "2024-03-05",
+          "nextReview": "2024-03-05",
+          "responsiblePerson": "Standard Responsible Person 3",
+          "documentationLink": "https://example.com/documentationLink/3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "recordType": "Category D",
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "lastReview": "2024-04-07",
+          "nextReview": "2024-04-07",
+          "responsiblePerson": "Elite Responsible Person 4",
+          "documentationLink": "https://example.com/documentationLink/4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "recordType": "Category E",
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "lastReview": "2024-05-09",
+          "nextReview": "2024-05-09",
+          "responsiblePerson": "Core Responsible Person 5",
+          "documentationLink": "https://example.com/documentationLink/5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "recordType": "Premium Tier",
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "lastReview": "2024-06-11",
+          "nextReview": "2024-06-11",
+          "responsiblePerson": "Pro Responsible Person 6",
+          "documentationLink": "https://example.com/documentationLink/6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "recordType": "Standard Tier",
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "lastReview": "2024-07-13",
+          "nextReview": "2024-07-13",
+          "responsiblePerson": "Essential Responsible Person 7",
+          "documentationLink": "https://example.com/documentationLink/7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "recordType": "Basic Tier",
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "lastReview": "2024-08-15",
+          "nextReview": "2024-08-15",
+          "responsiblePerson": "Primary Responsible Person 8",
+          "documentationLink": "https://example.com/documentationLink/8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "recordType": "Enterprise",
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "lastReview": "2024-09-17",
+          "nextReview": "2024-09-17",
+          "responsiblePerson": "Global Responsible Person 9",
+          "documentationLink": "https://example.com/documentationLink/9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "recordType": "Starter",
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "lastReview": "2024-10-19",
+          "nextReview": "2024-10-19",
+          "responsiblePerson": "Regional Responsible Person 10",
+          "documentationLink": "https://example.com/documentationLink/10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "recordType": "Growth",
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "lastReview": "2024-11-21",
+          "nextReview": "2024-11-21",
+          "responsiblePerson": "Custom Responsible Person 11",
+          "documentationLink": "https://example.com/documentationLink/11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "recordType": "Scale",
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "lastReview": "2024-12-23",
+          "nextReview": "2024-12-23",
+          "responsiblePerson": "Smart Responsible Person 12",
+          "documentationLink": "https://example.com/documentationLink/12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "recordType": "Foundation",
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "lastReview": "2024-01-25",
+          "nextReview": "2024-01-25",
+          "responsiblePerson": "Rapid Responsible Person 13",
+          "documentationLink": "https://example.com/documentationLink/13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "recordType": "Advanced",
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "lastReview": "2024-02-27",
+          "nextReview": "2024-02-27",
+          "responsiblePerson": "Secure Responsible Person 14",
+          "documentationLink": "https://example.com/documentationLink/14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "recordType": "Professional",
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "lastReview": "2024-03-01",
+          "nextReview": "2024-03-01",
+          "responsiblePerson": "Modern Responsible Person 15",
+          "documentationLink": "https://example.com/documentationLink/15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "ContinuingEducation",
+      "routeKey": "continuing-educations",
+      "label": "Continuing Education",
+      "icon": "calendar",
+      "aiFunction": "analyzeContinuingEducation",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Continuing Education data. The data includes: Technician Id, Course Name, Provider, Completion Date, Expiry Date, Credits, Certificate Number, Category, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "technicianId",
+          "label": "Technician Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "courseName",
+          "label": "Course Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "provider",
+          "label": "Provider",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "completionDate",
+          "label": "Completion Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "expiryDate",
+          "label": "Expiry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "credits",
+          "label": "Credits",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "certificateNumber",
+          "label": "Certificate Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "technicianId": 10,
+          "courseName": "Advanced Course 1",
+          "provider": "Advanced Provider 1",
+          "completionDate": "2024-01-01",
+          "expiryDate": "2024-01-01",
+          "credits": 10,
+          "certificateNumber": "Advanced Certificate Number 1",
+          "category": "Category A",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "technicianId": 58,
+          "courseName": "Premium Course 2",
+          "provider": "Premium Provider 2",
+          "completionDate": "2024-02-03",
+          "expiryDate": "2024-02-03",
+          "credits": 71.7,
+          "certificateNumber": "Premium Certificate Number 2",
+          "category": "Category B",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "technicianId": 106,
+          "courseName": "Standard Course 3",
+          "provider": "Standard Provider 3",
+          "completionDate": "2024-03-05",
+          "expiryDate": "2024-03-05",
+          "credits": 33.4,
+          "certificateNumber": "Standard Certificate Number 3",
+          "category": "Category C",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "technicianId": 154,
+          "courseName": "Elite Course 4",
+          "provider": "Elite Provider 4",
+          "completionDate": "2024-04-07",
+          "expiryDate": "2024-04-07",
+          "credits": 95.1,
+          "certificateNumber": "Elite Certificate Number 4",
+          "category": "Category D",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "technicianId": 102,
+          "courseName": "Core Course 5",
+          "provider": "Core Provider 5",
+          "completionDate": "2024-05-09",
+          "expiryDate": "2024-05-09",
+          "credits": 56.8,
+          "certificateNumber": "Core Certificate Number 5",
+          "category": "Category E",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "technicianId": 150,
+          "courseName": "Pro Course 6",
+          "provider": "Pro Provider 6",
+          "completionDate": "2024-06-11",
+          "expiryDate": "2024-06-11",
+          "credits": 118.5,
+          "certificateNumber": "Pro Certificate Number 6",
+          "category": "Premium Tier",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "technicianId": 198,
+          "courseName": "Essential Course 7",
+          "provider": "Essential Provider 7",
+          "completionDate": "2024-07-13",
+          "expiryDate": "2024-07-13",
+          "credits": 80.2,
+          "certificateNumber": "Essential Certificate Number 7",
+          "category": "Standard Tier",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "technicianId": 146,
+          "courseName": "Primary Course 8",
+          "provider": "Primary Provider 8",
+          "completionDate": "2024-08-15",
+          "expiryDate": "2024-08-15",
+          "credits": 141.9,
+          "certificateNumber": "Primary Certificate Number 8",
+          "category": "Basic Tier",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "technicianId": 194,
+          "courseName": "Global Course 9",
+          "provider": "Global Provider 9",
+          "completionDate": "2024-09-17",
+          "expiryDate": "2024-09-17",
+          "credits": 103.6,
+          "certificateNumber": "Global Certificate Number 9",
+          "category": "Enterprise",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "technicianId": 242,
+          "courseName": "Regional Course 10",
+          "provider": "Regional Provider 10",
+          "completionDate": "2024-10-19",
+          "expiryDate": "2024-10-19",
+          "credits": 165.3,
+          "certificateNumber": "Regional Certificate Number 10",
+          "category": "Starter",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "technicianId": 190,
+          "courseName": "Custom Course 11",
+          "provider": "Custom Provider 11",
+          "completionDate": "2024-11-21",
+          "expiryDate": "2024-11-21",
+          "credits": 127,
+          "certificateNumber": "Custom Certificate Number 11",
+          "category": "Growth",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "technicianId": 238,
+          "courseName": "Smart Course 12",
+          "provider": "Smart Provider 12",
+          "completionDate": "2024-12-23",
+          "expiryDate": "2024-12-23",
+          "credits": 188.7,
+          "certificateNumber": "Smart Certificate Number 12",
+          "category": "Scale",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "technicianId": 286,
+          "courseName": "Rapid Course 13",
+          "provider": "Rapid Provider 13",
+          "completionDate": "2024-01-25",
+          "expiryDate": "2024-01-25",
+          "credits": 150.4,
+          "certificateNumber": "Rapid Certificate Number 13",
+          "category": "Foundation",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "technicianId": 234,
+          "courseName": "Secure Course 14",
+          "provider": "Secure Provider 14",
+          "completionDate": "2024-02-27",
+          "expiryDate": "2024-02-27",
+          "credits": 212.1,
+          "certificateNumber": "Secure Certificate Number 14",
+          "category": "Advanced",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "technicianId": 282,
+          "courseName": "Modern Course 15",
+          "provider": "Modern Provider 15",
+          "completionDate": "2024-03-01",
+          "expiryDate": "2024-03-01",
+          "credits": 173.8,
+          "certificateNumber": "Modern Certificate Number 15",
+          "category": "Professional",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PhotoDocumentation",
+      "routeKey": "photo-documentations",
+      "label": "Photo Documentation",
+      "icon": "check-circle",
+      "aiFunction": "analyzePhotoDocumentation",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Photo Documentation data. The data includes: Case Id, Photo Type, Stage, File Name, Description, Taken By, Taken At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "photoType",
+          "label": "Photo Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "stage",
+          "label": "Stage",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fileName",
+          "label": "File Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "takenBy",
+          "label": "Taken By",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "takenAt",
+          "label": "Taken At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseId": 10,
+          "photoType": "Category A",
+          "stage": "Advanced Stage 1",
+          "fileName": "Advanced File 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "takenBy": "Advanced Taken By 1",
+          "takenAt": "2024-01-01"
+        },
+        {
+          "caseId": 58,
+          "photoType": "Category B",
+          "stage": "Premium Stage 2",
+          "fileName": "Premium File 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "takenBy": "Premium Taken By 2",
+          "takenAt": "2024-02-03"
+        },
+        {
+          "caseId": 106,
+          "photoType": "Category C",
+          "stage": "Standard Stage 3",
+          "fileName": "Standard File 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "takenBy": "Standard Taken By 3",
+          "takenAt": "2024-03-05"
+        },
+        {
+          "caseId": 154,
+          "photoType": "Category D",
+          "stage": "Elite Stage 4",
+          "fileName": "Elite File 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "takenBy": "Elite Taken By 4",
+          "takenAt": "2024-04-07"
+        },
+        {
+          "caseId": 102,
+          "photoType": "Category E",
+          "stage": "Core Stage 5",
+          "fileName": "Core File 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "takenBy": "Core Taken By 5",
+          "takenAt": "2024-05-09"
+        },
+        {
+          "caseId": 150,
+          "photoType": "Premium Tier",
+          "stage": "Pro Stage 6",
+          "fileName": "Pro File 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "takenBy": "Pro Taken By 6",
+          "takenAt": "2024-06-11"
+        },
+        {
+          "caseId": 198,
+          "photoType": "Standard Tier",
+          "stage": "Essential Stage 7",
+          "fileName": "Essential File 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "takenBy": "Essential Taken By 7",
+          "takenAt": "2024-07-13"
+        },
+        {
+          "caseId": 146,
+          "photoType": "Basic Tier",
+          "stage": "Primary Stage 8",
+          "fileName": "Primary File 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "takenBy": "Primary Taken By 8",
+          "takenAt": "2024-08-15"
+        },
+        {
+          "caseId": 194,
+          "photoType": "Enterprise",
+          "stage": "Global Stage 9",
+          "fileName": "Global File 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "takenBy": "Global Taken By 9",
+          "takenAt": "2024-09-17"
+        },
+        {
+          "caseId": 242,
+          "photoType": "Starter",
+          "stage": "Regional Stage 10",
+          "fileName": "Regional File 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "takenBy": "Regional Taken By 10",
+          "takenAt": "2024-10-19"
+        },
+        {
+          "caseId": 190,
+          "photoType": "Growth",
+          "stage": "Custom Stage 11",
+          "fileName": "Custom File 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "takenBy": "Custom Taken By 11",
+          "takenAt": "2024-11-21"
+        },
+        {
+          "caseId": 238,
+          "photoType": "Scale",
+          "stage": "Smart Stage 12",
+          "fileName": "Smart File 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "takenBy": "Smart Taken By 12",
+          "takenAt": "2024-12-23"
+        },
+        {
+          "caseId": 286,
+          "photoType": "Foundation",
+          "stage": "Rapid Stage 13",
+          "fileName": "Rapid File 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "takenBy": "Rapid Taken By 13",
+          "takenAt": "2024-01-25"
+        },
+        {
+          "caseId": 234,
+          "photoType": "Advanced",
+          "stage": "Secure Stage 14",
+          "fileName": "Secure File 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "takenBy": "Secure Taken By 14",
+          "takenAt": "2024-02-27"
+        },
+        {
+          "caseId": 282,
+          "photoType": "Professional",
+          "stage": "Modern Stage 15",
+          "fileName": "Modern File 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "takenBy": "Modern Taken By 15",
+          "takenAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "DesignFile",
+      "routeKey": "design-files",
+      "label": "Design File",
+      "icon": "dollar-sign",
+      "aiFunction": "analyzeDesignFile",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Design File data. The data includes: Case Id, File Name, File Type, Software, Version, Designer, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "fileName",
+          "label": "File Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fileType",
+          "label": "File Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "software",
+          "label": "Software",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "version",
+          "label": "Version",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "designer",
+          "label": "Designer",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseId": 10,
+          "fileName": "Advanced File 1",
+          "fileType": "Category A",
+          "software": "Advanced Software 1",
+          "version": "Advanced Version 1",
+          "designer": "Advanced Designer 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "caseId": 58,
+          "fileName": "Premium File 2",
+          "fileType": "Category B",
+          "software": "Premium Software 2",
+          "version": "Premium Version 2",
+          "designer": "Premium Designer 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "caseId": 106,
+          "fileName": "Standard File 3",
+          "fileType": "Category C",
+          "software": "Standard Software 3",
+          "version": "Standard Version 3",
+          "designer": "Standard Designer 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "caseId": 154,
+          "fileName": "Elite File 4",
+          "fileType": "Category D",
+          "software": "Elite Software 4",
+          "version": "Elite Version 4",
+          "designer": "Elite Designer 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "caseId": 102,
+          "fileName": "Core File 5",
+          "fileType": "Category E",
+          "software": "Core Software 5",
+          "version": "Core Version 5",
+          "designer": "Core Designer 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "caseId": 150,
+          "fileName": "Pro File 6",
+          "fileType": "Premium Tier",
+          "software": "Pro Software 6",
+          "version": "Pro Version 6",
+          "designer": "Pro Designer 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "caseId": 198,
+          "fileName": "Essential File 7",
+          "fileType": "Standard Tier",
+          "software": "Essential Software 7",
+          "version": "Essential Version 7",
+          "designer": "Essential Designer 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "caseId": 146,
+          "fileName": "Primary File 8",
+          "fileType": "Basic Tier",
+          "software": "Primary Software 8",
+          "version": "Primary Version 8",
+          "designer": "Primary Designer 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "caseId": 194,
+          "fileName": "Global File 9",
+          "fileType": "Enterprise",
+          "software": "Global Software 9",
+          "version": "Global Version 9",
+          "designer": "Global Designer 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "caseId": 242,
+          "fileName": "Regional File 10",
+          "fileType": "Starter",
+          "software": "Regional Software 10",
+          "version": "Regional Version 10",
+          "designer": "Regional Designer 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "caseId": 190,
+          "fileName": "Custom File 11",
+          "fileType": "Growth",
+          "software": "Custom Software 11",
+          "version": "Custom Version 11",
+          "designer": "Custom Designer 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "caseId": 238,
+          "fileName": "Smart File 12",
+          "fileType": "Scale",
+          "software": "Smart Software 12",
+          "version": "Smart Version 12",
+          "designer": "Smart Designer 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "caseId": 286,
+          "fileName": "Rapid File 13",
+          "fileType": "Foundation",
+          "software": "Rapid Software 13",
+          "version": "Rapid Version 13",
+          "designer": "Rapid Designer 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "caseId": 234,
+          "fileName": "Secure File 14",
+          "fileType": "Advanced",
+          "software": "Secure Software 14",
+          "version": "Secure Version 14",
+          "designer": "Secure Designer 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "caseId": 282,
+          "fileName": "Modern File 15",
+          "fileType": "Professional",
+          "software": "Modern Software 15",
+          "version": "Modern Version 15",
+          "designer": "Modern Designer 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "AiResult",
+      "routeKey": "ai-results",
+      "label": "Ai Result",
+      "icon": "activity",
+      "aiFunction": "analyzeAiResult",
+      "aiPrompt": "You are an AI analyst for A I Dental Lab Case Manager. Analyze the provided Ai Result data. The data includes: Case Id, Ai Type, Input Data, Result, Model Used. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "caseId",
+          "label": "Case Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "aiType",
+          "label": "Ai Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "inputData",
+          "label": "Input Data",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "result",
+          "label": "Result",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "modelUsed",
+          "label": "Model Used",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "caseId": 10,
+          "aiType": "Category A",
+          "inputData": "Comprehensive solution designed for optimal performance and efficiency.",
+          "result": "Comprehensive solution designed for optimal performance and efficiency.",
+          "modelUsed": "Advanced Model Used 1"
+        },
+        {
+          "caseId": 58,
+          "aiType": "Category B",
+          "inputData": "Industry-leading approach with proven results across multiple deployments.",
+          "result": "Industry-leading approach with proven results across multiple deployments.",
+          "modelUsed": "Premium Model Used 2"
+        },
+        {
+          "caseId": 106,
+          "aiType": "Category C",
+          "inputData": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "result": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "modelUsed": "Standard Model Used 3"
+        },
+        {
+          "caseId": 154,
+          "aiType": "Category D",
+          "inputData": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "result": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "modelUsed": "Elite Model Used 4"
+        },
+        {
+          "caseId": 102,
+          "aiType": "Category E",
+          "inputData": "Cost-effective strategy focused on sustainable long-term growth.",
+          "result": "Cost-effective strategy focused on sustainable long-term growth.",
+          "modelUsed": "Core Model Used 5"
+        },
+        {
+          "caseId": 150,
+          "aiType": "Premium Tier",
+          "inputData": "High-priority initiative aligned with organizational strategic objectives.",
+          "result": "High-priority initiative aligned with organizational strategic objectives.",
+          "modelUsed": "Pro Model Used 6"
+        },
+        {
+          "caseId": 198,
+          "aiType": "Standard Tier",
+          "inputData": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "result": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "modelUsed": "Essential Model Used 7"
+        },
+        {
+          "caseId": 146,
+          "aiType": "Basic Tier",
+          "inputData": "Innovative framework incorporating best practices and emerging technologies.",
+          "result": "Innovative framework incorporating best practices and emerging technologies.",
+          "modelUsed": "Primary Model Used 8"
+        },
+        {
+          "caseId": 194,
+          "aiType": "Enterprise",
+          "inputData": "Scalable architecture built to accommodate rapid expansion and change.",
+          "result": "Scalable architecture built to accommodate rapid expansion and change.",
+          "modelUsed": "Global Model Used 9"
+        },
+        {
+          "caseId": 242,
+          "aiType": "Starter",
+          "inputData": "Enterprise-grade solution with robust security and compliance features.",
+          "result": "Enterprise-grade solution with robust security and compliance features.",
+          "modelUsed": "Regional Model Used 10"
+        },
+        {
+          "caseId": 190,
+          "aiType": "Growth",
+          "inputData": "Integrated platform connecting multiple systems for seamless operations.",
+          "result": "Integrated platform connecting multiple systems for seamless operations.",
+          "modelUsed": "Custom Model Used 11"
+        },
+        {
+          "caseId": 238,
+          "aiType": "Scale",
+          "inputData": "Automated workflow reducing manual intervention and human error.",
+          "result": "Automated workflow reducing manual intervention and human error.",
+          "modelUsed": "Smart Model Used 12"
+        },
+        {
+          "caseId": 286,
+          "aiType": "Foundation",
+          "inputData": "Real-time monitoring system with intelligent alerting capabilities.",
+          "result": "Real-time monitoring system with intelligent alerting capabilities.",
+          "modelUsed": "Rapid Model Used 13"
+        },
+        {
+          "caseId": 234,
+          "aiType": "Advanced",
+          "inputData": "Customizable module adaptable to diverse operational requirements.",
+          "result": "Customizable module adaptable to diverse operational requirements.",
+          "modelUsed": "Secure Model Used 14"
+        },
+        {
+          "caseId": 282,
+          "aiType": "Professional",
+          "inputData": "Performance-optimized design achieving superior throughput and reliability.",
+          "result": "Performance-optimized design achieving superior throughput and reliability.",
+          "modelUsed": "Modern Model Used 15"
+        }
+      ]
+    }
+  ]
+}

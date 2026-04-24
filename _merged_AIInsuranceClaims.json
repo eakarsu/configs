@@ -1,0 +1,2527 @@
+{
+  "appName": "AI Insurance Claims",
+  "dbName": "a_i_insurance_claims",
+  "folderName": "generated/AIInsuranceClaims",
+  "features": [
+    {
+      "modelName": "Customer",
+      "routeKey": "customers",
+      "label": "Customer",
+      "icon": "activity",
+      "aiFunction": "analyzeCustomer",
+      "aiPrompt": "You are an AI analyst for A I Insurance Claims Adjuster. Analyze the provided Customer data. The data includes: First Name, Last Name, Email, Phone, Address, City, State, Zip, Date Of Birth. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "city",
+          "label": "City",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "state",
+          "label": "State",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "zip",
+          "label": "Zip",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dateOfBirth",
+          "label": "Date Of Birth",
+          "type": "DATEONLY",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "address": "Comprehensive solution designed for optimal performance and efficiency.",
+          "city": "New York",
+          "state": "Advanced State 1",
+          "zip": "Advanced Zip 1",
+          "dateOfBirth": "2024-01-01"
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "address": "Industry-leading approach with proven results across multiple deployments.",
+          "city": "Los Angeles",
+          "state": "Premium State 2",
+          "zip": "Premium Zip 2",
+          "dateOfBirth": "2024-02-03"
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "address": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "city": "Chicago",
+          "state": "Standard State 3",
+          "zip": "Standard Zip 3",
+          "dateOfBirth": "2024-03-05"
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "address": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "city": "Houston",
+          "state": "Elite State 4",
+          "zip": "Elite Zip 4",
+          "dateOfBirth": "2024-04-07"
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "address": "Cost-effective strategy focused on sustainable long-term growth.",
+          "city": "Phoenix",
+          "state": "Core State 5",
+          "zip": "Core Zip 5",
+          "dateOfBirth": "2024-05-09"
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "address": "High-priority initiative aligned with organizational strategic objectives.",
+          "city": "San Francisco",
+          "state": "Pro State 6",
+          "zip": "Pro Zip 6",
+          "dateOfBirth": "2024-06-11"
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "address": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "city": "Seattle",
+          "state": "Essential State 7",
+          "zip": "Essential Zip 7",
+          "dateOfBirth": "2024-07-13"
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "address": "Innovative framework incorporating best practices and emerging technologies.",
+          "city": "Boston",
+          "state": "Primary State 8",
+          "zip": "Primary Zip 8",
+          "dateOfBirth": "2024-08-15"
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "address": "Scalable architecture built to accommodate rapid expansion and change.",
+          "city": "Denver",
+          "state": "Global State 9",
+          "zip": "Global Zip 9",
+          "dateOfBirth": "2024-09-17"
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "address": "Enterprise-grade solution with robust security and compliance features.",
+          "city": "Miami",
+          "state": "Regional State 10",
+          "zip": "Regional Zip 10",
+          "dateOfBirth": "2024-10-19"
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "address": "Integrated platform connecting multiple systems for seamless operations.",
+          "city": "Austin",
+          "state": "Custom State 11",
+          "zip": "Custom Zip 11",
+          "dateOfBirth": "2024-11-21"
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "address": "Automated workflow reducing manual intervention and human error.",
+          "city": "Portland",
+          "state": "Smart State 12",
+          "zip": "Smart Zip 12",
+          "dateOfBirth": "2024-12-23"
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "address": "Real-time monitoring system with intelligent alerting capabilities.",
+          "city": "Dallas",
+          "state": "Rapid State 13",
+          "zip": "Rapid Zip 13",
+          "dateOfBirth": "2024-01-25"
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "address": "Customizable module adaptable to diverse operational requirements.",
+          "city": "Atlanta",
+          "state": "Secure State 14",
+          "zip": "Secure Zip 14",
+          "dateOfBirth": "2024-02-27"
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "address": "Performance-optimized design achieving superior throughput and reliability.",
+          "city": "Nashville",
+          "state": "Modern State 15",
+          "zip": "Modern Zip 15",
+          "dateOfBirth": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "Policie",
+      "routeKey": "policies",
+      "label": "Policie",
+      "icon": "briefcase",
+      "aiFunction": "analyzePolicie",
+      "aiPrompt": "You are an AI analyst for A I Insurance Claims Adjuster. Analyze the provided Policie data. The data includes: Policy Number, Customer Id, Type, Premium, Deductible, Coverage Limit, Start Date, End Date, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "policyNumber",
+          "label": "Policy Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "premium",
+          "label": "Premium",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "deductible",
+          "label": "Deductible",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "coverageLimit",
+          "label": "Coverage Limit",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "policyNumber": "Advanced Policy Number 1",
+          "customerId": 10,
+          "type": "Category A",
+          "premium": 10,
+          "deductible": 10,
+          "coverageLimit": 10,
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "status": "active"
+        },
+        {
+          "policyNumber": "Premium Policy Number 2",
+          "customerId": 58,
+          "type": "Category B",
+          "premium": 71.7,
+          "deductible": 71.7,
+          "coverageLimit": 71.7,
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "status": "pending"
+        },
+        {
+          "policyNumber": "Standard Policy Number 3",
+          "customerId": 106,
+          "type": "Category C",
+          "premium": 33.4,
+          "deductible": 33.4,
+          "coverageLimit": 33.4,
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "status": "in_progress"
+        },
+        {
+          "policyNumber": "Elite Policy Number 4",
+          "customerId": 154,
+          "type": "Category D",
+          "premium": 95.1,
+          "deductible": 95.1,
+          "coverageLimit": 95.1,
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "status": "completed"
+        },
+        {
+          "policyNumber": "Core Policy Number 5",
+          "customerId": 102,
+          "type": "Category E",
+          "premium": 56.8,
+          "deductible": 56.8,
+          "coverageLimit": 56.8,
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "status": "under_review"
+        },
+        {
+          "policyNumber": "Pro Policy Number 6",
+          "customerId": 150,
+          "type": "Premium Tier",
+          "premium": 118.5,
+          "deductible": 118.5,
+          "coverageLimit": 118.5,
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "status": "approved"
+        },
+        {
+          "policyNumber": "Essential Policy Number 7",
+          "customerId": 198,
+          "type": "Standard Tier",
+          "premium": 80.2,
+          "deductible": 80.2,
+          "coverageLimit": 80.2,
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "status": "active"
+        },
+        {
+          "policyNumber": "Primary Policy Number 8",
+          "customerId": 146,
+          "type": "Basic Tier",
+          "premium": 141.9,
+          "deductible": 141.9,
+          "coverageLimit": 141.9,
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "status": "active"
+        },
+        {
+          "policyNumber": "Global Policy Number 9",
+          "customerId": 194,
+          "type": "Enterprise",
+          "premium": 103.6,
+          "deductible": 103.6,
+          "coverageLimit": 103.6,
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "status": "active"
+        },
+        {
+          "policyNumber": "Regional Policy Number 10",
+          "customerId": 242,
+          "type": "Starter",
+          "premium": 165.3,
+          "deductible": 165.3,
+          "coverageLimit": 165.3,
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "status": "pending"
+        },
+        {
+          "policyNumber": "Custom Policy Number 11",
+          "customerId": 190,
+          "type": "Growth",
+          "premium": 127,
+          "deductible": 127,
+          "coverageLimit": 127,
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "status": "completed"
+        },
+        {
+          "policyNumber": "Smart Policy Number 12",
+          "customerId": 238,
+          "type": "Scale",
+          "premium": 188.7,
+          "deductible": 188.7,
+          "coverageLimit": 188.7,
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "status": "active"
+        },
+        {
+          "policyNumber": "Rapid Policy Number 13",
+          "customerId": 286,
+          "type": "Foundation",
+          "premium": 150.4,
+          "deductible": 150.4,
+          "coverageLimit": 150.4,
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "status": "in_progress"
+        },
+        {
+          "policyNumber": "Secure Policy Number 14",
+          "customerId": 234,
+          "type": "Advanced",
+          "premium": 212.1,
+          "deductible": 212.1,
+          "coverageLimit": 212.1,
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "status": "active"
+        },
+        {
+          "policyNumber": "Modern Policy Number 15",
+          "customerId": 282,
+          "type": "Professional",
+          "premium": 173.8,
+          "deductible": 173.8,
+          "coverageLimit": 173.8,
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Adjuster",
+      "routeKey": "adjusters",
+      "label": "Adjuster",
+      "icon": "clipboard",
+      "aiFunction": "analyzeAdjuster",
+      "aiPrompt": "You are an AI analyst for A I Insurance Claims Adjuster. Analyze the provided Adjuster data. The data includes: Name, Email, Phone, Specialization, License Number, Experience Years, Status, Rating. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "specialization",
+          "label": "Specialization",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "licenseNumber",
+          "label": "License Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "experienceYears",
+          "label": "Experience Years",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rating",
+          "label": "Rating",
+          "type": "DECIMAL",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "specialization": "Advanced Specialization 1",
+          "licenseNumber": "Advanced License Number 1",
+          "experienceYears": 2020,
+          "status": "active",
+          "rating": 1.5
+        },
+        {
+          "name": "Premium Name 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "specialization": "Premium Specialization 2",
+          "licenseNumber": "Premium License Number 2",
+          "experienceYears": 2021,
+          "status": "pending",
+          "rating": 2.1
+        },
+        {
+          "name": "Standard Name 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "specialization": "Standard Specialization 3",
+          "licenseNumber": "Standard License Number 3",
+          "experienceYears": 2022,
+          "status": "in_progress",
+          "rating": 2.7
+        },
+        {
+          "name": "Elite Name 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "specialization": "Elite Specialization 4",
+          "licenseNumber": "Elite License Number 4",
+          "experienceYears": 2023,
+          "status": "completed",
+          "rating": 3.3
+        },
+        {
+          "name": "Core Name 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "specialization": "Core Specialization 5",
+          "licenseNumber": "Core License Number 5",
+          "experienceYears": 2024,
+          "status": "under_review",
+          "rating": 3.9
+        },
+        {
+          "name": "Pro Name 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "specialization": "Pro Specialization 6",
+          "licenseNumber": "Pro License Number 6",
+          "experienceYears": 2025,
+          "status": "approved",
+          "rating": 4.5
+        },
+        {
+          "name": "Essential Name 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "specialization": "Essential Specialization 7",
+          "licenseNumber": "Essential License Number 7",
+          "experienceYears": 2020,
+          "status": "active",
+          "rating": 5.1
+        },
+        {
+          "name": "Primary Name 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "specialization": "Primary Specialization 8",
+          "licenseNumber": "Primary License Number 8",
+          "experienceYears": 2021,
+          "status": "active",
+          "rating": 5.7
+        },
+        {
+          "name": "Global Name 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "specialization": "Global Specialization 9",
+          "licenseNumber": "Global License Number 9",
+          "experienceYears": 2022,
+          "status": "active",
+          "rating": 6.3
+        },
+        {
+          "name": "Regional Name 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "specialization": "Regional Specialization 10",
+          "licenseNumber": "Regional License Number 10",
+          "experienceYears": 2023,
+          "status": "pending",
+          "rating": 1.9
+        },
+        {
+          "name": "Custom Name 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "specialization": "Custom Specialization 11",
+          "licenseNumber": "Custom License Number 11",
+          "experienceYears": 2024,
+          "status": "completed",
+          "rating": 2.5
+        },
+        {
+          "name": "Smart Name 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "specialization": "Smart Specialization 12",
+          "licenseNumber": "Smart License Number 12",
+          "experienceYears": 2025,
+          "status": "active",
+          "rating": 3.1
+        },
+        {
+          "name": "Rapid Name 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "specialization": "Rapid Specialization 13",
+          "licenseNumber": "Rapid License Number 13",
+          "experienceYears": 2020,
+          "status": "in_progress",
+          "rating": 3.7
+        },
+        {
+          "name": "Secure Name 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "specialization": "Secure Specialization 14",
+          "licenseNumber": "Secure License Number 14",
+          "experienceYears": 2021,
+          "status": "active",
+          "rating": 4.3
+        },
+        {
+          "name": "Modern Name 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "specialization": "Modern Specialization 15",
+          "licenseNumber": "Modern License Number 15",
+          "experienceYears": 2022,
+          "status": "approved",
+          "rating": 4.9
+        }
+      ]
+    },
+    {
+      "modelName": "Claim",
+      "routeKey": "claims",
+      "label": "Claim",
+      "icon": "database",
+      "aiFunction": "analyzeClaim",
+      "aiPrompt": "You are an AI analyst for A I Insurance Claims Adjuster. Analyze the provided Claim data. The data includes: Claim Number, Policy Id, Customer Id, Adjuster Id, Type, Description, Incident Date, Filed Date, Status, Estimated Amount, Approved Amount, Location, Priority. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "claimNumber",
+          "label": "Claim Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "policyId",
+          "label": "Policy Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "adjusterId",
+          "label": "Adjuster Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "incidentDate",
+          "label": "Incident Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "filedDate",
+          "label": "Filed Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "estimatedAmount",
+          "label": "Estimated Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "approvedAmount",
+          "label": "Approved Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "claimNumber": "Advanced Claim Number 1",
+          "policyId": 10,
+          "customerId": 10,
+          "adjusterId": 10,
+          "type": "Category A",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "incidentDate": "2024-01-01",
+          "filedDate": "2024-01-01",
+          "status": "active",
+          "estimatedAmount": 500,
+          "approvedAmount": 500,
+          "location": "Comprehensive solution designed for optimal performance and efficiency.",
+          "priority": "low"
+        },
+        {
+          "claimNumber": "Premium Claim Number 2",
+          "policyId": 58,
+          "customerId": 58,
+          "adjusterId": 58,
+          "type": "Category B",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "incidentDate": "2024-02-03",
+          "filedDate": "2024-02-03",
+          "status": "pending",
+          "estimatedAmount": 2481,
+          "approvedAmount": 2481,
+          "location": "Industry-leading approach with proven results across multiple deployments.",
+          "priority": "medium"
+        },
+        {
+          "claimNumber": "Standard Claim Number 3",
+          "policyId": 106,
+          "customerId": 106,
+          "adjusterId": 106,
+          "type": "Category C",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "incidentDate": "2024-03-05",
+          "filedDate": "2024-03-05",
+          "status": "in_progress",
+          "estimatedAmount": 4462,
+          "approvedAmount": 4462,
+          "location": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "priority": "high"
+        },
+        {
+          "claimNumber": "Elite Claim Number 4",
+          "policyId": 154,
+          "customerId": 154,
+          "adjusterId": 154,
+          "type": "Category D",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "incidentDate": "2024-04-07",
+          "filedDate": "2024-04-07",
+          "status": "completed",
+          "estimatedAmount": 6443,
+          "approvedAmount": 6443,
+          "location": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "priority": "critical"
+        },
+        {
+          "claimNumber": "Core Claim Number 5",
+          "policyId": 102,
+          "customerId": 102,
+          "adjusterId": 102,
+          "type": "Category E",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "incidentDate": "2024-05-09",
+          "filedDate": "2024-05-09",
+          "status": "under_review",
+          "estimatedAmount": 8424,
+          "approvedAmount": 8424,
+          "location": "Cost-effective strategy focused on sustainable long-term growth.",
+          "priority": "medium"
+        },
+        {
+          "claimNumber": "Pro Claim Number 6",
+          "policyId": 150,
+          "customerId": 150,
+          "adjusterId": 150,
+          "type": "Premium Tier",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "incidentDate": "2024-06-11",
+          "filedDate": "2024-06-11",
+          "status": "approved",
+          "estimatedAmount": 10405,
+          "approvedAmount": 10405,
+          "location": "High-priority initiative aligned with organizational strategic objectives.",
+          "priority": "low"
+        },
+        {
+          "claimNumber": "Essential Claim Number 7",
+          "policyId": 198,
+          "customerId": 198,
+          "adjusterId": 198,
+          "type": "Standard Tier",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "incidentDate": "2024-07-13",
+          "filedDate": "2024-07-13",
+          "status": "active",
+          "estimatedAmount": 12386,
+          "approvedAmount": 12386,
+          "location": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "priority": "medium"
+        },
+        {
+          "claimNumber": "Primary Claim Number 8",
+          "policyId": 146,
+          "customerId": 146,
+          "adjusterId": 146,
+          "type": "Basic Tier",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "incidentDate": "2024-08-15",
+          "filedDate": "2024-08-15",
+          "status": "active",
+          "estimatedAmount": 9367,
+          "approvedAmount": 9367,
+          "location": "Innovative framework incorporating best practices and emerging technologies.",
+          "priority": "high"
+        },
+        {
+          "claimNumber": "Global Claim Number 9",
+          "policyId": 194,
+          "customerId": 194,
+          "adjusterId": 194,
+          "type": "Enterprise",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "incidentDate": "2024-09-17",
+          "filedDate": "2024-09-17",
+          "status": "active",
+          "estimatedAmount": 11348,
+          "approvedAmount": 11348,
+          "location": "Scalable architecture built to accommodate rapid expansion and change.",
+          "priority": "critical"
+        },
+        {
+          "claimNumber": "Regional Claim Number 10",
+          "policyId": 242,
+          "customerId": 242,
+          "adjusterId": 242,
+          "type": "Starter",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "incidentDate": "2024-10-19",
+          "filedDate": "2024-10-19",
+          "status": "pending",
+          "estimatedAmount": 13329,
+          "approvedAmount": 13329,
+          "location": "Enterprise-grade solution with robust security and compliance features.",
+          "priority": "medium"
+        },
+        {
+          "claimNumber": "Custom Claim Number 11",
+          "policyId": 190,
+          "customerId": 190,
+          "adjusterId": 190,
+          "type": "Growth",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "incidentDate": "2024-11-21",
+          "filedDate": "2024-11-21",
+          "status": "completed",
+          "estimatedAmount": 15310,
+          "approvedAmount": 15310,
+          "location": "Integrated platform connecting multiple systems for seamless operations.",
+          "priority": "low"
+        },
+        {
+          "claimNumber": "Smart Claim Number 12",
+          "policyId": 238,
+          "customerId": 238,
+          "adjusterId": 238,
+          "type": "Scale",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "incidentDate": "2024-12-23",
+          "filedDate": "2024-12-23",
+          "status": "active",
+          "estimatedAmount": 17291,
+          "approvedAmount": 17291,
+          "location": "Automated workflow reducing manual intervention and human error.",
+          "priority": "medium"
+        },
+        {
+          "claimNumber": "Rapid Claim Number 13",
+          "policyId": 286,
+          "customerId": 286,
+          "adjusterId": 286,
+          "type": "Foundation",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "incidentDate": "2024-01-25",
+          "filedDate": "2024-01-25",
+          "status": "in_progress",
+          "estimatedAmount": 19272,
+          "approvedAmount": 19272,
+          "location": "Real-time monitoring system with intelligent alerting capabilities.",
+          "priority": "high"
+        },
+        {
+          "claimNumber": "Secure Claim Number 14",
+          "policyId": 234,
+          "customerId": 234,
+          "adjusterId": 234,
+          "type": "Advanced",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "incidentDate": "2024-02-27",
+          "filedDate": "2024-02-27",
+          "status": "active",
+          "estimatedAmount": 21253,
+          "approvedAmount": 21253,
+          "location": "Customizable module adaptable to diverse operational requirements.",
+          "priority": "critical"
+        },
+        {
+          "claimNumber": "Modern Claim Number 15",
+          "policyId": 282,
+          "customerId": 282,
+          "adjusterId": 282,
+          "type": "Professional",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "incidentDate": "2024-03-01",
+          "filedDate": "2024-03-01",
+          "status": "approved",
+          "estimatedAmount": 18234,
+          "approvedAmount": 18234,
+          "location": "Performance-optimized design achieving superior throughput and reliability.",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "modelName": "FraudAlert",
+      "routeKey": "fraud-alerts",
+      "label": "Fraud Alert",
+      "icon": "file-text",
+      "aiFunction": "analyzeFraudAlert",
+      "aiPrompt": "You are an AI analyst for A I Insurance Claims Adjuster. Analyze the provided Fraud Alert data. The data includes: Claim Id, Risk Score, Indicators, Ai Analysis, Status, Reviewed By. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "claimId",
+          "label": "Claim Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "riskScore",
+          "label": "Risk Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "indicators",
+          "label": "Indicators",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "reviewedBy",
+          "label": "Reviewed By",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "claimId": 10,
+          "riskScore": 1.5,
+          "indicators": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "reviewedBy": "Advanced Reviewed By 1"
+        },
+        {
+          "claimId": 58,
+          "riskScore": 2.1,
+          "indicators": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "reviewedBy": "Premium Reviewed By 2"
+        },
+        {
+          "claimId": 106,
+          "riskScore": 2.7,
+          "indicators": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "reviewedBy": "Standard Reviewed By 3"
+        },
+        {
+          "claimId": 154,
+          "riskScore": 3.3,
+          "indicators": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "reviewedBy": "Elite Reviewed By 4"
+        },
+        {
+          "claimId": 102,
+          "riskScore": 3.9,
+          "indicators": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "reviewedBy": "Core Reviewed By 5"
+        },
+        {
+          "claimId": 150,
+          "riskScore": 4.5,
+          "indicators": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "reviewedBy": "Pro Reviewed By 6"
+        },
+        {
+          "claimId": 198,
+          "riskScore": 5.1,
+          "indicators": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "reviewedBy": "Essential Reviewed By 7"
+        },
+        {
+          "claimId": 146,
+          "riskScore": 5.7,
+          "indicators": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "reviewedBy": "Primary Reviewed By 8"
+        },
+        {
+          "claimId": 194,
+          "riskScore": 6.3,
+          "indicators": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "reviewedBy": "Global Reviewed By 9"
+        },
+        {
+          "claimId": 242,
+          "riskScore": 1.9,
+          "indicators": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "reviewedBy": "Regional Reviewed By 10"
+        },
+        {
+          "claimId": 190,
+          "riskScore": 2.5,
+          "indicators": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "reviewedBy": "Custom Reviewed By 11"
+        },
+        {
+          "claimId": 238,
+          "riskScore": 3.1,
+          "indicators": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "reviewedBy": "Smart Reviewed By 12"
+        },
+        {
+          "claimId": 286,
+          "riskScore": 3.7,
+          "indicators": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "reviewedBy": "Rapid Reviewed By 13"
+        },
+        {
+          "claimId": 234,
+          "riskScore": 4.3,
+          "indicators": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "reviewedBy": "Secure Reviewed By 14"
+        },
+        {
+          "claimId": 282,
+          "riskScore": 4.9,
+          "indicators": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "reviewedBy": "Modern Reviewed By 15"
+        }
+      ]
+    },
+    {
+      "modelName": "DamageAssessment",
+      "routeKey": "damage-assessments",
+      "label": "Damage Assessment",
+      "icon": "heart",
+      "aiFunction": "analyzeDamageAssessment",
+      "aiPrompt": "You are an AI analyst for A I Insurance Claims Adjuster. Analyze the provided Damage Assessment data. The data includes: Claim Id, Damage Type, Severity, Estimated Cost, Ai Analysis, Photos Reviewed, Repair Timeline. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "claimId",
+          "label": "Claim Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "damageType",
+          "label": "Damage Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "severity",
+          "label": "Severity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "estimatedCost",
+          "label": "Estimated Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "photosReviewed",
+          "label": "Photos Reviewed",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "repairTimeline",
+          "label": "Repair Timeline",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "claimId": 10,
+          "damageType": "Category A",
+          "severity": "low",
+          "estimatedCost": 500,
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "photosReviewed": 10,
+          "repairTimeline": "Advanced Repair Timeline 1"
+        },
+        {
+          "claimId": 58,
+          "damageType": "Category B",
+          "severity": "medium",
+          "estimatedCost": 2481,
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments.",
+          "photosReviewed": 58,
+          "repairTimeline": "Premium Repair Timeline 2"
+        },
+        {
+          "claimId": 106,
+          "damageType": "Category C",
+          "severity": "high",
+          "estimatedCost": 4462,
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "photosReviewed": 106,
+          "repairTimeline": "Standard Repair Timeline 3"
+        },
+        {
+          "claimId": 154,
+          "damageType": "Category D",
+          "severity": "critical",
+          "estimatedCost": 6443,
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "photosReviewed": 154,
+          "repairTimeline": "Elite Repair Timeline 4"
+        },
+        {
+          "claimId": 102,
+          "damageType": "Category E",
+          "severity": "medium",
+          "estimatedCost": 8424,
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "photosReviewed": 102,
+          "repairTimeline": "Core Repair Timeline 5"
+        },
+        {
+          "claimId": 150,
+          "damageType": "Premium Tier",
+          "severity": "low",
+          "estimatedCost": 10405,
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives.",
+          "photosReviewed": 150,
+          "repairTimeline": "Pro Repair Timeline 6"
+        },
+        {
+          "claimId": 198,
+          "damageType": "Standard Tier",
+          "severity": "medium",
+          "estimatedCost": 12386,
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "photosReviewed": 198,
+          "repairTimeline": "Essential Repair Timeline 7"
+        },
+        {
+          "claimId": 146,
+          "damageType": "Basic Tier",
+          "severity": "high",
+          "estimatedCost": 9367,
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies.",
+          "photosReviewed": 146,
+          "repairTimeline": "Primary Repair Timeline 8"
+        },
+        {
+          "claimId": 194,
+          "damageType": "Enterprise",
+          "severity": "critical",
+          "estimatedCost": 11348,
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "photosReviewed": 194,
+          "repairTimeline": "Global Repair Timeline 9"
+        },
+        {
+          "claimId": 242,
+          "damageType": "Starter",
+          "severity": "medium",
+          "estimatedCost": 13329,
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features.",
+          "photosReviewed": 242,
+          "repairTimeline": "Regional Repair Timeline 10"
+        },
+        {
+          "claimId": 190,
+          "damageType": "Growth",
+          "severity": "low",
+          "estimatedCost": 15310,
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations.",
+          "photosReviewed": 190,
+          "repairTimeline": "Custom Repair Timeline 11"
+        },
+        {
+          "claimId": 238,
+          "damageType": "Scale",
+          "severity": "medium",
+          "estimatedCost": 17291,
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error.",
+          "photosReviewed": 238,
+          "repairTimeline": "Smart Repair Timeline 12"
+        },
+        {
+          "claimId": 286,
+          "damageType": "Foundation",
+          "severity": "high",
+          "estimatedCost": 19272,
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "photosReviewed": 286,
+          "repairTimeline": "Rapid Repair Timeline 13"
+        },
+        {
+          "claimId": 234,
+          "damageType": "Advanced",
+          "severity": "critical",
+          "estimatedCost": 21253,
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements.",
+          "photosReviewed": 234,
+          "repairTimeline": "Secure Repair Timeline 14"
+        },
+        {
+          "claimId": 282,
+          "damageType": "Professional",
+          "severity": "medium",
+          "estimatedCost": 18234,
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability.",
+          "photosReviewed": 282,
+          "repairTimeline": "Modern Repair Timeline 15"
+        }
+      ]
+    },
+    {
+      "modelName": "RiskAssessment",
+      "routeKey": "risk-assessments",
+      "label": "Risk Assessment",
+      "icon": "layers",
+      "aiFunction": "analyzeRiskAssessment",
+      "aiPrompt": "You are an AI analyst for A I Insurance Claims Adjuster. Analyze the provided Risk Assessment data. The data includes: Policy Id, Customer Name, Risk Level, Risk Score, Factors, Ai Analysis, Recommendation. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "policyId",
+          "label": "Policy Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "riskLevel",
+          "label": "Risk Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "riskScore",
+          "label": "Risk Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "factors",
+          "label": "Factors",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "recommendation",
+          "label": "Recommendation",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "policyId": 10,
+          "customerName": "James Wilson",
+          "riskLevel": "low",
+          "riskScore": 1.5,
+          "factors": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "recommendation": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "policyId": 58,
+          "customerName": "Sarah Chen",
+          "riskLevel": "medium",
+          "riskScore": 2.1,
+          "factors": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments.",
+          "recommendation": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "policyId": 106,
+          "customerName": "Michael Brown",
+          "riskLevel": "high",
+          "riskScore": 2.7,
+          "factors": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "recommendation": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "policyId": 154,
+          "customerName": "Emily Davis",
+          "riskLevel": "critical",
+          "riskScore": 3.3,
+          "factors": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "recommendation": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "policyId": 102,
+          "customerName": "Robert Garcia",
+          "riskLevel": "medium",
+          "riskScore": 3.9,
+          "factors": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "recommendation": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "policyId": 150,
+          "customerName": "Lisa Anderson",
+          "riskLevel": "low",
+          "riskScore": 4.5,
+          "factors": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives.",
+          "recommendation": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "policyId": 198,
+          "customerName": "David Martinez",
+          "riskLevel": "medium",
+          "riskScore": 5.1,
+          "factors": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "recommendation": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "policyId": 146,
+          "customerName": "Jennifer Taylor",
+          "riskLevel": "high",
+          "riskScore": 5.7,
+          "factors": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies.",
+          "recommendation": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "policyId": 194,
+          "customerName": "William Johnson",
+          "riskLevel": "critical",
+          "riskScore": 6.3,
+          "factors": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "recommendation": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "policyId": 242,
+          "customerName": "Maria Rodriguez",
+          "riskLevel": "medium",
+          "riskScore": 1.9,
+          "factors": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features.",
+          "recommendation": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "policyId": 190,
+          "customerName": "Thomas Lee",
+          "riskLevel": "low",
+          "riskScore": 2.5,
+          "factors": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations.",
+          "recommendation": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "policyId": 238,
+          "customerName": "Patricia White",
+          "riskLevel": "medium",
+          "riskScore": 3.1,
+          "factors": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error.",
+          "recommendation": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "policyId": 286,
+          "customerName": "Christopher Hall",
+          "riskLevel": "high",
+          "riskScore": 3.7,
+          "factors": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "recommendation": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "policyId": 234,
+          "customerName": "Amanda Clark",
+          "riskLevel": "critical",
+          "riskScore": 4.3,
+          "factors": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements.",
+          "recommendation": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "policyId": 282,
+          "customerName": "Daniel Wright",
+          "riskLevel": "medium",
+          "riskScore": 4.9,
+          "factors": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability.",
+          "recommendation": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Settlement",
+      "routeKey": "settlements",
+      "label": "Settlement",
+      "icon": "map-pin",
+      "aiFunction": "analyzeSettlement",
+      "aiPrompt": "You are an AI analyst for A I Insurance Claims Adjuster. Analyze the provided Settlement data. The data includes: Claim Id, Claim Number, Recommended Amount, Final Amount, Ai Analysis, Status, Approved By. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "claimId",
+          "label": "Claim Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "claimNumber",
+          "label": "Claim Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recommendedAmount",
+          "label": "Recommended Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "finalAmount",
+          "label": "Final Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "approvedBy",
+          "label": "Approved By",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "claimId": 10,
+          "claimNumber": "Advanced Claim Number 1",
+          "recommendedAmount": 500,
+          "finalAmount": 500,
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active",
+          "approvedBy": "Advanced Approved By 1"
+        },
+        {
+          "claimId": 58,
+          "claimNumber": "Premium Claim Number 2",
+          "recommendedAmount": 2481,
+          "finalAmount": 2481,
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending",
+          "approvedBy": "Premium Approved By 2"
+        },
+        {
+          "claimId": 106,
+          "claimNumber": "Standard Claim Number 3",
+          "recommendedAmount": 4462,
+          "finalAmount": 4462,
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress",
+          "approvedBy": "Standard Approved By 3"
+        },
+        {
+          "claimId": 154,
+          "claimNumber": "Elite Claim Number 4",
+          "recommendedAmount": 6443,
+          "finalAmount": 6443,
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed",
+          "approvedBy": "Elite Approved By 4"
+        },
+        {
+          "claimId": 102,
+          "claimNumber": "Core Claim Number 5",
+          "recommendedAmount": 8424,
+          "finalAmount": 8424,
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review",
+          "approvedBy": "Core Approved By 5"
+        },
+        {
+          "claimId": 150,
+          "claimNumber": "Pro Claim Number 6",
+          "recommendedAmount": 10405,
+          "finalAmount": 10405,
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved",
+          "approvedBy": "Pro Approved By 6"
+        },
+        {
+          "claimId": 198,
+          "claimNumber": "Essential Claim Number 7",
+          "recommendedAmount": 12386,
+          "finalAmount": 12386,
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active",
+          "approvedBy": "Essential Approved By 7"
+        },
+        {
+          "claimId": 146,
+          "claimNumber": "Primary Claim Number 8",
+          "recommendedAmount": 9367,
+          "finalAmount": 9367,
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active",
+          "approvedBy": "Primary Approved By 8"
+        },
+        {
+          "claimId": 194,
+          "claimNumber": "Global Claim Number 9",
+          "recommendedAmount": 11348,
+          "finalAmount": 11348,
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active",
+          "approvedBy": "Global Approved By 9"
+        },
+        {
+          "claimId": 242,
+          "claimNumber": "Regional Claim Number 10",
+          "recommendedAmount": 13329,
+          "finalAmount": 13329,
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending",
+          "approvedBy": "Regional Approved By 10"
+        },
+        {
+          "claimId": 190,
+          "claimNumber": "Custom Claim Number 11",
+          "recommendedAmount": 15310,
+          "finalAmount": 15310,
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed",
+          "approvedBy": "Custom Approved By 11"
+        },
+        {
+          "claimId": 238,
+          "claimNumber": "Smart Claim Number 12",
+          "recommendedAmount": 17291,
+          "finalAmount": 17291,
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error.",
+          "status": "active",
+          "approvedBy": "Smart Approved By 12"
+        },
+        {
+          "claimId": 286,
+          "claimNumber": "Rapid Claim Number 13",
+          "recommendedAmount": 19272,
+          "finalAmount": 19272,
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress",
+          "approvedBy": "Rapid Approved By 13"
+        },
+        {
+          "claimId": 234,
+          "claimNumber": "Secure Claim Number 14",
+          "recommendedAmount": 21253,
+          "finalAmount": 21253,
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active",
+          "approvedBy": "Secure Approved By 14"
+        },
+        {
+          "claimId": 282,
+          "claimNumber": "Modern Claim Number 15",
+          "recommendedAmount": 18234,
+          "finalAmount": 18234,
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved",
+          "approvedBy": "Modern Approved By 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Document",
+      "routeKey": "documents",
+      "label": "Document",
+      "icon": "package",
+      "aiFunction": "analyzeDocument",
+      "aiPrompt": "You are an AI analyst for A I Insurance Claims Adjuster. Analyze the provided Document data. The data includes: Claim Id, Document Type, File Name, Content, Extracted Data, Ai Analysis, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "claimId",
+          "label": "Claim Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "documentType",
+          "label": "Document Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "fileName",
+          "label": "File Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "extractedData",
+          "label": "Extracted Data",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "claimId": 10,
+          "documentType": "Category A",
+          "fileName": "Advanced File 1",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "extractedData": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "claimId": 58,
+          "documentType": "Category B",
+          "fileName": "Premium File 2",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "extractedData": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "claimId": 106,
+          "documentType": "Category C",
+          "fileName": "Standard File 3",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "extractedData": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "claimId": 154,
+          "documentType": "Category D",
+          "fileName": "Elite File 4",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "extractedData": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "claimId": 102,
+          "documentType": "Category E",
+          "fileName": "Core File 5",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "extractedData": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "claimId": 150,
+          "documentType": "Premium Tier",
+          "fileName": "Pro File 6",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "extractedData": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "claimId": 198,
+          "documentType": "Standard Tier",
+          "fileName": "Essential File 7",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "extractedData": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "claimId": 146,
+          "documentType": "Basic Tier",
+          "fileName": "Primary File 8",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "extractedData": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "claimId": 194,
+          "documentType": "Enterprise",
+          "fileName": "Global File 9",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "extractedData": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "claimId": 242,
+          "documentType": "Starter",
+          "fileName": "Regional File 10",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "extractedData": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "claimId": 190,
+          "documentType": "Growth",
+          "fileName": "Custom File 11",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "extractedData": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "claimId": 238,
+          "documentType": "Scale",
+          "fileName": "Smart File 12",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "extractedData": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "claimId": 286,
+          "documentType": "Foundation",
+          "fileName": "Rapid File 13",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "extractedData": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "claimId": 234,
+          "documentType": "Advanced",
+          "fileName": "Secure File 14",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "extractedData": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "claimId": 282,
+          "documentType": "Professional",
+          "fileName": "Modern File 15",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "extractedData": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "Communication",
+      "routeKey": "communications",
+      "label": "Communication",
+      "icon": "shield",
+      "aiFunction": "analyzeCommunication",
+      "aiPrompt": "You are an AI analyst for A I Insurance Claims Adjuster. Analyze the provided Communication data. The data includes: Claim Id, Customer Id, Customer Name, Channel, Subject, Message, Sentiment, Sentiment Score, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "claimId",
+          "label": "Claim Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "customerId",
+          "label": "Customer Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "channel",
+          "label": "Channel",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "subject",
+          "label": "Subject",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "sentiment",
+          "label": "Sentiment",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sentimentScore",
+          "label": "Sentiment Score",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "claimId": 10,
+          "customerId": 10,
+          "customerName": "James Wilson",
+          "channel": "Advanced Channel 1",
+          "subject": "Advanced Subject 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "sentiment": "Advanced Sentiment 1",
+          "sentimentScore": 1.5,
+          "aiAnalysis": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "claimId": 58,
+          "customerId": 58,
+          "customerName": "Sarah Chen",
+          "channel": "Premium Channel 2",
+          "subject": "Premium Subject 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "sentiment": "Premium Sentiment 2",
+          "sentimentScore": 2.1,
+          "aiAnalysis": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "claimId": 106,
+          "customerId": 106,
+          "customerName": "Michael Brown",
+          "channel": "Standard Channel 3",
+          "subject": "Standard Subject 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "sentiment": "Standard Sentiment 3",
+          "sentimentScore": 2.7,
+          "aiAnalysis": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "claimId": 154,
+          "customerId": 154,
+          "customerName": "Emily Davis",
+          "channel": "Elite Channel 4",
+          "subject": "Elite Subject 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "sentiment": "Elite Sentiment 4",
+          "sentimentScore": 3.3,
+          "aiAnalysis": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "claimId": 102,
+          "customerId": 102,
+          "customerName": "Robert Garcia",
+          "channel": "Core Channel 5",
+          "subject": "Core Subject 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "sentiment": "Core Sentiment 5",
+          "sentimentScore": 3.9,
+          "aiAnalysis": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "claimId": 150,
+          "customerId": 150,
+          "customerName": "Lisa Anderson",
+          "channel": "Pro Channel 6",
+          "subject": "Pro Subject 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "sentiment": "Pro Sentiment 6",
+          "sentimentScore": 4.5,
+          "aiAnalysis": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "claimId": 198,
+          "customerId": 198,
+          "customerName": "David Martinez",
+          "channel": "Essential Channel 7",
+          "subject": "Essential Subject 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "sentiment": "Essential Sentiment 7",
+          "sentimentScore": 5.1,
+          "aiAnalysis": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "claimId": 146,
+          "customerId": 146,
+          "customerName": "Jennifer Taylor",
+          "channel": "Primary Channel 8",
+          "subject": "Primary Subject 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "sentiment": "Primary Sentiment 8",
+          "sentimentScore": 5.7,
+          "aiAnalysis": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "claimId": 194,
+          "customerId": 194,
+          "customerName": "William Johnson",
+          "channel": "Global Channel 9",
+          "subject": "Global Subject 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "sentiment": "Global Sentiment 9",
+          "sentimentScore": 6.3,
+          "aiAnalysis": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "claimId": 242,
+          "customerId": 242,
+          "customerName": "Maria Rodriguez",
+          "channel": "Regional Channel 10",
+          "subject": "Regional Subject 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "sentiment": "Regional Sentiment 10",
+          "sentimentScore": 1.9,
+          "aiAnalysis": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "claimId": 190,
+          "customerId": 190,
+          "customerName": "Thomas Lee",
+          "channel": "Custom Channel 11",
+          "subject": "Custom Subject 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "sentiment": "Custom Sentiment 11",
+          "sentimentScore": 2.5,
+          "aiAnalysis": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "claimId": 238,
+          "customerId": 238,
+          "customerName": "Patricia White",
+          "channel": "Smart Channel 12",
+          "subject": "Smart Subject 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "sentiment": "Smart Sentiment 12",
+          "sentimentScore": 3.1,
+          "aiAnalysis": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "claimId": 286,
+          "customerId": 286,
+          "customerName": "Christopher Hall",
+          "channel": "Rapid Channel 13",
+          "subject": "Rapid Subject 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "sentiment": "Rapid Sentiment 13",
+          "sentimentScore": 3.7,
+          "aiAnalysis": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "claimId": 234,
+          "customerId": 234,
+          "customerName": "Amanda Clark",
+          "channel": "Secure Channel 14",
+          "subject": "Secure Subject 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "sentiment": "Secure Sentiment 14",
+          "sentimentScore": 4.3,
+          "aiAnalysis": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "claimId": 282,
+          "customerId": 282,
+          "customerName": "Daniel Wright",
+          "channel": "Modern Channel 15",
+          "subject": "Modern Subject 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "sentiment": "Modern Sentiment 15",
+          "sentimentScore": 4.9,
+          "aiAnalysis": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Payment",
+      "routeKey": "payments",
+      "label": "Payment",
+      "icon": "star",
+      "aiFunction": "analyzePayment",
+      "aiPrompt": "You are an AI analyst for A I Insurance Claims Adjuster. Analyze the provided Payment data. The data includes: Claim Id, Claim Number, Amount, Payment Method, Payment Date, Status, Reference Number, Payee Name. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "claimId",
+          "label": "Claim Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "claimNumber",
+          "label": "Claim Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "paymentDate",
+          "label": "Payment Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "referenceNumber",
+          "label": "Reference Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "payeeName",
+          "label": "Payee Name",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "claimId": 10,
+          "claimNumber": "Advanced Claim Number 1",
+          "amount": 500,
+          "paymentMethod": "Advanced Payment Method 1",
+          "paymentDate": "2024-01-01",
+          "status": "active",
+          "referenceNumber": "Advanced Reference Number 1",
+          "payeeName": "Advanced Payee 1"
+        },
+        {
+          "claimId": 58,
+          "claimNumber": "Premium Claim Number 2",
+          "amount": 2481,
+          "paymentMethod": "Premium Payment Method 2",
+          "paymentDate": "2024-02-03",
+          "status": "pending",
+          "referenceNumber": "Premium Reference Number 2",
+          "payeeName": "Premium Payee 2"
+        },
+        {
+          "claimId": 106,
+          "claimNumber": "Standard Claim Number 3",
+          "amount": 4462,
+          "paymentMethod": "Standard Payment Method 3",
+          "paymentDate": "2024-03-05",
+          "status": "in_progress",
+          "referenceNumber": "Standard Reference Number 3",
+          "payeeName": "Standard Payee 3"
+        },
+        {
+          "claimId": 154,
+          "claimNumber": "Elite Claim Number 4",
+          "amount": 6443,
+          "paymentMethod": "Elite Payment Method 4",
+          "paymentDate": "2024-04-07",
+          "status": "completed",
+          "referenceNumber": "Elite Reference Number 4",
+          "payeeName": "Elite Payee 4"
+        },
+        {
+          "claimId": 102,
+          "claimNumber": "Core Claim Number 5",
+          "amount": 8424,
+          "paymentMethod": "Core Payment Method 5",
+          "paymentDate": "2024-05-09",
+          "status": "under_review",
+          "referenceNumber": "Core Reference Number 5",
+          "payeeName": "Core Payee 5"
+        },
+        {
+          "claimId": 150,
+          "claimNumber": "Pro Claim Number 6",
+          "amount": 10405,
+          "paymentMethod": "Pro Payment Method 6",
+          "paymentDate": "2024-06-11",
+          "status": "approved",
+          "referenceNumber": "Pro Reference Number 6",
+          "payeeName": "Pro Payee 6"
+        },
+        {
+          "claimId": 198,
+          "claimNumber": "Essential Claim Number 7",
+          "amount": 12386,
+          "paymentMethod": "Essential Payment Method 7",
+          "paymentDate": "2024-07-13",
+          "status": "active",
+          "referenceNumber": "Essential Reference Number 7",
+          "payeeName": "Essential Payee 7"
+        },
+        {
+          "claimId": 146,
+          "claimNumber": "Primary Claim Number 8",
+          "amount": 9367,
+          "paymentMethod": "Primary Payment Method 8",
+          "paymentDate": "2024-08-15",
+          "status": "active",
+          "referenceNumber": "Primary Reference Number 8",
+          "payeeName": "Primary Payee 8"
+        },
+        {
+          "claimId": 194,
+          "claimNumber": "Global Claim Number 9",
+          "amount": 11348,
+          "paymentMethod": "Global Payment Method 9",
+          "paymentDate": "2024-09-17",
+          "status": "active",
+          "referenceNumber": "Global Reference Number 9",
+          "payeeName": "Global Payee 9"
+        },
+        {
+          "claimId": 242,
+          "claimNumber": "Regional Claim Number 10",
+          "amount": 13329,
+          "paymentMethod": "Regional Payment Method 10",
+          "paymentDate": "2024-10-19",
+          "status": "pending",
+          "referenceNumber": "Regional Reference Number 10",
+          "payeeName": "Regional Payee 10"
+        },
+        {
+          "claimId": 190,
+          "claimNumber": "Custom Claim Number 11",
+          "amount": 15310,
+          "paymentMethod": "Custom Payment Method 11",
+          "paymentDate": "2024-11-21",
+          "status": "completed",
+          "referenceNumber": "Custom Reference Number 11",
+          "payeeName": "Custom Payee 11"
+        },
+        {
+          "claimId": 238,
+          "claimNumber": "Smart Claim Number 12",
+          "amount": 17291,
+          "paymentMethod": "Smart Payment Method 12",
+          "paymentDate": "2024-12-23",
+          "status": "active",
+          "referenceNumber": "Smart Reference Number 12",
+          "payeeName": "Smart Payee 12"
+        },
+        {
+          "claimId": 286,
+          "claimNumber": "Rapid Claim Number 13",
+          "amount": 19272,
+          "paymentMethod": "Rapid Payment Method 13",
+          "paymentDate": "2024-01-25",
+          "status": "in_progress",
+          "referenceNumber": "Rapid Reference Number 13",
+          "payeeName": "Rapid Payee 13"
+        },
+        {
+          "claimId": 234,
+          "claimNumber": "Secure Claim Number 14",
+          "amount": 21253,
+          "paymentMethod": "Secure Payment Method 14",
+          "paymentDate": "2024-02-27",
+          "status": "active",
+          "referenceNumber": "Secure Reference Number 14",
+          "payeeName": "Secure Payee 14"
+        },
+        {
+          "claimId": 282,
+          "claimNumber": "Modern Claim Number 15",
+          "amount": 18234,
+          "paymentMethod": "Modern Payment Method 15",
+          "paymentDate": "2024-03-01",
+          "status": "approved",
+          "referenceNumber": "Modern Reference Number 15",
+          "payeeName": "Modern Payee 15"
+        }
+      ]
+    },
+    {
+      "modelName": "AuditLog",
+      "routeKey": "audit-logs",
+      "label": "Audit Log",
+      "icon": "truck",
+      "aiFunction": "analyzeAuditLog",
+      "aiPrompt": "You are an AI analyst for A I Insurance Claims Adjuster. Analyze the provided Audit Log data. The data includes: User Name, Action, Entity Type, Entity Id, Details, Ip Address. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userName",
+          "label": "User Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityType",
+          "label": "Entity Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "entityId",
+          "label": "Entity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "details",
+          "label": "Details",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "ipAddress",
+          "label": "Ip Address",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userName": "Advanced User 1",
+          "action": "Advanced Action 1",
+          "entityType": "Category A",
+          "entityId": 10,
+          "details": "Comprehensive solution designed for optimal performance and efficiency.",
+          "ipAddress": "New York"
+        },
+        {
+          "userName": "Premium User 2",
+          "action": "Premium Action 2",
+          "entityType": "Category B",
+          "entityId": 58,
+          "details": "Industry-leading approach with proven results across multiple deployments.",
+          "ipAddress": "Los Angeles"
+        },
+        {
+          "userName": "Standard User 3",
+          "action": "Standard Action 3",
+          "entityType": "Category C",
+          "entityId": 106,
+          "details": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "ipAddress": "Chicago"
+        },
+        {
+          "userName": "Elite User 4",
+          "action": "Elite Action 4",
+          "entityType": "Category D",
+          "entityId": 154,
+          "details": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "ipAddress": "Houston"
+        },
+        {
+          "userName": "Core User 5",
+          "action": "Core Action 5",
+          "entityType": "Category E",
+          "entityId": 102,
+          "details": "Cost-effective strategy focused on sustainable long-term growth.",
+          "ipAddress": "Phoenix"
+        },
+        {
+          "userName": "Pro User 6",
+          "action": "Pro Action 6",
+          "entityType": "Premium Tier",
+          "entityId": 150,
+          "details": "High-priority initiative aligned with organizational strategic objectives.",
+          "ipAddress": "San Francisco"
+        },
+        {
+          "userName": "Essential User 7",
+          "action": "Essential Action 7",
+          "entityType": "Standard Tier",
+          "entityId": 198,
+          "details": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "ipAddress": "Seattle"
+        },
+        {
+          "userName": "Primary User 8",
+          "action": "Primary Action 8",
+          "entityType": "Basic Tier",
+          "entityId": 146,
+          "details": "Innovative framework incorporating best practices and emerging technologies.",
+          "ipAddress": "Boston"
+        },
+        {
+          "userName": "Global User 9",
+          "action": "Global Action 9",
+          "entityType": "Enterprise",
+          "entityId": 194,
+          "details": "Scalable architecture built to accommodate rapid expansion and change.",
+          "ipAddress": "Denver"
+        },
+        {
+          "userName": "Regional User 10",
+          "action": "Regional Action 10",
+          "entityType": "Starter",
+          "entityId": 242,
+          "details": "Enterprise-grade solution with robust security and compliance features.",
+          "ipAddress": "Miami"
+        },
+        {
+          "userName": "Custom User 11",
+          "action": "Custom Action 11",
+          "entityType": "Growth",
+          "entityId": 190,
+          "details": "Integrated platform connecting multiple systems for seamless operations.",
+          "ipAddress": "Austin"
+        },
+        {
+          "userName": "Smart User 12",
+          "action": "Smart Action 12",
+          "entityType": "Scale",
+          "entityId": 238,
+          "details": "Automated workflow reducing manual intervention and human error.",
+          "ipAddress": "Portland"
+        },
+        {
+          "userName": "Rapid User 13",
+          "action": "Rapid Action 13",
+          "entityType": "Foundation",
+          "entityId": 286,
+          "details": "Real-time monitoring system with intelligent alerting capabilities.",
+          "ipAddress": "Dallas"
+        },
+        {
+          "userName": "Secure User 14",
+          "action": "Secure Action 14",
+          "entityType": "Advanced",
+          "entityId": 234,
+          "details": "Customizable module adaptable to diverse operational requirements.",
+          "ipAddress": "Atlanta"
+        },
+        {
+          "userName": "Modern User 15",
+          "action": "Modern Action 15",
+          "entityType": "Professional",
+          "entityId": 282,
+          "details": "Performance-optimized design achieving superior throughput and reliability.",
+          "ipAddress": "Nashville"
+        }
+      ]
+    }
+  ]
+}

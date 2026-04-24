@@ -1,0 +1,1834 @@
+{
+  "appName": "A I Dream Journal Analyzer",
+  "dbName": "a_i_dream_journal_analyzer",
+  "folderName": "generated/AIDreamJournalAnalyzer",
+  "features": [
+    {
+      "modelName": "DreamEntrie",
+      "routeKey": "dream-entries",
+      "label": "Dream Entrie",
+      "icon": "activity",
+      "aiFunction": "analyzeDreamEntrie",
+      "aiPrompt": "You are an AI analyst for A I Dream Journal Analyzer. Analyze the provided Dream Entrie data. The data includes: User Id, Title, Content, Dream Date, Mood, Sleep Quality, Is Lucid, Category, Tags. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "dreamDate",
+          "label": "Dream Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "mood",
+          "label": "Mood",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sleepQuality",
+          "label": "Sleep Quality",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "isLucid",
+          "label": "Is Lucid",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "tags",
+          "label": "Tags",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "title": "Advanced Title 1",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "dreamDate": "2024-01-01",
+          "mood": "Advanced Mood 1",
+          "sleepQuality": 10,
+          "isLucid": true,
+          "category": "Category A",
+          "tags": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "userId": 58,
+          "title": "Premium Title 2",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "dreamDate": "2024-02-03",
+          "mood": "Premium Mood 2",
+          "sleepQuality": 58,
+          "isLucid": true,
+          "category": "Category B",
+          "tags": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "userId": 106,
+          "title": "Standard Title 3",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "dreamDate": "2024-03-05",
+          "mood": "Standard Mood 3",
+          "sleepQuality": 106,
+          "isLucid": false,
+          "category": "Category C",
+          "tags": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "userId": 154,
+          "title": "Elite Title 4",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "dreamDate": "2024-04-07",
+          "mood": "Elite Mood 4",
+          "sleepQuality": 154,
+          "isLucid": true,
+          "category": "Category D",
+          "tags": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "userId": 102,
+          "title": "Core Title 5",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "dreamDate": "2024-05-09",
+          "mood": "Core Mood 5",
+          "sleepQuality": 102,
+          "isLucid": false,
+          "category": "Category E",
+          "tags": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "userId": 150,
+          "title": "Pro Title 6",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "dreamDate": "2024-06-11",
+          "mood": "Pro Mood 6",
+          "sleepQuality": 150,
+          "isLucid": true,
+          "category": "Premium Tier",
+          "tags": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "userId": 198,
+          "title": "Essential Title 7",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "dreamDate": "2024-07-13",
+          "mood": "Essential Mood 7",
+          "sleepQuality": 198,
+          "isLucid": true,
+          "category": "Standard Tier",
+          "tags": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "userId": 146,
+          "title": "Primary Title 8",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "dreamDate": "2024-08-15",
+          "mood": "Primary Mood 8",
+          "sleepQuality": 146,
+          "isLucid": false,
+          "category": "Basic Tier",
+          "tags": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "userId": 194,
+          "title": "Global Title 9",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "dreamDate": "2024-09-17",
+          "mood": "Global Mood 9",
+          "sleepQuality": 194,
+          "isLucid": true,
+          "category": "Enterprise",
+          "tags": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "userId": 242,
+          "title": "Regional Title 10",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "dreamDate": "2024-10-19",
+          "mood": "Regional Mood 10",
+          "sleepQuality": 242,
+          "isLucid": true,
+          "category": "Starter",
+          "tags": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "userId": 190,
+          "title": "Custom Title 11",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "dreamDate": "2024-11-21",
+          "mood": "Custom Mood 11",
+          "sleepQuality": 190,
+          "isLucid": false,
+          "category": "Growth",
+          "tags": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "userId": 238,
+          "title": "Smart Title 12",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "dreamDate": "2024-12-23",
+          "mood": "Smart Mood 12",
+          "sleepQuality": 238,
+          "isLucid": true,
+          "category": "Scale",
+          "tags": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "userId": 286,
+          "title": "Rapid Title 13",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "dreamDate": "2024-01-25",
+          "mood": "Rapid Mood 13",
+          "sleepQuality": 286,
+          "isLucid": false,
+          "category": "Foundation",
+          "tags": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "userId": 234,
+          "title": "Secure Title 14",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "dreamDate": "2024-02-27",
+          "mood": "Secure Mood 14",
+          "sleepQuality": 234,
+          "isLucid": true,
+          "category": "Advanced",
+          "tags": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "userId": 282,
+          "title": "Modern Title 15",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "dreamDate": "2024-03-01",
+          "mood": "Modern Mood 15",
+          "sleepQuality": 282,
+          "isLucid": true,
+          "category": "Professional",
+          "tags": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "DreamSymbol",
+      "routeKey": "dream-symbols",
+      "label": "Dream Symbol",
+      "icon": "briefcase",
+      "aiFunction": "analyzeDreamSymbol",
+      "aiPrompt": "You are an AI analyst for A I Dream Journal Analyzer. Analyze the provided Dream Symbol data. The data includes: Name, Meaning, Category. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "meaning",
+          "label": "Meaning",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "meaning": "Comprehensive solution designed for optimal performance and efficiency.",
+          "category": "Category A"
+        },
+        {
+          "name": "Premium Name 2",
+          "meaning": "Industry-leading approach with proven results across multiple deployments.",
+          "category": "Category B"
+        },
+        {
+          "name": "Standard Name 3",
+          "meaning": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "category": "Category C"
+        },
+        {
+          "name": "Elite Name 4",
+          "meaning": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "category": "Category D"
+        },
+        {
+          "name": "Core Name 5",
+          "meaning": "Cost-effective strategy focused on sustainable long-term growth.",
+          "category": "Category E"
+        },
+        {
+          "name": "Pro Name 6",
+          "meaning": "High-priority initiative aligned with organizational strategic objectives.",
+          "category": "Premium Tier"
+        },
+        {
+          "name": "Essential Name 7",
+          "meaning": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "category": "Standard Tier"
+        },
+        {
+          "name": "Primary Name 8",
+          "meaning": "Innovative framework incorporating best practices and emerging technologies.",
+          "category": "Basic Tier"
+        },
+        {
+          "name": "Global Name 9",
+          "meaning": "Scalable architecture built to accommodate rapid expansion and change.",
+          "category": "Enterprise"
+        },
+        {
+          "name": "Regional Name 10",
+          "meaning": "Enterprise-grade solution with robust security and compliance features.",
+          "category": "Starter"
+        },
+        {
+          "name": "Custom Name 11",
+          "meaning": "Integrated platform connecting multiple systems for seamless operations.",
+          "category": "Growth"
+        },
+        {
+          "name": "Smart Name 12",
+          "meaning": "Automated workflow reducing manual intervention and human error.",
+          "category": "Scale"
+        },
+        {
+          "name": "Rapid Name 13",
+          "meaning": "Real-time monitoring system with intelligent alerting capabilities.",
+          "category": "Foundation"
+        },
+        {
+          "name": "Secure Name 14",
+          "meaning": "Customizable module adaptable to diverse operational requirements.",
+          "category": "Advanced"
+        },
+        {
+          "name": "Modern Name 15",
+          "meaning": "Performance-optimized design achieving superior throughput and reliability.",
+          "category": "Professional"
+        }
+      ]
+    },
+    {
+      "modelName": "DreamCategorie",
+      "routeKey": "dream-categories",
+      "label": "Dream Categorie",
+      "icon": "clipboard",
+      "aiFunction": "analyzeDreamCategorie",
+      "aiPrompt": "You are an AI analyst for A I Dream Journal Analyzer. Analyze the provided Dream Categorie data. The data includes: Name, Description, Color. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "color",
+          "label": "Color",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "color": "Advanced Color 1"
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "color": "Premium Color 2"
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "color": "Standard Color 3"
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "color": "Elite Color 4"
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "color": "Core Color 5"
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "color": "Pro Color 6"
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "color": "Essential Color 7"
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "color": "Primary Color 8"
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "color": "Global Color 9"
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "color": "Regional Color 10"
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "color": "Custom Color 11"
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "color": "Smart Color 12"
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "color": "Rapid Color 13"
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "color": "Secure Color 14"
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "color": "Modern Color 15"
+        }
+      ]
+    },
+    {
+      "modelName": "MoodEntrie",
+      "routeKey": "mood-entries",
+      "label": "Mood Entrie",
+      "icon": "database",
+      "aiFunction": "analyzeMoodEntrie",
+      "aiPrompt": "You are an AI analyst for A I Dream Journal Analyzer. Analyze the provided Mood Entrie data. The data includes: User Id, Mood, Intensity, Entry Date, Notes, Triggers. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "mood",
+          "label": "Mood",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "intensity",
+          "label": "Intensity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "entryDate",
+          "label": "Entry Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "triggers",
+          "label": "Triggers",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "mood": "Advanced Mood 1",
+          "intensity": 10,
+          "entryDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "triggers": "Advanced Triggers 1"
+        },
+        {
+          "userId": 58,
+          "mood": "Premium Mood 2",
+          "intensity": 58,
+          "entryDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "triggers": "Premium Triggers 2"
+        },
+        {
+          "userId": 106,
+          "mood": "Standard Mood 3",
+          "intensity": 106,
+          "entryDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "triggers": "Standard Triggers 3"
+        },
+        {
+          "userId": 154,
+          "mood": "Elite Mood 4",
+          "intensity": 154,
+          "entryDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "triggers": "Elite Triggers 4"
+        },
+        {
+          "userId": 102,
+          "mood": "Core Mood 5",
+          "intensity": 102,
+          "entryDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "triggers": "Core Triggers 5"
+        },
+        {
+          "userId": 150,
+          "mood": "Pro Mood 6",
+          "intensity": 150,
+          "entryDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "triggers": "Pro Triggers 6"
+        },
+        {
+          "userId": 198,
+          "mood": "Essential Mood 7",
+          "intensity": 198,
+          "entryDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "triggers": "Essential Triggers 7"
+        },
+        {
+          "userId": 146,
+          "mood": "Primary Mood 8",
+          "intensity": 146,
+          "entryDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "triggers": "Primary Triggers 8"
+        },
+        {
+          "userId": 194,
+          "mood": "Global Mood 9",
+          "intensity": 194,
+          "entryDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "triggers": "Global Triggers 9"
+        },
+        {
+          "userId": 242,
+          "mood": "Regional Mood 10",
+          "intensity": 242,
+          "entryDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "triggers": "Regional Triggers 10"
+        },
+        {
+          "userId": 190,
+          "mood": "Custom Mood 11",
+          "intensity": 190,
+          "entryDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "triggers": "Custom Triggers 11"
+        },
+        {
+          "userId": 238,
+          "mood": "Smart Mood 12",
+          "intensity": 238,
+          "entryDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "triggers": "Smart Triggers 12"
+        },
+        {
+          "userId": 286,
+          "mood": "Rapid Mood 13",
+          "intensity": 286,
+          "entryDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "triggers": "Rapid Triggers 13"
+        },
+        {
+          "userId": 234,
+          "mood": "Secure Mood 14",
+          "intensity": 234,
+          "entryDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "triggers": "Secure Triggers 14"
+        },
+        {
+          "userId": 282,
+          "mood": "Modern Mood 15",
+          "intensity": 282,
+          "entryDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "triggers": "Modern Triggers 15"
+        }
+      ]
+    },
+    {
+      "modelName": "SleepQuality",
+      "routeKey": "sleep-qualitys",
+      "label": "Sleep Quality",
+      "icon": "file-text",
+      "aiFunction": "analyzeSleepQuality",
+      "aiPrompt": "You are an AI analyst for A I Dream Journal Analyzer. Analyze the provided Sleep Quality data. The data includes: User Id, Sleep Date, Hours Slept, Quality Rating, Bedtime, Wake Time, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "sleepDate",
+          "label": "Sleep Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "hoursSlept",
+          "label": "Hours Slept",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "qualityRating",
+          "label": "Quality Rating",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bedtime",
+          "label": "Bedtime",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "wakeTime",
+          "label": "Wake Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "sleepDate": "2024-01-01",
+          "hoursSlept": 10,
+          "qualityRating": 10,
+          "bedtime": "Advanced Bedtime 1",
+          "wakeTime": "Advanced Wake Time 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "userId": 58,
+          "sleepDate": "2024-02-03",
+          "hoursSlept": 71.7,
+          "qualityRating": 58,
+          "bedtime": "Premium Bedtime 2",
+          "wakeTime": "Premium Wake Time 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "userId": 106,
+          "sleepDate": "2024-03-05",
+          "hoursSlept": 33.4,
+          "qualityRating": 106,
+          "bedtime": "Standard Bedtime 3",
+          "wakeTime": "Standard Wake Time 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "userId": 154,
+          "sleepDate": "2024-04-07",
+          "hoursSlept": 95.1,
+          "qualityRating": 154,
+          "bedtime": "Elite Bedtime 4",
+          "wakeTime": "Elite Wake Time 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "userId": 102,
+          "sleepDate": "2024-05-09",
+          "hoursSlept": 56.8,
+          "qualityRating": 102,
+          "bedtime": "Core Bedtime 5",
+          "wakeTime": "Core Wake Time 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "userId": 150,
+          "sleepDate": "2024-06-11",
+          "hoursSlept": 118.5,
+          "qualityRating": 150,
+          "bedtime": "Pro Bedtime 6",
+          "wakeTime": "Pro Wake Time 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "userId": 198,
+          "sleepDate": "2024-07-13",
+          "hoursSlept": 80.2,
+          "qualityRating": 198,
+          "bedtime": "Essential Bedtime 7",
+          "wakeTime": "Essential Wake Time 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "userId": 146,
+          "sleepDate": "2024-08-15",
+          "hoursSlept": 141.9,
+          "qualityRating": 146,
+          "bedtime": "Primary Bedtime 8",
+          "wakeTime": "Primary Wake Time 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "userId": 194,
+          "sleepDate": "2024-09-17",
+          "hoursSlept": 103.6,
+          "qualityRating": 194,
+          "bedtime": "Global Bedtime 9",
+          "wakeTime": "Global Wake Time 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "userId": 242,
+          "sleepDate": "2024-10-19",
+          "hoursSlept": 165.3,
+          "qualityRating": 242,
+          "bedtime": "Regional Bedtime 10",
+          "wakeTime": "Regional Wake Time 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "userId": 190,
+          "sleepDate": "2024-11-21",
+          "hoursSlept": 127,
+          "qualityRating": 190,
+          "bedtime": "Custom Bedtime 11",
+          "wakeTime": "Custom Wake Time 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "userId": 238,
+          "sleepDate": "2024-12-23",
+          "hoursSlept": 188.7,
+          "qualityRating": 238,
+          "bedtime": "Smart Bedtime 12",
+          "wakeTime": "Smart Wake Time 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "userId": 286,
+          "sleepDate": "2024-01-25",
+          "hoursSlept": 150.4,
+          "qualityRating": 286,
+          "bedtime": "Rapid Bedtime 13",
+          "wakeTime": "Rapid Wake Time 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "userId": 234,
+          "sleepDate": "2024-02-27",
+          "hoursSlept": 212.1,
+          "qualityRating": 234,
+          "bedtime": "Secure Bedtime 14",
+          "wakeTime": "Secure Wake Time 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "userId": 282,
+          "sleepDate": "2024-03-01",
+          "hoursSlept": 173.8,
+          "qualityRating": 282,
+          "bedtime": "Modern Bedtime 15",
+          "wakeTime": "Modern Wake Time 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "LucidDream",
+      "routeKey": "lucid-dreams",
+      "label": "Lucid Dream",
+      "icon": "heart",
+      "aiFunction": "analyzeLucidDream",
+      "aiPrompt": "You are an AI analyst for A I Dream Journal Analyzer. Analyze the provided Lucid Dream data. The data includes: User Id, Title, Content, Dream Date, Technique Used, Lucidity Level, Duration Minutes, Control Level. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "dreamDate",
+          "label": "Dream Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "techniqueUsed",
+          "label": "Technique Used",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lucidityLevel",
+          "label": "Lucidity Level",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "durationMinutes",
+          "label": "Duration Minutes",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "controlLevel",
+          "label": "Control Level",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "title": "Advanced Title 1",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "dreamDate": "2024-01-01",
+          "techniqueUsed": "Advanced Technique Used 1",
+          "lucidityLevel": 10,
+          "durationMinutes": 10,
+          "controlLevel": 10
+        },
+        {
+          "userId": 58,
+          "title": "Premium Title 2",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "dreamDate": "2024-02-03",
+          "techniqueUsed": "Premium Technique Used 2",
+          "lucidityLevel": 58,
+          "durationMinutes": 58,
+          "controlLevel": 58
+        },
+        {
+          "userId": 106,
+          "title": "Standard Title 3",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "dreamDate": "2024-03-05",
+          "techniqueUsed": "Standard Technique Used 3",
+          "lucidityLevel": 106,
+          "durationMinutes": 106,
+          "controlLevel": 106
+        },
+        {
+          "userId": 154,
+          "title": "Elite Title 4",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "dreamDate": "2024-04-07",
+          "techniqueUsed": "Elite Technique Used 4",
+          "lucidityLevel": 154,
+          "durationMinutes": 154,
+          "controlLevel": 154
+        },
+        {
+          "userId": 102,
+          "title": "Core Title 5",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "dreamDate": "2024-05-09",
+          "techniqueUsed": "Core Technique Used 5",
+          "lucidityLevel": 102,
+          "durationMinutes": 102,
+          "controlLevel": 102
+        },
+        {
+          "userId": 150,
+          "title": "Pro Title 6",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "dreamDate": "2024-06-11",
+          "techniqueUsed": "Pro Technique Used 6",
+          "lucidityLevel": 150,
+          "durationMinutes": 150,
+          "controlLevel": 150
+        },
+        {
+          "userId": 198,
+          "title": "Essential Title 7",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "dreamDate": "2024-07-13",
+          "techniqueUsed": "Essential Technique Used 7",
+          "lucidityLevel": 198,
+          "durationMinutes": 198,
+          "controlLevel": 198
+        },
+        {
+          "userId": 146,
+          "title": "Primary Title 8",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "dreamDate": "2024-08-15",
+          "techniqueUsed": "Primary Technique Used 8",
+          "lucidityLevel": 146,
+          "durationMinutes": 146,
+          "controlLevel": 146
+        },
+        {
+          "userId": 194,
+          "title": "Global Title 9",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "dreamDate": "2024-09-17",
+          "techniqueUsed": "Global Technique Used 9",
+          "lucidityLevel": 194,
+          "durationMinutes": 194,
+          "controlLevel": 194
+        },
+        {
+          "userId": 242,
+          "title": "Regional Title 10",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "dreamDate": "2024-10-19",
+          "techniqueUsed": "Regional Technique Used 10",
+          "lucidityLevel": 242,
+          "durationMinutes": 242,
+          "controlLevel": 242
+        },
+        {
+          "userId": 190,
+          "title": "Custom Title 11",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "dreamDate": "2024-11-21",
+          "techniqueUsed": "Custom Technique Used 11",
+          "lucidityLevel": 190,
+          "durationMinutes": 190,
+          "controlLevel": 190
+        },
+        {
+          "userId": 238,
+          "title": "Smart Title 12",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "dreamDate": "2024-12-23",
+          "techniqueUsed": "Smart Technique Used 12",
+          "lucidityLevel": 238,
+          "durationMinutes": 238,
+          "controlLevel": 238
+        },
+        {
+          "userId": 286,
+          "title": "Rapid Title 13",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "dreamDate": "2024-01-25",
+          "techniqueUsed": "Rapid Technique Used 13",
+          "lucidityLevel": 286,
+          "durationMinutes": 286,
+          "controlLevel": 286
+        },
+        {
+          "userId": 234,
+          "title": "Secure Title 14",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "dreamDate": "2024-02-27",
+          "techniqueUsed": "Secure Technique Used 14",
+          "lucidityLevel": 234,
+          "durationMinutes": 234,
+          "controlLevel": 234
+        },
+        {
+          "userId": 282,
+          "title": "Modern Title 15",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "dreamDate": "2024-03-01",
+          "techniqueUsed": "Modern Technique Used 15",
+          "lucidityLevel": 282,
+          "durationMinutes": 282,
+          "controlLevel": 282
+        }
+      ]
+    },
+    {
+      "modelName": "RecurringDream",
+      "routeKey": "recurring-dreams",
+      "label": "Recurring Dream",
+      "icon": "layers",
+      "aiFunction": "analyzeRecurringDream",
+      "aiPrompt": "You are an AI analyst for A I Dream Journal Analyzer. Analyze the provided Recurring Dream data. The data includes: User Id, Title, Description, Frequency, First Occurrence, Last Occurrence, Occurrence Count, Common Elements, Emotional Tone. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "frequency",
+          "label": "Frequency",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "firstOccurrence",
+          "label": "First Occurrence",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "lastOccurrence",
+          "label": "Last Occurrence",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "occurrenceCount",
+          "label": "Occurrence Count",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "commonElements",
+          "label": "Common Elements",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "emotionalTone",
+          "label": "Emotional Tone",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "frequency": "Advanced Frequency 1",
+          "firstOccurrence": "2024-01-01",
+          "lastOccurrence": "2024-01-01",
+          "occurrenceCount": 115,
+          "commonElements": "Comprehensive solution designed for optimal performance and efficiency.",
+          "emotionalTone": "Advanced Emotional Tone 1"
+        },
+        {
+          "userId": 58,
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "frequency": "Premium Frequency 2",
+          "firstOccurrence": "2024-02-03",
+          "lastOccurrence": "2024-02-03",
+          "occurrenceCount": 137,
+          "commonElements": "Industry-leading approach with proven results across multiple deployments.",
+          "emotionalTone": "Premium Emotional Tone 2"
+        },
+        {
+          "userId": 106,
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "frequency": "Standard Frequency 3",
+          "firstOccurrence": "2024-03-05",
+          "lastOccurrence": "2024-03-05",
+          "occurrenceCount": 151,
+          "commonElements": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "emotionalTone": "Standard Emotional Tone 3"
+        },
+        {
+          "userId": 154,
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "frequency": "Elite Frequency 4",
+          "firstOccurrence": "2024-04-07",
+          "lastOccurrence": "2024-04-07",
+          "occurrenceCount": 78,
+          "commonElements": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "emotionalTone": "Elite Emotional Tone 4"
+        },
+        {
+          "userId": 102,
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "frequency": "Core Frequency 5",
+          "firstOccurrence": "2024-05-09",
+          "lastOccurrence": "2024-05-09",
+          "occurrenceCount": 83,
+          "commonElements": "Cost-effective strategy focused on sustainable long-term growth.",
+          "emotionalTone": "Core Emotional Tone 5"
+        },
+        {
+          "userId": 150,
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "frequency": "Pro Frequency 6",
+          "firstOccurrence": "2024-06-11",
+          "lastOccurrence": "2024-06-11",
+          "occurrenceCount": 65,
+          "commonElements": "High-priority initiative aligned with organizational strategic objectives.",
+          "emotionalTone": "Pro Emotional Tone 6"
+        },
+        {
+          "userId": 198,
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "frequency": "Essential Frequency 7",
+          "firstOccurrence": "2024-07-13",
+          "lastOccurrence": "2024-07-13",
+          "occurrenceCount": 80,
+          "commonElements": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "emotionalTone": "Essential Emotional Tone 7"
+        },
+        {
+          "userId": 146,
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "frequency": "Primary Frequency 8",
+          "firstOccurrence": "2024-08-15",
+          "lastOccurrence": "2024-08-15",
+          "occurrenceCount": 188,
+          "commonElements": "Innovative framework incorporating best practices and emerging technologies.",
+          "emotionalTone": "Primary Emotional Tone 8"
+        },
+        {
+          "userId": 194,
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "frequency": "Global Frequency 9",
+          "firstOccurrence": "2024-09-17",
+          "lastOccurrence": "2024-09-17",
+          "occurrenceCount": 130,
+          "commonElements": "Scalable architecture built to accommodate rapid expansion and change.",
+          "emotionalTone": "Global Emotional Tone 9"
+        },
+        {
+          "userId": 242,
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "frequency": "Regional Frequency 10",
+          "firstOccurrence": "2024-10-19",
+          "lastOccurrence": "2024-10-19",
+          "occurrenceCount": 171,
+          "commonElements": "Enterprise-grade solution with robust security and compliance features.",
+          "emotionalTone": "Regional Emotional Tone 10"
+        },
+        {
+          "userId": 190,
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "frequency": "Custom Frequency 11",
+          "firstOccurrence": "2024-11-21",
+          "lastOccurrence": "2024-11-21",
+          "occurrenceCount": 113,
+          "commonElements": "Integrated platform connecting multiple systems for seamless operations.",
+          "emotionalTone": "Custom Emotional Tone 11"
+        },
+        {
+          "userId": 238,
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "frequency": "Smart Frequency 12",
+          "firstOccurrence": "2024-12-23",
+          "lastOccurrence": "2024-12-23",
+          "occurrenceCount": 176,
+          "commonElements": "Automated workflow reducing manual intervention and human error.",
+          "emotionalTone": "Smart Emotional Tone 12"
+        },
+        {
+          "userId": 286,
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "frequency": "Rapid Frequency 13",
+          "firstOccurrence": "2024-01-25",
+          "lastOccurrence": "2024-01-25",
+          "occurrenceCount": 163,
+          "commonElements": "Real-time monitoring system with intelligent alerting capabilities.",
+          "emotionalTone": "Rapid Emotional Tone 13"
+        },
+        {
+          "userId": 234,
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "frequency": "Secure Frequency 14",
+          "firstOccurrence": "2024-02-27",
+          "lastOccurrence": "2024-02-27",
+          "occurrenceCount": 295,
+          "commonElements": "Customizable module adaptable to diverse operational requirements.",
+          "emotionalTone": "Secure Emotional Tone 14"
+        },
+        {
+          "userId": 282,
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "frequency": "Modern Frequency 15",
+          "firstOccurrence": "2024-03-01",
+          "lastOccurrence": "2024-03-01",
+          "occurrenceCount": 172,
+          "commonElements": "Performance-optimized design achieving superior throughput and reliability.",
+          "emotionalTone": "Modern Emotional Tone 15"
+        }
+      ]
+    },
+    {
+      "modelName": "DreamTag",
+      "routeKey": "dream-tags",
+      "label": "Dream Tag",
+      "icon": "map-pin",
+      "aiFunction": "analyzeDreamTag",
+      "aiPrompt": "You are an AI analyst for A I Dream Journal Analyzer. Analyze the provided Dream Tag data. The data includes: Name, Color. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "color",
+          "label": "Color",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "color": "Advanced Color 1"
+        },
+        {
+          "name": "Premium Name 2",
+          "color": "Premium Color 2"
+        },
+        {
+          "name": "Standard Name 3",
+          "color": "Standard Color 3"
+        },
+        {
+          "name": "Elite Name 4",
+          "color": "Elite Color 4"
+        },
+        {
+          "name": "Core Name 5",
+          "color": "Core Color 5"
+        },
+        {
+          "name": "Pro Name 6",
+          "color": "Pro Color 6"
+        },
+        {
+          "name": "Essential Name 7",
+          "color": "Essential Color 7"
+        },
+        {
+          "name": "Primary Name 8",
+          "color": "Primary Color 8"
+        },
+        {
+          "name": "Global Name 9",
+          "color": "Global Color 9"
+        },
+        {
+          "name": "Regional Name 10",
+          "color": "Regional Color 10"
+        },
+        {
+          "name": "Custom Name 11",
+          "color": "Custom Color 11"
+        },
+        {
+          "name": "Smart Name 12",
+          "color": "Smart Color 12"
+        },
+        {
+          "name": "Rapid Name 13",
+          "color": "Rapid Color 13"
+        },
+        {
+          "name": "Secure Name 14",
+          "color": "Secure Color 14"
+        },
+        {
+          "name": "Modern Name 15",
+          "color": "Modern Color 15"
+        }
+      ]
+    },
+    {
+      "modelName": "SleepGoal",
+      "routeKey": "sleep-goals",
+      "label": "Sleep Goal",
+      "icon": "package",
+      "aiFunction": "analyzeSleepGoal",
+      "aiPrompt": "You are an AI analyst for A I Dream Journal Analyzer. Analyze the provided Sleep Goal data. The data includes: User Id, Title, Description, Target Date, Goal Type, Target Value, Current Value, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "targetDate",
+          "label": "Target Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "goalType",
+          "label": "Goal Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "targetValue",
+          "label": "Target Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "currentValue",
+          "label": "Current Value",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "targetDate": "2024-01-01",
+          "goalType": "Category A",
+          "targetValue": 10,
+          "currentValue": 10,
+          "status": "active"
+        },
+        {
+          "userId": 58,
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "targetDate": "2024-02-03",
+          "goalType": "Category B",
+          "targetValue": 71.7,
+          "currentValue": 71.7,
+          "status": "pending"
+        },
+        {
+          "userId": 106,
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "targetDate": "2024-03-05",
+          "goalType": "Category C",
+          "targetValue": 33.4,
+          "currentValue": 33.4,
+          "status": "in_progress"
+        },
+        {
+          "userId": 154,
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "targetDate": "2024-04-07",
+          "goalType": "Category D",
+          "targetValue": 95.1,
+          "currentValue": 95.1,
+          "status": "completed"
+        },
+        {
+          "userId": 102,
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "targetDate": "2024-05-09",
+          "goalType": "Category E",
+          "targetValue": 56.8,
+          "currentValue": 56.8,
+          "status": "under_review"
+        },
+        {
+          "userId": 150,
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "targetDate": "2024-06-11",
+          "goalType": "Premium Tier",
+          "targetValue": 118.5,
+          "currentValue": 118.5,
+          "status": "approved"
+        },
+        {
+          "userId": 198,
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "targetDate": "2024-07-13",
+          "goalType": "Standard Tier",
+          "targetValue": 80.2,
+          "currentValue": 80.2,
+          "status": "active"
+        },
+        {
+          "userId": 146,
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "targetDate": "2024-08-15",
+          "goalType": "Basic Tier",
+          "targetValue": 141.9,
+          "currentValue": 141.9,
+          "status": "active"
+        },
+        {
+          "userId": 194,
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "targetDate": "2024-09-17",
+          "goalType": "Enterprise",
+          "targetValue": 103.6,
+          "currentValue": 103.6,
+          "status": "active"
+        },
+        {
+          "userId": 242,
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "targetDate": "2024-10-19",
+          "goalType": "Starter",
+          "targetValue": 165.3,
+          "currentValue": 165.3,
+          "status": "pending"
+        },
+        {
+          "userId": 190,
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "targetDate": "2024-11-21",
+          "goalType": "Growth",
+          "targetValue": 127,
+          "currentValue": 127,
+          "status": "completed"
+        },
+        {
+          "userId": 238,
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "targetDate": "2024-12-23",
+          "goalType": "Scale",
+          "targetValue": 188.7,
+          "currentValue": 188.7,
+          "status": "active"
+        },
+        {
+          "userId": 286,
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "targetDate": "2024-01-25",
+          "goalType": "Foundation",
+          "targetValue": 150.4,
+          "currentValue": 150.4,
+          "status": "in_progress"
+        },
+        {
+          "userId": 234,
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "targetDate": "2024-02-27",
+          "goalType": "Advanced",
+          "targetValue": 212.1,
+          "currentValue": 212.1,
+          "status": "active"
+        },
+        {
+          "userId": 282,
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "targetDate": "2024-03-01",
+          "goalType": "Professional",
+          "targetValue": 173.8,
+          "currentValue": 173.8,
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "DreamInsight",
+      "routeKey": "dream-insights",
+      "label": "Dream Insight",
+      "icon": "shield",
+      "aiFunction": "analyzeDreamInsight",
+      "aiPrompt": "You are an AI analyst for A I Dream Journal Analyzer. Analyze the provided Dream Insight data. The data includes: User Id, Title, Content, Insight Type, Related Dreams, Significance. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "insightType",
+          "label": "Insight Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "relatedDreams",
+          "label": "Related Dreams",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "significance",
+          "label": "Significance",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "title": "Advanced Title 1",
+          "content": "Comprehensive solution designed for optimal performance and efficiency.",
+          "insightType": "Category A",
+          "relatedDreams": 10,
+          "significance": "Advanced Significance 1"
+        },
+        {
+          "userId": 58,
+          "title": "Premium Title 2",
+          "content": "Industry-leading approach with proven results across multiple deployments.",
+          "insightType": "Category B",
+          "relatedDreams": 58,
+          "significance": "Premium Significance 2"
+        },
+        {
+          "userId": 106,
+          "title": "Standard Title 3",
+          "content": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "insightType": "Category C",
+          "relatedDreams": 106,
+          "significance": "Standard Significance 3"
+        },
+        {
+          "userId": 154,
+          "title": "Elite Title 4",
+          "content": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "insightType": "Category D",
+          "relatedDreams": 154,
+          "significance": "Elite Significance 4"
+        },
+        {
+          "userId": 102,
+          "title": "Core Title 5",
+          "content": "Cost-effective strategy focused on sustainable long-term growth.",
+          "insightType": "Category E",
+          "relatedDreams": 102,
+          "significance": "Core Significance 5"
+        },
+        {
+          "userId": 150,
+          "title": "Pro Title 6",
+          "content": "High-priority initiative aligned with organizational strategic objectives.",
+          "insightType": "Premium Tier",
+          "relatedDreams": 150,
+          "significance": "Pro Significance 6"
+        },
+        {
+          "userId": 198,
+          "title": "Essential Title 7",
+          "content": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "insightType": "Standard Tier",
+          "relatedDreams": 198,
+          "significance": "Essential Significance 7"
+        },
+        {
+          "userId": 146,
+          "title": "Primary Title 8",
+          "content": "Innovative framework incorporating best practices and emerging technologies.",
+          "insightType": "Basic Tier",
+          "relatedDreams": 146,
+          "significance": "Primary Significance 8"
+        },
+        {
+          "userId": 194,
+          "title": "Global Title 9",
+          "content": "Scalable architecture built to accommodate rapid expansion and change.",
+          "insightType": "Enterprise",
+          "relatedDreams": 194,
+          "significance": "Global Significance 9"
+        },
+        {
+          "userId": 242,
+          "title": "Regional Title 10",
+          "content": "Enterprise-grade solution with robust security and compliance features.",
+          "insightType": "Starter",
+          "relatedDreams": 242,
+          "significance": "Regional Significance 10"
+        },
+        {
+          "userId": 190,
+          "title": "Custom Title 11",
+          "content": "Integrated platform connecting multiple systems for seamless operations.",
+          "insightType": "Growth",
+          "relatedDreams": 190,
+          "significance": "Custom Significance 11"
+        },
+        {
+          "userId": 238,
+          "title": "Smart Title 12",
+          "content": "Automated workflow reducing manual intervention and human error.",
+          "insightType": "Scale",
+          "relatedDreams": 238,
+          "significance": "Smart Significance 12"
+        },
+        {
+          "userId": 286,
+          "title": "Rapid Title 13",
+          "content": "Real-time monitoring system with intelligent alerting capabilities.",
+          "insightType": "Foundation",
+          "relatedDreams": 286,
+          "significance": "Rapid Significance 13"
+        },
+        {
+          "userId": 234,
+          "title": "Secure Title 14",
+          "content": "Customizable module adaptable to diverse operational requirements.",
+          "insightType": "Advanced",
+          "relatedDreams": 234,
+          "significance": "Secure Significance 14"
+        },
+        {
+          "userId": 282,
+          "title": "Modern Title 15",
+          "content": "Performance-optimized design achieving superior throughput and reliability.",
+          "insightType": "Professional",
+          "relatedDreams": 282,
+          "significance": "Modern Significance 15"
+        }
+      ]
+    },
+    {
+      "modelName": "AiAnalyse",
+      "routeKey": "ai-analyses",
+      "label": "Ai Analyse",
+      "icon": "star",
+      "aiFunction": "analyzeAiAnalyse",
+      "aiPrompt": "You are an AI analyst for A I Dream Journal Analyzer. Analyze the provided Ai Analyse data. The data includes: User Id, Dream Content, Analysis Type, Result. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "dreamContent",
+          "label": "Dream Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "analysisType",
+          "label": "Analysis Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "result",
+          "label": "Result",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "dreamContent": "Comprehensive solution designed for optimal performance and efficiency.",
+          "analysisType": "Category A",
+          "result": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "userId": 58,
+          "dreamContent": "Industry-leading approach with proven results across multiple deployments.",
+          "analysisType": "Category B",
+          "result": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "userId": 106,
+          "dreamContent": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "analysisType": "Category C",
+          "result": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "userId": 154,
+          "dreamContent": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "analysisType": "Category D",
+          "result": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "userId": 102,
+          "dreamContent": "Cost-effective strategy focused on sustainable long-term growth.",
+          "analysisType": "Category E",
+          "result": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "userId": 150,
+          "dreamContent": "High-priority initiative aligned with organizational strategic objectives.",
+          "analysisType": "Premium Tier",
+          "result": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "userId": 198,
+          "dreamContent": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "analysisType": "Standard Tier",
+          "result": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "userId": 146,
+          "dreamContent": "Innovative framework incorporating best practices and emerging technologies.",
+          "analysisType": "Basic Tier",
+          "result": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "userId": 194,
+          "dreamContent": "Scalable architecture built to accommodate rapid expansion and change.",
+          "analysisType": "Enterprise",
+          "result": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "userId": 242,
+          "dreamContent": "Enterprise-grade solution with robust security and compliance features.",
+          "analysisType": "Starter",
+          "result": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "userId": 190,
+          "dreamContent": "Integrated platform connecting multiple systems for seamless operations.",
+          "analysisType": "Growth",
+          "result": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "userId": 238,
+          "dreamContent": "Automated workflow reducing manual intervention and human error.",
+          "analysisType": "Scale",
+          "result": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "userId": 286,
+          "dreamContent": "Real-time monitoring system with intelligent alerting capabilities.",
+          "analysisType": "Foundation",
+          "result": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "userId": 234,
+          "dreamContent": "Customizable module adaptable to diverse operational requirements.",
+          "analysisType": "Advanced",
+          "result": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "userId": 282,
+          "dreamContent": "Performance-optimized design achieving superior throughput and reliability.",
+          "analysisType": "Professional",
+          "result": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

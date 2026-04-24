@@ -1,0 +1,532 @@
+{
+  "appName": "AI Web Scraping Agent",
+  "dbName": "a_i_web_scraping",
+  "folderName": "generated/AIWebScraping",
+  "features": [
+    {
+      "modelName": "ScrapingJob",
+      "routeKey": "scraping-jobs",
+      "label": "Scraping Job",
+      "icon": "activity",
+      "aiFunction": "analyzeScrapingJob",
+      "aiPrompt": "You are an AI analyst for A I Autonomous Web Scraping Agent. Analyze the provided Scraping Job data. The data includes: Name, Url, Selectors, Schedule, Status, Last Run, Total Runs, Data Collected, Error Count. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "url",
+          "label": "Url",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "selectors",
+          "label": "Selectors",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "schedule",
+          "label": "Schedule",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastRun",
+          "label": "Last Run",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "totalRuns",
+          "label": "Total Runs",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "dataCollected",
+          "label": "Data Collected",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "errorCount",
+          "label": "Error Count",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "url": "Comprehensive solution designed for optimal performance and efficiency.",
+          "selectors": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "schedule": "Advanced Schedule 1",
+          "status": "active",
+          "lastRun": "2024-01-01",
+          "totalRuns": 10,
+          "dataCollected": 10,
+          "errorCount": 45
+        },
+        {
+          "name": "Premium Name 2",
+          "url": "Industry-leading approach with proven results across multiple deployments.",
+          "selectors": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "schedule": "Premium Schedule 2",
+          "status": "pending",
+          "lastRun": "2024-02-03",
+          "totalRuns": 58,
+          "dataCollected": 58,
+          "errorCount": 22
+        },
+        {
+          "name": "Standard Name 3",
+          "url": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "selectors": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "schedule": "Standard Schedule 3",
+          "status": "in_progress",
+          "lastRun": "2024-03-05",
+          "totalRuns": 106,
+          "dataCollected": 106,
+          "errorCount": 140
+        },
+        {
+          "name": "Elite Name 4",
+          "url": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "selectors": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "schedule": "Elite Schedule 4",
+          "status": "completed",
+          "lastRun": "2024-04-07",
+          "totalRuns": 154,
+          "dataCollected": 154,
+          "errorCount": 169
+        },
+        {
+          "name": "Core Name 5",
+          "url": "Cost-effective strategy focused on sustainable long-term growth.",
+          "selectors": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "schedule": "Core Schedule 5",
+          "status": "under_review",
+          "lastRun": "2024-05-09",
+          "totalRuns": 102,
+          "dataCollected": 102,
+          "errorCount": 195
+        },
+        {
+          "name": "Pro Name 6",
+          "url": "High-priority initiative aligned with organizational strategic objectives.",
+          "selectors": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "schedule": "Pro Schedule 6",
+          "status": "approved",
+          "lastRun": "2024-06-11",
+          "totalRuns": 150,
+          "dataCollected": 150,
+          "errorCount": 125
+        },
+        {
+          "name": "Essential Name 7",
+          "url": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "selectors": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "schedule": "Essential Schedule 7",
+          "status": "active",
+          "lastRun": "2024-07-13",
+          "totalRuns": 198,
+          "dataCollected": 198,
+          "errorCount": 112
+        },
+        {
+          "name": "Primary Name 8",
+          "url": "Innovative framework incorporating best practices and emerging technologies.",
+          "selectors": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "schedule": "Primary Schedule 8",
+          "status": "active",
+          "lastRun": "2024-08-15",
+          "totalRuns": 146,
+          "dataCollected": 146,
+          "errorCount": 58
+        },
+        {
+          "name": "Global Name 9",
+          "url": "Scalable architecture built to accommodate rapid expansion and change.",
+          "selectors": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "schedule": "Global Schedule 9",
+          "status": "active",
+          "lastRun": "2024-09-17",
+          "totalRuns": 194,
+          "dataCollected": 194,
+          "errorCount": 107
+        },
+        {
+          "name": "Regional Name 10",
+          "url": "Enterprise-grade solution with robust security and compliance features.",
+          "selectors": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "schedule": "Regional Schedule 10",
+          "status": "pending",
+          "lastRun": "2024-10-19",
+          "totalRuns": 242,
+          "dataCollected": 242,
+          "errorCount": 109
+        },
+        {
+          "name": "Custom Name 11",
+          "url": "Integrated platform connecting multiple systems for seamless operations.",
+          "selectors": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "schedule": "Custom Schedule 11",
+          "status": "completed",
+          "lastRun": "2024-11-21",
+          "totalRuns": 190,
+          "dataCollected": 190,
+          "errorCount": 109
+        },
+        {
+          "name": "Smart Name 12",
+          "url": "Automated workflow reducing manual intervention and human error.",
+          "selectors": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "schedule": "Smart Schedule 12",
+          "status": "active",
+          "lastRun": "2024-12-23",
+          "totalRuns": 238,
+          "dataCollected": 238,
+          "errorCount": 239
+        },
+        {
+          "name": "Rapid Name 13",
+          "url": "Real-time monitoring system with intelligent alerting capabilities.",
+          "selectors": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "schedule": "Rapid Schedule 13",
+          "status": "in_progress",
+          "lastRun": "2024-01-25",
+          "totalRuns": 286,
+          "dataCollected": 286,
+          "errorCount": 223
+        },
+        {
+          "name": "Secure Name 14",
+          "url": "Customizable module adaptable to diverse operational requirements.",
+          "selectors": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "schedule": "Secure Schedule 14",
+          "status": "active",
+          "lastRun": "2024-02-27",
+          "totalRuns": 234,
+          "dataCollected": 234,
+          "errorCount": 217
+        },
+        {
+          "name": "Modern Name 15",
+          "url": "Performance-optimized design achieving superior throughput and reliability.",
+          "selectors": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "schedule": "Modern Schedule 15",
+          "status": "approved",
+          "lastRun": "2024-03-01",
+          "totalRuns": 282,
+          "dataCollected": 282,
+          "errorCount": 237
+        }
+      ]
+    },
+    {
+      "modelName": "ScrapedData",
+      "routeKey": "scraped-datas",
+      "label": "Scraped Data",
+      "icon": "briefcase",
+      "aiFunction": "analyzeScrapedData",
+      "aiPrompt": "You are an AI analyst for A I Autonomous Web Scraping Agent. Analyze the provided Scraped Data data. The data includes: Job Id, Data, Url, Scraped At. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "jobId",
+          "label": "Job Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "data",
+          "label": "Data",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "url",
+          "label": "Url",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "scrapedAt",
+          "label": "Scraped At",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "jobId": 10,
+          "data": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "url": "Comprehensive solution designed for optimal performance and efficiency.",
+          "scrapedAt": "2024-01-01"
+        },
+        {
+          "jobId": 58,
+          "data": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "url": "Industry-leading approach with proven results across multiple deployments.",
+          "scrapedAt": "2024-02-03"
+        },
+        {
+          "jobId": 106,
+          "data": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "url": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "scrapedAt": "2024-03-05"
+        },
+        {
+          "jobId": 154,
+          "data": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "url": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "scrapedAt": "2024-04-07"
+        },
+        {
+          "jobId": 102,
+          "data": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "url": "Cost-effective strategy focused on sustainable long-term growth.",
+          "scrapedAt": "2024-05-09"
+        },
+        {
+          "jobId": 150,
+          "data": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "url": "High-priority initiative aligned with organizational strategic objectives.",
+          "scrapedAt": "2024-06-11"
+        },
+        {
+          "jobId": 198,
+          "data": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "url": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "scrapedAt": "2024-07-13"
+        },
+        {
+          "jobId": 146,
+          "data": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "url": "Innovative framework incorporating best practices and emerging technologies.",
+          "scrapedAt": "2024-08-15"
+        },
+        {
+          "jobId": 194,
+          "data": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "url": "Scalable architecture built to accommodate rapid expansion and change.",
+          "scrapedAt": "2024-09-17"
+        },
+        {
+          "jobId": 242,
+          "data": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "url": "Enterprise-grade solution with robust security and compliance features.",
+          "scrapedAt": "2024-10-19"
+        },
+        {
+          "jobId": 190,
+          "data": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "url": "Integrated platform connecting multiple systems for seamless operations.",
+          "scrapedAt": "2024-11-21"
+        },
+        {
+          "jobId": 238,
+          "data": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "url": "Automated workflow reducing manual intervention and human error.",
+          "scrapedAt": "2024-12-23"
+        },
+        {
+          "jobId": 286,
+          "data": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "url": "Real-time monitoring system with intelligent alerting capabilities.",
+          "scrapedAt": "2024-01-25"
+        },
+        {
+          "jobId": 234,
+          "data": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "url": "Customizable module adaptable to diverse operational requirements.",
+          "scrapedAt": "2024-02-27"
+        },
+        {
+          "jobId": 282,
+          "data": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "url": "Performance-optimized design achieving superior throughput and reliability.",
+          "scrapedAt": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "ScrapingLog",
+      "routeKey": "scraping-logs",
+      "label": "Scraping Log",
+      "icon": "clipboard",
+      "aiFunction": "analyzeScrapingLog",
+      "aiPrompt": "You are an AI analyst for A I Autonomous Web Scraping Agent. Analyze the provided Scraping Log data. The data includes: Job Id, Agent, Action, Status, Message, Duration Ms. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "jobId",
+          "label": "Job Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "agent",
+          "label": "Agent",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "durationMs",
+          "label": "Duration Ms",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "sampleData": [
+        {
+          "jobId": 10,
+          "agent": "Advanced Agent 1",
+          "action": "Advanced Action 1",
+          "status": "active",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "durationMs": 10
+        },
+        {
+          "jobId": 58,
+          "agent": "Premium Agent 2",
+          "action": "Premium Action 2",
+          "status": "pending",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "durationMs": 58
+        },
+        {
+          "jobId": 106,
+          "agent": "Standard Agent 3",
+          "action": "Standard Action 3",
+          "status": "in_progress",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "durationMs": 106
+        },
+        {
+          "jobId": 154,
+          "agent": "Elite Agent 4",
+          "action": "Elite Action 4",
+          "status": "completed",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "durationMs": 154
+        },
+        {
+          "jobId": 102,
+          "agent": "Core Agent 5",
+          "action": "Core Action 5",
+          "status": "under_review",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "durationMs": 102
+        },
+        {
+          "jobId": 150,
+          "agent": "Pro Agent 6",
+          "action": "Pro Action 6",
+          "status": "approved",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "durationMs": 150
+        },
+        {
+          "jobId": 198,
+          "agent": "Essential Agent 7",
+          "action": "Essential Action 7",
+          "status": "active",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "durationMs": 198
+        },
+        {
+          "jobId": 146,
+          "agent": "Primary Agent 8",
+          "action": "Primary Action 8",
+          "status": "active",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "durationMs": 146
+        },
+        {
+          "jobId": 194,
+          "agent": "Global Agent 9",
+          "action": "Global Action 9",
+          "status": "active",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "durationMs": 194
+        },
+        {
+          "jobId": 242,
+          "agent": "Regional Agent 10",
+          "action": "Regional Action 10",
+          "status": "pending",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "durationMs": 242
+        },
+        {
+          "jobId": 190,
+          "agent": "Custom Agent 11",
+          "action": "Custom Action 11",
+          "status": "completed",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "durationMs": 190
+        },
+        {
+          "jobId": 238,
+          "agent": "Smart Agent 12",
+          "action": "Smart Action 12",
+          "status": "active",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "durationMs": 238
+        },
+        {
+          "jobId": 286,
+          "agent": "Rapid Agent 13",
+          "action": "Rapid Action 13",
+          "status": "in_progress",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "durationMs": 286
+        },
+        {
+          "jobId": 234,
+          "agent": "Secure Agent 14",
+          "action": "Secure Action 14",
+          "status": "active",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "durationMs": 234
+        },
+        {
+          "jobId": 282,
+          "agent": "Modern Agent 15",
+          "action": "Modern Action 15",
+          "status": "approved",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "durationMs": 282
+        }
+      ]
+    }
+  ]
+}

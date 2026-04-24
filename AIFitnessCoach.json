@@ -1,0 +1,2401 @@
+{
+  "appName": "A I Fitness Coach",
+  "dbName": "a_i_fitness_coach",
+  "folderName": "generated/AIFitnessCoach",
+  "features": [
+    {
+      "modelName": "Workout",
+      "routeKey": "workouts",
+      "label": "Workout",
+      "icon": "activity",
+      "aiFunction": "analyzeWorkout",
+      "aiPrompt": "You are an AI analyst for A I Fitness Coach. Analyze the provided Workout data. The data includes: User Id, Name, Type, Difficulty, Duration, Calories, Exercises, Ai Generated, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "difficulty",
+          "label": "Difficulty",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "duration",
+          "label": "Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "calories",
+          "label": "Calories",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "exercises",
+          "label": "Exercises",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiGenerated",
+          "label": "Ai Generated",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "difficulty": "Advanced Difficulty 1",
+          "duration": 10,
+          "calories": 10,
+          "exercises": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "aiGenerated": true,
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "userId": 58,
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "difficulty": "Premium Difficulty 2",
+          "duration": 58,
+          "calories": 58,
+          "exercises": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "aiGenerated": true,
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "userId": 106,
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "difficulty": "Standard Difficulty 3",
+          "duration": 106,
+          "calories": 106,
+          "exercises": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "aiGenerated": false,
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "userId": 154,
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "difficulty": "Elite Difficulty 4",
+          "duration": 154,
+          "calories": 154,
+          "exercises": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "aiGenerated": true,
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "userId": 102,
+          "name": "Core Name 5",
+          "type": "Category E",
+          "difficulty": "Core Difficulty 5",
+          "duration": 102,
+          "calories": 102,
+          "exercises": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "aiGenerated": false,
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "userId": 150,
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "difficulty": "Pro Difficulty 6",
+          "duration": 150,
+          "calories": 150,
+          "exercises": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "aiGenerated": true,
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "userId": 198,
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "difficulty": "Essential Difficulty 7",
+          "duration": 198,
+          "calories": 198,
+          "exercises": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "aiGenerated": true,
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "userId": 146,
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "difficulty": "Primary Difficulty 8",
+          "duration": 146,
+          "calories": 146,
+          "exercises": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "aiGenerated": false,
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "userId": 194,
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "difficulty": "Global Difficulty 9",
+          "duration": 194,
+          "calories": 194,
+          "exercises": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "aiGenerated": true,
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "userId": 242,
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "difficulty": "Regional Difficulty 10",
+          "duration": 242,
+          "calories": 242,
+          "exercises": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "aiGenerated": true,
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "userId": 190,
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "difficulty": "Custom Difficulty 11",
+          "duration": 190,
+          "calories": 190,
+          "exercises": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "aiGenerated": false,
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "userId": 238,
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "difficulty": "Smart Difficulty 12",
+          "duration": 238,
+          "calories": 238,
+          "exercises": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "aiGenerated": true,
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "userId": 286,
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "difficulty": "Rapid Difficulty 13",
+          "duration": 286,
+          "calories": 286,
+          "exercises": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "aiGenerated": false,
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "userId": 234,
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "difficulty": "Secure Difficulty 14",
+          "duration": 234,
+          "calories": 234,
+          "exercises": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "aiGenerated": true,
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "userId": 282,
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "difficulty": "Modern Difficulty 15",
+          "duration": 282,
+          "calories": 282,
+          "exercises": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "aiGenerated": true,
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "GolfSwing",
+      "routeKey": "golf-swings",
+      "label": "Golf Swing",
+      "icon": "briefcase",
+      "aiFunction": "analyzeGolfSwing",
+      "aiPrompt": "You are an AI analyst for A I Fitness Coach. Analyze the provided Golf Swing data. The data includes: User Id, Name, Club Type, Swing Speed, Ball Speed, Launch Angle, Spin Rate, Carry Distance, Total Distance, Notes, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "clubType",
+          "label": "Club Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "swingSpeed",
+          "label": "Swing Speed",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "ballSpeed",
+          "label": "Ball Speed",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "launchAngle",
+          "label": "Launch Angle",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "spinRate",
+          "label": "Spin Rate",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "carryDistance",
+          "label": "Carry Distance",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "totalDistance",
+          "label": "Total Distance",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "name": "Advanced Name 1",
+          "clubType": "Category A",
+          "swingSpeed": 10,
+          "ballSpeed": 10,
+          "launchAngle": 10,
+          "spinRate": 10,
+          "carryDistance": 10,
+          "totalDistance": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "userId": 58,
+          "name": "Premium Name 2",
+          "clubType": "Category B",
+          "swingSpeed": 71.7,
+          "ballSpeed": 71.7,
+          "launchAngle": 71.7,
+          "spinRate": 58,
+          "carryDistance": 71.7,
+          "totalDistance": 71.7,
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "userId": 106,
+          "name": "Standard Name 3",
+          "clubType": "Category C",
+          "swingSpeed": 33.4,
+          "ballSpeed": 33.4,
+          "launchAngle": 33.4,
+          "spinRate": 106,
+          "carryDistance": 33.4,
+          "totalDistance": 33.4,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "userId": 154,
+          "name": "Elite Name 4",
+          "clubType": "Category D",
+          "swingSpeed": 95.1,
+          "ballSpeed": 95.1,
+          "launchAngle": 95.1,
+          "spinRate": 154,
+          "carryDistance": 95.1,
+          "totalDistance": 95.1,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "userId": 102,
+          "name": "Core Name 5",
+          "clubType": "Category E",
+          "swingSpeed": 56.8,
+          "ballSpeed": 56.8,
+          "launchAngle": 56.8,
+          "spinRate": 102,
+          "carryDistance": 56.8,
+          "totalDistance": 56.8,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "userId": 150,
+          "name": "Pro Name 6",
+          "clubType": "Premium Tier",
+          "swingSpeed": 118.5,
+          "ballSpeed": 118.5,
+          "launchAngle": 118.5,
+          "spinRate": 150,
+          "carryDistance": 118.5,
+          "totalDistance": 118.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "userId": 198,
+          "name": "Essential Name 7",
+          "clubType": "Standard Tier",
+          "swingSpeed": 80.2,
+          "ballSpeed": 80.2,
+          "launchAngle": 80.2,
+          "spinRate": 198,
+          "carryDistance": 80.2,
+          "totalDistance": 80.2,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "userId": 146,
+          "name": "Primary Name 8",
+          "clubType": "Basic Tier",
+          "swingSpeed": 141.9,
+          "ballSpeed": 141.9,
+          "launchAngle": 141.9,
+          "spinRate": 146,
+          "carryDistance": 141.9,
+          "totalDistance": 141.9,
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "userId": 194,
+          "name": "Global Name 9",
+          "clubType": "Enterprise",
+          "swingSpeed": 103.6,
+          "ballSpeed": 103.6,
+          "launchAngle": 103.6,
+          "spinRate": 194,
+          "carryDistance": 103.6,
+          "totalDistance": 103.6,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "userId": 242,
+          "name": "Regional Name 10",
+          "clubType": "Starter",
+          "swingSpeed": 165.3,
+          "ballSpeed": 165.3,
+          "launchAngle": 165.3,
+          "spinRate": 242,
+          "carryDistance": 165.3,
+          "totalDistance": 165.3,
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "userId": 190,
+          "name": "Custom Name 11",
+          "clubType": "Growth",
+          "swingSpeed": 127,
+          "ballSpeed": 127,
+          "launchAngle": 127,
+          "spinRate": 190,
+          "carryDistance": 127,
+          "totalDistance": 127,
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "userId": 238,
+          "name": "Smart Name 12",
+          "clubType": "Scale",
+          "swingSpeed": 188.7,
+          "ballSpeed": 188.7,
+          "launchAngle": 188.7,
+          "spinRate": 238,
+          "carryDistance": 188.7,
+          "totalDistance": 188.7,
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "userId": 286,
+          "name": "Rapid Name 13",
+          "clubType": "Foundation",
+          "swingSpeed": 150.4,
+          "ballSpeed": 150.4,
+          "launchAngle": 150.4,
+          "spinRate": 286,
+          "carryDistance": 150.4,
+          "totalDistance": 150.4,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "userId": 234,
+          "name": "Secure Name 14",
+          "clubType": "Advanced",
+          "swingSpeed": 212.1,
+          "ballSpeed": 212.1,
+          "launchAngle": 212.1,
+          "spinRate": 234,
+          "carryDistance": 212.1,
+          "totalDistance": 212.1,
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "userId": 282,
+          "name": "Modern Name 15",
+          "clubType": "Professional",
+          "swingSpeed": 173.8,
+          "ballSpeed": 173.8,
+          "launchAngle": 173.8,
+          "spinRate": 282,
+          "carryDistance": 173.8,
+          "totalDistance": 173.8,
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "RunningSession",
+      "routeKey": "running-sessions",
+      "label": "Running Session",
+      "icon": "clipboard",
+      "aiFunction": "analyzeRunningSession",
+      "aiPrompt": "You are an AI analyst for A I Fitness Coach. Analyze the provided Running Session data. The data includes: User Id, Name, Distance, Duration, Pace, Heart Rate Avg, Heart Rate Max, Elevation Gain, Calories, Terrain, Weather, Notes, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "distance",
+          "label": "Distance",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "duration",
+          "label": "Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "pace",
+          "label": "Pace",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "heartRateAvg",
+          "label": "Heart Rate Avg",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "heartRateMax",
+          "label": "Heart Rate Max",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "elevationGain",
+          "label": "Elevation Gain",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "calories",
+          "label": "Calories",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "terrain",
+          "label": "Terrain",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "weather",
+          "label": "Weather",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "name": "Advanced Name 1",
+          "distance": 10,
+          "duration": 10,
+          "pace": "Advanced Pace 1",
+          "heartRateAvg": 10,
+          "heartRateMax": 10,
+          "elevationGain": 10,
+          "calories": 10,
+          "terrain": "Advanced Terrain 1",
+          "weather": "Advanced Weather 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "userId": 58,
+          "name": "Premium Name 2",
+          "distance": 71.7,
+          "duration": 58,
+          "pace": "Premium Pace 2",
+          "heartRateAvg": 58,
+          "heartRateMax": 58,
+          "elevationGain": 58,
+          "calories": 58,
+          "terrain": "Premium Terrain 2",
+          "weather": "Premium Weather 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "userId": 106,
+          "name": "Standard Name 3",
+          "distance": 33.4,
+          "duration": 106,
+          "pace": "Standard Pace 3",
+          "heartRateAvg": 106,
+          "heartRateMax": 106,
+          "elevationGain": 106,
+          "calories": 106,
+          "terrain": "Standard Terrain 3",
+          "weather": "Standard Weather 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "userId": 154,
+          "name": "Elite Name 4",
+          "distance": 95.1,
+          "duration": 154,
+          "pace": "Elite Pace 4",
+          "heartRateAvg": 154,
+          "heartRateMax": 154,
+          "elevationGain": 154,
+          "calories": 154,
+          "terrain": "Elite Terrain 4",
+          "weather": "Elite Weather 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "userId": 102,
+          "name": "Core Name 5",
+          "distance": 56.8,
+          "duration": 102,
+          "pace": "Core Pace 5",
+          "heartRateAvg": 102,
+          "heartRateMax": 102,
+          "elevationGain": 102,
+          "calories": 102,
+          "terrain": "Core Terrain 5",
+          "weather": "Core Weather 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "userId": 150,
+          "name": "Pro Name 6",
+          "distance": 118.5,
+          "duration": 150,
+          "pace": "Pro Pace 6",
+          "heartRateAvg": 150,
+          "heartRateMax": 150,
+          "elevationGain": 150,
+          "calories": 150,
+          "terrain": "Pro Terrain 6",
+          "weather": "Pro Weather 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "userId": 198,
+          "name": "Essential Name 7",
+          "distance": 80.2,
+          "duration": 198,
+          "pace": "Essential Pace 7",
+          "heartRateAvg": 198,
+          "heartRateMax": 198,
+          "elevationGain": 198,
+          "calories": 198,
+          "terrain": "Essential Terrain 7",
+          "weather": "Essential Weather 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "userId": 146,
+          "name": "Primary Name 8",
+          "distance": 141.9,
+          "duration": 146,
+          "pace": "Primary Pace 8",
+          "heartRateAvg": 146,
+          "heartRateMax": 146,
+          "elevationGain": 146,
+          "calories": 146,
+          "terrain": "Primary Terrain 8",
+          "weather": "Primary Weather 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "userId": 194,
+          "name": "Global Name 9",
+          "distance": 103.6,
+          "duration": 194,
+          "pace": "Global Pace 9",
+          "heartRateAvg": 194,
+          "heartRateMax": 194,
+          "elevationGain": 194,
+          "calories": 194,
+          "terrain": "Global Terrain 9",
+          "weather": "Global Weather 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "userId": 242,
+          "name": "Regional Name 10",
+          "distance": 165.3,
+          "duration": 242,
+          "pace": "Regional Pace 10",
+          "heartRateAvg": 242,
+          "heartRateMax": 242,
+          "elevationGain": 242,
+          "calories": 242,
+          "terrain": "Regional Terrain 10",
+          "weather": "Regional Weather 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "userId": 190,
+          "name": "Custom Name 11",
+          "distance": 127,
+          "duration": 190,
+          "pace": "Custom Pace 11",
+          "heartRateAvg": 190,
+          "heartRateMax": 190,
+          "elevationGain": 190,
+          "calories": 190,
+          "terrain": "Custom Terrain 11",
+          "weather": "Custom Weather 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "userId": 238,
+          "name": "Smart Name 12",
+          "distance": 188.7,
+          "duration": 238,
+          "pace": "Smart Pace 12",
+          "heartRateAvg": 238,
+          "heartRateMax": 238,
+          "elevationGain": 238,
+          "calories": 238,
+          "terrain": "Smart Terrain 12",
+          "weather": "Smart Weather 12",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "userId": 286,
+          "name": "Rapid Name 13",
+          "distance": 150.4,
+          "duration": 286,
+          "pace": "Rapid Pace 13",
+          "heartRateAvg": 286,
+          "heartRateMax": 286,
+          "elevationGain": 286,
+          "calories": 286,
+          "terrain": "Rapid Terrain 13",
+          "weather": "Rapid Weather 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "userId": 234,
+          "name": "Secure Name 14",
+          "distance": 212.1,
+          "duration": 234,
+          "pace": "Secure Pace 14",
+          "heartRateAvg": 234,
+          "heartRateMax": 234,
+          "elevationGain": 234,
+          "calories": 234,
+          "terrain": "Secure Terrain 14",
+          "weather": "Secure Weather 14",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "userId": 282,
+          "name": "Modern Name 15",
+          "distance": 173.8,
+          "duration": 282,
+          "pace": "Modern Pace 15",
+          "heartRateAvg": 282,
+          "heartRateMax": 282,
+          "elevationGain": 282,
+          "calories": 282,
+          "terrain": "Modern Terrain 15",
+          "weather": "Modern Weather 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "TeamFormation",
+      "routeKey": "team-formations",
+      "label": "Team Formation",
+      "icon": "database",
+      "aiFunction": "analyzeTeamFormation",
+      "aiPrompt": "You are an AI analyst for A I Fitness Coach. Analyze the provided Team Formation data. The data includes: User Id, Team Name, Sport, Formation, Players, Strategy, Notes, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "teamName",
+          "label": "Team Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sport",
+          "label": "Sport",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "formation",
+          "label": "Formation",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "players",
+          "label": "Players",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "strategy",
+          "label": "Strategy",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "teamName": "Advanced Team 1",
+          "sport": "Advanced Sport 1",
+          "formation": "Advanced Formation 1",
+          "players": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "strategy": "Comprehensive solution designed for optimal performance and efficiency.",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "userId": 58,
+          "teamName": "Premium Team 2",
+          "sport": "Premium Sport 2",
+          "formation": "Premium Formation 2",
+          "players": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "strategy": "Industry-leading approach with proven results across multiple deployments.",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "userId": 106,
+          "teamName": "Standard Team 3",
+          "sport": "Standard Sport 3",
+          "formation": "Standard Formation 3",
+          "players": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "strategy": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "userId": 154,
+          "teamName": "Elite Team 4",
+          "sport": "Elite Sport 4",
+          "formation": "Elite Formation 4",
+          "players": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "strategy": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "userId": 102,
+          "teamName": "Core Team 5",
+          "sport": "Core Sport 5",
+          "formation": "Core Formation 5",
+          "players": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "strategy": "Cost-effective strategy focused on sustainable long-term growth.",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "userId": 150,
+          "teamName": "Pro Team 6",
+          "sport": "Pro Sport 6",
+          "formation": "Pro Formation 6",
+          "players": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "strategy": "High-priority initiative aligned with organizational strategic objectives.",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "userId": 198,
+          "teamName": "Essential Team 7",
+          "sport": "Essential Sport 7",
+          "formation": "Essential Formation 7",
+          "players": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "strategy": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "userId": 146,
+          "teamName": "Primary Team 8",
+          "sport": "Primary Sport 8",
+          "formation": "Primary Formation 8",
+          "players": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "strategy": "Innovative framework incorporating best practices and emerging technologies.",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "userId": 194,
+          "teamName": "Global Team 9",
+          "sport": "Global Sport 9",
+          "formation": "Global Formation 9",
+          "players": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "strategy": "Scalable architecture built to accommodate rapid expansion and change.",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "userId": 242,
+          "teamName": "Regional Team 10",
+          "sport": "Regional Sport 10",
+          "formation": "Regional Formation 10",
+          "players": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "strategy": "Enterprise-grade solution with robust security and compliance features.",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "userId": 190,
+          "teamName": "Custom Team 11",
+          "sport": "Custom Sport 11",
+          "formation": "Custom Formation 11",
+          "players": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "strategy": "Integrated platform connecting multiple systems for seamless operations.",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "userId": 238,
+          "teamName": "Smart Team 12",
+          "sport": "Smart Sport 12",
+          "formation": "Smart Formation 12",
+          "players": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "strategy": "Automated workflow reducing manual intervention and human error.",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "userId": 286,
+          "teamName": "Rapid Team 13",
+          "sport": "Rapid Sport 13",
+          "formation": "Rapid Formation 13",
+          "players": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "strategy": "Real-time monitoring system with intelligent alerting capabilities.",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "userId": 234,
+          "teamName": "Secure Team 14",
+          "sport": "Secure Sport 14",
+          "formation": "Secure Formation 14",
+          "players": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "strategy": "Customizable module adaptable to diverse operational requirements.",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "userId": 282,
+          "teamName": "Modern Team 15",
+          "sport": "Modern Sport 15",
+          "formation": "Modern Formation 15",
+          "players": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "strategy": "Performance-optimized design achieving superior throughput and reliability.",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "RecoveryPlan",
+      "routeKey": "recovery-plans",
+      "label": "Recovery Plan",
+      "icon": "file-text",
+      "aiFunction": "analyzeRecoveryPlan",
+      "aiPrompt": "You are an AI analyst for A I Fitness Coach. Analyze the provided Recovery Plan data. The data includes: User Id, Name, Recovery Type, Duration, Intensity, Activities, Nutrition, Sleep Hours, Notes, Ai Analysis. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "recoveryType",
+          "label": "Recovery Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "duration",
+          "label": "Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "intensity",
+          "label": "Intensity",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "activities",
+          "label": "Activities",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "nutrition",
+          "label": "Nutrition",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "sleepHours",
+          "label": "Sleep Hours",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiAnalysis",
+          "label": "Ai Analysis",
+          "type": "JSON",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "name": "Advanced Name 1",
+          "recoveryType": "Category A",
+          "duration": 10,
+          "intensity": "Advanced Intensity 1",
+          "activities": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "nutrition": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "sleepHours": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "aiAnalysis": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}"
+        },
+        {
+          "userId": 58,
+          "name": "Premium Name 2",
+          "recoveryType": "Category B",
+          "duration": 58,
+          "intensity": "Premium Intensity 2",
+          "activities": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "nutrition": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "sleepHours": 71.7,
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "aiAnalysis": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}"
+        },
+        {
+          "userId": 106,
+          "name": "Standard Name 3",
+          "recoveryType": "Category C",
+          "duration": 106,
+          "intensity": "Standard Intensity 3",
+          "activities": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "nutrition": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "sleepHours": 33.4,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "aiAnalysis": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}"
+        },
+        {
+          "userId": 154,
+          "name": "Elite Name 4",
+          "recoveryType": "Category D",
+          "duration": 154,
+          "intensity": "Elite Intensity 4",
+          "activities": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "nutrition": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "sleepHours": 95.1,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "aiAnalysis": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}"
+        },
+        {
+          "userId": 102,
+          "name": "Core Name 5",
+          "recoveryType": "Category E",
+          "duration": 102,
+          "intensity": "Core Intensity 5",
+          "activities": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "nutrition": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "sleepHours": 56.8,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "aiAnalysis": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}"
+        },
+        {
+          "userId": 150,
+          "name": "Pro Name 6",
+          "recoveryType": "Premium Tier",
+          "duration": 150,
+          "intensity": "Pro Intensity 6",
+          "activities": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "nutrition": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "sleepHours": 118.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "aiAnalysis": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}"
+        },
+        {
+          "userId": 198,
+          "name": "Essential Name 7",
+          "recoveryType": "Standard Tier",
+          "duration": 198,
+          "intensity": "Essential Intensity 7",
+          "activities": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "nutrition": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "sleepHours": 80.2,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "aiAnalysis": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}"
+        },
+        {
+          "userId": 146,
+          "name": "Primary Name 8",
+          "recoveryType": "Basic Tier",
+          "duration": 146,
+          "intensity": "Primary Intensity 8",
+          "activities": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "nutrition": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "sleepHours": 141.9,
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "aiAnalysis": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}"
+        },
+        {
+          "userId": 194,
+          "name": "Global Name 9",
+          "recoveryType": "Enterprise",
+          "duration": 194,
+          "intensity": "Global Intensity 9",
+          "activities": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "nutrition": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "sleepHours": 103.6,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "aiAnalysis": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}"
+        },
+        {
+          "userId": 242,
+          "name": "Regional Name 10",
+          "recoveryType": "Starter",
+          "duration": 242,
+          "intensity": "Regional Intensity 10",
+          "activities": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "nutrition": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "sleepHours": 165.3,
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "aiAnalysis": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}"
+        },
+        {
+          "userId": 190,
+          "name": "Custom Name 11",
+          "recoveryType": "Growth",
+          "duration": 190,
+          "intensity": "Custom Intensity 11",
+          "activities": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "nutrition": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "sleepHours": 127,
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "aiAnalysis": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}"
+        },
+        {
+          "userId": 238,
+          "name": "Smart Name 12",
+          "recoveryType": "Scale",
+          "duration": 238,
+          "intensity": "Smart Intensity 12",
+          "activities": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "nutrition": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "sleepHours": 188.7,
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "aiAnalysis": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}"
+        },
+        {
+          "userId": 286,
+          "name": "Rapid Name 13",
+          "recoveryType": "Foundation",
+          "duration": 286,
+          "intensity": "Rapid Intensity 13",
+          "activities": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "nutrition": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "sleepHours": 150.4,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "aiAnalysis": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}"
+        },
+        {
+          "userId": 234,
+          "name": "Secure Name 14",
+          "recoveryType": "Advanced",
+          "duration": 234,
+          "intensity": "Secure Intensity 14",
+          "activities": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "nutrition": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "sleepHours": 212.1,
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "aiAnalysis": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}"
+        },
+        {
+          "userId": 282,
+          "name": "Modern Name 15",
+          "recoveryType": "Professional",
+          "duration": 282,
+          "intensity": "Modern Intensity 15",
+          "activities": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "nutrition": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "sleepHours": 173.8,
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "aiAnalysis": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}"
+        }
+      ]
+    },
+    {
+      "modelName": "UserProfile",
+      "routeKey": "user-profiles",
+      "label": "User Profile",
+      "icon": "heart",
+      "aiFunction": "analyzeUserProfile",
+      "aiPrompt": "You are an AI analyst for A I Fitness Coach. Analyze the provided User Profile data. The data includes: User Id, Height, Weight, Age, Fitness Level, Gender, Goals, Injuries, Avatar Url, Onboarding Complete. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "height",
+          "label": "Height",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "age",
+          "label": "Age",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "fitnessLevel",
+          "label": "Fitness Level",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "gender",
+          "label": "Gender",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "goals",
+          "label": "Goals",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "injuries",
+          "label": "Injuries",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "avatarUrl",
+          "label": "Avatar Url",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "onboardingComplete",
+          "label": "Onboarding Complete",
+          "type": "BOOLEAN",
+          "formType": "select"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "height": 10,
+          "weight": 10,
+          "age": 18,
+          "fitnessLevel": "low",
+          "gender": "Advanced Gender 1",
+          "goals": "Comprehensive solution designed for optimal performance and efficiency.",
+          "injuries": "Comprehensive solution designed for optimal performance and efficiency.",
+          "avatarUrl": "Comprehensive solution designed for optimal performance and efficiency.",
+          "onboardingComplete": true
+        },
+        {
+          "userId": 58,
+          "height": 71.7,
+          "weight": 71.7,
+          "age": 21,
+          "fitnessLevel": "medium",
+          "gender": "Premium Gender 2",
+          "goals": "Industry-leading approach with proven results across multiple deployments.",
+          "injuries": "Industry-leading approach with proven results across multiple deployments.",
+          "avatarUrl": "Industry-leading approach with proven results across multiple deployments.",
+          "onboardingComplete": true
+        },
+        {
+          "userId": 106,
+          "height": 33.4,
+          "weight": 33.4,
+          "age": 24,
+          "fitnessLevel": "high",
+          "gender": "Standard Gender 3",
+          "goals": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "injuries": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "avatarUrl": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "onboardingComplete": false
+        },
+        {
+          "userId": 154,
+          "height": 95.1,
+          "weight": 95.1,
+          "age": 27,
+          "fitnessLevel": "critical",
+          "gender": "Elite Gender 4",
+          "goals": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "injuries": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "avatarUrl": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "onboardingComplete": true
+        },
+        {
+          "userId": 102,
+          "height": 56.8,
+          "weight": 56.8,
+          "age": 30,
+          "fitnessLevel": "medium",
+          "gender": "Core Gender 5",
+          "goals": "Cost-effective strategy focused on sustainable long-term growth.",
+          "injuries": "Cost-effective strategy focused on sustainable long-term growth.",
+          "avatarUrl": "Cost-effective strategy focused on sustainable long-term growth.",
+          "onboardingComplete": false
+        },
+        {
+          "userId": 150,
+          "height": 118.5,
+          "weight": 118.5,
+          "age": 33,
+          "fitnessLevel": "low",
+          "gender": "Pro Gender 6",
+          "goals": "High-priority initiative aligned with organizational strategic objectives.",
+          "injuries": "High-priority initiative aligned with organizational strategic objectives.",
+          "avatarUrl": "High-priority initiative aligned with organizational strategic objectives.",
+          "onboardingComplete": true
+        },
+        {
+          "userId": 198,
+          "height": 80.2,
+          "weight": 80.2,
+          "age": 36,
+          "fitnessLevel": "medium",
+          "gender": "Essential Gender 7",
+          "goals": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "injuries": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "avatarUrl": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "onboardingComplete": true
+        },
+        {
+          "userId": 146,
+          "height": 141.9,
+          "weight": 141.9,
+          "age": 39,
+          "fitnessLevel": "high",
+          "gender": "Primary Gender 8",
+          "goals": "Innovative framework incorporating best practices and emerging technologies.",
+          "injuries": "Innovative framework incorporating best practices and emerging technologies.",
+          "avatarUrl": "Innovative framework incorporating best practices and emerging technologies.",
+          "onboardingComplete": false
+        },
+        {
+          "userId": 194,
+          "height": 103.6,
+          "weight": 103.6,
+          "age": 42,
+          "fitnessLevel": "critical",
+          "gender": "Global Gender 9",
+          "goals": "Scalable architecture built to accommodate rapid expansion and change.",
+          "injuries": "Scalable architecture built to accommodate rapid expansion and change.",
+          "avatarUrl": "Scalable architecture built to accommodate rapid expansion and change.",
+          "onboardingComplete": true
+        },
+        {
+          "userId": 242,
+          "height": 165.3,
+          "weight": 165.3,
+          "age": 45,
+          "fitnessLevel": "medium",
+          "gender": "Regional Gender 10",
+          "goals": "Enterprise-grade solution with robust security and compliance features.",
+          "injuries": "Enterprise-grade solution with robust security and compliance features.",
+          "avatarUrl": "Enterprise-grade solution with robust security and compliance features.",
+          "onboardingComplete": true
+        },
+        {
+          "userId": 190,
+          "height": 127,
+          "weight": 127,
+          "age": 48,
+          "fitnessLevel": "low",
+          "gender": "Custom Gender 11",
+          "goals": "Integrated platform connecting multiple systems for seamless operations.",
+          "injuries": "Integrated platform connecting multiple systems for seamless operations.",
+          "avatarUrl": "Integrated platform connecting multiple systems for seamless operations.",
+          "onboardingComplete": false
+        },
+        {
+          "userId": 238,
+          "height": 188.7,
+          "weight": 188.7,
+          "age": 51,
+          "fitnessLevel": "medium",
+          "gender": "Smart Gender 12",
+          "goals": "Automated workflow reducing manual intervention and human error.",
+          "injuries": "Automated workflow reducing manual intervention and human error.",
+          "avatarUrl": "Automated workflow reducing manual intervention and human error.",
+          "onboardingComplete": true
+        },
+        {
+          "userId": 286,
+          "height": 150.4,
+          "weight": 150.4,
+          "age": 54,
+          "fitnessLevel": "high",
+          "gender": "Rapid Gender 13",
+          "goals": "Real-time monitoring system with intelligent alerting capabilities.",
+          "injuries": "Real-time monitoring system with intelligent alerting capabilities.",
+          "avatarUrl": "Real-time monitoring system with intelligent alerting capabilities.",
+          "onboardingComplete": false
+        },
+        {
+          "userId": 234,
+          "height": 212.1,
+          "weight": 212.1,
+          "age": 57,
+          "fitnessLevel": "critical",
+          "gender": "Secure Gender 14",
+          "goals": "Customizable module adaptable to diverse operational requirements.",
+          "injuries": "Customizable module adaptable to diverse operational requirements.",
+          "avatarUrl": "Customizable module adaptable to diverse operational requirements.",
+          "onboardingComplete": true
+        },
+        {
+          "userId": 282,
+          "height": 173.8,
+          "weight": 173.8,
+          "age": 60,
+          "fitnessLevel": "medium",
+          "gender": "Modern Gender 15",
+          "goals": "Performance-optimized design achieving superior throughput and reliability.",
+          "injuries": "Performance-optimized design achieving superior throughput and reliability.",
+          "avatarUrl": "Performance-optimized design achieving superior throughput and reliability.",
+          "onboardingComplete": true
+        }
+      ]
+    },
+    {
+      "modelName": "UserSetting",
+      "routeKey": "user-settings",
+      "label": "User Setting",
+      "icon": "layers",
+      "aiFunction": "analyzeUserSetting",
+      "aiPrompt": "You are an AI analyst for A I Fitness Coach. Analyze the provided User Setting data. The data includes: User Id, Theme, Language, Notifications Enabled, Email Notifications, Units, Timezone. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "theme",
+          "label": "Theme",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "language",
+          "label": "Language",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notificationsEnabled",
+          "label": "Notifications Enabled",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "emailNotifications",
+          "label": "Email Notifications",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "units",
+          "label": "Units",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "timezone",
+          "label": "Timezone",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "theme": "Advanced Theme 1",
+          "language": "Advanced Language 1",
+          "notificationsEnabled": true,
+          "emailNotifications": true,
+          "units": "Advanced Units 1",
+          "timezone": "Advanced Timezone 1"
+        },
+        {
+          "userId": 58,
+          "theme": "Premium Theme 2",
+          "language": "Premium Language 2",
+          "notificationsEnabled": true,
+          "emailNotifications": true,
+          "units": "Premium Units 2",
+          "timezone": "Premium Timezone 2"
+        },
+        {
+          "userId": 106,
+          "theme": "Standard Theme 3",
+          "language": "Standard Language 3",
+          "notificationsEnabled": false,
+          "emailNotifications": false,
+          "units": "Standard Units 3",
+          "timezone": "Standard Timezone 3"
+        },
+        {
+          "userId": 154,
+          "theme": "Elite Theme 4",
+          "language": "Elite Language 4",
+          "notificationsEnabled": true,
+          "emailNotifications": true,
+          "units": "Elite Units 4",
+          "timezone": "Elite Timezone 4"
+        },
+        {
+          "userId": 102,
+          "theme": "Core Theme 5",
+          "language": "Core Language 5",
+          "notificationsEnabled": false,
+          "emailNotifications": false,
+          "units": "Core Units 5",
+          "timezone": "Core Timezone 5"
+        },
+        {
+          "userId": 150,
+          "theme": "Pro Theme 6",
+          "language": "Pro Language 6",
+          "notificationsEnabled": true,
+          "emailNotifications": true,
+          "units": "Pro Units 6",
+          "timezone": "Pro Timezone 6"
+        },
+        {
+          "userId": 198,
+          "theme": "Essential Theme 7",
+          "language": "Essential Language 7",
+          "notificationsEnabled": true,
+          "emailNotifications": true,
+          "units": "Essential Units 7",
+          "timezone": "Essential Timezone 7"
+        },
+        {
+          "userId": 146,
+          "theme": "Primary Theme 8",
+          "language": "Primary Language 8",
+          "notificationsEnabled": false,
+          "emailNotifications": false,
+          "units": "Primary Units 8",
+          "timezone": "Primary Timezone 8"
+        },
+        {
+          "userId": 194,
+          "theme": "Global Theme 9",
+          "language": "Global Language 9",
+          "notificationsEnabled": true,
+          "emailNotifications": true,
+          "units": "Global Units 9",
+          "timezone": "Global Timezone 9"
+        },
+        {
+          "userId": 242,
+          "theme": "Regional Theme 10",
+          "language": "Regional Language 10",
+          "notificationsEnabled": true,
+          "emailNotifications": true,
+          "units": "Regional Units 10",
+          "timezone": "Regional Timezone 10"
+        },
+        {
+          "userId": 190,
+          "theme": "Custom Theme 11",
+          "language": "Custom Language 11",
+          "notificationsEnabled": false,
+          "emailNotifications": false,
+          "units": "Custom Units 11",
+          "timezone": "Custom Timezone 11"
+        },
+        {
+          "userId": 238,
+          "theme": "Smart Theme 12",
+          "language": "Smart Language 12",
+          "notificationsEnabled": true,
+          "emailNotifications": true,
+          "units": "Smart Units 12",
+          "timezone": "Smart Timezone 12"
+        },
+        {
+          "userId": 286,
+          "theme": "Rapid Theme 13",
+          "language": "Rapid Language 13",
+          "notificationsEnabled": false,
+          "emailNotifications": false,
+          "units": "Rapid Units 13",
+          "timezone": "Rapid Timezone 13"
+        },
+        {
+          "userId": 234,
+          "theme": "Secure Theme 14",
+          "language": "Secure Language 14",
+          "notificationsEnabled": true,
+          "emailNotifications": true,
+          "units": "Secure Units 14",
+          "timezone": "Secure Timezone 14"
+        },
+        {
+          "userId": 282,
+          "theme": "Modern Theme 15",
+          "language": "Modern Language 15",
+          "notificationsEnabled": true,
+          "emailNotifications": true,
+          "units": "Modern Units 15",
+          "timezone": "Modern Timezone 15"
+        }
+      ]
+    },
+    {
+      "modelName": "Notification",
+      "routeKey": "notifications",
+      "label": "Notification",
+      "icon": "map-pin",
+      "aiFunction": "analyzeNotification",
+      "aiPrompt": "You are an AI analyst for A I Fitness Coach. Analyze the provided Notification data. The data includes: User Id, Type, Title, Message, Read, Link. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "read",
+          "label": "Read",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "link",
+          "label": "Link",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "type": "Category A",
+          "title": "Advanced Title 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "read": true,
+          "link": "https://example.com/link/1"
+        },
+        {
+          "userId": 58,
+          "type": "Category B",
+          "title": "Premium Title 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "read": true,
+          "link": "https://example.com/link/2"
+        },
+        {
+          "userId": 106,
+          "type": "Category C",
+          "title": "Standard Title 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "read": false,
+          "link": "https://example.com/link/3"
+        },
+        {
+          "userId": 154,
+          "type": "Category D",
+          "title": "Elite Title 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "read": true,
+          "link": "https://example.com/link/4"
+        },
+        {
+          "userId": 102,
+          "type": "Category E",
+          "title": "Core Title 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "read": false,
+          "link": "https://example.com/link/5"
+        },
+        {
+          "userId": 150,
+          "type": "Premium Tier",
+          "title": "Pro Title 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "read": true,
+          "link": "https://example.com/link/6"
+        },
+        {
+          "userId": 198,
+          "type": "Standard Tier",
+          "title": "Essential Title 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "read": true,
+          "link": "https://example.com/link/7"
+        },
+        {
+          "userId": 146,
+          "type": "Basic Tier",
+          "title": "Primary Title 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "read": false,
+          "link": "https://example.com/link/8"
+        },
+        {
+          "userId": 194,
+          "type": "Enterprise",
+          "title": "Global Title 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "read": true,
+          "link": "https://example.com/link/9"
+        },
+        {
+          "userId": 242,
+          "type": "Starter",
+          "title": "Regional Title 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "read": true,
+          "link": "https://example.com/link/10"
+        },
+        {
+          "userId": 190,
+          "type": "Growth",
+          "title": "Custom Title 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "read": false,
+          "link": "https://example.com/link/11"
+        },
+        {
+          "userId": 238,
+          "type": "Scale",
+          "title": "Smart Title 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "read": true,
+          "link": "https://example.com/link/12"
+        },
+        {
+          "userId": 286,
+          "type": "Foundation",
+          "title": "Rapid Title 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "read": false,
+          "link": "https://example.com/link/13"
+        },
+        {
+          "userId": 234,
+          "type": "Advanced",
+          "title": "Secure Title 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "read": true,
+          "link": "https://example.com/link/14"
+        },
+        {
+          "userId": 282,
+          "type": "Professional",
+          "title": "Modern Title 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "read": true,
+          "link": "https://example.com/link/15"
+        }
+      ]
+    },
+    {
+      "modelName": "Feedback",
+      "routeKey": "feedbacks",
+      "label": "Feedback",
+      "icon": "package",
+      "aiFunction": "analyzeFeedback",
+      "aiPrompt": "You are an AI analyst for A I Fitness Coach. Analyze the provided Feedback data. The data includes: User Id, Type, Subject, Message, Status. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "subject",
+          "label": "Subject",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "message",
+          "label": "Message",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "type": "Category A",
+          "subject": "Advanced Subject 1",
+          "message": "Comprehensive solution designed for optimal performance and efficiency.",
+          "status": "active"
+        },
+        {
+          "userId": 58,
+          "type": "Category B",
+          "subject": "Premium Subject 2",
+          "message": "Industry-leading approach with proven results across multiple deployments.",
+          "status": "pending"
+        },
+        {
+          "userId": 106,
+          "type": "Category C",
+          "subject": "Standard Subject 3",
+          "message": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "status": "in_progress"
+        },
+        {
+          "userId": 154,
+          "type": "Category D",
+          "subject": "Elite Subject 4",
+          "message": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "status": "completed"
+        },
+        {
+          "userId": 102,
+          "type": "Category E",
+          "subject": "Core Subject 5",
+          "message": "Cost-effective strategy focused on sustainable long-term growth.",
+          "status": "under_review"
+        },
+        {
+          "userId": 150,
+          "type": "Premium Tier",
+          "subject": "Pro Subject 6",
+          "message": "High-priority initiative aligned with organizational strategic objectives.",
+          "status": "approved"
+        },
+        {
+          "userId": 198,
+          "type": "Standard Tier",
+          "subject": "Essential Subject 7",
+          "message": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "status": "active"
+        },
+        {
+          "userId": 146,
+          "type": "Basic Tier",
+          "subject": "Primary Subject 8",
+          "message": "Innovative framework incorporating best practices and emerging technologies.",
+          "status": "active"
+        },
+        {
+          "userId": 194,
+          "type": "Enterprise",
+          "subject": "Global Subject 9",
+          "message": "Scalable architecture built to accommodate rapid expansion and change.",
+          "status": "active"
+        },
+        {
+          "userId": 242,
+          "type": "Starter",
+          "subject": "Regional Subject 10",
+          "message": "Enterprise-grade solution with robust security and compliance features.",
+          "status": "pending"
+        },
+        {
+          "userId": 190,
+          "type": "Growth",
+          "subject": "Custom Subject 11",
+          "message": "Integrated platform connecting multiple systems for seamless operations.",
+          "status": "completed"
+        },
+        {
+          "userId": 238,
+          "type": "Scale",
+          "subject": "Smart Subject 12",
+          "message": "Automated workflow reducing manual intervention and human error.",
+          "status": "active"
+        },
+        {
+          "userId": 286,
+          "type": "Foundation",
+          "subject": "Rapid Subject 13",
+          "message": "Real-time monitoring system with intelligent alerting capabilities.",
+          "status": "in_progress"
+        },
+        {
+          "userId": 234,
+          "type": "Advanced",
+          "subject": "Secure Subject 14",
+          "message": "Customizable module adaptable to diverse operational requirements.",
+          "status": "active"
+        },
+        {
+          "userId": 282,
+          "type": "Professional",
+          "subject": "Modern Subject 15",
+          "message": "Performance-optimized design achieving superior throughput and reliability.",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "modelName": "FileUpload",
+      "routeKey": "file-uploads",
+      "label": "File Upload",
+      "icon": "shield",
+      "aiFunction": "analyzeFileUpload",
+      "aiPrompt": "You are an AI analyst for A I Fitness Coach. Analyze the provided File Upload data. The data includes: User Id, Filename, Original Name, Mime Type, Size, Category, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "filename",
+          "label": "Filename",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "originalName",
+          "label": "Original Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "mimeType",
+          "label": "Mime Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "size",
+          "label": "Size",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "filename": "Advanced Filename 1",
+          "originalName": "Advanced Original 1",
+          "mimeType": "Category A",
+          "size": 10,
+          "category": "Category A",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "userId": 58,
+          "filename": "Premium Filename 2",
+          "originalName": "Premium Original 2",
+          "mimeType": "Category B",
+          "size": 58,
+          "category": "Category B",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "userId": 106,
+          "filename": "Standard Filename 3",
+          "originalName": "Standard Original 3",
+          "mimeType": "Category C",
+          "size": 106,
+          "category": "Category C",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "userId": 154,
+          "filename": "Elite Filename 4",
+          "originalName": "Elite Original 4",
+          "mimeType": "Category D",
+          "size": 154,
+          "category": "Category D",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "userId": 102,
+          "filename": "Core Filename 5",
+          "originalName": "Core Original 5",
+          "mimeType": "Category E",
+          "size": 102,
+          "category": "Category E",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "userId": 150,
+          "filename": "Pro Filename 6",
+          "originalName": "Pro Original 6",
+          "mimeType": "Premium Tier",
+          "size": 150,
+          "category": "Premium Tier",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "userId": 198,
+          "filename": "Essential Filename 7",
+          "originalName": "Essential Original 7",
+          "mimeType": "Standard Tier",
+          "size": 198,
+          "category": "Standard Tier",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "userId": 146,
+          "filename": "Primary Filename 8",
+          "originalName": "Primary Original 8",
+          "mimeType": "Basic Tier",
+          "size": 146,
+          "category": "Basic Tier",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "userId": 194,
+          "filename": "Global Filename 9",
+          "originalName": "Global Original 9",
+          "mimeType": "Enterprise",
+          "size": 194,
+          "category": "Enterprise",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "userId": 242,
+          "filename": "Regional Filename 10",
+          "originalName": "Regional Original 10",
+          "mimeType": "Starter",
+          "size": 242,
+          "category": "Starter",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "userId": 190,
+          "filename": "Custom Filename 11",
+          "originalName": "Custom Original 11",
+          "mimeType": "Growth",
+          "size": 190,
+          "category": "Growth",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "userId": 238,
+          "filename": "Smart Filename 12",
+          "originalName": "Smart Original 12",
+          "mimeType": "Scale",
+          "size": 238,
+          "category": "Scale",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "userId": 286,
+          "filename": "Rapid Filename 13",
+          "originalName": "Rapid Original 13",
+          "mimeType": "Foundation",
+          "size": 286,
+          "category": "Foundation",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "userId": 234,
+          "filename": "Secure Filename 14",
+          "originalName": "Secure Original 14",
+          "mimeType": "Advanced",
+          "size": 234,
+          "category": "Advanced",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "userId": 282,
+          "filename": "Modern Filename 15",
+          "originalName": "Modern Original 15",
+          "mimeType": "Professional",
+          "size": 282,
+          "category": "Professional",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "AuditLog",
+      "routeKey": "audit-logs",
+      "label": "Audit Log",
+      "icon": "star",
+      "aiFunction": "analyzeAuditLog",
+      "aiPrompt": "You are an AI analyst for A I Fitness Coach. Analyze the provided Audit Log data. The data includes: User Id, Action, Resource, Resource Id, Details, Ip Address. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "userId",
+          "label": "User Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "resource",
+          "label": "Resource",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "resourceId",
+          "label": "Resource Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "details",
+          "label": "Details",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "ipAddress",
+          "label": "Ip Address",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "userId": 10,
+          "action": "Advanced Action 1",
+          "resource": "Advanced Resource 1",
+          "resourceId": 10,
+          "details": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "ipAddress": "New York"
+        },
+        {
+          "userId": 58,
+          "action": "Premium Action 2",
+          "resource": "Premium Resource 2",
+          "resourceId": 58,
+          "details": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "ipAddress": "Los Angeles"
+        },
+        {
+          "userId": 106,
+          "action": "Standard Action 3",
+          "resource": "Standard Resource 3",
+          "resourceId": 106,
+          "details": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "ipAddress": "Chicago"
+        },
+        {
+          "userId": 154,
+          "action": "Elite Action 4",
+          "resource": "Elite Resource 4",
+          "resourceId": 154,
+          "details": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "ipAddress": "Houston"
+        },
+        {
+          "userId": 102,
+          "action": "Core Action 5",
+          "resource": "Core Resource 5",
+          "resourceId": 102,
+          "details": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "ipAddress": "Phoenix"
+        },
+        {
+          "userId": 150,
+          "action": "Pro Action 6",
+          "resource": "Pro Resource 6",
+          "resourceId": 150,
+          "details": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "ipAddress": "San Francisco"
+        },
+        {
+          "userId": 198,
+          "action": "Essential Action 7",
+          "resource": "Essential Resource 7",
+          "resourceId": 198,
+          "details": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "ipAddress": "Seattle"
+        },
+        {
+          "userId": 146,
+          "action": "Primary Action 8",
+          "resource": "Primary Resource 8",
+          "resourceId": 146,
+          "details": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "ipAddress": "Boston"
+        },
+        {
+          "userId": 194,
+          "action": "Global Action 9",
+          "resource": "Global Resource 9",
+          "resourceId": 194,
+          "details": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "ipAddress": "Denver"
+        },
+        {
+          "userId": 242,
+          "action": "Regional Action 10",
+          "resource": "Regional Resource 10",
+          "resourceId": 242,
+          "details": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "ipAddress": "Miami"
+        },
+        {
+          "userId": 190,
+          "action": "Custom Action 11",
+          "resource": "Custom Resource 11",
+          "resourceId": 190,
+          "details": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "ipAddress": "Austin"
+        },
+        {
+          "userId": 238,
+          "action": "Smart Action 12",
+          "resource": "Smart Resource 12",
+          "resourceId": 238,
+          "details": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "ipAddress": "Portland"
+        },
+        {
+          "userId": 286,
+          "action": "Rapid Action 13",
+          "resource": "Rapid Resource 13",
+          "resourceId": 286,
+          "details": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "ipAddress": "Dallas"
+        },
+        {
+          "userId": 234,
+          "action": "Secure Action 14",
+          "resource": "Secure Resource 14",
+          "resourceId": 234,
+          "details": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "ipAddress": "Atlanta"
+        },
+        {
+          "userId": 282,
+          "action": "Modern Action 15",
+          "resource": "Modern Resource 15",
+          "resourceId": 282,
+          "details": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "ipAddress": "Nashville"
+        }
+      ]
+    }
+  ]
+}

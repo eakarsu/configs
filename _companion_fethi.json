@@ -1,0 +1,637 @@
+{
+  "appName": "AI Fethi Data Platform",
+  "dbName": "ai_fethi_data",
+  "folderName": "generated/fethi",
+  "features": [
+    {
+      "modelName": "DataSource",
+      "label": "Data Sources",
+      "icon": "database",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "url",
+          "label": "URL",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastFetched",
+          "label": "Last Fetched",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "recordCount",
+          "label": "Records",
+          "type": "INTEGER",
+          "formType": "number"
+        }
+      ],
+      "routeKey": "dataSources",
+      "aiFunction": "analyzeDataSource",
+      "aiPrompt": "You are an AI analyst for AI Fethi Data Platform. Analyze the provided Data Sources data. The data includes: Name, Type, URL, Status, Last Fetched, Records. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "type": "Alpha Type",
+          "url": "https://alpha.example.com",
+          "status": "Active",
+          "lastFetched": "2026-07-28",
+          "recordCount": 732
+        },
+        {
+          "name": "Beta Name",
+          "type": "Beta Type",
+          "url": "https://beta.example.com",
+          "status": "Pending",
+          "lastFetched": "2026-06-20",
+          "recordCount": 218
+        },
+        {
+          "name": "Gamma Name",
+          "type": "Gamma Type",
+          "url": "https://gamma.example.com",
+          "status": "Review",
+          "lastFetched": "2026-06-05",
+          "recordCount": 618
+        },
+        {
+          "name": "Delta Name",
+          "type": "Delta Type",
+          "url": "https://delta.example.com",
+          "status": "Approved",
+          "lastFetched": "2026-04-22",
+          "recordCount": 761
+        },
+        {
+          "name": "Epsilon Name",
+          "type": "Epsilon Type",
+          "url": "https://epsilon.example.com",
+          "status": "Draft",
+          "lastFetched": "2026-12-27",
+          "recordCount": 708
+        },
+        {
+          "name": "Zeta Name",
+          "type": "Zeta Type",
+          "url": "https://zeta.example.com",
+          "status": "Live",
+          "lastFetched": "2026-06-23",
+          "recordCount": 79
+        },
+        {
+          "name": "Eta Name",
+          "type": "Eta Type",
+          "url": "https://eta.example.com",
+          "status": "Paused",
+          "lastFetched": "2026-10-11",
+          "recordCount": 724
+        },
+        {
+          "name": "Theta Name",
+          "type": "Theta Type",
+          "url": "https://theta.example.com",
+          "status": "Archived",
+          "lastFetched": "2026-10-07",
+          "recordCount": 459
+        },
+        {
+          "name": "Iota Name",
+          "type": "Iota Type",
+          "url": "https://iota.example.com",
+          "status": "Beta",
+          "lastFetched": "2026-11-13",
+          "recordCount": 281
+        },
+        {
+          "name": "Kappa Name",
+          "type": "Kappa Type",
+          "url": "https://kappa.example.com",
+          "status": "GA",
+          "lastFetched": "2026-11-27",
+          "recordCount": 914
+        },
+        {
+          "name": "Lambda Name",
+          "type": "Lambda Type",
+          "url": "https://lambda.example.com",
+          "status": "Completed",
+          "lastFetched": "2026-04-09",
+          "recordCount": 195
+        },
+        {
+          "name": "Mu Name",
+          "type": "Mu Type",
+          "url": "https://mu.example.com",
+          "status": "In Progress",
+          "lastFetched": "2026-04-12",
+          "recordCount": 973
+        },
+        {
+          "name": "Nu Name",
+          "type": "Nu Type",
+          "url": "https://nu.example.com",
+          "status": "Scheduled",
+          "lastFetched": "2026-10-09",
+          "recordCount": 268
+        },
+        {
+          "name": "Xi Name",
+          "type": "Xi Type",
+          "url": "https://xi.example.com",
+          "status": "Failed",
+          "lastFetched": "2026-02-21",
+          "recordCount": 482
+        },
+        {
+          "name": "Omicron Name",
+          "type": "Omicron Type",
+          "url": "https://omicron.example.com",
+          "status": "Cancelled",
+          "lastFetched": "2026-05-03",
+          "recordCount": 32
+        }
+      ]
+    },
+    {
+      "modelName": "FetchJob",
+      "label": "Fetch Jobs",
+      "icon": "download",
+      "fields": [
+        {
+          "key": "sourceName",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "recordsFetched",
+          "label": "Records Fetched",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "errors",
+          "label": "Errors",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "routeKey": "fetchJobs",
+      "aiFunction": "analyzeFetchJob",
+      "aiPrompt": "You are an AI analyst for AI Fethi Data Platform. Analyze the provided Fetch Jobs data. The data includes: Source, Status, Start Time, End Time, Records Fetched, Errors. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "sourceName": "Alpha Source",
+          "status": "Active",
+          "startTime": "2026-01-04",
+          "endTime": "2026-02-19",
+          "recordsFetched": 588,
+          "errors": "Alpha errors — detailed content for enterprise use case."
+        },
+        {
+          "sourceName": "Beta Source",
+          "status": "Pending",
+          "startTime": "2026-06-09",
+          "endTime": "2026-02-28",
+          "recordsFetched": 498,
+          "errors": "Beta errors — detailed content for startup use case."
+        },
+        {
+          "sourceName": "Gamma Source",
+          "status": "Review",
+          "startTime": "2026-12-17",
+          "endTime": "2026-01-15",
+          "recordsFetched": 249,
+          "errors": "Gamma errors — detailed content for smb use case."
+        },
+        {
+          "sourceName": "Delta Source",
+          "status": "Approved",
+          "startTime": "2026-08-13",
+          "endTime": "2026-08-25",
+          "recordsFetched": 682,
+          "errors": "Delta errors — detailed content for agency use case."
+        },
+        {
+          "sourceName": "Epsilon Source",
+          "status": "Draft",
+          "startTime": "2026-10-23",
+          "endTime": "2026-07-05",
+          "recordsFetched": 29,
+          "errors": "Epsilon errors — detailed content for freelancer use case."
+        },
+        {
+          "sourceName": "Zeta Source",
+          "status": "Live",
+          "startTime": "2026-09-05",
+          "endTime": "2026-04-01",
+          "recordsFetched": 51,
+          "errors": "Zeta errors — detailed content for government use case."
+        },
+        {
+          "sourceName": "Eta Source",
+          "status": "Paused",
+          "startTime": "2026-06-04",
+          "endTime": "2026-05-16",
+          "recordsFetched": 700,
+          "errors": "Eta errors — detailed content for nonprofit use case."
+        },
+        {
+          "sourceName": "Theta Source",
+          "status": "Archived",
+          "startTime": "2026-09-22",
+          "endTime": "2026-04-19",
+          "recordsFetched": 143,
+          "errors": "Theta errors — detailed content for healthcare use case."
+        },
+        {
+          "sourceName": "Iota Source",
+          "status": "Beta",
+          "startTime": "2026-09-27",
+          "endTime": "2026-04-08",
+          "recordsFetched": 674,
+          "errors": "Iota errors — detailed content for finance use case."
+        },
+        {
+          "sourceName": "Kappa Source",
+          "status": "GA",
+          "startTime": "2026-06-02",
+          "endTime": "2026-07-25",
+          "recordsFetched": 826,
+          "errors": "Kappa errors — detailed content for education use case."
+        },
+        {
+          "sourceName": "Lambda Source",
+          "status": "Completed",
+          "startTime": "2026-04-21",
+          "endTime": "2026-10-04",
+          "recordsFetched": 725,
+          "errors": "Lambda errors — detailed content for retail use case."
+        },
+        {
+          "sourceName": "Mu Source",
+          "status": "In Progress",
+          "startTime": "2026-02-22",
+          "endTime": "2026-03-18",
+          "recordsFetched": 410,
+          "errors": "Mu errors — detailed content for tech use case."
+        },
+        {
+          "sourceName": "Nu Source",
+          "status": "Scheduled",
+          "startTime": "2026-01-13",
+          "endTime": "2026-10-07",
+          "recordsFetched": 380,
+          "errors": "Nu errors — detailed content for legal use case."
+        },
+        {
+          "sourceName": "Xi Source",
+          "status": "Failed",
+          "startTime": "2026-07-06",
+          "endTime": "2026-06-01",
+          "recordsFetched": 872,
+          "errors": "Xi errors — detailed content for real estate use case."
+        },
+        {
+          "sourceName": "Omicron Source",
+          "status": "Cancelled",
+          "startTime": "2026-10-13",
+          "endTime": "2026-07-22",
+          "recordsFetched": 198,
+          "errors": "Omicron errors — detailed content for manufacturing use case."
+        }
+      ]
+    },
+    {
+      "modelName": "DataTransform",
+      "label": "Data Transforms",
+      "icon": "shuffle",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "inputSource",
+          "label": "Input Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "outputFormat",
+          "label": "Output Format",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rules",
+          "label": "Transform Rules",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isActive",
+          "label": "Active",
+          "type": "BOOLEAN",
+          "formType": "checkbox"
+        }
+      ],
+      "routeKey": "dataTransforms",
+      "aiFunction": "analyzeDataTransform",
+      "aiPrompt": "You are an AI analyst for AI Fethi Data Platform. Analyze the provided Data Transforms data. The data includes: Name, Input Source, Output Format, Transform Rules, Active. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "name": "Alpha Name",
+          "inputSource": "Alpha Input Source",
+          "outputFormat": "Alpha Output Format",
+          "rules": "Alpha transform rules — detailed content for enterprise use case.",
+          "isActive": true
+        },
+        {
+          "name": "Beta Name",
+          "inputSource": "Beta Input Source",
+          "outputFormat": "Beta Output Format",
+          "rules": "Beta transform rules — detailed content for startup use case.",
+          "isActive": false
+        },
+        {
+          "name": "Gamma Name",
+          "inputSource": "Gamma Input Source",
+          "outputFormat": "Gamma Output Format",
+          "rules": "Gamma transform rules — detailed content for smb use case.",
+          "isActive": true
+        },
+        {
+          "name": "Delta Name",
+          "inputSource": "Delta Input Source",
+          "outputFormat": "Delta Output Format",
+          "rules": "Delta transform rules — detailed content for agency use case.",
+          "isActive": false
+        },
+        {
+          "name": "Epsilon Name",
+          "inputSource": "Epsilon Input Source",
+          "outputFormat": "Epsilon Output Format",
+          "rules": "Epsilon transform rules — detailed content for freelancer use case.",
+          "isActive": true
+        },
+        {
+          "name": "Zeta Name",
+          "inputSource": "Zeta Input Source",
+          "outputFormat": "Zeta Output Format",
+          "rules": "Zeta transform rules — detailed content for government use case.",
+          "isActive": false
+        },
+        {
+          "name": "Eta Name",
+          "inputSource": "Eta Input Source",
+          "outputFormat": "Eta Output Format",
+          "rules": "Eta transform rules — detailed content for nonprofit use case.",
+          "isActive": true
+        },
+        {
+          "name": "Theta Name",
+          "inputSource": "Theta Input Source",
+          "outputFormat": "Theta Output Format",
+          "rules": "Theta transform rules — detailed content for healthcare use case.",
+          "isActive": false
+        },
+        {
+          "name": "Iota Name",
+          "inputSource": "Iota Input Source",
+          "outputFormat": "Iota Output Format",
+          "rules": "Iota transform rules — detailed content for finance use case.",
+          "isActive": true
+        },
+        {
+          "name": "Kappa Name",
+          "inputSource": "Kappa Input Source",
+          "outputFormat": "Kappa Output Format",
+          "rules": "Kappa transform rules — detailed content for education use case.",
+          "isActive": false
+        },
+        {
+          "name": "Lambda Name",
+          "inputSource": "Lambda Input Source",
+          "outputFormat": "Lambda Output Format",
+          "rules": "Lambda transform rules — detailed content for retail use case.",
+          "isActive": true
+        },
+        {
+          "name": "Mu Name",
+          "inputSource": "Mu Input Source",
+          "outputFormat": "Mu Output Format",
+          "rules": "Mu transform rules — detailed content for tech use case.",
+          "isActive": false
+        },
+        {
+          "name": "Nu Name",
+          "inputSource": "Nu Input Source",
+          "outputFormat": "Nu Output Format",
+          "rules": "Nu transform rules — detailed content for legal use case.",
+          "isActive": true
+        },
+        {
+          "name": "Xi Name",
+          "inputSource": "Xi Input Source",
+          "outputFormat": "Xi Output Format",
+          "rules": "Xi transform rules — detailed content for real estate use case.",
+          "isActive": false
+        },
+        {
+          "name": "Omicron Name",
+          "inputSource": "Omicron Input Source",
+          "outputFormat": "Omicron Output Format",
+          "rules": "Omicron transform rules — detailed content for manufacturing use case.",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "modelName": "DataRecord",
+      "label": "Data Records",
+      "icon": "file",
+      "fields": [
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "content",
+          "label": "Content",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "fetchedDate",
+          "label": "Fetched Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "quality",
+          "label": "Quality Score",
+          "type": "FLOAT",
+          "formType": "number"
+        }
+      ],
+      "routeKey": "dataRecords",
+      "aiFunction": "analyzeDataRecord",
+      "aiPrompt": "You are an AI analyst for AI Fethi Data Platform. Analyze the provided Data Records data. The data includes: Source, Category, Content, Fetched Date, Quality Score. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "sampleData": [
+        {
+          "source": "Alpha Source",
+          "category": "Alpha Category",
+          "content": "Alpha content — detailed content for enterprise use case.",
+          "fetchedDate": "2026-11-09",
+          "quality": 198.27
+        },
+        {
+          "source": "Beta Source",
+          "category": "Beta Category",
+          "content": "Beta content — detailed content for startup use case.",
+          "fetchedDate": "2026-01-20",
+          "quality": 88.31
+        },
+        {
+          "source": "Gamma Source",
+          "category": "Gamma Category",
+          "content": "Gamma content — detailed content for smb use case.",
+          "fetchedDate": "2026-04-10",
+          "quality": 483.23
+        },
+        {
+          "source": "Delta Source",
+          "category": "Delta Category",
+          "content": "Delta content — detailed content for agency use case.",
+          "fetchedDate": "2026-02-23",
+          "quality": 501.69
+        },
+        {
+          "source": "Epsilon Source",
+          "category": "Epsilon Category",
+          "content": "Epsilon content — detailed content for freelancer use case.",
+          "fetchedDate": "2026-09-09",
+          "quality": 109.89
+        },
+        {
+          "source": "Zeta Source",
+          "category": "Zeta Category",
+          "content": "Zeta content — detailed content for government use case.",
+          "fetchedDate": "2026-03-12",
+          "quality": 238.14
+        },
+        {
+          "source": "Eta Source",
+          "category": "Eta Category",
+          "content": "Eta content — detailed content for nonprofit use case.",
+          "fetchedDate": "2026-09-08",
+          "quality": 612.55
+        },
+        {
+          "source": "Theta Source",
+          "category": "Theta Category",
+          "content": "Theta content — detailed content for healthcare use case.",
+          "fetchedDate": "2026-05-19",
+          "quality": 205.6
+        },
+        {
+          "source": "Iota Source",
+          "category": "Iota Category",
+          "content": "Iota content — detailed content for finance use case.",
+          "fetchedDate": "2026-06-16",
+          "quality": 224.04
+        },
+        {
+          "source": "Kappa Source",
+          "category": "Kappa Category",
+          "content": "Kappa content — detailed content for education use case.",
+          "fetchedDate": "2026-06-12",
+          "quality": 769.93
+        },
+        {
+          "source": "Lambda Source",
+          "category": "Lambda Category",
+          "content": "Lambda content — detailed content for retail use case.",
+          "fetchedDate": "2026-04-02",
+          "quality": 166.31
+        },
+        {
+          "source": "Mu Source",
+          "category": "Mu Category",
+          "content": "Mu content — detailed content for tech use case.",
+          "fetchedDate": "2026-10-27",
+          "quality": 455.75
+        },
+        {
+          "source": "Nu Source",
+          "category": "Nu Category",
+          "content": "Nu content — detailed content for legal use case.",
+          "fetchedDate": "2026-06-21",
+          "quality": 796.22
+        },
+        {
+          "source": "Xi Source",
+          "category": "Xi Category",
+          "content": "Xi content — detailed content for real estate use case.",
+          "fetchedDate": "2026-03-05",
+          "quality": 276.76
+        },
+        {
+          "source": "Omicron Source",
+          "category": "Omicron Category",
+          "content": "Omicron content — detailed content for manufacturing use case.",
+          "fetchedDate": "2026-12-10",
+          "quality": 172.95
+        }
+      ]
+    }
+  ]
+}

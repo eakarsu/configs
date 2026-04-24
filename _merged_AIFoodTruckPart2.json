@@ -1,0 +1,616 @@
+{
+  "appName": "AI Food Truck Manager (Part 2)",
+  "dbName": "a_i_food_truck_part2",
+  "folderName": "generated/AIFoodTruckPart2",
+  "features": [
+    {
+      "modelName": "Event",
+      "routeKey": "events",
+      "label": "Event",
+      "icon": "map-pin",
+      "aiFunction": "analyzeEvent",
+      "aiPrompt": "You are an AI analyst for food Truck. Analyze the provided Event data. The data includes: Name, Description, Start Date, End Date, Venue Address, Expected Attendance, Vendor Fee, Application Deadline, Location Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "venueAddress",
+          "label": "Venue Address",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "expectedAttendance",
+          "label": "Expected Attendance",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "vendorFee",
+          "label": "Vendor Fee",
+          "type": "FLOAT",
+          "formType": "number"
+        },
+        {
+          "key": "applicationDeadline",
+          "label": "Application Deadline",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "locationId",
+          "label": "Location Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "description": "Advanced Description 1",
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "venueAddress": "New York",
+          "expectedAttendance": 10,
+          "vendorFee": 500,
+          "applicationDeadline": "2024-01-01",
+          "locationId": "New York"
+        },
+        {
+          "name": "Premium Name 2",
+          "description": "Premium Description 2",
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "venueAddress": "Los Angeles",
+          "expectedAttendance": 58,
+          "vendorFee": 2481,
+          "applicationDeadline": "2024-02-03",
+          "locationId": "Los Angeles"
+        },
+        {
+          "name": "Standard Name 3",
+          "description": "Standard Description 3",
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "venueAddress": "Chicago",
+          "expectedAttendance": 106,
+          "vendorFee": 4462,
+          "applicationDeadline": "2024-03-05",
+          "locationId": "Chicago"
+        },
+        {
+          "name": "Elite Name 4",
+          "description": "Elite Description 4",
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "venueAddress": "Houston",
+          "expectedAttendance": 154,
+          "vendorFee": 6443,
+          "applicationDeadline": "2024-04-07",
+          "locationId": "Houston"
+        },
+        {
+          "name": "Core Name 5",
+          "description": "Core Description 5",
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "venueAddress": "Phoenix",
+          "expectedAttendance": 102,
+          "vendorFee": 8424,
+          "applicationDeadline": "2024-05-09",
+          "locationId": "Phoenix"
+        },
+        {
+          "name": "Pro Name 6",
+          "description": "Pro Description 6",
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "venueAddress": "San Francisco",
+          "expectedAttendance": 150,
+          "vendorFee": 10405,
+          "applicationDeadline": "2024-06-11",
+          "locationId": "San Francisco"
+        },
+        {
+          "name": "Essential Name 7",
+          "description": "Essential Description 7",
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "venueAddress": "Seattle",
+          "expectedAttendance": 198,
+          "vendorFee": 12386,
+          "applicationDeadline": "2024-07-13",
+          "locationId": "Seattle"
+        },
+        {
+          "name": "Primary Name 8",
+          "description": "Primary Description 8",
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "venueAddress": "Boston",
+          "expectedAttendance": 146,
+          "vendorFee": 9367,
+          "applicationDeadline": "2024-08-15",
+          "locationId": "Boston"
+        },
+        {
+          "name": "Global Name 9",
+          "description": "Global Description 9",
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "venueAddress": "Denver",
+          "expectedAttendance": 194,
+          "vendorFee": 11348,
+          "applicationDeadline": "2024-09-17",
+          "locationId": "Denver"
+        },
+        {
+          "name": "Regional Name 10",
+          "description": "Regional Description 10",
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "venueAddress": "Miami",
+          "expectedAttendance": 242,
+          "vendorFee": 13329,
+          "applicationDeadline": "2024-10-19",
+          "locationId": "Miami"
+        },
+        {
+          "name": "Custom Name 11",
+          "description": "Custom Description 11",
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "venueAddress": "Austin",
+          "expectedAttendance": 190,
+          "vendorFee": 15310,
+          "applicationDeadline": "2024-11-21",
+          "locationId": "Austin"
+        },
+        {
+          "name": "Smart Name 12",
+          "description": "Smart Description 12",
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "venueAddress": "Portland",
+          "expectedAttendance": 238,
+          "vendorFee": 17291,
+          "applicationDeadline": "2024-12-23",
+          "locationId": "Portland"
+        },
+        {
+          "name": "Rapid Name 13",
+          "description": "Rapid Description 13",
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "venueAddress": "Dallas",
+          "expectedAttendance": 286,
+          "vendorFee": 19272,
+          "applicationDeadline": "2024-01-25",
+          "locationId": "Dallas"
+        },
+        {
+          "name": "Secure Name 14",
+          "description": "Secure Description 14",
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "venueAddress": "Atlanta",
+          "expectedAttendance": 234,
+          "vendorFee": 21253,
+          "applicationDeadline": "2024-02-27",
+          "locationId": "Atlanta"
+        },
+        {
+          "name": "Modern Name 15",
+          "description": "Modern Description 15",
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "venueAddress": "Nashville",
+          "expectedAttendance": 282,
+          "vendorFee": 18234,
+          "applicationDeadline": "2024-03-01",
+          "locationId": "Nashville"
+        }
+      ]
+    },
+    {
+      "modelName": "PreOrderSettings",
+      "routeKey": "pre-order-settings",
+      "label": "Pre Order Settings",
+      "icon": "zap",
+      "aiFunction": "analyzePreOrderSettings",
+      "aiPrompt": "You are an AI analyst for food Truck. Analyze the provided Pre Order Settings data. The data includes: Default Slot Duration, Max Orders Per Slot, Advance Booking Hours, Cutoff Minutes, Auto Generate Slots, Is Enabled, Truck Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "defaultSlotDuration",
+          "label": "Default Slot Duration",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "maxOrdersPerSlot",
+          "label": "Max Orders Per Slot",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "advanceBookingHours",
+          "label": "Advance Booking Hours",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "cutoffMinutes",
+          "label": "Cutoff Minutes",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "autoGenerateSlots",
+          "label": "Auto Generate Slots",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "isEnabled",
+          "label": "Is Enabled",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "truckId",
+          "label": "Truck Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "defaultSlotDuration": 10,
+          "maxOrdersPerSlot": 10,
+          "advanceBookingHours": 10,
+          "cutoffMinutes": 10,
+          "autoGenerateSlots": true,
+          "isEnabled": true,
+          "truckId": "Advanced Truck Id 1"
+        },
+        {
+          "defaultSlotDuration": 58,
+          "maxOrdersPerSlot": 58,
+          "advanceBookingHours": 58,
+          "cutoffMinutes": 58,
+          "autoGenerateSlots": true,
+          "isEnabled": true,
+          "truckId": "Premium Truck Id 2"
+        },
+        {
+          "defaultSlotDuration": 106,
+          "maxOrdersPerSlot": 106,
+          "advanceBookingHours": 106,
+          "cutoffMinutes": 106,
+          "autoGenerateSlots": false,
+          "isEnabled": false,
+          "truckId": "Standard Truck Id 3"
+        },
+        {
+          "defaultSlotDuration": 154,
+          "maxOrdersPerSlot": 154,
+          "advanceBookingHours": 154,
+          "cutoffMinutes": 154,
+          "autoGenerateSlots": true,
+          "isEnabled": true,
+          "truckId": "Elite Truck Id 4"
+        },
+        {
+          "defaultSlotDuration": 102,
+          "maxOrdersPerSlot": 102,
+          "advanceBookingHours": 102,
+          "cutoffMinutes": 102,
+          "autoGenerateSlots": false,
+          "isEnabled": false,
+          "truckId": "Core Truck Id 5"
+        },
+        {
+          "defaultSlotDuration": 150,
+          "maxOrdersPerSlot": 150,
+          "advanceBookingHours": 150,
+          "cutoffMinutes": 150,
+          "autoGenerateSlots": true,
+          "isEnabled": true,
+          "truckId": "Pro Truck Id 6"
+        },
+        {
+          "defaultSlotDuration": 198,
+          "maxOrdersPerSlot": 198,
+          "advanceBookingHours": 198,
+          "cutoffMinutes": 198,
+          "autoGenerateSlots": true,
+          "isEnabled": true,
+          "truckId": "Essential Truck Id 7"
+        },
+        {
+          "defaultSlotDuration": 146,
+          "maxOrdersPerSlot": 146,
+          "advanceBookingHours": 146,
+          "cutoffMinutes": 146,
+          "autoGenerateSlots": false,
+          "isEnabled": false,
+          "truckId": "Primary Truck Id 8"
+        },
+        {
+          "defaultSlotDuration": 194,
+          "maxOrdersPerSlot": 194,
+          "advanceBookingHours": 194,
+          "cutoffMinutes": 194,
+          "autoGenerateSlots": true,
+          "isEnabled": true,
+          "truckId": "Global Truck Id 9"
+        },
+        {
+          "defaultSlotDuration": 242,
+          "maxOrdersPerSlot": 242,
+          "advanceBookingHours": 242,
+          "cutoffMinutes": 242,
+          "autoGenerateSlots": true,
+          "isEnabled": true,
+          "truckId": "Regional Truck Id 10"
+        },
+        {
+          "defaultSlotDuration": 190,
+          "maxOrdersPerSlot": 190,
+          "advanceBookingHours": 190,
+          "cutoffMinutes": 190,
+          "autoGenerateSlots": false,
+          "isEnabled": false,
+          "truckId": "Custom Truck Id 11"
+        },
+        {
+          "defaultSlotDuration": 238,
+          "maxOrdersPerSlot": 238,
+          "advanceBookingHours": 238,
+          "cutoffMinutes": 238,
+          "autoGenerateSlots": true,
+          "isEnabled": true,
+          "truckId": "Smart Truck Id 12"
+        },
+        {
+          "defaultSlotDuration": 286,
+          "maxOrdersPerSlot": 286,
+          "advanceBookingHours": 286,
+          "cutoffMinutes": 286,
+          "autoGenerateSlots": false,
+          "isEnabled": false,
+          "truckId": "Rapid Truck Id 13"
+        },
+        {
+          "defaultSlotDuration": 234,
+          "maxOrdersPerSlot": 234,
+          "advanceBookingHours": 234,
+          "cutoffMinutes": 234,
+          "autoGenerateSlots": true,
+          "isEnabled": true,
+          "truckId": "Secure Truck Id 14"
+        },
+        {
+          "defaultSlotDuration": 282,
+          "maxOrdersPerSlot": 282,
+          "advanceBookingHours": 282,
+          "cutoffMinutes": 282,
+          "autoGenerateSlots": true,
+          "isEnabled": true,
+          "truckId": "Modern Truck Id 15"
+        }
+      ]
+    },
+    {
+      "modelName": "EventTimeline",
+      "routeKey": "event-timelines",
+      "label": "Event Timeline",
+      "icon": "bell",
+      "aiFunction": "analyzeEventTimeline",
+      "aiPrompt": "You are an AI analyst for food Truck. Analyze the provided Event Timeline data. The data includes: Title, Description, Due Date, Is Completed, Completed At, Event Id, Registration Id. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "isCompleted",
+          "label": "Is Completed",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "completedAt",
+          "label": "Completed At",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "eventId",
+          "label": "Event Id",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "registrationId",
+          "label": "Registration Id",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Advanced Title 1",
+          "description": "Advanced Description 1",
+          "dueDate": "2024-01-01",
+          "isCompleted": true,
+          "completedAt": "2024-01-01",
+          "eventId": "Advanced Event Id 1",
+          "registrationId": "Advanced Registration Id 1"
+        },
+        {
+          "title": "Premium Title 2",
+          "description": "Premium Description 2",
+          "dueDate": "2024-02-03",
+          "isCompleted": true,
+          "completedAt": "2024-02-03",
+          "eventId": "Premium Event Id 2",
+          "registrationId": "Premium Registration Id 2"
+        },
+        {
+          "title": "Standard Title 3",
+          "description": "Standard Description 3",
+          "dueDate": "2024-03-05",
+          "isCompleted": false,
+          "completedAt": "2024-03-05",
+          "eventId": "Standard Event Id 3",
+          "registrationId": "Standard Registration Id 3"
+        },
+        {
+          "title": "Elite Title 4",
+          "description": "Elite Description 4",
+          "dueDate": "2024-04-07",
+          "isCompleted": true,
+          "completedAt": "2024-04-07",
+          "eventId": "Elite Event Id 4",
+          "registrationId": "Elite Registration Id 4"
+        },
+        {
+          "title": "Core Title 5",
+          "description": "Core Description 5",
+          "dueDate": "2024-05-09",
+          "isCompleted": false,
+          "completedAt": "2024-05-09",
+          "eventId": "Core Event Id 5",
+          "registrationId": "Core Registration Id 5"
+        },
+        {
+          "title": "Pro Title 6",
+          "description": "Pro Description 6",
+          "dueDate": "2024-06-11",
+          "isCompleted": true,
+          "completedAt": "2024-06-11",
+          "eventId": "Pro Event Id 6",
+          "registrationId": "Pro Registration Id 6"
+        },
+        {
+          "title": "Essential Title 7",
+          "description": "Essential Description 7",
+          "dueDate": "2024-07-13",
+          "isCompleted": true,
+          "completedAt": "2024-07-13",
+          "eventId": "Essential Event Id 7",
+          "registrationId": "Essential Registration Id 7"
+        },
+        {
+          "title": "Primary Title 8",
+          "description": "Primary Description 8",
+          "dueDate": "2024-08-15",
+          "isCompleted": false,
+          "completedAt": "2024-08-15",
+          "eventId": "Primary Event Id 8",
+          "registrationId": "Primary Registration Id 8"
+        },
+        {
+          "title": "Global Title 9",
+          "description": "Global Description 9",
+          "dueDate": "2024-09-17",
+          "isCompleted": true,
+          "completedAt": "2024-09-17",
+          "eventId": "Global Event Id 9",
+          "registrationId": "Global Registration Id 9"
+        },
+        {
+          "title": "Regional Title 10",
+          "description": "Regional Description 10",
+          "dueDate": "2024-10-19",
+          "isCompleted": true,
+          "completedAt": "2024-10-19",
+          "eventId": "Regional Event Id 10",
+          "registrationId": "Regional Registration Id 10"
+        },
+        {
+          "title": "Custom Title 11",
+          "description": "Custom Description 11",
+          "dueDate": "2024-11-21",
+          "isCompleted": false,
+          "completedAt": "2024-11-21",
+          "eventId": "Custom Event Id 11",
+          "registrationId": "Custom Registration Id 11"
+        },
+        {
+          "title": "Smart Title 12",
+          "description": "Smart Description 12",
+          "dueDate": "2024-12-23",
+          "isCompleted": true,
+          "completedAt": "2024-12-23",
+          "eventId": "Smart Event Id 12",
+          "registrationId": "Smart Registration Id 12"
+        },
+        {
+          "title": "Rapid Title 13",
+          "description": "Rapid Description 13",
+          "dueDate": "2024-01-25",
+          "isCompleted": false,
+          "completedAt": "2024-01-25",
+          "eventId": "Rapid Event Id 13",
+          "registrationId": "Rapid Registration Id 13"
+        },
+        {
+          "title": "Secure Title 14",
+          "description": "Secure Description 14",
+          "dueDate": "2024-02-27",
+          "isCompleted": true,
+          "completedAt": "2024-02-27",
+          "eventId": "Secure Event Id 14",
+          "registrationId": "Secure Registration Id 14"
+        },
+        {
+          "title": "Modern Title 15",
+          "description": "Modern Description 15",
+          "dueDate": "2024-03-01",
+          "isCompleted": true,
+          "completedAt": "2024-03-01",
+          "eventId": "Modern Event Id 15",
+          "registrationId": "Modern Registration Id 15"
+        }
+      ]
+    }
+  ]
+}

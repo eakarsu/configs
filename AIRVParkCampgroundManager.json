@@ -1,0 +1,3724 @@
+{
+  "appName": "A I R V Park Campground Manager",
+  "dbName": "a_i_r_v_park_campground_manager",
+  "folderName": "generated/AIRVParkCampgroundManager",
+  "features": [
+    {
+      "modelName": "Site",
+      "routeKey": "sites",
+      "label": "Site",
+      "icon": "activity",
+      "aiFunction": "analyzeSite",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Site data. The data includes: Site Number, Type, Status, Length Ft, Width Ft, Max Rig Length, Has Slides Room, Amp Service, Has Water, Has Sewer, Wifi Tier, Daily Rate, Weekly Rate, Monthly Rate, Seasonal Rate, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "siteNumber",
+          "label": "Site Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lengthFt",
+          "label": "Length Ft",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "widthFt",
+          "label": "Width Ft",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "maxRigLength",
+          "label": "Max Rig Length",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "hasSlidesRoom",
+          "label": "Has Slides Room",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "ampService",
+          "label": "Amp Service",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "hasWater",
+          "label": "Has Water",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "hasSewer",
+          "label": "Has Sewer",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "wifiTier",
+          "label": "Wifi Tier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dailyRate",
+          "label": "Daily Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "weeklyRate",
+          "label": "Weekly Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "monthlyRate",
+          "label": "Monthly Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "seasonalRate",
+          "label": "Seasonal Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "siteNumber": "Advanced Site Number 1",
+          "type": "Category A",
+          "status": "active",
+          "lengthFt": 10,
+          "widthFt": 10,
+          "maxRigLength": 10,
+          "hasSlidesRoom": true,
+          "ampService": 10,
+          "hasWater": true,
+          "hasSewer": true,
+          "wifiTier": "Advanced Wifi Tier 1",
+          "dailyRate": 1.5,
+          "weeklyRate": 1.5,
+          "monthlyRate": 1.5,
+          "seasonalRate": 1.5,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "siteNumber": "Premium Site Number 2",
+          "type": "Category B",
+          "status": "pending",
+          "lengthFt": 58,
+          "widthFt": 58,
+          "maxRigLength": 58,
+          "hasSlidesRoom": true,
+          "ampService": 58,
+          "hasWater": true,
+          "hasSewer": true,
+          "wifiTier": "Premium Wifi Tier 2",
+          "dailyRate": 2.1,
+          "weeklyRate": 2.1,
+          "monthlyRate": 2.1,
+          "seasonalRate": 2.1,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "siteNumber": "Standard Site Number 3",
+          "type": "Category C",
+          "status": "in_progress",
+          "lengthFt": 106,
+          "widthFt": 106,
+          "maxRigLength": 106,
+          "hasSlidesRoom": false,
+          "ampService": 106,
+          "hasWater": false,
+          "hasSewer": false,
+          "wifiTier": "Standard Wifi Tier 3",
+          "dailyRate": 2.7,
+          "weeklyRate": 2.7,
+          "monthlyRate": 2.7,
+          "seasonalRate": 2.7,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "siteNumber": "Elite Site Number 4",
+          "type": "Category D",
+          "status": "completed",
+          "lengthFt": 154,
+          "widthFt": 154,
+          "maxRigLength": 154,
+          "hasSlidesRoom": true,
+          "ampService": 154,
+          "hasWater": true,
+          "hasSewer": true,
+          "wifiTier": "Elite Wifi Tier 4",
+          "dailyRate": 3.3,
+          "weeklyRate": 3.3,
+          "monthlyRate": 3.3,
+          "seasonalRate": 3.3,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "siteNumber": "Core Site Number 5",
+          "type": "Category E",
+          "status": "under_review",
+          "lengthFt": 102,
+          "widthFt": 102,
+          "maxRigLength": 102,
+          "hasSlidesRoom": false,
+          "ampService": 102,
+          "hasWater": false,
+          "hasSewer": false,
+          "wifiTier": "Core Wifi Tier 5",
+          "dailyRate": 3.9,
+          "weeklyRate": 3.9,
+          "monthlyRate": 3.9,
+          "seasonalRate": 3.9,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "siteNumber": "Pro Site Number 6",
+          "type": "Premium Tier",
+          "status": "approved",
+          "lengthFt": 150,
+          "widthFt": 150,
+          "maxRigLength": 150,
+          "hasSlidesRoom": true,
+          "ampService": 150,
+          "hasWater": true,
+          "hasSewer": true,
+          "wifiTier": "Pro Wifi Tier 6",
+          "dailyRate": 4.5,
+          "weeklyRate": 4.5,
+          "monthlyRate": 4.5,
+          "seasonalRate": 4.5,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "siteNumber": "Essential Site Number 7",
+          "type": "Standard Tier",
+          "status": "active",
+          "lengthFt": 198,
+          "widthFt": 198,
+          "maxRigLength": 198,
+          "hasSlidesRoom": true,
+          "ampService": 198,
+          "hasWater": true,
+          "hasSewer": true,
+          "wifiTier": "Essential Wifi Tier 7",
+          "dailyRate": 5.1,
+          "weeklyRate": 5.1,
+          "monthlyRate": 5.1,
+          "seasonalRate": 5.1,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "siteNumber": "Primary Site Number 8",
+          "type": "Basic Tier",
+          "status": "active",
+          "lengthFt": 146,
+          "widthFt": 146,
+          "maxRigLength": 146,
+          "hasSlidesRoom": false,
+          "ampService": 146,
+          "hasWater": false,
+          "hasSewer": false,
+          "wifiTier": "Primary Wifi Tier 8",
+          "dailyRate": 5.7,
+          "weeklyRate": 5.7,
+          "monthlyRate": 5.7,
+          "seasonalRate": 5.7,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "siteNumber": "Global Site Number 9",
+          "type": "Enterprise",
+          "status": "active",
+          "lengthFt": 194,
+          "widthFt": 194,
+          "maxRigLength": 194,
+          "hasSlidesRoom": true,
+          "ampService": 194,
+          "hasWater": true,
+          "hasSewer": true,
+          "wifiTier": "Global Wifi Tier 9",
+          "dailyRate": 6.3,
+          "weeklyRate": 6.3,
+          "monthlyRate": 6.3,
+          "seasonalRate": 6.3,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "siteNumber": "Regional Site Number 10",
+          "type": "Starter",
+          "status": "pending",
+          "lengthFt": 242,
+          "widthFt": 242,
+          "maxRigLength": 242,
+          "hasSlidesRoom": true,
+          "ampService": 242,
+          "hasWater": true,
+          "hasSewer": true,
+          "wifiTier": "Regional Wifi Tier 10",
+          "dailyRate": 1.9,
+          "weeklyRate": 1.9,
+          "monthlyRate": 1.9,
+          "seasonalRate": 1.9,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "siteNumber": "Custom Site Number 11",
+          "type": "Growth",
+          "status": "completed",
+          "lengthFt": 190,
+          "widthFt": 190,
+          "maxRigLength": 190,
+          "hasSlidesRoom": false,
+          "ampService": 190,
+          "hasWater": false,
+          "hasSewer": false,
+          "wifiTier": "Custom Wifi Tier 11",
+          "dailyRate": 2.5,
+          "weeklyRate": 2.5,
+          "monthlyRate": 2.5,
+          "seasonalRate": 2.5,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "siteNumber": "Smart Site Number 12",
+          "type": "Scale",
+          "status": "active",
+          "lengthFt": 238,
+          "widthFt": 238,
+          "maxRigLength": 238,
+          "hasSlidesRoom": true,
+          "ampService": 238,
+          "hasWater": true,
+          "hasSewer": true,
+          "wifiTier": "Smart Wifi Tier 12",
+          "dailyRate": 3.1,
+          "weeklyRate": 3.1,
+          "monthlyRate": 3.1,
+          "seasonalRate": 3.1,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "siteNumber": "Rapid Site Number 13",
+          "type": "Foundation",
+          "status": "in_progress",
+          "lengthFt": 286,
+          "widthFt": 286,
+          "maxRigLength": 286,
+          "hasSlidesRoom": false,
+          "ampService": 286,
+          "hasWater": false,
+          "hasSewer": false,
+          "wifiTier": "Rapid Wifi Tier 13",
+          "dailyRate": 3.7,
+          "weeklyRate": 3.7,
+          "monthlyRate": 3.7,
+          "seasonalRate": 3.7,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "siteNumber": "Secure Site Number 14",
+          "type": "Advanced",
+          "status": "active",
+          "lengthFt": 234,
+          "widthFt": 234,
+          "maxRigLength": 234,
+          "hasSlidesRoom": true,
+          "ampService": 234,
+          "hasWater": true,
+          "hasSewer": true,
+          "wifiTier": "Secure Wifi Tier 14",
+          "dailyRate": 4.3,
+          "weeklyRate": 4.3,
+          "monthlyRate": 4.3,
+          "seasonalRate": 4.3,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "siteNumber": "Modern Site Number 15",
+          "type": "Professional",
+          "status": "approved",
+          "lengthFt": 282,
+          "widthFt": 282,
+          "maxRigLength": 282,
+          "hasSlidesRoom": true,
+          "ampService": 282,
+          "hasWater": true,
+          "hasSewer": true,
+          "wifiTier": "Modern Wifi Tier 15",
+          "dailyRate": 4.9,
+          "weeklyRate": 4.9,
+          "monthlyRate": 4.9,
+          "seasonalRate": 4.9,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Guest",
+      "routeKey": "guests",
+      "label": "Guest",
+      "icon": "briefcase",
+      "aiFunction": "analyzeGuest",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Guest data. The data includes: First Name, Last Name, Email, Phone, Rig Type, Rig Length, Rig Slides, License Plate, Pet Info, Loyalty Points, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "firstName",
+          "label": "First Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastName",
+          "label": "Last Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rigType",
+          "label": "Rig Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rigLength",
+          "label": "Rig Length",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "rigSlides",
+          "label": "Rig Slides",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "licensePlate",
+          "label": "License Plate",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "petInfo",
+          "label": "Pet Info",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "loyaltyPoints",
+          "label": "Loyalty Points",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "firstName": "James Wilson",
+          "lastName": "Advanced Last 1",
+          "email": "james.wilson@example.com",
+          "phone": "(555) 100-1000",
+          "rigType": "Category A",
+          "rigLength": 10,
+          "rigSlides": 10,
+          "licensePlate": "Advanced License Plate 1",
+          "petInfo": "Comprehensive solution designed for optimal performance and efficiency.",
+          "loyaltyPoints": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "firstName": "Sarah Chen",
+          "lastName": "Premium Last 2",
+          "email": "sarah.chen@example.com",
+          "phone": "(556) 137-1113",
+          "rigType": "Category B",
+          "rigLength": 58,
+          "rigSlides": 58,
+          "licensePlate": "Premium License Plate 2",
+          "petInfo": "Industry-leading approach with proven results across multiple deployments.",
+          "loyaltyPoints": 58,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "firstName": "Michael Brown",
+          "lastName": "Standard Last 3",
+          "email": "michael.brown@example.com",
+          "phone": "(557) 174-1226",
+          "rigType": "Category C",
+          "rigLength": 106,
+          "rigSlides": 106,
+          "licensePlate": "Standard License Plate 3",
+          "petInfo": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "loyaltyPoints": 106,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "firstName": "Emily Davis",
+          "lastName": "Elite Last 4",
+          "email": "emily.davis@example.com",
+          "phone": "(558) 211-1339",
+          "rigType": "Category D",
+          "rigLength": 154,
+          "rigSlides": 154,
+          "licensePlate": "Elite License Plate 4",
+          "petInfo": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "loyaltyPoints": 154,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "firstName": "Robert Garcia",
+          "lastName": "Core Last 5",
+          "email": "robert.garcia@example.com",
+          "phone": "(555) 248-1452",
+          "rigType": "Category E",
+          "rigLength": 102,
+          "rigSlides": 102,
+          "licensePlate": "Core License Plate 5",
+          "petInfo": "Cost-effective strategy focused on sustainable long-term growth.",
+          "loyaltyPoints": 102,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "firstName": "Lisa Anderson",
+          "lastName": "Pro Last 6",
+          "email": "lisa.anderson@example.com",
+          "phone": "(556) 285-1565",
+          "rigType": "Premium Tier",
+          "rigLength": 150,
+          "rigSlides": 150,
+          "licensePlate": "Pro License Plate 6",
+          "petInfo": "High-priority initiative aligned with organizational strategic objectives.",
+          "loyaltyPoints": 150,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "firstName": "David Martinez",
+          "lastName": "Essential Last 7",
+          "email": "david.martinez@example.com",
+          "phone": "(557) 322-1678",
+          "rigType": "Standard Tier",
+          "rigLength": 198,
+          "rigSlides": 198,
+          "licensePlate": "Essential License Plate 7",
+          "petInfo": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "loyaltyPoints": 198,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "firstName": "Jennifer Taylor",
+          "lastName": "Primary Last 8",
+          "email": "jennifer.taylor@example.com",
+          "phone": "(558) 359-1791",
+          "rigType": "Basic Tier",
+          "rigLength": 146,
+          "rigSlides": 146,
+          "licensePlate": "Primary License Plate 8",
+          "petInfo": "Innovative framework incorporating best practices and emerging technologies.",
+          "loyaltyPoints": 146,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "firstName": "William Johnson",
+          "lastName": "Global Last 9",
+          "email": "william.johnson@example.com",
+          "phone": "(555) 396-1904",
+          "rigType": "Enterprise",
+          "rigLength": 194,
+          "rigSlides": 194,
+          "licensePlate": "Global License Plate 9",
+          "petInfo": "Scalable architecture built to accommodate rapid expansion and change.",
+          "loyaltyPoints": 194,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "firstName": "Maria Rodriguez",
+          "lastName": "Regional Last 10",
+          "email": "maria.rodriguez@example.com",
+          "phone": "(556) 433-2017",
+          "rigType": "Starter",
+          "rigLength": 242,
+          "rigSlides": 242,
+          "licensePlate": "Regional License Plate 10",
+          "petInfo": "Enterprise-grade solution with robust security and compliance features.",
+          "loyaltyPoints": 242,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "firstName": "Thomas Lee",
+          "lastName": "Custom Last 11",
+          "email": "thomas.lee@example.com",
+          "phone": "(557) 470-2130",
+          "rigType": "Growth",
+          "rigLength": 190,
+          "rigSlides": 190,
+          "licensePlate": "Custom License Plate 11",
+          "petInfo": "Integrated platform connecting multiple systems for seamless operations.",
+          "loyaltyPoints": 190,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "firstName": "Patricia White",
+          "lastName": "Smart Last 12",
+          "email": "patricia.white@example.com",
+          "phone": "(558) 507-2243",
+          "rigType": "Scale",
+          "rigLength": 238,
+          "rigSlides": 238,
+          "licensePlate": "Smart License Plate 12",
+          "petInfo": "Automated workflow reducing manual intervention and human error.",
+          "loyaltyPoints": 238,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "firstName": "Christopher Hall",
+          "lastName": "Rapid Last 13",
+          "email": "christopher.hall@example.com",
+          "phone": "(555) 544-2356",
+          "rigType": "Foundation",
+          "rigLength": 286,
+          "rigSlides": 286,
+          "licensePlate": "Rapid License Plate 13",
+          "petInfo": "Real-time monitoring system with intelligent alerting capabilities.",
+          "loyaltyPoints": 286,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "firstName": "Amanda Clark",
+          "lastName": "Secure Last 14",
+          "email": "amanda.clark@example.com",
+          "phone": "(556) 581-2469",
+          "rigType": "Advanced",
+          "rigLength": 234,
+          "rigSlides": 234,
+          "licensePlate": "Secure License Plate 14",
+          "petInfo": "Customizable module adaptable to diverse operational requirements.",
+          "loyaltyPoints": 234,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "firstName": "Daniel Wright",
+          "lastName": "Modern Last 15",
+          "email": "daniel.wright@example.com",
+          "phone": "(557) 618-2582",
+          "rigType": "Professional",
+          "rigLength": 282,
+          "rigSlides": 282,
+          "licensePlate": "Modern License Plate 15",
+          "petInfo": "Performance-optimized design achieving superior throughput and reliability.",
+          "loyaltyPoints": 282,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Reservation",
+      "routeKey": "reservations",
+      "label": "Reservation",
+      "icon": "clipboard",
+      "aiFunction": "analyzeReservation",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Reservation data. The data includes: Site Id, Guest Id, Status, Total Amount, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "siteId",
+          "label": "Site Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "guestId",
+          "label": "Guest Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "totalAmount",
+          "label": "Total Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "siteId": 10,
+          "guestId": 10,
+          "status": "active",
+          "totalAmount": 500,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "siteId": 58,
+          "guestId": 58,
+          "status": "pending",
+          "totalAmount": 2481,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "siteId": 106,
+          "guestId": 106,
+          "status": "in_progress",
+          "totalAmount": 4462,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "siteId": 154,
+          "guestId": 154,
+          "status": "completed",
+          "totalAmount": 6443,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "siteId": 102,
+          "guestId": 102,
+          "status": "under_review",
+          "totalAmount": 8424,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "siteId": 150,
+          "guestId": 150,
+          "status": "approved",
+          "totalAmount": 10405,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "siteId": 198,
+          "guestId": 198,
+          "status": "active",
+          "totalAmount": 12386,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "siteId": 146,
+          "guestId": 146,
+          "status": "active",
+          "totalAmount": 9367,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "siteId": 194,
+          "guestId": 194,
+          "status": "active",
+          "totalAmount": 11348,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "siteId": 242,
+          "guestId": 242,
+          "status": "pending",
+          "totalAmount": 13329,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "siteId": 190,
+          "guestId": 190,
+          "status": "completed",
+          "totalAmount": 15310,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "siteId": 238,
+          "guestId": 238,
+          "status": "active",
+          "totalAmount": 17291,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "siteId": 286,
+          "guestId": 286,
+          "status": "in_progress",
+          "totalAmount": 19272,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "siteId": 234,
+          "guestId": 234,
+          "status": "active",
+          "totalAmount": 21253,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "siteId": 282,
+          "guestId": 282,
+          "status": "approved",
+          "totalAmount": 18234,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "CheckinCheckout",
+      "routeKey": "checkin-checkouts",
+      "label": "Checkin Checkout",
+      "icon": "database",
+      "aiFunction": "analyzeCheckinCheckout",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Checkin Checkout data. The data includes: Reservation Id, Guest Id, Site Id, Type, Timestamp, Notes, Processed By. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "reservationId",
+          "label": "Reservation Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "guestId",
+          "label": "Guest Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "siteId",
+          "label": "Site Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "timestamp",
+          "label": "Timestamp",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "processedBy",
+          "label": "Processed By",
+          "type": "STRING",
+          "formType": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "reservationId": 10,
+          "guestId": 10,
+          "siteId": 10,
+          "type": "Category A",
+          "timestamp": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "processedBy": "Advanced Processed By 1"
+        },
+        {
+          "reservationId": 58,
+          "guestId": 58,
+          "siteId": 58,
+          "type": "Category B",
+          "timestamp": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "processedBy": "Premium Processed By 2"
+        },
+        {
+          "reservationId": 106,
+          "guestId": 106,
+          "siteId": 106,
+          "type": "Category C",
+          "timestamp": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "processedBy": "Standard Processed By 3"
+        },
+        {
+          "reservationId": 154,
+          "guestId": 154,
+          "siteId": 154,
+          "type": "Category D",
+          "timestamp": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "processedBy": "Elite Processed By 4"
+        },
+        {
+          "reservationId": 102,
+          "guestId": 102,
+          "siteId": 102,
+          "type": "Category E",
+          "timestamp": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "processedBy": "Core Processed By 5"
+        },
+        {
+          "reservationId": 150,
+          "guestId": 150,
+          "siteId": 150,
+          "type": "Premium Tier",
+          "timestamp": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "processedBy": "Pro Processed By 6"
+        },
+        {
+          "reservationId": 198,
+          "guestId": 198,
+          "siteId": 198,
+          "type": "Standard Tier",
+          "timestamp": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "processedBy": "Essential Processed By 7"
+        },
+        {
+          "reservationId": 146,
+          "guestId": 146,
+          "siteId": 146,
+          "type": "Basic Tier",
+          "timestamp": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "processedBy": "Primary Processed By 8"
+        },
+        {
+          "reservationId": 194,
+          "guestId": 194,
+          "siteId": 194,
+          "type": "Enterprise",
+          "timestamp": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "processedBy": "Global Processed By 9"
+        },
+        {
+          "reservationId": 242,
+          "guestId": 242,
+          "siteId": 242,
+          "type": "Starter",
+          "timestamp": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "processedBy": "Regional Processed By 10"
+        },
+        {
+          "reservationId": 190,
+          "guestId": 190,
+          "siteId": 190,
+          "type": "Growth",
+          "timestamp": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "processedBy": "Custom Processed By 11"
+        },
+        {
+          "reservationId": 238,
+          "guestId": 238,
+          "siteId": 238,
+          "type": "Scale",
+          "timestamp": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "processedBy": "Smart Processed By 12"
+        },
+        {
+          "reservationId": 286,
+          "guestId": 286,
+          "siteId": 286,
+          "type": "Foundation",
+          "timestamp": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "processedBy": "Rapid Processed By 13"
+        },
+        {
+          "reservationId": 234,
+          "guestId": 234,
+          "siteId": 234,
+          "type": "Advanced",
+          "timestamp": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "processedBy": "Secure Processed By 14"
+        },
+        {
+          "reservationId": 282,
+          "guestId": 282,
+          "siteId": 282,
+          "type": "Professional",
+          "timestamp": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "processedBy": "Modern Processed By 15"
+        }
+      ]
+    },
+    {
+      "modelName": "UtilityReading",
+      "routeKey": "utility-readings",
+      "label": "Utility Reading",
+      "icon": "file-text",
+      "aiFunction": "analyzeUtilityReading",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Utility Reading data. The data includes: Site Id, Reading Date, Electric Kwh, Water Gallons, Sewer Gallons, Amount Due, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "siteId",
+          "label": "Site Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "readingDate",
+          "label": "Reading Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "electricKwh",
+          "label": "Electric Kwh",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "waterGallons",
+          "label": "Water Gallons",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "sewerGallons",
+          "label": "Sewer Gallons",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "amountDue",
+          "label": "Amount Due",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "siteId": 10,
+          "readingDate": "2024-01-01",
+          "electricKwh": 10,
+          "waterGallons": -120,
+          "sewerGallons": -120,
+          "amountDue": 500,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "siteId": 58,
+          "readingDate": "2024-02-03",
+          "electricKwh": 71.7,
+          "waterGallons": -117,
+          "sewerGallons": -117,
+          "amountDue": 2481,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "siteId": 106,
+          "readingDate": "2024-03-05",
+          "electricKwh": 33.4,
+          "waterGallons": -114,
+          "sewerGallons": -114,
+          "amountDue": 4462,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "siteId": 154,
+          "readingDate": "2024-04-07",
+          "electricKwh": 95.1,
+          "waterGallons": -111,
+          "sewerGallons": -111,
+          "amountDue": 6443,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "siteId": 102,
+          "readingDate": "2024-05-09",
+          "electricKwh": 56.8,
+          "waterGallons": -108,
+          "sewerGallons": -108,
+          "amountDue": 8424,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "siteId": 150,
+          "readingDate": "2024-06-11",
+          "electricKwh": 118.5,
+          "waterGallons": -105,
+          "sewerGallons": -105,
+          "amountDue": 10405,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "siteId": 198,
+          "readingDate": "2024-07-13",
+          "electricKwh": 80.2,
+          "waterGallons": -102,
+          "sewerGallons": -102,
+          "amountDue": 12386,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "siteId": 146,
+          "readingDate": "2024-08-15",
+          "electricKwh": 141.9,
+          "waterGallons": -99,
+          "sewerGallons": -99,
+          "amountDue": 9367,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "siteId": 194,
+          "readingDate": "2024-09-17",
+          "electricKwh": 103.6,
+          "waterGallons": -96,
+          "sewerGallons": -96,
+          "amountDue": 11348,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "siteId": 242,
+          "readingDate": "2024-10-19",
+          "electricKwh": 165.3,
+          "waterGallons": -93,
+          "sewerGallons": -93,
+          "amountDue": 13329,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "siteId": 190,
+          "readingDate": "2024-11-21",
+          "electricKwh": 127,
+          "waterGallons": -90,
+          "sewerGallons": -90,
+          "amountDue": 15310,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "siteId": 238,
+          "readingDate": "2024-12-23",
+          "electricKwh": 188.7,
+          "waterGallons": -87,
+          "sewerGallons": -87,
+          "amountDue": 17291,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "siteId": 286,
+          "readingDate": "2024-01-25",
+          "electricKwh": 150.4,
+          "waterGallons": -84,
+          "sewerGallons": -84,
+          "amountDue": 19272,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "siteId": 234,
+          "readingDate": "2024-02-27",
+          "electricKwh": 212.1,
+          "waterGallons": -81,
+          "sewerGallons": -81,
+          "amountDue": 21253,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "siteId": 282,
+          "readingDate": "2024-03-01",
+          "electricKwh": 173.8,
+          "waterGallons": -78,
+          "sewerGallons": -78,
+          "amountDue": 18234,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Rate",
+      "routeKey": "rates",
+      "label": "Rate",
+      "icon": "heart",
+      "aiFunction": "analyzeRate",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Rate data. The data includes: Name, Rate Type, Site Type, Amount, Start Date, End Date, Is Active, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "rateType",
+          "label": "Rate Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "siteType",
+          "label": "Site Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "startDate",
+          "label": "Start Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "endDate",
+          "label": "End Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "isActive",
+          "label": "Is Active",
+          "type": "BOOLEAN",
+          "formType": "select"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "rateType": "Category A",
+          "siteType": "Category A",
+          "amount": 500,
+          "startDate": "2024-01-01",
+          "endDate": "2024-01-01",
+          "isActive": true,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "rateType": "Category B",
+          "siteType": "Category B",
+          "amount": 2481,
+          "startDate": "2024-02-03",
+          "endDate": "2024-02-03",
+          "isActive": true,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "rateType": "Category C",
+          "siteType": "Category C",
+          "amount": 4462,
+          "startDate": "2024-03-05",
+          "endDate": "2024-03-05",
+          "isActive": false,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "rateType": "Category D",
+          "siteType": "Category D",
+          "amount": 6443,
+          "startDate": "2024-04-07",
+          "endDate": "2024-04-07",
+          "isActive": true,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "rateType": "Category E",
+          "siteType": "Category E",
+          "amount": 8424,
+          "startDate": "2024-05-09",
+          "endDate": "2024-05-09",
+          "isActive": false,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "rateType": "Premium Tier",
+          "siteType": "Premium Tier",
+          "amount": 10405,
+          "startDate": "2024-06-11",
+          "endDate": "2024-06-11",
+          "isActive": true,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "rateType": "Standard Tier",
+          "siteType": "Standard Tier",
+          "amount": 12386,
+          "startDate": "2024-07-13",
+          "endDate": "2024-07-13",
+          "isActive": true,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "rateType": "Basic Tier",
+          "siteType": "Basic Tier",
+          "amount": 9367,
+          "startDate": "2024-08-15",
+          "endDate": "2024-08-15",
+          "isActive": false,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "rateType": "Enterprise",
+          "siteType": "Enterprise",
+          "amount": 11348,
+          "startDate": "2024-09-17",
+          "endDate": "2024-09-17",
+          "isActive": true,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "rateType": "Starter",
+          "siteType": "Starter",
+          "amount": 13329,
+          "startDate": "2024-10-19",
+          "endDate": "2024-10-19",
+          "isActive": true,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "rateType": "Growth",
+          "siteType": "Growth",
+          "amount": 15310,
+          "startDate": "2024-11-21",
+          "endDate": "2024-11-21",
+          "isActive": false,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "rateType": "Scale",
+          "siteType": "Scale",
+          "amount": 17291,
+          "startDate": "2024-12-23",
+          "endDate": "2024-12-23",
+          "isActive": true,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "rateType": "Foundation",
+          "siteType": "Foundation",
+          "amount": 19272,
+          "startDate": "2024-01-25",
+          "endDate": "2024-01-25",
+          "isActive": false,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "rateType": "Advanced",
+          "siteType": "Advanced",
+          "amount": 21253,
+          "startDate": "2024-02-27",
+          "endDate": "2024-02-27",
+          "isActive": true,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "rateType": "Professional",
+          "siteType": "Professional",
+          "amount": 18234,
+          "startDate": "2024-03-01",
+          "endDate": "2024-03-01",
+          "isActive": true,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "LongtermResident",
+      "routeKey": "longterm-residents",
+      "label": "Longterm Resident",
+      "icon": "layers",
+      "aiFunction": "analyzeLongtermResident",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Longterm Resident data. The data includes: Guest Id, Site Id, Lease Start, Lease End, Monthly Rate, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "guestId",
+          "label": "Guest Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "siteId",
+          "label": "Site Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "leaseStart",
+          "label": "Lease Start",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "leaseEnd",
+          "label": "Lease End",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "monthlyRate",
+          "label": "Monthly Rate",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "guestId": 10,
+          "siteId": 10,
+          "leaseStart": "2024-01-01",
+          "leaseEnd": "2024-01-01",
+          "monthlyRate": 1.5,
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "guestId": 58,
+          "siteId": 58,
+          "leaseStart": "2024-02-03",
+          "leaseEnd": "2024-02-03",
+          "monthlyRate": 2.1,
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "guestId": 106,
+          "siteId": 106,
+          "leaseStart": "2024-03-05",
+          "leaseEnd": "2024-03-05",
+          "monthlyRate": 2.7,
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "guestId": 154,
+          "siteId": 154,
+          "leaseStart": "2024-04-07",
+          "leaseEnd": "2024-04-07",
+          "monthlyRate": 3.3,
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "guestId": 102,
+          "siteId": 102,
+          "leaseStart": "2024-05-09",
+          "leaseEnd": "2024-05-09",
+          "monthlyRate": 3.9,
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "guestId": 150,
+          "siteId": 150,
+          "leaseStart": "2024-06-11",
+          "leaseEnd": "2024-06-11",
+          "monthlyRate": 4.5,
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "guestId": 198,
+          "siteId": 198,
+          "leaseStart": "2024-07-13",
+          "leaseEnd": "2024-07-13",
+          "monthlyRate": 5.1,
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "guestId": 146,
+          "siteId": 146,
+          "leaseStart": "2024-08-15",
+          "leaseEnd": "2024-08-15",
+          "monthlyRate": 5.7,
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "guestId": 194,
+          "siteId": 194,
+          "leaseStart": "2024-09-17",
+          "leaseEnd": "2024-09-17",
+          "monthlyRate": 6.3,
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "guestId": 242,
+          "siteId": 242,
+          "leaseStart": "2024-10-19",
+          "leaseEnd": "2024-10-19",
+          "monthlyRate": 1.9,
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "guestId": 190,
+          "siteId": 190,
+          "leaseStart": "2024-11-21",
+          "leaseEnd": "2024-11-21",
+          "monthlyRate": 2.5,
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "guestId": 238,
+          "siteId": 238,
+          "leaseStart": "2024-12-23",
+          "leaseEnd": "2024-12-23",
+          "monthlyRate": 3.1,
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "guestId": 286,
+          "siteId": 286,
+          "leaseStart": "2024-01-25",
+          "leaseEnd": "2024-01-25",
+          "monthlyRate": 3.7,
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "guestId": 234,
+          "siteId": 234,
+          "leaseStart": "2024-02-27",
+          "leaseEnd": "2024-02-27",
+          "monthlyRate": 4.3,
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "guestId": 282,
+          "siteId": 282,
+          "leaseStart": "2024-03-01",
+          "leaseEnd": "2024-03-01",
+          "monthlyRate": 4.9,
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "Amenitie",
+      "routeKey": "amenities",
+      "label": "Amenitie",
+      "icon": "map-pin",
+      "aiFunction": "analyzeAmenitie",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Amenitie data. The data includes: Name, Type, Capacity, Status, Rate Per Hour, Description. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "capacity",
+          "label": "Capacity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "ratePerHour",
+          "label": "Rate Per Hour",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "type": "Category A",
+          "capacity": 10,
+          "status": "active",
+          "ratePerHour": 1.5,
+          "description": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "type": "Category B",
+          "capacity": 58,
+          "status": "pending",
+          "ratePerHour": 2.1,
+          "description": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "type": "Category C",
+          "capacity": 106,
+          "status": "in_progress",
+          "ratePerHour": 2.7,
+          "description": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "type": "Category D",
+          "capacity": 154,
+          "status": "completed",
+          "ratePerHour": 3.3,
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "type": "Category E",
+          "capacity": 102,
+          "status": "under_review",
+          "ratePerHour": 3.9,
+          "description": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "type": "Premium Tier",
+          "capacity": 150,
+          "status": "approved",
+          "ratePerHour": 4.5,
+          "description": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "type": "Standard Tier",
+          "capacity": 198,
+          "status": "active",
+          "ratePerHour": 5.1,
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "type": "Basic Tier",
+          "capacity": 146,
+          "status": "active",
+          "ratePerHour": 5.7,
+          "description": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "type": "Enterprise",
+          "capacity": 194,
+          "status": "active",
+          "ratePerHour": 6.3,
+          "description": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "type": "Starter",
+          "capacity": 242,
+          "status": "pending",
+          "ratePerHour": 1.9,
+          "description": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "type": "Growth",
+          "capacity": 190,
+          "status": "completed",
+          "ratePerHour": 2.5,
+          "description": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "type": "Scale",
+          "capacity": 238,
+          "status": "active",
+          "ratePerHour": 3.1,
+          "description": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "type": "Foundation",
+          "capacity": 286,
+          "status": "in_progress",
+          "ratePerHour": 3.7,
+          "description": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "type": "Advanced",
+          "capacity": 234,
+          "status": "active",
+          "ratePerHour": 4.3,
+          "description": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "type": "Professional",
+          "capacity": 282,
+          "status": "approved",
+          "ratePerHour": 4.9,
+          "description": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "AmenityBooking",
+      "routeKey": "amenity-bookings",
+      "label": "Amenity Booking",
+      "icon": "package",
+      "aiFunction": "analyzeAmenityBooking",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Amenity Booking data. The data includes: Amenity Id, Guest Id, Booking Date, Start Time, End Time, Status, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "amenityId",
+          "label": "Amenity Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "guestId",
+          "label": "Guest Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "bookingDate",
+          "label": "Booking Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "startTime",
+          "label": "Start Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "endTime",
+          "label": "End Time",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "amenityId": 10,
+          "guestId": 10,
+          "bookingDate": "2024-01-01",
+          "startTime": "Advanced Start Time 1",
+          "endTime": "Advanced End Time 1",
+          "status": "active",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "amenityId": 58,
+          "guestId": 58,
+          "bookingDate": "2024-02-03",
+          "startTime": "Premium Start Time 2",
+          "endTime": "Premium End Time 2",
+          "status": "pending",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "amenityId": 106,
+          "guestId": 106,
+          "bookingDate": "2024-03-05",
+          "startTime": "Standard Start Time 3",
+          "endTime": "Standard End Time 3",
+          "status": "in_progress",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "amenityId": 154,
+          "guestId": 154,
+          "bookingDate": "2024-04-07",
+          "startTime": "Elite Start Time 4",
+          "endTime": "Elite End Time 4",
+          "status": "completed",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "amenityId": 102,
+          "guestId": 102,
+          "bookingDate": "2024-05-09",
+          "startTime": "Core Start Time 5",
+          "endTime": "Core End Time 5",
+          "status": "under_review",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "amenityId": 150,
+          "guestId": 150,
+          "bookingDate": "2024-06-11",
+          "startTime": "Pro Start Time 6",
+          "endTime": "Pro End Time 6",
+          "status": "approved",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "amenityId": 198,
+          "guestId": 198,
+          "bookingDate": "2024-07-13",
+          "startTime": "Essential Start Time 7",
+          "endTime": "Essential End Time 7",
+          "status": "active",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "amenityId": 146,
+          "guestId": 146,
+          "bookingDate": "2024-08-15",
+          "startTime": "Primary Start Time 8",
+          "endTime": "Primary End Time 8",
+          "status": "active",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "amenityId": 194,
+          "guestId": 194,
+          "bookingDate": "2024-09-17",
+          "startTime": "Global Start Time 9",
+          "endTime": "Global End Time 9",
+          "status": "active",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "amenityId": 242,
+          "guestId": 242,
+          "bookingDate": "2024-10-19",
+          "startTime": "Regional Start Time 10",
+          "endTime": "Regional End Time 10",
+          "status": "pending",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "amenityId": 190,
+          "guestId": 190,
+          "bookingDate": "2024-11-21",
+          "startTime": "Custom Start Time 11",
+          "endTime": "Custom End Time 11",
+          "status": "completed",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "amenityId": 238,
+          "guestId": 238,
+          "bookingDate": "2024-12-23",
+          "startTime": "Smart Start Time 12",
+          "endTime": "Smart End Time 12",
+          "status": "active",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "amenityId": 286,
+          "guestId": 286,
+          "bookingDate": "2024-01-25",
+          "startTime": "Rapid Start Time 13",
+          "endTime": "Rapid End Time 13",
+          "status": "in_progress",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "amenityId": 234,
+          "guestId": 234,
+          "bookingDate": "2024-02-27",
+          "startTime": "Secure Start Time 14",
+          "endTime": "Secure End Time 14",
+          "status": "active",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "amenityId": 282,
+          "guestId": 282,
+          "bookingDate": "2024-03-01",
+          "startTime": "Modern Start Time 15",
+          "endTime": "Modern End Time 15",
+          "status": "approved",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "StoreItem",
+      "routeKey": "store-items",
+      "label": "Store Item",
+      "icon": "shield",
+      "aiFunction": "analyzeStoreItem",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Store Item data. The data includes: Name, Category, Price, Quantity, Sku, Description. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "price",
+          "label": "Price",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "sku",
+          "label": "Sku",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "name": "Advanced Name 1",
+          "category": "Category A",
+          "price": 500,
+          "quantity": 26,
+          "sku": "Advanced Sku 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "name": "Premium Name 2",
+          "category": "Category B",
+          "price": 2481,
+          "quantity": 131,
+          "sku": "Premium Sku 2",
+          "description": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "name": "Standard Name 3",
+          "category": "Category C",
+          "price": 4462,
+          "quantity": 206,
+          "sku": "Standard Sku 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "name": "Elite Name 4",
+          "category": "Category D",
+          "price": 6443,
+          "quantity": 101,
+          "sku": "Elite Sku 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "name": "Core Name 5",
+          "category": "Category E",
+          "price": 8424,
+          "quantity": 173,
+          "sku": "Core Sku 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "name": "Pro Name 6",
+          "category": "Premium Tier",
+          "price": 10405,
+          "quantity": 234,
+          "sku": "Pro Sku 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "name": "Essential Name 7",
+          "category": "Standard Tier",
+          "price": 12386,
+          "quantity": 198,
+          "sku": "Essential Sku 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "name": "Primary Name 8",
+          "category": "Basic Tier",
+          "price": 9367,
+          "quantity": 78,
+          "sku": "Primary Sku 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "name": "Global Name 9",
+          "category": "Enterprise",
+          "price": 11348,
+          "quantity": 141,
+          "sku": "Global Sku 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "name": "Regional Name 10",
+          "category": "Starter",
+          "price": 13329,
+          "quantity": 100,
+          "sku": "Regional Sku 10",
+          "description": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "name": "Custom Name 11",
+          "category": "Growth",
+          "price": 15310,
+          "quantity": 171,
+          "sku": "Custom Sku 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "name": "Smart Name 12",
+          "category": "Scale",
+          "price": 17291,
+          "quantity": 174,
+          "sku": "Smart Sku 12",
+          "description": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "name": "Rapid Name 13",
+          "category": "Foundation",
+          "price": 19272,
+          "quantity": 106,
+          "sku": "Rapid Sku 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "name": "Secure Name 14",
+          "category": "Advanced",
+          "price": 21253,
+          "quantity": 261,
+          "sku": "Secure Sku 14",
+          "description": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "name": "Modern Name 15",
+          "category": "Professional",
+          "price": 18234,
+          "quantity": 182,
+          "sku": "Modern Sku 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "StoreTransaction",
+      "routeKey": "store-transactions",
+      "label": "Store Transaction",
+      "icon": "star",
+      "aiFunction": "analyzeStoreTransaction",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Store Transaction data. The data includes: Guest Id, Items, Total, Payment Method, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "guestId",
+          "label": "Guest Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "items",
+          "label": "Items",
+          "type": "JSON",
+          "formType": "textarea"
+        },
+        {
+          "key": "total",
+          "label": "Total",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "paymentMethod",
+          "label": "Payment Method",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "guestId": 10,
+          "items": "{\"category\":\"Category A\",\"priority\":1,\"tags\":[\"Advanced\",\"Pro\"]}",
+          "total": 10,
+          "paymentMethod": "Advanced Payment Method 1",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "guestId": 58,
+          "items": "{\"category\":\"Category B\",\"priority\":2,\"tags\":[\"Premium\",\"Essential\"]}",
+          "total": 71.7,
+          "paymentMethod": "Premium Payment Method 2",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "guestId": 106,
+          "items": "{\"category\":\"Category C\",\"priority\":3,\"tags\":[\"Standard\",\"Primary\"]}",
+          "total": 33.4,
+          "paymentMethod": "Standard Payment Method 3",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "guestId": 154,
+          "items": "{\"category\":\"Category D\",\"priority\":1,\"tags\":[\"Elite\",\"Global\"]}",
+          "total": 95.1,
+          "paymentMethod": "Elite Payment Method 4",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "guestId": 102,
+          "items": "{\"category\":\"Category E\",\"priority\":2,\"tags\":[\"Core\",\"Regional\"]}",
+          "total": 56.8,
+          "paymentMethod": "Core Payment Method 5",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "guestId": 150,
+          "items": "{\"category\":\"Premium Tier\",\"priority\":3,\"tags\":[\"Pro\",\"Custom\"]}",
+          "total": 118.5,
+          "paymentMethod": "Pro Payment Method 6",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "guestId": 198,
+          "items": "{\"category\":\"Standard Tier\",\"priority\":1,\"tags\":[\"Essential\",\"Smart\"]}",
+          "total": 80.2,
+          "paymentMethod": "Essential Payment Method 7",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "guestId": 146,
+          "items": "{\"category\":\"Basic Tier\",\"priority\":2,\"tags\":[\"Primary\",\"Rapid\"]}",
+          "total": 141.9,
+          "paymentMethod": "Primary Payment Method 8",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "guestId": 194,
+          "items": "{\"category\":\"Enterprise\",\"priority\":3,\"tags\":[\"Global\",\"Secure\"]}",
+          "total": 103.6,
+          "paymentMethod": "Global Payment Method 9",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "guestId": 242,
+          "items": "{\"category\":\"Starter\",\"priority\":1,\"tags\":[\"Regional\",\"Modern\"]}",
+          "total": 165.3,
+          "paymentMethod": "Regional Payment Method 10",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "guestId": 190,
+          "items": "{\"category\":\"Growth\",\"priority\":2,\"tags\":[\"Custom\",\"Advanced\"]}",
+          "total": 127,
+          "paymentMethod": "Custom Payment Method 11",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "guestId": 238,
+          "items": "{\"category\":\"Scale\",\"priority\":3,\"tags\":[\"Smart\",\"Premium\"]}",
+          "total": 188.7,
+          "paymentMethod": "Smart Payment Method 12",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "guestId": 286,
+          "items": "{\"category\":\"Foundation\",\"priority\":1,\"tags\":[\"Rapid\",\"Standard\"]}",
+          "total": 150.4,
+          "paymentMethod": "Rapid Payment Method 13",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "guestId": 234,
+          "items": "{\"category\":\"Advanced\",\"priority\":2,\"tags\":[\"Secure\",\"Elite\"]}",
+          "total": 212.1,
+          "paymentMethod": "Secure Payment Method 14",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "guestId": 282,
+          "items": "{\"category\":\"Professional\",\"priority\":3,\"tags\":[\"Modern\",\"Core\"]}",
+          "total": 173.8,
+          "paymentMethod": "Modern Payment Method 15",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "MaintenanceOrder",
+      "routeKey": "maintenance-orders",
+      "label": "Maintenance Order",
+      "icon": "truck",
+      "aiFunction": "analyzeMaintenanceOrder",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Maintenance Order data. The data includes: Site Id, Title, Description, Priority, Status, Assigned To, Due Date, Completed Date, Cost, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "siteId",
+          "label": "Site Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "assignedTo",
+          "label": "Assigned To",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "dueDate",
+          "label": "Due Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "completedDate",
+          "label": "Completed Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "siteId": 10,
+          "title": "Advanced Title 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency.",
+          "priority": "low",
+          "status": "active",
+          "assignedTo": "Advanced Assigned To 1",
+          "dueDate": "2024-01-01",
+          "completedDate": "2024-01-01",
+          "cost": 500,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "siteId": 58,
+          "title": "Premium Title 2",
+          "description": "Industry-leading approach with proven results across multiple deployments.",
+          "priority": "medium",
+          "status": "pending",
+          "assignedTo": "Premium Assigned To 2",
+          "dueDate": "2024-02-03",
+          "completedDate": "2024-02-03",
+          "cost": 2481,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "siteId": 106,
+          "title": "Standard Title 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "priority": "high",
+          "status": "in_progress",
+          "assignedTo": "Standard Assigned To 3",
+          "dueDate": "2024-03-05",
+          "completedDate": "2024-03-05",
+          "cost": 4462,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "siteId": 154,
+          "title": "Elite Title 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "priority": "critical",
+          "status": "completed",
+          "assignedTo": "Elite Assigned To 4",
+          "dueDate": "2024-04-07",
+          "completedDate": "2024-04-07",
+          "cost": 6443,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "siteId": 102,
+          "title": "Core Title 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth.",
+          "priority": "medium",
+          "status": "under_review",
+          "assignedTo": "Core Assigned To 5",
+          "dueDate": "2024-05-09",
+          "completedDate": "2024-05-09",
+          "cost": 8424,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "siteId": 150,
+          "title": "Pro Title 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives.",
+          "priority": "low",
+          "status": "approved",
+          "assignedTo": "Pro Assigned To 6",
+          "dueDate": "2024-06-11",
+          "completedDate": "2024-06-11",
+          "cost": 10405,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "siteId": 198,
+          "title": "Essential Title 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "priority": "medium",
+          "status": "active",
+          "assignedTo": "Essential Assigned To 7",
+          "dueDate": "2024-07-13",
+          "completedDate": "2024-07-13",
+          "cost": 12386,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "siteId": 146,
+          "title": "Primary Title 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies.",
+          "priority": "high",
+          "status": "active",
+          "assignedTo": "Primary Assigned To 8",
+          "dueDate": "2024-08-15",
+          "completedDate": "2024-08-15",
+          "cost": 9367,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "siteId": 194,
+          "title": "Global Title 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change.",
+          "priority": "critical",
+          "status": "active",
+          "assignedTo": "Global Assigned To 9",
+          "dueDate": "2024-09-17",
+          "completedDate": "2024-09-17",
+          "cost": 11348,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "siteId": 242,
+          "title": "Regional Title 10",
+          "description": "Enterprise-grade solution with robust security and compliance features.",
+          "priority": "medium",
+          "status": "pending",
+          "assignedTo": "Regional Assigned To 10",
+          "dueDate": "2024-10-19",
+          "completedDate": "2024-10-19",
+          "cost": 13329,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "siteId": 190,
+          "title": "Custom Title 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations.",
+          "priority": "low",
+          "status": "completed",
+          "assignedTo": "Custom Assigned To 11",
+          "dueDate": "2024-11-21",
+          "completedDate": "2024-11-21",
+          "cost": 15310,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "siteId": 238,
+          "title": "Smart Title 12",
+          "description": "Automated workflow reducing manual intervention and human error.",
+          "priority": "medium",
+          "status": "active",
+          "assignedTo": "Smart Assigned To 12",
+          "dueDate": "2024-12-23",
+          "completedDate": "2024-12-23",
+          "cost": 17291,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "siteId": 286,
+          "title": "Rapid Title 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities.",
+          "priority": "high",
+          "status": "in_progress",
+          "assignedTo": "Rapid Assigned To 13",
+          "dueDate": "2024-01-25",
+          "completedDate": "2024-01-25",
+          "cost": 19272,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "siteId": 234,
+          "title": "Secure Title 14",
+          "description": "Customizable module adaptable to diverse operational requirements.",
+          "priority": "critical",
+          "status": "active",
+          "assignedTo": "Secure Assigned To 14",
+          "dueDate": "2024-02-27",
+          "completedDate": "2024-02-27",
+          "cost": 21253,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "siteId": 282,
+          "title": "Modern Title 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability.",
+          "priority": "medium",
+          "status": "approved",
+          "assignedTo": "Modern Assigned To 15",
+          "dueDate": "2024-03-01",
+          "completedDate": "2024-03-01",
+          "cost": 18234,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "LoyaltyReward",
+      "routeKey": "loyalty-rewards",
+      "label": "Loyalty Reward",
+      "icon": "users",
+      "aiFunction": "analyzeLoyaltyReward",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Loyalty Reward data. The data includes: Guest Id, Points, Action, Description. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "guestId",
+          "label": "Guest Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "points",
+          "label": "Points",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "guestId": 10,
+          "points": 10,
+          "action": "Advanced Action 1",
+          "description": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "guestId": 58,
+          "points": 58,
+          "action": "Premium Action 2",
+          "description": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "guestId": 106,
+          "points": 106,
+          "action": "Standard Action 3",
+          "description": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "guestId": 154,
+          "points": 154,
+          "action": "Elite Action 4",
+          "description": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "guestId": 102,
+          "points": 102,
+          "action": "Core Action 5",
+          "description": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "guestId": 150,
+          "points": 150,
+          "action": "Pro Action 6",
+          "description": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "guestId": 198,
+          "points": 198,
+          "action": "Essential Action 7",
+          "description": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "guestId": 146,
+          "points": 146,
+          "action": "Primary Action 8",
+          "description": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "guestId": 194,
+          "points": 194,
+          "action": "Global Action 9",
+          "description": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "guestId": 242,
+          "points": 242,
+          "action": "Regional Action 10",
+          "description": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "guestId": 190,
+          "points": 190,
+          "action": "Custom Action 11",
+          "description": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "guestId": 238,
+          "points": 238,
+          "action": "Smart Action 12",
+          "description": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "guestId": 286,
+          "points": 286,
+          "action": "Rapid Action 13",
+          "description": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "guestId": 234,
+          "points": 234,
+          "action": "Secure Action 14",
+          "description": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "guestId": 282,
+          "points": 282,
+          "action": "Modern Action 15",
+          "description": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "RevenueRecord",
+      "routeKey": "revenue-records",
+      "label": "Revenue Record",
+      "icon": "zap",
+      "aiFunction": "analyzeRevenueRecord",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Revenue Record data. The data includes: Source, Site Id, Amount, Revenue Date, Category, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "source",
+          "label": "Source",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "siteId",
+          "label": "Site Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "revenueDate",
+          "label": "Revenue Date",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "source": "Advanced Source 1",
+          "siteId": 10,
+          "amount": 500,
+          "revenueDate": "2024-01-01",
+          "category": "Category A",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "source": "Premium Source 2",
+          "siteId": 58,
+          "amount": 2481,
+          "revenueDate": "2024-02-03",
+          "category": "Category B",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "source": "Standard Source 3",
+          "siteId": 106,
+          "amount": 4462,
+          "revenueDate": "2024-03-05",
+          "category": "Category C",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "source": "Elite Source 4",
+          "siteId": 154,
+          "amount": 6443,
+          "revenueDate": "2024-04-07",
+          "category": "Category D",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "source": "Core Source 5",
+          "siteId": 102,
+          "amount": 8424,
+          "revenueDate": "2024-05-09",
+          "category": "Category E",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "source": "Pro Source 6",
+          "siteId": 150,
+          "amount": 10405,
+          "revenueDate": "2024-06-11",
+          "category": "Premium Tier",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "source": "Essential Source 7",
+          "siteId": 198,
+          "amount": 12386,
+          "revenueDate": "2024-07-13",
+          "category": "Standard Tier",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "source": "Primary Source 8",
+          "siteId": 146,
+          "amount": 9367,
+          "revenueDate": "2024-08-15",
+          "category": "Basic Tier",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "source": "Global Source 9",
+          "siteId": 194,
+          "amount": 11348,
+          "revenueDate": "2024-09-17",
+          "category": "Enterprise",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "source": "Regional Source 10",
+          "siteId": 242,
+          "amount": 13329,
+          "revenueDate": "2024-10-19",
+          "category": "Starter",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "source": "Custom Source 11",
+          "siteId": 190,
+          "amount": 15310,
+          "revenueDate": "2024-11-21",
+          "category": "Growth",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "source": "Smart Source 12",
+          "siteId": 238,
+          "amount": 17291,
+          "revenueDate": "2024-12-23",
+          "category": "Scale",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "source": "Rapid Source 13",
+          "siteId": 286,
+          "amount": 19272,
+          "revenueDate": "2024-01-25",
+          "category": "Foundation",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "source": "Secure Source 14",
+          "siteId": 234,
+          "amount": 21253,
+          "revenueDate": "2024-02-27",
+          "category": "Advanced",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "source": "Modern Source 15",
+          "siteId": 282,
+          "amount": 18234,
+          "revenueDate": "2024-03-01",
+          "category": "Professional",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "SecurityLog",
+      "routeKey": "security-logs",
+      "label": "Security Log",
+      "icon": "bar-chart",
+      "aiFunction": "analyzeSecurityLog",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Security Log data. The data includes: Gate Name, Guest Id, Access Code, Action, Vehicle Info, Notes, Timestamp. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "gateName",
+          "label": "Gate Name",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "guestId",
+          "label": "Guest Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "accessCode",
+          "label": "Access Code",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "action",
+          "label": "Action",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "vehicleInfo",
+          "label": "Vehicle Info",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "timestamp",
+          "label": "Timestamp",
+          "type": "DATE",
+          "formType": "date"
+        }
+      ],
+      "sampleData": [
+        {
+          "gateName": "Advanced Gate 1",
+          "guestId": 10,
+          "accessCode": "Advanced Access Code 1",
+          "action": "Advanced Action 1",
+          "vehicleInfo": "Comprehensive solution designed for optimal performance and efficiency.",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency.",
+          "timestamp": "2024-01-01"
+        },
+        {
+          "gateName": "Premium Gate 2",
+          "guestId": 58,
+          "accessCode": "Premium Access Code 2",
+          "action": "Premium Action 2",
+          "vehicleInfo": "Industry-leading approach with proven results across multiple deployments.",
+          "notes": "Industry-leading approach with proven results across multiple deployments.",
+          "timestamp": "2024-02-03"
+        },
+        {
+          "gateName": "Standard Gate 3",
+          "guestId": 106,
+          "accessCode": "Standard Access Code 3",
+          "action": "Standard Action 3",
+          "vehicleInfo": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards.",
+          "timestamp": "2024-03-05"
+        },
+        {
+          "gateName": "Elite Gate 4",
+          "guestId": 154,
+          "accessCode": "Elite Access Code 4",
+          "action": "Elite Action 4",
+          "vehicleInfo": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics.",
+          "timestamp": "2024-04-07"
+        },
+        {
+          "gateName": "Core Gate 5",
+          "guestId": 102,
+          "accessCode": "Core Access Code 5",
+          "action": "Core Action 5",
+          "vehicleInfo": "Cost-effective strategy focused on sustainable long-term growth.",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth.",
+          "timestamp": "2024-05-09"
+        },
+        {
+          "gateName": "Pro Gate 6",
+          "guestId": 150,
+          "accessCode": "Pro Access Code 6",
+          "action": "Pro Action 6",
+          "vehicleInfo": "High-priority initiative aligned with organizational strategic objectives.",
+          "notes": "High-priority initiative aligned with organizational strategic objectives.",
+          "timestamp": "2024-06-11"
+        },
+        {
+          "gateName": "Essential Gate 7",
+          "guestId": 198,
+          "accessCode": "Essential Access Code 7",
+          "action": "Essential Action 7",
+          "vehicleInfo": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability.",
+          "timestamp": "2024-07-13"
+        },
+        {
+          "gateName": "Primary Gate 8",
+          "guestId": 146,
+          "accessCode": "Primary Access Code 8",
+          "action": "Primary Action 8",
+          "vehicleInfo": "Innovative framework incorporating best practices and emerging technologies.",
+          "notes": "Innovative framework incorporating best practices and emerging technologies.",
+          "timestamp": "2024-08-15"
+        },
+        {
+          "gateName": "Global Gate 9",
+          "guestId": 194,
+          "accessCode": "Global Access Code 9",
+          "action": "Global Action 9",
+          "vehicleInfo": "Scalable architecture built to accommodate rapid expansion and change.",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change.",
+          "timestamp": "2024-09-17"
+        },
+        {
+          "gateName": "Regional Gate 10",
+          "guestId": 242,
+          "accessCode": "Regional Access Code 10",
+          "action": "Regional Action 10",
+          "vehicleInfo": "Enterprise-grade solution with robust security and compliance features.",
+          "notes": "Enterprise-grade solution with robust security and compliance features.",
+          "timestamp": "2024-10-19"
+        },
+        {
+          "gateName": "Custom Gate 11",
+          "guestId": 190,
+          "accessCode": "Custom Access Code 11",
+          "action": "Custom Action 11",
+          "vehicleInfo": "Integrated platform connecting multiple systems for seamless operations.",
+          "notes": "Integrated platform connecting multiple systems for seamless operations.",
+          "timestamp": "2024-11-21"
+        },
+        {
+          "gateName": "Smart Gate 12",
+          "guestId": 238,
+          "accessCode": "Smart Access Code 12",
+          "action": "Smart Action 12",
+          "vehicleInfo": "Automated workflow reducing manual intervention and human error.",
+          "notes": "Automated workflow reducing manual intervention and human error.",
+          "timestamp": "2024-12-23"
+        },
+        {
+          "gateName": "Rapid Gate 13",
+          "guestId": 286,
+          "accessCode": "Rapid Access Code 13",
+          "action": "Rapid Action 13",
+          "vehicleInfo": "Real-time monitoring system with intelligent alerting capabilities.",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities.",
+          "timestamp": "2024-01-25"
+        },
+        {
+          "gateName": "Secure Gate 14",
+          "guestId": 234,
+          "accessCode": "Secure Access Code 14",
+          "action": "Secure Action 14",
+          "vehicleInfo": "Customizable module adaptable to diverse operational requirements.",
+          "notes": "Customizable module adaptable to diverse operational requirements.",
+          "timestamp": "2024-02-27"
+        },
+        {
+          "gateName": "Modern Gate 15",
+          "guestId": 282,
+          "accessCode": "Modern Access Code 15",
+          "action": "Modern Action 15",
+          "vehicleInfo": "Performance-optimized design achieving superior throughput and reliability.",
+          "notes": "Performance-optimized design achieving superior throughput and reliability.",
+          "timestamp": "2024-03-01"
+        }
+      ]
+    },
+    {
+      "modelName": "MailPackage",
+      "routeKey": "mail-packages",
+      "label": "Mail Package",
+      "icon": "bell",
+      "aiFunction": "analyzeMailPackage",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Mail Package data. The data includes: Guest Id, Type, Sender, Tracking Number, Status, Received Date, Picked Up Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "guestId",
+          "label": "Guest Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "sender",
+          "label": "Sender",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "trackingNumber",
+          "label": "Tracking Number",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "receivedDate",
+          "label": "Received Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "pickedUpDate",
+          "label": "Picked Up Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "guestId": 10,
+          "type": "Category A",
+          "sender": "Advanced Sender 1",
+          "trackingNumber": "Advanced Tracking Number 1",
+          "status": "active",
+          "receivedDate": "2024-01-01",
+          "pickedUpDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "guestId": 58,
+          "type": "Category B",
+          "sender": "Premium Sender 2",
+          "trackingNumber": "Premium Tracking Number 2",
+          "status": "pending",
+          "receivedDate": "2024-02-03",
+          "pickedUpDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "guestId": 106,
+          "type": "Category C",
+          "sender": "Standard Sender 3",
+          "trackingNumber": "Standard Tracking Number 3",
+          "status": "in_progress",
+          "receivedDate": "2024-03-05",
+          "pickedUpDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "guestId": 154,
+          "type": "Category D",
+          "sender": "Elite Sender 4",
+          "trackingNumber": "Elite Tracking Number 4",
+          "status": "completed",
+          "receivedDate": "2024-04-07",
+          "pickedUpDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "guestId": 102,
+          "type": "Category E",
+          "sender": "Core Sender 5",
+          "trackingNumber": "Core Tracking Number 5",
+          "status": "under_review",
+          "receivedDate": "2024-05-09",
+          "pickedUpDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "guestId": 150,
+          "type": "Premium Tier",
+          "sender": "Pro Sender 6",
+          "trackingNumber": "Pro Tracking Number 6",
+          "status": "approved",
+          "receivedDate": "2024-06-11",
+          "pickedUpDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "guestId": 198,
+          "type": "Standard Tier",
+          "sender": "Essential Sender 7",
+          "trackingNumber": "Essential Tracking Number 7",
+          "status": "active",
+          "receivedDate": "2024-07-13",
+          "pickedUpDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "guestId": 146,
+          "type": "Basic Tier",
+          "sender": "Primary Sender 8",
+          "trackingNumber": "Primary Tracking Number 8",
+          "status": "active",
+          "receivedDate": "2024-08-15",
+          "pickedUpDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "guestId": 194,
+          "type": "Enterprise",
+          "sender": "Global Sender 9",
+          "trackingNumber": "Global Tracking Number 9",
+          "status": "active",
+          "receivedDate": "2024-09-17",
+          "pickedUpDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "guestId": 242,
+          "type": "Starter",
+          "sender": "Regional Sender 10",
+          "trackingNumber": "Regional Tracking Number 10",
+          "status": "pending",
+          "receivedDate": "2024-10-19",
+          "pickedUpDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "guestId": 190,
+          "type": "Growth",
+          "sender": "Custom Sender 11",
+          "trackingNumber": "Custom Tracking Number 11",
+          "status": "completed",
+          "receivedDate": "2024-11-21",
+          "pickedUpDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "guestId": 238,
+          "type": "Scale",
+          "sender": "Smart Sender 12",
+          "trackingNumber": "Smart Tracking Number 12",
+          "status": "active",
+          "receivedDate": "2024-12-23",
+          "pickedUpDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "guestId": 286,
+          "type": "Foundation",
+          "sender": "Rapid Sender 13",
+          "trackingNumber": "Rapid Tracking Number 13",
+          "status": "in_progress",
+          "receivedDate": "2024-01-25",
+          "pickedUpDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "guestId": 234,
+          "type": "Advanced",
+          "sender": "Secure Sender 14",
+          "trackingNumber": "Secure Tracking Number 14",
+          "status": "active",
+          "receivedDate": "2024-02-27",
+          "pickedUpDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "guestId": 282,
+          "type": "Professional",
+          "sender": "Modern Sender 15",
+          "trackingNumber": "Modern Tracking Number 15",
+          "status": "approved",
+          "receivedDate": "2024-03-01",
+          "pickedUpDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "PropaneSale",
+      "routeKey": "propane-sales",
+      "label": "Propane Sale",
+      "icon": "book",
+      "aiFunction": "analyzePropaneSale",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Propane Sale data. The data includes: Guest Id, Gallons, Price Per Gallon, Total, Tank Size, Sale Date, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "guestId",
+          "label": "Guest Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "gallons",
+          "label": "Gallons",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "pricePerGallon",
+          "label": "Price Per Gallon",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "total",
+          "label": "Total",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "tankSize",
+          "label": "Tank Size",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "saleDate",
+          "label": "Sale Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "guestId": 10,
+          "gallons": -120,
+          "pricePerGallon": 500,
+          "total": 10,
+          "tankSize": "Advanced Tank Size 1",
+          "saleDate": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "guestId": 58,
+          "gallons": -117,
+          "pricePerGallon": 2481,
+          "total": 71.7,
+          "tankSize": "Premium Tank Size 2",
+          "saleDate": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "guestId": 106,
+          "gallons": -114,
+          "pricePerGallon": 4462,
+          "total": 33.4,
+          "tankSize": "Standard Tank Size 3",
+          "saleDate": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "guestId": 154,
+          "gallons": -111,
+          "pricePerGallon": 6443,
+          "total": 95.1,
+          "tankSize": "Elite Tank Size 4",
+          "saleDate": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "guestId": 102,
+          "gallons": -108,
+          "pricePerGallon": 8424,
+          "total": 56.8,
+          "tankSize": "Core Tank Size 5",
+          "saleDate": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "guestId": 150,
+          "gallons": -105,
+          "pricePerGallon": 10405,
+          "total": 118.5,
+          "tankSize": "Pro Tank Size 6",
+          "saleDate": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "guestId": 198,
+          "gallons": -102,
+          "pricePerGallon": 12386,
+          "total": 80.2,
+          "tankSize": "Essential Tank Size 7",
+          "saleDate": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "guestId": 146,
+          "gallons": -99,
+          "pricePerGallon": 9367,
+          "total": 141.9,
+          "tankSize": "Primary Tank Size 8",
+          "saleDate": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "guestId": 194,
+          "gallons": -96,
+          "pricePerGallon": 11348,
+          "total": 103.6,
+          "tankSize": "Global Tank Size 9",
+          "saleDate": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "guestId": 242,
+          "gallons": -93,
+          "pricePerGallon": 13329,
+          "total": 165.3,
+          "tankSize": "Regional Tank Size 10",
+          "saleDate": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "guestId": 190,
+          "gallons": -90,
+          "pricePerGallon": 15310,
+          "total": 127,
+          "tankSize": "Custom Tank Size 11",
+          "saleDate": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "guestId": 238,
+          "gallons": -87,
+          "pricePerGallon": 17291,
+          "total": 188.7,
+          "tankSize": "Smart Tank Size 12",
+          "saleDate": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "guestId": 286,
+          "gallons": -84,
+          "pricePerGallon": 19272,
+          "total": 150.4,
+          "tankSize": "Rapid Tank Size 13",
+          "saleDate": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "guestId": 234,
+          "gallons": -81,
+          "pricePerGallon": 21253,
+          "total": 212.1,
+          "tankSize": "Secure Tank Size 14",
+          "saleDate": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "guestId": 282,
+          "gallons": -78,
+          "pricePerGallon": 18234,
+          "total": 173.8,
+          "tankSize": "Modern Tank Size 15",
+          "saleDate": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "FirewoodInventory",
+      "routeKey": "firewood-inventorys",
+      "label": "Firewood Inventory",
+      "icon": "calendar",
+      "aiFunction": "analyzeFirewoodInventory",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Firewood Inventory data. The data includes: Wood Type, Quantity Bundles, Price Per Bundle, Supplier, Last Restocked, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "woodType",
+          "label": "Wood Type",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "quantityBundles",
+          "label": "Quantity Bundles",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "pricePerBundle",
+          "label": "Price Per Bundle",
+          "type": "DECIMAL",
+          "formType": "number"
+        },
+        {
+          "key": "supplier",
+          "label": "Supplier",
+          "type": "STRING",
+          "formType": "text"
+        },
+        {
+          "key": "lastRestocked",
+          "label": "Last Restocked",
+          "type": "DATEONLY",
+          "formType": "date"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "woodType": "Category A",
+          "quantityBundles": 139,
+          "pricePerBundle": 500,
+          "supplier": "Advanced Supplier 1",
+          "lastRestocked": "2024-01-01",
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "woodType": "Category B",
+          "quantityBundles": 41,
+          "pricePerBundle": 2481,
+          "supplier": "Premium Supplier 2",
+          "lastRestocked": "2024-02-03",
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "woodType": "Category C",
+          "quantityBundles": 151,
+          "pricePerBundle": 4462,
+          "supplier": "Standard Supplier 3",
+          "lastRestocked": "2024-03-05",
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "woodType": "Category D",
+          "quantityBundles": 206,
+          "pricePerBundle": 6443,
+          "supplier": "Elite Supplier 4",
+          "lastRestocked": "2024-04-07",
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "woodType": "Category E",
+          "quantityBundles": 51,
+          "pricePerBundle": 8424,
+          "supplier": "Core Supplier 5",
+          "lastRestocked": "2024-05-09",
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "woodType": "Premium Tier",
+          "quantityBundles": 145,
+          "pricePerBundle": 10405,
+          "supplier": "Pro Supplier 6",
+          "lastRestocked": "2024-06-11",
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "woodType": "Standard Tier",
+          "quantityBundles": 109,
+          "pricePerBundle": 12386,
+          "supplier": "Essential Supplier 7",
+          "lastRestocked": "2024-07-13",
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "woodType": "Basic Tier",
+          "quantityBundles": 211,
+          "pricePerBundle": 9367,
+          "supplier": "Primary Supplier 8",
+          "lastRestocked": "2024-08-15",
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "woodType": "Enterprise",
+          "quantityBundles": 229,
+          "pricePerBundle": 11348,
+          "supplier": "Global Supplier 9",
+          "lastRestocked": "2024-09-17",
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "woodType": "Starter",
+          "quantityBundles": 168,
+          "pricePerBundle": 13329,
+          "supplier": "Regional Supplier 10",
+          "lastRestocked": "2024-10-19",
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "woodType": "Growth",
+          "quantityBundles": 171,
+          "pricePerBundle": 15310,
+          "supplier": "Custom Supplier 11",
+          "lastRestocked": "2024-11-21",
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "woodType": "Scale",
+          "quantityBundles": 92,
+          "pricePerBundle": 17291,
+          "supplier": "Smart Supplier 12",
+          "lastRestocked": "2024-12-23",
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "woodType": "Foundation",
+          "quantityBundles": 232,
+          "pricePerBundle": 19272,
+          "supplier": "Rapid Supplier 13",
+          "lastRestocked": "2024-01-25",
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "woodType": "Advanced",
+          "quantityBundles": 160,
+          "pricePerBundle": 21253,
+          "supplier": "Secure Supplier 14",
+          "lastRestocked": "2024-02-27",
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "woodType": "Professional",
+          "quantityBundles": 234,
+          "pricePerBundle": 18234,
+          "supplier": "Modern Supplier 15",
+          "lastRestocked": "2024-03-01",
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    },
+    {
+      "modelName": "DumpStationLog",
+      "routeKey": "dump-station-logs",
+      "label": "Dump Station Log",
+      "icon": "check-circle",
+      "aiFunction": "analyzeDumpStationLog",
+      "aiPrompt": "You are an AI analyst for A I R V Park Campground Manager. Analyze the provided Dump Station Log data. The data includes: Site Id, Guest Id, Station Number, Usage Date, Duration Minutes, Notes. Provide insights, recommendations, identify patterns, flag potential issues, and suggest optimizations. Return a structured JSON response with sections for summary, key_metrics, recommendations, and risk_factors.",
+      "fields": [
+        {
+          "key": "siteId",
+          "label": "Site Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "guestId",
+          "label": "Guest Id",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "stationNumber",
+          "label": "Station Number",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "usageDate",
+          "label": "Usage Date",
+          "type": "DATE",
+          "formType": "date"
+        },
+        {
+          "key": "durationMinutes",
+          "label": "Duration Minutes",
+          "type": "INTEGER",
+          "formType": "number"
+        },
+        {
+          "key": "notes",
+          "label": "Notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "siteId": 10,
+          "guestId": 10,
+          "stationNumber": 71,
+          "usageDate": "2024-01-01",
+          "durationMinutes": 10,
+          "notes": "Comprehensive solution designed for optimal performance and efficiency."
+        },
+        {
+          "siteId": 58,
+          "guestId": 58,
+          "stationNumber": 14,
+          "usageDate": "2024-02-03",
+          "durationMinutes": 58,
+          "notes": "Industry-leading approach with proven results across multiple deployments."
+        },
+        {
+          "siteId": 106,
+          "guestId": 106,
+          "stationNumber": 20,
+          "usageDate": "2024-03-05",
+          "durationMinutes": 106,
+          "notes": "Streamlined process that reduces overhead while maintaining quality standards."
+        },
+        {
+          "siteId": 154,
+          "guestId": 154,
+          "stationNumber": 173,
+          "usageDate": "2024-04-07",
+          "durationMinutes": 154,
+          "notes": "Next-generation implementation leveraging AI-driven insights and analytics."
+        },
+        {
+          "siteId": 102,
+          "guestId": 102,
+          "stationNumber": 212,
+          "usageDate": "2024-05-09",
+          "durationMinutes": 102,
+          "notes": "Cost-effective strategy focused on sustainable long-term growth."
+        },
+        {
+          "siteId": 150,
+          "guestId": 150,
+          "stationNumber": 86,
+          "usageDate": "2024-06-11",
+          "durationMinutes": 150,
+          "notes": "High-priority initiative aligned with organizational strategic objectives."
+        },
+        {
+          "siteId": 198,
+          "guestId": 198,
+          "stationNumber": 75,
+          "usageDate": "2024-07-13",
+          "durationMinutes": 198,
+          "notes": "Data-driven methodology ensuring measurable outcomes and accountability."
+        },
+        {
+          "siteId": 146,
+          "guestId": 146,
+          "stationNumber": 67,
+          "usageDate": "2024-08-15",
+          "durationMinutes": 146,
+          "notes": "Innovative framework incorporating best practices and emerging technologies."
+        },
+        {
+          "siteId": 194,
+          "guestId": 194,
+          "stationNumber": 100,
+          "usageDate": "2024-09-17",
+          "durationMinutes": 194,
+          "notes": "Scalable architecture built to accommodate rapid expansion and change."
+        },
+        {
+          "siteId": 242,
+          "guestId": 242,
+          "stationNumber": 238,
+          "usageDate": "2024-10-19",
+          "durationMinutes": 242,
+          "notes": "Enterprise-grade solution with robust security and compliance features."
+        },
+        {
+          "siteId": 190,
+          "guestId": 190,
+          "stationNumber": 230,
+          "usageDate": "2024-11-21",
+          "durationMinutes": 190,
+          "notes": "Integrated platform connecting multiple systems for seamless operations."
+        },
+        {
+          "siteId": 238,
+          "guestId": 238,
+          "stationNumber": 200,
+          "usageDate": "2024-12-23",
+          "durationMinutes": 238,
+          "notes": "Automated workflow reducing manual intervention and human error."
+        },
+        {
+          "siteId": 286,
+          "guestId": 286,
+          "stationNumber": 261,
+          "usageDate": "2024-01-25",
+          "durationMinutes": 286,
+          "notes": "Real-time monitoring system with intelligent alerting capabilities."
+        },
+        {
+          "siteId": 234,
+          "guestId": 234,
+          "stationNumber": 225,
+          "usageDate": "2024-02-27",
+          "durationMinutes": 234,
+          "notes": "Customizable module adaptable to diverse operational requirements."
+        },
+        {
+          "siteId": 282,
+          "guestId": 282,
+          "stationNumber": 135,
+          "usageDate": "2024-03-01",
+          "durationMinutes": 282,
+          "notes": "Performance-optimized design achieving superior throughput and reliability."
+        }
+      ]
+    }
+  ]
+}

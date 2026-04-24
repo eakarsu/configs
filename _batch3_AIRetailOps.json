@@ -1,0 +1,3766 @@
+{
+  "appName": "AI Retail Operations Manager",
+  "dbName": "ai_retail_ops",
+  "folderName": "generated/AIRetailOps",
+  "features": [
+    {
+      "label": "Barcode Item",
+      "modelName": "BarcodeItem",
+      "routeKey": "barcodeItems",
+      "icon": "📊",
+      "aiFunction": "analyzeBarcodeItem",
+      "aiPrompt": "Analyze this Barcode Item data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "barcode",
+          "label": "Barcode",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "productName",
+          "label": "Product Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "sku",
+          "label": "Sku",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "manufacturer",
+          "label": "Manufacturer",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "price",
+          "label": "price",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "costPrice",
+          "label": "cost Price",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "weight",
+          "label": "weight",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "dimensions",
+          "label": "Dimensions",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "stockQuantity",
+          "label": "stock Quantity",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "reorderLevel",
+          "label": "reorder Level",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "lastScannedAt",
+          "label": "last Scanned At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "isActive",
+          "label": "is Active",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "barcode": "Alpha Barcode",
+          "productName": "Alpha Product Name",
+          "sku": "Alpha Sku",
+          "category": "Operations",
+          "manufacturer": "Alpha Manufacturer",
+          "price": 221.89,
+          "costPrice": 270.77,
+          "weight": 18.94,
+          "dimensions": "Alpha Dimensions",
+          "stockQuantity": 215,
+          "reorderLevel": 1,
+          "location": "Alpha Location",
+          "lastScannedAt": "2026-05-08",
+          "isActive": true
+        },
+        {
+          "barcode": "Beta Barcode",
+          "productName": "Beta Product Name",
+          "sku": "Beta Sku",
+          "category": "Sales",
+          "manufacturer": "Beta Manufacturer",
+          "price": 600.89,
+          "costPrice": 130.69,
+          "weight": 53.25,
+          "dimensions": "Beta Dimensions",
+          "stockQuantity": 370,
+          "reorderLevel": 2,
+          "location": "Beta Location",
+          "lastScannedAt": "2026-01-08",
+          "isActive": false
+        },
+        {
+          "barcode": "Gamma Barcode",
+          "productName": "Gamma Product Name",
+          "sku": "Gamma Sku",
+          "category": "Marketing",
+          "manufacturer": "Gamma Manufacturer",
+          "price": 221.57,
+          "costPrice": 727.57,
+          "weight": 80.51,
+          "dimensions": "Gamma Dimensions",
+          "stockQuantity": 439,
+          "reorderLevel": 3,
+          "location": "Gamma Location",
+          "lastScannedAt": "2026-10-01",
+          "isActive": true
+        },
+        {
+          "barcode": "Delta Barcode",
+          "productName": "Delta Product Name",
+          "sku": "Delta Sku",
+          "category": "Finance",
+          "manufacturer": "Delta Manufacturer",
+          "price": 81.1,
+          "costPrice": 694.99,
+          "weight": 6.73,
+          "dimensions": "Delta Dimensions",
+          "stockQuantity": 452,
+          "reorderLevel": 4,
+          "location": "Delta Location",
+          "lastScannedAt": "2026-05-14",
+          "isActive": false
+        },
+        {
+          "barcode": "Epsilon Barcode",
+          "productName": "Epsilon Product Name",
+          "sku": "Epsilon Sku",
+          "category": "HR",
+          "manufacturer": "Epsilon Manufacturer",
+          "price": 603.54,
+          "costPrice": 869.11,
+          "weight": 65.99,
+          "dimensions": "Epsilon Dimensions",
+          "stockQuantity": 329,
+          "reorderLevel": 5,
+          "location": "Epsilon Location",
+          "lastScannedAt": "2026-06-08",
+          "isActive": true
+        },
+        {
+          "barcode": "Zeta Barcode",
+          "productName": "Zeta Product Name",
+          "sku": "Zeta Sku",
+          "category": "Engineering",
+          "manufacturer": "Zeta Manufacturer",
+          "price": 903.65,
+          "costPrice": 155.9,
+          "weight": 8.76,
+          "dimensions": "Zeta Dimensions",
+          "stockQuantity": 495,
+          "reorderLevel": 6,
+          "location": "Zeta Location",
+          "lastScannedAt": "2026-07-25",
+          "isActive": false
+        },
+        {
+          "barcode": "Eta Barcode",
+          "productName": "Eta Product Name",
+          "sku": "Eta Sku",
+          "category": "Support",
+          "manufacturer": "Eta Manufacturer",
+          "price": 191.08,
+          "costPrice": 163.64,
+          "weight": 75.51,
+          "dimensions": "Eta Dimensions",
+          "stockQuantity": 162,
+          "reorderLevel": 7,
+          "location": "Eta Location",
+          "lastScannedAt": "2026-12-22",
+          "isActive": true
+        },
+        {
+          "barcode": "Theta Barcode",
+          "productName": "Theta Product Name",
+          "sku": "Theta Sku",
+          "category": "Legal",
+          "manufacturer": "Theta Manufacturer",
+          "price": 30.85,
+          "costPrice": 782.32,
+          "weight": 25.09,
+          "dimensions": "Theta Dimensions",
+          "stockQuantity": 152,
+          "reorderLevel": 8,
+          "location": "Theta Location",
+          "lastScannedAt": "2026-06-23",
+          "isActive": false
+        },
+        {
+          "barcode": "Iota Barcode",
+          "productName": "Iota Product Name",
+          "sku": "Iota Sku",
+          "category": "Admin",
+          "manufacturer": "Iota Manufacturer",
+          "price": 401.08,
+          "costPrice": 235.56,
+          "weight": 81.11,
+          "dimensions": "Iota Dimensions",
+          "stockQuantity": 457,
+          "reorderLevel": 9,
+          "location": "Iota Location",
+          "lastScannedAt": "2026-11-15",
+          "isActive": true
+        },
+        {
+          "barcode": "Kappa Barcode",
+          "productName": "Kappa Product Name",
+          "sku": "Kappa Sku",
+          "category": "Analytics",
+          "manufacturer": "Kappa Manufacturer",
+          "price": 592,
+          "costPrice": 214.64,
+          "weight": 56.27,
+          "dimensions": "Kappa Dimensions",
+          "stockQuantity": 207,
+          "reorderLevel": 10,
+          "location": "Kappa Location",
+          "lastScannedAt": "2026-05-22",
+          "isActive": false
+        },
+        {
+          "barcode": "Lambda Barcode",
+          "productName": "Lambda Product Name",
+          "sku": "Lambda Sku",
+          "category": "Security",
+          "manufacturer": "Lambda Manufacturer",
+          "price": 747.58,
+          "costPrice": 571.82,
+          "weight": 18.26,
+          "dimensions": "Lambda Dimensions",
+          "stockQuantity": 471,
+          "reorderLevel": 11,
+          "location": "Lambda Location",
+          "lastScannedAt": "2026-05-21",
+          "isActive": true
+        },
+        {
+          "barcode": "Mu Barcode",
+          "productName": "Mu Product Name",
+          "sku": "Mu Sku",
+          "category": "Compliance",
+          "manufacturer": "Mu Manufacturer",
+          "price": 683.73,
+          "costPrice": 620.4,
+          "weight": 50.1,
+          "dimensions": "Mu Dimensions",
+          "stockQuantity": 2,
+          "reorderLevel": 12,
+          "location": "Mu Location",
+          "lastScannedAt": "2026-06-08",
+          "isActive": false
+        },
+        {
+          "barcode": "Nu Barcode",
+          "productName": "Nu Product Name",
+          "sku": "Nu Sku",
+          "category": "Infrastructure",
+          "manufacturer": "Nu Manufacturer",
+          "price": 836.34,
+          "costPrice": 336.57,
+          "weight": 73.19,
+          "dimensions": "Nu Dimensions",
+          "stockQuantity": 34,
+          "reorderLevel": 13,
+          "location": "Nu Location",
+          "lastScannedAt": "2026-03-25",
+          "isActive": true
+        },
+        {
+          "barcode": "Xi Barcode",
+          "productName": "Xi Product Name",
+          "sku": "Xi Sku",
+          "category": "Product",
+          "manufacturer": "Xi Manufacturer",
+          "price": 754.41,
+          "costPrice": 370.91,
+          "weight": 91.57,
+          "dimensions": "Xi Dimensions",
+          "stockQuantity": 423,
+          "reorderLevel": 14,
+          "location": "Xi Location",
+          "lastScannedAt": "2026-12-21",
+          "isActive": false
+        },
+        {
+          "barcode": "Omicron Barcode",
+          "productName": "Omicron Product Name",
+          "sku": "Omicron Sku",
+          "category": "Research",
+          "manufacturer": "Omicron Manufacturer",
+          "price": 765.35,
+          "costPrice": 838.87,
+          "weight": 63.05,
+          "dimensions": "Omicron Dimensions",
+          "stockQuantity": 169,
+          "reorderLevel": 15,
+          "location": "Omicron Location",
+          "lastScannedAt": "2026-11-08",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "label": "SKU Manager",
+      "modelName": "SKUManager",
+      "routeKey": "skuManagers",
+      "icon": "🏷️",
+      "aiFunction": "analyzeSKUManager",
+      "aiPrompt": "Analyze this SKU Manager data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "sku",
+          "label": "Sku",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "productName",
+          "label": "Product Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "variant",
+          "label": "Variant",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "color",
+          "label": "Color",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "size",
+          "label": "Size",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "price",
+          "label": "price",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "stockQuantity",
+          "label": "stock Quantity",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "warehouseLocation",
+          "label": "Warehouse Location",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "supplier",
+          "label": "Supplier",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "lastUpdated",
+          "label": "last Updated",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "imageUrl",
+          "label": "Image Url",
+          "type": "STRING",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "sku": "Alpha Sku",
+          "productName": "Alpha Product Name",
+          "variant": "Alpha Variant",
+          "color": "#3B82F6",
+          "size": "Alpha Size",
+          "price": 723.65,
+          "stockQuantity": 204,
+          "warehouseLocation": "Alpha Warehouse Location",
+          "supplier": "Alpha Supplier",
+          "status": "Active",
+          "lastUpdated": "2026-09-09",
+          "imageUrl": "https://alpha.example.com"
+        },
+        {
+          "sku": "Beta Sku",
+          "productName": "Beta Product Name",
+          "variant": "Beta Variant",
+          "color": "#EF4444",
+          "size": "Beta Size",
+          "price": 343.84,
+          "stockQuantity": 402,
+          "warehouseLocation": "Beta Warehouse Location",
+          "supplier": "Beta Supplier",
+          "status": "Pending",
+          "lastUpdated": "2026-01-15",
+          "imageUrl": "https://beta.example.com"
+        },
+        {
+          "sku": "Gamma Sku",
+          "productName": "Gamma Product Name",
+          "variant": "Gamma Variant",
+          "color": "#10B981",
+          "size": "Gamma Size",
+          "price": 693.92,
+          "stockQuantity": 134,
+          "warehouseLocation": "Gamma Warehouse Location",
+          "supplier": "Gamma Supplier",
+          "status": "Review",
+          "lastUpdated": "2026-05-20",
+          "imageUrl": "https://gamma.example.com"
+        },
+        {
+          "sku": "Delta Sku",
+          "productName": "Delta Product Name",
+          "variant": "Delta Variant",
+          "color": "#F59E0B",
+          "size": "Delta Size",
+          "price": 274.07,
+          "stockQuantity": 221,
+          "warehouseLocation": "Delta Warehouse Location",
+          "supplier": "Delta Supplier",
+          "status": "Approved",
+          "lastUpdated": "2026-07-24",
+          "imageUrl": "https://delta.example.com"
+        },
+        {
+          "sku": "Epsilon Sku",
+          "productName": "Epsilon Product Name",
+          "variant": "Epsilon Variant",
+          "color": "#8B5CF6",
+          "size": "Epsilon Size",
+          "price": 776.59,
+          "stockQuantity": 168,
+          "warehouseLocation": "Epsilon Warehouse Location",
+          "supplier": "Epsilon Supplier",
+          "status": "Draft",
+          "lastUpdated": "2026-05-26",
+          "imageUrl": "https://epsilon.example.com"
+        },
+        {
+          "sku": "Zeta Sku",
+          "productName": "Zeta Product Name",
+          "variant": "Zeta Variant",
+          "color": "#EC4899",
+          "size": "Zeta Size",
+          "price": 193.6,
+          "stockQuantity": 491,
+          "warehouseLocation": "Zeta Warehouse Location",
+          "supplier": "Zeta Supplier",
+          "status": "Live",
+          "lastUpdated": "2026-11-12",
+          "imageUrl": "https://zeta.example.com"
+        },
+        {
+          "sku": "Eta Sku",
+          "productName": "Eta Product Name",
+          "variant": "Eta Variant",
+          "color": "#06B6D4",
+          "size": "Eta Size",
+          "price": 127.66,
+          "stockQuantity": 104,
+          "warehouseLocation": "Eta Warehouse Location",
+          "supplier": "Eta Supplier",
+          "status": "Paused",
+          "lastUpdated": "2026-06-13",
+          "imageUrl": "https://eta.example.com"
+        },
+        {
+          "sku": "Theta Sku",
+          "productName": "Theta Product Name",
+          "variant": "Theta Variant",
+          "color": "#F97316",
+          "size": "Theta Size",
+          "price": 601.83,
+          "stockQuantity": 488,
+          "warehouseLocation": "Theta Warehouse Location",
+          "supplier": "Theta Supplier",
+          "status": "Archived",
+          "lastUpdated": "2026-05-06",
+          "imageUrl": "https://theta.example.com"
+        },
+        {
+          "sku": "Iota Sku",
+          "productName": "Iota Product Name",
+          "variant": "Iota Variant",
+          "color": "#6366F1",
+          "size": "Iota Size",
+          "price": 305.61,
+          "stockQuantity": 115,
+          "warehouseLocation": "Iota Warehouse Location",
+          "supplier": "Iota Supplier",
+          "status": "Beta",
+          "lastUpdated": "2026-10-05",
+          "imageUrl": "https://iota.example.com"
+        },
+        {
+          "sku": "Kappa Sku",
+          "productName": "Kappa Product Name",
+          "variant": "Kappa Variant",
+          "color": "#14B8A6",
+          "size": "Kappa Size",
+          "price": 200.85,
+          "stockQuantity": 87,
+          "warehouseLocation": "Kappa Warehouse Location",
+          "supplier": "Kappa Supplier",
+          "status": "GA",
+          "lastUpdated": "2026-11-19",
+          "imageUrl": "https://kappa.example.com"
+        },
+        {
+          "sku": "Lambda Sku",
+          "productName": "Lambda Product Name",
+          "variant": "Lambda Variant",
+          "color": "#D946EF",
+          "size": "Lambda Size",
+          "price": 835.24,
+          "stockQuantity": 262,
+          "warehouseLocation": "Lambda Warehouse Location",
+          "supplier": "Lambda Supplier",
+          "status": "Completed",
+          "lastUpdated": "2026-01-20",
+          "imageUrl": "https://lambda.example.com"
+        },
+        {
+          "sku": "Mu Sku",
+          "productName": "Mu Product Name",
+          "variant": "Mu Variant",
+          "color": "#0EA5E9",
+          "size": "Mu Size",
+          "price": 23.25,
+          "stockQuantity": 235,
+          "warehouseLocation": "Mu Warehouse Location",
+          "supplier": "Mu Supplier",
+          "status": "In Progress",
+          "lastUpdated": "2026-07-11",
+          "imageUrl": "https://mu.example.com"
+        },
+        {
+          "sku": "Nu Sku",
+          "productName": "Nu Product Name",
+          "variant": "Nu Variant",
+          "color": "#84CC16",
+          "size": "Nu Size",
+          "price": 281.61,
+          "stockQuantity": 211,
+          "warehouseLocation": "Nu Warehouse Location",
+          "supplier": "Nu Supplier",
+          "status": "Scheduled",
+          "lastUpdated": "2026-07-05",
+          "imageUrl": "https://nu.example.com"
+        },
+        {
+          "sku": "Xi Sku",
+          "productName": "Xi Product Name",
+          "variant": "Xi Variant",
+          "color": "#FB923C",
+          "size": "Xi Size",
+          "price": 772.33,
+          "stockQuantity": 344,
+          "warehouseLocation": "Xi Warehouse Location",
+          "supplier": "Xi Supplier",
+          "status": "Failed",
+          "lastUpdated": "2026-12-17",
+          "imageUrl": "https://xi.example.com"
+        },
+        {
+          "sku": "Omicron Sku",
+          "productName": "Omicron Product Name",
+          "variant": "Omicron Variant",
+          "color": "#A855F7",
+          "size": "Omicron Size",
+          "price": 438.16,
+          "stockQuantity": 367,
+          "warehouseLocation": "Omicron Warehouse Location",
+          "supplier": "Omicron Supplier",
+          "status": "Cancelled",
+          "lastUpdated": "2026-09-01",
+          "imageUrl": "https://omicron.example.com"
+        }
+      ]
+    },
+    {
+      "label": "Inventory Scan",
+      "modelName": "InventoryScan",
+      "routeKey": "inventoryScans",
+      "icon": "📱",
+      "aiFunction": "analyzeInventoryScan",
+      "aiPrompt": "Analyze this Inventory Scan data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "scanId",
+          "label": "Scan Id",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "location",
+          "label": "Location",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "scannedBy",
+          "label": "Scanned By",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "itemCount",
+          "label": "item Count",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "discrepancies",
+          "label": "discrepancies",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "startedAt",
+          "label": "started At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "completedAt",
+          "label": "completed At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "scanType",
+          "label": "Scan Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "accuracy",
+          "label": "accuracy",
+          "type": "FLOAT",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "scanId": "Alpha Scan Id",
+          "location": "Alpha Location",
+          "scannedBy": "Alpha Scanned By",
+          "itemCount": 46,
+          "discrepancies": 439,
+          "status": "Active",
+          "startedAt": "2026-10-10",
+          "completedAt": "2026-04-25",
+          "notes": "Alpha notes — comprehensive details for enterprise use case with actionable insights.",
+          "scanType": "Alpha Type",
+          "accuracy": 99.6
+        },
+        {
+          "scanId": "Beta Scan Id",
+          "location": "Beta Location",
+          "scannedBy": "Beta Scanned By",
+          "itemCount": 409,
+          "discrepancies": 833,
+          "status": "Pending",
+          "startedAt": "2026-01-09",
+          "completedAt": "2026-11-07",
+          "notes": "Beta notes — comprehensive details for startup use case with actionable insights.",
+          "scanType": "Beta Type",
+          "accuracy": 48.3
+        },
+        {
+          "scanId": "Gamma Scan Id",
+          "location": "Gamma Location",
+          "scannedBy": "Gamma Scanned By",
+          "itemCount": 319,
+          "discrepancies": 767,
+          "status": "Review",
+          "startedAt": "2026-11-27",
+          "completedAt": "2026-04-10",
+          "notes": "Gamma notes — comprehensive details for smb use case with actionable insights.",
+          "scanType": "Gamma Type",
+          "accuracy": 52
+        },
+        {
+          "scanId": "Delta Scan Id",
+          "location": "Delta Location",
+          "scannedBy": "Delta Scanned By",
+          "itemCount": 229,
+          "discrepancies": 77,
+          "status": "Approved",
+          "startedAt": "2026-02-26",
+          "completedAt": "2026-12-20",
+          "notes": "Delta notes — comprehensive details for agency use case with actionable insights.",
+          "scanType": "Delta Type",
+          "accuracy": 76.1
+        },
+        {
+          "scanId": "Epsilon Scan Id",
+          "location": "Epsilon Location",
+          "scannedBy": "Epsilon Scanned By",
+          "itemCount": 414,
+          "discrepancies": 515,
+          "status": "Draft",
+          "startedAt": "2026-08-19",
+          "completedAt": "2026-08-25",
+          "notes": "Epsilon notes — comprehensive details for freelancer use case with actionable insights.",
+          "scanType": "Epsilon Type",
+          "accuracy": 84
+        },
+        {
+          "scanId": "Zeta Scan Id",
+          "location": "Zeta Location",
+          "scannedBy": "Zeta Scanned By",
+          "itemCount": 495,
+          "discrepancies": 322,
+          "status": "Live",
+          "startedAt": "2026-05-16",
+          "completedAt": "2026-04-16",
+          "notes": "Zeta notes — comprehensive details for government use case with actionable insights.",
+          "scanType": "Zeta Type",
+          "accuracy": 79.7
+        },
+        {
+          "scanId": "Eta Scan Id",
+          "location": "Eta Location",
+          "scannedBy": "Eta Scanned By",
+          "itemCount": 128,
+          "discrepancies": 95,
+          "status": "Paused",
+          "startedAt": "2026-03-27",
+          "completedAt": "2026-06-17",
+          "notes": "Eta notes — comprehensive details for nonprofit use case with actionable insights.",
+          "scanType": "Eta Type",
+          "accuracy": 51.7
+        },
+        {
+          "scanId": "Theta Scan Id",
+          "location": "Theta Location",
+          "scannedBy": "Theta Scanned By",
+          "itemCount": 287,
+          "discrepancies": 146,
+          "status": "Archived",
+          "startedAt": "2026-08-22",
+          "completedAt": "2026-07-11",
+          "notes": "Theta notes — comprehensive details for healthcare use case with actionable insights.",
+          "scanType": "Theta Type",
+          "accuracy": 72.5
+        },
+        {
+          "scanId": "Iota Scan Id",
+          "location": "Iota Location",
+          "scannedBy": "Iota Scanned By",
+          "itemCount": 129,
+          "discrepancies": 902,
+          "status": "Beta",
+          "startedAt": "2026-01-23",
+          "completedAt": "2026-06-20",
+          "notes": "Iota notes — comprehensive details for finance use case with actionable insights.",
+          "scanType": "Iota Type",
+          "accuracy": 87.3
+        },
+        {
+          "scanId": "Kappa Scan Id",
+          "location": "Kappa Location",
+          "scannedBy": "Kappa Scanned By",
+          "itemCount": 485,
+          "discrepancies": 58,
+          "status": "GA",
+          "startedAt": "2026-08-13",
+          "completedAt": "2026-01-18",
+          "notes": "Kappa notes — comprehensive details for education use case with actionable insights.",
+          "scanType": "Kappa Type",
+          "accuracy": 66.3
+        },
+        {
+          "scanId": "Lambda Scan Id",
+          "location": "Lambda Location",
+          "scannedBy": "Lambda Scanned By",
+          "itemCount": 383,
+          "discrepancies": 856,
+          "status": "Completed",
+          "startedAt": "2026-10-25",
+          "completedAt": "2026-02-22",
+          "notes": "Lambda notes — comprehensive details for retail use case with actionable insights.",
+          "scanType": "Lambda Type",
+          "accuracy": 45
+        },
+        {
+          "scanId": "Mu Scan Id",
+          "location": "Mu Location",
+          "scannedBy": "Mu Scanned By",
+          "itemCount": 240,
+          "discrepancies": 484,
+          "status": "In Progress",
+          "startedAt": "2026-01-07",
+          "completedAt": "2026-10-01",
+          "notes": "Mu notes — comprehensive details for tech use case with actionable insights.",
+          "scanType": "Mu Type",
+          "accuracy": 71.7
+        },
+        {
+          "scanId": "Nu Scan Id",
+          "location": "Nu Location",
+          "scannedBy": "Nu Scanned By",
+          "itemCount": 145,
+          "discrepancies": 671,
+          "status": "Scheduled",
+          "startedAt": "2026-06-04",
+          "completedAt": "2026-06-04",
+          "notes": "Nu notes — comprehensive details for legal use case with actionable insights.",
+          "scanType": "Nu Type",
+          "accuracy": 48.8
+        },
+        {
+          "scanId": "Xi Scan Id",
+          "location": "Xi Location",
+          "scannedBy": "Xi Scanned By",
+          "itemCount": 371,
+          "discrepancies": 772,
+          "status": "Failed",
+          "startedAt": "2026-07-07",
+          "completedAt": "2026-01-20",
+          "notes": "Xi notes — comprehensive details for real estate use case with actionable insights.",
+          "scanType": "Xi Type",
+          "accuracy": 91.2
+        },
+        {
+          "scanId": "Omicron Scan Id",
+          "location": "Omicron Location",
+          "scannedBy": "Omicron Scanned By",
+          "itemCount": 237,
+          "discrepancies": 819,
+          "status": "Cancelled",
+          "startedAt": "2026-07-15",
+          "completedAt": "2026-03-05",
+          "notes": "Omicron notes — comprehensive details for manufacturing use case with actionable insights.",
+          "scanType": "Omicron Type",
+          "accuracy": 52.2
+        }
+      ]
+    },
+    {
+      "label": "Return Request",
+      "modelName": "ReturnRequest",
+      "routeKey": "returnRequests",
+      "icon": "↩️",
+      "aiFunction": "analyzeReturnRequest",
+      "aiPrompt": "Analyze this Return Request data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "returnNumber",
+          "label": "Return Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "orderNumber",
+          "label": "Order Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "productName",
+          "label": "Product Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "reason",
+          "label": "reason",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "returnType",
+          "label": "Return Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "quantity",
+          "label": "quantity",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "refundAmount",
+          "label": "refund Amount",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "requestedAt",
+          "label": "requested At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "processedAt",
+          "label": "processed At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "condition",
+          "label": "Condition",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "trackingNumber",
+          "label": "Tracking Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "aiApproval",
+          "label": "ai Approval",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "returnNumber": "Alpha Return Number",
+          "orderNumber": "Alpha Order Number",
+          "customerName": "Alpha Customer Name",
+          "productName": "Alpha Product Name",
+          "reason": "Alpha reason content for enterprise scenario.",
+          "returnType": "Alpha Type",
+          "quantity": 402,
+          "refundAmount": 317.8,
+          "status": "Active",
+          "requestedAt": "2026-02-20",
+          "processedAt": "2026-01-08",
+          "condition": "Alpha Condition",
+          "trackingNumber": "Alpha Tracking Number",
+          "aiApproval": "Alpha ai approval content for enterprise scenario."
+        },
+        {
+          "returnNumber": "Beta Return Number",
+          "orderNumber": "Beta Order Number",
+          "customerName": "Beta Customer Name",
+          "productName": "Beta Product Name",
+          "reason": "Beta reason content for startup scenario.",
+          "returnType": "Beta Type",
+          "quantity": 226,
+          "refundAmount": 646.97,
+          "status": "Pending",
+          "requestedAt": "2026-06-12",
+          "processedAt": "2026-05-09",
+          "condition": "Beta Condition",
+          "trackingNumber": "Beta Tracking Number",
+          "aiApproval": "Beta ai approval content for startup scenario."
+        },
+        {
+          "returnNumber": "Gamma Return Number",
+          "orderNumber": "Gamma Order Number",
+          "customerName": "Gamma Customer Name",
+          "productName": "Gamma Product Name",
+          "reason": "Gamma reason content for smb scenario.",
+          "returnType": "Gamma Type",
+          "quantity": 467,
+          "refundAmount": 31.21,
+          "status": "Review",
+          "requestedAt": "2026-09-15",
+          "processedAt": "2026-09-11",
+          "condition": "Gamma Condition",
+          "trackingNumber": "Gamma Tracking Number",
+          "aiApproval": "Gamma ai approval content for smb scenario."
+        },
+        {
+          "returnNumber": "Delta Return Number",
+          "orderNumber": "Delta Order Number",
+          "customerName": "Delta Customer Name",
+          "productName": "Delta Product Name",
+          "reason": "Delta reason content for agency scenario.",
+          "returnType": "Delta Type",
+          "quantity": 295,
+          "refundAmount": 312.1,
+          "status": "Approved",
+          "requestedAt": "2026-08-26",
+          "processedAt": "2026-06-04",
+          "condition": "Delta Condition",
+          "trackingNumber": "Delta Tracking Number",
+          "aiApproval": "Delta ai approval content for agency scenario."
+        },
+        {
+          "returnNumber": "Epsilon Return Number",
+          "orderNumber": "Epsilon Order Number",
+          "customerName": "Epsilon Customer Name",
+          "productName": "Epsilon Product Name",
+          "reason": "Epsilon reason content for freelancer scenario.",
+          "returnType": "Epsilon Type",
+          "quantity": 82,
+          "refundAmount": 246.96,
+          "status": "Draft",
+          "requestedAt": "2026-10-02",
+          "processedAt": "2026-02-22",
+          "condition": "Epsilon Condition",
+          "trackingNumber": "Epsilon Tracking Number",
+          "aiApproval": "Epsilon ai approval content for freelancer scenario."
+        },
+        {
+          "returnNumber": "Zeta Return Number",
+          "orderNumber": "Zeta Order Number",
+          "customerName": "Zeta Customer Name",
+          "productName": "Zeta Product Name",
+          "reason": "Zeta reason content for government scenario.",
+          "returnType": "Zeta Type",
+          "quantity": 407,
+          "refundAmount": 189.53,
+          "status": "Live",
+          "requestedAt": "2026-11-07",
+          "processedAt": "2026-10-25",
+          "condition": "Zeta Condition",
+          "trackingNumber": "Zeta Tracking Number",
+          "aiApproval": "Zeta ai approval content for government scenario."
+        },
+        {
+          "returnNumber": "Eta Return Number",
+          "orderNumber": "Eta Order Number",
+          "customerName": "Eta Customer Name",
+          "productName": "Eta Product Name",
+          "reason": "Eta reason content for nonprofit scenario.",
+          "returnType": "Eta Type",
+          "quantity": 193,
+          "refundAmount": 200.75,
+          "status": "Paused",
+          "requestedAt": "2026-12-23",
+          "processedAt": "2026-08-27",
+          "condition": "Eta Condition",
+          "trackingNumber": "Eta Tracking Number",
+          "aiApproval": "Eta ai approval content for nonprofit scenario."
+        },
+        {
+          "returnNumber": "Theta Return Number",
+          "orderNumber": "Theta Order Number",
+          "customerName": "Theta Customer Name",
+          "productName": "Theta Product Name",
+          "reason": "Theta reason content for healthcare scenario.",
+          "returnType": "Theta Type",
+          "quantity": 189,
+          "refundAmount": 576.22,
+          "status": "Archived",
+          "requestedAt": "2026-11-09",
+          "processedAt": "2026-10-16",
+          "condition": "Theta Condition",
+          "trackingNumber": "Theta Tracking Number",
+          "aiApproval": "Theta ai approval content for healthcare scenario."
+        },
+        {
+          "returnNumber": "Iota Return Number",
+          "orderNumber": "Iota Order Number",
+          "customerName": "Iota Customer Name",
+          "productName": "Iota Product Name",
+          "reason": "Iota reason content for finance scenario.",
+          "returnType": "Iota Type",
+          "quantity": 474,
+          "refundAmount": 906.41,
+          "status": "Beta",
+          "requestedAt": "2026-10-05",
+          "processedAt": "2026-06-08",
+          "condition": "Iota Condition",
+          "trackingNumber": "Iota Tracking Number",
+          "aiApproval": "Iota ai approval content for finance scenario."
+        },
+        {
+          "returnNumber": "Kappa Return Number",
+          "orderNumber": "Kappa Order Number",
+          "customerName": "Kappa Customer Name",
+          "productName": "Kappa Product Name",
+          "reason": "Kappa reason content for education scenario.",
+          "returnType": "Kappa Type",
+          "quantity": 110,
+          "refundAmount": 295.73,
+          "status": "GA",
+          "requestedAt": "2026-02-17",
+          "processedAt": "2026-02-27",
+          "condition": "Kappa Condition",
+          "trackingNumber": "Kappa Tracking Number",
+          "aiApproval": "Kappa ai approval content for education scenario."
+        },
+        {
+          "returnNumber": "Lambda Return Number",
+          "orderNumber": "Lambda Order Number",
+          "customerName": "Lambda Customer Name",
+          "productName": "Lambda Product Name",
+          "reason": "Lambda reason content for retail scenario.",
+          "returnType": "Lambda Type",
+          "quantity": 65,
+          "refundAmount": 94.75,
+          "status": "Completed",
+          "requestedAt": "2026-02-27",
+          "processedAt": "2026-12-06",
+          "condition": "Lambda Condition",
+          "trackingNumber": "Lambda Tracking Number",
+          "aiApproval": "Lambda ai approval content for retail scenario."
+        },
+        {
+          "returnNumber": "Mu Return Number",
+          "orderNumber": "Mu Order Number",
+          "customerName": "Mu Customer Name",
+          "productName": "Mu Product Name",
+          "reason": "Mu reason content for tech scenario.",
+          "returnType": "Mu Type",
+          "quantity": 256,
+          "refundAmount": 638.13,
+          "status": "In Progress",
+          "requestedAt": "2026-06-07",
+          "processedAt": "2026-02-27",
+          "condition": "Mu Condition",
+          "trackingNumber": "Mu Tracking Number",
+          "aiApproval": "Mu ai approval content for tech scenario."
+        },
+        {
+          "returnNumber": "Nu Return Number",
+          "orderNumber": "Nu Order Number",
+          "customerName": "Nu Customer Name",
+          "productName": "Nu Product Name",
+          "reason": "Nu reason content for legal scenario.",
+          "returnType": "Nu Type",
+          "quantity": 122,
+          "refundAmount": 673.26,
+          "status": "Scheduled",
+          "requestedAt": "2026-05-12",
+          "processedAt": "2026-11-11",
+          "condition": "Nu Condition",
+          "trackingNumber": "Nu Tracking Number",
+          "aiApproval": "Nu ai approval content for legal scenario."
+        },
+        {
+          "returnNumber": "Xi Return Number",
+          "orderNumber": "Xi Order Number",
+          "customerName": "Xi Customer Name",
+          "productName": "Xi Product Name",
+          "reason": "Xi reason content for real estate scenario.",
+          "returnType": "Xi Type",
+          "quantity": 184,
+          "refundAmount": 478.2,
+          "status": "Failed",
+          "requestedAt": "2026-02-01",
+          "processedAt": "2026-03-06",
+          "condition": "Xi Condition",
+          "trackingNumber": "Xi Tracking Number",
+          "aiApproval": "Xi ai approval content for real estate scenario."
+        },
+        {
+          "returnNumber": "Omicron Return Number",
+          "orderNumber": "Omicron Order Number",
+          "customerName": "Omicron Customer Name",
+          "productName": "Omicron Product Name",
+          "reason": "Omicron reason content for manufacturing scenario.",
+          "returnType": "Omicron Type",
+          "quantity": 29,
+          "refundAmount": 198.09,
+          "status": "Cancelled",
+          "requestedAt": "2026-10-02",
+          "processedAt": "2026-08-02",
+          "condition": "Omicron Condition",
+          "trackingNumber": "Omicron Tracking Number",
+          "aiApproval": "Omicron ai approval content for manufacturing scenario."
+        }
+      ]
+    },
+    {
+      "label": "Refund Record",
+      "modelName": "RefundRecord",
+      "routeKey": "refundRecords",
+      "icon": "💰",
+      "aiFunction": "analyzeRefundRecord",
+      "aiPrompt": "Analyze this Refund Record data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "refundNumber",
+          "label": "Refund Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "returnNumber",
+          "label": "Return Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "amount",
+          "label": "amount",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "method",
+          "label": "Method",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "initiatedAt",
+          "label": "initiated At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "completedAt",
+          "label": "completed At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "reason",
+          "label": "Reason",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "processedBy",
+          "label": "Processed By",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "refundNumber": "Alpha Refund Number",
+          "returnNumber": "Alpha Return Number",
+          "customerName": "Alpha Customer Name",
+          "amount": 848.61,
+          "method": "Alpha Type",
+          "status": "Active",
+          "initiatedAt": "2026-11-22",
+          "completedAt": "2026-05-05",
+          "reason": "Alpha Reason",
+          "processedBy": "Alpha Processed By",
+          "notes": "Alpha notes — comprehensive details for enterprise use case with actionable insights."
+        },
+        {
+          "refundNumber": "Beta Refund Number",
+          "returnNumber": "Beta Return Number",
+          "customerName": "Beta Customer Name",
+          "amount": 714.61,
+          "method": "Beta Type",
+          "status": "Pending",
+          "initiatedAt": "2026-05-05",
+          "completedAt": "2026-05-20",
+          "reason": "Beta Reason",
+          "processedBy": "Beta Processed By",
+          "notes": "Beta notes — comprehensive details for startup use case with actionable insights."
+        },
+        {
+          "refundNumber": "Gamma Refund Number",
+          "returnNumber": "Gamma Return Number",
+          "customerName": "Gamma Customer Name",
+          "amount": 234.25,
+          "method": "Gamma Type",
+          "status": "Review",
+          "initiatedAt": "2026-04-16",
+          "completedAt": "2026-10-09",
+          "reason": "Gamma Reason",
+          "processedBy": "Gamma Processed By",
+          "notes": "Gamma notes — comprehensive details for smb use case with actionable insights."
+        },
+        {
+          "refundNumber": "Delta Refund Number",
+          "returnNumber": "Delta Return Number",
+          "customerName": "Delta Customer Name",
+          "amount": 561.75,
+          "method": "Delta Type",
+          "status": "Approved",
+          "initiatedAt": "2026-01-16",
+          "completedAt": "2026-06-06",
+          "reason": "Delta Reason",
+          "processedBy": "Delta Processed By",
+          "notes": "Delta notes — comprehensive details for agency use case with actionable insights."
+        },
+        {
+          "refundNumber": "Epsilon Refund Number",
+          "returnNumber": "Epsilon Return Number",
+          "customerName": "Epsilon Customer Name",
+          "amount": 845.93,
+          "method": "Epsilon Type",
+          "status": "Draft",
+          "initiatedAt": "2026-07-14",
+          "completedAt": "2026-09-08",
+          "reason": "Epsilon Reason",
+          "processedBy": "Epsilon Processed By",
+          "notes": "Epsilon notes — comprehensive details for freelancer use case with actionable insights."
+        },
+        {
+          "refundNumber": "Zeta Refund Number",
+          "returnNumber": "Zeta Return Number",
+          "customerName": "Zeta Customer Name",
+          "amount": 293.54,
+          "method": "Zeta Type",
+          "status": "Live",
+          "initiatedAt": "2026-12-05",
+          "completedAt": "2026-09-22",
+          "reason": "Zeta Reason",
+          "processedBy": "Zeta Processed By",
+          "notes": "Zeta notes — comprehensive details for government use case with actionable insights."
+        },
+        {
+          "refundNumber": "Eta Refund Number",
+          "returnNumber": "Eta Return Number",
+          "customerName": "Eta Customer Name",
+          "amount": 513.14,
+          "method": "Eta Type",
+          "status": "Paused",
+          "initiatedAt": "2026-12-10",
+          "completedAt": "2026-06-05",
+          "reason": "Eta Reason",
+          "processedBy": "Eta Processed By",
+          "notes": "Eta notes — comprehensive details for nonprofit use case with actionable insights."
+        },
+        {
+          "refundNumber": "Theta Refund Number",
+          "returnNumber": "Theta Return Number",
+          "customerName": "Theta Customer Name",
+          "amount": 55.79,
+          "method": "Theta Type",
+          "status": "Archived",
+          "initiatedAt": "2026-07-16",
+          "completedAt": "2026-03-26",
+          "reason": "Theta Reason",
+          "processedBy": "Theta Processed By",
+          "notes": "Theta notes — comprehensive details for healthcare use case with actionable insights."
+        },
+        {
+          "refundNumber": "Iota Refund Number",
+          "returnNumber": "Iota Return Number",
+          "customerName": "Iota Customer Name",
+          "amount": 510.45,
+          "method": "Iota Type",
+          "status": "Beta",
+          "initiatedAt": "2026-07-22",
+          "completedAt": "2026-02-25",
+          "reason": "Iota Reason",
+          "processedBy": "Iota Processed By",
+          "notes": "Iota notes — comprehensive details for finance use case with actionable insights."
+        },
+        {
+          "refundNumber": "Kappa Refund Number",
+          "returnNumber": "Kappa Return Number",
+          "customerName": "Kappa Customer Name",
+          "amount": 162.43,
+          "method": "Kappa Type",
+          "status": "GA",
+          "initiatedAt": "2026-09-25",
+          "completedAt": "2026-02-11",
+          "reason": "Kappa Reason",
+          "processedBy": "Kappa Processed By",
+          "notes": "Kappa notes — comprehensive details for education use case with actionable insights."
+        },
+        {
+          "refundNumber": "Lambda Refund Number",
+          "returnNumber": "Lambda Return Number",
+          "customerName": "Lambda Customer Name",
+          "amount": 457.25,
+          "method": "Lambda Type",
+          "status": "Completed",
+          "initiatedAt": "2026-12-21",
+          "completedAt": "2026-11-02",
+          "reason": "Lambda Reason",
+          "processedBy": "Lambda Processed By",
+          "notes": "Lambda notes — comprehensive details for retail use case with actionable insights."
+        },
+        {
+          "refundNumber": "Mu Refund Number",
+          "returnNumber": "Mu Return Number",
+          "customerName": "Mu Customer Name",
+          "amount": 523.39,
+          "method": "Mu Type",
+          "status": "In Progress",
+          "initiatedAt": "2026-02-04",
+          "completedAt": "2026-08-28",
+          "reason": "Mu Reason",
+          "processedBy": "Mu Processed By",
+          "notes": "Mu notes — comprehensive details for tech use case with actionable insights."
+        },
+        {
+          "refundNumber": "Nu Refund Number",
+          "returnNumber": "Nu Return Number",
+          "customerName": "Nu Customer Name",
+          "amount": 469.89,
+          "method": "Nu Type",
+          "status": "Scheduled",
+          "initiatedAt": "2026-05-22",
+          "completedAt": "2026-03-11",
+          "reason": "Nu Reason",
+          "processedBy": "Nu Processed By",
+          "notes": "Nu notes — comprehensive details for legal use case with actionable insights."
+        },
+        {
+          "refundNumber": "Xi Refund Number",
+          "returnNumber": "Xi Return Number",
+          "customerName": "Xi Customer Name",
+          "amount": 641.09,
+          "method": "Xi Type",
+          "status": "Failed",
+          "initiatedAt": "2026-12-06",
+          "completedAt": "2026-07-27",
+          "reason": "Xi Reason",
+          "processedBy": "Xi Processed By",
+          "notes": "Xi notes — comprehensive details for real estate use case with actionable insights."
+        },
+        {
+          "refundNumber": "Omicron Refund Number",
+          "returnNumber": "Omicron Return Number",
+          "customerName": "Omicron Customer Name",
+          "amount": 823.25,
+          "method": "Omicron Type",
+          "status": "Cancelled",
+          "initiatedAt": "2026-07-05",
+          "completedAt": "2026-09-23",
+          "reason": "Omicron Reason",
+          "processedBy": "Omicron Processed By",
+          "notes": "Omicron notes — comprehensive details for manufacturing use case with actionable insights."
+        }
+      ]
+    },
+    {
+      "label": "RMA Tracking",
+      "modelName": "RMATracking",
+      "routeKey": "rmaTrackings",
+      "icon": "📦",
+      "aiFunction": "analyzeRMATracking",
+      "aiPrompt": "Analyze this RMA Tracking data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "rmaNumber",
+          "label": "Rma Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "productName",
+          "label": "Product Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "serialNumber",
+          "label": "Serial Number",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "issueType",
+          "label": "Issue Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "createdAt",
+          "label": "created At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "receivedAt",
+          "label": "received At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "inspectedAt",
+          "label": "inspected At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "resolution",
+          "label": "Resolution",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "replacementSku",
+          "label": "Replacement Sku",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "warrantyStatus",
+          "label": "Warranty Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "notes",
+          "label": "notes",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "rmaNumber": "Alpha Rma Number",
+          "productName": "Alpha Product Name",
+          "serialNumber": "Alpha Serial Number",
+          "issueType": "Alpha Type",
+          "status": "Active",
+          "createdAt": "2026-02-15",
+          "receivedAt": "2026-11-05",
+          "inspectedAt": "2026-05-03",
+          "resolution": "Alpha Resolution",
+          "replacementSku": "Alpha Replacement Sku",
+          "warrantyStatus": "Active",
+          "notes": "Alpha notes — comprehensive details for enterprise use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Beta Rma Number",
+          "productName": "Beta Product Name",
+          "serialNumber": "Beta Serial Number",
+          "issueType": "Beta Type",
+          "status": "Pending",
+          "createdAt": "2026-10-25",
+          "receivedAt": "2026-04-05",
+          "inspectedAt": "2026-06-21",
+          "resolution": "Beta Resolution",
+          "replacementSku": "Beta Replacement Sku",
+          "warrantyStatus": "Pending",
+          "notes": "Beta notes — comprehensive details for startup use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Gamma Rma Number",
+          "productName": "Gamma Product Name",
+          "serialNumber": "Gamma Serial Number",
+          "issueType": "Gamma Type",
+          "status": "Review",
+          "createdAt": "2026-04-21",
+          "receivedAt": "2026-11-03",
+          "inspectedAt": "2026-11-05",
+          "resolution": "Gamma Resolution",
+          "replacementSku": "Gamma Replacement Sku",
+          "warrantyStatus": "Review",
+          "notes": "Gamma notes — comprehensive details for smb use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Delta Rma Number",
+          "productName": "Delta Product Name",
+          "serialNumber": "Delta Serial Number",
+          "issueType": "Delta Type",
+          "status": "Approved",
+          "createdAt": "2026-05-27",
+          "receivedAt": "2026-08-23",
+          "inspectedAt": "2026-02-02",
+          "resolution": "Delta Resolution",
+          "replacementSku": "Delta Replacement Sku",
+          "warrantyStatus": "Approved",
+          "notes": "Delta notes — comprehensive details for agency use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Epsilon Rma Number",
+          "productName": "Epsilon Product Name",
+          "serialNumber": "Epsilon Serial Number",
+          "issueType": "Epsilon Type",
+          "status": "Draft",
+          "createdAt": "2026-11-28",
+          "receivedAt": "2026-09-16",
+          "inspectedAt": "2026-01-27",
+          "resolution": "Epsilon Resolution",
+          "replacementSku": "Epsilon Replacement Sku",
+          "warrantyStatus": "Draft",
+          "notes": "Epsilon notes — comprehensive details for freelancer use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Zeta Rma Number",
+          "productName": "Zeta Product Name",
+          "serialNumber": "Zeta Serial Number",
+          "issueType": "Zeta Type",
+          "status": "Live",
+          "createdAt": "2026-06-25",
+          "receivedAt": "2026-07-14",
+          "inspectedAt": "2026-02-05",
+          "resolution": "Zeta Resolution",
+          "replacementSku": "Zeta Replacement Sku",
+          "warrantyStatus": "Live",
+          "notes": "Zeta notes — comprehensive details for government use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Eta Rma Number",
+          "productName": "Eta Product Name",
+          "serialNumber": "Eta Serial Number",
+          "issueType": "Eta Type",
+          "status": "Paused",
+          "createdAt": "2026-02-17",
+          "receivedAt": "2026-10-05",
+          "inspectedAt": "2026-03-24",
+          "resolution": "Eta Resolution",
+          "replacementSku": "Eta Replacement Sku",
+          "warrantyStatus": "Paused",
+          "notes": "Eta notes — comprehensive details for nonprofit use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Theta Rma Number",
+          "productName": "Theta Product Name",
+          "serialNumber": "Theta Serial Number",
+          "issueType": "Theta Type",
+          "status": "Archived",
+          "createdAt": "2026-07-27",
+          "receivedAt": "2026-05-23",
+          "inspectedAt": "2026-04-27",
+          "resolution": "Theta Resolution",
+          "replacementSku": "Theta Replacement Sku",
+          "warrantyStatus": "Archived",
+          "notes": "Theta notes — comprehensive details for healthcare use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Iota Rma Number",
+          "productName": "Iota Product Name",
+          "serialNumber": "Iota Serial Number",
+          "issueType": "Iota Type",
+          "status": "Beta",
+          "createdAt": "2026-06-18",
+          "receivedAt": "2026-02-22",
+          "inspectedAt": "2026-02-13",
+          "resolution": "Iota Resolution",
+          "replacementSku": "Iota Replacement Sku",
+          "warrantyStatus": "Beta",
+          "notes": "Iota notes — comprehensive details for finance use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Kappa Rma Number",
+          "productName": "Kappa Product Name",
+          "serialNumber": "Kappa Serial Number",
+          "issueType": "Kappa Type",
+          "status": "GA",
+          "createdAt": "2026-06-24",
+          "receivedAt": "2026-12-13",
+          "inspectedAt": "2026-10-04",
+          "resolution": "Kappa Resolution",
+          "replacementSku": "Kappa Replacement Sku",
+          "warrantyStatus": "GA",
+          "notes": "Kappa notes — comprehensive details for education use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Lambda Rma Number",
+          "productName": "Lambda Product Name",
+          "serialNumber": "Lambda Serial Number",
+          "issueType": "Lambda Type",
+          "status": "Completed",
+          "createdAt": "2026-06-08",
+          "receivedAt": "2026-06-15",
+          "inspectedAt": "2026-01-18",
+          "resolution": "Lambda Resolution",
+          "replacementSku": "Lambda Replacement Sku",
+          "warrantyStatus": "Completed",
+          "notes": "Lambda notes — comprehensive details for retail use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Mu Rma Number",
+          "productName": "Mu Product Name",
+          "serialNumber": "Mu Serial Number",
+          "issueType": "Mu Type",
+          "status": "In Progress",
+          "createdAt": "2026-12-04",
+          "receivedAt": "2026-09-08",
+          "inspectedAt": "2026-06-04",
+          "resolution": "Mu Resolution",
+          "replacementSku": "Mu Replacement Sku",
+          "warrantyStatus": "In Progress",
+          "notes": "Mu notes — comprehensive details for tech use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Nu Rma Number",
+          "productName": "Nu Product Name",
+          "serialNumber": "Nu Serial Number",
+          "issueType": "Nu Type",
+          "status": "Scheduled",
+          "createdAt": "2026-09-10",
+          "receivedAt": "2026-01-27",
+          "inspectedAt": "2026-10-12",
+          "resolution": "Nu Resolution",
+          "replacementSku": "Nu Replacement Sku",
+          "warrantyStatus": "Scheduled",
+          "notes": "Nu notes — comprehensive details for legal use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Xi Rma Number",
+          "productName": "Xi Product Name",
+          "serialNumber": "Xi Serial Number",
+          "issueType": "Xi Type",
+          "status": "Failed",
+          "createdAt": "2026-09-20",
+          "receivedAt": "2026-08-23",
+          "inspectedAt": "2026-08-20",
+          "resolution": "Xi Resolution",
+          "replacementSku": "Xi Replacement Sku",
+          "warrantyStatus": "Failed",
+          "notes": "Xi notes — comprehensive details for real estate use case with actionable insights."
+        },
+        {
+          "rmaNumber": "Omicron Rma Number",
+          "productName": "Omicron Product Name",
+          "serialNumber": "Omicron Serial Number",
+          "issueType": "Omicron Type",
+          "status": "Cancelled",
+          "createdAt": "2026-03-14",
+          "receivedAt": "2026-05-10",
+          "inspectedAt": "2026-10-14",
+          "resolution": "Omicron Resolution",
+          "replacementSku": "Omicron Replacement Sku",
+          "warrantyStatus": "Cancelled",
+          "notes": "Omicron notes — comprehensive details for manufacturing use case with actionable insights."
+        }
+      ]
+    },
+    {
+      "label": "Size Guide",
+      "modelName": "SizeGuide",
+      "routeKey": "sizeGuides",
+      "icon": "📏",
+      "aiFunction": "analyzeSizeGuide",
+      "aiPrompt": "Analyze this Size Guide data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "productCategory",
+          "label": "Product Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "region",
+          "label": "Region",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "sizeLabel",
+          "label": "Size Label",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "chestCm",
+          "label": "chest Cm",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "waistCm",
+          "label": "waist Cm",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "hipCm",
+          "label": "hip Cm",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "lengthCm",
+          "label": "length Cm",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "shoulderCm",
+          "label": "shoulder Cm",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "usSize",
+          "label": "Us Size",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "ukSize",
+          "label": "Uk Size",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "euSize",
+          "label": "Eu Size",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "isUnisex",
+          "label": "is Unisex",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "productCategory": "Operations",
+          "region": "Alpha Region",
+          "sizeLabel": "Alpha Size Label",
+          "chestCm": 57.23,
+          "waistCm": 454.07,
+          "hipCm": 984.13,
+          "lengthCm": 329.46,
+          "shoulderCm": 520.58,
+          "usSize": "Alpha Us Size",
+          "ukSize": "Alpha Uk Size",
+          "euSize": "Alpha Eu Size",
+          "isUnisex": true
+        },
+        {
+          "productCategory": "Sales",
+          "region": "Beta Region",
+          "sizeLabel": "Beta Size Label",
+          "chestCm": 243,
+          "waistCm": 612.41,
+          "hipCm": 293.4,
+          "lengthCm": 785.84,
+          "shoulderCm": 405.32,
+          "usSize": "Beta Us Size",
+          "ukSize": "Beta Uk Size",
+          "euSize": "Beta Eu Size",
+          "isUnisex": false
+        },
+        {
+          "productCategory": "Marketing",
+          "region": "Gamma Region",
+          "sizeLabel": "Gamma Size Label",
+          "chestCm": 827.82,
+          "waistCm": 922.08,
+          "hipCm": 201.69,
+          "lengthCm": 544.52,
+          "shoulderCm": 407.97,
+          "usSize": "Gamma Us Size",
+          "ukSize": "Gamma Uk Size",
+          "euSize": "Gamma Eu Size",
+          "isUnisex": true
+        },
+        {
+          "productCategory": "Finance",
+          "region": "Delta Region",
+          "sizeLabel": "Delta Size Label",
+          "chestCm": 854.62,
+          "waistCm": 350.88,
+          "hipCm": 846.26,
+          "lengthCm": 283.31,
+          "shoulderCm": 395.88,
+          "usSize": "Delta Us Size",
+          "ukSize": "Delta Uk Size",
+          "euSize": "Delta Eu Size",
+          "isUnisex": false
+        },
+        {
+          "productCategory": "HR",
+          "region": "Epsilon Region",
+          "sizeLabel": "Epsilon Size Label",
+          "chestCm": 716.46,
+          "waistCm": 718.57,
+          "hipCm": 925.53,
+          "lengthCm": 488.78,
+          "shoulderCm": 82.78,
+          "usSize": "Epsilon Us Size",
+          "ukSize": "Epsilon Uk Size",
+          "euSize": "Epsilon Eu Size",
+          "isUnisex": true
+        },
+        {
+          "productCategory": "Engineering",
+          "region": "Zeta Region",
+          "sizeLabel": "Zeta Size Label",
+          "chestCm": 121.46,
+          "waistCm": 532.89,
+          "hipCm": 461.65,
+          "lengthCm": 707.26,
+          "shoulderCm": 232.26,
+          "usSize": "Zeta Us Size",
+          "ukSize": "Zeta Uk Size",
+          "euSize": "Zeta Eu Size",
+          "isUnisex": false
+        },
+        {
+          "productCategory": "Support",
+          "region": "Eta Region",
+          "sizeLabel": "Eta Size Label",
+          "chestCm": 752.16,
+          "waistCm": 295.1,
+          "hipCm": 466.11,
+          "lengthCm": 470.28,
+          "shoulderCm": 915.08,
+          "usSize": "Eta Us Size",
+          "ukSize": "Eta Uk Size",
+          "euSize": "Eta Eu Size",
+          "isUnisex": true
+        },
+        {
+          "productCategory": "Legal",
+          "region": "Theta Region",
+          "sizeLabel": "Theta Size Label",
+          "chestCm": 750.18,
+          "waistCm": 638.97,
+          "hipCm": 686.96,
+          "lengthCm": 548.02,
+          "shoulderCm": 9.52,
+          "usSize": "Theta Us Size",
+          "ukSize": "Theta Uk Size",
+          "euSize": "Theta Eu Size",
+          "isUnisex": false
+        },
+        {
+          "productCategory": "Admin",
+          "region": "Iota Region",
+          "sizeLabel": "Iota Size Label",
+          "chestCm": 280.53,
+          "waistCm": 344.19,
+          "hipCm": 535.84,
+          "lengthCm": 241.39,
+          "shoulderCm": 555.48,
+          "usSize": "Iota Us Size",
+          "ukSize": "Iota Uk Size",
+          "euSize": "Iota Eu Size",
+          "isUnisex": true
+        },
+        {
+          "productCategory": "Analytics",
+          "region": "Kappa Region",
+          "sizeLabel": "Kappa Size Label",
+          "chestCm": 92.43,
+          "waistCm": 341.94,
+          "hipCm": 998.05,
+          "lengthCm": 821.1,
+          "shoulderCm": 96.87,
+          "usSize": "Kappa Us Size",
+          "ukSize": "Kappa Uk Size",
+          "euSize": "Kappa Eu Size",
+          "isUnisex": false
+        },
+        {
+          "productCategory": "Security",
+          "region": "Lambda Region",
+          "sizeLabel": "Lambda Size Label",
+          "chestCm": 259.61,
+          "waistCm": 733.89,
+          "hipCm": 778.77,
+          "lengthCm": 629.48,
+          "shoulderCm": 711.7,
+          "usSize": "Lambda Us Size",
+          "ukSize": "Lambda Uk Size",
+          "euSize": "Lambda Eu Size",
+          "isUnisex": true
+        },
+        {
+          "productCategory": "Compliance",
+          "region": "Mu Region",
+          "sizeLabel": "Mu Size Label",
+          "chestCm": 81.08,
+          "waistCm": 534.28,
+          "hipCm": 84.15,
+          "lengthCm": 46.51,
+          "shoulderCm": 274.08,
+          "usSize": "Mu Us Size",
+          "ukSize": "Mu Uk Size",
+          "euSize": "Mu Eu Size",
+          "isUnisex": false
+        },
+        {
+          "productCategory": "Infrastructure",
+          "region": "Nu Region",
+          "sizeLabel": "Nu Size Label",
+          "chestCm": 368.21,
+          "waistCm": 169.24,
+          "hipCm": 62.72,
+          "lengthCm": 506.52,
+          "shoulderCm": 724.22,
+          "usSize": "Nu Us Size",
+          "ukSize": "Nu Uk Size",
+          "euSize": "Nu Eu Size",
+          "isUnisex": true
+        },
+        {
+          "productCategory": "Product",
+          "region": "Xi Region",
+          "sizeLabel": "Xi Size Label",
+          "chestCm": 126.56,
+          "waistCm": 360.15,
+          "hipCm": 692.07,
+          "lengthCm": 238.82,
+          "shoulderCm": 759.66,
+          "usSize": "Xi Us Size",
+          "ukSize": "Xi Uk Size",
+          "euSize": "Xi Eu Size",
+          "isUnisex": false
+        },
+        {
+          "productCategory": "Research",
+          "region": "Omicron Region",
+          "sizeLabel": "Omicron Size Label",
+          "chestCm": 245.63,
+          "waistCm": 729.26,
+          "hipCm": 339.19,
+          "lengthCm": 303.6,
+          "shoulderCm": 347.23,
+          "usSize": "Omicron Us Size",
+          "ukSize": "Omicron Uk Size",
+          "euSize": "Omicron Eu Size",
+          "isUnisex": true
+        }
+      ]
+    },
+    {
+      "label": "Fit Recommendation",
+      "modelName": "FitRecommendation",
+      "routeKey": "fitRecommendations",
+      "icon": "👕",
+      "aiFunction": "analyzeFitRecommendation",
+      "aiPrompt": "Analyze this Fit Recommendation data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "productName",
+          "label": "Product Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "recommendedSize",
+          "label": "Recommended Size",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "confidence",
+          "label": "confidence",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "bodyType",
+          "label": "Body Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "heightCm",
+          "label": "height Cm",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "weightKg",
+          "label": "weight Kg",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "preferredFit",
+          "label": "Preferred Fit",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "previousPurchases",
+          "label": "previous Purchases",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "aiReasoning",
+          "label": "ai Reasoning",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "isAccepted",
+          "label": "is Accepted",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerName": "Alpha Customer Name",
+          "productName": "Alpha Product Name",
+          "recommendedSize": "Alpha Recommended Size",
+          "confidence": 56.2,
+          "bodyType": "Alpha Type",
+          "heightCm": 470.26,
+          "weightKg": 24.31,
+          "preferredFit": "Alpha Preferred Fit",
+          "previousPurchases": "Alpha previous purchases content for enterprise scenario.",
+          "aiReasoning": "Alpha ai reasoning content for enterprise scenario.",
+          "isAccepted": true
+        },
+        {
+          "customerName": "Beta Customer Name",
+          "productName": "Beta Product Name",
+          "recommendedSize": "Beta Recommended Size",
+          "confidence": 53.3,
+          "bodyType": "Beta Type",
+          "heightCm": 277.59,
+          "weightKg": 14.79,
+          "preferredFit": "Beta Preferred Fit",
+          "previousPurchases": "Beta previous purchases content for startup scenario.",
+          "aiReasoning": "Beta ai reasoning content for startup scenario.",
+          "isAccepted": false
+        },
+        {
+          "customerName": "Gamma Customer Name",
+          "productName": "Gamma Product Name",
+          "recommendedSize": "Gamma Recommended Size",
+          "confidence": 47.1,
+          "bodyType": "Gamma Type",
+          "heightCm": 543.38,
+          "weightKg": 16.03,
+          "preferredFit": "Gamma Preferred Fit",
+          "previousPurchases": "Gamma previous purchases content for smb scenario.",
+          "aiReasoning": "Gamma ai reasoning content for smb scenario.",
+          "isAccepted": true
+        },
+        {
+          "customerName": "Delta Customer Name",
+          "productName": "Delta Product Name",
+          "recommendedSize": "Delta Recommended Size",
+          "confidence": 88.8,
+          "bodyType": "Delta Type",
+          "heightCm": 681.51,
+          "weightKg": 62.12,
+          "preferredFit": "Delta Preferred Fit",
+          "previousPurchases": "Delta previous purchases content for agency scenario.",
+          "aiReasoning": "Delta ai reasoning content for agency scenario.",
+          "isAccepted": false
+        },
+        {
+          "customerName": "Epsilon Customer Name",
+          "productName": "Epsilon Product Name",
+          "recommendedSize": "Epsilon Recommended Size",
+          "confidence": 47.5,
+          "bodyType": "Epsilon Type",
+          "heightCm": 504.35,
+          "weightKg": 55.01,
+          "preferredFit": "Epsilon Preferred Fit",
+          "previousPurchases": "Epsilon previous purchases content for freelancer scenario.",
+          "aiReasoning": "Epsilon ai reasoning content for freelancer scenario.",
+          "isAccepted": true
+        },
+        {
+          "customerName": "Zeta Customer Name",
+          "productName": "Zeta Product Name",
+          "recommendedSize": "Zeta Recommended Size",
+          "confidence": 73.4,
+          "bodyType": "Zeta Type",
+          "heightCm": 352.44,
+          "weightKg": 90.49,
+          "preferredFit": "Zeta Preferred Fit",
+          "previousPurchases": "Zeta previous purchases content for government scenario.",
+          "aiReasoning": "Zeta ai reasoning content for government scenario.",
+          "isAccepted": false
+        },
+        {
+          "customerName": "Eta Customer Name",
+          "productName": "Eta Product Name",
+          "recommendedSize": "Eta Recommended Size",
+          "confidence": 75.2,
+          "bodyType": "Eta Type",
+          "heightCm": 62.53,
+          "weightKg": 38.06,
+          "preferredFit": "Eta Preferred Fit",
+          "previousPurchases": "Eta previous purchases content for nonprofit scenario.",
+          "aiReasoning": "Eta ai reasoning content for nonprofit scenario.",
+          "isAccepted": true
+        },
+        {
+          "customerName": "Theta Customer Name",
+          "productName": "Theta Product Name",
+          "recommendedSize": "Theta Recommended Size",
+          "confidence": 58.5,
+          "bodyType": "Theta Type",
+          "heightCm": 869.8,
+          "weightKg": 78.8,
+          "preferredFit": "Theta Preferred Fit",
+          "previousPurchases": "Theta previous purchases content for healthcare scenario.",
+          "aiReasoning": "Theta ai reasoning content for healthcare scenario.",
+          "isAccepted": false
+        },
+        {
+          "customerName": "Iota Customer Name",
+          "productName": "Iota Product Name",
+          "recommendedSize": "Iota Recommended Size",
+          "confidence": 75.6,
+          "bodyType": "Iota Type",
+          "heightCm": 230.9,
+          "weightKg": 89.81,
+          "preferredFit": "Iota Preferred Fit",
+          "previousPurchases": "Iota previous purchases content for finance scenario.",
+          "aiReasoning": "Iota ai reasoning content for finance scenario.",
+          "isAccepted": true
+        },
+        {
+          "customerName": "Kappa Customer Name",
+          "productName": "Kappa Product Name",
+          "recommendedSize": "Kappa Recommended Size",
+          "confidence": 43.1,
+          "bodyType": "Kappa Type",
+          "heightCm": 803.31,
+          "weightKg": 93.97,
+          "preferredFit": "Kappa Preferred Fit",
+          "previousPurchases": "Kappa previous purchases content for education scenario.",
+          "aiReasoning": "Kappa ai reasoning content for education scenario.",
+          "isAccepted": false
+        },
+        {
+          "customerName": "Lambda Customer Name",
+          "productName": "Lambda Product Name",
+          "recommendedSize": "Lambda Recommended Size",
+          "confidence": 69.3,
+          "bodyType": "Lambda Type",
+          "heightCm": 299.19,
+          "weightKg": 51.59,
+          "preferredFit": "Lambda Preferred Fit",
+          "previousPurchases": "Lambda previous purchases content for retail scenario.",
+          "aiReasoning": "Lambda ai reasoning content for retail scenario.",
+          "isAccepted": true
+        },
+        {
+          "customerName": "Mu Customer Name",
+          "productName": "Mu Product Name",
+          "recommendedSize": "Mu Recommended Size",
+          "confidence": 96.1,
+          "bodyType": "Mu Type",
+          "heightCm": 492.33,
+          "weightKg": 71.97,
+          "preferredFit": "Mu Preferred Fit",
+          "previousPurchases": "Mu previous purchases content for tech scenario.",
+          "aiReasoning": "Mu ai reasoning content for tech scenario.",
+          "isAccepted": false
+        },
+        {
+          "customerName": "Nu Customer Name",
+          "productName": "Nu Product Name",
+          "recommendedSize": "Nu Recommended Size",
+          "confidence": 70.3,
+          "bodyType": "Nu Type",
+          "heightCm": 794.28,
+          "weightKg": 30.71,
+          "preferredFit": "Nu Preferred Fit",
+          "previousPurchases": "Nu previous purchases content for legal scenario.",
+          "aiReasoning": "Nu ai reasoning content for legal scenario.",
+          "isAccepted": true
+        },
+        {
+          "customerName": "Xi Customer Name",
+          "productName": "Xi Product Name",
+          "recommendedSize": "Xi Recommended Size",
+          "confidence": 57.8,
+          "bodyType": "Xi Type",
+          "heightCm": 286.11,
+          "weightKg": 98.74,
+          "preferredFit": "Xi Preferred Fit",
+          "previousPurchases": "Xi previous purchases content for real estate scenario.",
+          "aiReasoning": "Xi ai reasoning content for real estate scenario.",
+          "isAccepted": false
+        },
+        {
+          "customerName": "Omicron Customer Name",
+          "productName": "Omicron Product Name",
+          "recommendedSize": "Omicron Recommended Size",
+          "confidence": 46.6,
+          "bodyType": "Omicron Type",
+          "heightCm": 123.31,
+          "weightKg": 11.42,
+          "preferredFit": "Omicron Preferred Fit",
+          "previousPurchases": "Omicron previous purchases content for manufacturing scenario.",
+          "aiReasoning": "Omicron ai reasoning content for manufacturing scenario.",
+          "isAccepted": true
+        }
+      ]
+    },
+    {
+      "label": "Wishlist",
+      "modelName": "Wishlist",
+      "routeKey": "wishlists",
+      "icon": "❤️",
+      "aiFunction": "analyzeWishlist",
+      "aiPrompt": "Analyze this Wishlist data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "productName",
+          "label": "Product Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "productSku",
+          "label": "Product Sku",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "price",
+          "label": "price",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "addedAt",
+          "label": "added At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "notifyOnSale",
+          "label": "notify On Sale",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "isAvailable",
+          "label": "is Available",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "priceDropPercent",
+          "label": "price Drop Percent",
+          "type": "FLOAT",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "customerName": "Alpha Customer Name",
+          "productName": "Alpha Product Name",
+          "productSku": "Alpha Product Sku",
+          "price": 779.56,
+          "addedAt": "2026-02-21",
+          "category": "Operations",
+          "priority": "Critical",
+          "notifyOnSale": true,
+          "isAvailable": true,
+          "priceDropPercent": 60.1
+        },
+        {
+          "customerName": "Beta Customer Name",
+          "productName": "Beta Product Name",
+          "productSku": "Beta Product Sku",
+          "price": 340.81,
+          "addedAt": "2026-04-09",
+          "category": "Sales",
+          "priority": "High",
+          "notifyOnSale": false,
+          "isAvailable": false,
+          "priceDropPercent": 63.7
+        },
+        {
+          "customerName": "Gamma Customer Name",
+          "productName": "Gamma Product Name",
+          "productSku": "Gamma Product Sku",
+          "price": 249.57,
+          "addedAt": "2026-12-02",
+          "category": "Marketing",
+          "priority": "Medium",
+          "notifyOnSale": true,
+          "isAvailable": true,
+          "priceDropPercent": 65.4
+        },
+        {
+          "customerName": "Delta Customer Name",
+          "productName": "Delta Product Name",
+          "productSku": "Delta Product Sku",
+          "price": 451.95,
+          "addedAt": "2026-03-18",
+          "category": "Finance",
+          "priority": "Low",
+          "notifyOnSale": false,
+          "isAvailable": false,
+          "priceDropPercent": 73.3
+        },
+        {
+          "customerName": "Epsilon Customer Name",
+          "productName": "Epsilon Product Name",
+          "productSku": "Epsilon Product Sku",
+          "price": 72.74,
+          "addedAt": "2026-04-05",
+          "category": "HR",
+          "priority": "Info",
+          "notifyOnSale": true,
+          "isAvailable": true,
+          "priceDropPercent": 43.2
+        },
+        {
+          "customerName": "Zeta Customer Name",
+          "productName": "Zeta Product Name",
+          "productSku": "Zeta Product Sku",
+          "price": 173.1,
+          "addedAt": "2026-10-27",
+          "category": "Engineering",
+          "priority": "Warning",
+          "notifyOnSale": false,
+          "isAvailable": false,
+          "priceDropPercent": 69.4
+        },
+        {
+          "customerName": "Eta Customer Name",
+          "productName": "Eta Product Name",
+          "productSku": "Eta Product Sku",
+          "price": 116.74,
+          "addedAt": "2026-03-27",
+          "category": "Support",
+          "priority": "Notice",
+          "notifyOnSale": true,
+          "isAvailable": true,
+          "priceDropPercent": 49
+        },
+        {
+          "customerName": "Theta Customer Name",
+          "productName": "Theta Product Name",
+          "productSku": "Theta Product Sku",
+          "price": 419.24,
+          "addedAt": "2026-12-20",
+          "category": "Legal",
+          "priority": "Alert",
+          "notifyOnSale": false,
+          "isAvailable": false,
+          "priceDropPercent": 78.2
+        },
+        {
+          "customerName": "Iota Customer Name",
+          "productName": "Iota Product Name",
+          "productSku": "Iota Product Sku",
+          "price": 756.04,
+          "addedAt": "2026-03-13",
+          "category": "Admin",
+          "priority": "Emergency",
+          "notifyOnSale": true,
+          "isAvailable": true,
+          "priceDropPercent": 44.7
+        },
+        {
+          "customerName": "Kappa Customer Name",
+          "productName": "Kappa Product Name",
+          "productSku": "Kappa Product Sku",
+          "price": 407.98,
+          "addedAt": "2026-06-07",
+          "category": "Analytics",
+          "priority": "Debug",
+          "notifyOnSale": false,
+          "isAvailable": false,
+          "priceDropPercent": 93.3
+        },
+        {
+          "customerName": "Lambda Customer Name",
+          "productName": "Lambda Product Name",
+          "productSku": "Lambda Product Sku",
+          "price": 471.21,
+          "addedAt": "2026-02-24",
+          "category": "Security",
+          "priority": "Trace",
+          "notifyOnSale": true,
+          "isAvailable": true,
+          "priceDropPercent": 87.7
+        },
+        {
+          "customerName": "Mu Customer Name",
+          "productName": "Mu Product Name",
+          "productSku": "Mu Product Sku",
+          "price": 451.39,
+          "addedAt": "2026-09-20",
+          "category": "Compliance",
+          "priority": "Fatal",
+          "notifyOnSale": false,
+          "isAvailable": false,
+          "priceDropPercent": 90.5
+        },
+        {
+          "customerName": "Nu Customer Name",
+          "productName": "Nu Product Name",
+          "productSku": "Nu Product Sku",
+          "price": 439.39,
+          "addedAt": "2026-12-27",
+          "category": "Infrastructure",
+          "priority": "Major",
+          "notifyOnSale": true,
+          "isAvailable": true,
+          "priceDropPercent": 76.4
+        },
+        {
+          "customerName": "Xi Customer Name",
+          "productName": "Xi Product Name",
+          "productSku": "Xi Product Sku",
+          "price": 640.6,
+          "addedAt": "2026-07-25",
+          "category": "Product",
+          "priority": "Minor",
+          "notifyOnSale": false,
+          "isAvailable": false,
+          "priceDropPercent": 82.5
+        },
+        {
+          "customerName": "Omicron Customer Name",
+          "productName": "Omicron Product Name",
+          "productSku": "Omicron Product Sku",
+          "price": 323.59,
+          "addedAt": "2026-03-15",
+          "category": "Research",
+          "priority": "Trivial",
+          "notifyOnSale": true,
+          "isAvailable": true,
+          "priceDropPercent": 85
+        }
+      ]
+    },
+    {
+      "label": "Gift Registry",
+      "modelName": "GiftRegistry",
+      "routeKey": "giftRegistries",
+      "icon": "🎁",
+      "aiFunction": "analyzeGiftRegistry",
+      "aiPrompt": "Analyze this Gift Registry data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "registryName",
+          "label": "Registry Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "ownerName",
+          "label": "Owner Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "eventType",
+          "label": "Event Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "eventDate",
+          "label": "event Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "description",
+          "label": "description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "itemCount",
+          "label": "item Count",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "purchasedCount",
+          "label": "purchased Count",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "totalValue",
+          "label": "total Value",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "isPublic",
+          "label": "is Public",
+          "type": "BOOLEAN",
+          "formType": "input"
+        },
+        {
+          "key": "shareUrl",
+          "label": "Share Url",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "createdAt",
+          "label": "created At",
+          "type": "DATE",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "registryName": "Alpha Registry Name",
+          "ownerName": "Alpha Owner Name",
+          "eventType": "Alpha Type",
+          "eventDate": "2026-08-20",
+          "description": "Alpha description — comprehensive details for enterprise use case with actionable insights.",
+          "itemCount": 386,
+          "purchasedCount": 291,
+          "totalValue": 135.84,
+          "isPublic": true,
+          "shareUrl": "https://alpha.example.com",
+          "status": "Active",
+          "createdAt": "2026-10-09"
+        },
+        {
+          "registryName": "Beta Registry Name",
+          "ownerName": "Beta Owner Name",
+          "eventType": "Beta Type",
+          "eventDate": "2026-11-23",
+          "description": "Beta description — comprehensive details for startup use case with actionable insights.",
+          "itemCount": 375,
+          "purchasedCount": 133,
+          "totalValue": 45.84,
+          "isPublic": false,
+          "shareUrl": "https://beta.example.com",
+          "status": "Pending",
+          "createdAt": "2026-04-13"
+        },
+        {
+          "registryName": "Gamma Registry Name",
+          "ownerName": "Gamma Owner Name",
+          "eventType": "Gamma Type",
+          "eventDate": "2026-03-14",
+          "description": "Gamma description — comprehensive details for smb use case with actionable insights.",
+          "itemCount": 445,
+          "purchasedCount": 281,
+          "totalValue": 858.74,
+          "isPublic": true,
+          "shareUrl": "https://gamma.example.com",
+          "status": "Review",
+          "createdAt": "2026-04-02"
+        },
+        {
+          "registryName": "Delta Registry Name",
+          "ownerName": "Delta Owner Name",
+          "eventType": "Delta Type",
+          "eventDate": "2026-03-05",
+          "description": "Delta description — comprehensive details for agency use case with actionable insights.",
+          "itemCount": 66,
+          "purchasedCount": 407,
+          "totalValue": 160.99,
+          "isPublic": false,
+          "shareUrl": "https://delta.example.com",
+          "status": "Approved",
+          "createdAt": "2026-07-20"
+        },
+        {
+          "registryName": "Epsilon Registry Name",
+          "ownerName": "Epsilon Owner Name",
+          "eventType": "Epsilon Type",
+          "eventDate": "2026-11-05",
+          "description": "Epsilon description — comprehensive details for freelancer use case with actionable insights.",
+          "itemCount": 369,
+          "purchasedCount": 365,
+          "totalValue": 826,
+          "isPublic": true,
+          "shareUrl": "https://epsilon.example.com",
+          "status": "Draft",
+          "createdAt": "2026-09-17"
+        },
+        {
+          "registryName": "Zeta Registry Name",
+          "ownerName": "Zeta Owner Name",
+          "eventType": "Zeta Type",
+          "eventDate": "2026-02-13",
+          "description": "Zeta description — comprehensive details for government use case with actionable insights.",
+          "itemCount": 284,
+          "purchasedCount": 36,
+          "totalValue": 622.49,
+          "isPublic": false,
+          "shareUrl": "https://zeta.example.com",
+          "status": "Live",
+          "createdAt": "2026-10-08"
+        },
+        {
+          "registryName": "Eta Registry Name",
+          "ownerName": "Eta Owner Name",
+          "eventType": "Eta Type",
+          "eventDate": "2026-10-06",
+          "description": "Eta description — comprehensive details for nonprofit use case with actionable insights.",
+          "itemCount": 251,
+          "purchasedCount": 194,
+          "totalValue": 477.86,
+          "isPublic": true,
+          "shareUrl": "https://eta.example.com",
+          "status": "Paused",
+          "createdAt": "2026-11-12"
+        },
+        {
+          "registryName": "Theta Registry Name",
+          "ownerName": "Theta Owner Name",
+          "eventType": "Theta Type",
+          "eventDate": "2026-12-27",
+          "description": "Theta description — comprehensive details for healthcare use case with actionable insights.",
+          "itemCount": 403,
+          "purchasedCount": 461,
+          "totalValue": 797.54,
+          "isPublic": false,
+          "shareUrl": "https://theta.example.com",
+          "status": "Archived",
+          "createdAt": "2026-11-14"
+        },
+        {
+          "registryName": "Iota Registry Name",
+          "ownerName": "Iota Owner Name",
+          "eventType": "Iota Type",
+          "eventDate": "2026-10-19",
+          "description": "Iota description — comprehensive details for finance use case with actionable insights.",
+          "itemCount": 347,
+          "purchasedCount": 115,
+          "totalValue": 510.17,
+          "isPublic": true,
+          "shareUrl": "https://iota.example.com",
+          "status": "Beta",
+          "createdAt": "2026-08-27"
+        },
+        {
+          "registryName": "Kappa Registry Name",
+          "ownerName": "Kappa Owner Name",
+          "eventType": "Kappa Type",
+          "eventDate": "2026-12-04",
+          "description": "Kappa description — comprehensive details for education use case with actionable insights.",
+          "itemCount": 134,
+          "purchasedCount": 65,
+          "totalValue": 130.4,
+          "isPublic": false,
+          "shareUrl": "https://kappa.example.com",
+          "status": "GA",
+          "createdAt": "2026-06-24"
+        },
+        {
+          "registryName": "Lambda Registry Name",
+          "ownerName": "Lambda Owner Name",
+          "eventType": "Lambda Type",
+          "eventDate": "2026-08-09",
+          "description": "Lambda description — comprehensive details for retail use case with actionable insights.",
+          "itemCount": 404,
+          "purchasedCount": 336,
+          "totalValue": 34.5,
+          "isPublic": true,
+          "shareUrl": "https://lambda.example.com",
+          "status": "Completed",
+          "createdAt": "2026-06-15"
+        },
+        {
+          "registryName": "Mu Registry Name",
+          "ownerName": "Mu Owner Name",
+          "eventType": "Mu Type",
+          "eventDate": "2026-11-04",
+          "description": "Mu description — comprehensive details for tech use case with actionable insights.",
+          "itemCount": 485,
+          "purchasedCount": 184,
+          "totalValue": 448.49,
+          "isPublic": false,
+          "shareUrl": "https://mu.example.com",
+          "status": "In Progress",
+          "createdAt": "2026-03-21"
+        },
+        {
+          "registryName": "Nu Registry Name",
+          "ownerName": "Nu Owner Name",
+          "eventType": "Nu Type",
+          "eventDate": "2026-06-21",
+          "description": "Nu description — comprehensive details for legal use case with actionable insights.",
+          "itemCount": 179,
+          "purchasedCount": 42,
+          "totalValue": 892.92,
+          "isPublic": true,
+          "shareUrl": "https://nu.example.com",
+          "status": "Scheduled",
+          "createdAt": "2026-09-13"
+        },
+        {
+          "registryName": "Xi Registry Name",
+          "ownerName": "Xi Owner Name",
+          "eventType": "Xi Type",
+          "eventDate": "2026-04-22",
+          "description": "Xi description — comprehensive details for real estate use case with actionable insights.",
+          "itemCount": 33,
+          "purchasedCount": 230,
+          "totalValue": 528.03,
+          "isPublic": false,
+          "shareUrl": "https://xi.example.com",
+          "status": "Failed",
+          "createdAt": "2026-10-13"
+        },
+        {
+          "registryName": "Omicron Registry Name",
+          "ownerName": "Omicron Owner Name",
+          "eventType": "Omicron Type",
+          "eventDate": "2026-05-26",
+          "description": "Omicron description — comprehensive details for manufacturing use case with actionable insights.",
+          "itemCount": 481,
+          "purchasedCount": 34,
+          "totalValue": 181.16,
+          "isPublic": true,
+          "shareUrl": "https://omicron.example.com",
+          "status": "Cancelled",
+          "createdAt": "2026-04-06"
+        }
+      ]
+    },
+    {
+      "label": "Price Tag",
+      "modelName": "PriceTag",
+      "routeKey": "priceTags",
+      "icon": "💲",
+      "aiFunction": "analyzePriceTag",
+      "aiPrompt": "Analyze this Price Tag data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "productName",
+          "label": "Product Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "sku",
+          "label": "Sku",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "regularPrice",
+          "label": "regular Price",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "salePrice",
+          "label": "sale Price",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "costPrice",
+          "label": "cost Price",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "margin",
+          "label": "margin",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "currency",
+          "label": "Currency",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "effective Date",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "expiresAt",
+          "label": "expires At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "priceType",
+          "label": "Price Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "competitor1Price",
+          "label": "competitor1 Price",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "competitor2Price",
+          "label": "competitor2 Price",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "aiRecommendedPrice",
+          "label": "ai Recommended Price",
+          "type": "FLOAT",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "productName": "Alpha Product Name",
+          "sku": "Alpha Sku",
+          "regularPrice": 490.84,
+          "salePrice": 203.37,
+          "costPrice": 207.91,
+          "margin": 768.16,
+          "currency": "Alpha Currency",
+          "effectiveDate": "2026-08-21",
+          "expiresAt": "2026-03-02",
+          "priceType": "Alpha Type",
+          "competitor1Price": 297.57,
+          "competitor2Price": 509.59,
+          "aiRecommendedPrice": 334.13
+        },
+        {
+          "productName": "Beta Product Name",
+          "sku": "Beta Sku",
+          "regularPrice": 248.62,
+          "salePrice": 37.45,
+          "costPrice": 755.37,
+          "margin": 266.99,
+          "currency": "Beta Currency",
+          "effectiveDate": "2026-11-12",
+          "expiresAt": "2026-03-18",
+          "priceType": "Beta Type",
+          "competitor1Price": 513.75,
+          "competitor2Price": 726.54,
+          "aiRecommendedPrice": 362.14
+        },
+        {
+          "productName": "Gamma Product Name",
+          "sku": "Gamma Sku",
+          "regularPrice": 636.51,
+          "salePrice": 730.4,
+          "costPrice": 502.83,
+          "margin": 811.61,
+          "currency": "Gamma Currency",
+          "effectiveDate": "2026-04-02",
+          "expiresAt": "2026-11-08",
+          "priceType": "Gamma Type",
+          "competitor1Price": 710.18,
+          "competitor2Price": 779.99,
+          "aiRecommendedPrice": 544.5
+        },
+        {
+          "productName": "Delta Product Name",
+          "sku": "Delta Sku",
+          "regularPrice": 323.58,
+          "salePrice": 533.99,
+          "costPrice": 137.47,
+          "margin": 390.56,
+          "currency": "Delta Currency",
+          "effectiveDate": "2026-07-13",
+          "expiresAt": "2026-08-20",
+          "priceType": "Delta Type",
+          "competitor1Price": 204.02,
+          "competitor2Price": 721.39,
+          "aiRecommendedPrice": 651.9
+        },
+        {
+          "productName": "Epsilon Product Name",
+          "sku": "Epsilon Sku",
+          "regularPrice": 215.76,
+          "salePrice": 803.34,
+          "costPrice": 135.74,
+          "margin": 557.37,
+          "currency": "Epsilon Currency",
+          "effectiveDate": "2026-07-22",
+          "expiresAt": "2026-10-25",
+          "priceType": "Epsilon Type",
+          "competitor1Price": 809.94,
+          "competitor2Price": 896.57,
+          "aiRecommendedPrice": 494.7
+        },
+        {
+          "productName": "Zeta Product Name",
+          "sku": "Zeta Sku",
+          "regularPrice": 787.68,
+          "salePrice": 654.96,
+          "costPrice": 546.3,
+          "margin": 836.08,
+          "currency": "Zeta Currency",
+          "effectiveDate": "2026-07-18",
+          "expiresAt": "2026-10-19",
+          "priceType": "Zeta Type",
+          "competitor1Price": 18.46,
+          "competitor2Price": 543.99,
+          "aiRecommendedPrice": 124.32
+        },
+        {
+          "productName": "Eta Product Name",
+          "sku": "Eta Sku",
+          "regularPrice": 336.54,
+          "salePrice": 229.33,
+          "costPrice": 766.75,
+          "margin": 612.39,
+          "currency": "Eta Currency",
+          "effectiveDate": "2026-11-06",
+          "expiresAt": "2026-08-09",
+          "priceType": "Eta Type",
+          "competitor1Price": 100.83,
+          "competitor2Price": 640.77,
+          "aiRecommendedPrice": 792.54
+        },
+        {
+          "productName": "Theta Product Name",
+          "sku": "Theta Sku",
+          "regularPrice": 858.92,
+          "salePrice": 141.14,
+          "costPrice": 224.39,
+          "margin": 514.41,
+          "currency": "Theta Currency",
+          "effectiveDate": "2026-06-13",
+          "expiresAt": "2026-07-22",
+          "priceType": "Theta Type",
+          "competitor1Price": 244.69,
+          "competitor2Price": 463.1,
+          "aiRecommendedPrice": 631.01
+        },
+        {
+          "productName": "Iota Product Name",
+          "sku": "Iota Sku",
+          "regularPrice": 557.45,
+          "salePrice": 153,
+          "costPrice": 692.74,
+          "margin": 899.21,
+          "currency": "Iota Currency",
+          "effectiveDate": "2026-11-27",
+          "expiresAt": "2026-08-21",
+          "priceType": "Iota Type",
+          "competitor1Price": 511.88,
+          "competitor2Price": 759.54,
+          "aiRecommendedPrice": 38.38
+        },
+        {
+          "productName": "Kappa Product Name",
+          "sku": "Kappa Sku",
+          "regularPrice": 727.32,
+          "salePrice": 96.69,
+          "costPrice": 427.75,
+          "margin": 644.6,
+          "currency": "Kappa Currency",
+          "effectiveDate": "2026-05-20",
+          "expiresAt": "2026-08-10",
+          "priceType": "Kappa Type",
+          "competitor1Price": 717.94,
+          "competitor2Price": 485.01,
+          "aiRecommendedPrice": 887.84
+        },
+        {
+          "productName": "Lambda Product Name",
+          "sku": "Lambda Sku",
+          "regularPrice": 26.21,
+          "salePrice": 726.3,
+          "costPrice": 729.3,
+          "margin": 514.51,
+          "currency": "Lambda Currency",
+          "effectiveDate": "2026-05-15",
+          "expiresAt": "2026-09-16",
+          "priceType": "Lambda Type",
+          "competitor1Price": 273.84,
+          "competitor2Price": 479.34,
+          "aiRecommendedPrice": 57.77
+        },
+        {
+          "productName": "Mu Product Name",
+          "sku": "Mu Sku",
+          "regularPrice": 605.27,
+          "salePrice": 66.91,
+          "costPrice": 631.73,
+          "margin": 803.77,
+          "currency": "Mu Currency",
+          "effectiveDate": "2026-05-14",
+          "expiresAt": "2026-09-08",
+          "priceType": "Mu Type",
+          "competitor1Price": 509.08,
+          "competitor2Price": 245.45,
+          "aiRecommendedPrice": 136.24
+        },
+        {
+          "productName": "Nu Product Name",
+          "sku": "Nu Sku",
+          "regularPrice": 296.78,
+          "salePrice": 147.29,
+          "costPrice": 612.92,
+          "margin": 425.69,
+          "currency": "Nu Currency",
+          "effectiveDate": "2026-02-03",
+          "expiresAt": "2026-12-17",
+          "priceType": "Nu Type",
+          "competitor1Price": 713.11,
+          "competitor2Price": 39.72,
+          "aiRecommendedPrice": 853.72
+        },
+        {
+          "productName": "Xi Product Name",
+          "sku": "Xi Sku",
+          "regularPrice": 719.1,
+          "salePrice": 75.91,
+          "costPrice": 889.16,
+          "margin": 121.21,
+          "currency": "Xi Currency",
+          "effectiveDate": "2026-12-02",
+          "expiresAt": "2026-04-04",
+          "priceType": "Xi Type",
+          "competitor1Price": 326.44,
+          "competitor2Price": 880.71,
+          "aiRecommendedPrice": 219.64
+        },
+        {
+          "productName": "Omicron Product Name",
+          "sku": "Omicron Sku",
+          "regularPrice": 633.72,
+          "salePrice": 15.56,
+          "costPrice": 253.57,
+          "margin": 248.21,
+          "currency": "Omicron Currency",
+          "effectiveDate": "2026-05-05",
+          "expiresAt": "2026-12-15",
+          "priceType": "Omicron Type",
+          "competitor1Price": 724.39,
+          "competitor2Price": 858.35,
+          "aiRecommendedPrice": 95.5
+        }
+      ]
+    },
+    {
+      "label": "Shelf Planogram",
+      "modelName": "ShelfPlanogram",
+      "routeKey": "shelfPlanograms",
+      "icon": "🗄️",
+      "aiFunction": "analyzeShelfPlanogram",
+      "aiPrompt": "Analyze this Shelf Planogram data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "shelfName",
+          "label": "Shelf Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "section",
+          "label": "Section",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "productName",
+          "label": "Product Name",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "position",
+          "label": "position",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "facings",
+          "label": "facings",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "stockLevel",
+          "label": "stock Level",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "salesVelocity",
+          "label": "sales Velocity",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "lastRestocked",
+          "label": "last Restocked",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "aiPlacement",
+          "label": "ai Placement",
+          "type": "TEXT",
+          "formType": "textarea"
+        }
+      ],
+      "sampleData": [
+        {
+          "shelfName": "Alpha Shelf Name",
+          "section": "Alpha Section",
+          "productName": "Alpha Product Name",
+          "position": 1,
+          "facings": 207,
+          "stockLevel": 98,
+          "salesVelocity": 736.64,
+          "lastRestocked": "2026-09-21",
+          "category": "Operations",
+          "priority": "Critical",
+          "aiPlacement": "Alpha ai placement content for enterprise scenario."
+        },
+        {
+          "shelfName": "Beta Shelf Name",
+          "section": "Beta Section",
+          "productName": "Beta Product Name",
+          "position": 2,
+          "facings": 975,
+          "stockLevel": 95,
+          "salesVelocity": 556.4,
+          "lastRestocked": "2026-04-28",
+          "category": "Sales",
+          "priority": "High",
+          "aiPlacement": "Beta ai placement content for startup scenario."
+        },
+        {
+          "shelfName": "Gamma Shelf Name",
+          "section": "Gamma Section",
+          "productName": "Gamma Product Name",
+          "position": 3,
+          "facings": 115,
+          "stockLevel": 163,
+          "salesVelocity": 70.58,
+          "lastRestocked": "2026-06-02",
+          "category": "Marketing",
+          "priority": "Medium",
+          "aiPlacement": "Gamma ai placement content for smb scenario."
+        },
+        {
+          "shelfName": "Delta Shelf Name",
+          "section": "Delta Section",
+          "productName": "Delta Product Name",
+          "position": 4,
+          "facings": 770,
+          "stockLevel": 744,
+          "salesVelocity": 792.14,
+          "lastRestocked": "2026-11-26",
+          "category": "Finance",
+          "priority": "Low",
+          "aiPlacement": "Delta ai placement content for agency scenario."
+        },
+        {
+          "shelfName": "Epsilon Shelf Name",
+          "section": "Epsilon Section",
+          "productName": "Epsilon Product Name",
+          "position": 5,
+          "facings": 467,
+          "stockLevel": 798,
+          "salesVelocity": 372.96,
+          "lastRestocked": "2026-12-10",
+          "category": "HR",
+          "priority": "Info",
+          "aiPlacement": "Epsilon ai placement content for freelancer scenario."
+        },
+        {
+          "shelfName": "Zeta Shelf Name",
+          "section": "Zeta Section",
+          "productName": "Zeta Product Name",
+          "position": 6,
+          "facings": 344,
+          "stockLevel": 83,
+          "salesVelocity": 992.24,
+          "lastRestocked": "2026-06-28",
+          "category": "Engineering",
+          "priority": "Warning",
+          "aiPlacement": "Zeta ai placement content for government scenario."
+        },
+        {
+          "shelfName": "Eta Shelf Name",
+          "section": "Eta Section",
+          "productName": "Eta Product Name",
+          "position": 7,
+          "facings": 830,
+          "stockLevel": 634,
+          "salesVelocity": 865.95,
+          "lastRestocked": "2026-06-02",
+          "category": "Support",
+          "priority": "Notice",
+          "aiPlacement": "Eta ai placement content for nonprofit scenario."
+        },
+        {
+          "shelfName": "Theta Shelf Name",
+          "section": "Theta Section",
+          "productName": "Theta Product Name",
+          "position": 8,
+          "facings": 660,
+          "stockLevel": 776,
+          "salesVelocity": 898.5,
+          "lastRestocked": "2026-07-09",
+          "category": "Legal",
+          "priority": "Alert",
+          "aiPlacement": "Theta ai placement content for healthcare scenario."
+        },
+        {
+          "shelfName": "Iota Shelf Name",
+          "section": "Iota Section",
+          "productName": "Iota Product Name",
+          "position": 9,
+          "facings": 68,
+          "stockLevel": 81,
+          "salesVelocity": 195.91,
+          "lastRestocked": "2026-12-10",
+          "category": "Admin",
+          "priority": "Emergency",
+          "aiPlacement": "Iota ai placement content for finance scenario."
+        },
+        {
+          "shelfName": "Kappa Shelf Name",
+          "section": "Kappa Section",
+          "productName": "Kappa Product Name",
+          "position": 10,
+          "facings": 32,
+          "stockLevel": 678,
+          "salesVelocity": 202.85,
+          "lastRestocked": "2026-10-04",
+          "category": "Analytics",
+          "priority": "Debug",
+          "aiPlacement": "Kappa ai placement content for education scenario."
+        },
+        {
+          "shelfName": "Lambda Shelf Name",
+          "section": "Lambda Section",
+          "productName": "Lambda Product Name",
+          "position": 11,
+          "facings": 361,
+          "stockLevel": 87,
+          "salesVelocity": 853.07,
+          "lastRestocked": "2026-11-05",
+          "category": "Security",
+          "priority": "Trace",
+          "aiPlacement": "Lambda ai placement content for retail scenario."
+        },
+        {
+          "shelfName": "Mu Shelf Name",
+          "section": "Mu Section",
+          "productName": "Mu Product Name",
+          "position": 12,
+          "facings": 183,
+          "stockLevel": 714,
+          "salesVelocity": 930.99,
+          "lastRestocked": "2026-11-02",
+          "category": "Compliance",
+          "priority": "Fatal",
+          "aiPlacement": "Mu ai placement content for tech scenario."
+        },
+        {
+          "shelfName": "Nu Shelf Name",
+          "section": "Nu Section",
+          "productName": "Nu Product Name",
+          "position": 13,
+          "facings": 737,
+          "stockLevel": 727,
+          "salesVelocity": 315.11,
+          "lastRestocked": "2026-02-18",
+          "category": "Infrastructure",
+          "priority": "Major",
+          "aiPlacement": "Nu ai placement content for legal scenario."
+        },
+        {
+          "shelfName": "Xi Shelf Name",
+          "section": "Xi Section",
+          "productName": "Xi Product Name",
+          "position": 14,
+          "facings": 779,
+          "stockLevel": 805,
+          "salesVelocity": 860.72,
+          "lastRestocked": "2026-12-08",
+          "category": "Product",
+          "priority": "Minor",
+          "aiPlacement": "Xi ai placement content for real estate scenario."
+        },
+        {
+          "shelfName": "Omicron Shelf Name",
+          "section": "Omicron Section",
+          "productName": "Omicron Product Name",
+          "position": 15,
+          "facings": 824,
+          "stockLevel": 429,
+          "salesVelocity": 842.76,
+          "lastRestocked": "2026-03-21",
+          "category": "Research",
+          "priority": "Trivial",
+          "aiPlacement": "Omicron ai placement content for manufacturing scenario."
+        }
+      ]
+    },
+    {
+      "label": "AI Retail Insight",
+      "modelName": "AIRetailInsight",
+      "routeKey": "aiRetailInsights",
+      "icon": "🤖",
+      "aiFunction": "analyzeAIRetailInsight",
+      "aiPrompt": "Analyze this AI Retail Insight data and provide actionable insights, trends, and recommendations.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "insightType",
+          "label": "Insight Type",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "description",
+          "label": "description",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "confidence",
+          "label": "confidence",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "estimatedImpact",
+          "label": "estimated Impact",
+          "type": "FLOAT",
+          "formType": "input"
+        },
+        {
+          "key": "recommendation",
+          "label": "recommendation",
+          "type": "TEXT",
+          "formType": "textarea"
+        },
+        {
+          "key": "affectedSkus",
+          "label": "affected Skus",
+          "type": "INTEGER",
+          "formType": "input"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "type": "STRING",
+          "formType": "input"
+        },
+        {
+          "key": "detectedAt",
+          "label": "detected At",
+          "type": "DATE",
+          "formType": "input"
+        },
+        {
+          "key": "isActionable",
+          "label": "is Actionable",
+          "type": "BOOLEAN",
+          "formType": "input"
+        }
+      ],
+      "sampleData": [
+        {
+          "title": "Alpha Title",
+          "insightType": "Alpha Type",
+          "description": "Alpha description — comprehensive details for enterprise use case with actionable insights.",
+          "confidence": 57.1,
+          "estimatedImpact": 623.01,
+          "recommendation": "AI Analysis for Alpha: Recommend optimizing operations workflows. 12% improvement potential.",
+          "affectedSkus": 329,
+          "priority": "Critical",
+          "detectedAt": "2026-04-26",
+          "isActionable": true
+        },
+        {
+          "title": "Beta Title",
+          "insightType": "Beta Type",
+          "description": "Beta description — comprehensive details for startup use case with actionable insights.",
+          "confidence": 50,
+          "estimatedImpact": 214.98,
+          "recommendation": "AI Analysis for Beta: Recommend optimizing sales workflows. 12% improvement potential.",
+          "affectedSkus": 567,
+          "priority": "High",
+          "detectedAt": "2026-12-11",
+          "isActionable": false
+        },
+        {
+          "title": "Gamma Title",
+          "insightType": "Gamma Type",
+          "description": "Gamma description — comprehensive details for smb use case with actionable insights.",
+          "confidence": 48.5,
+          "estimatedImpact": 262.9,
+          "recommendation": "AI Analysis for Gamma: Recommend optimizing marketing workflows. 31% improvement potential.",
+          "affectedSkus": 3,
+          "priority": "Medium",
+          "detectedAt": "2026-10-17",
+          "isActionable": true
+        },
+        {
+          "title": "Delta Title",
+          "insightType": "Delta Type",
+          "description": "Delta description — comprehensive details for agency use case with actionable insights.",
+          "confidence": 41,
+          "estimatedImpact": 836.08,
+          "recommendation": "AI Analysis for Delta: Recommend optimizing finance workflows. 26% improvement potential.",
+          "affectedSkus": 952,
+          "priority": "Low",
+          "detectedAt": "2026-07-15",
+          "isActionable": false
+        },
+        {
+          "title": "Epsilon Title",
+          "insightType": "Epsilon Type",
+          "description": "Epsilon description — comprehensive details for freelancer use case with actionable insights.",
+          "confidence": 89.6,
+          "estimatedImpact": 208.98,
+          "recommendation": "AI Analysis for Epsilon: Recommend optimizing hr workflows. 16% improvement potential.",
+          "affectedSkus": 865,
+          "priority": "Info",
+          "detectedAt": "2026-06-14",
+          "isActionable": true
+        },
+        {
+          "title": "Zeta Title",
+          "insightType": "Zeta Type",
+          "description": "Zeta description — comprehensive details for government use case with actionable insights.",
+          "confidence": 57.7,
+          "estimatedImpact": 970.14,
+          "recommendation": "AI Analysis for Zeta: Recommend optimizing engineering workflows. 17% improvement potential.",
+          "affectedSkus": 44,
+          "priority": "Warning",
+          "detectedAt": "2026-10-17",
+          "isActionable": false
+        },
+        {
+          "title": "Eta Title",
+          "insightType": "Eta Type",
+          "description": "Eta description — comprehensive details for nonprofit use case with actionable insights.",
+          "confidence": 73.1,
+          "estimatedImpact": 908.53,
+          "recommendation": "AI Analysis for Eta: Recommend optimizing support workflows. 24% improvement potential.",
+          "affectedSkus": 830,
+          "priority": "Notice",
+          "detectedAt": "2026-07-21",
+          "isActionable": true
+        },
+        {
+          "title": "Theta Title",
+          "insightType": "Theta Type",
+          "description": "Theta description — comprehensive details for healthcare use case with actionable insights.",
+          "confidence": 58.3,
+          "estimatedImpact": 909.12,
+          "recommendation": "AI Analysis for Theta: Recommend optimizing legal workflows. 30% improvement potential.",
+          "affectedSkus": 426,
+          "priority": "Alert",
+          "detectedAt": "2026-10-28",
+          "isActionable": false
+        },
+        {
+          "title": "Iota Title",
+          "insightType": "Iota Type",
+          "description": "Iota description — comprehensive details for finance use case with actionable insights.",
+          "confidence": 85.6,
+          "estimatedImpact": 746.3,
+          "recommendation": "AI Analysis for Iota: Recommend optimizing admin workflows. 14% improvement potential.",
+          "affectedSkus": 484,
+          "priority": "Emergency",
+          "detectedAt": "2026-11-02",
+          "isActionable": true
+        },
+        {
+          "title": "Kappa Title",
+          "insightType": "Kappa Type",
+          "description": "Kappa description — comprehensive details for education use case with actionable insights.",
+          "confidence": 71.9,
+          "estimatedImpact": 54.45,
+          "recommendation": "AI Analysis for Kappa: Recommend optimizing analytics workflows. 16% improvement potential.",
+          "affectedSkus": 611,
+          "priority": "Debug",
+          "detectedAt": "2026-11-04",
+          "isActionable": false
+        },
+        {
+          "title": "Lambda Title",
+          "insightType": "Lambda Type",
+          "description": "Lambda description — comprehensive details for retail use case with actionable insights.",
+          "confidence": 61.3,
+          "estimatedImpact": 690.91,
+          "recommendation": "AI Analysis for Lambda: Recommend optimizing security workflows. 30% improvement potential.",
+          "affectedSkus": 789,
+          "priority": "Trace",
+          "detectedAt": "2026-02-02",
+          "isActionable": true
+        },
+        {
+          "title": "Mu Title",
+          "insightType": "Mu Type",
+          "description": "Mu description — comprehensive details for tech use case with actionable insights.",
+          "confidence": 78.1,
+          "estimatedImpact": 443.6,
+          "recommendation": "AI Analysis for Mu: Recommend optimizing compliance workflows. 28% improvement potential.",
+          "affectedSkus": 656,
+          "priority": "Fatal",
+          "detectedAt": "2026-05-08",
+          "isActionable": false
+        },
+        {
+          "title": "Nu Title",
+          "insightType": "Nu Type",
+          "description": "Nu description — comprehensive details for legal use case with actionable insights.",
+          "confidence": 76.3,
+          "estimatedImpact": 470.79,
+          "recommendation": "AI Analysis for Nu: Recommend optimizing infrastructure workflows. 29% improvement potential.",
+          "affectedSkus": 240,
+          "priority": "Major",
+          "detectedAt": "2026-07-25",
+          "isActionable": true
+        },
+        {
+          "title": "Xi Title",
+          "insightType": "Xi Type",
+          "description": "Xi description — comprehensive details for real estate use case with actionable insights.",
+          "confidence": 98.7,
+          "estimatedImpact": 395.55,
+          "recommendation": "AI Analysis for Xi: Recommend optimizing product workflows. 34% improvement potential.",
+          "affectedSkus": 361,
+          "priority": "Minor",
+          "detectedAt": "2026-03-23",
+          "isActionable": false
+        },
+        {
+          "title": "Omicron Title",
+          "insightType": "Omicron Type",
+          "description": "Omicron description — comprehensive details for manufacturing use case with actionable insights.",
+          "confidence": 87.3,
+          "estimatedImpact": 513.6,
+          "recommendation": "AI Analysis for Omicron: Recommend optimizing research workflows. 13% improvement potential.",
+          "affectedSkus": 397,
+          "priority": "Trivial",
+          "detectedAt": "2026-01-19",
+          "isActionable": true
+        }
+      ]
+    }
+  ]
+}
