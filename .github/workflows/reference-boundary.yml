@@ -1,0 +1,26 @@
+name: reference-boundary
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run check
+      - run: bash -n start.sh
+      - name: Prove execution is denied
+        run: |
+          set +e
+          ./start.sh
+          code=$?
+          set -e
+          test "$code" = 78
